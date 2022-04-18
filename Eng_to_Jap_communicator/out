@@ -1,0 +1,25 @@
+SENT: (yy mode)
+[ LTOP: h0
+INDEX: e2 [ e TENSE: pres MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ]
+RELS: < [ pron_rel<0:1> LBL: h4 ARG0: x3 [ x PERS: 3 NUM: sg GEND: m PRONTYPE: std_pron ] ]
+ [ def_q_rel<-1:-1> LBL: h5 ARG0: x3 RSTR: h6 BODY: h7 ]
+ [ _wa_d_rel<1:2> LBL: h4 ARG0: e8 [ e TENSE: untensed MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ] ARG1: e9 [ e TENSE: tense MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ] ARG2: x3 ]
+ [ "_keshite_a_rel"<2:5> LBL: h1 ARG0: e10 [ e TENSE: untensed MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ] ARG1: e2 ]
+ [ udef_q_rel<5:6> LBL: h11 ARG0: x12 [ x PERS: 3 ] RSTR: h13 BODY: h14 ]
+ [ "_uso_n_1_rel"<5:6> LBL: h15 ARG0: x12 ]
+ [ "_tsuku_v_6_rel"<7:9> LBL: h16 ARG0: e2 ARG1: x3 ARG2: x12 ]
+ [ neg_x_rel<9:11> LBL: h1 ARG0: e17 [ e TENSE: tense MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ] ARG1: h18 ] >
+HCONS: < h0 qeq h1 h6 qeq h4 h13 qeq h15 h18 qeq h16 > ]
+[ LTOP: h0
+INDEX: e2 [ e TENSE: pres MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ]
+RELS: < [ pron_rel<0:1> LBL: h4 ARG0: x5 [ x PERS: 3 NUM: sg GEND: m PRONTYPE: std_pron ] ]
+ [ def_q_rel<-1:-1> LBL: h6 ARG0: x5 RSTR: h7 BODY: h8 ]
+ [ _wa_d_rel<1:2> LBL: h1 ARG0: e9 [ e TENSE: untensed MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ] ARG1: e2 ARG2: x5 ]
+ [ "_keshite_a_rel"<2:5> LBL: h1 ARG0: e10 [ e TENSE: untensed MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ] ARG1: e2 ]
+ [ udef_q_rel<5:6> LBL: h11 ARG0: x12 [ x PERS: 3 ] RSTR: h13 BODY: h14 ]
+ [ "_uso_n_1_rel"<5:6> LBL: h15 ARG0: x12 ]
+ [ "_tsuku_v_6_rel"<7:9> LBL: h16 ARG0: e2 ARG1: i3 ARG2: x12 ]
+ [ neg_x_rel<9:11> LBL: h1 ARG0: e17 [ e TENSE: tense MOOD: indicative PROG: - PERF: - ASPECT: default_aspect PASS: - SF: prop ] ARG1: h18 ] >
+HCONS: < h0 qeq h1 h7 qeq h4 h13 qeq h15 h18 qeq h16 > ]
+
+

@@ -1,0 +1,11 @@
+SENT: You must go.
+[ LTOP: h0
+INDEX: e2 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ]
+RELS: < [ pron<0:3> LBL: h4 ARG0: x3 [ x PERS: 2 IND: + PT: std ] ]
+ [ pronoun_q<0:3> LBL: h5 ARG0: x3 RSTR: h6 BODY: h7 ]
+ [ _must_v_modal<4:8> LBL: h1 ARG0: e2 ARG1: h8 ]
+ [ _go_v_1<9:12> LBL: h9 ARG0: e10 [ e SF: prop TENSE: untensed MOOD: indicative PROG: - PERF: - ] ARG1: x3 ] >
+HCONS: < h0 qeq h1 h6 qeq h4 h8 qeq h9 >
+ICONS: < > ]
+
+

@@ -1,0 +1,9 @@
+1	grp	Grouping
+2	concpt_dic	Concept from Concept dictionary
+3	idx_concpt_dic	Index for Concepts
+4	catg	Lexical Category (only for proper nouns, pronouns) AND Ontological Information about nouns
+5	gnp	GNP (Gender, Number, Person) Information
+6	intra_chk	Intrachunk Dependency Relations
+7	inter_chk	Interchunk Dependency Relations
+8	disc_rel	Discourse Relations
+9	sent_type	Sentence Type

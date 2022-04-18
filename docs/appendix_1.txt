@@ -1,0 +1,9 @@
+Grouping
+---------
+The 1st row in user csv is about grouping of local word grouping (LWG). The modifiers of a noun such as adjectives, determiners, numbers (cardinal and/or ordinal), emphatic markers, measurement units and all other possible modifiers will be grouped together. Some of the examples are given below:
+
+determiners:	यह, वह, कम, ज्यादा, सब, कुछ, काफी, बहुत, सारा
+discourse particles:	ही, भी, तक, तो, नहीं
+measurement units:	दर्जन, किलोमीटर, मीटर, घण्टा, किलो
+
+Note: Check the guideline for how to group the words. 
