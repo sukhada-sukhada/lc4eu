@@ -2,7 +2,7 @@ var=`echo $lang_comm`
 
 
 #to check language communicator path is set or not
-if ! [[ "$var" =~ "language_communicator" ]]; then
+if ! [[ "$var" =~ "lc4eu" ]]; then
 	echo "Please set the path of language_communicator tool in bashrc."
 	exit
 fi
