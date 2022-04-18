@@ -30,7 +30,7 @@ Pre-requisites:
 	)
 3. Clips
     1. Download zip file : (https://sourceforge.net/projects/clipsrules/files/CLIPS/6.40_Beta_1/clips_core_source_640.zip/download)
-    2. copy zip file in language_communicator folder
+    2. copy zip file in lc4eu folder
     3. unzip clips_core_source_640.zip
 
  
@@ -46,7 +46,7 @@ Run following command to open the bashrc file:
 1. Copy and paste the following lines at the end of ~/.bashrc 
 
 	export PYDELPHIN=$HOME/pydelphin
-	export lang_comm=$HOME/language_communicator
+	export lang_comm=$HOME/lc4eu
 	export PATH=$lang_comm/bin:$PATH
 
 2. Save and quit the above file 
