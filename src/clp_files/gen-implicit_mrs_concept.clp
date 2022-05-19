@@ -403,3 +403,30 @@
 (printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?vina 10) "  udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values   compound-vi_n  id-MRS_concept "(+ ?vi 10) "  udef_q)"crlf)
 )
+
+
+;Rule for generating the mrs_concept: nominalization, for kriyArWa_kriyA
+; #mEM Kelane ke liye krIdAMgaNa meM gayA.
+; I went to the playground for playing.
+; (rel_name-ids	kriyArWa_kriyA	40000	20000)
+(defrule nominalization
+(rel_name-ids	kriyArWa_kriyA	?kri ?krikri)
+=>
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
+(printout ?*defdbug* "(rule-rel-values    nominalization  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
+
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  nominalization   id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
+)
+
+;Generate 'superl' mrs_concept for superlative degree adjectives
+;#sUrya sabase badA nakRawra hE.
+;The sun is the largest star.
+;(id-degree      20000   superl)
+(defrule superl
+(id-degree	?id	superl)
+=>
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 10) "  superl)"crlf)
+(printout ?*defdbug* "(rule-rel-values  superl   id-MRS_concept "(+ ?id 10) "  superl)"crlf)
+)
+

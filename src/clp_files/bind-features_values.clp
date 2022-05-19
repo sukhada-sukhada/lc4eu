@@ -156,7 +156,7 @@
 )
 
 ;Rule for verb when only karta is present : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
-;replace ARG2 of kriyA with ARG0 of karwA
+;replace ARG1 of kriyA with ARG0 of karwA
 (defrule v-k1
 ;(declare (salience 10))
 (rel_name-ids	k1	?kriyA ?karwA)
@@ -238,7 +238,8 @@
 (MRS_info ?rel2 ?karak ?mrsCon2 ?lbl2 ?argn_0 $?varss)
 (test (eq (sub-string 1 1 (str-cat ?prep)) (sub-string 1 1 (str-cat ?karak))))
 (test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
-(test (neq (str-index "_n_" ?mrsCon2)FALSE))
+;(test (neq (str-index "_n_" ?mrsCon2)FALSE))
+(test (or (neq (str-index "_n_" ?mrsCon2)FALSE) (eq ?mrsCon2 nominalization) ))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
@@ -692,6 +693,8 @@ propn
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 (not (kriyA-TAM ?kri_id yA_gayA_1))
+(not (rel_name-ids	kriyArWa_kriyA	?kri	?kri_id))
+
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -757,6 +760,22 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values there-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
 ) 
 
+
+;replace the ARG1 value of superl with the ARG0 value adjective, and
+;replace the LBL value of superl with the LBL value of adjective
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20010 superl h1 e2 e3)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _big_a_1 h16 e17 x18)
+(defrule superlative
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?super superl ?l ?a0 ?a1)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adj  ?adj_concept ?l1 ?a01 ?a11)
+(id-degree	?adj	superl)
+(rel_name-ids	mod	?n	?adj)
+(MRS_info ?rel ?n ?mrscon ?l2 $?)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?super" superl "?l2" "?a0" "?a01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values superlative  id-MRS_concept-LBL-ARG0-ARG1 "?super" superl "?l2" "?a0" "?a01")"crlf)
+)
 
 (defrule printFacts
 (declare (salience -9000))

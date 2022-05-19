@@ -45,7 +45,12 @@ for k in idConcept.keys():
 # Writing gender,number,person:
 for i in range(len(gnp)):
     if gnp[i] !='':
-        ans.write('(id-gen-num-pers\t' + str((i+1)*10000) + '\t' + gnp[i][1:-1] + ')\n')
+        if 'superl' in gnp[i]:
+            ans.write('(id-degree\t' + str((i+1)*10000) + '\tsuperl)\n')
+        elif 'comper' in gnp[i]:
+            ans.write('(id-degree\t' + str((i+1)*10000) + '\tcomper)\n')
+        else:
+            ans.write('(id-gen-num-pers\t' + str((i+1)*10000) + '\t' + gnp[i][1:-1] + ')\n')
 
 # Writing POS values
 for i in range(len(wid)):
