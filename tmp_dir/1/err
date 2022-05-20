@@ -28,7 +28,7 @@ TRUE
 CLIPS> (bind ?*path* (str-cat ?*path* "/src/clp_files/gen-implicit_mrs_concept.clp"))
 "/home/sukhada/lc4eu/src/clp_files/gen-implicit_mrs_concept.clp"
 CLIPS> (load ?*path*)
-::*****************************
+::*******************************
 TRUE
 CLIPS> (load-facts "hin-clips-facts.dat")
 TRUE
@@ -192,7 +192,7 @@ TRUE
 CLIPS> (bind ?*path* (str-cat ?*path* "/src/clp_files/bind-features_values.clp"))
 "/home/sukhada/lc4eu/src/clp_files/bind-features_values.clp"
 CLIPS> (load ?*path*)
-::*****************************************
+::******************************************
 TRUE
 CLIPS> (load-facts "hin-clips-facts.dat")
 TRUE
