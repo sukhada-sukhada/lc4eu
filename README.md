@@ -14,7 +14,7 @@ copy the following command on terminal:
 sudo apt-get install git
 
 To clone the language communicator tool from github copy the below command and paste on terminal:
-git clone https://github.com/shastri0911/language_communicator.git
+git clone https://github.com/sukhada-sukhada/lc4eu
 
 #language communicator
 #Readme to generate english sentence using a CHL input 
@@ -72,8 +72,9 @@ How to Run:
 		(Note: user csv filenames are stored as numbers)
 OR
     Run an existing user csv file using following command:
-	bash lc.sh $HOME/language_communicator/verified_sent/1
+	bash lc.sh $HOME/lc4eu/verified_sent/1
 	
 	NOTE:
 	**	Output is stored in the file name dir present inside tmp_dir
-		(Ex: Output is stored in $HOME/language_communicator/tmp_dir/1/)
+		(Ex: Output is stored in $HOME/lc4eu/tmp_dir/1/)
+		
