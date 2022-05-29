@@ -25,13 +25,15 @@
 
 ;Restr-Trstricted fact for mrs concepts like _each_q, _which_q etc
 (defrule rstr-rstd4non-implicit
-(rel_name-ids mod|ord|cord ?head ?dep)
+(rel_name-ids ord|cord|dem ?head ?dep)
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x ?rstr $?vars)
 (test (neq ?endsWith_q ?mrsCon))
 (test (neq ?endsWith_q def_implicit_q))
 (test (neq ?endsWith_q def_explicit_q))
-(test (eq (sub-string (- (str-length ?endsWith_q) 1) (str-length ?endsWith_q) ?endsWith_q) "_q"))
+(test (or
+   (eq (sub-string (- (str-length ?endsWith_q) 1) (str-length ?endsWith_q) ?endsWith_q) "_q")
+   (eq (sub-string (- (str-length ?endsWith_q) 3) (str-length ?endsWith_q) ?endsWith_q) "_dem") ) )
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 (not (Restr-Restricted-fact-generated_for_comp ?dep))
 =>
@@ -139,6 +141,8 @@
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (not (Restr-Restricted-fact-generated))
 (not (MRS_info ?rel1 ?id1 neg ?lbl1 $?v))
+(not (id-causative	?id	yes))
+(not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 =>
 ;(if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE) )
 ;then
@@ -152,6 +156,26 @@
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
 ;)     
 )
+
+;Restrictor for LTOP Restrictor-Restricted default value causative
+(defrule LTOP-rstdc
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id _make_v_cause ?lbl $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdc Restr-Restricted  h0 "?lbl ")"crlf)
+)
+
+;Restrictor for  causative
+(defrule LTOP-rstdca
+(id-causative       ?id1   yes)
+(MRS_info ?rel ?id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?vars)
+(MRS_info ?rel1  ?id1  ?mrsV ?lbl1 ?arg10 ?arg11 ?arg12 $?var)
+(test (neq ?id ?id1))
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdca Restr-Restricted  "?arg2 " "?lbl1 ")"crlf)
+)
+
 
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20100 _should_v_modal h7 e8 h9)
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _sleep_v_1 h10 e11 x2)

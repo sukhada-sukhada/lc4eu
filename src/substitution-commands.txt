@@ -1,0 +1,4 @@
+s/\]  \[/\]\n\[/g
+s/ \[/\n\[/g
+s/ RELS/\nRELS/g
+s/ HCONS/\nHCONS/g

@@ -314,7 +314,7 @@
 ;mEM Gara jA sakawA hUz. kyA Apa ruka sakawe hEM? mEM nahIM so sakawA hUz.
 ;I can go home.          Can you stop?            I can not sleep.
 (defrule can_v_modal
-(kriyA-TAM	?id  0_sakawA_hE_1)
+(kriyA-TAM	?id  0_sakawA_hE_1|0_sakawA_1)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
@@ -428,5 +428,15 @@
 =>
 (printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 10) "  superl)"crlf)
 (printout ?*defdbug* "(rule-rel-values  superl   id-MRS_concept "(+ ?id 10) "  superl)"crlf)
+)
+
+;rule for generating  _make_v_cause
+;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+;The teacher made the students clean the class.
+(defrule make_v_cause
+(id-causative	?id	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _make_v_cause  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
 )
 

@@ -43,10 +43,23 @@
 (rel_name-ids mod|intf ?viya ?viNa)
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
-(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
+;(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
+(test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q"))
 =>
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values viya-viNa   "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
+)
+
+;Rule for binding/replacing ARG0 value of demonstrative_pronoun with ARG0 value of viSeRya
+;Ex. rAma yaha kAma  kara sakawA. Rama can do this work.
+(defrule dem
+(rel_name-ids dem ?viya ?viNa)
+(MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
+(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
+(test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q")) 
+=>
+(printout ?*rstr-fp* "(MRS_info  "?rel2" "?viNa" "?co" "?lbl2" "?arg0_viya" "?arg1_viNa" "(implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values dem   "?rel2 " " ?viNa " " ?co " " ?lbl2 " " ?arg0_viya " " ?arg1_viNa " "(implode$ (create$ $?vars)) ")"crlf)
 )
 
 ;Replace LBL values of kriyA_viSeRaNa with the LBL value of kriyA, and Replace ARG1 values of kriyA_viSeRaNa with the ARG0 value of kriyA. Ex. "I walk slowly." 
@@ -173,6 +186,47 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-k1 "?rel_name " "?kriyA" "?mrsCon" "?lbl" "?arg0" "?argwA_0" "(implode$ (create$ $?v))")"crlf)
 )
 
+;Rule for verb when only causative karta is present : for (kriyA-pk1 ? ?) and  (kriyA-k2 ? ?) is not present for causative
+;replace ARG1 of the kriyA "_make_v_cause" with ARG0 of karwA
+(defrule v-pk1
+(rel_name-ids	pk1	?kriyA ?karwA)
+(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
+?f<-(MRS_info ?rel3 ?make_v_id _make_v_cause ?lbl3 ?A30 ?A31 ?A32)
+(test (neq ?arg1 ?argwA_0))
+(test (eq ?make_v_id (+ ?kriyA 100)))
+(not (modified_pk1 ?karwA))
+=>
+(retract ?f)
+(assert (modified_pk1 ?karwA))
+(assert (MRS_info  ?rel3  ?make_v_id _make_v_cause  ?lbl3 ?A30 ?argwA_0  ?A32))
+;(printout ?*rstr-fp* "(MRS_info "?rel3 " " ?make_v_id " _make_v_cause " ?lbl3 " "?A30 " "?argwA_0 " " ?A32")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-pk1 MRS_info "?rel3 " " ?make_v_id " _make_v_cause " ?lbl3 " "?A30 " "?argwA_0 " " ?A32")"crlf)
+)
+
+
+;Rule for verb when only prayojaka karta is present : for (kriyA-jk1 ? ?) and  (kriyA-k2 ? ?) is not present
+;replace ARG1 of main kriyA with ARG0 of prayojaka karwA
+;Ex. 
+(defrule v-jk1
+(rel_name-ids	jk1	?kriyA ?karwA)
+(MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
+(MRS_info ?rel3 ?make_v_id _make_v_cause ?lbl3 ?A30 ?A31 ?A32)
+?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
+(test (eq (str-index _q ?mrsCon1) FALSE))
+(test (neq ?arg1 ?argwA_0))
+(test (eq ?make_v_id (+ ?kriyA 100)))
+(not (modified_jk1 ?karwA))
+=>
+(retract ?f)
+(assert (modified_jk1 ?karwA))
+(assert (MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?argwA_0 ?arg2 $?v))
+;(printout ?*rstr-fp* "(MRS_info "?rel_name " " ?kriyA  " "?mrsCon" " ?lbl " "?arg0 " "?argwA_0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-jk1 MRS_info "?rel_name " " ?kriyA  " "?mrsCon" " ?lbl " "?arg0 " "?argwA_0 " )"crlf)
+)
+
+
+
 ;Rule for verb and its arguments(when both karta and karma are present),Replace ARG1 value of kriyA with ARG0 value of karwA and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k2
 (rel_name-ids	k2       	?kriyA ?karma)
@@ -204,6 +258,7 @@
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (eq ?get_v_id (+ ?kriyA 100)))
 (not (modified_Arg1 ?getA1))
+(not (id-causative ?id yes)) ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 =>
 (retract ?f)
 (assert (modified_Arg1 ?argma_0))
@@ -215,7 +270,7 @@
 
 ;Rule for verb and its arguments(when  karta, karma and sampradaan are present),Replace ARG3 value of kriyA with ARG0 value of sampradaan and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k4
-(rel_name-ids	k4|k2g   	?kriyA ?k4)
+(rel_name-ids	k4|k2g|k2s   	?kriyA ?k4)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 ?arg3 )
 (MRS_info ?rel2 ?k4 ?mrsCon2 ?lbl2 ?argk4_0 $?vars1)
 (test (eq (str-index _q ?mrsCon2) FALSE))
@@ -564,8 +619,14 @@ propn
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num card ?lbl ?numARG0 ?ARG1 ?CARG)
 (MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
 =>
-(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?vilbl" " ?numARG0 " "?viarg0" " ?enum ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values saMKyA_vi id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?vilbl" "?numARG0" "?viarg0" "?enum")"crlf)
+(if (neq (str-index "_" ?enum) FALSE) then
+  (bind ?myEnum (string-to-field (sub-string 0 (- (str-index "_" ?enum )1) ?enum))) ;removing "_digit" from e_concept_label, ex. "ten_2" => "ten"
+     (printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?vilbl" "?numARG0" "?viarg0" "?myEnum")"crlf)
+     (printout ?*rstr-dbug* "(rule-rel-values saMKyA_vi id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?vilbl" "?numARG0" "?viarg0" "?myEnum")"crlf)
+else
+   (printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?vilbl" " ?numARG0 " "?viarg0" " ?enum ")"crlf)
+   (printout ?*rstr-dbug* "(rule-rel-values saMKyA_vi id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?vilbl" "?numARG0" "?viarg0" "?enum")"crlf)
+)
 )
 
 ;Rule for numerical adjectives. Replace 
@@ -693,8 +754,8 @@ propn
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 (not (kriyA-TAM ?kri_id yA_gayA_1))
-(not (rel_name-ids	kriyArWa_kriyA	?kri	?kri_id))
-
+(not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
+(not (id-causative ?id yes))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -721,6 +782,17 @@ then
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
 (printout ?*rstr-dbug* "(rule-rel-values tam-modal  LTOP-INDEX h0 "?arg0 ")"crlf)
 )
+
+;generates LTOP and INDEX values for causative.
+;ex. SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40100 _make_v_cause h1 e2 x28 h4)
+(defrule make-LTOP
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id _make_v_cause ?lbl ?arg0 $?vars)
+=>
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values causative-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
 
 
 ;generates LTOP and INDEX values for predicative adjective(s).
