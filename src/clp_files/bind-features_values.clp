@@ -77,7 +77,7 @@
 ;replace ARG1 of adjective with ARG0 of non-adjective
 ;ex INPUT: rAma acCA hE. OUTPUT: Rama is good.
 (defrule samAnAXi
-(rel_name-ids	samAnAXi	?non-adj ?adj)
+(rel_name-ids	samAnAXi|k1s	?non-adj ?adj)
 (id-guNavAcI    ?adj   yes)
 ?f<-(MRS_info ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?non-adj ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
@@ -95,8 +95,8 @@
 ;replace ARG1 of verb with ARG0 of 1st samAnAXi & ARG2 of verb with ARG0 of 2nd samAnAXi.
 ;ex INPUT: rAma dAktara hE. OUTPUT: Rama is a doctor.
 (defrule samAnAXi-noun
-(id-concept_label       ?v_id   state_copula)
-(rel_name-ids	samAnAXi	?id1 ?id2)
+(id-concept_label       ?v_id   state_copula|hE_1|WA_1)
+(rel_name-ids	samAnAXi|k1s	?id1 ?id2)
 (not (id-concept_label  ?k-id   ?hiConcept&Aja_1|kala_1|kala_2)) ;to rule out the cases for time adverbs.
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
@@ -115,7 +115,7 @@
 ;replace ARG1 of existential verb with ARG0 of AXeya & ARG2 of verb with ARG0 of AXAra.
 ;ex INPUT: ladakA xillI meM hE. OUTPUT: The boy is in Delhi.
 (defrule existential
-(id-concept_label       ?v_id   state_existential)
+(id-concept_label       ?v_id   state_existential|hE_1|WA_1)
 (rel_name-ids	AXAra-AXeya	?id1 ?id2)
 ?f<-(MRS_info ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
@@ -134,7 +134,7 @@
 ;replace ARG1 of the verb with ARG0 of anuBAvaka & ARG2 of verb with ARG0 of anuBava.
 ;ex INPUT: rAma ko buKAra hE. OUTPUT: rAma has fever.
 (defrule anuBava
-(id-concept_label       ?v_id   state_anuBUwi)
+(id-concept_label       ?v_id   state_anuBUwi|hE_1|WA_1)
 (rel_name-ids   anuBava-anuBAvaka       ?id1  ?id2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
@@ -153,7 +153,7 @@
 ;replace ARG1 of the verb with ARG0 of possessor & ARG2 of verb with ARG0 of possessed.
 ;ex INPUT: rAma ke pAsa kiwAba hE. OUTPUT: rAma has the book.
 (defrule possession
-(id-concept_label       ?v_id   state_possession)
+(id-concept_label       ?v_id   state_possession|hE_1|WA_1)
 (rel_name-ids   possessed-possessor       ?id1  ?id2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
@@ -417,7 +417,7 @@
 ;ex INPUT: Aja skUla meM merA pahalA xina hE. OUTPUT: Today is my first day at the school.
 
 (defrule time-samAnAXi
-(id-concept_label       ?v_id   state_copula)
+(id-concept_label       ?v_id   state_copula|hE_1|WA_1)
 (rel_name-ids   samAnAXi        ?s-id1  ?s-id2)
 (id-concept_label  ?k-id   ?hiConcept&Aja_1|kala_1|kala_2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
@@ -686,13 +686,14 @@ else
 ;Ex. rAvana mArA gayA.
 (defrule pargd
 ?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id parg_d ?lbl ?arg0 ?arg1 ?arg2) 
-(MRS_info ?rel ?id ?v ?lblv ?arg0v ?arg1v ?arg2v)
+(MRS_info ?rel ?id ?v ?lblv ?arg0v ?arg1v ?arg2v $?var)
 (test (neq (str-index "_v_" ?v)FALSE))
 =>
 (retract ?f)
-(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lblv" " ?arg0 " " ?arg0v " "?arg2v")"crlf)
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lblv" " ?arg0 " " ?arg0v " "?arg2v ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values pargd id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d " ?lblv " " ?arg0 " " ?arg0v " " ?arg2v ")"crlf)
 )
+
 
 ;for imperative sentence information
 (defrule kri-tam-imper
@@ -747,15 +748,26 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-q id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
 
+;generates LTOP and INDEX values for vAkya_vn.
+;Ex. sUrya camakawA BI hE. 
+(defrule vAkya_vn-LTOP
+(rel_name-ids	vAkya_vn   ?id1 ?id2)
+(MRS_info ?rel1  ?id1  ?mrsV ?lbl1 ?arg10 ?arg11 $?var)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg10 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vAkya_vn-LTOP LTOP-INDEX h0 "?arg10 ")"crlf)
+)
 ;Rule for LTOP: The LBL value and ARG0 value of *_v_* becomes the value of LTOP and INDEX if the following words are not there in the sentence: "possibly", "suddenly". "not".If they exist, the LTOP value becomes the LBL value of that word and INDEX value is the ARG0 value of *_v_*. For "not" we get a node "neg" in the MRS
 (defrule v-LTOP
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
 (not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
-(not (kriyA-TAM ?kri_id yA_gayA_1))
+;(not (kriyA-TAM ?kri_id pres))
+;(not (kriyA-TAM ?kri_id yA_gayA_1))
 (not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
 (not (id-causative ?id yes))
+(not(rel_name-ids vAkya_vn ?id1 ?id2)) 
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -798,9 +810,9 @@ then
 ;generates LTOP and INDEX values for predicative adjective(s).
 ;ex. rAma acCA hE.
 (defrule samAnAXi-LTOP
-(id-concept_label       ?v   state_copula)
+(id-concept_label       ?v   state_copula|hE_1|WA_1)
 (id-guNavAcI    ?id_adj   yes)
-(rel_name-ids   samAnAXi        ?id  ?id_adj)
+(rel_name-ids   samAnAXi|k1s        ?id  ?id_adj)
 (MRS_info ?rel ?id_adj ?mrsCon ?lbl ?arg0 $?vars)
 =>
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
@@ -810,7 +822,7 @@ then
 ;generates LTOP and INDEX values for existential verb(s).
 ;ex. ladakA xilli meM hE.
 (defrule Existential-LTOP
-(id-concept_label       ?v   state_existential)
+(id-concept_label       ?v   state_existential|hE_1|WA_1)
 ?f<-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
 ;(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
 (MRS_info ?rel ?id3 ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2)
@@ -824,7 +836,7 @@ then
 ) 
  
 (defrule there-LTOP
-(id-concept_label       ?id   state_existential)
+(id-concept_label       ?id   state_existential|hE_1|WA_1)
 ?f<-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 loc_nonsp  ?lbl ?arg0 $?args)
 =>

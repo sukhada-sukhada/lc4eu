@@ -123,7 +123,13 @@ for k in idConcept.keys():
 # Writing Speaker's View values
 for i in range(len(wid)):
     if speakerView[i] != '':
-        ans.write('(id-'+speakerView[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
+        if ':' in speakerView[i]:   
+            idrel = speakerView[i].split(':')
+            headId = str(int(float(idrel[0]))*10000)
+            depId = str((i+1)*10000)
+            ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n')
+        else:
+            ans.write('(id-'+speakerView[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
 
 
 # Writing scope facts

@@ -25,23 +25,40 @@
 (printout ?*mrs-dbug* "(rule-rel-values   rm-qcon4quantifier  id-MRS_concept "?q_id" "?aq")"crlf)
 )
 
-;This rule changes the ARG1 value like x* of the passive verbs when k1 is present for the verb to i*
+;Rule to change the ARG1 value x* of the passive verbs when k1 is not present for the verb to i*
 ;Ex. (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _kill_v_1 h19 e20 x21 x22)
 ;changes to
 ;    (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _kill_v_1 h19 e20 i21 x22)
-;Ex. Ravana was killed by Rama.
+;Ex. Ravana was killed.
 (defrule passive-v-k1
 (declare (salience 200))
 ?f1<-(sentence_type	pass-affirmative)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
-(not (rel_name-ids kriyA-k1	?kri	?k1))
+?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2 $?var)
+(not (rel_name-ids k1	?kri	?k1))
 =>
 (retract ?f1 ?f)
-(bind ?a1 (str-cat "i" (sub-string 2 (str-length ?arg1) ?arg1)))  
+(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))  
 ;(assert (MRS_info   ?kri ?arg1  (explode$ ?a1) ))
-(printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values passive-v-k1 MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2" "(implode$ (create$ $?var))")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values passive-v-k1 MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2" "(implode$ (create$ $?var))")"crlf)
 )
+
+
+;Rule for converting arg2 value (x*) of transtive verb when k2 is absent to u*
+;Ex. #usane nahIM KAyA.  
+;     He did not eat.
+(defrule active-k2-absent
+(declare (salience 200))
+?f1<-(sentence_type    affirmative|negative|interrogative)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
+(not (rel_name-ids k2   ?kri    ?k2))   
+=>
+(retract ?f1 ?f)
+(bind ?a2 (str-cat "u" (sub-string 2 (str-length ?arg2) ?arg2)))
+(printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?a2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values active-k2-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?a2")"crlf)
+)
+
 
 ;Changing the ARG0 value (e*) to i* for imperative(-nagetive) sentences.
 ;(MRS_concept-label-feature_values neg LBL: h* ARG0: e* ARG1: h*)

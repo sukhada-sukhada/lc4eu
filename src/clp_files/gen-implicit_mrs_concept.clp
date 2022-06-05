@@ -50,6 +50,7 @@
 (defrule mrs_mass_notDef
 (id-gen-num-pers ?id ?g ?n ?p)
 (id-mass ?id yes)
+(not (rel_name-ids dem ?id ?))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
@@ -376,12 +377,12 @@
 ;To generate "_get_v_state" MRS concept for the TAM "yA_gayA_1" 
 ;KAnA mere xvArA KAyA gayA.
 ;The food got eaten by me.
-(defrule _get_v_state
-(kriyA-TAM      ?id yA_gayA_1)
-=>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
-(printout ?*defdbug* "(rule-rel-values  _get_v_state  id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
-)
+;(defrule _get_v_state
+;(kriyA-TAM      ?id yA_gayA_1)
+;=>
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
+;(printout ?*defdbug* "(rule-rel-values  _get_v_state  id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
+;)
 
 
 

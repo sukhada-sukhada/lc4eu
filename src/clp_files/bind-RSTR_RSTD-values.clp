@@ -141,8 +141,9 @@
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (not (Restr-Restricted-fact-generated))
 (not (MRS_info ?rel1 ?id1 neg ?lbl1 $?v))
-(not (id-causative	?id	yes))
+(not (id-causative ?id yes))
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
+(not(rel_name-ids vAkya_vn ?id_1 ?id_2))
 =>
 ;(if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE) )
 ;then
@@ -156,6 +157,28 @@
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
 ;)     
 )
+
+;Restrictor for LTOP Restrictor-Restricted default value vAkya_vn
+;Ex. sUrya camakawA BI hE. The sun also shines.
+(defrule LTOP-vAkya_vn
+(rel_name-ids	vAkya_vn	?id1 ?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id2 ?mrsalso ?lbl ?arg0 $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-vAkya_vn Restr-Restricted  h0 "?lbl ")"crlf)
+)
+
+;Restrictor for  vAkya_vn
+;Ex. sUrya camakawA BI hE. The sun also shines.
+(defrule rstr-rstd_vakya_vn
+(rel_name-ids vAkya_vn ?id1 ?id2)
+(MRS_info ?rel1  ?id1  ?mrsV ?lbl ?arg0 ?arg1 $?var)
+(MRS_info ?rel ?id2 ?mrsalso ?lbl1 ?arg10 ?arg20 $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg20 " "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values rstr-rstd-vAkya_vn Restr-Restricted  "?arg20 " "?lbl ")"crlf)
+)
+
 
 ;Restrictor for LTOP Restrictor-Restricted default value causative
 (defrule LTOP-rstdc

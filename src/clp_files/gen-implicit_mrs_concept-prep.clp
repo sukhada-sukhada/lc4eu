@@ -24,7 +24,7 @@
 (defrule on_p_temp
 (dofw  ?vaar     ?day)
 (id-concept_label ?id	?vaar) 
-(rel_name-ids k7  ?kri   ?k-id)
+(rel_name-ids k7|k7t  ?kri   ?k-id)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?id 1) " _on_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values on_p_temp  id-MRS_concept " (+ ?id 1) " _on_p_temp)"crlf)

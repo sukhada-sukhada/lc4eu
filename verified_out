@@ -372,8 +372,8 @@ The boy is reading a new book in the garden.
 
 #KAnA mere xvArA KAyA gayA.
 160
-The food got eaten by myself.
-The food got eaten by me.
+The food was eaten by myself.
+The food was eaten by me.
 
 #kyA rAvaNa rAma ke xvArA mArA gayA WA?
 161
@@ -1457,10 +1457,45 @@ I came yesterday.
 I came, yesterday.
 I came yesterday.
 
-rAma yaha kAma  kara sakawA hE.
+#rAma yaha kAma kara sakawA hE.
 330
 Rama can do this work.
 
+#kyA usane KAyA?
+331
+Did he eat?
+He did eat?
+He ate?
+
+#rAvaNa mArA gayA WA.
+332
+Ravana was killed.
+
+#kyA usane nahIM KAyA?
+333
+He did not eat?
+Did he not eat?
+Didn't he eat?
+He didn't eat?
+He did not eat?
+Did he not eat?
+
+#muJe kalama xiyA gayA.
+334
+A pen was given to myself.
+A pen was given to me.
+
+#sUrya camakawA BI hE.
+335
+Also, the sun shines.
+Also the sun shines.
+The sun also shines.
+
+#usane nahIM KAyA.
+336
+He did not eat.
+He didn't eat.
+He did not eat.
 
 #mEM kiwAbeM paDa rahA hUz.
 34
@@ -1701,7 +1736,7 @@ Babies eat fruits on Tuesday.
 
 #rAvana mArA gayA.
 60
-Ravana got killed.
+Ravana was killed.
 
 #rAvaNa rAma ke xvArA mArA gayA WA.
 61
