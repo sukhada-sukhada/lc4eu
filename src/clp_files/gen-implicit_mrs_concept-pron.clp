@@ -39,3 +39,16 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
 )
+
+;rule for demonstrative pronoun
+(defrule mrs_dem_pron
+(rel_name-ids deic ?obj    ?dem)
+(not (rel_name-ids	dem	?obj	?dem))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_dem_pron id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 1)" dem)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_dem_pron id-MRS_concept "(+ ?dem 1)" dem)"crlf)
+)
+

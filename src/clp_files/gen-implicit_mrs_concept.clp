@@ -25,9 +25,10 @@
 (not(id-place ?id yes))
 (not (rel_name-ids ord ?id $?v))
 (not (rel_name-ids dem ?id $?v1))
-(not (rel_name-ids r6 ?id ?r6))  ;mEM_kA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
+(not (rel_name-ids r6 ?id ?r6))  ;merA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
+(not (rel_name-ids deic ?ida	?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "?id " _a_q)"crlf)

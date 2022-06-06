@@ -868,3 +868,55 @@ then
 (printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")" crlf)
 (printout ?*rstr-dbug* "(rule-rel-values printFacts " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")"crlf)
 )
+
+(defrule samAnAXi-deic
+(id-concept_label       ?v_id   state_copula|hE_1|WA_1)
+(rel_name-ids	samAnAXi|k1s	?id1 ?id2)
+(rel_name-ids deic ?id2	?id1)
+?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
+(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
+(not (modified_samAnAXide ?id2))
+=>
+(retract ?f)
+(assert (modified_samAnAXide ?id2))
+(assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?id2_arg0 ))
+(printout ?*rstr-dbug* "(rule-rel-values samAnAXi-deic "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?arg1 " " ?id2_arg0 ")"crlf)
+)
+
+;Rule for generic_entity
+(defrule generic_entity
+(rel_name-ids deic ?id    ?id1)
+(MRS_info ?rel ?id1 _this_q_dem ?lbl ?ARG0 ?rstr ?body)
+?f1<-(MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG1 ?ARG2)
+?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
+(test (eq  (+ ?id1 10) ?id3))
+(not (modified ?ARG02))
+=>
+(retract ?f1 ?f2)
+(assert (modified ?ARG02))
+(assert (MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG0 ?ARG2))
+(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
+(printout ?*rstr-dbug* "(rule-rel-values _be_v_id " ?rel1 " "?id2" _be_v_id " ?lbl1 " " ?ARG01" " ?ARG0" " ?ARG2")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
+)
+
+;Rule for demonstrative adj
+(defrule dem_adj
+(rel_name-ids deic ?id1    ?id3)
+(rel_name-ids	dem	?id1	?id3)
+(id-guNavAcI	?id2	yes)
+(MRS_info ?rel ?id2 ?mrs ?lbl ?arg0 ?arg1 $?va)
+?f1<-(MRS_info ?rel1 ?id1 ?mrs_1 ?lbl1 ?ARG01 $?var)
+?f2<-(MRS_info ?rel2 ?id3 ?mrs_2 ?lbl2 ?ARG11 $?vars)
+(not (modified_adj ?arg0))
+=>
+(retract ?f1 ?f2)
+(assert (modified_adj ?arg0))
+(assert (MRS_info ?rel1 ?id1 ?mrs_1 ?lbl1 ?arg1 $?var))
+(assert (MRS_info ?rel2 ?id3 ?mrs_2 ?lbl2 ?arg1 $?vars))
+(printout ?*rstr-dbug* "(rule-rel-values dem_adj " ?rel1 " "?id1" " mrs_1" " ?lbl1 " " ?arg1" "(implode$ (create$ $?var)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values dem_adj2 " ?rel2 " "?id3" " mrs_2" " ?lbl2 " " ?arg1" "(implode$ (create$ $?vars)) ")"crlf)
+)
+
+

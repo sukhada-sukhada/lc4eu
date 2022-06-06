@@ -262,6 +262,38 @@
 )
 
 
+;Restrictor for LTOP Restrictor-Restricted default value deictic
+(defrule LTOP-rstdeic
+(rel_name-ids deic ?id1    ?id)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id2 generic_entity ?lbl1 ?ARG01)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id _this_q_dem ?lbl ?ARG0 ?ARG1 ?ARG2)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?ARG1 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeic Restr-Restricted  "?ARG1 " "?lbl1 ")"crlf)
+)
+
+;Restrictor for LTOP Restrictor-Restricted  value deictic adj
+(defrule LTOP-rstdeicad
+(rel_name-ids deic ?obj    ?dem)
+(rel_name-ids	dem	?obj	?dem)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?dem ?mrs ?lbl ?ARG0 ?ARG1 ?ARG2)
+(MRS_info ?rel ?obj ?mrs1 ?lbl1 $?var)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?ARG1 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeicad Restr-Restricted  "?ARG1 " "?lbl1 ")"crlf)
+)
+;Restrictor for LTOP Restrictor-Restricted default value deitic adj
+(defrule LTOP-rstdaj
+(rel_name-ids deic ?obj    ?dem)
+(rel_name-ids	dem	?obj	?dem)
+(rel_name-ids	samAnAXi	?obj  ?adj)
+(id-guNavAcI	?adj	yes)
+(MRS_info ?rel ?adj ?mrs ?lbl $?var)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdc Restr-Restricted  h0 "?lbl ")"crlf)
+)
+
 
 (defrule print-sf_etc
 (declare (salience -1000))
