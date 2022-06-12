@@ -20617,3 +20617,8 @@
 (MRS_concept-label-feature_values superl LBL: h* ARG0: e* ARG1: e*)
 (MRS_concept-label-feature_values _make_v_cause LBL: h* ARG0: e* ARG1: x* ARG2: h*)
 (MRS_concept-label-feature_values _make_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: u*)
+(MRS_concept-label-feature_values named LBL: h* ARG0: x* CARG: n*)
+(MRS_concept-label-feature_values dofw LBL: h* ARG0: x* CARG: n*)
+(MRS_concept-label-feature_values ord LBL: h* ARG0: e* ARG1: x* CARG: n*)
+(MRS_concept-label-feature_values mofy LBL: h* ARG0: x* CARG: n*)
+(MRS_concept-label-feature_values card LBL: h* ARG0: e* ARG1: x* CARG: n*)
