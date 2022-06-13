@@ -9,22 +9,35 @@
 (rel_name-ids ?rel ?kri ?k-id)
 (Karaka_Relation-Preposition    ?rel  ?prep)
 (id-concept_label	?k-id	?comp)
-(not (id-concept_label	?k-id	?hiConcept&kahAz_1|kaba_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|vahAz_1|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1))
+(not (id-concept_label	?k-id	?hiConcept&kahAz_1|kaba_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1))
 (not (rel_name-ids k4 ?kri ?k-id))
 (not (generated_prep_for ?k-id))
-;(test (neq (str-index "-" ?rel) FALSE))
-;(test (eq (sub-string (+ (str-index "-" ?rel)1) (str-length ?rel) ?rel) (implode$ (create$ ?karaka))))
+(not (do_not_generate_prep_for_k2p ?k-id)) ;I am coming home.
 =>
 (bind ?myprep (str-cat "_" ?prep "_p"))
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " " ?myprep")"crlf)
 (printout ?*defdbug* "(rule-rel-values mrsPrep id-MRS_concept " (+ ?k-id 1) " " ?myprep")"crlf)
 )
 
+;Not to generate default preposition for k2p when k2p stands for home/there/here.
+;Ex. I am coming home/here/there.
+(defrule noPrep4k2p
+(declare (salience 1000))
+(rel_name-ids k2p ?kri ?k-id)
+(id-concept_label  ?k-id   vahAz_1|vahAz+para_1|Gara_1|yahAz_1)
+;(not (generated_prep_for_k2p ?k-id))
+=>
+(assert (do_not_generate_prep_for_k2p ?k-id))
+(printout ?*defdbug* "(rule-rel-values noPrep4k2p id-MRS_concept " ?k-id ")"crlf)
+)
+
+
+
 ;
 (defrule on_p_temp
 (dofw  ?vaar     ?day)
 (id-concept_label ?id	?vaar) 
-(rel_name-ids k7|k7t  ?kri   ?k-id)
+(rel_name-ids k7t|k7  ?kri   ?k-id)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?id 1) " _on_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values on_p_temp  id-MRS_concept " (+ ?id 1) " _on_p_temp)"crlf)

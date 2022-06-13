@@ -27,11 +27,12 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pron )"crlf)
 (printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000 pron )"crlf)
 )
+;(rel_name-ids	r6	30000	20000)
+;(rel_name-ids coref  10000	20000)
 
 ;rule for possesive pronoun :if ((rel_name-ids r6 ?id) is present, generate (id-MRS_concept ?id def_explicit_q) and (id-MRS_concept ?id poss)
 (defrule mrs_poss_pron
 (rel_name-ids r6 ?viSeRya ?r6)
-;(id-pron	?r6	yes)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 10)" def_explicit_q)"crlf)
@@ -52,3 +53,15 @@
 (printout ?*defdbug* "(rule-rel-values mrs_dem_pron id-MRS_concept "(+ ?dem 1)" dem)"crlf)
 )
 
+;345: vaha apane piwA  ke sAWa vixyAlaya gayI 
+;343: rAma apane piwA  ke sAWa vixyAlaya gayA 
+(defrule coref
+(rel_name-ids coref  ?referent    ?coref)
+(id-concept_label       ?coref    ?conL)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?coref 10)" pronoun_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "(+ ?coref 10)" pronoun_q )"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?coref " pron )"crlf)
+(printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "?coref " pron)"crlf)
+)

@@ -108,13 +108,21 @@ for i in range(len(depRels)):
                 except:
                     print('Sukhada Warning: Value Error')
 
-# Writing emphetic information
+# Writing discourse information
 for i in range(len(discorseRel)):
     if discorseRel[i] != '':
         idrel = discorseRel[i].split(':')
-        headId = str(int(float(idrel[0]))*10000)
-        depId = str((i+1)*10000)
-        ans.write('(rel_name-ids ' +idrel[1]+ ' ' + headId + '\t' + depId + ')\n')
+        if '.' in idrel[0]:
+            sentid = idrel[0].split('.')[0] + '.' #beyond sentence level discourse
+            indexid = idrel[0].split('.')[1]
+            headId = sentid + str(int(indexid)*10000)
+            depId = str((i+1)*10000)
+            ans.write('(rel_name-ids ' +idrel[1]+ ' ' + headId + '\t' + depId + ')\n')
+        else:
+            headId = str(int(float(idrel[0])*10000)) #sentence level discourse
+            depId = str((i+1)*10000)
+            ans.write('(rel_name-ids ' +idrel[1]+ ' ' + headId + '\t' + depId + ')\n')
+
 
 for k in idConcept.keys():
     if k.endswith('100'):
@@ -127,7 +135,7 @@ for i in range(len(wid)):
             idrel = speakerView[i].split(':')
             headId = str(int(float(idrel[0]))*10000)
             depId = str((i+1)*10000)
-            ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n')
+            ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n') # 335: sUrya camakawA BI hE.
         else:
             ans.write('(id-'+speakerView[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
 

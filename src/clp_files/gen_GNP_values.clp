@@ -53,7 +53,7 @@
 (defrule gnp-of-eng_pron
 (id-gen-num-pers ?id1 ?g ?n ?p)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(id-pron ?id1 yes)
+(or (id-pron ?id1 yes) (rel_name-ids coref ?x	?id1))
 (MRS_concept-H_G-Eng_G   pron   ?g  ?eg )
 (MRS_concept-H_N-Eng_N   pron   ?n  ?en)
 (MRS_concept-H_P-Eng_P   pron   ?p  ?ep)
@@ -68,3 +68,5 @@ else
 	(printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron id-GEN-NUM-PER "?id1 "  " ?eg " " ?n " "?ep ")"crlf)
 )
 )
+
+

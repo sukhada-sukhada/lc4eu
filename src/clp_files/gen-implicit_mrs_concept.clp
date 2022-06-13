@@ -29,6 +29,7 @@
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
 (not (rel_name-ids deic ?ida	?id))
+(not (rel_name-ids coref ?	?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "?id " _a_q)"crlf)
@@ -82,7 +83,7 @@
 
 ;Rule for proper noun: if ((id-propn ?id yes) is present, generate (id-MRS_concept ?id proper_q) and  (id-MRS_concept ?id named)
 (defrule mrs_propn
-(or (id-per  ?id yes) (id-place  ?id yes) (id-org  ?id yes))
+(or (id-per  ?id yes) (id-place  ?id yes) (id-org  ?id yes)  (id-ne  ?id yes) )
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_propn  id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
@@ -139,20 +140,20 @@
 )
 
 ;Ex. 
-(defrule mrs_there
-(id-concept_label ?id vahAz_1|vahAz+para_1)
-=>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " place_n)"crlf)
+;(defrule mrs_there
+;(id-concept_label ?id vahAz_1|vahAz+para_1)
+;=>
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
+;(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " place_n)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " _there_a_1)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_there id-MRS_concept "?id " _there_a_1)"crlf)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " _there_a_1)"crlf)
+;(printout ?*defdbug* "(rule-rel-values mrs_there id-MRS_concept "?id " _there_a_1)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " def_implicit_q)"crlf)
-)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
+;(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " loc_nonsp)"crlf)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
+;(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " def_implicit_q)"crlf)
+;)
 
 
 ;written by sakshi yadav (NIT-Raipur)
@@ -162,8 +163,8 @@
 ;generates (id-MRS_concept "?id " place_n)
 ;          (id-MRS_concept "?id " def_implicit_q)
 ;          (id-MRS_concept "?id " loc_nonsp)
-(defrule mrs_home
-(id-concept_label ?id Gara_1)
+(defrule mrs_place
+(id-concept_label ?id Gara_1|vahAz_1|vahAz+para_1)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_home  id-MRS_concept "?id " place_n)"crlf)
