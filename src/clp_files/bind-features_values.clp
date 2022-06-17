@@ -687,12 +687,25 @@ else
 ;Ex. rAvana mArA gayA.
 (defrule pargd
 ?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id parg_d ?lbl ?arg0 ?arg1 ?arg2) 
-(MRS_info ?rel ?id ?v ?lblv ?arg0v ?arg1v ?arg2v $?var)
+(MRS_info ?rel ?id ?v ?lblv ?arg0v ?arg1v ?arg2v)
 (test (neq (str-index "_v_" ?v)FALSE))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lblv" " ?arg0 " " ?arg0v " "?arg2v ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values pargd id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d " ?lblv " " ?arg0 " " ?arg0v " " ?arg2v ")"crlf)
+)
+
+;Rule for pargd when verb has ARG3 value.
+;Replace ARG2 value of pargd with ARG3 value of verb
+;Ex. The earth is called a planet.
+(defrule pargd2
+?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id parg_d ?lbl ?arg0 ?arg1 ?arg2) 
+(MRS_info ?rel ?id1 ?v1 ?lblv1 ?arg0v1 ?arg1v1 ?arg2v1 ?arg3v1)
+(test (neq (str-index "_v_" ?v1)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id1" parg_d "?lblv1" " ?arg0 " " ?arg0v1 " "?arg3v1 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values pargd2 id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id1" parg_d " ?lblv1 " " ?arg0 " " ?arg0v1 " " ?arg3v1 ")"crlf)
 )
 
 

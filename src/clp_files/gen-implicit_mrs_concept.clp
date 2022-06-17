@@ -228,7 +228,7 @@
 ;written by sakshi yadav(NIT Raipur) Date-11.06.19
 ;Generates new facts for years of centuries then generate (MRS_info id-MRS_concept ?id _in_p_temp) and  (MRS_info id-MRS_concept ?id proper_q) 
 (defrule yearsofcenturies
-(id-concept_label ?id ?num)
+(iiiiiiid-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
 (not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2))
 =>
