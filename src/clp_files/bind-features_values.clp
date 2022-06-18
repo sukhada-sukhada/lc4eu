@@ -77,11 +77,11 @@
 ;replace ARG1 of adjective with ARG0 of non-adjective
 ;ex INPUT: rAma acCA hE. OUTPUT: Rama is good.
 (defrule samAnAXi
-(rel_name-ids	samAnAXi|k1s	?non-adj ?adj)
-(id-guNavAcI    ?adj   yes)
+(rel_name-ids   k1	?non-adj ?k1)
+(rel_name-ids	k1s	?non-adj ?adj)
 ?f<-(MRS_info ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?arg1 $?v)
-(MRS_info ?rel1 ?non-adj ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
-(test (eq (str-index _q ?mrsCon1) FALSE))
+(MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
+(test (neq (str-index _a_ ?mrsCon) FALSE))
 (test (neq ?arg1 ?nonadjarg_0))
 (not (modified_samAnAXi ?nonadjarg_0))
 =>
@@ -95,39 +95,40 @@
 ;replace ARG1 of verb with ARG0 of 1st samAnAXi & ARG2 of verb with ARG0 of 2nd samAnAXi.
 ;ex INPUT: rAma dAktara hE. OUTPUT: Rama is a doctor.
 (defrule samAnAXi-noun
-(id-concept_label       ?v_id   state_copula|hE_1|WA_1)
-(rel_name-ids	samAnAXi|k1s	?id1 ?id2)
-(not (id-concept_label  ?k-id   ?hiConcept&Aja_1|kala_1|kala_2)) ;to rule out the cases for time adverbs.
+(id-concept_label       ?v_id   hE_1|WA_1)
+(rel_name-ids	k1s	?v_id ?k1s)
+(rel_name-ids	k1	?v_id ?k1)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
-(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
-(MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
+(MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel2 ?k1s ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
 (test (eq (str-index _q ?mrsCon1) FALSE))
 (test (neq ?arg1 ?id1_arg0))
-(not (modified_samAnAXi ?id1))
+(not (id-concept_label  ?k-id   ?hiConcept&Aja_1|kala_1|kala_2)) ;to rule out the cases for time adverbs.
+(not (modified_samAnAXi ?k1))
 =>
 (retract ?f)
-(assert (modified_samAnAXi ?id1))
+(assert (modified_samAnAXi ?k1))
 (assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id1_arg0 ?id2_arg0 ))
 (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-noun "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id1_arg0 " " ?id2_arg0 ")"crlf)
 )
 
-;Rule for Existential(AXAra-AXeya) : for binding ARG1 & ARG2 of the existential verb with the ARG0 values of AXAra and AXEya.
-;replace ARG1 of existential verb with ARG0 of AXeya & ARG2 of verb with ARG0 of AXAra.
+;replace ARG1 of existential prep with ARG0 of AXeya & ARG2 of prep with ARG0 of AXAra.
 ;ex INPUT: ladakA xillI meM hE. OUTPUT: The boy is in Delhi.
 (defrule existential
-(id-concept_label       ?v_id   state_existential|hE_1|WA_1)
-(rel_name-ids	AXAra-AXeya	?id1 ?id2)
+(id-concept_label   ?v_id  hE_1|WA_1)
+(rel_name-ids	k7p|k7	?v_id ?k7)
+(rel_name-ids	k1	?v_id ?k1)
 ?f<-(MRS_info ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2 )
-(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
-(MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
-(test (eq (+ ?id1 1) ?id ))
+(MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel2 ?k7 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
+(test (eq (+ ?k7 1) ?id ))
 (test (neq ?arg1 ?id1_arg0))
 (not (modified_existential ?arg2))
 =>
 (retract ?f)
 (assert (modified_existential ?id1_arg0))
-(assert (MRS_info  ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
-(printout ?*rstr-dbug* "(rule-rel-values existential "?rel_name " " ?id " " ?endsWith_p " " ?lbl " " ?arg0 " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
+(assert (MRS_info  ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?id1_arg0 ?id2_arg0 ))
+(printout ?*rstr-dbug* "(rule-rel-values existential "?rel_name " " ?id " " ?endsWith_p " " ?lbl " " ?arg0 " " ?id1_arg0 " " ?id2_arg0 ")"crlf)
 )
 
 ;Rule for (anuBava-anuBAvaka) : for binding ARG1 & ARG2 of the verb with the ARG0 values of anuBAvaka and anuBava.
@@ -229,7 +230,7 @@
 
 ;Rule for verb and its arguments(when both karta and karma are present),Replace ARG1 value of kriyA with ARG0 value of karwA and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k2
-(rel_name-ids	k2       	?kriyA ?karma)
+(rel_name-ids	k2|k1s       	?kriyA ?karma)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 (test (neq (sub-string (- (str-length ?mrsCon2) 1) (str-length ?mrsCon2) ?mrsCon2) "_q")) ;I asked Rama a question. What do the animals eat? What did Hari fill in the pot?
@@ -774,7 +775,7 @@ else
 ;Rule for LTOP: The LBL value and ARG0 value of *_v_* becomes the value of LTOP and INDEX if the following words are not there in the sentence: "possibly", "suddenly". "not".If they exist, the LTOP value becomes the LBL value of that word and INDEX value is the ARG0 value of *_v_*. For "not" we get a node "neg" in the MRS
 (defrule v-LTOP
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
-(not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
+;(not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 ;(not (kriyA-TAM ?kri_id pres))
@@ -824,10 +825,10 @@ then
 ;generates LTOP and INDEX values for predicative adjective(s).
 ;ex. rAma acCA hE.
 (defrule samAnAXi-LTOP
-(id-concept_label       ?v   state_copula|hE_1|WA_1)
-(id-guNavAcI    ?id_adj   yes)
-(rel_name-ids   samAnAXi|k1s        ?id  ?id_adj)
+(id-concept_label       ?v   hE_1|WA_1)
+(rel_name-ids   k1s        ?id  ?id_adj)
 (MRS_info ?rel ?id_adj ?mrsCon ?lbl ?arg0 $?vars)
+(test (neq (str-index _a_ ?mrsCon) FALSE)) 
 =>
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
     (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
@@ -836,13 +837,10 @@ then
 ;generates LTOP and INDEX values for existential verb(s).
 ;ex. ladakA xilli meM hE.
 (defrule Existential-LTOP
-(id-concept_label       ?v   state_existential|hE_1|WA_1)
-?f<-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
-;(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
+(id-concept_label       ?v   hE_1|WA_1)
+?f<-(rel_name-ids   k7p|k7        ?v  ?id2)
 (MRS_info ?rel ?id3 ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2)
-;(test  (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
-(test  (or (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p")
-           (eq ?endsWith_p "loc_nonsp")))
+(test  (or (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p")        (eq ?endsWith_p "loc_nonsp")))
 =>
 (retract ?f)
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)

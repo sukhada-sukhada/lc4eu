@@ -5,6 +5,45 @@
 (defglobal ?*mrs-dbug* = mrs-dbug)
 (defglobal ?*count* = 1)
 
+
+;rule for deleting be_v_id for k1s
+;Rama is good.
+;(id-concept_label	30000	hE_1)
+;(rel_name-ids	k1s	30000	20000)
+;(id-hin_concept-MRS_concept 30000 hE_1 _be_v_id)
+;(id-hin_concept-MRS_concept 20000 acCA_1 _good_a_at-for-of)
+(defrule rm_be_v_id
+(declare (salience 10000))
+?f<-(id-concept_label	?kri	hE_1)
+(rel_name-ids	k1s	?kri	?k1s)
+?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
+(id-hin_concept-MRS_concept ?k1s ?hinCon ?adj)
+(test (neq (str-index _a_ ?adj) FALSE) )
+=>
+(retract ?f ?f1)
+(printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id id-MRS_concept " ?kri " hE_1)"crlf)
+)
+
+
+
+;rule for deleting be_v_id for k7p
+;Rama is in Delhi.
+;(id-concept_label	20000	xillI)
+;(id-concept_label	40000	 hE_1)
+;(rel_name-ids	k1	40000	10000)
+;(rel_name-ids	k7p	40000	20000)
+(defrule rm_be_v_id-k7p
+(declare (salience 10000))
+?f<-(id-concept_label	?kri	hE_1)
+(rel_name-ids	k7p	?kri	?k1s)
+?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
+=>
+(retract ?f ?f1)
+(printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id-k7p id-MRS_concept " ?kri " hE_1)"crlf)
+)
+
+
+
 ;(rel_name-ids viSeRya-viSeRaNa	20000	21000)
 ;(id-concept_label	21000	WodZA_3)
 ;(id-hin_concept-MRS_concept 21000 WodZA_3 _some_q) 

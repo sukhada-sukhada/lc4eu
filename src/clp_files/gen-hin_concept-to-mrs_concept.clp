@@ -17,7 +17,7 @@
 ;Deletes the MRS concept fact of stative verb "be" if Predicative adjective exists.
 ;e.g #rAma acCA hE. (Rama is good).
 (defrule state-pred-adj
-(id-concept_label       ?id   state_copula|hE_1|WA_1)
+(iiid-concept_label       ?id   state_copula|hE_1|WA_1)
 (id-guNavAcI    ?id1   yes) 
 ?f<-(id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept)
 =>
@@ -29,7 +29,7 @@
 ;Deletes the MRS concept fact of stative verb (existential) "be" .
 ;e.g #rAma xillI meM HE. (Rama is in Delhi).
 (defrule state-existential
-(id-concept_label       ?id   state_existential|hE_1|WA_1)
+(iiiid-concept_label       ?id   state_existential|hE_1|WA_1)
 (rel_name-ids   AXAra-AXeya     ?id1  ?id2)
 ?f<-(id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept)
 =>
