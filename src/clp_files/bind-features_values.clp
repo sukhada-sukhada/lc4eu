@@ -132,20 +132,21 @@
 )
 
 ;Rule for (anuBava-anuBAvaka) : for binding ARG1 & ARG2 of the verb with the ARG0 values of anuBAvaka and anuBava.
-;replace ARG1 of the verb with ARG0 of anuBAvaka & ARG2 of verb with ARG0 of anuBava.
+;replace ARG1 of the verb with ARG0 of k4a/anuBAvaka & ARG2 of verb with ARG0 of k1/anuBava.
 ;ex INPUT: rAma ko buKAra hE. OUTPUT: rAma has fever.
 (defrule anuBava
-(id-concept_label       ?v_id   state_anuBUwi|hE_1|WA_1)
-(rel_name-ids   anuBava-anuBAvaka       ?id1  ?id2)
+(id-concept_label ?v_id hE_1|WA_1)
+(rel_name-ids   k1    ?v_id  ?id1)
+(rel_name-ids   k4a   ?v_id  ?id2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
-(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+?f1<-(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
 (MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
 (test (eq (str-index _q ?mrsCon1) FALSE))
 (test (neq ?arg1 ?id1_arg0))
-(not (modified_anuBava ?id1))
+(not (modified_anuBava ?id2))
 =>
-(retract ?f)
-(assert (modified_anuBava ?id1))
+(retract ?f ?f1)
+(assert (modified_anuBava ?id2))
 (assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
 (printout ?*rstr-dbug* "(rule-rel-values anuBava "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
 )
