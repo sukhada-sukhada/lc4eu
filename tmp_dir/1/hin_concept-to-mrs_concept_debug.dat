@@ -1,4 +1,0 @@
-(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 raha_1 _live_v_1)
-(rule-rel-values print-mrs-rel id-hin_concept-MRS_concept 30000 raha_1 _live_v_1)
-(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 kahAz_1 _where_a_1)
-(rule-rel-values print-mrs-rel id-hin_concept-MRS_concept 20000 kahAz_1 _where_a_1)
