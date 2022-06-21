@@ -1,7 +1,7 @@
 #mEM john ke lie Sahara se AyA.
-mEM,John,Sahara_1,A_1-yA_1
+speaker,John,Sahara_1,A_1-yA_1
 1,2,3,4
-pron,per,,
+,per,,
 [- sg u],[- sg a],[- sg a],
 4:k1,4:rt,4:k5,
 ,,,

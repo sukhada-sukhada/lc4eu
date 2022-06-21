@@ -4217,7 +4217,7 @@
 (MRS_concept-label-feature_values _considerateness/NN_u_unknown LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _consideration_n_of LBL: h* ARG0: x* ARG1: i*)
 (MRS_concept-label-feature_values _consider_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
-(MRS_concept-label-feature_values _consider_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: x*)
+;(MRS_concept-label-feature_values _consider_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: x*)
 (MRS_concept-label-feature_values _consigner/NN_u_unknown LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _consignment_n_of LBL: h* ARG0: x* ARG1: i*)
 (MRS_concept-label-feature_values _consignment_n_of LBL: h* ARG0: x* ARG1: x*)

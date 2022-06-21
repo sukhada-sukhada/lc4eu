@@ -19,7 +19,7 @@
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
 (test (neq ?n  pl))
-(not(id-pron ?id yes))
+(not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
 (not(id-org ?id yes))
 (not(id-per ?id yes))
 (not(id-place ?id yes))
@@ -42,7 +42,7 @@
 (not (id-mass ?id yes))
 (not (rel_name-ids dem ?id $?v))
 (test (eq ?n pl))
-(not(id-pron ?id yes))
+(not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "?id " udef_q)"crlf)
@@ -184,7 +184,7 @@
 ;          (id-MRS_concept "?id " def_implicit_q)
 ;          (id-MRS_concept "?id " loc_nonsp)
 (defrule mrs_kala
-(id-concept_label ?id kala_1|kala_2|Aja_1)
+(id-concept_label ?id kala_1|kala_2|Aja_1|jalxI_9|xera_11|aba_1)
 (rel_name-ids   ?relname        ?id1  ?id2)	;To restrict the generation of "loc_nonsp" when "kala, Aja" are in "samanadhikaran" relation.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
@@ -235,6 +235,17 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id " proper_q)"crlf)
 )
+
+(defrule dayandnight
+(id-concept_label ?id ?num)
+(rel_name-ids k7t ?kri  ?id&:(numberp ?id))
+(id-concept_label  ?k-id   ?hiConcept&rAwa_1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id " def_implicit_q)"crlf)
+)
+
+
 
 
 
@@ -379,12 +390,12 @@
 ;To generate "_get_v_state" MRS concept for the TAM "yA_gayA_1" 
 ;KAnA mere xvArA KAyA gayA.
 ;The food got eaten by me.
-;(defrule _get_v_state
-;(kriyA-TAM      ?id yA_gayA_1)
-;=>
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
-;(printout ?*defdbug* "(rule-rel-values  _get_v_state  id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
-;)
+(defrule _get_v_state
+(id-stative	?id	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _get_v_state  id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
+)
 
 
 

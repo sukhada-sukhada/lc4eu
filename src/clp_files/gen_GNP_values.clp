@@ -42,7 +42,7 @@
 (MRS_concept-H_N-Eng_N   *_n_*   ?hn   ?en)
 (MRS_concept-H_P-Eng_P   *_n_*   ?hp   3)
 (test (neq (str-index _n_ ?mrsCon) FALSE))
-(not (id-pron ?id1 yes))
+(not (id-concept_label	?id1 	speaker|addressee|vaha|yaha))
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 " -  " ?en "  3 )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_noun_ id-GEN-NUM-PER "?id1 " - " ?en " 3 )"crlf)
@@ -53,7 +53,7 @@
 (defrule gnp-of-eng_pron
 (id-gen-num-pers ?id1 ?g ?n ?p)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(or (id-pron ?id1 yes) (rel_name-ids coref ?x	?id1))
+(or (id-concept_label	?id1 	speaker|addressee|vaha|yaha) (rel_name-ids coref ?x	?id1))
 (MRS_concept-H_G-Eng_G   pron   ?g  ?eg )
 (MRS_concept-H_N-Eng_N   pron   ?n  ?en)
 (MRS_concept-H_P-Eng_P   pron   ?p  ?ep)
