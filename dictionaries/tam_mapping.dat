@@ -60,6 +60,14 @@
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_jAwA_hE_1  is_en  no  no  pres -) 
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_jAwA_WA_1  was_en  no  no  past -) 
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_jAyegA_1  will_be_en  no  no  fut -)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZawA_hE_1 have_to_0  no  no  pres -) 
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZawA_WA_1  had_to_0  no  no  past -) 
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZA_1  had_to_0  no  no  past -) 
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZegA_1  will_have_to  no  no  fut -)
+
+
+
+
 
 
 

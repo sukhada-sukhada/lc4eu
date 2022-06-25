@@ -24,6 +24,7 @@
 (not(id-per ?id yes))
 (not(id-place ?id yes))
 (not (rel_name-ids ord ?id $?v))
+(not (rel_name-ids card ?id $?v))
 (not (rel_name-ids dem ?id $?v1))
 (not (rel_name-ids r6 ?id ?r6))  ;merA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
@@ -37,11 +38,11 @@
 
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
 (defrule mrs_pl_notDef
-(id-gen-num-pers ?id ?g ?n ?p)
+(id-gen-num-pers ?id ?g ?n ?p) 
+(or (test (eq ?n pl)) (rel_name-ids card  ?id ?))
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
 (not (rel_name-ids dem ?id $?v))
-(test (eq ?n pl))
 (not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)

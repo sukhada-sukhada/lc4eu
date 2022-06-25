@@ -131,13 +131,24 @@ for k in idConcept.keys():
 # Writing Speaker's View values
 for i in range(len(wid)):
     if speakerView[i] != '':
-        if ':' in speakerView[i]:   
-            idrel = speakerView[i].split(':')
-            headId = str(int(float(idrel[0]))*10000)
-            depId = str((i+1)*10000)
-            ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n') # 335: sUrya camakawA BI hE.
+        if ' ' in speakerView[i].strip():
+            lst = speakerView[i].split(' ')
+            for j in range(len(lst)):
+                if ':' in lst[j]:   
+                    idrel = lst[j].split(':')
+                    headId = str(int(float(idrel[0]))*10000)
+                    depId = str((i+1)*10000)
+                    ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n') # 335: sUrya camakawA BI hE.
+                else:
+                    ans.write('(id-'+lst[j]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
         else:
-            ans.write('(id-'+speakerView[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
+            if ':' in speakerView[i]:   
+                idrel = speakerView[i].split(':')
+                headId = str(int(float(idrel[0]))*10000)
+                depId = str((i+1)*10000)
+                ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n') # 335: sUrya camakawA BI hE.
+            else:
+                ans.write('(id-'+speakerView[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
 
 
 # Writing scope facts
