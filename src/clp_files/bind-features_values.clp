@@ -191,6 +191,7 @@
 ;Rule for verb when only causative karta is present : for (kriyA-pk1 ? ?) and  (kriyA-k2 ? ?) is not present for causative
 ;replace ARG1 of the kriyA "_make_v_cause" with ARG0 of karwA
 (defrule v-pk1
+(id-causative	?kriya	yes)
 (rel_name-ids	pk1	?kriyA ?karwA)
 (MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
@@ -206,11 +207,11 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-pk1 MRS_info "?rel3 " " ?make_v_id " _make_v_cause " ?lbl3 " "?A30 " "?argwA_0 " " ?A32")"crlf)
 )
 
-
 ;Rule for verb when only prayojaka karta is present : for (kriyA-jk1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;replace ARG1 of main kriyA with ARG0 of prayojaka karwA
 ;Ex. 
 (defrule v-jk1
+(id-causative	?kriya	yes)
 (rel_name-ids	jk1	?kriyA ?karwA)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
 (MRS_info ?rel3 ?make_v_id _make_v_cause ?lbl3 ?A30 ?A31 ?A32)
@@ -227,7 +228,60 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-jk1 MRS_info "?rel_name " " ?kriyA  " "?mrsCon" " ?lbl " "?arg0 " "?argwA_0 " )"crlf)
 )
 
+;genrates binding for double causative
+(defrule v-p1k1
+(id-double_causative	?kriya	yes)
+(rel_name-ids	pk1	?kriyA ?karwA)
+(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
+?f<-(MRS_info ?rel3 ?ask_id1 _ask_v_1 ?lbl3 ?A30 ?A31 ?A32 ?A33)
+(test (neq ?arg1 ?argwA_0))
+(test (eq ?ask_id1 (+ ?kriyA 200)))
+(not (modified_p1k1 ?karwA))
+=>
+(retract ?f)
+(assert (modified_p1k1 ?karwA))
+(assert (MRS_info  ?rel3  ?ask_id1 _ask_v_1  ?lbl3 ?A30 ?argwA_0  ?A32 ?A33))
+;(printout ?*rstr-fp* "(MRS_info "?rel3 " " ?ask_id1 " _ask_v_1" ?lbl3 " "?A30 " "?argwA_0 " " ?A32" "A33")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-p1k1 MRS_info "?rel3 " " ?ask_id1 " _ask_v_1 " ?lbl3 " "?A30 " "?argwA_0 " " ?A32" "A33")"crlf)
+)
 
+(defrule v-mk1
+(id-double_causative	?kriya	yes)
+(rel_name-ids	mk1	?kriyA ?karwA)
+(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
+?f1<-(MRS_info ?rel3 ?ask_id1 _ask_v_1 ?lbl3 ?A30 ?A31 ?A32 ?A33)
+?f2<-(MRS_info ?rel2 ?make_v_id _make_v_cause ?lbl2 ?A20 ?A21 ?A22)
+(test (neq ?arg1 ?argwA_0))
+(test (eq ?ask_id1 (+ ?kriyA 200)))
+(test (eq ?make_v_id (+ ?kriyA 100)))
+(not (modified_mk1 ?karwA))
+=>
+(retract ?f1 ?f2)
+(assert (modified_mk1 ?karwA))
+(assert (MRS_info  ?rel3  ?ask_id1 _ask_v_1  ?lbl3 ?A30 ?A31 ?argwA_0 ?A33))
+(assert (MRS_info ?rel2 ?make_v_id _make_v_cause ?lbl2 ?A20 ?argwA_0 ?A22))
+(printout ?*rstr-dbug* "(rule-rel-values v-mk1 MRS_info "?rel3 " " ?ask_id1 " _ask_v_1 " ?lbl3 " "?A30 " " ?A31" "?argwA_0 " "A33")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-mk1 MRS_info "?rel2 " " ?make_v_id " _make_v_cause " ?lbl2 " "?A20 " "?argwA_0 " " ?A22")"crlf)
+)
+
+(defrule v-j1k1
+(id-double_causative	?kriya	yes)
+(rel_name-ids	jk1	?kriyA ?karwA)
+?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
+(MRS_info ?rel2 ?make_v_id _make_v_cause ?lbl2 ?A20 ?A21 ?A22)
+(test (neq ?arg1 ?argwA_0))
+(test (eq ?make_v_id (+ ?kriyA 100)))
+(not (modified_j1k1 ?karwA))
+=>
+(retract ?f)
+(assert (modified_j1k1 ?karwA))
+(assert (MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?argwA_0  $?v))
+;(printout ?*rstr-fp* "(MRS_info "?rel_name " " ?kriyA  " "?mrsCon" " ?lbl " "?arg0 " "?argwA_0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-j1k1 MRS_info "?rel_name " " ?kriyA  " "?mrsCon" " ?lbl " "?arg0 " "?argwA_0 " )"crlf)
+)
 
 ;Rule for verb and its arguments(when both karta and karma are present),Replace ARG1 value of kriyA with ARG0 value of karwA and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k2
@@ -251,23 +305,71 @@
 ;(MRS_info id-MRS_concept-LBL-ARG0 10000 _food_n_1 h19 x20)
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30100 _get_v_state h7 e8 x9 h10)
 
-(defrule v-k2-yA-gayA_1
-(rel_name-ids   k2        ?kriyA ?karma)
+;genrates binding for get_v_state
+(defrule v-stative
+(id-stative	?kriyA	yes)
+(not (sentence_type  pass-affirmative))
 (MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
-(MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 ?f<-(MRS_info ?rel3 ?get_v_id ?getVState ?lbl3 ?getA0 ?getA1 ?A2)
-;(test (eq (str-index _q ?mrsCon2) FALSE))
-(test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (eq ?get_v_id (+ ?kriyA 100)))
 (not (modified_Arg1 ?getA1))
 (not (id-causative ?id yes)) ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 =>
 (retract ?f)
-(assert (modified_Arg1 ?argma_0))
-(assert (MRS_info  ?rel3  ?get_v_id ?getVState  ?lbl3 ?getA0 ?argma_0  ?A2))
-(printout ?*rstr-dbug* "(rule-rel-values v-k2-yA-gayA_1 "?rel3 " " ?get_v_id " " ?getVState " " ?lbl3 " "?getA0 " "?argma_0 " " ?A2")"crlf)
+(assert (modified_Arg1 ?getA1))
+(assert (MRS_info  ?rel3  ?get_v_id ?getVState  ?lbl3 ?getA0 ?arg1  ?A2))
+(printout ?*rstr-dbug* "(rule-rel-values stative "?rel3 " " ?get_v_id " " ?getVState " " ?lbl3 " "?getA0 " "?arg1 " " ?A2")"crlf)
 )
 
+;genrates binding for get_v_state passive sentence
+(defrule v-stativepa
+(id-stative	?kriyA	yes)
+(sentence_type  pass-affirmative)
+(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
+?f<-(MRS_info ?rel3 ?get_v_id ?getVState ?lbl3 ?getA0 ?getA1 ?A2)
+(test (eq ?get_v_id (+ ?kriyA 100)))
+(not (modified_Arg1 ?getA1))
+(not (id-causative ?id yes)) ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+=>
+(retract ?f)
+(assert (modified_Arg1 ?getA1))
+(assert (MRS_info  ?rel3  ?get_v_id ?getVState  ?lbl3 ?getA0 ?arg2  ?A2))
+(printout ?*rstr-dbug* "(rule-rel-values stativepa "?rel3 " " ?get_v_id " " ?getVState " " ?lbl3 " "?getA0 " "?arg2 " " ?A2")"crlf)
+)
+
+(defrule v-in
+(rel_name-ids	k7t	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id2 ?dnn ?lbl2 ?arg10 ?arg11)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 ?v ?lbl1 ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id4 _can_v_modal ?lbl3 ?arg20 ?arg21)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id3 _at_p_temp ?lbl4 ?arg30 ?arg31 ?arg32)
+(test (eq ?id1 (- ?id4 100)))
+(test (eq ?id2 (- ?id3 1)))
+(not (modified_at ?id3))
+=>
+(retract ?f3)
+(assert (modified_at ?id3))
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id3 _at_p_temp ?lbl1 ?arg30 ?arg0 ?arg10))
+(printout ?*rstr-dbug* "(rule-rel-values v-in MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id3" _at_p_temp "?lbl1" "?arg30" "?arg0" "?arg10")"crlf)
+)
+
+(defrule v-day
+(rel_name-ids	k7t	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id2 ?dnn ?lbl2 ?arg10 )
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 ?v ?lbl1 ?arg0 ?arg1 ?arg2)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id2 def_implicit_q ?lbl3 ?arg20 ?arg21 ?arg22)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id3 _at_p_temp ?lbl4 ?arg30 ?arg31 ?arg32)
+(test (eq ?id2 (- ?id3 1)))
+(not (modified_at ?id3))
+=>
+(retract ?f2 ?f3)
+(assert (modified_at ?id3))
+(assert (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id2 def_implicit_q ?lbl3 ?arg10 ?arg21 ?arg22))
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id3 _at_p_temp ?lbl1 ?arg30 ?arg0 ?arg10))
+(printout ?*rstr-dbug* "(rule-rel-values v-day MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id2" def_implicit_q "?lbl3" "?arg10" "?arg21" "?arg22")"crlf)
+
+(printout ?*rstr-dbug* "(rule-rel-values v-day MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id3" _at_p_temp "?lbl1" "?arg30" "?arg0" "?arg10")"crlf)
+)
 
 
 ;Rule for verb and its arguments(when  karta, karma and sampradaan are present),Replace ARG3 value of kriyA with ARG0 value of sampradaan and ARG2 value of kriyA with ARG0 value of karma
@@ -397,7 +499,7 @@
 (MRS_info ?rel ?id1 ?v ?lbl4 ?arg04 $?vars); It will rain tomorrow. kala varRA hogI.
 (rel_name-ids   ?relname        ?id1  ?id)
 (test (neq (str-index "_v_" ?v)FALSE))
-(test (or (eq ?mrs_time _yesterday_a_1) (eq ?mrs_time _today_a_1) (eq ?mrs_time _tomorrow_a_1)))
+(test (or (eq ?mrs_time _yesterday_a_1) (eq ?mrs_time _today_a_1) (eq ?mrs_time _tomorrow_a_1)(eq ?mrs_time _early_a_1) (eq ?mrs_time _now_a_1)(eq ?mrs_time _late_p)))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0" " ?arg04 " " ?arg2 ")"crlf)
@@ -677,6 +779,23 @@ else
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf  ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
+;genrate tense value for v_mod_seq
+(defrule v_mod_seq
+(rel_name-ids	vmod_seq	?id	?kri)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v_mod_seq id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
+)
+
+;genrate tense value for v_mod_seq in get_v_state
+(defrule v_mod_seq2
+(rel_name-ids	vmod_seq	?id	?kri)
+(id-stative	?id	yes)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v_mod_seq2 id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
+)
+
 
 ;for negation sentence information
 (defrule kri-tam-neg
@@ -782,13 +901,17 @@ else
 ;Rule for LTOP: The LBL value and ARG0 value of *_v_* becomes the value of LTOP and INDEX if the following words are not there in the sentence: "possibly", "suddenly". "not".If they exist, the LTOP value becomes the LBL value of that word and INDEX value is the ARG0 value of *_v_*. For "not" we get a node "neg" in the MRS
 (defrule v-LTOP
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
+(rel_name-ids	main	0	?kri_id)
 ;(not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 ;(not (kriyA-TAM ?kri_id pres))
 ;(not (kriyA-TAM ?kri_id yA_gayA_1))
 (not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
+(not (rel_name-ids	vmod_seq	?id	?kri_id))
+(not (id-stative ?id yes))
 (not (id-causative ?id yes))
+(not (id-double_causative	?id	yes))
 (not(rel_name-ids vAkya_vn ?id1 ?id2)) 
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
@@ -817,17 +940,49 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values tam-modal  LTOP-INDEX h0 "?arg0 ")"crlf)
 )
 
+(defrule tam-wish
+(kriyA-TAM ?kri_id nA_cAhawA_hE_1) 
+(MRS_info ?rel ?mod  _want_v_1 ?l ?arg0 ?a1 ?a2)
+(sentence_type  affirmative|interrogative|negative)
+(test (eq ?mod (+ ?kri_id 100)))
+=>
+(assert (asserted_LTOP-INDEX-for-modal))
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values tam-wish  LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
 ;generates LTOP and INDEX values for causative.
 ;ex. SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40100 _make_v_cause h1 e2 x28 h4)
 (defrule make-LTOP
-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id _make_v_cause ?lbl ?arg0 $?vars)
+(id-causative	?id	yes)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _make_v_cause ?lbl ?arg0 $?vars)
+(test (eq  (+ ?id 100) ?id1))
 =>
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
     (printout ?*rstr-dbug* "(rule-rel-values causative-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
 )
 
+;generates LTOP and INDEX values for double causative.
+(defrule ask-LTOP
+(id-double_causative	?id	yes)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id1 _ask_v_1 ?lbl ?arg0 $?vars)
+(test (eq  (+ ?id 200) ?id1))
+=>
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values dubcau-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
 
+;generates LTOP and INDEX values for get_cause.
+(defrule get-LTOP
+(id-stative	?id	yes)
+;(not (rel_name-ids	vmod_seq	?id	?kri))
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _get_v_state ?lbl ?arg0 $?vars)
+(test (eq  (+ ?id 100) ?id1))
+=>
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values get-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
 
 ;generates LTOP and INDEX values for predicative adjective(s).
 ;ex. rAma acCA hE.

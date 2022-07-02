@@ -3,7 +3,7 @@
 1,2,3,4
 yes_no_qsn,per,,
 ,[m sg a],[- sg a],
-,possessor,possessed,
+,possessor,possessed,0:main
 ,,,
 ,,def,
 ,,,

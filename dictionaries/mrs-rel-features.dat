@@ -3525,7 +3525,6 @@
 (MRS_concept-label-feature_values _clean_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
 (MRS_concept-label-feature_values _clearance_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _clear_a_of LBL: h* ARG0: e* ARG1: e*)
-(MRS_concept-label-feature_values _clear_a_of LBL: h* ARG0: e* ARG1: x* ARG2: i*)
 (MRS_concept-label-feature_values _clearing_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _clearness_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _clearseeing/VBG_u_unknown LBL: h* ARG0: e* ARG1: x* ARG2: p*)
@@ -19466,7 +19465,6 @@
 (MRS_concept-label-feature_values _skylight_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _skyline_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _sky_n_1 LBL: h* ARG0: x*)
-(MRS_concept-label-feature_values _sky_n_1 LBL: h* ARG0: x* RSTR: h* BODY: h*)
 (MRS_concept-label-feature_values _skyscraper_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _slab_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _slack_a_1 LBL: h* ARG0: e* ARG1: x*)
@@ -24233,4 +24231,5 @@
 (MRS_concept-label-feature_values _zoo_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values def_implicit_q LBL: h* ARG0: x* RSTR: h* BODY: h*)
 (MRS_concept-label-feature_values _at_p_temp LBL: h* ARG0: e* ARG1: e* ARG2: x*)
+(MRS_concept-label-feature_values _have_v_qmodal LBL: h* ARG0: e* ARG1: h*)
 

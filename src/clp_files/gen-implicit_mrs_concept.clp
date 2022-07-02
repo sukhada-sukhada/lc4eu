@@ -38,7 +38,7 @@
 
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
 (defrule mrs_pl_notDef
-(id-gen-num-pers ?id ?g ?n ?p) 
+(id-gen-num-pers ?id ?g ?n ?p)
 (or (test (eq ?n pl)) (rel_name-ids card  ?id ?))
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
@@ -226,12 +226,11 @@
 (printout ?*defdbug* "(rule-rel-values  monthsofyears id-MRS_concept "?id " proper_q)"crlf)
 )
 
-;written by sakshi yadav(NIT Raipur) Date-11.06.19
-;Generates new facts for years of centuries then generate (MRS_info id-MRS_concept ?id _in_p_temp) and  (MRS_info id-MRS_concept ?id proper_q) 
+
 (defrule yearsofcenturies
-(iiiiiiid-concept_label ?id ?num)
+(id-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2))
+(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id " proper_q)"crlf)
@@ -253,12 +252,19 @@
 (defrule mrs_parg_d
 (sentence_type  pass-affirmative|pass-interrogative)
 (kriyA-TAM ?kri ?tam)
+;(not (kriyA-TAM	?kri	kara_1))
+(not (rel_name-ids	vmod_seq	?id	?kri))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_parg_d  id-MRS_concept "?kri" parg_d)"crlf)
 )
 
-
+(defrule mrs_subord
+(rel_name-ids	vmod_seq	?id	?kri)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
+)
 
 ;rule for interrogative sentences for 'who'
 ;(defrule mrs_inter_who
@@ -373,7 +379,7 @@
 ;Rahesh ko seba KAnA hE.
 ;Ramesh has to eat an apple.
 (defrule _have_v_qmodal
-(kriyA-TAM	?id  nA_hE_1)
+(kriyA-TAM	?id  nA_hE_1|nA_padZA_1|nA_padZawA_hE_1|nA_padZawA_WA_1|nA_padZegA_1)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  _have_v_qmodal  id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
@@ -453,5 +459,14 @@
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
 (printout ?*defdbug* "(rule-rel-values  _make_v_cause  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
+)
+
+(defrule make_ask
+(id-double_causative	?id	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
 )
 

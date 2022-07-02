@@ -3,7 +3,7 @@ KaragoSa_1,GAsa_1,nahIM,KA_1-yA_WA_2
 1,2,3,4
 ,mass,,
 [m sg a],[- sg a],,
-4:k1,4:k2,,
+4:k1,4:k2,,0:main
 ,,,
 def,,,
 ,,4:neg,

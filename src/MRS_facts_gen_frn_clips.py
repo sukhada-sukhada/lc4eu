@@ -43,6 +43,39 @@ def _about_index(l):
             temp[i]="-"
     ans.write(" [ e SF: "+temp[2]+" TENSE: "+temp[3]+" MOOD: "+temp[4]+" PROG: "+temp[5]+" PERF: "+temp[6]+" ]\n")
 
+def _tense_info(l):
+    temp=l.split()
+    mrs_labels=temp[1].split("-")[2:]
+    mrs_values=temp[4:]
+    ans.write(temp[3]+" ")
+    mrs_nlables=temp[4:]
+    for i in range(0,len(mrs_labels)):
+            if i < 2:
+               mrs_nlables[i]=mrs_labels[i]
+            else:
+               mrs_nlables[i+5]=mrs_labels[i]
+    mrs_nlables[2]='[ e SF'
+    mrs_nlables[3]='TENSE'
+    mrs_nlables[4]='MOOD'
+    mrs_nlables[5]='PROG'
+    mrs_nlables[6]='PERF'    
+    mrs_values[6]=mrs_values[6]+' ]'
+ 
+    for i in range(0,len(mrs_values)):
+        ans.write(mrs_nlables[i]+": "+mrs_values[i]+" ")
+        if mrs_nlables[i]=="ARG0": # arg0 field has been found
+            arg0=mrs_values[i]
+            if (arg0 not in arg0_set) and (arg0 in list(arg0_gnp.keys())):
+                labels=arg0_gnp[arg0][0]
+                values=arg0_gnp[arg0][1]
+                arg0_set.append(arg0)
+                ans.write("[ "+arg0[0]+" ")
+                for i in range(0,len(labels)):
+                    if values[i] !="-":
+                        ans.write(labels[i]+":"+" "+values[i]+" ")
+                ans.write("] ")
+    ans.write("]")    
+    
 def _hcons(l):
     temp=l.split()
     ans.write(temp[1]+" qeq "+temp[2]+" ")
@@ -54,11 +87,11 @@ def main():
         f[i]=f[i].strip("()")
         if f[i].startswith('LTOP'):
            temp=f[i].split()
-           ans.write("[ LTOP: "+temp[1]+"\n"+"INDEX: "+temp[2])
+           ans.write("[ LTOP: "+temp[1]+"\n"+"INDEX: "+temp[2]+"\n")
 
     # writing info about the index
     for i in range(0,len(f)):
-        if f[i].startswith("id-SF"):
+        if f[i].startswith("id-SF") and "untensed" not in f[i]:
             _about_index(f[i])
 
     ans.write("RELS: < ")
@@ -118,7 +151,11 @@ def main():
                 ans.write("\n[ ")
             _mrs_info(f[i])
             linecount=linecount+1
-
+        
+        if f[i].startswith("tense-MRS_info"):
+           ans.write("\n[ ")
+           _tense_info(f[i])   
+           
         if f[i].startswith("Restr-Restricted"):
             if count==0:
                 ans.write(" >\nHCONS: < ")
