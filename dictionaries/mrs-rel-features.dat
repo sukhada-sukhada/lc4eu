@@ -1267,7 +1267,7 @@
 (MRS_concept-label-feature_values _aside_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _aside_p LBL: h* ARG0: e* ARG1: e*)
 (MRS_concept-label-feature_values _aside_p LBL: h* ARG0: e* ARG1: x*)
-(MRS_concept-label-feature_values _ask_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: x*)
+(MRS_concept-label-feature_values _ask_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: h*)
 (MRS_concept-label-feature_values _ask_v_for LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: x*)
 (MRS_concept-label-feature_values _aslant/JJ_u_unknown LBL: h* ARG0: e* ARG1: x*)
 (MRS_concept-label-feature_values _asleep_a_1 LBL: h* ARG0: e* ARG1: x*)
