@@ -31,6 +31,7 @@
 (not (id-concept_label	?id	Gara_1))
 (not (rel_name-ids deic ?ida	?id))
 (not (rel_name-ids coref ?	?id))
+(not  (id-abs ?id yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "?id " _a_q)"crlf)
@@ -39,7 +40,7 @@
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
 (defrule mrs_pl_notDef
 (id-gen-num-pers ?id ?g ?n ?p)
-(or (test (eq ?n pl)) (rel_name-ids card  ?id ?))
+(or (test (eq ?n pl)) (rel_name-ids card  ?id ?) (id-abs ?id yes))
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
 (not (rel_name-ids dem ?id $?v))
@@ -468,5 +469,13 @@
 (printout ?*defdbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
 (printout ?*defdbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
+)
+
+;361: manwrIjI ne kala manxira kA uxGAtana kiyA. The honorable minister inaugurated the temple yesterday.
+(defrule respect
+(id-respect  ?id  yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept  "?id"  _honorable_a_1 )"crlf)
+(printout ?*defdbug* "(rule-rel-values respect id-MRS_concept "?id" _honorable_a_1 )"crlf)
 )
 

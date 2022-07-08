@@ -174,7 +174,7 @@
 ;replace ARG1 of kriyA with ARG0 of karwA
 (defrule v-k1
 ;(declare (salience 10))
-(rel_name-ids	k1	?kriyA ?karwA)
+(rel_name-ids	k1|k4a	?kriyA ?karwA)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
 (test (eq (str-index _q ?mrsCon1) FALSE))
