@@ -1,10 +1,10 @@
-#muJe sonA cAhie.
-speaker,so_1-nA_cAhie_1
-1,2
-,
-[- sg u],
-2:k1,0:main
-,
-,
-,
+#yaha Gara hE.
+yaha_1,Gara_2,hE_1-pres
+1,2,3
+,,
+[- - a],[- sg a],
+3:k1,3:k1s,0:main
+2:deic,,
+,,
+,,
 affirmative

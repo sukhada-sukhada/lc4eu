@@ -114,6 +114,19 @@
 (bind ?*count* (+ ?*count* 3))
 )
 
+(defrule speak_k2
+(declare (salience 5000))
+(id-hin_concept-MRS_concept ?id ?hinlbl _speak_v_to)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id _speak_v_to ?lbl ?arg0 ?arg1 ?arg2)
+(not (rel_name-ids k2 ?id ?k2))
+=>
+(retract ?f)
+(printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _speak_v_to "?lbl" "?arg0" "?arg1")"crlf)
+(printout ?*mrs-dbug*  "(rule-rel-values speak_k2 MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _speak_v_to "?lbl" "?arg0" "?arg1")"crlf)
+)
+
+
+
 ;Rule for generating initial mrs info for concepts in file "id-concept_label-mrs_concept.dat"
 (defrule mrs-info
 (id-hin_concept-MRS_concept ?id  ?conLbl  ?mrsCon)

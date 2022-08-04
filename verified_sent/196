@@ -1,10 +1,10 @@
-#somavAra pahalA xina hE.
-somavAra_1,pahalA_1,xina_1,hE_1-pres
-1,2,3,4
-,,,
-,,[- sg a],
-4:k1,3:card,4:k1s,0:main
-,,,
-,,def,
-,,,
+#rAma ko Kira KAnI padZI.
+rAma, KIra, KA_1-nA_padZA_1
+1,2,3
+per,ne,
+[m sg a],,
+3:k1,3:k2,0:main
+,,
+,,
+,,
 affirmative

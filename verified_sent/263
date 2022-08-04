@@ -1,10 +1,10 @@
-#Apa kahAz rahawe hEM?
-addressee,kahAz_1,raha_1-wA_hE_1 
-1,2,3
-,,
-[- - m],,
-3:k1,3:k7p,0:main
-,,
-,,
-,,
-interrogative
+#rAma ne mohana se tikata KarIxavAye.
+rAma,mohana,tikata_1,KarIxa_1-yA_1
+1,2,3,4
+per,per,,
+[m sg a],[m sg a],[- sg a],[causative]
+4:pk1,4:jk1,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative

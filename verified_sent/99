@@ -1,10 +1,10 @@
-#kyA wuma nahIM keloge?
-,addressee,nahIM_1,Kela_1-gA_1,
-1,2,3,4
-yes_no_qsn,,,
-,[- - m],,
-,4:k1,,0:main
-,,,
-,,,
-,,4:neg,
-interrogative
+#camadZe se jUwe banAo.
+camadZA_1,jUwA_1, banA_1-o_1
+1,2,3
+mass,,
+[- sg a],[- pl a],
+3:k5prk, 3:k2,0:main
+,,
+,,
+,,
+imperative

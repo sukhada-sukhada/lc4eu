@@ -32,6 +32,7 @@
 (not (rel_name-ids deic ?ida	?id))
 (not (rel_name-ids coref ?	?id))
 (not  (id-abs ?id yes))
+(not  (id-ne ?id yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "?id " _a_q)"crlf)
@@ -44,7 +45,8 @@
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
 (not (rel_name-ids dem ?id $?v))
-(not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
+(not(id-concept_label	?id 	?concept&speaker|addressee|vaha|yaha))
+(not (rel_name-ids coref ?	?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "?id " udef_q)"crlf)
@@ -54,6 +56,7 @@
 (defrule mrs_mass_notDef
 (id-gen-num-pers ?id ?g ?n ?p)
 (id-mass ?id yes)
+(not (id-def ?id yes))
 (not (rel_name-ids dem ?id ?))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
@@ -169,13 +172,13 @@
 (id-concept_label ?id Gara_1|vahAz_1|vahAz+para_1)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_home  id-MRS_concept "?id " place_n)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " place_n)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_home  id-MRS_concept "?id " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " def_implicit_q)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_home  id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " loc_nonsp)"crlf)
 )
 
 ; written by sakshi yadav (NIT-Raipur)

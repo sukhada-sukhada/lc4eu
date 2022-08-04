@@ -1,10 +1,10 @@
-#mEM XIre calawA hUz.
-speaker,XIre_1,cala_6-wA_hE_1
-1,2,3
-,,
-[- sg u],,
-3:k1,3:kr_vn,0:main
-,,
-,,
-,,
+#mEMne usase eka praSna pUCA.
+speaker, vaha, eka_6, praSna_1, pUCa_3-yA_1
+1,2,3,4,5
+,,,,
+[m sg u],[m sg a],,[ - sg a],
+5:k1,5:k2g,4:card,5:k2,0:main
+,,,,
+,,,,
+,,,,
 affirmative

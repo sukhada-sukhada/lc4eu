@@ -1,10 +1,10 @@
-#kyA mEM ApakI sahAyawA kara sakawA hUz?
-,speaker,addressee,sahAyawA+kara_1-0_sakawA_hE_2
-1,2,3,4
-yes_no_qsn,,,
-,[- sg u],[- - m],
-,4:k1,4:k2,0:main
-,,,
-,,,
-,,,
-interrogative
+#usane nahIM KAyA.
+vaha,nahIM_1,KA_1-yA_1
+1,2,3
+,,
+[m sg a],,
+3:k1,,0:main
+,,
+,,
+,3:neg,
+negative

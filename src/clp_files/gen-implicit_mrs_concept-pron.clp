@@ -58,6 +58,7 @@
 (defrule coref
 (rel_name-ids coref  ?referent    ?coref)
 (id-concept_label       ?coref    ?conL)
+(not (id-concept_label	?coref eka+xUsarA_1)) ; 326: #hama eka xUsare se pyAra karawe hEM.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?coref 10)" pronoun_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "(+ ?coref 10)" pronoun_q )"crlf)

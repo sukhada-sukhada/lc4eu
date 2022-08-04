@@ -1,10 +1,10 @@
-#usane KAnA nahIM KAyA.
-vaha,KAnA_1,nahIM_1,KA_1-yA_1
-1,2,3,4
-,mass,,
-[f sg a],[- sg a],,
-4:k1,4:k2,,0:main
-,,,
-,,,
-,,4:neg,
-negative
+#BArawa ko AryAvarwa kahA jAwA WA.
+BArawa,AryAvarwa,kaha_1-yA_jAwA_WA_1
+1,2,3
+ne,ne,
+,,
+3:k2g,3:k2,0:main
+,,
+,,
+,,
+pass-affirmative

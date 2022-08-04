@@ -1,10 +1,10 @@
-#mEM usake lie Sahara se AyA.
-speaker,vaha,Sahara_1,A_1-yA_1
+#Apa AsamAna kA avalokana acCI waraha se kara sakawe hEM.
+addressee, AsamAna_1, acCI+waraha_4, avalokana+kara_1-0_sakawA_hE_1
 1,2,3,4
 ,,,
-[- sg u],[m sg a],[- sg a],
-4:k1,4:rt,4:k5,0:main
+[- - m],[- sg a],,
+4:k1,4:k2,4:kr_vn,0:main
 ,,,
-,,def,
+,def,,
 ,,,
 affirmative

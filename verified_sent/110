@@ -1,10 +1,10 @@
-#vaha Gara nahIM jA sakawA hE.
-vaha,Gara_1,nahIM_1,jA_1-0_sakawA_hE_2
-1,2,3,4
-,,,
-[m sg a],[- sg -],,
-4:k1,4:k2,0:main
-,,,
-,,,
-,,4:neg,
-negative
+#muJe kalama xiyA gayA.
+speaker,kalama_1,xe_1-yA_gayA_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k4,3:k2,0:main
+,,
+,,
+,,
+pass-affirmative

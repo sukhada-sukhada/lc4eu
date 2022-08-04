@@ -1,10 +1,10 @@
-#kyA mEM ApakI sahAyawA kara sakawA hUz?
-,speaker,addressee,sahAyawA+kara_1-0_sakawA_hE_3
-1,2,3,4
-yes_no_qsn,,,
-,[- sg u],[- - m],
-,4:k1,4:k2,0:main
-,,,
-,,,
-,,,
-interrogative
+#sUrya camakawA BI hE.
+sUrya_1, camaka_13-wA_hE_1, BI_1
+1,2,3
+,,
+[- sg a],,
+2:k1,,0:main
+,,
+def,,2:BI
+,,
+affirmative

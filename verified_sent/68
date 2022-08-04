@@ -1,10 +1,10 @@
-#vaha KAnA KA rahA hE.
-vaha,KAnA_1,KA_1-0_rahA_hE_1
+#pqWvI ko graha kahA jAwA hE.
+pqWvI_1,graha_1,kaha_1-yA_jAwA_hE_1
 1,2,3
-,mass,
-[m sg a],[- - a],
-3:k1,3:k2,0:main
 ,,
+[- sg a],[- sg a],
+3:k2g,3:k2,0:main
 ,,
+def,,
 ,,
-affirmative
+pass-affirmative

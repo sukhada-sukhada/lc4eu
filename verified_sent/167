@@ -1,10 +1,10 @@
-#vaha bujurga AxamI kI sahAyawA karawA hE.
-vaha,bujurga_1,AxamI_1,sahAyawA+kara_1-wA_hE_1
-1,2,3,4
-,,,
-[m sg a],,[m sg a],
-4:k1,3:mod,4:k2,0:main
-,,,
-,,def,
-,,,
+saviwA rImA ko xasa seba xegI.
+saviwA, rImA, xasa_1, seba_1, xe_1-gA_1
+1,2,3,4,5
+per,per,,,
+[- sg a],[- sg a],,[- pl a],
+5:k1,5:k4,4:ord,5:k2,0:main
+,,,,
+,,,,
+,,,,
 affirmative

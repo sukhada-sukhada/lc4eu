@@ -1,10 +1,10 @@
-#mere xvArA KAnA KAyA gayA WA.
-speaker,KAnA_1,KA_1-yA_gayA_WA_1
-1,2,3
-,,
-[- sg u],[- sg a],
-3:k1,3:k2,0:main
-,,
-,def,
-,,
-pass-affirmative
+rAma yaha kAma nahIM kara sakawA.
+rAma,yaha_1,kAma_1,nahIM_1,kara_17-0_sakawA_1
+1,2,3,4,5
+per,,,,
+[m sg a],,[- sg a],,
+5:k1,3:dem,5:k2,,0:main
+,,,,
+,,,,
+,,,5:neg,
+negative

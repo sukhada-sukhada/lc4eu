@@ -1,10 +1,10 @@
-#mEMne acCI kiwAba paDI.
-speaker,acCA_1,kiwAba_1,paDa_1-yA_1
-1,2,3,4
-,,,
-[- sg u],,[- sg a],
-4:k1,3:mod,4:k2,0:main
-,,,
-,,,
-,,,
+rAma ne SyAma xvArA mohana se BiKArI ko xAna xilavAyA.
+rAma, SyAma, mohana,BiKArI_1,xAna_1, xe_1-yA_1
+1,2,3,4,5,6
+per,per,per,,,
+[m sg a],[m sg a], [m sg a],[m sg a],[- - a],[double_causative]
+6:pk1,6:mk1,6:jk1,6:k4,6:k2,
+,,,,,
+,,,def,def,
+,,,,,
 affirmative

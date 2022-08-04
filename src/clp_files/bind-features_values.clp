@@ -45,7 +45,9 @@
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 ;(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
 (test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q"))
+(not (modified_viSeRaNa ?viNa))
 =>
+(assert (modified_viSeRaNa ?viNa))
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values viya-viNa   "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 )
@@ -63,8 +65,8 @@
 )
 
 ;Replace LBL values of kriyA_viSeRaNa with the LBL value of kriyA, and Replace ARG1 values of kriyA_viSeRaNa with the ARG0 value of kriyA. Ex. "I walk slowly." 
-(defrule kr_vn
-(rel_name-ids kr_vn ?kri ?kri_vi)
+(defrule kr_vnn
+(rrrel_name-ids kr_vn ?kri ?kri_vi)
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
 (MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 =>
@@ -72,6 +74,18 @@
 (printout ?*rstr-dbug* "(rule-rel-values kriyA-kriyA_viSeRaNa  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
 )
 
+(defrule kr_vn
+(declare (salience 1000))
+(rel_name-ids kr_vn ?kri ?kri_vi)
+(MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
+(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
+(not (modified_kr_vn ?kri_vi))
+=>
+(assert (modified_kr_vn ?kri_vi))
+(printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2 " " ?arg0 " "(implode$ (create$ $?vars)) ")"crlf)
+;(assert (MRS_info  ?rel2 ?kri_vi  ?mrsconkrivi  ?lbl1 ?arg0_2 ?arg0 $?vars) )
+(printout ?*rstr-dbug* "(rule-rel-values kr_vn  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
+)
 
 ;Rule for predicative adjective (samAnAXi) : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;replace ARG1 of adjective with ARG0 of non-adjective
@@ -180,6 +194,7 @@
 (test (eq (str-index _q ?mrsCon1) FALSE))
 (test (neq ?arg1 ?argwA_0))
 (not (modified_k1 ?karwA))
+(test (neq (str-index "_v_" ?mrsCon)FALSE))
 =>
 (retract ?f)
 (assert (modified_k1 ?karwA))
@@ -289,6 +304,7 @@
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 (test (neq (sub-string (- (str-length ?mrsCon2) 1) (str-length ?mrsCon2) ?mrsCon2) "_q")) ;I asked Rama a question. What do the animals eat? What did Hari fill in the pot?
+;(test (and (neq (sub-string  1 1 ?mrsCon2)  "_")   (neq (sub-string (- (str-length ?mrsCon2) 1) (str-length ?mrsCon2) ?mrsCon2) "_q"))) ;I asked Rama a question. What do the animals eat? What did Hari fill in the pot?
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (neq ?arg2 ?argma_0))
 (not (modified_k2 ?karma))
@@ -813,6 +829,7 @@ else
 ;Replace LBL of parg_d with LBL of v and ARG1 of parg_d with ARG0 of verb 
 ;Ex. rAvana mArA gayA.
 (defrule pargd
+(declare (salience -200))
 ?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id parg_d ?lbl ?arg0 ?arg1 ?arg2) 
 (MRS_info ?rel ?id ?v ?lblv ?arg0v ?arg1v ?arg2v)
 (test (neq (str-index "_v_" ?v)FALSE))

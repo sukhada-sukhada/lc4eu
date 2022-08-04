@@ -1,10 +1,10 @@
-#muJe Gara jAnA cAhie.
-speaker,Gara_1,jA_1-nA_cAhie_1
-1,2,3
-,,
-[- sg u],[- sg -],
-3:k1,3:k2,0:main
-,,
-,,
-,,
+#rAma apane piwA ke sAWa vixyAlaya gayA.
+rAma,apanA,piwA_1,vixyAlaya_1,jA_1-yA_1
+1,2,3,4,5
+per,,,,
+[m sg a],,[m sg a],[- sg a],
+5:k1,3:r6,5:ras_k1,5:k2p,0:main
+,1:coref,,,
+,,,def,
+,,,,
 affirmative
