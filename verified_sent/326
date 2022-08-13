@@ -1,10 +1,10 @@
-#hama eka xUsare se pyAra karawe hEM.
-speaker,eka+xUsarA_1,pyAra+kara_1-wA_hE_1
-1,2,3
-,,
-[- pl u],,
-3:k1,3:k2,0:main
-,1:coref,
-,,
-,,
+#kala pAnI barasA WA.
+kala_1,pAnI+barasa_1-yA_WA_1
+1,2
+,
+,
+2:k7t,0:main
+,
+,
+,
 affirmative

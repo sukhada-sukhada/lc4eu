@@ -81,7 +81,7 @@
 (defrule in_p_temp
 (id-concept_label	?k-id  ?num)
 (rel_name-ids k7t	?kri ?k-id)
-(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2))
+(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2|pahale_4))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)

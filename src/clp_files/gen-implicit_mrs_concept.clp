@@ -189,7 +189,7 @@
 ;          (id-MRS_concept "?id " def_implicit_q)
 ;          (id-MRS_concept "?id " loc_nonsp)
 (defrule mrs_kala
-(id-concept_label ?id kala_1|kala_2|Aja_1|jalxI_9|xera_11|aba_1)
+(id-concept_label ?id pahale_4|kala_1|kala_2|Aja_1|jalxI_9|xera_11|aba_1)
 (rel_name-ids   ?relname        ?id1  ?id2)	;To restrict the generation of "loc_nonsp" when "kala, Aja" are in "samanadhikaran" relation.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
@@ -234,7 +234,7 @@
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1))
+(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id " proper_q)"crlf)
