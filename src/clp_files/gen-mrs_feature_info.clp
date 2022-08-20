@@ -98,6 +98,24 @@
 (printout ?*mrs-dbug* "(rule-rel-values active-k2-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?a2")"crlf)
 )
 
+;Rule for converting arg1 value (x*) of transtive verb when k1 is absent to u*
+;Ex. rAma ne skUla jAkara KAnA KAyA.
+;   Having gone to the school Rama ate food.
+(defrule k1-absent
+(declare (salience 200))
+?f1<-(sentence_type    affirmative|negative|interrogative)
+?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 $?v)
+(not (rel_name-ids k1   ?kri    ?k1))
+(test (neq (str-index _v_ ?mrscon) FALSE))
+=>
+(retract ?f1 ?f)
+(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
+)
+
+
+
 
 ;Changing the ARG0 value (e*) to i* for imperative(-nagetive) sentences.
 ;(MRS_concept-label-feature_values neg LBL: h* ARG0: e* ARG1: h*)
