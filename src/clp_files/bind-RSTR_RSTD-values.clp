@@ -114,6 +114,19 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-neg-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
 )
 
+;Restrictor for ARG1 value of neg and LBL value of predicative adjective
+;Ex. rAvaNa acCA nahIM hE.  Ravana is not good.
+(defrule neg-pred_adj
+(rel_name-ids	k1s	?kri	?adj)
+(rel_name-ids	neg	?kri	?neg)
+(MRS_info ?rel   ?neg neg ?lbl ?a0 ?a1)
+(MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg1 $?v)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted "?a1 " "?l")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  neg-pred_adj  Restr-Restricted "?a1" "?l")"crlf)
+)
+
 ;(defrule LTOP-there_a_1
 ;(id-concept_label	?id	state_existential)
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?loc loc_nonsp ?lbl ?a0 ? ? )

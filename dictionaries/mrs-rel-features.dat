@@ -24736,3 +24736,4 @@
 (MRS_concept-label-feature_values  _breccia/NN_u_unknown LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _tuff/NN_u_unknown LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _recrystallisation/NN_u_unknown LBL: h* ARG0: x*)
+(MRS_concept-label-feature_values _that_x_deg LBL: h* ARG0: e* ARG1: e* ARG2: u*)
