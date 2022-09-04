@@ -35,7 +35,7 @@
 (not  (id-ne ?id yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "?id " _a_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "(+ ?id 10)" _a_q)"crlf)
 )
 
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
@@ -45,11 +45,11 @@
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
 (not (rel_name-ids dem ?id $?v))
-(not(id-concept_label	?id 	?concept&speaker|addressee|vaha|yaha))
+(not(id-concept_label	?id 	?concept&speaker|addressee|vaha|yaha|saba_4))
 (not (rel_name-ids coref ?	?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "?id " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 )
 
 ;Rule for mass noun : if (id-mass ?id yes) , generate (id-MRS_Rel ?id _udef_q)
@@ -105,11 +105,8 @@
 (id-concept_label ?id kyA_1)
 (sentence_type  interrogative)
 =>
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " thing)"crlf)
-;(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " thing)"crlf)
-
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "(+ ?id 10)" which_q)"crlf)
 )
 
 ;rule for interrogative sentences for 'who',
@@ -122,7 +119,7 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " person)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " person)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " which_q)"crlf)
 )
 
@@ -133,32 +130,12 @@
 (id-concept_label ?id kahAz_1)
 (sentence_type  interrogative)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " place_n"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "(+ ?id 10)" which_q)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " which_q)"crlf)
-
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " loc_nonsp)"crlf)
-
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
 )
-
-;Ex. 
-;(defrule mrs_there
-;(id-concept_label ?id vahAz_1|vahAz+para_1)
-;=>
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
-;(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " place_n)"crlf)
-
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " _there_a_1)"crlf)
-;(printout ?*defdbug* "(rule-rel-values mrs_there id-MRS_concept "?id " _there_a_1)"crlf)
-
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-;(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " loc_nonsp)"crlf)
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
-;(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " def_implicit_q)"crlf)
-;)
 
 
 ;written by sakshi yadav (NIT-Raipur)
@@ -169,14 +146,16 @@
 ;          (id-MRS_concept "?id " def_implicit_q)
 ;          (id-MRS_concept "?id " loc_nonsp)
 (defrule mrs_place
-(id-concept_label ?id Gara_1|vahAz_1|vahAz+para_1)
+(id-concept_label ?id Gara_1|vahAz_1|vahAz+para_1|bAhara_1|bAhara_2)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " place_n)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" def_implicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " def_implicit_q)"crlf)
 
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " loc_nonsp)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " loc_nonsp)"crlf)
 )
@@ -195,11 +174,14 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " time_n)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " def_implicit_q)"crlf)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id" def_implicit_q)"crlf)
+
 (if (neq ?relname samAnAXi) then	;;To restrict the generation of "loc_nonsp" when "kala, Aja" are in "samanadhikaran" relation.e.g Today is Monday.
- (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
- (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " loc_nonsp)"crlf)
+ ;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
+ (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" loc_nonsp)"crlf)
+ (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id" loc_nonsp)"crlf)
 
  
 )
@@ -210,11 +192,8 @@
 (defrule daysofweeks
 (id-concept_label ?id somavAra|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1)
 =>
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " dofw)"crlf)
-;(printout ?*defdbug* "(rule-rel-values  daysofweeks id-MRS_concept "?id " dofw)"crlf)
-
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  daysofweeks id-MRS_concept "?id " proper_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  daysofweeks id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
 )
 
 
@@ -223,11 +202,8 @@
 (defrule monthsofyears
 (id-concept_label ?id janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara)
 =>
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " mofy)"crlf)
-;(printout ?*defdbug* "(rule-rel-values  monthsofyears id-MRS_concept "?id " mofy)"crlf)
-
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  monthsofyears id-MRS_concept "?id " proper_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  monthsofyears id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
 )
 
 
@@ -236,8 +212,8 @@
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
 (not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id " proper_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
 )
 
 (defrule dayandnight
@@ -245,18 +221,15 @@
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
 (id-concept_label  ?k-id   ?hiConcept&rAwa_1)
 =>
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id" def_implicit_q)"crlf)
 )
-
-
-
 
 
 (defrule mrs_parg_d
 (sentence_type  pass-affirmative|pass-interrogative)
 (kriyA-TAM ?kri ?tam)
-;(not (kriyA-TAM	?kri	kara_1))
 (not (rel_name-ids	vmod_seq	?id	?kri))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
@@ -284,13 +257,13 @@
 (id-concept_label ?id kaba_1)
 (sentence_type  interrogative)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "(+ ?id 10)" which_q)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " time_n)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " loc_nonsp)"crlf)
 )
 

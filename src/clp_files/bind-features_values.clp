@@ -57,9 +57,10 @@
 (defrule dem
 (rel_name-ids dem ?viya ?viNa)
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
+?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 (test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q")) 
 =>
+(retract ?f)
 (printout ?*rstr-fp* "(MRS_info  "?rel2" "?viNa" "?co" "?lbl2" "?arg0_viya" "?arg1_viNa" "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values dem   "?rel2 " " ?viNa " " ?co " " ?lbl2 " " ?arg0_viya " " ?arg1_viNa " "(implode$ (create$ $?vars)) ")"crlf)
 )
@@ -68,8 +69,9 @@
 (defrule kr_vnn
 (rrrel_name-ids kr_vn ?kri ?kri_vi)
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
+?f<-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 =>
+(retract ?f)
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2 " " ?arg0 " "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kriyA-kriyA_viSeRaNa  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
 )
@@ -78,9 +80,10 @@
 (declare (salience 1000))
 (rel_name-ids kr_vn ?kri ?kri_vi)
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
+?f<-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 (not (modified_kr_vn ?kri_vi))
 =>
+(retract ?f)
 (assert (modified_kr_vn ?kri_vi))
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2 " " ?arg0 " "(implode$ (create$ $?vars)) ")"crlf)
 ;(assert (MRS_info  ?rel2 ?kri_vi  ?mrsconkrivi  ?lbl1 ?arg0_2 ?arg0 $?vars) )
@@ -159,7 +162,7 @@
 (test (neq ?arg1 ?id1_arg0))
 (not (modified_anuBava ?id2))
 =>
-(retract ?f ?f1)
+(retract ?f )
 (assert (modified_anuBava ?id2))
 (assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
 (printout ?*rstr-dbug* "(rule-rel-values anuBava "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
@@ -277,7 +280,7 @@
 (assert (modified_mk1 ?karwA))
 (assert (MRS_info  ?rel3  ?ask_id1 _ask_v_1  ?lbl3 ?A30 ?A31 ?argwA_0 ?A33))
 (assert (MRS_info ?rel2 ?make_v_id _make_v_cause ?lbl2 ?A20 ?argwA_0 ?A22))
-(printout ?*rstr-dbug* "(rule-rel-values v-mk1 MRS_info "?rel3 " " ?ask_id1 " _ask_v_1 " ?lbl3 " "?A30 " " ?A31" "?argwA_0 " "A33")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-mk1 MRS_info "?rel3 " " ?ask_id1 " _ask_v_1 " ?lbl3 " "?A30 " " ?A31" "?argwA_0 " "?A33")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-mk1 MRS_info "?rel2 " " ?make_v_id " _make_v_cause " ?lbl2 " "?A20 " "?argwA_0 " " ?A22")"crlf)
 )
 
@@ -304,7 +307,6 @@
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 (test (neq (sub-string (- (str-length ?mrsCon2) 1) (str-length ?mrsCon2) ?mrsCon2) "_q")) ;I asked Rama a question. What do the animals eat? What did Hari fill in the pot?
-;(test (and (neq (sub-string  1 1 ?mrsCon2)  "_")   (neq (sub-string (- (str-length ?mrsCon2) 1) (str-length ?mrsCon2) ?mrsCon2) "_q"))) ;I asked Rama a question. What do the animals eat? What did Hari fill in the pot?
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (neq ?arg2 ?argma_0))
 (not (modified_k2 ?karma))
@@ -313,6 +315,22 @@
 (assert (modified_k2 ?karma))
 (assert (MRS_info  ?rel_name  ?kriyA  ?mrsCon  ?lbl ?arg0 ?arg1 ?argma_0  $?v))
 (printout ?*rstr-dbug* "(rule-rel-values v-k2 "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " "?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
+)
+
+
+(defrule v-k2_every
+(rel_name-ids    k2         ?kriyA ?every_q)
+?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
+(MRS_info ?rel2 ?every_q every_q  ?lbl2 ?argma_0 $?v1)
+;(MRS_info ?rel3 ?per person  ?l ?a0)
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+(test (neq ?arg2 ?argma_0))
+(not (modified_k2 ?every_q))
+=>
+(retract ?f)
+(assert (modified_k2 ?every_q))
+(assert (MRS_info  ?rel_name  ?kriyA  ?mrsCon  ?lbl ?arg0 ?arg1 ?argma_0 $?v))
+(printout ?*rstr-dbug* "(rule-rel-values v-k2_every "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " "?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
 )
 
 
@@ -380,10 +398,12 @@
 =>
 (retract ?f2 ?f3)
 (assert (modified_at ?id3))
-(assert (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id2 def_implicit_q ?lbl3 ?arg10 ?arg21 ?arg22))
-(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id3 _at_p_temp ?lbl1 ?arg30 ?arg0 ?arg10))
+;(assert (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id2 def_implicit_q ?lbl3 ?arg10 ?arg21 ?arg22))
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id2" def_implicit_q "?lbl3" "?arg10" "?arg21" "?arg22")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-day MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id2" def_implicit_q "?lbl3" "?arg10" "?arg21" "?arg22")"crlf)
 
+;(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id3 _at_p_temp ?lbl1 ?arg30 ?arg0 ?arg10))
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id3" _at_p_temp "?lbl1" "?arg30" "?arg0" "?arg10")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-day MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id3" _at_p_temp "?lbl1" "?arg30" "?arg0" "?arg10")"crlf)
 )
 
@@ -428,15 +448,15 @@
 ;Ex- i am coming home
 (defrule v-home
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
-(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?home ?lbl3 ?arg03 ?arg13)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?home ?lbl3 ?arg03 ?arg13)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
 (test (neq (str-index "_v_" ?v)FALSE))
 (test (or (eq ?home  _there_a_1)
 (eq ?home  _home_p)))
 =>
-(retract ?f)
+(retract ?f ?f1 ?f2 ?f3)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0" " ?arg04 " " ?arg2 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-home id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0 " " ?arg04 " " ?arg2 ")"crlf)
 
@@ -452,16 +472,16 @@
 
 (defrule v-there
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
-(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _there_a_1 ?lbl3 ?arg03 ?arg13)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _there_a_1 ?lbl3 ?arg03 ?arg13)
 (rel_name-ids	AXAra-AXeya	?adhar  ?adhey)
 (MRS_info id-MRS_concept-LBL-ARG0 ?adhey ?mrs ?l ?a0)
 (not (modified loc_nonsp))
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
 ;(test (neq (str-index "_v_" ?v)FALSE))
 =>
-(retract ?f)
+(retract ?f ?f1 ?f2 ?f3)
 (assert (modified loc_nonsp))
 (assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp  ?lbl ?arg0 ?a0  ?arg02))
 ;(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl " " ?arg0" " ?a0 " " ?arg02 ")"crlf)
@@ -480,44 +500,21 @@
 
 
 
-(defrule v-thereeeeeeeeeee
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
-(MMMMMM id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
-(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _there_a_1 ?lbl3 ?arg03 ?arg13)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
-;(test (neq (str-index "_v_" ?v)FALSE))
-=>
-(retract ?f)
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0" " ?arg04 " " ?arg2 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v-there id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0 " " ?arg04 " " ?arg2 ")"crlf)
-
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg2 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v-there id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg2 ")"crlf)
-
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg2 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v-there id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg2 ")"crlf)
-
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v-there id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg2" "?rstr" "?body ")"crlf)
-)
-
-
 ;written by sakshi yadav (NIT-Raipur) date-27.05.19
 ;Rule for verb and word yesterday,today,tomorrow is present :
 ;Replace LBL of loc_nonsp with LBL of verb and  ARG1 of loc_nonsp with ARG0 of verb and LBL of place_n with LBL of home_p and ARG1 of mrs_time  ,ARG0 of time_n home_p,ARG0 of de_implicit_q with ARG2 of loc_nonsp
 ;Ex- i came yesterday, i will come tomorrow, i come today. I will play a game today.
 (defrule v-time
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
-(MRS_info id-MRS_concept-LBL-ARG0 ?id time_n ?lbl2 ?arg02)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrs_time ?lbl3 ?arg03 ?arg13)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?id time_n ?lbl2 ?arg02)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrs_time ?lbl3 ?arg03 ?arg13)
 (MRS_info ?rel ?id1 ?v ?lbl4 ?arg04 $?vars); It will rain tomorrow. kala varRA hogI.
 (rel_name-ids   ?relname        ?id1  ?id)
 (test (neq (str-index "_v_" ?v)FALSE))
 (test (or (eq ?mrs_time _yesterday_a_1) (eq ?mrs_time _today_a_1) (eq ?mrs_time _tomorrow_a_1)(eq ?mrs_time _early_a_1) (eq ?mrs_time _now_a_1)(eq ?mrs_time _late_p)))
 =>
-(retract ?f)
+(retract ?f ?f1 ?f2 ?f3)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0" " ?arg04 " " ?arg2 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-time id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0 " " ?arg04 " " ?arg2 ")"crlf)
 
@@ -543,14 +540,10 @@
 (rel_name-ids   samAnAXi        ?s-id1  ?s-id2)
 (id-concept_label  ?k-id   ?hiConcept&Aja_1|kala_1|kala_2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
-;(not(rel_name-ids k7  ?kri   ?k-id))
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
 (MRS_info id-MRS_concept-LBL-ARG0 ?id time_n ?lbl2 ?arg02)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrs_time ?lbl3 ?arg03 ?arg13)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _day_n_of h14 x15 i16)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?rel1 ?s-id2 ?mrsCon2 ?s-id2_lbl ?s-id2_arg0 $?vars)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
-;(rel_name-ids   ?relname        ?id2  ?id3)
 (test (neq (str-index "_v_" ?v_id)FALSE))
 (test (eq (str-index _q ?id) FALSE))
 (test (neq ?arg1 ?arg02))
@@ -560,10 +553,13 @@
 (assert (modified_samAnAXi ?s-id1))
 (assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg02 ?s-id2_arg0 ))
 (printout ?*rstr-dbug* "(rule-rel-values time-samAnAXi "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?arg0 " " ?s-id2_arg0 ")"crlf)
+
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0  "?id" time_n "?lbl3" "?arg02 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values time-samAnAXi id-MRS_concept-LBL-ARG0  "?id" time_n "?lbl3" "?arg02 ")"crlf)
+
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " " ?mrs_time " "?lbl3"  "?arg03" "?arg02 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values time-samAnAXi id-MRS_concept-LBL-ARG0-ARG1 "?id " " ?mrs_time " "?lbl3"  "?arg03" "?arg02 ")"crlf)
+
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values time-samAnAXi id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
 )
@@ -602,7 +598,7 @@
 (MRS_info ?rel                             ?id ?mrsCon ?lbl6 ?arg00 $?v)  
 (MRS_info ?rel1                             ?id1 ?mrsCon1 ?lbl7 ?arg8 $?v1)  
 =>
-(retract ?f) 
+(retract ?f ?f1) 
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values r6 id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
 
@@ -646,12 +642,13 @@
 ;Ex. mEM_usake_lie_Sahara_se_AyA
 (defrule prep-pron
 (rel_name-ids ?relp ?kriyA ?karaka)
-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2 $?v)
+?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel1 ?kriyA ?mrsCon1 ?lbl1 ?argv_0 $?vars)
 (MRS_info ?rel2 ?karaka pron ?lbl2 ?argpron_0 $?varss)
 (test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
 (test (eq (sub-string 1 1 (str-cat ?prep)) (sub-string 1 1 (str-cat ?karaka))))
 =>
+(retract ?f)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argpron_0 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values prep-pron  "?rel_name " " ?kriyA " " ?endsWith_p " " ?lbl " " ?arg0 " " ?argv_0 " " ?argpron_0 ")"crlf)
 )
@@ -666,19 +663,23 @@
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp lilbl arg0 liarg0 wharg0)
 ;(MRS_info id-MRS_concept-LBL-ARG0 20000 place_n plbl wharg0)
 (defrule ques-where
-(MRS_info ?rel_name ?id which_q ?whlbl ?wharg0 $?v)
-(MRS_info ?rel1 ?id1 ?mrsCon1 ?lilbl ?liarg0 $?vars)
-(MRS_info ?rel ?id place_n ?plbl ?parg0)
-?f<- (MRS_info ?rel2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
+(declare (salience 100))
+(rel_name-ids	?r	?id1	?id2)
+(MRS_info ?rel1 ?id1 ?kri ?kl ?ka0 $?vars)
+(MRS_info ?rel ?id2 place_n ?pl ?pa0)
+?f<- (MRS_info ?rel2 ?id loc_nonsp ?ll ?la0 ?la1 ?la2)
+?f1<-(MRS_info ?rel_name ?id which_q ?wl ?wa0 $?v)
+(test (neq (str-index "_v_" ?kri)FALSE))
 =>
-(retract ?f)
-(printout ?*rstr-fp* "(MRS_info  " ?rel2 " "?id " " loc_nonsp " " ?lilbl " " ?arg0 " " ?liarg0 " " ?parg0 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values ques-where  " ?rel2 " "?id " " loc_nonsp " " ?lilbl " " ?arg0 " " ?liarg0 " " ?parg0 ")"crlf)
+(retract ?f ?f1)
+(printout ?*rstr-fp* "(MRS_info  " ?rel2 " "?id " loc_nonsp " ?kl " " ?la0 " " ?ka0" "?pa0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values ques-where  " ?rel2 " "?id " loc_nonsp " ?kl " " ?la0 " " ?ka0 " " ?pa0 ")"crlf)
 
-(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id " " which_q " " ?whlbl " " ?parg0 " " (implode$ (create$ $?v)) ")"crlf)
-;(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id " " which_q " " ?whlbl " " ?parg0 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values ques-where  " ?rel_name " "?id " " which_q " " ?whlbl " " ?parg0 ")"crlf)
+(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id " which_q " ?wl " " ?pa0 " " (implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values ques-where  " ?rel_name " "?id " which_q " ?wl " " ?pa0 " " (implode$ (create$ $?v))")"crlf)
 )
+
+
 
 ;Rule for interrogative sent 'when'
 ;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 which_q h13 x14 h15 h16)
@@ -689,17 +690,17 @@
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp glbl arg0 garg0 targ0)
 ;(MRS_info id-MRS_concept-LBL-ARG0 20000 time_n whlbl targ0)
 (defrule ques-when
-(MRS_info ?rel_name ?id which_q ?whlbl ?wharg0 $?v)
-(MRS_info ?rel1 ?id1 ?mrsCon1 ?glbl ?garg0 $?vars)
 (MRS_info ?rel ?id time_n ?tlbl ?targ0)
-?f<- (MRS_info ?rel2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info ?rel1 ?id1 ?mrsCon1 ?glbl ?garg0 $?vars)
+?f<- (MRS_info ?rel2 ?id2 loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
+?f1<-(MRS_info ?rel_name ?id3 which_q ?whlbl ?wharg0 $?v)
 =>
-(retract ?f)
-(printout ?*rstr-fp* "(MRS_info  " ?rel2 " "?id " " loc_nonsp " " ?glbl " " ?arg0 " " ?garg0 " " ?targ0 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values ques-when  " ?rel2 " "?id " " loc_nonsp " " ?glbl " " ?arg0 " " ?garg0 " " ?targ0 ")"crlf)
+(retract ?f ?f1)
+(printout ?*rstr-fp* "(MRS_info  " ?rel2 " "?id2 " " loc_nonsp " " ?glbl " " ?arg0 " " ?garg0 " " ?targ0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values ques-when  " ?rel2 " "?id2 " " loc_nonsp " " ?glbl " " ?arg0 " " ?garg0 " " ?targ0 ")"crlf)
 
-(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id " " which_q " " ?whlbl " " ?targ0 " "(implode$ (create$ $?v))")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values ques-when  " ?rel_name " "?id " " which_q " " ?whlbl " " ?targ0 " "(implode$ (create$ $?v))")"crlf)
+(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id3 " " which_q " " ?whlbl " " ?targ0 " "(implode$ (create$ $?v))")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values ques-when  " ?rel_name " "?id3 " " which_q " " ?whlbl " " ?targ0 " "(implode$ (create$ $?v))")"crlf)
 )
 
 
@@ -713,7 +714,6 @@
 (not (modified ?id))
 =>
 (retract ?f)
-;(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-CARG "?id" named "?h1" "?x2 " " ?properName ")"crlf)
 (assert (MRS_info  id-MRS_concept-LBL-ARG0-CARG  ?id  ?named ?h1 ?x2  (sym-cat (upcase (sub-string 1 1 ?properName ))(lowcase (sub-string 2 (str-length ?properName) ?properName )))))
 (printout ?*rstr-dbug* "(rule-rel-values propn id-MRS_concept-LBL-ARG0-CARG "?id"  "?named " "?h1" "?x2" " (sym-cat (upcase (sub-string 1 1 ?properName )) (lowcase (sub-string 2 (str-length ?properName) ?properName ))) ")"crlf)
 (assert (modified ?id))
@@ -721,12 +721,13 @@
 
 ;Rule for generating CARG value 'Mon' in days of week and 'Jan' in months of year
 (defrule dofw
-(id-concept_label	?id	?con)
+?f1<-(id-concept_label	?id	?con)
 (or (mofy ?con ?val) (dofw ?con ?val))
-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id ?dofw  ?h1 ?x2 ?carg)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id ?dofw  ?h1 ?x2 ?carg)
 (test (or (eq ?dofw mofy) (eq ?dofw dofw)))
 =>
-(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-CARG "?id" " ?dofw " "?h1" "?x2 " " ?val ")"crlf)
+(retract ?f ?f1)
+(assert (MRS_info  id-MRS_concept-LBL-ARG0-CARG ?id  ?dofw ?h1 ?x2  ?val))
 (printout ?*rstr-dbug* "(rule-rel-values dofw id-MRS_concept-LBL-ARG0-CARG "?id"  "?dofw " "?h1" "?x2" " ?val ")"crlf)
 )
 
@@ -763,9 +764,10 @@ else
 (id-concept_label ?num ?hnum)
 (rel_name-ids card   ?vi     ?num)
 (concept_label-concept_in_Eng-MRS_concept ?hnum ?enum ord)
-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num ord ?lbl ?numARG0 ?ARG1 ?CARG)
+?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num ord ?lbl ?numARG0 ?ARG1 ?CARG)
 (MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
 =>
+(retract ?f)
 (printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" ord "?vilbl" " ?numARG0 " "?viarg0" " ?enum ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kramavAcI_vi id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" ord "?vilbl" "?numARG0" "?viarg0" "?enum")"crlf)
 )
@@ -867,15 +869,19 @@ else
 (defrule kriImperPronArg
 (sentence_type  imperative)
 ?f1<-(MRS_info ?rel1 ?kri ?con ?lbl ?arg0 ?arg1  $?var)
-?f<-(MRS_info ?rel2 ?pron ?co ?lbl1 ?arg01  $?vars)
-(test  (eq pron ?co)) 
+?f<-(MRS_info ?rel2 ?pron pron ?lbl1 ?arg01  $?vars)
+?f2<-(MRS_info ?rel3 ?pron pronoun_q ?l ?a0  $?v)
 (test (neq (str-index "_v_" ?con)FALSE))
 (not (already_modified ?kri ARG1  ?arg1))
 =>
-(retract ?f1 ?f)
+(retract ?f1 ?f ?f2)
 (assert (already_modified ?kri ARG1  ?arg01))
+
 (assert (MRS_info  ?rel1 ?kri ?con ?lbl ?arg0  ?arg01 $?var))
 (printout ?*rstr-dbug* "(rule-rel-values kriImperPronArg " ?rel1 " "?kri" " ?con " "?lbl" " ?arg0 " " ?arg01 " "(implode$ (create$ $?var))")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info "?rel3" "?pron" pronoun_q "?l" "?arg01" "(implode$ (create$ $?v))")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kriImperPronArg " ?rel3" "?pron" pronoun_q "?l" "?arg01" "(implode$ (create$ $?v))")"crlf)
 )
 
 ;for the TAM nA_cAhawA_hE_1
@@ -919,11 +925,8 @@ else
 (defrule v-LTOP
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
 (rel_name-ids	main	0	?kri_id)
-;(not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
-;(not (kriyA-TAM ?kri_id pres))
-;(not (kriyA-TAM ?kri_id yA_gayA_1))
 (not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
 (not (rel_name-ids	vmod_seq	?id	?kri_id))
 (not (id-stative ?id yes))
@@ -993,7 +996,6 @@ then
 ;generates LTOP and INDEX values for get_cause.
 (defrule get-LTOP
 (id-stative	?id	yes)
-;(not (rel_name-ids	vmod_seq	?id	?kri))
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _get_v_state ?lbl ?arg0 $?vars)
 (test (eq  (+ ?id 100) ?id1))
 =>
@@ -1054,8 +1056,9 @@ then
 
 (defrule printFacts
 (declare (salience -9000))
-(MRS_info ?rel ?kri ?mrsCon $?vars)
+?f<-(MRS_info ?rel ?kri ?mrsCon $?vars)
 =>
+(retract ?f)
 (printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")" crlf)
 (printout ?*rstr-dbug* "(rule-rel-values printFacts " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")"crlf)
 )
@@ -1086,9 +1089,11 @@ then
 =>
 (retract ?f1 ?f2)
 (assert (modified ?ARG02))
+
 (assert (MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG0 ?ARG2))
-(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
 (printout ?*rstr-dbug* "(rule-rel-values _be_v_id " ?rel1 " "?id2" _be_v_id " ?lbl1 " " ?ARG01" " ?ARG0" " ?ARG2")"crlf)
+
+(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
 (printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
 )
 
@@ -1104,10 +1109,38 @@ then
 =>
 (retract ?f1 ?f2)
 (assert (modified_adj ?arg0))
+
 (assert (MRS_info ?rel1 ?id1 ?mrs_1 ?lbl1 ?arg1 $?var))
-(assert (MRS_info ?rel2 ?id3 ?mrs_2 ?lbl2 ?arg1 $?vars))
 (printout ?*rstr-dbug* "(rule-rel-values dem_adj " ?rel1 " "?id1" " mrs_1" " ?lbl1 " " ?arg1" "(implode$ (create$ $?var)) ")"crlf)
+
+(assert (MRS_info ?rel2 ?id3 ?mrs_2 ?lbl2 ?arg1 $?vars))
 (printout ?*rstr-dbug* "(rule-rel-values dem_adj2 " ?rel2 " "?id3" " mrs_2" " ?lbl2 " " ?arg1" "(implode$ (create$ $?vars)) ")"crlf)
 )
 
+;Replacing ARG0 of implicit mrs concepts like _a_q, pronoun_q with the ARG0 value of their head
+(defrule mrs-info_q
+(MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
+?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x $?vars)
+(test (neq ?endsWith_q ?mrsCon))
+(test (eq (sub-string 1 1 (implode$ (create$ ?head))) (sub-string 1 1 (implode$ (create$ ?dep)))))
+(test (> ?dep ?head))
+(test (eq (sub-string (- (str-length ?endsWith_q) 1) (str-length ?endsWith_q) ?endsWith_q) "_q"))
+(test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
+(test (neq (sub-string (- (str-length ?mrsCon) 6) (str-length ?mrsCon) ?mrsCon) "_p_temp"))
+=>
+(retract ?f)
+(printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values  mrs-info_q "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
+)
+
+
+(defrule rstr-rstd4non-implicit
+(rel_name-ids ord|dem ?head ?dep)
+(MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
+?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x $?vars)
+=>
+(retract ?f)
+(printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rstr-rstd4non-implicit "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
+)
 

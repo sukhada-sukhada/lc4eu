@@ -74,7 +74,7 @@ def _tense_info(l):
                     if values[i] !="-":
                         ans.write(labels[i]+":"+" "+values[i]+" ")
                 ans.write("] ")
-    ans.write("]")    
+    ans.write("]\n")    
     
 def _hcons(l):
     temp=l.split()

@@ -19,7 +19,6 @@
 (test (neq (str-index poss ?noendsq1) FALSE))
 =>
 (retract ?f1)
-(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?id1 " " ?noendsq " " ?lbl1 " " ?arg " " (implode$ (create$ $?arg1)) ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  rm-mrs-info  "?rel1 " " ?id1 " " ?noendsq " " ?lbl1 " " ?arg " " (implode$ (create$ $?arg1)) ")"crlf)
 )
 
@@ -41,8 +40,8 @@
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values rstr-rstd4non-implicit  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
 
-(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values rstr-rstd4non-implicit "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
+;(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
+;(printout ?*rstr-rstd-dbg* "(rule-rel-values rstr-rstd4non-implicit "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
 
@@ -57,7 +56,9 @@
 (defrule mrs-info_q
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x ?rstr $?vars)
+;(not (id-concept_label ?dep ?cl))
 (test (neq ?endsWith_q ?mrsCon))
+(test (neq ?endsWith_q every_q)) ;#rAma saba ko apane skUla bulAwA hE. Rama calls everyone to his school.
 (test (neq ?endsWith_q def_implicit_q))
 (test (neq ?endsWith_q def_explicit_q))
 (test (eq (sub-string 1 1 (implode$ (create$ ?head))) (sub-string 1 1 (implode$ (create$ ?dep)))))
@@ -69,9 +70,6 @@
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values mrs-info_q  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
-
-(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  mrs-info_q "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
 ;want to bind LBL of '_home_p' with RSTR of 'def_implicit_q
@@ -87,9 +85,6 @@
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values defimplicitq  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
-
-(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?id " def_implicit_q " ?lbl1 " " ?x " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values defimlicitq "?rel1 " " ?id " def_implicit_q  " ?lbl1 " "?x " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
 ;want to bind LBL of '_yesterday_a_1|_today_a_1|_tomorrow_a_1' with RSTR of 'def_implicit_q
@@ -100,15 +95,12 @@
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values defimplicitq  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
-
-(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?id " def_implicit_q " ?lbl1 " " ?x " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  mrs-info_q "?rel1 " " ?id " def_implicit_q  " ?lbl1 " "?x " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
 ;Restrictor for LTOP Restrictor-Restricted when neg is present
 (defrule LTOP-neg-rstd
-(MRS_info ?rel	?id ?mrsCon ?lbl $?vars)
-(test (neq (str-index neg ?mrsCon) FALSE))
+(MRS_info ?rel	?id neg ?lbl $?vars)
+(not (Restr-Restricted-fact-generated))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-neg-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
@@ -127,19 +119,10 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  neg-pred_adj  Restr-Restricted "?a1" "?l")"crlf)
 )
 
-;(defrule LTOP-there_a_1
-;(id-concept_label	?id	state_existential)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?loc loc_nonsp ?lbl ?a0 ? ? )
-;=>
-;(printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
-;(printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-there_a_1  Restr-Restricted  h0 "?a0 ")"crlf)
-;)
-
 
 ; written by sakshi yadav (NIT Raipur) date- 02.06.19
 ;want to bind RSTR of def_explicit_q  with LBL of poss
 (defrule defexpq
-;(declare (salience 1000))
 (rel_name-ids r6	?id  ?id1)
 (MRS_info ?rel1 ?idposs poss ?lbl2 ?ARG_0 ?ARG1 ?ARG2)
 ?f<-(MRS_info ?rel2 ?id_q def_explicit_q ?lbl1 ?x ?rstr $?v)
@@ -147,9 +130,6 @@
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values defexpq Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
-
-(printout ?*rstr-rstd*   "(MRS_info " ?rel2 " " ?id_q  " def_explicit_q " ?lbl1 " " ?x " " ?rstr " " (implode$ (create$ $?v)) ")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  defexpq " ?rel2 " " ?id_q " def_explicit_q  " ?lbl1 " "?x " " ?rstr " " (implode$ (create$ $?v)) ")"crlf)
 )
 
 
@@ -168,17 +148,8 @@
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 (not(rel_name-ids vAkya_vn ?id_1 ?id_2))
 =>
-;(if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE) )
-;then
-;  (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
-;  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd Restr-Restricted  h0 "?lbl ")"crlf)
-
-;else
- ;       (if (neq (str-index _v_ ?mrsCon) FALSE)
-;then
         (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf) 
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
-;)     
 )
 
 ;Restrictor for LTOP Restrictor-Restricted default value vAkya_vn
@@ -217,11 +188,16 @@
 ;Restrictor for LTOP Restrictor-Restricted default value causative
 (defrule LTOP-rstdc
 (id-causative	?id	yes)
-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _make_v_cause ?lbl ?arg0 $?vars)
+(MRS_info ?rel1  ?id  ?mrsV ?lbl1 $?var)
+?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _make_v_cause ?lbl ?arg0 ?a1 ?a2)
 (test (eq  (+ ?id 100) ?id1))
 =>
+(retract ?f)
  (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdc Restr-Restricted  h0 "?lbl ")"crlf)
+
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?a2 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdc Restr-Restricted  "?a2 " "?lbl1 ")"crlf)
 )
 
 ;Restrictor for LTOP Restrictor-Restricted default value double causative
@@ -236,7 +212,7 @@
 
 ;Restrictor for  causative
 (defrule LTOP-rstdca
-(id-causative       ?id1   yes)
+(iiiiiiid-causative       ?id1   yes)
 (MRS_info ?rel ?id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?vars)
 (MRS_info ?rel1  ?id1  ?mrsV ?lbl1 ?arg10 ?arg11 ?arg12 $?var)
 (test (neq ?id ?id1))
@@ -310,13 +286,11 @@
  (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subordst Restr-Restricted  h0 "?lbl ")"crlf)
 
-(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl2 ")" crlf)
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl2 ")" crlf)
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subordst Restr-Restricted  "?arg2 " "?lbl2 ")"crlf)
 
  (printout ?*rstr-rstd* "(Restr-Restricted  "?arg1 " "?lbl3 ")" crlf)
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subordst Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
-
-
 )
 
 
@@ -331,7 +305,6 @@
 (MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
 (test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
 (test (neq (str-index _v_ ?mrsV) FALSE))
-;(not (MRS_info ? ? neg $?))
 (test (neq ?id ?id1))
 =>
     (assert (Restr-Restricted-fact-generated))
@@ -340,8 +313,9 @@
 
     (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1 ")" crlf)
     (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal  Restr-Restricted " ?arg1 " "?lbl1 ")"crlf)
-
 )
+
+
 (defrule LTOP-neg-modal
 (declare (salience 100))
 (sentence_type	negative)
@@ -349,15 +323,15 @@
 (MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
 (test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
 (test (neq (str-index _v_ ?mrsV) FALSE))
-;(not (MRS_info ? ? neg $?))
 (test (neq ?id ?id1))
+(not (Restr-Restricted-fact-generated))
 =>
     (assert (Restr-Restricted-fact-generated))
-    ;(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl ")" crlf)
-    ;(printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal  Restr-Restricted h0 "?lbl ")"crlf)
+    (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl ")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-neg-modal  Restr-Restricted h0 "?lbl ")"crlf)
 
     (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1 ")" crlf)
-    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-neg-modal  Restr-Restricted " ?arg1 " "?lbl1 ")"crlf)
+    (printout ?*rstr-rstd* "(rule-rel-values LTOP-neg-modal  Restr-Restricted " ?arg1 " "?lbl1 ")" crlf)
 
 )
 
@@ -372,9 +346,6 @@
 (test (neq ?id ?id1))
 =>
     (assert (Restr-Restricted-fact-generated))
-    ;(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl ")" crlf)
-    ;(printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal  Restr-Restricted h0 "?lbl ")"crlf)
-
     (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1 ")" crlf)
     (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-int-modal  Restr-Restricted " ?arg1 " "?lbl1 ")"crlf)
 
@@ -397,7 +368,6 @@
 
     (printout ?*rstr-rstd* "(Restr-Restricted " ?arg12 " "?lbl ")" crlf)
     (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-nA_cAhawA_hE  Restr-Restricted " ?arg12 " "?lbl ")"crlf)
-
 )
 
 ;for compounds 
@@ -415,12 +385,13 @@
           (eq ?mrs  _a_q)))
 (not (Restr-Restricted-fact-generated_for_comp ?id1))          
 =>
+(retract ?f ?f1)
     (assert (Restr-Restricted-fact-generated_for_comp ?id1))
     (assert (Restr-Restricted-fact-generated_for_comp ?id2))
+
     (printout ?*rstr-rstd* "(Restr-Restricted " ?trstr " "?cl ")" crlf)
     (printout ?*rstr-rstd-dbg* "(rule-rel-values comp_udefq  Restr-Restricted "?trstr " "?cl ")"crlf)
-    (printout ?*rstr-rstd* "(MRS_info " ?rel1 " " ?id1 " udef_q  " ?ul " " ?ua0 " " ?urstr " " ?ubody")" crlf)
-    (printout ?*rstr-rstd* "(MRS_info " ?rel2 " " ?id2 " " ?mrs "  " ?tl " " ?ta0 " " ?trstr " " ?tbody")" crlf)
+
     (printout ?*rstr-rstd* "(Restr-Restricted " ?urstr " "?dep_lbl ")" crlf)
     (printout ?*rstr-rstd-dbg* "(rule-rel-values comp_udefq  Restr-Restricted " ?urstr " "?dep_lbl ")"crlf)
 )
@@ -433,10 +404,7 @@
 (MRS_info ?rel1 ?id _this_q_dem ?lbl ?ARG0 ?ARG1 ?ARG2)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  "?ARG1 " "?lbl1 ")" crlf)
- (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeic Restr-Restricted  "?ARG1 " "?lbl1 ")"crlf)
-
-(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?id " " "_this_q_dem" " " ?lbl " " ?ARG0 " " ?ARG1 " "?ARG2  ")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeic "?rel1 " " ?id " " "_this_q_dem" " " ?lbl " " ?ARG0 " " ?ARG1 " "?ARG2 ")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeic Restr-Restricted  "?ARG1 " "?lbl1 ")"crlf)
 )
 
 
@@ -448,8 +416,9 @@
 (MRS_info ?rel ?obj ?mrs1 ?lbl1 $?var)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  "?ARG1 " "?lbl1 ")" crlf)
- (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeicad Restr-Restricted  "?ARG1 " "?lbl1 ")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeicad Restr-Restricted  "?ARG1 " "?lbl1 ")"crlf)
 )
+
 ;Restrictor for LTOP Restrictor-Restricted default value deitic adj
 (defrule LTOP-rstdaj
 (rel_name-ids deic ?obj    ?dem)
@@ -462,31 +431,82 @@
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdc Restr-Restricted  h0 "?lbl ")"crlf)
 )
 
-
-;(defrule print-sf_etc
-;(declare (salience -1000))
-;?f1<- (id-SF-TENSE-MOOD-PROG-PERF ?rel1 $?vars) 
-;=>
-;(retract ?f1)
-;(printout ?*rstr-rstd*   "(id-SF-TENSE-MOOD-PROG-PERF  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
-;(printout ?*rstr-rstd-dbg* "(rule-rel-values  print-sf_etc id-SF-TENSE-MOOD-PROG-PERF  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
-;)
-
-;(defrule print-mrs
-;(declare (salience -1000))
-;?f1<-(MRS_info ?rel1  $?vars)
-;=>
-;(retract ?f1)
-;(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
-;(printout ?*rstr-rstd-dbg* "(rule-rel-values  print-mrs  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
-;)
+;changing the ARG0 value (i.e. e*) of neg to i300
+(defrule neg-arg0-i
+(sentence_type  imperative)
+(rel_name-ids neg ?kri  ?negId)
+?f<-(MRS_info ?rel1 ?negId neg ?lbl ?arg0  ?ARG1)
+(not (modified_ARG0_value_to_i ?negId))
+=>
+(retract ?f)
+(assert (modified_ARG0_value_to_i ?negId))
+(bind ?i (str-cat "i" (sub-string 2 (str-length ?arg0) ?arg0)))
+(assert (MRS_info ?rel1 ?negId neg ?lbl ?i  ?ARG1))
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-arg0-i MRS_info "?rel1" "?negId" neg "?lbl" "?i" " ?ARG1")"crlf)
+)
 
 
-;(defrule print-ltop
-;(declare (salience -1000))
-;?f1<- (LTOP-INDEX ?rel1  $?vars) 
-;=>
-;(retract ?f1)
-;(printout ?*rstr-rstd*   "(LTOP-INDEX  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
-;(printout ?*rstr-rstd-dbg* "(rule-rel-values  print-ltop LTOP-INDEX  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
-;)
+
+;Restrictor-Restricted between ARG1 value neg and LBL value of verb
+;Ex. 236: "ayAn ne KAnA nahIM KAyA WA." = Ayan had not eaten food.
+;    25: "ladake ne KAnA nahIM KAyA." = The boy did not eat food.       
+(defrule neg-rstd
+(rel_name-ids neg ?x    ?negId)
+?f<-(MRS_info ?rel1 ?negId neg ?lbl ?  ?ARG1)
+?f1<-(MRS_info ?rel3 ?m ?verbORprep ?V_lbl  ?V_A0  ?V_A1 $?vars)
+(test (or (neq (str-index _v_ ?verbORprep) FALSE) (neq (str-index _p ?verbORprep) FALSE) ) )
+=>
+(retract ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted  h0 " ?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-rstd Restr-Restricted  h0 "?lbl")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted     "?ARG1  "  " ?V_lbl ")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-rstd Restr-Restricted  "?ARG1"  "?V_lbl")"crlf)
+)
+
+; Ex. mEM so nahIM sakawA hUz.
+; Ex. I can not sleep. I cannot sleep. I can't sleep.
+(defrule neg-modal
+(declare (salience 1000))
+?f<-(MRS_info ?rel1 ?id1 ?modal ?lbl ?ARG0  ?ARG1)
+?f1<-(MRS_info ?rel2 ?id2 neg ?lbl2 ?ARG0_2 ?ARG1_2 $?vars)
+?f2<-(MRS_info ?rel3 ?id3 ?v ?lbl3 ?ARG0_3 ?ARG1_3 $?var)
+(test (neq (str-index _v_modal ?modal) FALSE))
+(test (neq (str-index _v_ ?v) FALSE))
+(test (neq ?id1 ?id3))
+(test (neq ?id2 ?id3))
+=>
+(retract ?f ?f1 ?f2)
+(printout ?*rstr-rstd* "(Restr-Restricted   h0 " ?lbl2 ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-modal  Restr-Restricted  h0 "?lbl2")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted     "?ARG1_2" "?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-modal  Restr-Restricted  "?ARG1_2" "?lbl")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted     "?ARG1" "?lbl3")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-modal  Restr-Restricted  "?ARG1" "?lbl3")"crlf)
+)
+
+(defrule LTOP-modal-neg-intero
+(declare (salience 3000))
+(sentence_type     interrogative)
+?f2<-(MRS_info ?rel  ?id ?mrsModal  ?lbl ?arg0 ?arg1 $?vars)
+?f<-(MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
+?f1<-(MRS_info ?rel2  ?id2 neg ?nl ?n0 ?na1)
+(test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
+(test (neq (str-index _v_ ?mrsV) FALSE))
+(not (sentence_type     negative))
+(test (neq ?id ?id1))
+=>
+(retract ?f ?f1 ?f2)
+    (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal-neg-intero  Restr-Restricted h0 "?lbl")"crlf)
+
+    (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?nl")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal-neg-intero  Restr-Restricted " ?arg1 " "?nl")"crlf)
+
+    (printout ?*rstr-rstd* "(Restr-Restricted " ?na1 " "?lbl1")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal-neg-intero  Restr-Restricted " ?na1 " "?lbl1")"crlf)
+)
+
+

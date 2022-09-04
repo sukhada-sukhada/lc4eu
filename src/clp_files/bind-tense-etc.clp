@@ -5,18 +5,18 @@
 ;example:-Apa kahAz rahawe hEM?
 ;solution:-Where do you live?
 (defrule tense
-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 (not (id-double_causative	?id	yes))
 (not (id-causative	?id	yes))
 (not (id-stative	?id	yes))
 (not (id-concept_label       ?v   hE_1|WA_1))
 (not (modified_tense ?id))
-(not (modified_tense_modal ?id1) )
+;(not (modified_tense_modal ?id1) )
 =>
 (assert (modified_tense ?id))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?id ?mrs ?l ?a0 ?sf ?tense ?mood ?prog ?perf $?va))
+(retract ?f1 ?f)
+(printout ?*tense-etc* "(tense-MRS_info "?rel" "?id" "?mrs" "?l" "?a0" "?sf" "?tense" "?mood" "?prog" "?perf" "(implode$ (create$ $?va))")" crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  tense  "?rel " " ?id " " ?mrs " " ?l " " ?a0 "  " ?sf " " ?tense " " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
@@ -24,14 +24,14 @@
 ;solution:-The mother asked Rama to make the child eat food.
 (defrule tensedc
 (id-double_causative	?id	yes)
-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?kri ?mrs ?l ?a0 $?va)
 (test (eq ?kri (+ ?id 200)))
 (not (modified_tense ?id))
 =>
 (assert (modified_tense ?id))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?kri ?mrs ?l ?a0 ?sf ?tense ?mood ?prog ?perf $?va))
+(retract ?f ?f1)
+(printout ?*tense-etc* "(tense-MRS_info  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " " ?tense " " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  tensedc  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " " ?tense " " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
@@ -39,14 +39,14 @@
 ;solution:-The teacher made the students clean the class.
 (defrule tensec
 (id-causative	?id	yes)
-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?kri ?mrs ?l ?a0 $?va)
 (test (eq ?kri (+ ?id 100)))
 (not (modified_tense ?id))
 =>
 (assert (modified_tense ?id))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?kri ?mrs ?l ?a0 ?sf ?tense ?mood ?prog ?perf $?va))
+(retract ?f1 ?f)
+(printout ?*tense-etc* "(tense-MRS_info "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " " ?tense " " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  tensec  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " " ?tense " " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
@@ -55,14 +55,15 @@
 (defrule tensemodal
 (declare (salience 10000))
 (LTOP-INDEX h0 ?e)
-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?kri ?mrs ?l ?e $?va)
 (test (or (neq (str-index _v_modal ?mrs) FALSE) (neq (str-index _v_qmodal ?mrs) FALSE)))
-(not (modified_tense_modal ?kri))
+(not (modified_tense ?kri))
 =>
-(assert (modified_tense_modal ?kri))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?kri ?mrs ?l ?e ?sf ?tense ?mood ?prog ?perf $?va))
+(assert (modified_tense ?kri))
+(assert (modified_tense ?id))
+(retract ?f ?f1)
+(printout ?*tense-etc* "(tense-MRS_info  "?rel " " ?id " " ?mrs " " ?l " " ?e " " ?sf " " ?tense " " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  tensemodal  "?rel " " ?id " " ?mrs " " ?l " " ?e " " ?sf " " ?tense " " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
@@ -79,9 +80,9 @@
 =>
 (assert (modified_tense ?id))
 (retract ?f ?f1 ?f2 ?f3)
-(assert (tense-MRS_info ?rel ?id ?mrs ?l ?a0 ?sf untensed ?mood ?prog ?perf $?va))
-(assert (tense-MRS_info ?rel1 ?id1 ?mrs1 ?l1 ?a01 ?sf1 untensed ?mood1 ?prog1 ?perf1 $?vas))
+(printout ?*tense-etc* "(tense-MRS_info  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " untensed " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  tensest  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " untensed " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(printout ?*tense-etc* "(tense-MRS_info "?rel1 " " ?id1 " " ?mrs1 " " ?l1 " " ?a01 " " ?sf1 " untensed " ?mood1 " " ?prog1 " " ?perf1 " " (implode$ (create$ $?vas)) ")" crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  tensest  "?rel1 " " ?id1 " " ?mrs1 " " ?l1 " " ?a01 " " ?sf1 " untensed " ?mood1 " " ?prog1 " " ?perf1 " " (implode$ (create$ $?vas)) ")" crlf)
 )
 
@@ -90,15 +91,15 @@
 (defrule tenses
 (declare (salience -10))
 (id-stative	?id	yes)
-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf)
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf)
 ?f<-(MRS_info ?rel ?kri ?mrs ?l ?a0 $?va)
 (test (eq ?kri (+ ?id 100)))
 (not (modified_tensest ?id))
 =>
 (assert (modified_tensest ?id))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?kri ?mrs ?l ?a0 ?sf ?tense ?mood ?prog ?perf $?va))
-(printout ?*tense-etc-dbg* "(rule-rel-values  tenses  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " untensed " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(retract ?f1 ?f)
+(printout ?*tense-etc* "(tense-MRS_info  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(printout ?*tense-etc-dbg* "(rule-rel-values  tenses  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
 ;example:-yaha Gara hE.
@@ -106,15 +107,15 @@
 (defrule tensexs
 (declare (salience -10))
 (id-concept_label       ?v   hE_1|WA_1)
-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 (not (id-double_causative	?id	yes))
 (not (modified_tensexs ?id))
 =>
 (assert (modified_tensexs ?id))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?id ?mrs ?l ?a0 ?sf ?tense ?mood ?prog ?perf $?va))
-(printout ?*tense-etc-dbg* "(rule-rel-values  tensexst  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " untensed " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(retract ?f ?f1)
+(printout ?*tense-etc* "(tense-MRS_info "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(printout ?*tense-etc-dbg* "(rule-rel-values  tensexs  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
 ;example:-vaha kiwAba suMxara hE.
@@ -122,15 +123,15 @@
 (defrule tensexstad
 (id-concept_label       ?v   hE_1|WA_1)
 (rel_name-ids   k1s        ?v  ?id)
-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 (test(neq (str-index "_a_" ?mrs)FALSE))
 (not (modified_tensexstad ?id))
 =>
 (assert (modified_tenseexstad ?id))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?id ?mrs ?l ?a0 ?sf ?tense ?mood ?prog ?perf $?va))
-(printout ?*tense-etc-dbg* "(rule-rel-values  tensexstad  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " untensed " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(retract ?f ?f1)
+(printout ?*tense-etc* "(tense-MRS_info "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(printout ?*tense-etc-dbg* "(rule-rel-values  tensexstad  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
 ;example:-mEM Delhi meM hUz.
@@ -138,23 +139,23 @@
 (defrule tensexsti
 (id-concept_label       ?v   hE_1|WA_1)
 (rel_name-ids   k7p        ?v  ?id)
-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id1 _in_p ?l ?a0 $?va)
 (not (modified_tensexsti ?id1))
 (not (id-double_causative	?id	yes))
 (test (eq ?id1 (+ ?id 1)))
 =>
 (assert (modified_tenseexsti ?id1))
-(retract ?f)
-(assert (tense-MRS_info ?rel ?id1 _in_p ?l ?a0 ?sf ?tense ?mood ?prog ?perf $?va))
-(printout ?*tense-etc-dbg* "(rule-rel-values  tensexsti  "?rel " " ?id1 " _in_p " ?l " " ?a0 " " ?sf " untensed " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(retract ?f ?f1)
+(printout ?*tense-etc* "(tense-MRS_info  "?rel " " ?id1 " _in_p " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(printout ?*tense-etc-dbg* "(rule-rel-values  tensexsti  "?rel " " ?id1 " _in_p " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
 
 (defrule print-ltop
-(declare (salience -900))
 ?f1<- (LTOP-INDEX ?rel1  $?vars) 
 =>
+(retract ?f1)
 (printout ?*tense-etc*   "(LTOP-INDEX  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  print-ltop LTOP-INDEX  "?rel1 " " (implode$ (create$ $?vars)) ")"crlf)
 )
@@ -162,17 +163,20 @@
 (defrule print-mrs
 (declare (salience -1000))
 ?f1<-(MRS_info ?rel1  ?id ?mrs $?vars)
-(test (neq (sub-string (- (str-length ?mrs) 1) (str-length ?mrs) ?mrs) "_q"))
-(test (neq (sub-string (- (str-length ?mrs) 3) (str-length ?mrs) ?mrs) "_dem"))
+;(test (neq (sub-string (- (str-length ?mrs) 1) (str-length ?mrs) ?mrs) "_q"))
+;(test (neq (sub-string (- (str-length ?mrs) 3) (str-length ?mrs) ?mrs) "_dem"))
 (not (modified_tense_modal ?id))
 =>
+(retract ?f1)
 (printout ?*tense-etc*   "(MRS_info  "?rel1 " " ?id " " ?mrs " " (implode$ (create$ $?vars)) ")"crlf)
 (printout ?*tense-etc-dbg* "(rule-rel-values  print-mrs  "?rel1 " " ?id " " ?mrs " " (implode$ (create$ $?vars)) ")"crlf)
 )
-(defrule printFacts
-(declare (salience -9000))
-(tense-MRS_info ?rel $?vars)
-=>
-(printout ?*tense-etc* "(tense-MRS_info " ?rel "  " (implode$ (create$ $?vars)) ")" crlf)
-(printout ?*tense-etc-dbg* "(rule-rel-values printFacts " ?rel " " (implode$ (create$ $?vars)) ")"crlf)
-)
+
+
+;(defrule printFacts
+;(declare (salience -9000))
+;(tense-MRS_info ?rel $?vars)
+;=>
+;(printout ?*tense-etc* "(tense-MRS_info " ?rel "  " (implode$ (create$ $?vars)) ")" crlf)
+;(printout ?*tense-etc-dbg* "(rule-rel-values printFacts " ?rel " " (implode$ (create$ $?vars)) ")"crlf)
+;)
