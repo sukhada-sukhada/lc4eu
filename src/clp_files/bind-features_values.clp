@@ -301,6 +301,26 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-j1k1 MRS_info "?rel_name " " ?kriyA  " "?mrsCon" " ?lbl " "?arg0 " "?argwA_0 " )"crlf)
 )
 
+;Rule to delete k2 relation of the verb want when it takes a verb as k2
+;And replace the ARG1 value of the verb that has occurred as k2 with arg0 value of k1
+;Ex. Rama wants to sleep.
+(defrule want-k2-deleted
+(declare (salience 300))
+?f<-(rel_name-ids k2   ?kri ?k2)
+(rel_name-ids k1   ?kri ?k1)
+(MRS_info ?rel ?kri _want_v_1 $?vars)
+?f1<-(MRS_info ?r ?k2  ?k2v ?l ?a0 ?a1 $?v)
+(MRS_info ?r1 ?k1  ?k1mrs ?k1l ?k1a0 $?k1v)
+(test (neq (str-index _v_ ?k2v) FALSE))
+=>
+(retract ?f ?f1)
+(printout ?*rstr-dbug* "(rule-rel-values want-k2-deleted rel_name-ids k2 "?kri" "?k2")"crlf) 
+
+(printout ?*rstr-fp* "(MRS_info "?r" "?k2" "?k2v" "?l" "?a0" "?k1a0" "(implode$ (create$ $?v))")"crlf) 
+(printout ?*rstr-dbug* "(rule-rel-values want-k2-deleted MRS_info "?r" "?k2" "?k2v" "?l" "?a0" "?k1a0" "(implode$ (create$ $?v))")"crlf) 
+)
+
+
 ;Rule for verb and its arguments(when both karta and karma are present),Replace ARG1 value of kriyA with ARG0 value of karwA and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k2
 (rel_name-ids	k2|k1s       	?kriyA ?karma)

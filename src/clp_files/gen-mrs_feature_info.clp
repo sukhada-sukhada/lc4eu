@@ -6,6 +6,8 @@
 (defglobal ?*count* = 1)
 
 
+
+
 ;rule for deleting be_v_id for k1s
 ;Rama is good.
 ;(id-concept_label	30000	hE_1)
@@ -64,6 +66,22 @@
 (printout ?*mrs-dbug* "(rule-rel-values   rm-qcon4quantifier  id-MRS_concept "?q_id" "?aq")"crlf)
 )
 
+;Rule to change the ARG2 value x* to h* of the verb want when it takes a verb as k2
+;Ex. Rama wants to sleep.
+(defrule want-k2-v
+(declare (salience 300))
+?f<-(MRS_info ?rel ?kri _want_v_1 ?l ?a0 ?a1 ?a2)
+(rel_name-ids k2   ?kri	?k2)
+(MRS_info ?r ?k2  ?k2v $?v)
+(test (neq (str-index _v_ ?k2v) FALSE))
+=>
+(retract ?f)
+(bind ?arg2 (str-cat "h" (sub-string 2 (str-length ?a2) ?a2)))  
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" _want_v_1 "?l" "?a0" "?a1" "?arg2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values want-k2-v "?rel" "?kri" _want_v_1 "?l" "?a0" "?a1" "?arg2")"crlf)
+)
+
+
 ;Rule to change the ARG1 value x* of the passive verbs when k1 is not present for the verb to i*
 ;Ex. (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _kill_v_1 h19 e20 x21 x22)
 ;changes to
@@ -71,16 +89,17 @@
 ;Ex. Ravana was killed.
 (defrule passive-v-k1
 (declare (salience 200))
-?f1<-(sentence_type	pass-affirmative)
+?f1<-(sentence_type     pass-affirmative)
 ?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2 $?var)
-(not (rel_name-ids k1	?kri	?k1))
+(not (rel_name-ids k1   ?kri    ?k1))
 =>
 (retract ?f1 ?f)
-(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))  
+(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
 ;(assert (MRS_info   ?kri ?arg1  (explode$ ?a1) ))
 (printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2" "(implode$ (create$ $?var))")"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values passive-v-k1 MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2" "(implode$ (create$ $?var))")"crlf)
 )
+
 
 
 ;Rule for converting arg2 value (x*) of transtive verb when k2 is absent to u*

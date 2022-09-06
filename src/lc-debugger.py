@@ -125,8 +125,10 @@ def compareResults(expectedSW,gotSW):
     del finalData['HCONS']
     return (finalData,finalData1)
     
-
-aceOutRes,lcOutRes = compareResults(aceOut,fr)
+try:
+    aceOutRes,lcOutRes = compareResults(aceOut,fr)
+except:
+    print('Errorssssssssssss\n')
 
 
 

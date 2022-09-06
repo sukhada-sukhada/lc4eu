@@ -41,13 +41,14 @@
 (printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
 )
 
-;rule for generatint MRS concept 'person' for 'saba_7/everyone'.
-(defrule person
+;rule for generating MRS concept 'every_q' for 'saba_4/everyone/everybody'.
+(defrule mrs_every_q
 (id-concept_label ?id saba_4)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" person)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_person_q  id-MRS_concept "(+ ?id 10)" person)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" every_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_every_q  id-MRS_concept "(+ ?id 10)" every_q)"crlf)
 )
+
 
 ;rule for demonstrative pronoun
 (defrule mrs_dem_pron

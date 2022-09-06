@@ -56,9 +56,7 @@
 (defrule mrs-info_q
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x ?rstr $?vars)
-;(not (id-concept_label ?dep ?cl))
 (test (neq ?endsWith_q ?mrsCon))
-(test (neq ?endsWith_q every_q)) ;#rAma saba ko apane skUla bulAwA hE. Rama calls everyone to his school.
 (test (neq ?endsWith_q def_implicit_q))
 (test (neq ?endsWith_q def_explicit_q))
 (test (eq (sub-string 1 1 (implode$ (create$ ?head))) (sub-string 1 1 (implode$ (create$ ?dep)))))
@@ -510,3 +508,16 @@
 )
 
 
+;Rule to generate Rester-Restricted values for the verb want when it takes a verb as k2
+;Ex. Rama wants to sleep.
+(defrule want-k2-rstr
+(rel_name-ids k2   ?kri ?k2)
+(MRS_info ?rel ?kri _want_v_1 $?vars ?arg2)
+?f1<-(MRS_info ?r ?k2  ?k2v ?l  $?v)
+(test (neq (str-index _v_ ?k2v) FALSE))
+=>
+(retract ?f1)
+    (printout ?*rstr-rstd* "(Restr-Restricted " ?arg2 " "?l")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values want-k2-rstr  Restr-Restricted " ?arg2 " "?l")"crlf)
+
+)

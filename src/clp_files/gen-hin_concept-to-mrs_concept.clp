@@ -60,7 +60,7 @@
 =>
 (retract ?f)
 (printout ?*mrsCon* "(id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values print-mrs-rel id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
 )
 
 
