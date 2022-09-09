@@ -141,8 +141,8 @@
 (not (id-causative ?id yes))
 (not (id-stative ?id1 yes))
 (not (id-double_causative	?id	yes))
-(not (rel_name-ids	vmod_seq	?id	?kri_id))
-(not (rel_name-ids	vmod_seq	?kri_id	?id))
+(not (rel_name-ids	vmod_pk	?id	?kri_id))
+(not (rel_name-ids	vmod_pk	?kri_id	?id))
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 (not(rel_name-ids vAkya_vn ?id_1 ?id_2))
 =>
@@ -236,7 +236,7 @@
 
 (defrule LTOP-rstdsta
 (id-stative	?id	yes)
-(not (rel_name-ids	vmod_seq	?id	?kri))
+(not (rel_name-ids	vmod_pk	?id	?kri))
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _get_v_state ?lbl ?arg0 $?vars)
 (test (eq  (+ ?id 100) ?id1))
 =>
@@ -258,7 +258,7 @@
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord
 (not (id-stative ?id1 yes))
-(rel_name-ids	vmod_seq	?id1	?id2)
+(rel_name-ids	vmod_pk	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -275,7 +275,7 @@
 
 (defrule LTOP-subordst
 (id-stative ?id1 yes)
-(rel_name-ids	vmod_seq	?id1	?id2)
+(rel_name-ids	vmod_pk	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)

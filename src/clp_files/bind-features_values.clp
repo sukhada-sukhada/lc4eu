@@ -817,21 +817,20 @@ else
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf  ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
-;genrate tense value for v_mod_seq
-(defrule v_mod_seq
-(rel_name-ids	vmod_seq	?id	?kri)
+(defrule vmod_pk
+(rel_name-ids	vmod_pk	?id	?kri)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v_mod_seq id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_pk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 )
 
-;genrate tense value for v_mod_seq in get_v_state
-(defrule v_mod_seq2
-(rel_name-ids	vmod_seq	?id	?kri)
+;genrate tense value for vmod_pk in get_v_state
+(defrule vmod_pk2
+(rel_name-ids	vmod_pk	?id	?kri)
 (id-stative	?id	yes)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v_mod_seq2 id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_pk2 id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
 )
 
 
@@ -948,7 +947,7 @@ else
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 (not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
-(not (rel_name-ids	vmod_seq	?id	?kri_id))
+(not (rel_name-ids	vmod_pk	?id	?kri_id))
 (not (id-stative ?id yes))
 (not (id-causative ?id yes))
 (not (id-double_causative	?id	yes))

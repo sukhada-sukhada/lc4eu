@@ -230,14 +230,14 @@
 (defrule mrs_parg_d
 (sentence_type  pass-affirmative|pass-interrogative)
 (kriyA-TAM ?kri ?tam)
-(not (rel_name-ids	vmod_seq	?id	?kri))
+(not (rel_name-ids	vmod_pk	?id	?kri))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_parg_d  id-MRS_concept "?kri" parg_d)"crlf)
 )
 
 (defrule mrs_subord
-(rel_name-ids	vmod_seq	?id	?kri)
+(rel_name-ids	vmod_pk	?id	?kri)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
