@@ -3,8 +3,8 @@ rAma,WodZA_2,pAnI_1,state_possession-pres
 1,2,3,4
 per,,mass,
 [m sg a],,[- sg a],
-possessor,3:dem,possessed,0:main
+possessor,,possessed,0:main
 ,,,
 ,,,
-,,,
+,3:quant,,
 affirmative

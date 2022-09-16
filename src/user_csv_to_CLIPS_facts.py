@@ -59,7 +59,12 @@ for i in range(len(gnp)):
 # Writing POS values
 for i in range(len(wid)):
     if pos[i] != '':
-        ans.write('(id-'+pos[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
+        if ' ' in pos[i]:
+            poslst = pos[i].split()
+            for j in range(len(poslst)):
+                ans.write('(id-'+poslst[j]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
+        else:
+            ans.write('(id-'+pos[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
 
 
 # Writing dependency relations

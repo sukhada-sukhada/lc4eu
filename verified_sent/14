@@ -1,10 +1,11 @@
 #kyA Apa jA rahe hEM?
 ,addressee,jA_1-0_rahA_hE_1
 1,2,3
-yes_no_qsn,,
-,[- - m],
+,anim,
+,[m sg m],
 ,3:k1,0:main
 ,,
-,,
+,respect,
 ,,
 interrogative
+

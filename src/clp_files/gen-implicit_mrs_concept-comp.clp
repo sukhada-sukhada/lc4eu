@@ -9,6 +9,7 @@
 (id-hin_concept-MRS_concept ?compid ?comp ?comp_mrs)
 (test (neq (str-index "+"  ?comp_mrs) FALSE)) ;no implicit compound nodes for 312: usane muJe KeloM meM pramANa pawra xiyA.
 (test (eq (str-index "recip_pro"  ?comp_mrs) FALSE))
+(not (id-per ?compid yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?compid 2) " compound)"crlf)
 (printout ?*defdbug* "(rule-rel-values samasa id-MRS_concept " (+ ?compid 2)" compound)"crlf)

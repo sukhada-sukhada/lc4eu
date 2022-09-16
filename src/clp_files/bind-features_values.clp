@@ -35,6 +35,21 @@
 (printout ?*rstr-dbug* "(rule-rel-values comp id-MRS_concept-LBL-ARG0-RSTR-BODY  "?adq" "?atheq" "?ql" "?ha0" "?qstr" "?qody")" crlf)
 )
 
+;Rule for the respect word "ji" in Hindi.
+;This rule creates binding with the person for whom we are giving respect with word "ji".
+; 26 verified sentence #manwrIjI ne kala manxira kA uxGAtana kiyA.
+(defrule respect-honorable
+(declare (salience 1000))
+(id-respect	?id	yes)
+(MRS_info ?rel1 ?id ?mrscon ?lbl1 ?arg0 $?v)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 _honorable_a_1 ?lbl ?argo2 ?arg01)
+(test (eq (+ ?id 1000) ?id1)) 
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id1" _honorable_a_1 "?lbl1" "?argo2" "?arg0")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values respect-honorable id-MRS_concept-LBL-ARG0-ARG1 "?id1" _honorable_a_1 "?lbl1" "?argo2" "?arg0")"crlf)
+)
+
 
 ;Rule for adjective and noun : for (viSeRya-viSeRaNa 	? ?)
 ;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
@@ -55,7 +70,7 @@
 ;Rule for binding/replacing ARG0 value of demonstrative_pronoun with ARG0 value of viSeRya
 ;Ex. rAma yaha kAma  kara sakawA. Rama can do this work.
 (defrule dem
-(rel_name-ids dem ?viya ?viNa)
+(rel_name-ids dem|quant ?viya ?viNa)
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 ?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 (test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q")) 
@@ -1154,12 +1169,25 @@ then
 
 
 (defrule rstr-rstd4non-implicit
-(rel_name-ids ord|dem ?head ?dep)
+(rel_name-ids ord|dem|quant ?head ?dep)
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x $?vars)
 =>
 (retract ?f)
 (printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rstr-rstd4non-implicit "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
+)
+
+(defrule emph-also-nonverb
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?a0 ?a1)
+(id-emph  ?id1  yes)
+(MRS_info ?rel ?id1 ?mrscon ?l $?v)
+(test (eq (str-index _v_ ?mrscon) FALSE))
+(test (eq (+ ?id1 1000) ?id))
+=>
+(retract  ?f)
+(bind ?arg1 (str-cat "e" (sub-string 2 (str-length ?a1) ?a1)))
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l" "?a0" " ?arg1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values emph-also-nonverb MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l"  "?a0" " ?arg1")"crlf)
 )
 

@@ -1,10 +1,10 @@
 #mEM usase eka kiwAba le rahA hUz.
-speaker,vaha,eka_1,kiwAba_1,le_1-0_rahA_hE_1
-1,2,3,4,5
-,,,,
-[m sg u],[m sg a],,[- sg a],
-5:k1,5:k5,4:ord,5:k2,0:main
-,,,,
-,,,,
-,,,,
+speaker,vaha,kiwAba_1,le_1-0_rahA_hE_1
+1,2,3,4
+anim,anim,,
+[m sg u],[m sg a],[- sg a],
+4:k1,4:k5,4:k2,0:main
+,,,
+,,,
+,,,
 affirmative

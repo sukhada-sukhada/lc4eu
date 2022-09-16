@@ -1,10 +1,11 @@
 #vaha kaCuA ko nahIM xeKa sakawA WA.
-vaha,kaCuA_1,nahIM_1,xeKa_1-0_sakawA_WA_1 
+vaha,kaCuA_1,nahIM_1,xeKa_1-0_sakawA_WA_1
 1,2,3,4
-,,,
-[m sg a],[m sg a],,
-4:k1,4:k2,,0:main
+anim,anim,,
+[m sg a],[- sg a],,
+4:k1,4:k2,4:neg,0:main
 ,,,
 ,def,,
-,,4:neg,
+,,,
 negative
+

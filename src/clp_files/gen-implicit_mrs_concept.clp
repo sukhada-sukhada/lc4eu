@@ -26,6 +26,7 @@
 (not (rel_name-ids ord ?id $?v))
 (not (rel_name-ids card ?id $?v))
 (not (rel_name-ids dem ?id $?v1))
+(not (rel_name-ids quant ?id $?v1))
 (not (rel_name-ids r6 ?id ?r6))  ;merA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
@@ -45,6 +46,7 @@
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
 (not (rel_name-ids dem ?id $?v))
+(not (rel_name-ids quant ?id $?v))
 (not(id-concept_label	?id 	?concept&speaker|addressee|vaha|yaha|saba_4))
 (not (rel_name-ids coref ?	?id))
 =>
@@ -58,6 +60,7 @@
 (id-mass ?id yes)
 (not (id-def ?id yes))
 (not (rel_name-ids dem ?id ?))
+(not (rel_name-ids quant ?id ?))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
@@ -447,12 +450,27 @@
 (printout ?*defdbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
 )
 
+;This rule creates _honorable_a_1 for the respect word "ji" and doesn't create for the respect word of the addressee.
 ;361: manwrIjI ne kala manxira kA uxGAtana kiyA. The honorable minister inaugurated the temple yesterday.
 (defrule respect
 (id-respect  ?id  yes)
+(rel_name-ids ?rel ? ?id)
+(not(id-concept_label	?id 	addressee))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept  "?id"  _honorable_a_1 )"crlf)
-(printout ?*defdbug* "(rule-rel-values respect id-MRS_concept "?id" _honorable_a_1 )"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _honorable_a_1 )"crlf)
+(printout ?*defdbug* "(rule-rel-values respect id-MRS_concept "(+ ?id 1000)" _honorable_a_1 )"crlf)
 )
+
+;This rules creates _also_a_1 when emphatic exists in the USR
+;101 verified sentence #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
+;113 verified sentence #sUrya camakawA BI hE.
+(defrule emphatic
+(id-emph  ?id  yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _also_a_1)"crlf)
+(printout ?*defdbug* "(rule-rel-values emphatic id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
+)
+
+
 
 

@@ -1,10 +1,11 @@
 #kyA mEM kala Gara jA sakawA hUz?
 ,speaker,kala_2,Gara_1,jA_1-0_sakawA_hE_3
 1,2,3,4,5
-yes_no_qsn,,,,
-,[- sg u],,,
-,5:k1,5:k7,5:k2,0:main
+,,,,
+,[m sg u],,,
+,5:k1,5:k7,5:k2p,0:main
 ,,,,
 ,,,,
 ,,,,
 interrogative
+

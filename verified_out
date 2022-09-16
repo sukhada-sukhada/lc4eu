@@ -17,11 +17,17 @@ I can't speak Rusi.
 #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
 101
 Also, Vivek invited Rahul, for the function.
+Also, Vivek invited Rahul, for the functions.
 Also, Vivek invited Rahul for the function.
+Also, Vivek invited Rahul for the functions.
 Also Vivek invited Rahul, for the function.
 Vivek also invited Rahul, for the function.
+Also Vivek invited Rahul, for the functions.
+Vivek also invited Rahul, for the functions.
 Also Vivek invited Rahul for the function.
 Vivek also invited Rahul for the function.
+Also Vivek invited Rahul for the functions.
+Vivek also invited Rahul for the functions.
 
 #rAma ko Pala KAnA hogA.
 102
@@ -87,9 +93,7 @@ The sun also shines.
 #kyA mEM jA sakawA hUz?
 114
 May I go?
-May we go?
 I may go?
-We may go?
 
 #kyA mEM kala Gara jA sakawA hUz?
 115
@@ -333,7 +337,6 @@ Come, to Xilli.
 
 #rAma ne kAma kiyA WA
 153
-Rama had performed the jobs.
 Rama had performed the job.
 
 #rAma ne KAnA KAyA hE.
@@ -342,8 +345,8 @@ Rama has eaten the food.
 
 #BEravanAWa mAz vERNo ke xvArA katarA  meM mArA gayA hE.
 155
-Beravanawa has been killed by Maz verno, in Katara.
-Beravanawa has been killed by Maz verno in Katara.
+Beravanawa has been killed by Maz+verno, in Katara.
+Beravanawa has been killed by Maz+verno in Katara.
 
 #rAvaNa rAma ke xvArA laMkA meM mArA gayA hE.
 156
@@ -402,7 +405,7 @@ The field had abundant grapes.
 166
 The grapes were juicy.
 
-saviwA rImA ko xasa seba xegI.
+#saviwA rImA ko xasa seba xegI.
 167
 Saviwa will give ten apples to Rima.
 Saviwa will give Rima ten apples.
@@ -658,13 +661,13 @@ Rama gave a blue book to Mohana.
 
 #haMsa suKI hE.
 210
-Swans are happy.
+The swan is happy.
 
 #rAjA ke pAsa paMKa hEM
 211
 The king has wings.
 
-#haMsoM ne bAwacIwa kI.
+#haMsoM ne bAwacIwa kI.
 212
 The swans talked.
 
@@ -681,11 +684,11 @@ The boy has come from the city.
 
 #wAlAba meM haMsa hE.
 215
-Swans are in the pool.
+A swan is in the pool.
 
 #ladake ne nayI kiwAba paDI.
 216
-The boy studied a novel book.
+The boy studied a new book.
 
 #rAma xvArA KIra KAyI gayI.
 217
@@ -781,7 +784,7 @@ I came from the city for him.
 
 #ayAn ke pAsa WodZA pAnI WA.
 229
-Ayan had a little water.
+Ayan had little water.
 
 #mohana rAma ko apane vixyAlaya bulAwA hE.
 23
@@ -927,11 +930,8 @@ He watched the movie.
 #ladake ne KAnA nahIM KAyA.
 25
 The boy did not eat food.
-The boy did not eat foods.
 The boy didn't eat food.
 The boy did not eat food.
-The boy didn't eat foods.
-The boy did not eat foods.
 
 #unhoMne bagZIce meM KAnA KAyA.
 250
@@ -1055,7 +1055,7 @@ Who won the match?
 
 #vaha KaragoSa ko pyAra karawA WA
 270
-He loved the rabbit.
+He used to love the rabbit.
 
 #Riwesa KaragoSa ko GAsa xewA hE.
 271
@@ -1106,7 +1106,6 @@ The rabbit was eating grass.
 #rAma ko xuHKa hE.
 28
 Rama has grief.
-Rama has griefs.
 
 #riweSa ko samaJa A gayA
 280
@@ -1148,7 +1147,7 @@ He once saw a turtle.
 287
 The rabbit mocked the turtle.
 
-#usane kaCue ko xOdZa ke lie cunOwI xI.
+#usane kaCue ko xOdZa ke liye cunOwI xI.
 288
 He challenged the turtle to a race.
 
@@ -1186,7 +1185,7 @@ The rabbit got tired.
 294
 The rabbit stopped.
 
-#usane kaCuA ke lie xUra se paryavekRaNa kiyA.
+#usane kaCuA ke liye xUra se paryavekRaNa kiyA.
 295
 He scanned from the distance, for the turtle.
 He scanned, from the distance, for the turtle.
@@ -1392,7 +1391,7 @@ The sun is a big star.
 323
 The sun is the biggest star.
 
-#गुलाब जैसे फूल पानी में नहीं उगते हैं।			
+#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 324
 Flowers like roses do not grow in water.
 Flowers like roses do not grow in water.
@@ -1533,14 +1532,12 @@ I ate a good fruit.
 
 #mEMne acCI kiwAba paDI hE.
 37
-I read a good book.
+I have read a good book.
 
 rAma ne SyAma xvArA mohana se BiKArI ko xAna xilavAyA.
 38
 Rama asked Syama to make Mohana give the donation to the beggar.
-Rama asked Syama to make Mohana give the donations to the beggar.
 Rama asked Syama to make Mohana give the beggar the donation.
-Rama asked Syama to make Mohana give the beggar the donations.
 
 #ye prawIka hE.
 39
@@ -1627,7 +1624,7 @@ I went in the city to a school.
 I went, to a school in the city.
 I went to a school in the city.
 
-#mEM usake lie Sahara gayA.
+#ladakA usake lie Sahara gayA.
 51
 The boy went to the city, for himself.
 The boy went to the city, for him.

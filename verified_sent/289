@@ -1,10 +1,12 @@
 #kaCue ne cunOwI ko svIkAra kIyA.
 kaCuA_1,cunOwI_1,svIkAra_1-yA_1
 1,2,3
-,,
-[m sg a],[m sg a],
+anim,,
+[- sg a],[- sg a],
 3:k1,3:k2,0:main
 ,,
 def,def,
 ,,
 affirmative
+
+

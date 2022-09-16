@@ -69,4 +69,20 @@ else
 )
 )
 
+;This rule is for the gnp values of the addressee. It replaces gender and number of addressee with '-'
+(defrule gnp-of-eng_pron-addressee
+(declare (salience 1000))
+?f<-(id-gen-num-pers ?id1 ?g ?n m)
+(id-concept_label	?id1 	addressee)
+(MRS_concept-H_G-Eng_G   pron   ?g  ?eg )
+(MRS_concept-H_N-Eng_N   pron   ?n  ?en)
+(MRS_concept-H_P-Eng_P   pron   ?hp  2)
+(not (modified id-gen-num-pers ?id1))
+=>
+(assert (modified id-gen-num-pers ?id1))
+(retract ?f)
+(printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 " - - 2)"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron-addressee id-GEN-NUM-PER "?id1 " - - 2)"crlf)
+)
+
 

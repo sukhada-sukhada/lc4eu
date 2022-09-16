@@ -24,7 +24,7 @@
 
 ;Restr-Trstricted fact for mrs concepts like _each_q, _which_q etc
 (defrule rstr-rstd4non-implicit
-(rel_name-ids ord|cord|dem ?head ?dep)
+(rel_name-ids ord|card|dem|quant ?head ?dep)
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x ?rstr $?vars)
 (test (neq ?endsWith_q ?mrsCon))
@@ -43,6 +43,19 @@
 ;(printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
 ;(printout ?*rstr-rstd-dbg* "(rule-rel-values rstr-rstd4non-implicit "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " ?rstr " " (implode$ (create$ $?vars)) ")"crlf)
 )
+
+;(defrule each-mod
+;(rel_name-ids mod ?head ?dep)
+;(MRS_info ?rel ?head ?mrscon ?lbl ?ARG0)
+;?f<-(MRS_info ?rel1 ?dep ?endswith_q ?lbl1 ?arg0 ?rstr ?body)
+;(test (neq (str-index _q  ?endswith_q) False))
+;(test (neq (str-index _n_ ?mrscon) False))
+;(test (eq (str-index _a_ ?endswith_q) False))
+;=>
+;(printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl ")"crlf)
+;(printout ?*rstr-rstd-dbg* "(rule-rel-values each-mod Restr-Restricted  "?rstr"  "?lbl ")"crlf)
+;)
+
 
 
 ;Restr-Trstricted fact for implicit mrs concepts like _a_q, pronoun_q
@@ -152,24 +165,24 @@
 
 ;Restrictor for LTOP Restrictor-Restricted default value vAkya_vn
 ;Ex. sUrya camakawA BI hE. The sun also shines.
-(defrule LTOP-vAkya_vn
-(rel_name-ids	vAkya_vn	?id1 ?id2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id2 ?mrsalso ?lbl ?arg0 $?vars)
-=>
- (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
- (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-vAkya_vn Restr-Restricted  h0 "?lbl ")"crlf)
-)
+;(defrule LTOP-vAkya_vn
+;(rel_name-ids	vAkya_vn	?id1 ?id2)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id2 ?mrsalso ?lbl ?arg0 $?vars)
+;=>
+; (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
+;(printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-vAkya_vn Restr-Restricted  h0 "?lbl ")"crlf)
+;)
 
 ;Restrictor for  vAkya_vn
 ;Ex. sUrya camakawA BI hE. The sun also shines.
-(defrule rstr-rstd_vakya_vn
-(rel_name-ids vAkya_vn ?id1 ?id2)
-(MRS_info ?rel1  ?id1  ?mrsV ?lbl ?arg0 ?arg1 $?var)
-(MRS_info ?rel ?id2 ?mrsalso ?lbl1 ?arg10 ?arg20 $?vars)
-=>
- (printout ?*rstr-rstd* "(Restr-Restricted  "?arg20 " "?lbl ")" crlf)
- (printout ?*rstr-rstd-dbg* "(rule-rel-values rstr-rstd-vAkya_vn Restr-Restricted  "?arg20 " "?lbl ")"crlf)
-)
+;(defrule rstr-rstd_vakya_vn
+;(rel_name-ids vAkya_vn ?id1 ?id2)
+;(MRS_info ?rel1  ?id1  ?mrsV ?lbl ?arg0 ?arg1 $?var)
+;(MRS_info ?rel ?id2 ?mrsalso ?lbl1 ?arg10 ?arg20 $?vars)
+;=>
+; (printout ?*rstr-rstd* "(Restr-Restricted  "?arg20 " "?lbl ")" crlf)
+; (printout ?*rstr-rstd-dbg* "(rule-rel-values rstr-rstd-vAkya_vn Restr-Restricted  "?arg20 " "?lbl ")"crlf)
+;)
 
 
 ;Restrictor for  vk2
@@ -521,3 +534,22 @@
     (printout ?*rstr-rstd-dbg* "(rule-rel-values want-k2-rstr  Restr-Restricted " ?arg2 " "?l")"crlf)
 
 )
+
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 21000 _also_a_1 h5 e6 h7)
+;This rule creates rstr binding with emphatic word "also" and the verb along it emphasize.
+;101 verified sentence #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
+;113 verified sentence #sUrya camakawA BI hE.
+(defrule emph-also-verb
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?arg0 ?arg1)
+(id-emph  ?id2  yes)
+?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (eq (+ ?id2 1000) ?id)) 
+=>
+(retract  ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values emph-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values emph-also-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+

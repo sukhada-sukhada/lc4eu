@@ -1,10 +1,11 @@
 #kyA wuma nahIM keloge?
 ,addressee,nahIM_1,Kela_1-gA_2
 1,2,3,4
-yes_no_qsn,,,
-,[- - m],,
-,4:k1,,0:main
+,,,
+,[m sg m],,
+,4:k1,4:neg,0:main
 ,,,
 ,,,
-,,4:neg,
+,,,
 interrogative
+

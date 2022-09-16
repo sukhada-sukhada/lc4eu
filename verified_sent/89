@@ -1,10 +1,11 @@
 #kyA wuma xillI meM ho?
 kyA,addressee,xillI,hE_1-pres
 1,2,3,4
-yes_no_qsn,,place,
-,[- - m],[- sg a],
+,anim,place,
+,[m sg m],[- sg a],
 ,4:k1,4:k7p,0:main
 ,,,
 ,,,
 ,,,
 interrogative
+

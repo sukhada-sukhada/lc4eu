@@ -1,10 +1,11 @@
 #kuCa bacce koI Kela Kela sakawe hEM.
 kuCa_1,baccA_2,koI_1,Kela_2,Kela_1-0_sakawA_hE_1
 1,2,3,4,5
-,,,,
+,anim,,,
 ,[- pl a],,[- sg a],
-2:dem,5:k1,4:dem,5:k2,0:main
+,5:k1,,5:k2,0:main
 ,,,,
 ,,,,
-,,,,
+2:quant,,4:quant,,
 affirmative
+
