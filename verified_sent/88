@@ -1,11 +1,11 @@
 #kyA rAma ke pAsa kiwAba hE?
-,rAma,kiwAba_1,state_possession-pres
+,rAma,kiwAba_1,hE_2-pres
 1,2,3,4
 ,per anim,,
 ,[m sg a],[- sg a],
-,possessor,possessed,0:main
+,3:possessor,4:k1,0:main
 ,,,
 ,,def,
 ,,,
-interrogative
+yn_interrogative
 

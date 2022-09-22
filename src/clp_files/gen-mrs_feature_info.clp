@@ -107,9 +107,10 @@
 ;     He did not eat.
 (defrule active-k2-absent
 (declare (salience 200))
-?f1<-(sentence_type    affirmative|negative|interrogative)
+?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
 (not (rel_name-ids k2   ?kri    ?k2))   
+(test (eq (str-index _have_v_1 ?mrscon) FALSE))
 =>
 (retract ?f1 ?f)
 (bind ?a2 (str-cat "u" (sub-string 2 (str-length ?arg2) ?arg2)))
@@ -122,7 +123,7 @@
 ;   Having gone to the school Rama ate food.
 (defrule k1-absent
 (declare (salience 200))
-?f1<-(sentence_type    affirmative|negative|interrogative)
+?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
 ?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 $?v)
 (not (rel_name-ids k1   ?kri    ?k1))
 (test (neq (str-index _v_ ?mrscon) FALSE))

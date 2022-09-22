@@ -1,9 +1,9 @@
 #rAma ke pAsa WodZA pAnI hE.
-rAma,WodZA_2,pAnI_1,state_possession-pres
+rAma,WodZA_2,pAnI_1,hE_2-pres
 1,2,3,4
-per,,mass,
+per anim,,mass,
 [m sg a],,[- sg a],
-possessor,,possessed,0:main
+3:possessor,,4:k1,0:main
 ,,,
 ,,,
 ,3:quant,,

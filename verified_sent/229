@@ -1,10 +1,10 @@
 #ayAn ke pAsa WodZA pAnI WA.
-ayAn,WodZA_1,pAnI_1,state_possession-past
+ayAn,WodZA_2,pAnI_1,hE_2-past
 1,2,3,4
 per anim,,mass,
 [m sg a],,[- sg a],
-possessor,3:mod,possessed,0:main
+3:possessor,,4:k1,0:main
 ,,,
 ,,,
-,,,
+,3:quant,,
 affirmative

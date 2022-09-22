@@ -1,9 +1,9 @@
 #Kewa meM bahuwa aMgUra We
-Kewa_1,bahuwa_3,aMgUra_1,state_possession-past
+Kewa_1,bahuwa_3,aMgUra_1,hE_1-past
 1,2,3,4
 ,,,
 [- sg a],,[- pl a],
-possessor,3:mod,possessed,0:main
+4:k7p,3:mod,4:k1,0:main
 ,,,
 def,,,
 ,,,

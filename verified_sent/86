@@ -1,9 +1,9 @@
 #ladake ke pAsa kiwAba hE.
-ladakA_1,kiwAba_1,state_possession-pres
+ladakA_1,kiwAba_1,hE_2-pres
 1,2,3
 anim,,
 [m sg a],[- sg a],
-possessor,possessed,0:main
+2:possessor,3:k1,0:main
 ,,
 def,def,
 ,,

@@ -77,12 +77,6 @@ for i in range(len(depRels)):
                 sam1 = [i for i, n in enumerate(depRels) if n == 'samAnAXi'][0]
                 sam2 = [i for i, n in enumerate(depRels) if n == 'samAnAXi'][1]
                 ans.write('(rel_name-ids\tsamAnAXi\t' + str(((sam1+1)*10000)) + '  ' + str(((sam2+1)*10000)) + ')\n' )
-            elif 'AXAra' in idRel: #
-                AXAra = [i for i, n in enumerate(depRels) if n == 'AXAra'][0]
-                AXeya = [i for i, n in enumerate(depRels) if n == 'AXeya'][0]
-                ans.write('(rel_name-ids\tAXAra-AXeya\t' + str(((AXAra+1)*10000)) + '  ' + str(((AXeya+1)*10000)) + ')\n' )
-            elif 'AXeya' in idRel:
-                pass
             elif 'anuBAvya' in idRel: #
                 anuBava = [i for i, n in enumerate(depRels) if n == 'anuBava'][0]
                 anuBAvaka = [i for i, n in enumerate(depRels) if n == 'anuBAvaka'][0]
@@ -93,12 +87,6 @@ for i in range(len(depRels)):
                 anuBAvaka = [i for i, n in enumerate(depRels) if n == 'anuBAvaka'][0]
                 ans.write('(rel_name-ids\tanuBava-anuBAvaka\t' + str(((anuBava+1)*10000)) + '  ' + str(((anuBAvaka+1)*10000)) + ')\n' )
             elif 'anuBAvaka' in idRel:
-                pass
-            elif 'possessed' in idRel: #
-                possessed = [i for i, n in enumerate(depRels) if n == 'possessed'][0]
-                possessor = [i for i, n in enumerate(depRels) if n == 'possessor'][0]
-                ans.write('(rel_name-ids\tpossessed-possessor\t' + str(((possessed+1)*10000)) + '  ' + str(((possessor+1)*10000)) + ')\n' )
-            elif 'possessor' in idRel:
                 pass
             else:
                 try:

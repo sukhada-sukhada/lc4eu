@@ -1,9 +1,9 @@
-#riweSa ke pAsa KaragoSa WA
-riweSa,KaragoSa_1,state_possession-past
+#riweSa ke pAsa KaragoSa WA.
+riweSa,KaragoSa_1,hE_2-past
 1,2,3
-per anim,,
-[m sg -],[m sg -],
-possessor,possessed,0:main
+per anim,anim,
+[m sg -],[- sg a],
+2:possessor,3:k1,0:main
 ,,
 ,,
 ,,

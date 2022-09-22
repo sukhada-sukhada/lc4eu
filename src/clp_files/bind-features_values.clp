@@ -167,6 +167,7 @@
 ;replace ARG1 of the verb with ARG0 of k4a/anuBAvaka & ARG2 of verb with ARG0 of k1/anuBava.
 ;ex INPUT: rAma ko buKAra hE. OUTPUT: rAma has fever.
 (defrule anuBava
+(declare (salience 500))
 (id-concept_label ?v_id hE_1|WA_1)
 (rel_name-ids   k1    ?v_id  ?id1)
 (rel_name-ids   k4a   ?v_id  ?id2)
@@ -186,20 +187,24 @@
 ;Rule for possessor-possessed : for binding ARG1 & ARG2 of the verb with the ARG0 values of possessor and possessed)
 ;replace ARG1 of the verb with ARG0 of possessor & ARG2 of verb with ARG0 of possessed.
 ;ex INPUT: rAma ke pAsa kiwAba hE. OUTPUT: rAma has the book.
+;(rel_name-ids	possessor	30000	10000)
+;(rel_name-ids	k1	40000	30000)
 (defrule possession
-(id-concept_label       ?v_id   state_possession|hE_1|WA_1)
-(rel_name-ids   possessed-possessor       ?id1  ?id2)
+(declare (salience 5000))
+(id-concept_label  ?v_id  hE_2)
+?f1<-(rel_name-ids	k1	?v_id	?k1)
+(rel_name-ids  possessor       ?k1  ?id2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
-(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
 (MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
 (test (eq (str-index _q ?mrsCon1) FALSE))
 (test (neq ?arg1 ?id1_arg0))
-(not (modified_possessed ?id1))
+(not (modified_possessed ?id2))
 =>
-(retract ?f)
-(assert (modified_possessed ?id1))
+(retract ?f ?f1)
+(assert (modified_possessed ?id2))
 (assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
-(printout ?*rstr-dbug* "(rule-rel-values possession "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values possession "?rel_name" "?v_id" "?mrsCon" "?lbl" "?arg0" "?id2_arg0" "?id1_arg0")"crlf)
 )
 
 ;Rule for verb when only karta is present : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
@@ -213,6 +218,7 @@
 (test (neq ?arg1 ?argwA_0))
 (not (modified_k1 ?karwA))
 (test (neq (str-index "_v_" ?mrsCon)FALSE))
+(not (modified_possessed ?karwA))
 =>
 (retract ?f)
 (assert (modified_k1 ?karwA))
@@ -939,7 +945,7 @@ else
 ;for question sentence information
 (defrule kri-tam-q
 (kriyA-TAM ?kri ?tam)
-(sentence_type  interrogative|pass-interrogative)
+(sentence_type  yn_interrogative|interrogative|pass-interrogative)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -986,7 +992,7 @@ then
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense modal)
 (kriyA-TAM ?kri ?tam)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
-(sentence_type  affirmative|interrogative|negative)
+(sentence_type  affirmative|interrogative|yn_interrogative|negative)
 (test (or (neq (str-index _v_modal ?mrs_modal) FALSE) (neq (str-index _v_qmodal ?mrs_modal) FALSE)));_used+to_v_qmodal
 =>
 (assert (asserted_LTOP-INDEX-for-modal))
@@ -994,16 +1000,16 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values tam-modal  LTOP-INDEX h0 "?arg0 ")"crlf)
 )
 
-(defrule tam-wish
-(kriyA-TAM ?kri_id nA_cAhawA_hE_1) 
-(MRS_info ?rel ?mod  _want_v_1 ?l ?arg0 ?a1 ?a2)
-(sentence_type  affirmative|interrogative|negative)
-(test (eq ?mod (+ ?kri_id 100)))
-=>
-(assert (asserted_LTOP-INDEX-for-modal))
-(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
-(printout ?*rstr-dbug* "(rule-rel-values tam-wish  LTOP-INDEX h0 "?arg0 ")"crlf)
-)
+;(defrule tam-wish
+;(kriyA-TAM ?kri_id nA_cAhawA_hE_1) 
+;(MRS_info ?rel ?mod  _want_v_1 ?l ?arg0 ?a1 ?a2)
+;(sentence_type  affirmative|interrogative|negative)
+;(test (eq ?mod (+ ?kri_id 100)))
+;=>
+;(assert (asserted_LTOP-INDEX-for-modal))
+;(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+;(printout ?*rstr-dbug* "(rule-rel-values tam-wish  LTOP-INDEX h0 "?arg0 ")"crlf)
+;)
 
 ;generates LTOP and INDEX values for causative.
 ;ex. SikRikA ne CAwroM se kakRA ko sAPa karAyA.

@@ -1,9 +1,9 @@
 #rAjA ke pAsa paMKa hEM
-rAjA_1,paMKa_1,state_possession-pres
+rAjA_1,paMKa_1,hE_2-pres
 1,2,3
 anim,,
 [- sg a],[- pl a],
-possessor,possessed,0:main
+2:possessor,3:k1,0:main
 ,,
 def,,
 ,,
