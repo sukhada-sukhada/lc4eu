@@ -1,10 +1,10 @@
 #kyA Apa AeMge?
-,addressee,A_1-gA_2
-1,2,3
-,,
-,[m sg m],
-,3:k1,0:main
-,,
-,,
-,,
+addressee,A_1-gA_2
+1,2
+,
+[m sg m],
+2:k1,0:main
+,
+,
+,
 yn_interrogative

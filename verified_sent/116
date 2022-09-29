@@ -1,10 +1,10 @@
 #kyA usane nahIM KAyA?
-,vaha,nahIM_1,KA_1-yA_1
-1,2,3,4
-,,,
-,[m sg a],,
-,4:k1,4:neg,0:main
-,101.1:coref,,
-,,,
-,,,
+vaha,nahIM_1,KA_1-yA_1
+1,2,3
+,,
+[m sg a],,
+3:k1,3:neg,0:main
+101.1:coref,,
+,,
+,,
 yn_interrogative
