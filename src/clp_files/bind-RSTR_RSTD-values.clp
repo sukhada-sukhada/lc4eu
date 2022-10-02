@@ -155,6 +155,8 @@
 (not (id-stative ?id1 yes))
 (not (id-double_causative	?id	yes))
 (not (rel_name-ids	vmod_pk	?id	?kri_id))
+(not (rel_name-ids	vmod_kr_vn	?id	?kri_id))
+(not (rel_name-ids	vmod_sk	?id	?kri_id))
 (not (rel_name-ids	vmod_pk	?kri_id	?id))
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 (not(rel_name-ids vAkya_vn ?id_1 ?id_2))
@@ -284,6 +286,61 @@
 
  (printout ?*rstr-rstd* "(Restr-Restricted  "?arg1 " "?lbl1 ")" crlf)
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subord Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
+)
+
+;It creates binding for vmod_kr_vn with subord abstract typed feature
+;verified sentence 338 #वह लंगडाकर चलता है.
+;Restrictor for LTOP Restrictor-Restricted default value subord
+(defrule LTOP-subord-kv
+(rel_name-ids	vmod_kr_vn	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1	?id1 ?mrsCon1 ?lbl1 $?var)
+(MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subord-kv Restr-Restricted  h0 "?lbl ")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl2 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subord-kv Restr-Restricted  "?arg2 " "?lbl2 ")"crlf)
+
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg1 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subord-kv Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
+)
+
+;It creates binding for vmod_sk with _while_x
+;verified sentence 339 #राम सोते हुए खर्राटे भरता है।
+(defrule LTOP-while
+(rel_name-ids	vmod_sk		?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -30000 _while_x ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
+(MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-while Restr-Restricted  h0 "?lbl ")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl2 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-while Restr-Restricted  "?arg2 " "?lbl2 ")"crlf)
+
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg1 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-while Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
+)
+
+;It creates binding for vmod_kr_vn with _while_x
+; verified sentence 340#भागते हुए शेर को देखो
+(defrule LTOP-while-kr
+(rel_name-ids	vmod_kr_vn	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -30000 _while_x ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 ?mrsCon1 ?lbl1 $?var)
+(MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-while Restr-Restricted  h0 "?lbl ")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl2 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-while Restr-Restricted  "?arg2 " "?lbl2 ")"crlf)
+
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg1 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-while Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
 )
 
 (defrule LTOP-subordst

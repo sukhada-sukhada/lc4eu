@@ -135,6 +135,23 @@
 )
 
 
+;This rule converts kridant arg1 x* to u* when k1 is absent for any type of sentence.
+; verified sentence 340 #भागते हुए शेर को देखो
+(defrule k1-absent-4-vmod
+(declare (salience 200))
+;?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
+?f<-(MRS_info ?rel ?kridant ?mrscon ?lbl ?arg0 ?arg1 $?v)
+(rel_name-ids ?vmod   ?main    ?kridant)
+(not (rel_name-ids k1   ?kridant    ?k1))
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (neq (str-index vmod_ ?vmod) FALSE))
+=>
+(retract ?f)
+(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kridant" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values k1-absent-4-vmod "?rel" "?kridant" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
+)
+
 
 
 ;Changing the ARG0 value (e*) to i* for imperative(-nagetive) sentences.

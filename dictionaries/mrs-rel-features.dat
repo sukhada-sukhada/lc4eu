@@ -24733,4 +24733,5 @@
 (MRS_concept-label-feature_values _that_x_deg LBL: h* ARG0: e* ARG1: e* ARG2: u*)
 (MRS_concept-label-feature_values _every_q LBL: h* ARG0: x* RSTR: h* BODY: h*)
 (MRS_concept-label-feature_values _want_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
+(MRS_concept-label-feature_values _while_x LBL: h* ARG0: e* ARG1: h* ARG2: h*)
 

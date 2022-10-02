@@ -246,6 +246,38 @@
 (printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
 )
 
+;It creates mrs rel feature subord for sentences with vmod_kr_vn
+;verified sentence 338 #वह लंगडाकर चलता है.
+(defrule mrs_subord-kr
+(rel_name-ids	vmod_kr_vn	?kri	?kvn)
+(MRS_concept-label-feature_values ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
+(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_subord-kr id-MRS_concept -20000 subord)"crlf)
+)
+
+;It creates mrs rel feature _while_x for sentences with vmod_sk
+;verified sentence 339 #राम सोते हुए खर्राटे भरता है। 
+(defrule mrs_while
+(rel_name-ids	vmod_sk		?id	?kri)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -30000  _while_x)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_while id-MRS_concept -30000  _while_x)"crlf)
+)
+
+;It creates mrs rel feature _while_x for sentences with vmod_kr_vn
+; verified sentence 340#भागते हुए शेर को देखो
+(defrule krvn_while
+(rel_name-ids	vmod_kr_vn ?kri ?kvn)
+(MRS_concept-label-feature_values ?mrscon ?lbl ?l ?arg0 ?a0 ?arg1 ?a1 ARG2: ?a2)
+(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -30000  _while_x)"crlf)
+(printout ?*defdbug* "(rule-rel-values krvn_while id-MRS_concept -30000  _while_x)"crlf)
+)
+
+
 ;rule for interrogative sentences for 'who'
 ;(defrule mrs_inter_who
 ;(id-concept_label ?id kOna_1)

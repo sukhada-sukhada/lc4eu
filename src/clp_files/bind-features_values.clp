@@ -55,7 +55,7 @@
 ;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
 ;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
-(rel_name-ids mod|intf|card ?viya ?viNa)
+(rel_name-ids mod|intf|card|vmod_vks ?viya ?viNa)
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 ;(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
@@ -844,6 +844,36 @@ else
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values vmod_pk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 )
+
+;It creates TAM for vmod_vks
+;verified sentence 341 #भागते हुए शेर को देखो
+(defrule vmod_vks
+(rel_name-ids	vmod_vks	?id	?kri)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_vks id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
+)
+
+;It creates TAM for vmod_kr_vn
+;verified sentence 338 #वह लंगडाकर चलता है.
+;verified sentence 340#भागते हुए शेर को देखो
+(defrule vmod_kr_vn
+(rel_name-ids	vmod_kr_vn	?kri	?kvn)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_kr_vn id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
+)
+
+;It creates TAM for vmod_sk
+;verified sentence 339 #राम सोते हुए खर्राटे भरता है। 
+(defrule vmod_sk
+(rel_name-ids	vmod_sk	?id	?kri)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_sk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
+)
+
+
 
 ;genrate tense value for vmod_pk in get_v_state
 (defrule vmod_pk2
