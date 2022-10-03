@@ -183,7 +183,7 @@ You will play?
 125
 Ravana was killed.
 
-#rAma dAktara nahIM hE.
+#rAma doYktara nahIM hE.
 126
 Rama is not a doctor.
 Rama isn't a doctor.
@@ -473,7 +473,7 @@ Rama has the advantage.
 178
 A lion was in the forest.
 
-#kyA rAma dAktara hE ?
+#kyA rAma doYktara hE ?
 179
 Rama is a doctor?
 Rama is a Dr.?
@@ -513,7 +513,7 @@ Come to Delhi.
 Come to Delhi.
 Come, to Delhi.
 
-#rAma dAktara hE.
+#rAma doYktara hE.
 184
 Rama is a doctor.
 
@@ -799,7 +799,7 @@ I will come tomorrow.
 I will come, tomorrow.
 I will come tomorrow.
 
-#vaha acCA dAktara hE
+#vaha acCA doYktara hE
 231
 He is a good doctor.
 
@@ -881,7 +881,7 @@ Bring fruits, for the boy from the forest.
 Siwa saw the zoo, in Xilli.
 Siwa saw the zoo in Xilli.
 
-#aMSa dAktara hE
+#aMSa doYktara hE
 241
 Amsa is a doctor.
 
@@ -1531,6 +1531,30 @@ While running, watch the lion.
 While running watch the lion.
 While running watch the lion.
 
+#BAgawe hue Sera ko xeKo.
+341
+Watch the running lion.
+Watch the lion, running.
+Watch the lion running.
+Watch the running lion.
+
+#KIra ke liye cAvala KarIxo.
+342
+Buy rice, for Kira.
+Buy rice for Kira.
+
+#KIra ke liye KarIxo.
+343
+
+#hAWI JUmawA huA calawA hE.
+344
+Swaying, an elephant walks.
+An elephant walks swaying.
+
+#rAma hazsawe hue bolawA hE.
+345
+Laughing, Rama talks.
+Rama talks laughing.
 
 #mEM ladake ke lie Sahara se AyA.
 35
@@ -1820,7 +1844,7 @@ She will go with her father to the school.
 She will go, to the school with her father.
 She will go, with her father to the school.
 
-#rAma acCA dAktara hE.
+#rAma acCA doYktara hE.
 75
 Rama is a good doctor.
 
