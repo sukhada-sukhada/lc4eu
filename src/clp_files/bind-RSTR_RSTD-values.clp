@@ -158,6 +158,7 @@
 (not (rel_name-ids	vmod_kr_vn	?id	?kri_id))
 (not (rel_name-ids	vmod_sk	?id	?kri_id))
 (not (rel_name-ids	vmod_pk	?kri_id	?id))
+(not (rel_name-ids	vmod_pka ?id 	?kri_id))
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 (not(rel_name-ids vAkya_vn ?id_1 ?id_2))
 =>
@@ -273,7 +274,7 @@
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord
 (not (id-stative ?id1 yes))
-(rel_name-ids	vmod_pk	?id1	?id2)
+(rel_name-ids	vmod_pk|vmod_pka	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -608,5 +609,18 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values emph-verb Restr-Restricted h0 "?lbl")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values emph-also-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+
+;It creates binding with arg2 value of verb with lbl of adjective
+;#राम खा -खाकर मोटा हो गया ।
+(defrule vmod_pka
+(rel_name-ids	k1s	?kri	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?hin ?lbl ?a0 ?a1 ?arg2)
+(MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+(test (neq (str-index _v_ ?hin) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted "?arg2 " "?l")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  vmod_pka  Restr-Restricted "?arg2" "?l")"crlf)
 )
 

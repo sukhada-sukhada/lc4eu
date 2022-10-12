@@ -48,7 +48,7 @@ for i in range(len(gnp)):
         if 'superl' in gnp[i]:
             ans.write('(id-degree\t' + str((i+1)*10000) + '\tsuperl)\n')
         elif 'comper' in gnp[i]:
-            ans.write('(id-degree\t' + str((i+1)*10000) + '\tcomper)\n')
+            ans.write('(id-degree\t' + str((i+1)*10000) + '\t' + gnp[i][1:-1] + ')\n')
         elif 'double_causative' in gnp[i]:
             ans.write('(id-double_causative\t' + str((i+1)*10000) + '\tyes)\n')        
         elif 'causative' in gnp[i]:

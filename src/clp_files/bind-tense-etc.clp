@@ -7,8 +7,8 @@
 (defrule tense
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
-(not (id-double_causative	?id	yes))
-(not (id-causative	?id	yes))
+(not (id-double_causative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
+(not (id-causative	?id	yes)) ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 (not (id-stative	?id	yes))
 (not (id-concept_label       ?v   hE_1|WA_1))
 (not (modified_tense ?id))

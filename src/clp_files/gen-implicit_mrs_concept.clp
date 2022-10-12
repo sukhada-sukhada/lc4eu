@@ -16,24 +16,24 @@
 ;Rule for a as a determiner : if the is not present,is not a mass noun and not plural then generate (id-MRS_Rel ?id _a_q)
 (defrule mrsDef_not
 (id-gen-num-pers ?id ?g ?n ?p)
-(not (id-def ?id yes))
-(not (id-mass ?id yes))
-(test (neq ?n  pl))
+(not (id-def ?id yes)) ;#rAma apane piwA ke sAWa vixyAlaya gayA.
+(not (id-mass ?id yes)) ;#wuma pAnI se GadZe ko Baro.
+(test (neq ?n  pl)) 
 (not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
 (not(id-org ?id yes))
-(not(id-per ?id yes))
-(not(id-place ?id yes))
-(not (rel_name-ids ord ?id $?v))
-(not (rel_name-ids card ?id $?v))
-(not (rel_name-ids dem ?id $?v1))
-(not (rel_name-ids quant ?id $?v1))
+(not(id-per ?id yes)) ;#rAvana mArA gayA.
+(not(id-place ?id yes)) ;#rAma xillI meM nahIM hE.
+(not (rel_name-ids ord ?id $?v)) ;#usane eka Kewa xeKA
+(not (rel_name-ids card ?id $?v)) ;#saviwA rImA ko xasa seba xegI.
+(not (rel_name-ids dem ?id $?v1)) ;#rAma yaha kAma kara sakawA hE.
+(not (rel_name-ids quant ?id $?v1)) ;#prawyeka baccA Kela rahA hE.
 (not (rel_name-ids r6 ?id ?r6))  ;merA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
-(not (rel_name-ids deic ?ida	?id))
-(not (rel_name-ids coref ?	?id))
-(not  (id-abs ?id yes))
-(not  (id-ne ?id yes))
+(not (rel_name-ids deic ?ida	?id)) ;#yaha Gara hE.
+(not (rel_name-ids coref ?	?id)) ;#usane nahIM KAyA.
+(not  (id-abs ?id yes)) ;#kyA wumako buKAra hE?
+(not  (id-ne ?id yes)) ;#KIra ke liye cAvala KarIxo.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "(+ ?id 10)" _a_q)"crlf)
@@ -239,15 +239,16 @@
 (printout ?*defdbug* "(rule-rel-values mrs_parg_d  id-MRS_concept "?kri" parg_d)"crlf)
 )
 
+;#rAma ne skUla jAkara KAnA KAyA.
 (defrule mrs_subord
-(rel_name-ids	vmod_pk	?id	?kri)
+(rel_name-ids	vmod_pk|vmod_pka	?id	?kri)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
 )
 
 ;It creates mrs rel feature subord for sentences with vmod_kr_vn
-;verified sentence 338 #वह लंगडाकर चलता है.
+;verified sentence 338 #vaha laMgadAkara calawA hE.
 (defrule mrs_subord-kr
 (rel_name-ids	vmod_kr_vn	?kri	?kvn)
 (MRS_concept-label-feature_values ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
@@ -258,7 +259,7 @@
 )
 
 ;It creates mrs rel feature _while_x for sentences with vmod_sk
-;verified sentence 339 #राम सोते हुए खर्राटे भरता है। 
+;verified sentence 339 #rAma sowe hue KarrAte BarawA hE. 
 (defrule mrs_while
 (rel_name-ids	vmod_sk		?id	?kri)
 =>
@@ -266,8 +267,17 @@
 (printout ?*defdbug* "(rule-rel-values mrs_while id-MRS_concept -30000  _while_x)"crlf)
 )
 
+;It creates mrs rel feature _frequent_a_1 for sentences with vmod_pka
+;rAma KA -KAkara motA ho gayA .
+(defrule mrs_frequent
+(rel_name-ids	vmod_pka	?id	?kri)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -5000 _frequent_a_1)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_frequent id-MRS_concept -5000  _frequent_a_1)"crlf)
+)
+
 ;It creates mrs rel feature _while_x for sentences with vmod_kr_vn
-; verified sentence 340#भागते हुए शेर को देखो
+; verified sentence 340#BAgawe hue Sera ko xeKo
 (defrule krvn_while
 (rel_name-ids	vmod_kr_vn ?kri ?kvn)
 (MRS_concept-label-feature_values ?mrscon ?lbl ?l ?arg0 ?a0 ?arg1 ?a1 ARG2: ?a2)
@@ -461,6 +471,24 @@
 =>
 (printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 10) "  superl)"crlf)
 (printout ?*defdbug* "(rule-rel-values  superl   id-MRS_concept "(+ ?id 10) "  superl)"crlf)
+)
+
+;Rule for creating comp mrs concept for comparative sentences.
+;#rAma mohana se jyAxA buxXimAna hE.
+(defrule comper_more
+(id-degree	?id	comper_more)
+=>
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*defdbug* "(rule-rel-values  comper_more   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+)
+
+;Rule for creating comp mrs concept for comparative sentences.
+;#rAma mohana se kama buxXimAna hE .
+(defrule comper_less
+(id-degree	?id comper_less)
+=>
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
+(printout ?*defdbug* "(rule-rel-values  comper_more   id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
 )
 
 ;rule for generating  _make_v_cause

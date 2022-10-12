@@ -55,7 +55,7 @@
 ;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
 ;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
-(rel_name-ids mod|intf|card|vmod_vks ?viya ?viNa)
+(rel_name-ids mod|intf|card|vmod_vks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 ;(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
@@ -70,7 +70,7 @@
 ;Rule for binding/replacing ARG0 value of demonstrative_pronoun with ARG0 value of viSeRya
 ;Ex. rAma yaha kAma  kara sakawA. Rama can do this work.
 (defrule dem
-(rel_name-ids dem|quant ?viya ?viNa)
+(rel_name-ids dem|quant ?viya ?viNa) ; 142,129 respectively. 
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 ?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 (test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q")) 
@@ -93,7 +93,7 @@
 
 (defrule kr_vn
 (declare (salience 1000))
-(rel_name-ids kr_vn ?kri ?kri_vi)
+(rel_name-ids kr_vn ?kri ?kri_vi) ;#aXyApaka aBI Aye hEM.
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
 ?f<-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 (not (modified_kr_vn ?kri_vi))
@@ -109,7 +109,7 @@
 ;replace ARG1 of adjective with ARG0 of non-adjective
 ;ex INPUT: rAma acCA hE. OUTPUT: Rama is good.
 (defrule samAnAXi
-(rel_name-ids   k1	?non-adj ?k1)
+(rel_name-ids   k1	?non-adj ?k1) ;#yaha Gara hE.
 (rel_name-ids	k1s	?non-adj ?adj)
 ?f<-(MRS_info ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
@@ -209,6 +209,7 @@
 
 ;Rule for verb when only karta is present : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;replace ARG1 of kriyA with ARG0 of karwA
+;#rAju ko buKAra hE
 (defrule v-k1
 ;(declare (salience 10))
 (rel_name-ids	k1|k4a	?kriyA ?karwA)
@@ -229,6 +230,7 @@
 
 ;Rule for verb when only causative karta is present : for (kriyA-pk1 ? ?) and  (kriyA-k2 ? ?) is not present for causative
 ;replace ARG1 of the kriyA "_make_v_cause" with ARG0 of karwA
+;#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 (defrule v-pk1
 (id-causative	?kriya	yes)
 (rel_name-ids	pk1	?kriyA ?karwA)
@@ -248,6 +250,7 @@
 
 ;Rule for verb when only prayojaka karta is present : for (kriyA-jk1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;replace ARG1 of main kriyA with ARG0 of prayojaka karwA
+;#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 ;Ex. 
 (defrule v-jk1
 (id-causative	?kriya	yes)
@@ -267,7 +270,9 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-jk1 MRS_info "?rel_name " " ?kriyA  " "?mrsCon" " ?lbl " "?arg0 " "?argwA_0 " )"crlf)
 )
 
+;Rule for binding ARG1 of ask with ARG0 of karwa.
 ;genrates binding for double causative
+;mAz ne rAma se bacce ko KAnA KilavAyA.
 (defrule v-p1k1
 (id-double_causative	?kriya	yes)
 (rel_name-ids	pk1	?kriyA ?karwA)
@@ -285,6 +290,8 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-p1k1 MRS_info "?rel3 " " ?ask_id1 " _ask_v_1 " ?lbl3 " "?A30 " "?argwA_0 " " ?A32" "A33")"crlf)
 )
 
+;mAz ne rAma se bacce ko KAnA KilavAyA.
+;Rule to bind ARG1 of make_v_cause with ARG0 of karwa. 
 (defrule v-mk1
 (id-double_causative	?kriya	yes)
 (rel_name-ids	mk1	?kriyA ?karwA)
@@ -305,6 +312,8 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-mk1 MRS_info "?rel2 " " ?make_v_id " _make_v_cause " ?lbl2 " "?A20 " "?argwA_0 " " ?A22")"crlf)
 )
 
+;Rule for converting arg1 of kriya with arg0 of karwa
+;mAz ne rAma se bacce ko KAnA KilavAyA.
 (defrule v-j1k1
 (id-double_causative	?kriya	yes)
 (rel_name-ids	jk1	?kriyA ?karwA)
@@ -351,6 +360,7 @@
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (neq ?arg2 ?argma_0))
 (not (modified_k2 ?karma))
+(not (rel_name-ids vmod_pka ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
 =>
 (retract ?f)
 (assert (modified_k2 ?karma))
@@ -358,7 +368,8 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-k2 "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " "?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
 )
 
-
+;Rule to bind every_q with kriya by converting arg2 of kriya with arg0 of every_q
+;rAma sabako skUla bulAwA hE.
 (defrule v-k2_every
 (rel_name-ids    k2         ?kriyA ?every_q)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
@@ -374,11 +385,6 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-k2_every "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " "?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
 )
 
-
-;(rel_name-ids kriyA-k2	30000	10000)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _eat_v_1 h21 e22 x23 x24)
-;(MRS_info id-MRS_concept-LBL-ARG0 10000 _food_n_1 h19 x20)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30100 _get_v_state h7 e8 x9 h10)
 
 ;genrates binding for get_v_state
 (defrule v-stative
@@ -511,6 +517,7 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-home id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg2" "?rstr" "?body ")"crlf)
 )
 
+;#mEM vahAz A rahA hUz.
 (defrule v-there
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
@@ -537,9 +544,6 @@
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-there id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
 )
-
-
-
 
 ;written by sakshi yadav (NIT-Raipur) date-27.05.19
 ;Rule for verb and word yesterday,today,tomorrow is present :
@@ -646,13 +650,7 @@
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr " " ?body ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values r6  id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr" " ?body ")"crlf)
 )
-; (rel_name-ids	AXAra-AXeya	20000  40000)
-; (MRS_info id-MRS_concept-LBL-ARG0 40000 _school_n_1 h28 x29)
-; (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  40010 def_explicit_q h11 x29 h13 h14)
-; (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp h23 e20 e24 x22)
-; (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 def_implicit_q h15 x16 h17 h18)
-; (MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _there_a_1 h23 e24 x25)
-; (MRS_info id-MRS_concept-LBL-ARG0 20000 place_n h26 x27)
+
 (defrule adhar-adheya
 (rel_name-ids	AXAra-AXeya	?adhar  ?adheya)
 (MRS_info id-MRS_concept-LBL-ARG0 ?adheya ?mrs ?l ?a0)
@@ -696,13 +694,7 @@
 
 
 ;Rule for interrogative sent 'where'
-;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 which_q h11 x12 h13 h14)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _live_v_1 h17 e18 x19)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp h7 e8 e9 x10)
-;(MRS_info id-MRS_concept-LBL-ARG0 20000 place_n h15 x16)
-;then
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp lilbl arg0 liarg0 wharg0)
-;(MRS_info id-MRS_concept-LBL-ARG0 20000 place_n plbl wharg0)
+;#Apa kahAz rahawe hEM?
 (defrule ques-where
 (declare (salience 100))
 (rel_name-ids	?r	?id1	?id2)
@@ -723,13 +715,7 @@
 
 
 ;Rule for interrogative sent 'when'
-;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 which_q h13 x14 h15 h16)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _go_v_1 h17 e18 x19)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp h7 e8 e9 x10)
-;(MRS_info id-MRS_concept-LBL-ARG0 20000 time_n h11 x12)
-;then
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp glbl arg0 garg0 targ0)
-;(MRS_info id-MRS_concept-LBL-ARG0 20000 time_n whlbl targ0)
+;#vaha kaba jA rahA hE?
 (defrule ques-when
 (MRS_info ?rel ?id time_n ?tlbl ?targ0)
 (MRS_info ?rel1 ?id1 ?mrsCon1 ?glbl ?garg0 $?vars)
@@ -838,15 +824,18 @@ else
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf  ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
-(defrule vmod_pk
-(rel_name-ids	vmod_pk	?id	?kri)
+
+;rule creates TAM for vmod_pk and vmod_pka
+;#rAma ne skUla jAkara KAnA KAyA
+(defrule vmod_pk_pka
+(rel_name-ids	vmod_pk|vmod_pka	?id	?kri)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_pk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_pk_pka id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 )
 
 ;It creates TAM for vmod_vks
-;verified sentence 341 #भागते हुए शेर को देखो
+;verified sentence 341 BAgawe hue Sera ko xeKo
 (defrule vmod_vks
 (rel_name-ids	vmod_vks	?id	?kri)
 =>
@@ -855,8 +844,8 @@ else
 )
 
 ;It creates TAM for vmod_kr_vn
-;verified sentence 338 #वह लंगडाकर चलता है.
-;verified sentence 340#भागते हुए शेर को देखो
+;verified sentence 338 vaha laMgadAkara calawA hE.
+;verified sentence 340 BAgawe hue Sera ko xeKo
 (defrule vmod_kr_vn
 (rel_name-ids	vmod_kr_vn	?kri	?kvn)
 =>
@@ -865,7 +854,7 @@ else
 )
 
 ;It creates TAM for vmod_sk
-;verified sentence 339 #राम सोते हुए खर्राटे भरता है। 
+;verified sentence 339 #rAma sowe hue KarrAte BarawA hE. 
 (defrule vmod_sk
 (rel_name-ids	vmod_sk	?id	?kri)
 =>
@@ -884,8 +873,15 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values vmod_pk2 id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
 )
 
+(defrule vmod_atb
+(rel_name-ids	vmod_atb	?kri	?id)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_atb id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
+)
 
 ;for negation sentence information
+;#mEM rUsI nahIM bola sakawA hUz.
 (defrule kri-tam-neg
 (kriyA-TAM ?kri ?tam)
 (sentence_type  negative)
@@ -926,6 +922,7 @@ else
 
 
 ;for imperative sentence information
+;#Apa Sahara jAo!
 (defrule kri-tam-imper
 (kriyA-TAM ?kri ?tam)
 (sentence_type  imperative)
@@ -973,6 +970,7 @@ else
 
 
 ;for question sentence information
+;#kyA hari ne pAnI se GadZe ko BarA?
 (defrule kri-tam-q
 (kriyA-TAM ?kri ?tam)
 (sentence_type  yn_interrogative|interrogative|pass-interrogative)
@@ -998,10 +996,12 @@ else
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 (not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
-(not (rel_name-ids	vmod_pk	?id	?kri_id))
+(not (rel_name-ids	vmod_pk	?id	?kri_id)) ;#rAma ne skUla jAkara KAnA KAyA.
+(not (rel_name-ids	vmod_pka	?id	?kri_id)) ;rAma KA -KAkara motA ho gayA .
+(not (rel_name-ids	vmod_atb	?id	?kri_id))
 (not (id-stative ?id yes))
-(not (id-causative ?id yes))
-(not (id-double_causative	?id	yes))
+(not (id-causative ?id yes)) ;#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+(not (id-double_causative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
 (not(rel_name-ids vAkya_vn ?id1 ?id2)) 
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
@@ -1055,7 +1055,7 @@ then
 
 ;generates LTOP and INDEX values for double causative.
 (defrule ask-LTOP
-(id-double_causative	?id	yes)
+(id-double_causative	?id	yes) 
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id1 _ask_v_1 ?lbl ?arg0 $?vars)
 (test (eq  (+ ?id 200) ?id1))
 =>
@@ -1110,8 +1110,6 @@ then
 
 ;replace the ARG1 value of superl with the ARG0 value adjective, and
 ;replace the LBL value of superl with the LBL value of adjective
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20010 superl h1 e2 e3)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _big_a_1 h16 e17 x18)
 (defrule superlative
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?super superl ?l ?a0 ?a1)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adj  ?adj_concept ?l1 ?a01 ?a11)
@@ -1150,7 +1148,7 @@ then
 
 ;Rule for generic_entity
 (defrule generic_entity
-(rel_name-ids deic ?id    ?id1)
+(rel_name-ids deic ?id    ?id1) ;#yaha Gara hE.
 (MRS_info ?rel ?id1 _this_q_dem ?lbl ?ARG0 ?rstr ?body)
 ?f1<-(MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG1 ?ARG2)
 ?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
@@ -1169,7 +1167,7 @@ then
 
 ;Rule for demonstrative adj
 (defrule dem_adj
-(rel_name-ids deic ?id1    ?id3)
+(rel_name-ids deic ?id1    ?id3) ;#yaha Gara hE.
 (rel_name-ids	dem	?id1	?id3)
 (id-guNavAcI	?id2	yes)
 (MRS_info ?rel ?id2 ?mrs ?lbl ?arg0 ?arg1 $?va)
@@ -1214,6 +1212,7 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values rstr-rstd4non-implicit "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
+;#sUrya camakawA BI hE.
 (defrule emph-also-nonverb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?a0 ?a1)
 (id-emph  ?id1  yes)
@@ -1225,5 +1224,62 @@ then
 (bind ?arg1 (str-cat "e" (sub-string 2 (str-length ?a1) ?a1)))
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l" "?a0" " ?arg1")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values emph-also-nonverb MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l"  "?a0" " ?arg1")"crlf)
+)
+;Rule for creating binding with verb and the word _frequent_a_1.
+;It creates frequent lbl same as verb lbl and arg1 will be same as arg0 of verb.
+;#राम खा -खाकर मोटा हो गया ।
+(defrule frequent
+;(MRS_info id-MRS_concept -5000  _frequent_a_1)
+(rel_name-ids	vmod_pka ?id ?kriyA)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 ?lbl ?arg0 ?arg1)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriyA ?mrsCon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index "_v_" ?mrsCon)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 "?lbl1" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values frequent  id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 "?lbl1" "?arg0" "?arg01")"crlf)
+)
+
+(defrule vmod_atb_bind
+(rel_name-ids	vmod_atb ?ids ?idatb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?idatb ?mrscon ?lbl ?arg0 ?arg1)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriyA ?mrsCon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index "_v_" ?mrsCon)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?idatb" "?mrscon" "?lbl1" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values frequent  id-MRS_concept-LBL-ARG0-ARG1 "?idatb" "?mrscon" "?lbl1" "?arg0" "?arg01")"crlf)
+)
+
+;Rule for binding comparitive degree "comp" node with the adjective it specifies and the person it compares.
+;It replaces lbl of adjective with the lbl of comp, and arg0 of adjective with the arg1 of comp, and arg0 of upamAna with the arg2 of comp. 
+;#rAma mohana se jyAxA buxXimAna hE.
+(defrule comper_more-bind
+(id-degree	?adjid	comper_more)
+(rel_name-ids ru ?id ?id1)          ;?id = upameya/rAma, ?id1 = upamAna/mohana
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?compid comp ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
+(MRS_info ?rel ?id1 ?mrs ?lbll ?arg ?name)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp "?lbl" "?a0" "?arg0" "?arg" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values comper-more-bind  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp "?lbl" "?a0" "?arg0" "?arg")"crlf)
+)
+
+;Rule for binding comparitive degree "comp_less" node with the adjective it specifies and the person it compares.
+;It converts lbl of adjective as its lbl and arg0 of adjective will be its arg1 and arg2 will the arg0 of the person.
+;#rAma mohana se kama buxXimAna hE .
+(defrule comper_less-bind
+(id-degree	?adjid	comper_less)
+(rel_name-ids ru ?id ?id1)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?compid comp_less ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
+(MRS_info ?rel ?id1 ?mrs ?lbll ?arg ?name)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp_less "?lbl" "?a0" "?arg0" "?arg" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values comper-less-bind  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp_less "?lbl" "?a0" "?arg0" "?arg")"crlf)
 )
 

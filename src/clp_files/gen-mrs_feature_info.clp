@@ -100,8 +100,6 @@
 (printout ?*mrs-dbug* "(rule-rel-values passive-v-k1 MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2" "(implode$ (create$ $?var))")"crlf)
 )
 
-
-
 ;Rule for converting arg2 value (x*) of transtive verb when k2 is absent to u*
 ;Ex. #usane nahIM KAyA.  
 ;     He did not eat.
@@ -109,7 +107,7 @@
 (declare (salience 200))
 ?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
-(not (rel_name-ids k2   ?kri    ?k2))   
+(not (rel_name-ids k2   ?kri    ?k2))
 (test (eq (str-index _have_v_1 ?mrscon) FALSE))
 =>
 (retract ?f1 ?f)
@@ -117,6 +115,7 @@
 (printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?a2")"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values active-k2-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?a2")"crlf)
 )
+
 
 ;Rule for converting arg1 value (x*) of transtive verb when k1 is absent to u*
 ;Ex. rAma ne skUla jAkara KAnA KAyA.
@@ -134,6 +133,20 @@
 (printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
 )
 
+;Rule converts arg1 and arg2 of vmod_pka kriya into u*
+;#राम खा -खाकर मोटा हो गया ।
+(defrule vmod_pka
+(declare (salience 500))
+?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
+(rel_name-ids vmod_pka  ?id    ?kri)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+=>
+(retract ?f)
+(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
+(bind ?a2 (str-cat "u" (sub-string 2 (str-length ?arg2) ?arg2)))
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values vmod_pka "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
+)
 
 ;This rule converts kridant arg1 x* to u* when k1 is absent for any type of sentence.
 ; verified sentence 340 #भागते हुए शेर को देखो
@@ -151,8 +164,6 @@
 (printout ?*mrs-fp* "(MRS_info "?rel" "?kridant" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values k1-absent-4-vmod "?rel" "?kridant" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
 )
-
-
 
 ;Changing the ARG0 value (e*) to i* for imperative(-nagetive) sentences.
 ;(MRS_concept-label-feature_values neg LBL: h* ARG0: e* ARG1: h*)

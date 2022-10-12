@@ -12,6 +12,8 @@
 (not (id-concept_label	?k-id	?hiConcept&kahAz_1|kaba_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1))
 (not (rel_name-ids k4 ?kri ?k-id))
 (not (generated_prep_for ?k-id))
+(not (id-degree ?id	comper_more)) ;#rAma mohana se jyAxA buxXimAna hE.
+(not (id-degree ?id	comper_less)) ;rAma mohana se kama buxXimAna hE .
 (not (do_not_generate_prep_for_k2p ?k-id)) ;I am coming home.
 =>
 (bind ?myprep (str-cat "_" ?prep "_p"))
