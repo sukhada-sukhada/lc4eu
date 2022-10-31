@@ -45,8 +45,9 @@
 (or (test (eq ?n pl)) (rel_name-ids card  ?id ?) (id-abs ?id yes))
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
-(not (rel_name-ids dem ?id $?v))
-(not (rel_name-ids quant ?id $?v))
+(not (rel_name-ids dem ?id ?v))
+(not (rel_name-ids quant ?id ?v))
+(not (rel_name-ids r6 ?id ?v))
 (not(id-concept_label	?id 	?concept&speaker|addressee|vaha|yaha|saba_4))
 (not (rel_name-ids coref ?	?id))
 =>
@@ -491,6 +492,18 @@
 (printout ?*defdbug* "(rule-rel-values  comper_more   id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
 )
 
+
+;Rule for bringing comp_equal for ru relation.
+(defrule comper_equal
+(rel_name-ids ru ?id ?id1)
+(not (id-degree	?adjid	comper_more)) 
+(not (id-degree	?adjid	comper_less)) 
+=>
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 40) "  comp_equal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  comper_more   id-MRS_concept "(+ ?id 40) "  comp_equal)"crlf)
+)
+
+
 ;rule for generating  _make_v_cause
 ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 ;The teacher made the students clean the class.
@@ -531,6 +544,31 @@
 (printout ?*defdbug* "(rule-rel-values emphatic id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
 )
 
+;Rule for bring _before_x_h for the rblak relation. ;gAyoM ke xuhane se pahale rAma Gara gayA.
+(defrule rblak
+(rel_name-ids	rblak	?id	?kri)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -40000 _before_x_h)"crlf)
+(printout ?*defdbug* "(rule-rel-values rblak id-MRS_concept -40000 _before_x_h)"crlf)
+)
 
+;Rule for bring _when_x_subord for the rblk relation. ;rAma ke vana jAne para xaSaraWa mara gaye.
+(defrule rblpk
+(rel_name-ids	rblpk	?id	?kri)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -50000 _when_x_subord)"crlf)
+(printout ?*defdbug* "(rule-rel-values rblpk id-MRS_concept -50000 _when_x_subord)"crlf)
+)
+
+;Rule for bringing udef_q and ccof for ccof relation.
+;#rAma Ora sIwA acCe hEM.
+(defrule ccof
+(rel_name-ids	ccof	?ccofid	?id)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -15000 _and_c)"crlf)
+(printout ?*defdbug* "(rule-rel-values ccof id-MRS_concept -15000 _and_c)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ccofid 10)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values ccof id-MRS_concept "(+ ?ccofid 10)" udef_q)"crlf)
+)
 
 

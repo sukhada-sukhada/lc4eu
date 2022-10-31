@@ -5,15 +5,8 @@
 (defglobal ?*mrs-dbug* = mrs-dbug)
 (defglobal ?*count* = 1)
 
-
-
-
 ;rule for deleting be_v_id for k1s
 ;Rama is good.
-;(id-concept_label	30000	hE_1)
-;(rel_name-ids	k1s	30000	20000)
-;(id-hin_concept-MRS_concept 30000 hE_1 _be_v_id)
-;(id-hin_concept-MRS_concept 20000 acCA_1 _good_a_at-for-of)
 (defrule rm_be_v_id
 (declare (salience 10000))
 ?f<-(id-concept_label	?kri	hE_1)
@@ -26,14 +19,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id id-MRS_concept " ?kri " hE_1)"crlf)
 )
 
-
-
 ;rule for deleting be_v_id for k7p
 ;Rama is in Delhi.
-;(id-concept_label	20000	xillI)
-;(id-concept_label	40000	 hE_1)
-;(rel_name-ids	k1	40000	10000)
-;(rel_name-ids	k7p	40000	20000)
 (defrule rm_be_v_id-k7p
 (declare (salience 10000))
 ?f<-(id-concept_label	?kri	hE_1)
@@ -44,12 +31,6 @@
 (printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id-k7p id-MRS_concept " ?kri " hE_1)"crlf)
 )
 
-
-
-;(rel_name-ids viSeRya-viSeRaNa	20000	21000)
-;(id-concept_label	21000	WodZA_3)
-;(id-hin_concept-MRS_concept 21000 WodZA_3 _some_q) 
-;(MRS_info id-MRS_concept 20010 _a_q)
 ;Rules to delete _a_q etc for concepts that already have some quantifiers like _some_q, _all_q, _every_q etc as viSeRana
 ;prawyeka baccA Kela rahe hEM. hara baccA Kela rahe hEM. saBI bacce Kela rahe hEM. prawyeka pedZa lambA hE.	
 ;Each kid is playing.          Every kid is playing.     All kids are playing.     Each tree is tall.
@@ -83,9 +64,6 @@
 
 
 ;Rule to change the ARG1 value x* of the passive verbs when k1 is not present for the verb to i*
-;Ex. (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _kill_v_1 h19 e20 x21 x22)
-;changes to
-;    (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _kill_v_1 h19 e20 i21 x22)
 ;Ex. Ravana was killed.
 (defrule passive-v-k1
 (declare (salience 200))
@@ -134,9 +112,10 @@
 )
 
 ;Rule converts arg1 and arg2 of vmod_pka kriya into u*
-;#राम खा -खाकर मोटा हो गया ।
+;#rAma KA -KAkara motA ho gayA .
 (defrule vmod_pka
 (declare (salience 500))
+;?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
 ?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
 (rel_name-ids vmod_pka  ?id    ?kri)
 (test (neq (str-index _v_ ?mrscon) FALSE))
@@ -145,11 +124,11 @@
 (bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
 (bind ?a2 (str-cat "u" (sub-string 2 (str-length ?arg2) ?arg2)))
 (printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values vmod_pka "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
 )
 
 ;This rule converts kridant arg1 x* to u* when k1 is absent for any type of sentence.
-; verified sentence 340 #भागते हुए शेर को देखो
+; verified sentence 340 #BAgawe hue Sera ko xeKo
 (defrule k1-absent-4-vmod
 (declare (salience 200))
 ;?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
@@ -166,7 +145,6 @@
 )
 
 ;Changing the ARG0 value (e*) to i* for imperative(-nagetive) sentences.
-;(MRS_concept-label-feature_values neg LBL: h* ARG0: e* ARG1: h*)
 ;Ex. 320 Sahara mawa jAo!  =  Don't go to the city.
 (defrule imper-neg
 (declare (salience 2200))
@@ -189,6 +167,18 @@
 (retract ?f)
 (printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _speak_v_to "?lbl" "?arg0" "?arg1")"crlf)
 (printout ?*mrs-dbug*  "(rule-rel-values speak_k2 MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _speak_v_to "?lbl" "?arg0" "?arg1")"crlf)
+)
+
+;deleting ARG2 value for irregular adjective forms in comperative and superlative degree
+(defrule rmARG2Irregular-adj
+(declare (salience 5000))
+(id-degree	?id	superl|comper_less|comper_more)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id ?adj ?lbl ?arg0 ?arg1 ?arg2)
+(test (or (eq ?adj _good_a_at-for-of) (eq ?adj _bad_a_at) (eq ?adj _much_x_deg)))
+=>
+(retract ?f)
+(printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" "?adj" "?lbl" "?arg0" "?arg1")"crlf)
+(printout ?*mrs-dbug*  "(rule-rel-values rmARG2Irregular-adj MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" "?adj" "?lbl" "?arg0" "?arg1")"crlf)
 )
 
 

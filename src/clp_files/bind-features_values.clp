@@ -193,7 +193,7 @@
 (declare (salience 5000))
 (id-concept_label  ?v_id  hE_2)
 ?f1<-(rel_name-ids	k1	?v_id	?k1)
-(rel_name-ids  possessor       ?k1  ?id2)
+(rel_name-ids  possessor|janaka     ?k1  ?id2) ;rAma ke xo bete hEM
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
 (MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
@@ -837,7 +837,7 @@ else
 ;It creates TAM for vmod_vks
 ;verified sentence 341 BAgawe hue Sera ko xeKo
 (defrule vmod_vks
-(rel_name-ids	vmod_vks	?id	?kri)
+(rel_name-ids	vmod_vks ?id	?kri)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values vmod_vks id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
@@ -869,8 +869,8 @@ else
 (rel_name-ids	vmod_pk	?id	?kri)
 (id-stative	?id	yes)
 =>
-(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_pk2 id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vmod_pk2 id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
 )
 
 (defrule vmod_atb
@@ -879,6 +879,23 @@ else
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values vmod_atb id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
 )
+
+;Rule for creating TAM information for rblak relation verb.  ;gAyoM ke xuhane se pahale rAma Gara gayA.
+(defrule rblak
+(rel_name-ids	rblak	?kri	?id)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id" prop past indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rblak id-SF-TENSE-MOOD-PROG-PERF "?id" prop past indicative - - )"crlf)
+)
+
+;Rule for creating TAM information for rblpk relation verb. ;rAma ke vana jAne para xaSaraWa mara gaye.
+(defrule rblpk
+(rel_name-ids	rblpk	?kri	?id)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id" prop past indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rblpk id-SF-TENSE-MOOD-PROG-PERF "?id" prop past indicative - - )"crlf)
+)
+
 
 ;for negation sentence information
 ;#mEM rUsI nahIM bola sakawA hUz.
@@ -990,7 +1007,7 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values vAkya_vn-LTOP LTOP-INDEX h0 "?arg10 ")"crlf)
 )
 ;Rule for LTOP: The LBL value and ARG0 value of *_v_* becomes the value of LTOP and INDEX if the following words are not there in the sentence: "possibly", "suddenly". "not".If they exist, the LTOP value becomes the LBL value of that word and INDEX value is the ARG0 value of *_v_*. For "not" we get a node "neg" in the MRS
-(defrule v-LTOP
+(defrule v-LTOP 
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
 (rel_name-ids	main	0	?kri_id)
 (not (asserted_LTOP-INDEX-for-modal))
@@ -999,6 +1016,8 @@ else
 (not (rel_name-ids	vmod_pk	?id	?kri_id)) ;#rAma ne skUla jAkara KAnA KAyA.
 (not (rel_name-ids	vmod_pka	?id	?kri_id)) ;rAma KA -KAkara motA ho gayA .
 (not (rel_name-ids	vmod_atb	?id	?kri_id))
+(not (rel_name-ids	rblak	?id	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
+(not (rel_name-ids	rblpk	?id	?kri_id)) ;;rAma ke vana jAne para xaSaraWa mara gaye.
 (not (id-stative ?id yes))
 (not (id-causative ?id yes)) ;#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 (not (id-double_causative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
@@ -1146,6 +1165,7 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-deic "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?arg1 " " ?id2_arg0 ")"crlf)
 )
 
+
 ;Rule for generic_entity
 (defrule generic_entity
 (rel_name-ids deic ?id    ?id1) ;#yaha Gara hE.
@@ -1281,5 +1301,71 @@ then
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp_less "?lbl" "?a0" "?arg0" "?arg" )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values comper-less-bind  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp_less "?lbl" "?a0" "?arg0" "?arg")"crlf)
+)
+
+;Rule for changing the LBL of comp_equal with the adjective it modifies and changing arg1 of comp_equal with arg0 of the adjective and ARG2 of comp_equal will be same as the arg0 of the person it refers. 
+;rAXA mIrA jEsI sunxara hE.
+(defrule comper_equal-bind
+(rel_name-ids ru ?id ?id1)          ;?id = upameya/rAma, ?id1 = upamAna/mohana
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?compid comp_equal ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
+(MRS_info ?rel ?id1 ?mrs ?lbll ?arg ?name)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp_equal "?lbl" "?a0" "?arg0" "?arg" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values comper_equal-bind  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" com_equal "?lbl" "?a0" "?arg0" "?arg")"crlf)
+)
+
+;Changing the lbl value of pargd with the blak verb and arg1 and arg2 will changed as blak verb.
+;gAyoM ke xuhane se pahale rAma Gara gayA.
+(defrule pargd-r-blak
+(declare (salience -400))
+(rel_name-ids	rblak	?kri	?blak)
+?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id parg_d ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?blak ?mrscon ?lbl1 ?arg00 ?arg11 ?arg22)
+(test (neq (str-index "_v_" ?mrscon)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lbl1" " ?arg0 " " ?arg00 " "?arg22 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values pargd-r-blak id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lbl1" " ?arg0 " " ?arg00 " "?arg22 ")"crlf)
+)
+
+;Rule for changing L-INDEX of ccof with the first list component word ARG0 and R-INDEX with the second list component word ARG0.
+;Rule for changing arg0 of udef_q with ARG0 of _and_c.
+;rAma Ora sIwA acCe hEM.
+(defrule ccof
+(rel_name-ids	ccof	?ccofid	?first)
+(rel_name-ids	ccof	?ccofid	?second)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?l ?a0 ?li ?ri)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?lbll ?argg ?rstr ?body)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?first ?name ?lbl ?arg0 ?namee)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?second ?name2 ?lbl1 ?arg00 ?namee2)
+(not (modified_ccof ?a0))
+=>
+(retract ?f ?f1)
+(assert (modified_ccof ?a0))
+(assert (MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?l ?a0 ?arg0 ?arg00))
+(printout ?*rstr-dbug* "(rule-rel-values ccof  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _and_c "?l" "?a0" "?arg0" "?arg00")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values ccof  id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
+)
+
+;Rule to change ARG1 of adjective with ARG0 of _and_c
+;rAma Ora sIwA acCe hEM.
+(defrule ccofk1s
+(rel_name-ids	ccof	?ccofid	?id)
+(rel_name-ids	k1s	?non-adj ?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?adj ?mrsCon ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?iddd _and_c ?lbll ?arg00 ?l ?r)
+(test (neq (str-index _a_ ?mrsCon) FALSE))
+(test (neq ?arg1 ?arg00))
+(not (modified_ccofk1s ?arg00))
+=>
+(retract ?f)
+(assert (modified_ccofk1s ?arg00))
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?adj ?mrsCon ?lbl ?arg0 ?arg00 ?arg2))
+;(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?adj" "?mrsCon" "?lbl" "?arg0" "?arg00" "?arg2")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values ccofk1s id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?adj" "?mrsCon" "?lbl" "?arg0" "?arg00" "?arg2")"crlf)
 )
 

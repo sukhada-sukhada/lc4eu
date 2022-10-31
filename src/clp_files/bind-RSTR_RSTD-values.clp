@@ -158,7 +158,9 @@
 (not (rel_name-ids	vmod_kr_vn	?id	?kri_id))
 (not (rel_name-ids	vmod_sk	?id	?kri_id))
 (not (rel_name-ids	vmod_pk	?kri_id	?id))
-(not (rel_name-ids	vmod_pka ?id 	?kri_id))
+(not (rel_name-ids	vmod_pka ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
+(not (rel_name-ids	rblak ?id 	?kri_id))
+(not (rel_name-ids	rblpk ?id 	?kri_id)) ;rAma ke vana jAne para xaSaraWa mara gaye.
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 (not(rel_name-ids vAkya_vn ?id_1 ?id_2))
 =>
@@ -622,5 +624,66 @@
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted "?arg2 " "?l")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  vmod_pka  Restr-Restricted "?arg2" "?l")"crlf)
+)
+
+
+;Rule for RSTR binding with h0 with lbl of _before_x_h and arg1 and arg2 of before_x_h with the two verb labels. 
+;gAyoM ke xuhane se pahale rAma Gara gayA.
+(defrule LTOP-rblak
+(rel_name-ids	rblak	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -40000 _before_x_h ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1	?id1 ?mrsCon1 ?lbl1 $?var)
+(MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rblak Restr-Restricted  h0 "?lbl ")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl2 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rblak Restr-Restricted  "?arg2 " "?lbl2 ")"crlf)
+
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg1 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rblak Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
+)
+
+;Rule for RSTR binding with h0 with lbl of _when_x_subord and arg1 and arg2 of _when_x_subord with the two verb labels. 
+;rAma ke vana jAne para xaSaraWa mara gaye.
+(defrule LTOP-rblpk
+(rel_name-ids	rblpk	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -50000 _when_x_subord ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1	?id1 ?mrsCon1 ?lbl1 $?var)
+(MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
+=>
+ (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rblpk Restr-Restricted  h0 "?lbl ")"crlf)
+
+(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl2 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rblpk Restr-Restricted  "?arg2 " "?lbl2 ")"crlf)
+
+ (printout ?*rstr-rstd* "(Restr-Restricted  "?arg1 " "?lbl1 ")" crlf)
+ (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rblpk Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
+)
+
+;Rule for binding RSTR of udef_q with LBL of _and_c 
+;#rAma Ora sIwA acCe hEM.
+(defrule ccof-rstr
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX -15000 _and_c ?lbl ?arg0 ?first ?second)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?l ?arg0 ?rstr ?body)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?rstr"  "?lbl ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values ccof-rstr Restr-Restricted  "?rstr" "?lbl ")"crlf)
+)
+
+;Rule for binding h0 with label of adjective when there is no verb.
+;#rAma Ora sIwA acCe hEM.
+(defrule adjective
+(rel_name-ids	k1s	?id ?adj)
+(MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+(MRS_info ?rel ?idd ?hin ?lbl ?a0 $?v1)
+(not (rel_name-ids neg	?iddd	?neg))
+(test (eq (str-index _v_ ?hin) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 "?l")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  adjective  Restr-Restricted h0 "?l")"crlf)
 )
 
