@@ -41,8 +41,8 @@ try:
     with open('.ace_input','w') as f:
         f.write(english_sentence)
 except:
-    print("Unable to write temporary file .ace_input")
-    exit()
+    fail_print("Unable to write temporary file .ace_input")
+
 
 run_ace_command = [HOME + "/ace-0.9.34/ace",
                    "-g",
@@ -54,11 +54,10 @@ try:
     result = subprocess.run(run_ace_command, stdout=subprocess.PIPE)
     ace_output = str(result.stdout,'utf-8')
 except:
-    print("Failed to run ace. Exiting")
-    exit()
+    fail_print("Failed to run ace.")
 if ace_output == "":
-    print("Failed to run ace. Exiting.")
-    exit()
+    fail_print("Failed to run ace.")
+
 
 
 
@@ -72,15 +71,15 @@ def compareResults(expectedSW,gotSW):
         temp = cdata.split('LTOP: ')
         if len(temp)>1:
             finalData['LTOP']= temp[1].split('\n')[0]
-        
+
         temp = cdata.split('INDEX: ')
         if len(temp)>1:
             finalData['INDEX']=temp[1].split(' ')[0]
-        
+
         temp = cdata.split('HCONS: ')
         if len(temp)>1:
             finalData['HCONS']=temp[1].split('\n')[0]
-    
+
     ## ADD Relations
     temp = expectedSW.split('RELS: < ')
     if len(temp)>1:
