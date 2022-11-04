@@ -71,7 +71,7 @@
 ;solution:-Having seen the snake Rama got scared.
 (defrule tensest
 (id-stative	?id	yes)
-(rel_name-ids	vmod_pk	?id	?id1)
+(rel_name-ids	rpk	?id	?id1)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf untensed ?mood ?prog ?perf)
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 ?f2<-(id-SF-TENSE-MOOD-PROG-PERF ?id1 ?sf1 untensed ?mood1 ?prog1 ?perf1)

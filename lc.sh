@@ -56,5 +56,7 @@ sed -i 's/_INDEX/-INDEX/g' $file_name"_mrs"
 
 echo "Calling ACE parser for generating English sentence"
 #$HOME/ace-0.9.24/ace -g $HOME/ace-0.9.24/erg-1214-x86-64-0.9.24.dat -e $file_name"_mrs" 
-$HOME/ace-0.9.34/ace -g $HOME/ace-0.9.34/erg-1214-x86-64-0.9.34.dat -e $file_name"_mrs"
- 
+$HOME/ace-0.9.34/ace -g $HOME/ace-0.9.34/erg-1214-x86-64-0.9.34.dat -e $file_name"_mrs" >english_sentence.txt 
+
+python3 $var/src/replace-unknown-word-in-Eng-sentence.py $var/tmp_dir/$file_name/unknown_mrs_concept_replaced.dat $var/tmp_dir/$file_name/english_sentence.txt
+cat $var/tmp_dir/$file_name/final_english_sent.txt

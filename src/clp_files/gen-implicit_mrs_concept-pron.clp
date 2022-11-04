@@ -5,6 +5,7 @@
 (defglobal ?*defdbug* = mrs-def-dbug)
 
 ;Rule for pronoun : if (id-pron ?id yes) generate (id-MRS_Rel ?id pronoun_q) and (id-MRS_Rel ?id pron)
+;#mEM Gara jA sakawA hUz.
 (defrule mrsPron_yes
 (id-concept_label	?id 	speaker|addressee|vaha|yaha)
 =>

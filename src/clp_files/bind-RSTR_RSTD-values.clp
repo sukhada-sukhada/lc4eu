@@ -154,11 +154,11 @@
 (not (id-causative ?id yes))
 (not (id-stative ?id1 yes))
 (not (id-double_causative	?id	yes))
-(not (rel_name-ids	vmod_pk	?id	?kri_id))
+(not (rel_name-ids	rpk	?id	?kri_id))
 (not (rel_name-ids	vmod_kr_vn	?id	?kri_id))
-(not (rel_name-ids	vmod_sk	?id	?kri_id))
-(not (rel_name-ids	vmod_pk	?kri_id	?id))
-(not (rel_name-ids	vmod_pka ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
+(not (rel_name-ids	rsk	?id	?kri_id))
+(not (rel_name-ids	rpk	?kri_id	?id))
+(not (rel_name-ids	rpka ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
 (not (rel_name-ids	rblak ?id 	?kri_id))
 (not (rel_name-ids	rblpk ?id 	?kri_id)) ;rAma ke vana jAne para xaSaraWa mara gaye.
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
@@ -254,7 +254,7 @@
 
 (defrule LTOP-rstdsta
 (id-stative	?id	yes)
-(not (rel_name-ids	vmod_pk	?id	?kri))
+(not (rel_name-ids	rpk	?id	?kri))
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _get_v_state ?lbl ?arg0 $?vars)
 (test (eq  (+ ?id 100) ?id1))
 =>
@@ -276,7 +276,7 @@
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord
 (not (id-stative ?id1 yes))
-(rel_name-ids	vmod_pk|vmod_pka	?id1	?id2)
+(rel_name-ids	rpk|rpka	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -310,10 +310,10 @@
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subord-kv Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
 )
 
-;It creates binding for vmod_sk with _while_x
+;It creates binding for rsk with _while_x
 ;verified sentence 339 #राम सोते हुए खर्राटे भरता है।
 (defrule LTOP-while
-(rel_name-ids	vmod_sk		?id1	?id2)
+(rel_name-ids	rsk		?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -30000 _while_x ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -348,7 +348,7 @@
 
 (defrule LTOP-subordst
 (id-stative ?id1 yes)
-(rel_name-ids	vmod_pk	?id1	?id2)
+(rel_name-ids	rpk	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -615,7 +615,7 @@
 
 ;It creates binding with arg2 value of verb with lbl of adjective
 ;#राम खा -खाकर मोटा हो गया ।
-(defrule vmod_pka
+(defrule rpka
 (rel_name-ids	k1s	?kri	?adj)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?hin ?lbl ?a0 ?a1 ?arg2)
 (MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
@@ -623,7 +623,7 @@
 (test (neq (str-index _v_ ?hin) FALSE))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted "?arg2 " "?l")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  vmod_pka  Restr-Restricted "?arg2" "?l")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  rpka  Restr-Restricted "?arg2" "?l")"crlf)
 )
 
 

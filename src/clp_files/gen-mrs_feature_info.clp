@@ -111,13 +111,13 @@
 (printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
 )
 
-;Rule converts arg1 and arg2 of vmod_pka kriya into u*
+;Rule converts arg1 and arg2 of rpka kriya into u*
 ;#rAma KA -KAkara motA ho gayA .
-(defrule vmod_pka
+(defrule rpka
 (declare (salience 500))
 ;?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
 ?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
-(rel_name-ids vmod_pka  ?id    ?kri)
+(rel_name-ids rpka  ?id    ?kri)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (retract ?f)
@@ -136,7 +136,7 @@
 (rel_name-ids ?vmod   ?main    ?kridant)
 (not (rel_name-ids k1   ?kridant    ?k1))
 (test (neq (str-index _v_ ?mrscon) FALSE))
-(test (neq (str-index vmod_ ?vmod) FALSE))
+(test (neq (str-index r ?vmod) FALSE))
 =>
 (retract ?f)
 (bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))

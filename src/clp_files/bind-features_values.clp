@@ -55,7 +55,7 @@
 ;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
 ;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
-(rel_name-ids mod|intf|card|vmod_vks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
+(rel_name-ids mod|intf|card|rvks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 ;(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
@@ -193,7 +193,7 @@
 (declare (salience 5000))
 (id-concept_label  ?v_id  hE_2)
 ?f1<-(rel_name-ids	k1	?v_id	?k1)
-(rel_name-ids  possessor|janaka     ?k1  ?id2) ;rAma ke xo bete hEM
+(rel_name-ids  rsm|rhh     ?k1  ?id2) ;rAma ke xo bete hEM
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
 (MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
@@ -360,7 +360,7 @@
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (neq ?arg2 ?argma_0))
 (not (modified_k2 ?karma))
-(not (rel_name-ids vmod_pka ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
+(not (rel_name-ids rpka ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
 =>
 (retract ?f)
 (assert (modified_k2 ?karma))
@@ -825,22 +825,22 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
 
-;rule creates TAM for vmod_pk and vmod_pka
+;rule creates TAM for rpk and rpka
 ;#rAma ne skUla jAkara KAnA KAyA
-(defrule vmod_pk_pka
-(rel_name-ids	vmod_pk|vmod_pka	?id	?kri)
+(defrule rpk_pka
+(rel_name-ids	rpk|rpka	?id	?kri)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_pk_pka id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rpk_pka id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 )
 
-;It creates TAM for vmod_vks
+;It creates TAM for rvks
 ;verified sentence 341 BAgawe hue Sera ko xeKo
-(defrule vmod_vks
-(rel_name-ids	vmod_vks ?id	?kri)
+(defrule rvks
+(rel_name-ids	rvks ?id	?kri)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_vks id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rvks id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 )
 
 ;It creates TAM for vmod_kr_vn
@@ -853,31 +853,31 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values vmod_kr_vn id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
 )
 
-;It creates TAM for vmod_sk
+;It creates TAM for rsk
 ;verified sentence 339 #rAma sowe hue KarrAte BarawA hE. 
-(defrule vmod_sk
-(rel_name-ids	vmod_sk	?id	?kri)
+(defrule rsk
+(rel_name-ids	rsk	?id	?kri)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_sk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rsk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 )
 
 
 
-;genrate tense value for vmod_pk in get_v_state
-(defrule vmod_pk2
-(rel_name-ids	vmod_pk	?id	?kri)
+;genrate tense value for rpk in get_v_state
+(defrule rpk2
+(rel_name-ids	rpk	?id	?kri)
 (id-stative	?id	yes)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_pk2 id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rpk2 id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
 )
 
-(defrule vmod_atb
-(rel_name-ids	vmod_atb	?kri	?id)
+(defrule ratb
+(rel_name-ids	ratb	?kri	?id)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_atb id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values ratb id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
 )
 
 ;Rule for creating TAM information for rblak relation verb.  ;gAyoM ke xuhane se pahale rAma Gara gayA.
@@ -1013,9 +1013,9 @@ else
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 (not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
-(not (rel_name-ids	vmod_pk	?id	?kri_id)) ;#rAma ne skUla jAkara KAnA KAyA.
-(not (rel_name-ids	vmod_pka	?id	?kri_id)) ;rAma KA -KAkara motA ho gayA .
-(not (rel_name-ids	vmod_atb	?id	?kri_id))
+(not (rel_name-ids	rpk	?id	?kri_id)) ;#rAma ne skUla jAkara KAnA KAyA.
+(not (rel_name-ids	rpka	?id	?kri_id)) ;rAma KA -KAkara motA ho gayA .
+(not (rel_name-ids	ratb	?id	?kri_id))
 (not (rel_name-ids	rblak	?id	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
 (not (rel_name-ids	rblpk	?id	?kri_id)) ;;rAma ke vana jAne para xaSaraWa mara gaye.
 (not (id-stative ?id yes))
@@ -1250,7 +1250,7 @@ then
 ;#राम खा -खाकर मोटा हो गया ।
 (defrule frequent
 ;(MRS_info id-MRS_concept -5000  _frequent_a_1)
-(rel_name-ids	vmod_pka ?id ?kriyA)
+(rel_name-ids	rpka ?id ?kriyA)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 ?lbl ?arg0 ?arg1)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriyA ?mrsCon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index "_v_" ?mrsCon)FALSE))
@@ -1260,8 +1260,8 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values frequent  id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 "?lbl1" "?arg0" "?arg01")"crlf)
 )
 
-(defrule vmod_atb_bind
-(rel_name-ids	vmod_atb ?ids ?idatb)
+(defrule ratb_bind
+(rel_name-ids	ratb ?ids ?idatb)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?idatb ?mrscon ?lbl ?arg0 ?arg1)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriyA ?mrsCon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index "_v_" ?mrsCon)FALSE))

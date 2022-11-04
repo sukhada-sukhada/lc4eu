@@ -234,7 +234,7 @@
 (defrule mrs_parg_d
 (sentence_type  pass-affirmative|pass-interrogative)
 (kriyA-TAM ?kri ?tam)
-(not (rel_name-ids	vmod_pk	?id	?kri))
+(not (rel_name-ids	rpk	?id	?kri))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_parg_d  id-MRS_concept "?kri" parg_d)"crlf)
@@ -242,7 +242,7 @@
 
 ;#rAma ne skUla jAkara KAnA KAyA.
 (defrule mrs_subord
-(rel_name-ids	vmod_pk|vmod_pka	?id	?kri)
+(rel_name-ids	rpk|rpka	?id	?kri)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
@@ -259,19 +259,19 @@
 (printout ?*defdbug* "(rule-rel-values mrs_subord-kr id-MRS_concept -20000 subord)"crlf)
 )
 
-;It creates mrs rel feature _while_x for sentences with vmod_sk
+;It creates mrs rel feature _while_x for sentences with rsk
 ;verified sentence 339 #rAma sowe hue KarrAte BarawA hE. 
 (defrule mrs_while
-(rel_name-ids	vmod_sk		?id	?kri)
+(rel_name-ids	rsk		?id	?kri)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -30000  _while_x)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_while id-MRS_concept -30000  _while_x)"crlf)
 )
 
-;It creates mrs rel feature _frequent_a_1 for sentences with vmod_pka
+;It creates mrs rel feature _frequent_a_1 for sentences with rpka
 ;rAma KA -KAkara motA ho gayA .
 (defrule mrs_frequent
-(rel_name-ids	vmod_pka	?id	?kri)
+(rel_name-ids	rpka	?id	?kri)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -5000 _frequent_a_1)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_frequent id-MRS_concept -5000  _frequent_a_1)"crlf)
