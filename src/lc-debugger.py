@@ -154,7 +154,6 @@ try:
     aceOutRes,lcOutRes = compareResults(ace_output,fr)
 except:
     print('Result Comparison Failed.\n')
-    exit()
 
 
 # print RELS which are not present
