@@ -22,8 +22,8 @@ def fail_print(s):
     print(f'{bcolors.FAIL + bcolors.BOLD}{s}{bcolors.ENDC}')
 
 try:
-    lcMrsPath = "tmp_dir/1/1_mrs"#sys.argv[1]#'/root/Documents/language_communicator/tmp_dir/160/160_mrs'
-    english_sentence = "Where do you live?"#sys.argv[2]#"The food got eaten by me."
+    lcMrsPath = sys.argv[1]#'/root/Documents/language_communicator/tmp_dir/160/160_mrs'
+    english_sentence = sys.argv[2]#"The food got eaten by me."
     ## Output Got
     try:
         with open(lcMrsPath, 'r') as f:
@@ -143,14 +143,6 @@ def compareResults(expectedSW,gotSW):
 
     return (finalData,finalData1)
 
-try:
-    aceOutRes,lcOutRes = compareResults(ace_output,fr)
-except:
-    print('Result Comparison Failed.\n')
-    exit()
-
-
-
 seperator = '\n\t\t'+'*'*40+ '    End   '+ '*'*40 + '\n\n'
 print('\n\t\t'+'*'*40+ '    ACE MRS Output:   '+ '*'*40 )
 print(ace_output.strip(),end=seperator)
@@ -158,6 +150,12 @@ print('\n\t\t'+'*'*40+ '    lc.sh Script MRS Output   '+ '*'*40 )
 
 print(fr,end=seperator+'\n')
 
+
+try:
+    aceOutRes,lcOutRes = compareResults(ace_output,fr)
+except:
+    print('Result Comparison Failed.\n')
+    exit()
 
 
 # print RELS which are not present
