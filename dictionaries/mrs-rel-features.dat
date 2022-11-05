@@ -802,7 +802,6 @@
 (MRS_concept-label-feature_values _ancient_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _ancientness/NN_u_unknown LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _ancillary_a_1 LBL: h* ARG0: e* ARG1: x*)
-(MRS_concept-label-feature_values _and_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
 (MRS_concept-label-feature_values _anecdotage/NN_u_unknown LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _anecdote_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _anecdotist/NN_u_unknown LBL: h* ARG0: x*)
@@ -23765,3 +23764,4 @@
 (MRS_concept-label-feature_values _before_x_h LBL: h* ARG0: e* ARG1: h* ARG2: h*)
 (MRS_concept-label-feature_values _when_x_subord LBL: h* ARG0: e* ARG1: h* ARG2: h*)
 (MRS_concept-label-feature_values _be_v_there LBL: h* ARG0: e* ARG1: x*)
+(MRS_concept-label-feature_values _and_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
