@@ -3,6 +3,8 @@
 import sys
 import re
 import os,subprocess
+from pathlib import Path
+HOME = str(Path.home())
 
 
 class bcolors:
@@ -16,28 +18,45 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+def fail_print(s):
+    print(f'{bcolors.FAIL + bcolors.BOLD}{s}{bcolors.ENDC}')
 
 try:
     lcMrsPath = sys.argv[1]#'/root/Documents/language_communicator/tmp_dir/160/160_mrs'
-    engSent = sys.argv[2]#"The food got eaten by me."
+    english_sentence = sys.argv[2]#"The food got eaten by me."
     ## Output Got
     try:
-        f = open(lcMrsPath, 'r')
-        fr = f.read()
+        with open(lcMrsPath, 'r') as f:
+            fr = f.read()
     except:
-        print(f'{bcolors.FAIL + bcolors.BOLD}(lc mrs output path) is Not Valid {bcolors.ENDC}')
+        fail_print('(lc mrs output path) is Not Valid.')
         sys.exit(0)
 
 except:
-    print(f'{bcolors.FAIL + bcolors.BOLD}Command is not Valid => eg (python3 mrs-binding.py "lc mrs output path" "English Sentence"){bcolors.ENDC}')
+    fail_print('Command is not Valid => eg (python3 mrs-binding.py "lc mrs output path" "English Sentence")')
     sys.exit(0)
 
 
+try:
+    with open('.ace_input','w') as f:
+        f.write(english_sentence)
+except:
+    fail_print("Unable to write temporary file .ace_input")
 
-open('.ace_input','w').write(engSent)
-runACE_Command = ["/home/sukhada/ace-0.9.24/ace", "-g","/home/sukhada/ace-0.9.24/erg-1214-x86-64-0.9.24.dat","-1Tf",".ace_input"]
-result = subprocess.run(runACE_Command, stdout=subprocess.PIPE)
-aceOut = str(result.stdout,'utf-8')
+
+run_ace_command = [HOME + "/ace-0.9.34/ace",
+                   "-g",
+                   HOME + "/ace-0.9.34/erg-1214-x86-64-0.9.34.dat",
+                   "-1Tf",
+                   ".ace_input"
+                ]
+try:
+    result = subprocess.run(run_ace_command, stdout=subprocess.PIPE)
+    ace_output = str(result.stdout,'utf-8')
+except:
+    fail_print("Failed to run ace.")
+if ace_output == "":
+    fail_print("Failed to run ace.")
 
 
 
@@ -52,15 +71,15 @@ def compareResults(expectedSW,gotSW):
         temp = cdata.split('LTOP: ')
         if len(temp)>1:
             finalData['LTOP']= temp[1].split('\n')[0]
-        
+
         temp = cdata.split('INDEX: ')
         if len(temp)>1:
             finalData['INDEX']=temp[1].split(' ')[0]
-        
+
         temp = cdata.split('HCONS: ')
         if len(temp)>1:
             finalData['HCONS']=temp[1].split('\n')[0]
-    
+
     ## ADD Relations
     temp = expectedSW.split('RELS: < ')
     if len(temp)>1:
@@ -121,24 +140,20 @@ def compareResults(expectedSW,gotSW):
             finalRels[key] = fRels
     finalData1['RELS'] = finalRels
 
-    del finalData1['HCONS']
-    del finalData['HCONS']
     return (finalData,finalData1)
-    
-try:
-    aceOutRes,lcOutRes = compareResults(aceOut,fr)
-except:
-    print('Errorssssssssssss\n')
-
-
 
 seperator = '\n\t\t'+'*'*40+ '    End   '+ '*'*40 + '\n\n'
 print('\n\t\t'+'*'*40+ '    ACE MRS Output:   '+ '*'*40 )
-print(aceOut.strip(),end=seperator)
+print(ace_output.strip(),end=seperator)
 print('\n\t\t'+'*'*40+ '    lc.sh Script MRS Output   '+ '*'*40 )
 
 print(fr,end=seperator+'\n')
 
+
+try:
+    aceOutRes,lcOutRes = compareResults(ace_output,fr)
+except:
+    print('Result Comparison Failed.\n')
 
 
 # print RELS which are not present
