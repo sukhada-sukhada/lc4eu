@@ -2,7 +2,7 @@
 
 
 (defglobal ?*mrs-fp* = mrs-file)
-(defglobal ?*mrs-dbug* = mrs-dbug)
+(defglobal ?*mrs-dbug* = mrs-debug)
 (defglobal ?*count* = 1)
 
 ;rule for deleting be_v_id for k1s
@@ -18,6 +18,21 @@
 (retract ?f ?f1)
 (printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id id-MRS_concept " ?kri " hE_1)"crlf)
 )
+
+;Rule for removing _be_v_id for the sentences consists of ru relation.
+;Ex. गुलाब जैसे फूल पानी में नहीं उगते हैं।
+(defrule rm_be_v_id-ru
+(declare (salience 10000))
+?f<-(id-concept_label	?kri	hE_1)
+(rel_name-ids	ru	?pru	?wal)
+?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
+(id-hin_concept-MRS_concept ?ru ?hinCon ?mrscon)
+(test (neq (str-index _n_ ?mrscon) FALSE) )
+=>
+(retract ?f ?f1)
+(printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id-ru id-MRS_concept " ?kri " hE_1)"crlf)
+)
+
 
 ;rule for deleting be_v_id for k7p
 ;Rama is in Delhi.
@@ -254,3 +269,29 @@
    (printout ?*mrs-fp* "(MRS_info "?rel" "?id" "?mrscon" "?lbl" "(implode$ (create$ $?all))")"crlf)
    (printout ?*mrs-dbug* "(rule-rel-values printMRSfacts  MRS_info "?rel" "?id" "?mrscon" "?lbl" "(implode$ (create$ $?all))")"crlf)
 )
+
+;Rule for bringing L_HNDL and R_HNDL for the implicit_conj and _and_c when the construction is in predicative form.
+;Ex. Rama buxXimAna, motA, xilera, Ora accA hE. 
+;Rules of udef_q will not work this rule only works for adjective or verb constructions.
+;It creates L_HNDL and R_HNDL with h values and L_INDEX and R_INDEX with e values. 
+(defrule implict_handle
+(declare (salience 5000)) 
+(MRS_concept-label-feature_values implicit_conj LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
+?f<-(rel_name-ids	k1s	?kri	?k1s)
+(construction-ids	conj	$? ?k1s $?)
+(MRS_info id-MRS_concept ?implicit ?mrs)
+(MRS_concept-label-feature_values ?mrscon $?v)
+;(test (eq ?mrs implicit_conj) )
+(test (or (eq ?mrs implicit_conj) (eq ?mrs _and_c)) )
+(test (or (eq  (+ ?k1s 600) ?implicit) (eq  (+ ?k1s 500) ?implicit)))
+;(test (eq  (+ ?k1s 600) ?implicit))
+(test (neq (str-index _a_ ?mrscon) False))
+=>
+(retract ?f) 
+(assert (MRS_concept-label-feature_values ?mrs LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values implict_handle  MRS_concept-label-feature_values "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
+)
+
+
+
+

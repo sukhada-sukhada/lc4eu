@@ -1,11 +1,12 @@
 #rAma Ora sIwA acCe hEM.
-rAma,Ora_1,sIwA,acCA_1,hE_1-pres
-1,2,3,4,5
-per,,per,,
-[m sg a],,[f sg a],,
-2:ccof,5:k1,2:ccof,5:k1s,0:main
-,,,,
-,,,,
-,,,,
+rAma,sIwA,acCA_1,hE_1-pres
+1,2,3,4
+per,per,,
+[m sg a],[f sg a],,
+4:k1,4:k1,4:k1s,0:main
+,,,
+,,,
+,,,
 affirmative
+conj:[1,2]
 

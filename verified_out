@@ -56,7 +56,7 @@ He did not eat.
 109
 Where might you live?
 Where might you live?
-#gAyeM GAsa KawIM hEM.
+#gAyeM GAsa KAwIM hEM.
 11
 Cows eat grass.
 #muJe kalama xiyA gayA.
@@ -146,7 +146,7 @@ He can sleep.
 123
 I will play a game, tomorrow.
 I will play a game tomorrow.
-#kyA wuma keloge?
+#kyA wuma Keloge?
 124
 Will you play?
 You will play?
@@ -209,7 +209,7 @@ You would come?
 Did he eat?
 He did eat?
 He ate?
-#kyA wuma nahIM keloge?
+#kyA wuma nahIM Keloge?
 139
 You would not play?
 Wouldn't you play?
@@ -465,7 +465,7 @@ You are in Delhi?
 #bacce Pala KAwe hEM.
 195
 Children eat fruits.
-#rAma ko Kira KAnI padZI.
+#rAma ko KIra KAnI padZI.
 196
 Rama had to eat Kira.
 #muJe xOdZanA cAhie.
@@ -527,7 +527,7 @@ He shouldn't go, home.
 #haMsoM ne cidiyA ko mukkA mArA.
 207
 The swans punched the bird.
-#rAjamahala mEM wAlAba hE.
+#rAjamahala meM wAlAba hE.
 208
 A pool is in the palace.
 #haMsa IrRyAlu hEM.
@@ -579,9 +579,10 @@ Rama is sitting.
 He used to live in Ramapura.
 He used to live in Ramapura.
 He used to live, in Ramapura.
-#koI Pala KawIM hEM.
+#koI Pala KawI hEM.
 221
-#ayAn ne use pAnI xeyA.
+
+#ayAn ne use pAnI xiyA.
 222
 Ayan gave water to him.
 Ayan gave water to himself.
@@ -778,7 +779,7 @@ I should go, home.
 252
 Riwesa studies in the school.
 Riwesa studies, in the school.
-#jAnavara GAsa KawA hE.
+#jAnavara GAsa KAwA hE.
 253
 An animal eats grass.
 #riweSa bagIce meM hE.
@@ -846,7 +847,7 @@ Bring fruits from the forest, for Riwesa.
 Bring fruits, from the forest, for Riwesa.
 Bring fruits from the forest for Riwesa.
 Bring fruits, from the forest for Riwesa.
-#jAnavara kya kAwe hEM?
+#jAnavara kyA kAwe hEM?
 266
 What do the animals eat?
 #ayAn acCA ladZakA WA
@@ -894,7 +895,7 @@ The rabbit had missed.
 #riweSa ro rahA WA.
 276
 Riwesa was weeping.
-#riweSa ne KaragoSa ko xeKa
+#riweSa ne KaragoSa ko xeKA.
 277
 Riwesa saw the rabbit.
 #KaragoSa bagIcA meM WA
@@ -1141,7 +1142,7 @@ The sun is a big star.
 #sUrya sabase badA nakRawra hE.
 323
 The sun is the biggest star.
-#गुलाब जैसे फूल पानी में नहीं उगते हैं।
+#gulAba jEse PUla pAnI meM nahIM ugawe hEM.
 324
 Flowers like roses do not grow in water.
 Flowers like roses do not grow in water.
@@ -1329,13 +1330,14 @@ Rama went before the cows were milked.
 Raxa is as beautiful as Mira.
 #rAma Ora sIwA acCe hEM.
 354
+Rama and Siwa are good.
 #rAma ke xo bete hEM.
 355
 Rama has two sons.
 #rAma ke eka betI hE.
 356
 Rama has a daughter.
-#mEMne kaviwAoM ki kiwAba KarIxI.
+#mEMne kaviwAoM kI kiwAba KarIxI.
 357
 I bought rhymes ’ book.
 I bought rhymes's book.
@@ -1361,9 +1363,44 @@ I will applaud Rama tomorrow.
 #mEMne avinASI saca paDA.
 362
 I read the imperishable truth.
+#rAma ke vana jAne para xaSaraWa mara gaye.
+363
+When Rama left to the forest, Xasarawa died.
+When Rama left, to the forest, Xasarawa died.
+When Rama left to the forest Xasarawa died.
+When Rama left, to the forest Xasarawa died.
+Xasarawa died when Rama left to the forest.
+Xasarawa died when Rama left, to the forest.
+Xasarawa died when Rama left to the forest.
+Xasarawa died when Rama left, to the forest.
+#rAma, hari, viveka, riyA, rajanI Ora mohana acCe hEM.
+364
+Rama, Hari, Viveka, Riya, Rajani, and Mohana are good.
+#rAma, mohana Ora sIwA acCe hEM.
+365
+Rama, Mohana, and Siwa are good.
+#rAma buxXimAna, praSAMwa, xilera Ora acCA hE.
+366
+Rama is intelligent, calm, brave, and good.
+#kuwwA!
+367
+A dog.
+A dog
+#kuwwe!
+368
+Dogs
+Dogs.
+#kuwwA Ora billI
+369
+The cat and the dog.
+The cat and the dog
 #mEMne acCI kiwAba paDI hE.
 37
 I have read a good book.
+#kuwwe Ora billiyAz
+370
+The cats and the dog.
+The cats and the dog
 #rAma ne SyAma xvArA mohana se BiKArI ko xAna xilavAyA.
 38
 Rama asked Syama to make Mohana give the donation to the beggar.
@@ -1393,9 +1430,9 @@ I ate a new fruit.
 #mEMne naye ladake ko xeKA.
 43
 I saw the new boy.
-#mEMne nayI kiwAba paDI.
+#bagIce meM billiyAz WIM. 
 44
-I read a new book.
+Cats were in the garden.
 #BArawa meM xvIpasamUha hEM.
 45
 Islands are in Barawa.
@@ -1673,13 +1710,13 @@ Rama went with his father to the school.
 I am coming, there.
 I am coming there.
 I am coming there.
-#wuma keloge.
+#wuma Keloge.
 93
 You will play.
 #rAma paDegA.
 94
 Rama will study.
-#mEM Gara jA sakawA hUzgayA hUzgA.
+#mEM Gara jA sakawA hUz.
 95
 I might go home.
 I might go home.

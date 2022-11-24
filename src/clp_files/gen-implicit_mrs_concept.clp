@@ -34,6 +34,7 @@
 (not (rel_name-ids coref ?	?id)) ;#usane nahIM KAyA.
 (not  (id-abs ?id yes)) ;#kyA wumako buKAra hE?
 (not  (id-ne ?id yes)) ;#KIra ke liye cAvala KarIxo.
+;(not (sentence_type	)) ;#kuwwA! ;#billI Ora kuwwA.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "(+ ?id 10)" _a_q)"crlf)
@@ -50,6 +51,7 @@
 (not (rel_name-ids r6 ?id ?v))
 (not(id-concept_label	?id 	?concept&speaker|addressee|vaha|yaha|saba_4))
 (not (rel_name-ids coref ?	?id))
+;(not (sentence_type	)) ;;#kuwwA! ;#billI Ora kuwwA.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
@@ -62,9 +64,23 @@
 (not (id-def ?id yes))
 (not (rel_name-ids dem ?id ?))
 (not (rel_name-ids quant ?id ?))
+(not (sentence_type	)) ;;#kuwwA! ;#billI Ora kuwwA.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+)
+
+;Rule for creating udef_q and unknown for non-sentence type.
+;In case of topic names we need to generate unknown and udef_q.
+
+(defrule udef_unknown
+(id-gen-num-pers ?id ?g ?n ?p)
+(sentence_type	)
+=>
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+;(printout ?*defdbug* "(rule-rel-values  udef_unknown id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 0000000 unknown)"crlf)
+(printout ?*defdbug* "(rule-rel-values  udef_unknown id-MRS_concept 0000000 unknown)"crlf)
 )
 
 ;rule for generating  _this_q_dem
@@ -494,15 +510,16 @@
 
 
 ;Rule for bringing comp_equal for ru relation.
-(defrule comper_equal
+(defrule comper-equal
 (rel_name-ids ru ?id ?id1)
 (not (id-degree	?adjid	comper_more)) 
-(not (id-degree	?adjid	comper_less)) 
+(not (id-degree	?adjid	comper_less))
+(rel_name-ids	k1	?kri	?id) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
+(rel_name-ids	k1s	?kri	?adj)
 =>
 (printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 40) "  comp_equal)"crlf)
-(printout ?*defdbug* "(rule-rel-values  comper_more   id-MRS_concept "(+ ?id 40) "  comp_equal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  comper-equal   id-MRS_concept "(+ ?id 40) "  comp_equal)"crlf)
 )
-
 
 ;rule for generating  _make_v_cause
 ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
@@ -560,15 +577,63 @@
 (printout ?*defdbug* "(rule-rel-values rblpk id-MRS_concept -50000 _when_x_subord)"crlf)
 )
 
-;Rule for bringing udef_q and ccof for ccof relation.
+
+;Rule for bringing _and_c for conj relation.
 ;#rAma Ora sIwA acCe hEM.
-(defrule ccof
-(rel_name-ids	ccof	?ccofid	?id)
+;#rAma, hari Ora sIwA acCe hEM.
+;#Rama buxXimAna, motA, xilera, Ora accA hE.
+(defrule conj
+(construction-ids	conj	$?v ?id1 ?id2)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept -15000 _and_c)"crlf)
-(printout ?*defdbug* "(rule-rel-values ccof id-MRS_concept -15000 _and_c)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ccofid 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values ccof id-MRS_concept "(+ ?ccofid 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 500)" _and_c)"crlf)
+(printout ?*defdbug* "(rule-rel-values conj id-MRS_concept "(+ ?id1 500)" _and_c)"crlf)
 )
 
+
+;Rule for creating implicit_conj when the construction is more than two values. 
+;Ex. Rama buxXimAna, motA, xilera, Ora accA hE.
+(defrule implicit_conj
+(construction-ids	conj  $?v)
+=>
+(bind ?count (length$ (create$ $?v)))
+(if (> ?count 2)  then
+  (loop-for-count (?i 1  (- ?count 2))
+   (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 600)" implicit_conj)"crlf)
+   (printout ?*defdbug* "(rule-rel-values implicit_conj id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 600)" implicit_conj)"crlf)
+)))
+
+;Rule for creating ude_q when the construction values are in subjective position with noun entries. 
+;Ex. rAma, hari Ora sIwA acCe hEM.
+(defrule implicit_conj4pred
+(construction-ids	conj  $? ?n $? ?x ?y)
+(rel_name-ids   ?rel        ?id ?n)
+(id-concept_label	?n	?hincon)
+(id-gen-num-pers	?n	?gen ?num ?per)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values implicit_conj4pred id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+)
+
+
+;Rule for creating udef_q for when the sentence consists of only two noun entries in the construction for unknown.
+;#billI Ora kuwwA.
+(defrule implicit_conj4unknown
+(construction-ids	conj  ?n ?y)
+(rel_name-ids   ?rel        ?id ?n)
+(id-concept_label	?n	?hincon)
+(id-gen-num-pers	?n	?gen ?num ?per)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values implicit_conj4unknown id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+)
+
+;Rule for creating udef_q for the construction with two subjective entries. 
+;;#rAma Ora sIwA acCe hEM.
+(defrule udefq_conj4subj
+(construction-ids	conj  $? ?n ?y)
+(id-gen-num-pers	?n	?gen ?num ?per)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values udefq_conj4subj id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+)
 

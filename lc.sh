@@ -53,6 +53,7 @@ uniq file.merge > file.merge.uniq
 #sort -u file.merge > file.merge.uniq
 python3 $var/src/MRS_facts_gen_frn_clips.py file.merge.uniq $file_name"_mrs"
 sed -i 's/_INDEX/-INDEX/g' $file_name"_mrs"
+sed -i 's/_HNDL/-HNDL/g' $file_name"_mrs"
 
 echo "Calling ACE parser for generating English sentence"
 #$HOME/ace-0.9.24/ace -g $HOME/ace-0.9.24/erg-1214-x86-64-0.9.24.dat -e $file_name"_mrs" 

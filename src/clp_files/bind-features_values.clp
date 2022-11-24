@@ -905,7 +905,7 @@ else
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kri-tam-neg id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
 
 ;Modified by Sukhada on 24/04/2020 for 'Ravana was killed by Rama'.
@@ -1049,17 +1049,6 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values tam-modal  LTOP-INDEX h0 "?arg0 ")"crlf)
 )
 
-;(defrule tam-wish
-;(kriyA-TAM ?kri_id nA_cAhawA_hE_1) 
-;(MRS_info ?rel ?mod  _want_v_1 ?l ?arg0 ?a1 ?a2)
-;(sentence_type  affirmative|interrogative|negative)
-;(test (eq ?mod (+ ?kri_id 100)))
-;=>
-;(assert (asserted_LTOP-INDEX-for-modal))
-;(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
-;(printout ?*rstr-dbug* "(rule-rel-values tam-wish  LTOP-INDEX h0 "?arg0 ")"crlf)
-;)
-
 ;generates LTOP and INDEX values for causative.
 ;ex. SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40100 _make_v_cause h1 e2 x28 h4)
@@ -1092,17 +1081,6 @@ then
     (printout ?*rstr-dbug* "(rule-rel-values get-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
 )
 
-;generates LTOP and INDEX values for predicative adjective(s).
-;ex. rAma acCA hE.
-(defrule samAnAXi-LTOP
-(id-concept_label       ?v   hE_1|WA_1)
-(rel_name-ids   k1s        ?id  ?id_adj)
-(MRS_info ?rel ?id_adj ?mrsCon ?lbl ?arg0 $?vars)
-(test (neq (str-index _a_ ?mrsCon) FALSE)) 
-=>
-    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
-    (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
-)  
 
 ;generates LTOP and INDEX values for existential verb(s).
 ;ex. ladakA xilli meM hE.
@@ -1215,6 +1193,8 @@ then
 (test (eq (sub-string (- (str-length ?endsWith_q) 1) (str-length ?endsWith_q) ?endsWith_q) "_q"))
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 (test (neq (sub-string (- (str-length ?mrsCon) 6) (str-length ?mrsCon) ?mrsCon) "_p_temp"))
+(not (modified_conj ?head))
+;(not (modified_implicit_conj ?head)) ;#rAma, hari Ora sIwA acCe hEM.
 =>
 (retract ?f)
 (printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
@@ -1311,6 +1291,8 @@ then
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
 (MRS_info ?rel ?id1 ?mrs ?lbll ?arg ?name)
 (test (neq (str-index _a_ ?mrs_adj) FALSE))
+(rel_name-ids	k1	?kri	?id)
+(rel_name-ids	k1s	?kri	?adjid) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?compid" comp_equal "?lbl" "?a0" "?arg0" "?arg" )"crlf)
@@ -1319,6 +1301,7 @@ then
 
 ;Changing the lbl value of pargd with the blak verb and arg1 and arg2 will changed as blak verb.
 ;gAyoM ke xuhane se pahale rAma Gara gayA.
+
 (defrule pargd-r-blak
 (declare (salience -400))
 (rel_name-ids	rblak	?kri	?blak)
@@ -1331,41 +1314,236 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values pargd-r-blak id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lbl1" " ?arg0 " " ?arg00 " "?arg22 ")"crlf)
 )
 
-;Rule for changing L-INDEX of ccof with the first list component word ARG0 and R-INDEX with the second list component word ARG0.
+;Rule for changing L-INDEX and R-INDEX of conj with the ARG0 of the component before _and_c  and the component after _and_c respectively
 ;Rule for changing arg0 of udef_q with ARG0 of _and_c.
+;This rule creates binding for _and_c and will be available for sentences having more coordination words. 
+;The ARG0 of _and_c will be available and replace with the previous implicit_conj R-INDEX
+;#rAma, hari Ora sIwA acCe hEM.
+;Rama buxXimAna, motA, xilera, Ora accA hEM.
 ;rAma Ora sIwA acCe hEM.
-(defrule ccof
-(rel_name-ids	ccof	?ccofid	?first)
-(rel_name-ids	ccof	?ccofid	?second)
+(defrule conj
+(declare (salience 1000))
+(construction-ids	conj	$?vars ?id1 ?id2)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?l ?a0 ?li ?ri)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?lbll ?argg ?rstr ?body)
-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?first ?name ?lbl ?arg0 ?namee)
-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?second ?name2 ?lbl1 ?arg00 ?namee2)
-(not (modified_ccof ?a0))
+(MRS_info ?rel1 ?id1 ?name ?lbl ?arg0 $?var)
+(MRS_info ?rel2 ?id2 ?name2 ?lbl1 ?arg00 $?varss)
+(not (modified_conj ?id))
 =>
 (retract ?f ?f1)
-(assert (modified_ccof ?a0))
-(assert (MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?l ?a0 ?arg0 ?arg00))
-(printout ?*rstr-dbug* "(rule-rel-values ccof  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _and_c "?l" "?a0" "?arg0" "?arg00")"crlf)
+(assert (modified_conj ?id))
+(assert (conj_ARG0 ?id ?a0))
+;(assert (MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?l ?a0 ?arg0 ?arg00))
+(printout ?*rstr-fp*  "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _and_c "?l" "?a0" "?arg0" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _and_c "?l" "?a0" "?arg0" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj  conj_ARG0 "?id" "?a0")"crlf)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values ccof  id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj  id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
 )
 
-;Rule to change ARG1 of adjective with ARG0 of _and_c
+;Rule for converting R-INDEX of implicit_conj with ARG0 of _and_c and then ARG0 of immediate implicit_conj with R-INDEX of immidiate next implicit_conj and so on.
+;Rule for converting L-INDEX of implicit_conj with  arg0 of previous component it brings (-600). This process also continues until the last implicit_conj
+;Rule for converting udef_q arg0 with arg0 of implicit_conj
+;#rAma, hari Ora sIwA acCe hEM.
+;Rama buxXimAna, motA, xilera, Ora accA hEM.
+
+(defrule conj-implicit
+(declare (salience 1000))
+(construction-ids	conj	$?vars ?id1 ?id2 $?va)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id implicit_conj ?l ?a0 ?li ?ri)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?lbll ?argg ?rstr ?body)
+?f3<-(MRS_info ?rel1 ?id1 ?con1 ?l1 ?a01 $?var)
+?f2<-(conj_ARG0 ?conj ?Pre_A0)
+(not (modified_implicit_conj ?id))
+(not (modified_implicit_main ?id1))
+(test (eq  (-  (string-to-field (sub-string 1 1 (str-cat ?conj))) 1)  (string-to-field (sub-string 1 1 (str-cat ?id)))  (string-to-field (sub-string 1 1 (str-cat ?id1)) ) ))
+=>
+(retract ?f ?f1 ?f2)
+(assert (modified_implicit_main ?id1))
+(assert (modified_implicit_conj ?id1))
+(assert (conj_ARG0 ?id ?a0))
+(printout ?*rstr-fp*  "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" implicit_conj "?l" "?a0" "?a01" "?Pre_A0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-implicit  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" conj-implicit "?l" "?a0" "?a01" "?Pre_A0")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-implicit  id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
+)
+
+
+;generates LTOP and INDEX values for predicative adjective(s).
+;ex. rAma acCA hE.   rAma, sIwA, hari and mohana acCe hEM.
+(defrule samAnAXi-LTOP
+(id-concept_label       ?v   hE_1|WA_1)
+(rel_name-ids   k1s        ?id  ?id_adj)
+(MRS_info ?rel ?id_adj ?mrsCon ?lbl ?arg0 $?vars)
+(not (LTOP_value_geneated_4_construction))
+(test (neq (str-index _a_ ?mrsCon) FALSE)) 
+=>
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)  
+
+;Generates binding with the LTOP-INDEX with implicit arg0 when there is predicative construction with more than two words. 
+;#Rama buxXimAna, motA, xilera, Ora accA hE.
+(defrule samAnAXi-LTOP-conj-pred
+(declare (salience 1000))
+(id-concept_label       ?v   hE_1|WA_1)
+(rel_name-ids   k1s        ?v  ?k1s)
+(construction-ids	conj  ?k1s $?k1ses)
+(MRS_info ?rel ?k1sImplicit implicit_conj ?lbl ?arg0 $?vars)
+(MRS_info ?rel1 ?k1s ?mrsCon $?var)
+(test (eq  (+ ?k1s 600) ?k1sImplicit))
+(test (neq (str-index _a_ ?mrsCon) FALSE))
+;(not (modified_implicit_main ?id1))
+=>
+
+(assert (LTOP_value_geneated_4_construction))
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP-conj-pred LTOP-INDEX h0 "?arg0 ")"crlf)
+)  
+
+
+;Rule to change ARG1 of adjective with ARG0 of _and_c when the construction is in predicate position.
 ;rAma Ora sIwA acCe hEM.
-(defrule ccofk1s
-(rel_name-ids	ccof	?ccofid	?id)
+;When the construction is having only two words. 
+(defrule conjk1s
+(construction-ids	conj	?id1 ?id2)
 (rel_name-ids	k1s	?non-adj ?adj)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?adj ?mrsCon ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?iddd _and_c ?lbll ?arg00 ?l ?r)
 (test (neq (str-index _a_ ?mrsCon) FALSE))
 (test (neq ?arg1 ?arg00))
-(not (modified_ccofk1s ?arg00))
+(not (modified_conjk1s ?arg00))
 =>
 (retract ?f)
-(assert (modified_ccofk1s ?arg00))
+(assert (modified_conjk1s ?arg00))
 (assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?adj ?mrsCon ?lbl ?arg0 ?arg00 ?arg2))
 ;(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?adj" "?mrsCon" "?lbl" "?arg0" "?arg00" "?arg2")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values ccofk1s id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?adj" "?mrsCon" "?lbl" "?arg0" "?arg00" "?arg2")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conjk1s id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?adj" "?mrsCon" "?lbl" "?arg0" "?arg00" "?arg2")"crlf)
+)
+
+
+;Rule for converting predicatvie word ARG1 with the first implicit_conj ARG0 value. 
+;#rAma, hari Ora sIwA acCe hEM.
+(defrule implicit-conj-bind-final
+(declare (salience 1000))
+(rel_name-ids	k1	?kri	?id1)
+(construction-ids	conj	?id1 $?var)
+?f<-(MRS_info ?rel ?adjid ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id implicit_conj ?lbll ?arg00 ?l ?r)
+(test (eq  (+ ?id1 600) ?id))
+=>
+(printout ?*rstr-fp* "(MRS_info "?rel" "?adjid" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values implicit-conj-bind-final "?rel" "?adjid" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+)
+
+;Rule for binding ARG1 of the predicative word with ARG0 of _and_c  when construction is in subjective position with two entries. 
+(defrule conj-bind-final-two
+(declare (salience 1000))
+(rel_name-ids	k1	?kri	?id1)
+(construction-ids	conj	?id1 ?id2)
+?f<-(MRS_info ?rel ?adjid ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?lbll ?arg00 ?l ?r)
+(test (eq  (+ ?id1 500) ?id))
+=>
+(printout ?*rstr-fp* "(MRS_info "?rel" "?adjid" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-bind-final-two "?rel" "?adjid" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+)
+
+;Rule for binding LTOP_INDEX with arg0 of unknown typed feature.
+;#kuwwA!
+;#billI Ora kuwwA.
+(defrule unknown_LTOP
+(sentence_type	)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values unknown_LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+;Rule to change arg value of unknown with arg0 of the word it brough from. 
+;;#kuwwA! for this sentence the arg0 of dog will go for the arg1 of the unknown
+;Not applicable for the sentences having more than two words in construction. 
+(defrule unknown_bind
+(sentence_type	)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+(MRS_info id-MRS_concept-LBL-ARG0 ?noun ?mrsCon ?lbl1 ?arg01)
+(not (construction-ids	conj	?id1 ?id2))
+=>
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?arg01 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values unknown_bind id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?arg01 ")"crlf)
+)
+
+;Rule for binding ARG0 of conj with ARG of unknown when the construction is in two words.
+;;#billI Ora kuwwA. 
+(defrule unknown_conj
+(declare (salience 2000))
+(sentence_type	)
+(construction-ids	conj	?id1 ?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?conjid _and_c ?lbl1 ?Arg0 $?v)
+(test (eq  (+ ?id1 500) ?conjid))
+=>
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?Arg0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values unknown_conj id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?Arg0 ")"crlf)
+)
+
+;Rule for binding L_HNDL of _and_c with the previous LBL of the word. R_HNDL with the LBl fo the preceeding word.
+;Rule for binding L-INDEX of _and_c with the ARG0 of previous word and R-INDEX with the preceding word ARG0 
+;It also provides LBL and ARG0 of _and_c for the next rule. 
+;#Rama buxXimAna, motA, xilera, Ora accA hE.
+(defrule conj-pred
+(declare (salience 1000))
+(construction-ids	conj	$?vars ?id1 ?id2)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?id _and_c ?l ?a0 ?li ?ri ?lh ?rh)
+(MRS_info ?rel1 ?id1 ?name ?lbl ?arg0 $?var)
+(MRS_info ?rel2 ?id2 ?name2 ?lbl1 ?arg00 $?varss)
+(not (modified_conj ?id))
+=>
+(retract ?f)
+(assert (modified_conj ?id))
+(assert (conj_LBL_ARG0 ?id ?l ?a0 ))
+(printout ?*rstr-fp*  "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?id" _and_c "?l" "?a0" "?arg0" "?arg00" "?lbl" "?lbl1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-pred  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?id" _and_c "?l" "?a0" "?arg0" "?arg00" "?lbl" "?lbl1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-pred  conj_LBL_ARG0 "?id" "?l" "?a0")"crlf)
+)
+
+;Rule for binding implicit_conj just before the _and_c with R-INDEX with the arg0 of the _and_c and LBL of _and_c with the R_HNDL of implicit_conj.
+;Then binding starts for this implicit_conj L_INDEX with the ARG0 of the preceeding word and L_HNDL with the LBL of the same word.
+;This process continues until the last implicit_conj binds. 
+;#Rama buxXimAna, motA, xilera, Ora accA hE. 
+(defrule conj-implicit-pred
+(declare (salience 1000))
+(construction-ids	conj	$?vars ?id1 ?id2 $?va)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?id implicit_conj ?l ?a0 ?li ?ri ?lh ?rh)
+?f3<-(MRS_info ?rel1 ?id1 ?con1 ?l1 ?a01 $?var)
+?f2<-(conj_LBL_ARG0 ?conj ?Pre_lbl ?Pre_A0)
+(not (modified_implicit_conj ?id))
+(not (modified_implicit_main ?id1))
+(test (eq  (-  (string-to-field (sub-string 1 1 (str-cat ?conj))) 1)  (string-to-field (sub-string 1 1 (str-cat ?id)))  (string-to-field (sub-string 1 1 (str-cat ?id1)) ) ))
+=>
+(retract ?f ?f2)
+(assert (modified_implicit_main ?id1))
+(assert (modified_implicit_conj ?id1))
+(assert (conj_LBL_ARG0 ?id ?l ?a0))
+(printout ?*rstr-fp*  "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?id" implicit_conj "?l" "?a0" "?a01" "?Pre_A0" "?l1" "?Pre_lbl" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-implicit-pred  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?id" implicit_conj "?l" "?a0" "?a01" "?Pre_A0" "?Pre_lbl")"crlf)
+)
+
+;Rule for binding ARG1 of the predicative position with the ARG0 of the subject position.
+;#rAma, hari Ora sIwA acCe hEM.
+(defrule samAnAXi-construction
+(rel_name-ids   k1	?non-adj ?k1)
+(rel_name-ids	k1s	?non-adj ?adj)
+(construction-ids	conj	 $? ?adj  $?)
+?f<-(MRS_info ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
+(test (neq (str-index _a_ ?mrsCon) FALSE))
+(test (neq ?arg1 ?nonadjarg_0))
+(not (modified_samAnAXi ?nonadjarg_0 ?adj) )
+=>
+;(retract ?f)
+(assert (modified_samAnAXi ?nonadjarg_0 ?adj))
+(assert (MRS_info  ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?nonadjarg_0 $?v))
+(printout ?*rstr-dbug* "(rule-rel-values samAnAXi-construction "?rel_name " " ?adj " " ?mrsCon " " ?lbl " " ?nonadjarg_0 " "(implode$ (create$ $?v))")"crlf)
 )
 

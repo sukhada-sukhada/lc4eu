@@ -77,6 +77,9 @@
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 (test (neq (sub-string (- (str-length ?mrsCon) 6) (str-length ?mrsCon) ?mrsCon) "_p_temp"))
 (not (Restr-Restricted-fact-generated_for_comp ?dep))
+;(test (neq ?mrsCon "_and_c"))
+(test (eq (str-index _and_c ?mrsCon) FALSE))
+(test (eq (str-index implicit_conj ?mrsCon) FALSE))
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
@@ -665,16 +668,33 @@
 
 ;Rule for binding RSTR of udef_q with LBL of _and_c 
 ;#rAma Ora sIwA acCe hEM.
-(defrule ccof-rstr
-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX -15000 _and_c ?lbl ?arg0 ?first ?second)
-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?l ?arg0 ?rstr ?body)
+(defrule conj-rstr
+(declare (salience 10000))
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?lbl ?arg0 ?first ?second)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?l ?a ?rstr ?body)
+(test (eq (- ?id 490) ?idd))
 =>
+(retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted  "?rstr"  "?lbl ")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values ccof-rstr Restr-Restricted  "?rstr" "?lbl ")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values conj-rstr Restr-Restricted  "?rstr" "?lbl ")"crlf)
+)
+
+;Rule for binding RSTR of udef_q with LBL of implicit_conj
+;#rAma Ora sIwA acCe hEM.
+(defrule implicit-rstr
+(declare (salience 1000))
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id implicit_conj ?lbl ?arg0 ?first ?second)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?l ?a ?rstr ?body)
+(test (eq (- ?id 590) ?idd))
+=>
+(retract ?f)
+(printout ?*rstr-rstd* "(Restr-Restricted  "?rstr"  "?lbl ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values implicit-rstr Restr-Restricted  "?rstr" "?lbl ")"crlf)
 )
 
 ;Rule for binding h0 with label of adjective when there is no verb.
-;#rAma Ora sIwA acCe hEM.
+;This rule not fires when predicates are in the construction order. 
+;#Rama buxXimAna, motA, xilera, Ora accA hE.
 (defrule adjective
 (rel_name-ids	k1s	?id ?adj)
 (MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
@@ -682,8 +702,54 @@
 (MRS_info ?rel ?idd ?hin ?lbl ?a0 $?v1)
 (not (rel_name-ids neg	?iddd	?neg))
 (test (eq (str-index _v_ ?hin) FALSE))
+(not (construction-ids	conj 	$? ?adj $?))
+(MRS_info ?rel2 ?impl implicit_conj $?var)
+(test (eq  (+ ?adj 600) ?impl))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 "?l")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  adjective  Restr-Restricted h0 "?l")"crlf)
 )
+
+;Rule for binding h0 with the lbl of the karwa in construction. When there is no verb in the construction and having only two subjective construction.
+;#rAma Ora sIwA acCe hEM.
+(defrule adjective-conjj
+(rel_name-ids	k1s	?id ?adj)
+(MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+(MRS_info ?rel ?idd ?hin ?lbl ?a0 $?v1)
+(not (rel_name-ids neg	?iddd	?neg))
+(test (eq (str-index _v_ ?hin) FALSE))
+(MRS_info ?rel3  ?k1 ?mrsconk1 $?vs)
+(construction-ids	conj 	?k1 ?x)
+(test (eq  (+ ?k1 10000) ?x))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 "?l")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  adjective-conjj  Restr-Restricted h0 "?l")"crlf)
+)
+
+;Rule for binding lbl of first implicit_conj with the h0 when the construction is having predicates. 
+;#Rama buxXimAna, motA, xilera, Ora accA hE.
+(defrule implicit-adjective
+(rel_name-ids	k1s	?kri ?adj)
+(MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
+(construction-ids	conj	?adj $?var)
+(MRS_info ?rel ?id1 implicit_conj ?lbl1 ?arg01 $?vars)
+(test (neq (str-index _a_ ?mrs_adj) FALSE))
+(test (eq  (+ ?adj 600) ?id1))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  implicit-adjective  Restr-Restricted h0 "?lbl1")"crlf)
+)
+
+;Rule for binding lbl of the unknown with h0 when the sentence_type is unknown.
+;#kuwwA!
+;#billI Ora kuwwA.
+(defrule unknown_rstr
+(sentence_type	)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 "?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values unknown_rstr Restr-Restricted h0 "?lbl")"crlf)
+)
+
 

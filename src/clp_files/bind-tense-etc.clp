@@ -126,6 +126,7 @@
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 (test(neq (str-index "_a_" ?mrs)FALSE))
+(not (construction-ids	conj	$? ?id $?)) ;#Rama buxXimAna, motA, xilera, Ora accA hE.
 (not (modified_tensexstad ?id))
 =>
 (assert (modified_tenseexstad ?id))
@@ -134,8 +135,44 @@
 (printout ?*tense-etc-dbg* "(rule-rel-values  tensexstad  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
 )
 
+;Rule for creating tense to the head of the sentence when the sentence is in construction form. 
+;Here it creates tense for the first implicit_conj when the construction is in predicative construction.
+;#Rama buxXimAna, motA, xilera, Ora accA hE.
+(defrule tenseConj_adj
+(declare (salience 1000))
+(id-concept_label       ?v   hE_1|WA_1)
+(rel_name-ids   k1s        ?v  ?id)
+(construction-ids	conj	$? ?id $? ?x ?y)
+(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
+?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
+(test(neq (str-index "_a_" ?mrs)FALSE))
+(not (modified_tensexstad ?id))
+=>
+(assert (modified_tenseexstad ?id))
+(retract ?f)
+(printout ?*tense-etc* "(tense-MRS_info "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+(printout ?*tense-etc-dbg* "(rule-rel-values  tenseConj_adj  "?rel " " ?id " " ?mrs " " ?l " " ?a0 " " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?va)) ")" crlf)
+)
+
+
+;Rule for creating TENSE information for the implicit_conj when it is became the head of the sentence.
+;Rama is intelligent, calm, brave, and good.
+(defrule tenseimplicit_conjarg0
+(declare (salience 1000))
+(rel_name-ids   k1s        ?v  ?k1s)
+(construction-ids	conj	?k1s $?)
+(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?imconid implicit_conj ?lbl ?arg0 $?vs)
+(test (eq  (+ ?k1s 600) ?imconid))
+=>
+(retract ?f)
+(printout ?*tense-etc* "(tense-MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?imconid" implicit_conj "?lbl" "?arg0" " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?vs)) ")" crlf)
+(printout ?*tense-etc-dbg* "(rule-rel-values  tenseimplicit_conjarg0  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?imconid" implicit_conj "?lbl" "?arg0" " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?vs)) ")" crlf)
+)
+
+
 ;example:-mEM Delhi meM hUz.
-;solution:-I am in Delhi.
+;Eng-I am in Delhi.
 (defrule tensexsti
 (id-concept_label       ?v   hE_1|WA_1)
 (rel_name-ids   k7p        ?v  ?id)
@@ -172,11 +209,3 @@
 (printout ?*tense-etc-dbg* "(rule-rel-values  print-mrs  "?rel1 " " ?id " " ?mrs " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
-
-;(defrule printFacts
-;(declare (salience -9000))
-;(tense-MRS_info ?rel $?vars)
-;=>
-;(printout ?*tense-etc* "(tense-MRS_info " ?rel "  " (implode$ (create$ $?vars)) ")" crlf)
-;(printout ?*tense-etc-dbg* "(rule-rel-values printFacts " ?rel " " (implode$ (create$ $?vars)) ")"crlf)
-;)

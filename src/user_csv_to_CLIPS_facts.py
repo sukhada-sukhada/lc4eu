@@ -19,6 +19,9 @@ depRels = hinUsrCsv[5].strip().split(',')        # row 6: dependency relations
 discorseRel = hinUsrCsv[6].strip().split(',')    # row 7: discourse relations
 speakerView = hinUsrCsv[7].strip().split(',')    # row 8: Speaker's view
 scope = hinUsrCsv[8].strip().split(',')          # row 9: scope
+if len(hinUsrCsv) > 10:
+    construction = hinUsrCsv[10].split()         # row 11: construction
+    #print(construction, hinUsrCsv)
 
 # Writing kriyA and their TAM value
 for i in range(len(conceptDict)):
@@ -155,3 +158,16 @@ for i in range(len(scope)):
 
 # writing sentence type
 ans.write('(sentence_type\t' + hinUsrCsv[9].strip() + ')\n')
+
+# Constructions
+if len(hinUsrCsv) > 10:
+    for c in range(len(construction)):
+        myc = construction[c].split(':')
+        constructionName = myc[0]
+        constructionIds  = myc[1][1:-1].split(',')
+        myIds = []
+        for i in range(len(constructionIds)):
+            myIds.append(str(int(constructionIds[i])*10000))
+        ans.write('(construction-ids\t' + constructionName + '\t' + ' '.join(myIds) + ')\n')
+    
+
