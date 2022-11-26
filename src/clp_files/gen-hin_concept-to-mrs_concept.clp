@@ -17,8 +17,8 @@
 (defrule unknown-NN
 (declare (salience 10000))
 (id-concept_label       ?id   ?conLabel)
-?f<-(concept_label-concept_in_Eng-MRS_concept ?conLabel ?enCon ?mrsConcept)
-(MRS_concept-label-feature_values ?mrsConcept $?fv)
+?f<-(cl-cEn-MRSc ?conLabel ?enCon ?mrsConcept)
+(MRSc-FVs ?mrsConcept $?fv)
 (test (neq (str-index _u_unknown ?mrsConcept) FALSE))
 (test (neq (str-index NN ?mrsConcept) FALSE))
 =>
@@ -52,8 +52,8 @@
 (defrule unknown-JJ
 (declare (salience 10000))
 (id-concept_label       ?id   ?conLabel)
-?f<-(concept_label-concept_in_Eng-MRS_concept ?conLabel ?enCon ?mrsConcept)
-(MRS_concept-label-feature_values ?mrsConcept $?fv)
+?f<-(cl-cEn-MRSc ?conLabel ?enCon ?mrsConcept)
+(MRSc-FVs ?mrsConcept $?fv)
 (test (neq (str-index _u_unknown ?mrsConcept) FALSE))
 (test (neq (str-index JJ ?mrsConcept) FALSE))
 =>
@@ -75,8 +75,8 @@
 (defrule unknown-RB
 (declare (salience 10000))
 (id-concept_label       ?id   ?conLabel)
-?f<-(concept_label-concept_in_Eng-MRS_concept ?conLabel ?enCon ?mrsConcept)
-(MRS_concept-label-feature_values ?mrsConcept $?fv)
+?f<-(cl-cEn-MRSc ?conLabel ?enCon ?mrsConcept)
+(MRSc-FVs ?mrsConcept $?fv)
 (test (neq (str-index _u_unknown ?mrsConcept) FALSE))
 (test (neq (str-index RB ?mrsConcept) FALSE))
 =>
@@ -103,8 +103,8 @@
 (defrule unknown-VB
 (declare (salience 10000))
 (id-concept_label       ?id   ?conLabel)
-?f<-(concept_label-concept_in_Eng-MRS_concept ?conLabel ?enCon ?mrsConcept)
-(MRS_concept-label-feature_values ?mrsConcept $?fv)
+?f<-(cl-cEn-MRSc ?conLabel ?enCon ?mrsConcept)
+(MRSc-FVs ?mrsConcept $?fv)
 (test (neq (str-index _u_unknown ?mrsConcept) FALSE))
 (test (neq (str-index VB ?mrsConcept) FALSE))
 =>
@@ -132,7 +132,7 @@
 (defrule mrs-rels
 ;(declare (salience 100))
 (id-concept_label       ?id   ?conLabel)
-(concept_label-concept_in_Eng-MRS_concept ?conLabel ?enCon ?mrsConcept)
+(cl-cEn-MRSc ?conLabel ?enCon ?mrsConcept)
 =>
 (assert (id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept))
 (printout ?*mrs-dbug* "(rule-rel-values mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " "?mrsConcept ")"crlf)

@@ -765,7 +765,7 @@
 (declare (salience 1000))
 (id-concept_label ?num ?hnum)
 (rel_name-ids ord|card	?vi     ?num)
-(concept_label-concept_in_Eng-MRS_concept ?hnum ?enum card|ord)
+(cl-cEn-MRSc ?hnum ?enum card|ord)
 ?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num ?ord ?lbl ?numARG0 ?ARG1 ?CARG)
 (MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
 (test (or (eq ?ord ord) (eq ?ord card)) )
@@ -790,7 +790,7 @@ else
 (defrule kramavAcI_vi
 (id-concept_label ?num ?hnum)
 (rel_name-ids card   ?vi     ?num)
-(concept_label-concept_in_Eng-MRS_concept ?hnum ?enum ord)
+(cl-cEn-MRSc ?hnum ?enum ord)
 ?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num ord ?lbl ?numARG0 ?ARG1 ?CARG)
 (MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
 =>
@@ -804,7 +804,7 @@ else
 ;Ex. rAma xo kiwAbaeM paDa rahA hE.
 ;(defrule demonstrative
 ;(rel_name-ids viSeRya-dem	?vi     ?dem)
-;(concept_label-concept_in_Eng-MRS_concept ?hdem ?edem this_q_dem)
+;(cl-cEn-MRSc ?hdem ?edem this_q_dem)
 ;(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num card ?lbl ?numARG0 ?ARG1 ?CARG)
 ;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?dem _this_q_dem ?lbl ?demARG0 ?RSTR ?BODY)
 ;(MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)

@@ -165,7 +165,7 @@
 (declare (salience 2200))
 (sentence_type	imperative)
 (rel_name-ids neg	?kri	?negid)
-?f<-(MRS_concept-label-feature_values neg LBL: h* ARG0: e* ARG1: h*)
+?f<-(MRSc-FVs neg LBL: h* ARG0: e* ARG1: h*)
 =>
 (retract ?f)
 (printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?negid" neg  h1 i2 h3)"crlf)
@@ -201,7 +201,7 @@
 ;Rule for generating initial mrs info for concepts in file "id-concept_label-mrs_concept.dat"
 (defrule mrs-info
 (id-hin_concept-MRS_concept ?id  ?conLbl  ?mrsCon)
-(MRS_concept-label-feature_values ?mrsCon $?vars)
+(MRSc-FVs ?mrsCon $?vars)
 =>
 	(bind ?val (length$ (create$ $?vars)))
 	(bind ?rel (create$ ))
@@ -232,7 +232,7 @@
 ;Generate initial MRS info for concepts in "mrs_info.dat"
 (defrule mrs-info-other
 ?f<-(MRS_info id-MRS_concept ?id  ?mrsCon )
-(MRS_concept-label-feature_values ?mrsCon $?vars)
+(MRSc-FVs ?mrsCon $?vars)
 =>
 (retract ?f )
 	(bind ?val (length$ (create$ $?vars)))
@@ -276,11 +276,11 @@
 ;It creates L_HNDL and R_HNDL with h values and L_INDEX and R_INDEX with e values. 
 (defrule implict_handle
 (declare (salience 5000)) 
-(MRS_concept-label-feature_values implicit_conj LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
+(MRSc-FVs implicit_conj LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
 ?f<-(rel_name-ids	k1s	?kri	?k1s)
 (construction-ids	conj	$? ?k1s $?)
 (MRS_info id-MRS_concept ?implicit ?mrs)
-(MRS_concept-label-feature_values ?mrscon $?v)
+(MRSc-FVs ?mrscon $?v)
 ;(test (eq ?mrs implicit_conj) )
 (test (or (eq ?mrs implicit_conj) (eq ?mrs _and_c)) )
 (test (or (eq  (+ ?k1s 600) ?implicit) (eq  (+ ?k1s 500) ?implicit)))
@@ -288,8 +288,8 @@
 (test (neq (str-index _a_ ?mrscon) False))
 =>
 (retract ?f) 
-(assert (MRS_concept-label-feature_values ?mrs LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*))
-   (printout ?*mrs-dbug* "(rule-rel-values implict_handle  MRS_concept-label-feature_values "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
+(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values implict_handle  MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
 )
 
 

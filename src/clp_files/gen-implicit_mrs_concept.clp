@@ -268,7 +268,7 @@
 ;verified sentence 338 #vaha laMgadAkara calawA hE.
 (defrule mrs_subord-kr
 (rel_name-ids	vmod_kr_vn	?kri	?kvn)
-(MRS_concept-label-feature_values ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
+(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
 (id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
@@ -297,7 +297,7 @@
 ; verified sentence 340#BAgawe hue Sera ko xeKo
 (defrule krvn_while
 (rel_name-ids	vmod_kr_vn ?kri ?kvn)
-(MRS_concept-label-feature_values ?mrscon ?lbl ?l ?arg0 ?a0 ?arg1 ?a1 ARG2: ?a2)
+(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ?arg1 ?a1 ARG2: ?a2)
 (id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -30000  _while_x)"crlf)
