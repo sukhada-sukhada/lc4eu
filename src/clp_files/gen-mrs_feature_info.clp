@@ -5,7 +5,7 @@
 (defglobal ?*mrs-dbug* = mrs-debug)
 (defglobal ?*count* = 1)
 
-;rule for deleting be_v_id for k1s
+;rule for deleting be_v_id for k1s 
 ;Rama is good.
 (defrule rm_be_v_id
 (declare (salience 10000))
@@ -292,6 +292,67 @@
    (printout ?*mrs-dbug* "(rule-rel-values implict_handle  MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
 )
 
+;Rule to change the ARG2 value x* to h* of the verb want when it takes a verb as k2
+;Ex. Rama wants to sleep.
+(defrule want-k2-v
+(declare (salience 300))
+?f<-(MRS_info ?rel ?kri _want_v_1 ?l ?a0 ?a1 ?a2)
+(rel_name-ids k2   ?kri	?k2)
+(MRS_info ?r ?k2  ?k2v $?v)
+(test (neq (str-index _v_ ?k2v) FALSE))
+=>
+(retract ?f)
+(bind ?arg2 (str-cat "h" (sub-string 2 (str-length ?a2) ?a2)))  
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" _want_v_1 "?l" "?a0" "?a1" "?arg2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values want-k2-v "?rel" "?kri" _want_v_1 "?l" "?a0" "?a1" "?arg2")"crlf)
+)
 
+;Rule to change the ARG0 value e* to x* of the card when it takes a verb as k2 and arg1 x* to i*
+;When card is coming in k2 position.
+;The cat chased one.
+(defrule card-x-i
+(declare (salience 300))
+?f<-(MRS_info ?rel ?ic card ?l ?a0 ?a1 ?carg)
+(rel_name-ids k2   ?kri	?ic)
+(MRS_info ?r ?kri  ?mrscon $?v)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+=>
+(retract ?f)
+(bind ?arg0 (str-cat "x" (sub-string 2 (str-length ?a0) ?a0)))
+(bind ?arg1 (str-cat "i" (sub-string 2 (str-length ?a1) ?a1)))    
+(printout ?*mrs-fp* "(MRS_info "?rel" "?ic" card "?l" "?arg0" "?arg1" "?carg")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values card-x-i "?rel" "?ic" card "?l" "?arg0" "?arg1" "?carg")"crlf)
+)
+
+;Removing be_v_id for for kim with k1s relation. 
+;How are you?
+(defrule rm_be_v_id-how
+(declare (salience 10000))
+?f<-(id-concept_label	?kri	hE_1) 
+(id-concept_label	?k1s	kim)
+(rel_name-ids	k1s	?kri	?k1s)
+?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
+(sentence_type  interrogative)
+=>
+(retract ?f ?f1)
+(printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id-how id-MRS_concept " ?kri " hE_1)"crlf)
+)
+
+
+;Rule for changing arg0 of which_q from e to i.
+;How are you?
+(defrule which_q_e-i
+;(declare (salience 300))
+?f<-(MRSc-FVs which_q LBL: h* ARG0: ?a0 RSTR: h* BODY: h*)
+(id-concept_label	?kri	hE_1) 
+(id-concept_label	?k1s	kim)
+(rel_name-ids	k1s	?kri	?k1s)
+(sentence_type  interrogative)
+=>
+(retract ?f)
+(bind ?arg0 (str-cat "i" (sub-string 2 (str-length ?a0) ?a0)))  
+(printout ?*mrs-fp* "(MRSc-FVs which_q LBL: h* ARG0: "?arg0" RSTR: h* BODY: h*)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values which_q_e-i MRSc-FVs which_q LBL: h* ARG0: "?arg0" RSTR: h* BODY: h*)"crlf)
+)
 
 

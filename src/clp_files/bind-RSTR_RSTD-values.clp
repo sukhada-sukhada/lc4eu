@@ -80,11 +80,13 @@
 ;(test (neq ?mrsCon "_and_c"))
 (test (eq (str-index _and_c ?mrsCon) FALSE))
 (test (eq (str-index implicit_conj ?mrsCon) FALSE))
+(not (which_bind_notrequired ?dep)) ;kOna sA kuwwA BOMkA?
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values mrs-info_q  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
 )
+
 
 ;want to bind LBL of '_home_p' with RSTR of 'def_implicit_q
 (defrule defimplicitq
@@ -158,7 +160,7 @@
 (not (id-stative ?id1 yes))
 (not (id-double_causative	?id	yes))
 (not (rel_name-ids	rpk	?id	?kri_id))
-(not (rel_name-ids	vmod_kr_vn	?id	?kri_id))
+;(not (rel_name-ids	kr_vn	?id	?kri_id))
 (not (rel_name-ids	rsk	?id	?kri_id))
 (not (rel_name-ids	rpk	?kri_id	?id))
 (not (rel_name-ids	rpka ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
@@ -166,6 +168,7 @@
 (not (rel_name-ids	rblpk ?id 	?kri_id)) ;rAma ke vana jAne para xaSaraWa mara gaye.
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 (not(rel_name-ids vAkya_vn ?id_1 ?id_2))
+(not (ltop_bind_notrequired ?kri_id))
 =>
         (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf) 
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
@@ -298,7 +301,7 @@
 ;verified sentence 338 #वह लंगडाकर चलता है.
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord-kv
-(rel_name-ids	vmod_kr_vn	?id1	?id2)
+(rel_name-ids	kr_vn	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -752,4 +755,63 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values unknown_rstr Restr-Restricted h0 "?lbl")"crlf)
 )
 
+;Rule for binding rstr of the which_q with the lbl of the mrscon it modifies.
+;#kOna sA kuwwA BOMkA?
+(defrule which-rstr
+(rel_name-ids	mod	?k1	?which)
+(sentence_type  interrogative)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?which _which_q ?lbl ?arg0 ?rstr ?body)
+(MRS_info id-MRS_concept-LBL-ARG0 ?k1 ?mrscon ?lbl1 ?arg01 $?v)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted "?rstr" "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values which-rstr Restr-Restricted "?rstr" "?lbl1")"crlf)
+)
 
+;Rule for binding rstr of the def_implicit_q with lbl of the poss for sentences with whose. 
+;;#kiska kuwwA BOMkA?
+(defrule whose-rstr
+(rel_name-ids	r6	?noun	?whose)
+(sentence_type  interrogative)
+(id-concept_label	?whose	kim)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?ld ?ad ?rd ?bd)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?poss poss ?lpo ?aopo ?a1po ?a2po)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted "?rd" "?lpo")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values whose-rstr Restr-Restricted "?rd" "?lpo")"crlf)
+)
+
+;Rule for binding prpstn_to_prop lbl with ltop ho. 
+;How are you?
+
+(defrule how-rstrr
+(id-concept_label	?how	kim)
+(rel_name-ids	k1s	?kri	?how)
+(sentence_type  interrogative)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 "?lptp")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values how-rstrr Restr-Restricted h0 "?lptp")"crlf)
+)
+
+;Rule for not binding of which_q with the head it modifies. 
+;Which dog barked?
+(defrule kim-which-rstr
+(declare (salience 10000))
+(id-concept_label	?how	kim)
+(rel_name-ids	k1s	?kri	?how)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
+=>
+(assert (which_bind_notrequired ?wq))
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  kim-which which_bind_notrequired " ?wq ")"crlf)
+)
+
+;Rule for not binding h0 with the lbl of the kr_vn verb. 
+(defrule kr_vn-notbind
+(declare (salience 10000))
+(rel_name-ids	kr_vn	?kri	?kri_id)
+(id-hin_concept-MRS_concept ?kri_id ?hin1 ?mrsCon)
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+=>
+(assert (ltop_bind_notrequired ?kri_id))
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  kr_vn-notbind ltop_bind_notrequired " ?kri_id ")"crlf)
+)

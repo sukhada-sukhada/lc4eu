@@ -17,7 +17,7 @@ if ':coref' in discourseRow:
         if 'coref' in discourseRel[j]:
             mycoref = discourseRel[j].split(':')
             if '.' in mycoref[0]: #When the strings before and after '.' respectively refer to another file name and concept index for coref
-                corefFile = mycoref[0].split('.')[0] #Getting coref file name
+                corefFile = mycoref[0][:mycoref[0].rindex('.')] #Getting coref file name 
                 corefIndex = mycoref[0].split('.')[1] #Get coref index from coref file. Assumes that coref file exists in the same folder where the input USR exists.
                 myfile = open(os.path.dirname(sys.argv[1])+'/'+corefFile, 'r')         #reading coref file
                 corefUSR = list(myfile)

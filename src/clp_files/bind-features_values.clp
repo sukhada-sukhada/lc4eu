@@ -97,8 +97,9 @@
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
 ?f<-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 (not (modified_kr_vn ?kri_vi))
+(test (eq (str-index _v_ ?mrsconkrivi) FALSE))
 =>
-(retract ?f)
+;(retract ?f)
 (assert (modified_kr_vn ?kri_vi))
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2 " " ?arg0 " "(implode$ (create$ $?vars)) ")"crlf)
 ;(assert (MRS_info  ?rel2 ?kri_vi  ?mrsconkrivi  ?lbl1 ?arg0_2 ?arg0 $?vars) )
@@ -784,6 +785,32 @@ else
 )
 )
 
+;Rule for converting card CARG value n into the english number. It works when card is coming in k2 position. 
+;The cat chased one. 
+(defrule saMKyA_kri
+(declare (salience 1000))
+(id-concept_label ?num ?hnum)
+(rel_name-ids k2	?vi     ?num)
+(cl-cEn-MRSc ?hnum ?enum card)
+?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num card ?lbl ?numARG0 ?ARG1 ?CARG)
+;(MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
+;(test (or (eq ?ord ord) (eq ?ord card)) )
+(not (enum_replaced ?num))
+=>
+(retract ?f)
+(assert (enum_replaced ?num))
+(if (neq (str-index "_" ?enum) FALSE) then
+  (bind ?myEnum (string-to-field (sub-string 0 (- (str-index "_" ?enum )1) ?enum))) ;removing "_digit" from e_concept_label, ex. "ten_2" => "ten"
+     (assert (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num card ?lbl ?numARG0  ?ARG1   ?myEnum ) )
+     ;(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?lbl" "?numARG0" "?ARG1" "?myEnum")"crlf)
+     (printout ?*rstr-dbug* "(rule-rel-values saMKyA_vi id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?lbl" "?numARG0" "?ARG1" "?myEnum")"crlf)
+else
+   (printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?lbl" " ?numARG0 " "?ARG1" " ?enum ")"crlf)
+   (printout ?*rstr-dbug* "(rule-rel-values saMKyA_kri id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?lbl" "?numARG0" "?ARG1" "?enum")"crlf)
+)
+)
+
+
 ;Rule for numerical adjectives. Replace 
 ;CARG value of ordinal number with English number and LBL value of the same fact with LBL of viSeRya and ARG1 value with ARG0 value of viSeRya.
 ;Ex. rAma pahalI kiwAba paDa rahA hE.
@@ -846,11 +873,14 @@ else
 ;It creates TAM for vmod_kr_vn
 ;verified sentence 338 vaha laMgadAkara calawA hE.
 ;verified sentence 340 BAgawe hue Sera ko xeKo
-(defrule vmod_kr_vn
-(rel_name-ids	vmod_kr_vn	?kri	?kvn)
+(defrule kr_vn-sf
+(rel_name-ids	kr_vn	?kri	?kvn)
+;(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
+(id-hin_concept-MRS_concept ?kvn ?hin ?mrscon)
+(test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values vmod_kr_vn id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kr_vn-sf id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
 )
 
 ;It creates TAM for rsk
@@ -862,8 +892,6 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values rsk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 )
 
-
-
 ;genrate tense value for rpk in get_v_state
 (defrule rpk2
 (rel_name-ids	rpk	?id	?kri)
@@ -873,6 +901,7 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values rpk2 id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
 )
 
+;Rule for creating SF form for ratb relation.
 (defrule ratb
 (rel_name-ids	ratb	?kri	?id)
 =>
@@ -1122,6 +1151,7 @@ then
 (defrule printFacts
 (declare (salience -9000))
 ?f<-(MRS_info ?rel ?kri ?mrsCon $?vars)
+(test (eq (str-index unspec_adj ?mrsCon) FALSE))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")" crlf)
@@ -1195,6 +1225,8 @@ then
 (test (neq (sub-string (- (str-length ?mrsCon) 6) (str-length ?mrsCon) ?mrsCon) "_p_temp"))
 (not (modified_conj ?head))
 ;(not (modified_implicit_conj ?head)) ;#rAma, hari Ora sIwA acCe hEM.
+(not (which_bind_notrequired ?dep))
+
 =>
 (retract ?f)
 (printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
@@ -1546,4 +1578,96 @@ then
 (assert (MRS_info  ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?nonadjarg_0 $?v))
 (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-construction "?rel_name " " ?adj " " ?mrsCon " " ?lbl " " ?nonadjarg_0 " "(implode$ (create$ $?v))")"crlf)
 )
+
+;Rule for binding arg0 of the _which_q with the arg0 of the word it modifies. 
+;;#kOna sA kuwwA BOMkA?
+(defrule which-mod
+(id-concept_label	?which	kim)
+(rel_name-ids	mod	?k1	?which)
+(sentence_type  interrogative)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?which _which_q ?lbl ?arg0 ?rstr ?body)
+(MRS_info id-MRS_concept-LBL-ARG0 ?k1 ?mrscon ?lbl1 ?arg01 $?v)
+=>
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY "?which" _which_q "?lbl" "?arg01" " ?rstr " " ?body ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values which-mod id-MRS_concept-LBL-ARG0-RSTR-BODY "?which" _which_q "?lbl" " ?arg01 " " ?rstr " "?body")"crlf)
+)
+
+
+;Rule for binding def_implicit_q, which_q, poss with the values of person and noun concept.
+;It changes ARG0 of def_implicit_q with the arg0 of word it modifies, changing arg0 of which_q with the arg0 of the person, and changing lbl of poss with the word it modifies and arg1 with arg0 of the same word and arg2 with the person arg0. 
+;#kiska kuwwA BOMkA? 
+(defrule whose-r6
+(declare (salience 1000))
+(id-concept_label	?whose	kim)
+(rel_name-ids	r6	?noun	?whose)
+(sentence_type  interrogative)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?ld ?ad ?rd ?bd)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id which_q ?lbl ?arg0 ?rstr ?body)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?poss poss ?lpo ?aopo ?a1po ?a2po)
+(MRS_info id-MRS_concept-LBL-ARG0 ?per person ?lp ?pa)
+(MRS_info id-MRS_concept-LBL-ARG0 ?noun ?mrscon ?lbl1 ?arg01 $?v)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?ld" "?arg01" "?rd" "?bd")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values whose-r6 id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?ld" "?arg01" "?rd" "?bd")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-RSTR_BODY "?id" which_q "?lbl" "?pa" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values whose-r6 id-MRS_concept-LBL-ARG0-RSTR_BODY "?id" which_q "?lbl" "?pa" "?rstr" "?body")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?poss" poss "?lbl1" "?aopo" "?arg01" "?pa")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values whose-r6 id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?poss" poss "?lbl1" "?aopo" "?arg01" "?pa")"crlf)
+)
+
+;Rule for binding LTOP h0 with the lbl of the unsepc_adj. 
+; How are you?
+(defrule how-k1s-ltop
+(rel_name-ids	k1s	?kri	?how)
+(id-concept_label	?how	kim)
+(sentence_type  interrogative)
+(MRS_info ?rel1  ?id1  unspec_adj ?lbl1 ?arg10 ?arg11 $?var)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg10 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values how-k1s-ltop LTOP-INDEX h0 "?arg10 ")"crlf)
+)
+
+;Rule for binding unsepc_adj, which_q, prpstn_to_prop with property and the pronoun. 
+;How are you?
+
+(defrule how-k1s
+(declare (salience 1000))
+(id-concept_label	?how	kim)
+(rel_name-ids	k1s	?kri	?how)
+(sentence_type  interrogative)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?us unspec_adj ?lus ?a0us ?a1us)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
+(MRS_info id-MRS_concept-LBL-ARG0 ?noun pron ?lbl1 ?arg01)
+(MRS_info id-MRS_concept-LBL-ARG0 ?p property ?lp ?a0p)
+;(test (neq (str-index pron ?mrscon) FALSE))
+;(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?us" unspec_adj "?lus" "?a0us" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values how-k1s id-MRS_concept-LBL-ARG0-ARG1 "?us" unspec_adj "?lus" "?a0us" "?arg01")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?wq" which_q "?wl" "?a0p" "?lp" "?bdw")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values how-k1s id-MRS_concept-LBL-ARG0-RSTR-BODY "?wq" which_q "?wl" "?a0p" "?lp" "?bdw")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?ptp" prpstn_to_prop "?lptp" "?a0ptp" "?lus" "?a0p")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values how-k1s id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?ptp" prpstn_to_prop "?lptp" "?a0ptp" "?lus" "?a0p")"crlf)
+)
+
+;Rule for not binding which_q with the head of the word it modifies. 
+;How are you?
+(defrule kim-which
+(declare (salience 10000))
+(id-concept_label	?how	kim)
+(rel_name-ids	k1s	?kri	?how)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
+=>
+(assert (which_bind_notrequired ?wq))
+(printout ?*rstr-dbug* "(rule-rel-values  kim-which which_bind_notrequired " ?wq ")"crlf)
+)
+
+
+
 

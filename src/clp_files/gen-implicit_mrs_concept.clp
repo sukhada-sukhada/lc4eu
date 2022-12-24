@@ -18,6 +18,7 @@
 (id-gen-num-pers ?id ?g ?n ?p)
 (not (id-def ?id yes)) ;#rAma apane piwA ke sAWa vixyAlaya gayA.
 (not (id-mass ?id yes)) ;#wuma pAnI se GadZe ko Baro.
+;(not (id-anim ?id yes))
 (test (neq ?n  pl)) 
 (not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
 (not(id-org ?id yes))
@@ -28,16 +29,30 @@
 (not (rel_name-ids dem ?id $?v1)) ;#rAma yaha kAma kara sakawA hE.
 (not (rel_name-ids quant ?id $?v1)) ;#prawyeka baccA Kela rahA hE.
 (not (rel_name-ids r6 ?id ?r6))  ;merA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
-(not (id-concept_label	?id	kOna_1)) ;Who won the match?
+(not (id-concept_label	?id	kim)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
 (not (rel_name-ids deic ?ida	?id)) ;#yaha Gara hE.
 (not (rel_name-ids coref ?	?id)) ;#usane nahIM KAyA.
 (not  (id-abs ?id yes)) ;#kyA wumako buKAra hE?
 (not  (id-ne ?id yes)) ;#KIra ke liye cAvala KarIxo.
 ;(not (sentence_type	)) ;#kuwwA! ;#billI Ora kuwwA.
+(not (no_a_q_required ?id)) ;Which dog did bark?
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "(+ ?id 10)" _a_q)"crlf)
+)
+
+
+;Rule for removing _a_q for kim which is in modifier relation. 
+;Which dog did bark?
+(defrule kim
+(declare (salience 10000))
+(id-concept_label	?kid	kim)
+(id-concept_label	?nid	?noun)
+(rel_name-ids mod ?nid ?kid)
+=>
+(assert (no_a_q_required ?nid))
+(printout ?*defdbug* "(rule-rel-values  kim no_a_q_required " ?nid ")"crlf)
 )
 
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
@@ -122,39 +137,48 @@
 ;generates (id-MRS_concept "?id " thing)
 ;	   (id-MRS_concept "?id " which_q)
 (defrule mrs_inter_what
-(id-concept_label ?id kyA_1)
+(id-concept_label ?id kim)
+(rel_name-ids	k2	?kri	?id)
 (sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "(+ ?id 10)" which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" thing)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_what id-MRS_concept "?id" thing)"crlf)
 )
 
 ;rule for interrogative sentences for 'who',
 ;generates (id-MRS_concept "?id " person)
 ;	   (id-MRS_concept "?id " which_q)
 (defrule mrs_inter_who
-(id-concept_label ?id kOna_1)
+(id-concept_label ?id kim)
+(rel_name-ids	k1	?kri	?id)
 (sentence_type  interrogative)
+
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " person)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " person)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept " (+ ?id 10) " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" person)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_who id-MRS_concept "?id" person)"crlf)
 )
 
 ;rule for interrogative sentences for 'where',
 ;generates (id-MRS_concept "?id " place)
 ;          (id-MRS_concept "?id " which_q)
 (defrule mrs_inter_where
-(id-concept_label ?id kahAz_1)
+(id-concept_label ?id kim)
+(rel_name-ids	k7p	?kri	?id)
 (sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" which_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "(+ ?id 10)" which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_where id-MRS_concept "(+ ?id 10)" which_q)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_where id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" place_n)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_where id-MRS_concept "?id" place_n)"crlf)
 )
 
 
@@ -230,7 +254,7 @@
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
@@ -264,17 +288,6 @@
 (printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
 )
 
-;It creates mrs rel feature subord for sentences with vmod_kr_vn
-;verified sentence 338 #vaha laMgadAkara calawA hE.
-(defrule mrs_subord-kr
-(rel_name-ids	vmod_kr_vn	?kri	?kvn)
-(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
-(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
-=>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_subord-kr id-MRS_concept -20000 subord)"crlf)
-)
-
 ;It creates mrs rel feature _while_x for sentences with rsk
 ;verified sentence 339 #rAma sowe hue KarrAte BarawA hE. 
 (defrule mrs_while
@@ -295,28 +308,19 @@
 
 ;It creates mrs rel feature _while_x for sentences with vmod_kr_vn
 ; verified sentence 340#BAgawe hue Sera ko xeKo
-(defrule krvn_while
-(rel_name-ids	vmod_kr_vn ?kri ?kvn)
-(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ?arg1 ?a1 ARG2: ?a2)
-(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
-=>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept -30000  _while_x)"crlf)
-(printout ?*defdbug* "(rule-rel-values krvn_while id-MRS_concept -30000  _while_x)"crlf)
-)
-
-
-;rule for interrogative sentences for 'who'
-;(defrule mrs_inter_who
-;(id-concept_label ?id kOna_1)
-;(sentence_type  question)
+;(defrule krvn_while
+;(rel_name-ids	kr_vn ?kri ?kvn)
+;(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ?arg1 ?a1 ARG2: ?a2)
+;(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
 ;=>
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
-;(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " which_q)"crlf)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept -30000  _while_x)"crlf)
+;(printout ?*defdbug* "(rule-rel-values krvn_while id-MRS_concept -30000  _while_x)"crlf)
 ;)
 
 ;rule for interrogative sentences for 'when'
 (defrule mrs_inter_when
-(id-concept_label ?id kaba_1)
+(id-concept_label ?id kim)
+(rel_name-ids	k7t	?kri	?id)
 (sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
@@ -326,7 +330,7 @@
 (printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " time_n)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "(+ ?id 10) " loc_nonsp)"crlf)
 )
 
 ;rule for generating  _should_v_modal
@@ -637,3 +641,77 @@
 (printout ?*defdbug* "(rule-rel-values udefq_conj4subj id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
 )
 
+;Rule for bringing number_q when card is coming in the k2 position.
+;The cat chased one.
+(defrule eka-k2
+(id-concept_label	?ic	eka_6)
+(rel_name-ids	k2	?kri	?ic)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values udefq_conj4subj id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
+)
+
+;Rule to bring def_implicit_q and poss for the sentences with whose word.
+;;#kiska kuwwA BOMkA? 
+(defrule mrs_inter_whose
+(id-concept_label ?id kim)
+(rel_name-ids	r6	?noun	?id)
+(sentence_type  interrogative)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 11) " poss)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "(+ ?id 11)" poss)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " person)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "?id " person)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+)
+
+;Rule for bringing _which_q for kim with modifier relation.
+;Which dog barked?
+(defrule mrs_inter_which
+(id-concept_label ?id kim)
+(rel_name-ids	mod	?noun	?id)
+(sentence_type  interrogative)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " _which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_which  id-MRS_concept "?id " _which_q)"crlf)
+)
+
+;Rule for bringing which_q, property, unspec_adj, prpstn_to_prop for sentence ;How are you?
+(defrule mrs_inter_how
+(id-concept_label	?id	kim)
+(rel_name-ids	k1s	?kri	?id)
+(sentence_type  interrogative)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how  id-MRS_concept "?id " which_q)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " property)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how  id-MRS_concept "?id " property)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 3) " unspec_adj)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how  id-MRS_concept "?id " unspec_adj)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 3) " prpstn_to_prop)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how  id-MRS_concept "?id " prpstn_to_prop)"crlf)
+)
+
+
+;It creates mrs rel feature subord for sentences with vmod_kr_vn
+;verified sentence 338 #vaha laMgadAkara calawA hE.
+(defrule mrs_subord-kr
+(rel_name-ids	kr_vn	?kri	?kvn)
+(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
+(id-hin_concept-MRS_concept ?kvn ?hin1 ?mrsCon)
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+(not (id-hin_concept-MRS_concept ?kvn ?hin ?mrscon))
+(test (neq (str-index _a_ ?mrscon) FALSE))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_subord-kr id-MRS_concept -20000 subord)"crlf)
+)
