@@ -355,4 +355,17 @@
 (printout ?*mrs-dbug* "(rule-rel-values which_q_e-i MRSc-FVs which_q LBL: h* ARG0: "?arg0" RSTR: h* BODY: h*)"crlf)
 )
 
+;Rule for changing ARG3 value of verb into i* when it is in a relation of rt.
+;He challenged the turtle, for a race.
+(defrule verb-ARG3-i
+?f<-(MRS_info ?rel ?kri ?mrscon ?l ?a0 ?a1 ?a2 ?a3)
+(id-concept_label	?kri	?hinconcept)
+(rel_name-ids	rt	?kri	?noun)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+=>
+(retract ?f)
+(bind ?arg3 (str-cat "i" (sub-string 2 (str-length ?a3) ?a3)))  
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?l" "?a0" "?a1" "?a2" "?arg3")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values verb-ARG3-i "?rel" "?kri" "?mrscon" "?l" "?a0" "?a1" "?a2" "?arg3")"crlf)
+)
 

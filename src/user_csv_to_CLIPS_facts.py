@@ -132,19 +132,18 @@ for i in range(len(wid)):
         if ' ' in speakerView[i].strip():
             lst = speakerView[i].split(' ')
             for j in range(len(lst)):
-                if ':' in lst[j]:   
+                if ':' in lst[j]: 
                     idrel = lst[j].split(':')
-                    headId = str(int(float(idrel[0]))*10000)
-                    depId = str((i+1)*10000)
-                    ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n') # 335: sUrya camakawA BI hE.
+                    if 'shade:' in lst[j]: 
+                        ans.write('(id-shade\t' +  str((i+1)*10000) + ' ' + idrel[1][:-1] +')\n') # 375: 
                 else:
-                    ans.write('(id-'+lst[j]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
+                        ans.write('(id-'+lst[j]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
         else:
             if ':' in speakerView[i]:   
                 idrel = speakerView[i].split(':')
-                headId = str(int(float(idrel[0]))*10000)
                 depId = str((i+1)*10000)
-                ans.write('(rel_name-ids\tvAkya_vn\t' + headId + ' ' + depId +')\n') # 335: sUrya camakawA BI hE.
+                if 'shade:' in speakerView[i]: 
+                    ans.write('(id-shade\t' +  str((i+1)*10000) + ' ' + idrel[1][:-1] +')\n') # 375: 
             else:
                 ans.write('(id-'+speakerView[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
 
