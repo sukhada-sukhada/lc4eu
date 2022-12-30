@@ -1,0 +1,13 @@
+word,root,tam
+rahA,raha,yA
+rahegA,raha,gA
+huA,ho,yA
+hogA,ho,gA
+padZa,padZa,0
+padZA,padZa,yA
+padZegA,pada,gA
+hE,hE,hE
+cAhiye,cAha,subj
+sakawA,saka,wA
+WA,WA,WA
+calawA, cala, wA

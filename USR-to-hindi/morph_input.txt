@@ -1,0 +1,1 @@
+^baccA<cat:n><case:d><gen:m><num:p>$ ^maMgalavAra<cat:n><case:o><gen:m><num:s>$ ^Pala<cat:n><case:d><gen:m><num:p>$ ^KA<cat:v><gen:m><num:p><per:a><tam:wA>$ ^hE<cat:v><gen:m><num:p><per:a><tam:hE>$

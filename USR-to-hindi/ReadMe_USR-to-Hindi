@@ -1,0 +1,35 @@
+# Pre-requisites:
+   - lttoolbox 3.1 or above
+   - apertium 3.1 or above
+   - xsltproc
+   
+[1] Run the following commands for installing the pre-requisites:
+   
+   (i) To install lttoolbox 3.1 or above
+           $ sudo apt-get update
+           $ sudo apt-get install lttoolbox
+   (ii) To install apertium
+           $ sudo apt-get install apertium
+   (iii) To install xsltproc
+           $ sudo apt-get update -y
+           $ sudo apt-get install -y xsltproc
+     
+[2] Run the following command for compilation:     
+      $ sh compile_dict.sh
+
+[3] For generating Hindi Sentences from USR
+
+    [a] Go to the "USR-to-hindi" directory using command prompt (terminal)
+
+    [b] Run the following command on the terminal:
+        $ python3 generate_input_modularize_new.py <PATH of USR_file>
+        For Example: 
+             $ python3 generate_input_modularize_new.py ../verified_sent/1
+          
+    [c] Output will come in the following file: morph_input.txt-out.txt
+       
+Troubleshooting:
+   Q.1: ModuleNotFoundError: No module named 'wxconv'
+   Ans. Run the following command:
+            $ pip install wxconv
+       

@@ -1,0 +1,26 @@
+pre-requisites:
+   - lttoolbox 3.1 or above
+   - apertium 3.1 or above
+   - xsltproc
+
+Compile:     
+   $ sh compile.sh
+--------
+
+To get analysis:
+----------------
+  $lt-proc -c -a hi.morf.bin
+
+Or use following command to run the input from file:
+  $sh run_morph-analyser.sh <INPUT_FILE>
+  Ex. 
+    $sh run_morph-analyser.sh inp.txt
+
+To get generation
+-----------------
+  $lt-proc -c -g hi.gen.bin
+  
+Or use following command to run the input from file:
+  $sh run_morph-generator.sh <INPUT_FILE>
+  Ex. 
+    $sh run_morph-generator.sh inp-2
