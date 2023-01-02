@@ -22,7 +22,11 @@ if ':coref' in discourseRow:
                 myfile = open(os.path.dirname(sys.argv[1])+'/'+corefFile, 'r')         #reading coref file
                 corefUSR = list(myfile)
                 corefGNPlist = corefUSR[4].split(',') #getting list of GNP values from coref file
-                myUSRgnplist.append(corefGNPlist[int(corefIndex)-1]) #getting GNP values from coref file
+                if corefGNPlist[int(corefIndex)-1] == '\n':
+                    myUSRgnplist.append('')
+                else: 
+                    myUSRgnplist.append(corefGNPlist[int(corefIndex)-1]) #getting GNP values from coref file
+
             else:
                 corefIndex = mycoref[0] #Getting coref index 
                 myUSRgnplist.append(origGNPlist[int(corefIndex)-1]) #getting GNP values from coref file

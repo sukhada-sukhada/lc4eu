@@ -295,7 +295,7 @@ def process_pronouns(pronouns,processed_nouns):
 
         
         if "k1" in pronoun[4]: 
-            if clean(pronoun[1]) in ('kOna', 'kyA', 'vaha') and pronoun[2] not in ('per'): 
+            if clean(pronoun[1]) in ('kOna', 'kyA', 'vaha') and pronoun[2] != 'per':
            #tam not 'yA' to be added. 
              case = "d" 
             else: 
@@ -304,12 +304,6 @@ def process_pronouns(pronouns,processed_nouns):
                 case = 'd'
         
         
-        #if "k1" in pronoun[4]:
-         #   if clean(pronoun[1]) in ('kOna','kyA','vaha'): # and pronoun[2] not in ('anim','per'):
-          #      case = "d"
-        #else :
-         #   if "k2" in pronoun[4] and pronoun[2] in ('anim','per'):
-          #      case = 'd'
         if pronoun[1] == 'addressee':
             addr_map = {'respect':'Apa', 'informal':'wU', '':'wU'}
             pronoun_per = {'respect':'m', 'informal':'m_h0', '':'m_h1'}
