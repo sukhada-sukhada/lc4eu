@@ -23915,3 +23915,6 @@
 (MRSc-FVs unspec_adj LBL: h* ARG0: e* ARG1: x*)
 (MRSc-FVs property LBL: h* ARG0: i*)
 (MRSc-FVs prpstn_to_prop LBL: h* ARG0: e* ARG1: h* ARG2: i*)
+(MRSc-FVs abstr_deg LBL: h* ARG0: i*)
+(MRSc-FVs measure LBL: h* ARG0: e* ARG1: e* ARG2: i*)
+

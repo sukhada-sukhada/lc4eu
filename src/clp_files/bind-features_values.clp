@@ -855,7 +855,9 @@ else
 ;rule creates TAM for rpk and rpka
 ;#rAma ne skUla jAkara KAnA KAyA
 (defrule rpk_pka
-(rel_name-ids	rpk|rpka	?id	?kri)
+(rel_name-ids	rpk	?id	?kri)
+(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
+(test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rpk_pka id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
@@ -899,14 +901,6 @@ else
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rpk2 id-SF-TENSE-MOOD-PROG-PERF "?id" prop untensed indicative - - )"crlf)
-)
-
-;Rule for creating SF form for ratb relation.
-(defrule ratb
-(rel_name-ids	ratb	?kri	?id)
-=>
-(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values ratb id-SF-TENSE-MOOD-PROG-PERF "?id " prop untensed indicative - - )"crlf)
 )
 
 ;Rule for creating TAM information for rblak relation verb.  ;gAyoM ke xuhane se pahale rAma Gara gayA.
@@ -1043,8 +1037,6 @@ else
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 (not (rel_name-ids kriyArWa_kriyA ?kri	?kri_id))
 (not (rel_name-ids	rpk	?id	?kri_id)) ;#rAma ne skUla jAkara KAnA KAyA.
-(not (rel_name-ids	rpka	?id	?kri_id)) ;rAma KA -KAkara motA ho gayA .
-(not (rel_name-ids	ratb	?id	?kri_id))
 (not (rel_name-ids	rblak	?id	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
 (not (rel_name-ids	rblpk	?id	?kri_id)) ;;rAma ke vana jAne para xaSaraWa mara gaye.
 (not (id-stative ?id yes))
@@ -1152,6 +1144,7 @@ then
 (declare (salience -9000))
 ?f<-(MRS_info ?rel ?kri ?mrsCon $?vars)
 (test (eq (str-index unspec_adj ?mrsCon) FALSE))
+(test (eq (str-index which_q ?mrsCon) FALSE))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")" crlf)
@@ -1262,7 +1255,7 @@ then
 ;#राम खा -खाकर मोटा हो गया ।
 (defrule frequent
 ;(MRS_info id-MRS_concept -5000  _frequent_a_1)
-(rel_name-ids	rpka ?id ?kriyA)
+(rel_name-ids	rpk ?id ?kriyA)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 ?lbl ?arg0 ?arg1)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriyA ?mrsCon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index "_v_" ?mrsCon)FALSE))
@@ -1270,17 +1263,6 @@ then
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 "?lbl1" "?arg0" "?arg01")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values frequent  id-MRS_concept-LBL-ARG0-ARG1 -5000 _frequent_a_1 "?lbl1" "?arg0" "?arg01")"crlf)
-)
-
-(defrule ratb_bind
-(rel_name-ids	ratb ?ids ?idatb)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?idatb ?mrscon ?lbl ?arg0 ?arg1)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriyA ?mrsCon ?lbl1 ?arg01 ?arg11 $?v)
-(test (neq (str-index "_v_" ?mrsCon)FALSE))
-=>
-(retract ?f)
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?idatb" "?mrscon" "?lbl1" "?arg0" "?arg01")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values frequent  id-MRS_concept-LBL-ARG0-ARG1 "?idatb" "?mrscon" "?lbl1" "?arg0" "?arg01")"crlf)
 )
 
 ;Rule for binding comparitive degree "comp" node with the adjective it specifies and the person it compares.
@@ -1661,13 +1643,39 @@ then
 (defrule kim-which
 (declare (salience 10000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k1s	?kri	?how)
+(rel_name-ids	k1s|degree	?kri	?how)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
 =>
 (assert (which_bind_notrequired ?wq))
 (printout ?*rstr-dbug* "(rule-rel-values  kim-which which_bind_notrequired " ?wq ")"crlf)
 )
 
+;Rule for binding measure and which_q with the abstr_deg and kri of the sentence.
+;How happy was Abramas?
+(defrule how-adj
+(rel_name-ids	degree	?kri	?how)
+(id-concept_label	?how	kim)
+(sentence_type  interrogative)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?m measure ?ml ?ma0 ?ma1 ?ma2)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?w which_q ?wl ?wa0 ?wr ?wb)
+(MRS_info id-MRS_concept-LBL-ARG0 ?a abstr_deg ?al ?aa0)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri _happy_a_with ?hl ?ha0 ?ha1 ?ha2)
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?m" measure "?hl" "?ma0" "?ha0" "?aa0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values how-adj id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?m" measure "?hl" "?ma0" "?ha0" "?aa0")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?w" which_q "?wl" "?aa0" "?wr" "?wb")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values how-adj id-MRS_concept-LBL-ARG0-RSTR-BODY "?w" which_q "?wl" "?aa0" "?wr" "?wb")"crlf)
+)
 
-
+(defrule rpk
+(rel_name-ids	rpk ?noun ?id)
+(rel_name-ids	k1	?kriyA	?noun)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?engcon ?lbl ?arg0 ?arg1)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriyA ?mrsCon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index "_v_" ?mrsCon)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" "?engcon" "?lbl1" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rpk  id-MRS_concept-LBL-ARG0-ARG1 "?id" "?engcon" "?lbl1" "?arg0" "?arg01")"crlf)
+)
 

@@ -98,7 +98,7 @@
 ;     He did not eat.
 (defrule active-k2-absent
 (declare (salience 200))
-?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
+?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative|imperative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
 (not (rel_name-ids k2   ?kri    ?k2))
 (test (eq (str-index _have_v_1 ?mrscon) FALSE))
@@ -126,13 +126,13 @@
 (printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
 )
 
-;Rule converts arg1 and arg2 of rpka kriya into u*
+;Rule converts arg1 and arg2 of rpk kriya into u*
 ;#rAma KA -KAkara motA ho gayA .
-(defrule rpka
+(defrule rpk
 (declare (salience 500))
 ;?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
 ?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
-(rel_name-ids rpka  ?id    ?kri)
+(rel_name-ids rpk  ?id    ?kri)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (retract ?f)
@@ -341,12 +341,13 @@
 
 ;Rule for changing arg0 of which_q from e to i.
 ;How are you?
+;How happy was Abrama?
 (defrule which_q_e-i
 ;(declare (salience 300))
 ?f<-(MRSc-FVs which_q LBL: h* ARG0: ?a0 RSTR: h* BODY: h*)
-(id-concept_label	?kri	hE_1) 
+(id-concept_label	?kri	?word) 
 (id-concept_label	?k1s	kim)
-(rel_name-ids	k1s	?kri	?k1s)
+(rel_name-ids	k1s|degree	?kri	?k1s)
 (sentence_type  interrogative)
 =>
 (retract ?f)
@@ -368,4 +369,6 @@
 (printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?l" "?a0" "?a1" "?a2" "?arg3")"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values verb-ARG3-i "?rel" "?kri" "?mrscon" "?l" "?a0" "?a1" "?a2" "?arg3")"crlf)
 )
+
+
 

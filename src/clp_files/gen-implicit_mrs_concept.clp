@@ -282,7 +282,9 @@
 
 ;#rAma ne skUla jAkara KAnA KAyA.
 (defrule mrs_subord
-(rel_name-ids	rpk|rpka	?id	?kri)
+(rel_name-ids	rpk	?id	?kri)
+(id-hin_concept-MRS_concept ?id ?hinconcept ?engcon) 	
+(test (eq (str-index _n_ ?engcon) FALSE))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
@@ -297,10 +299,14 @@
 (printout ?*defdbug* "(rule-rel-values mrs_while id-MRS_concept -30000  _while_x)"crlf)
 )
 
-;It creates mrs rel feature _frequent_a_1 for sentences with rpka
+;It creates mrs rel feature _frequent_a_1 for sentences with rpk
 ;rAma KA -KAkara motA ho gayA .
 (defrule mrs_frequent
-(rel_name-ids	rpka	?id	?kri)
+(rel_name-ids	rpk	?id	?kri)
+(id-hin_concept-MRS_concept ?id ?hinconcept ?engcon) 	
+(test (eq (str-index _n_ ?engcon) FALSE))
+(not (rel_name-ids	k2	?id	?karma))
+
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -5000 _frequent_a_1)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_frequent id-MRS_concept -5000  _frequent_a_1)"crlf)
@@ -715,3 +721,19 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord-kr id-MRS_concept -20000 subord)"crlf)
 )
+
+;Rule for bringing which_q, abstr_deg, measure for the relation degree.
+;;How happy was Abramas? 
+(defrule mrs_inter_how-adj
+(id-concept_label ?id kim)
+(rel_name-ids	degree	?noun	?id)
+(sentence_type  interrogative)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj  id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " abstr_deg)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj id-MRS_concept "(+ ?id 2)" abstr_deg)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 3) " measure)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj id-MRS_concept "(+ ?id 3) " measure)"crlf)
+)
+
