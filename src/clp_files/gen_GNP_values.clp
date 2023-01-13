@@ -24,9 +24,9 @@
 (id-gen-num-pers ?id1 ?hg ?hn a)
 (id-propn ?id1 yes)
 (MRS_info ?rel1 ?id1 proper_q  $?vars)
-(MRS_concept-H_G-Eng_G   *_n_*   ?hg  ?eg )
-(MRS_concept-H_N-Eng_N   *_n_*   ?hn   ?en)
-(MRS_concept-H_P-Eng_P   *_n_*   ?hp   3)
+(MRS_concept-H_G-Eng_G    *_n_*   ?hg  ?eg)
+(MRS_concept-H_N-Eng_N    *_n_*   ?hn   ?en)
+(MRS_concept-H_P-Eng_P    *_n_*   ?hp   3)
 ;(test (neq (str-index _n_ ?mrsCon) FALSE))
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 " " - " " ?en "  3 )"crlf)
@@ -38,9 +38,9 @@
 (defrule gnp-of-eng_noun_
 (id-gen-num-pers ?id1 ?hg ?hn a)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(MRS_concept-H_G-Eng_G   *_n_*   ?hg  ?eg )
-(MRS_concept-H_N-Eng_N   *_n_*   ?hn   ?en)
-(MRS_concept-H_P-Eng_P   *_n_*   ?hp   3)
+(MRS_concept-H_G-Eng_G    *_n_*   ?hg  ?eg)
+(MRS_concept-H_N-Eng_N    *_n_*   ?hn   ?en)
+(MRS_concept-H_P-Eng_P    *_n_*   ?hp   3)
 (test (neq (str-index _n_ ?mrsCon) FALSE))
 (not (id-concept_label	?id1 	speaker|addressee|vaha|yaha))
 =>
@@ -54,18 +54,19 @@
 (id-gen-num-pers ?id1 ?g ?n ?p)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
 (or (id-concept_label	?id1 	speaker|addressee|vaha|yaha) (rel_name-ids coref ?x	?id1))
-(MRS_concept-H_G-Eng_G   pron   ?g  ?eg )
-(MRS_concept-H_N-Eng_N   pron   ?n  ?en)
-(MRS_concept-H_P-Eng_P   pron   ?p  ?ep)
+(MRS_concept-H_G-Eng_G    pron   ?g  ?eg)
+(MRS_concept-H_N-Eng_N    pron   ?n  ?en)
+(MRS_concept-H_P-Eng_P    pron   ?p  ?ep)
+(not (id-concept_label	?id1	eka+xUsarA_1)) ;We love each other."
 =>
 (if (or (neq (str-index u ?p) FALSE) (neq (str-index pl ?n) FALSE))
 then
-       (printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 " - " ?n " " ?ep "  )"crlf)
-       (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron id-GEN-NUM-PER "?id1 "  " ?eg " " ?n " "?ep ")"crlf)
+       (printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 " - " ?n " " ?ep " std )"crlf)
+       (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron id-GEN-NUM-PER-PT "?id1 "  " ?eg " " ?n " "?ep " std)"crlf)
 
 else
- 	(printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 "  "  ?eg " " ?n " " ?ep "  )"crlf)
-	(printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron id-GEN-NUM-PER "?id1 "  " ?eg " " ?n " "?ep ")"crlf)
+ 	(printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 "  "  ?eg " " ?n " " ?ep " std )"crlf)
+	(printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron id-GEN-NUM-PER-PT "?id1 "  " ?eg " " ?n " "?ep " std)"crlf)
 )
 )
 
@@ -74,9 +75,9 @@ else
 (declare (salience 1000))
 ?f<-(id-gen-num-pers ?id1 ?g ?n m)
 (id-concept_label	?id1 	addressee)
-(MRS_concept-H_G-Eng_G   pron   ?g  ?eg )
-(MRS_concept-H_N-Eng_N   pron   ?n  ?en)
-(MRS_concept-H_P-Eng_P   pron   ?hp  2)
+(MRS_concept-H_G-Eng_G    pron   ?g  ?eg)
+(MRS_concept-H_N-Eng_N    pron   ?n  ?en)
+(MRS_concept-H_P-Eng_P    pron   ?hp  2)
 (not (modified id-gen-num-pers ?id1))
 =>
 (assert (modified id-gen-num-pers ?id1))
@@ -85,4 +86,26 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron-addressee id-GEN-NUM-PER "?id1 " - - 2)"crlf)
 )
 
+;Rule for reflexives pronouns. It generates PT: refl 
+;I love myself.
+(defrule gnp-of-eng_reflexive 
+(id-gen-num-pers ?id1 ?g ?n ?p)
+(id-concept_label	?id1	Kuxa|KZuxa|svayam|svayaM)
+(MRS_info ?rel1 ?id1 pron  $?vars)
+(or (rel_name-ids coref ?x	?id1))
+(MRS_concept-H_G-Eng_G    pron   ?g  ?eg)
+(MRS_concept-H_N-Eng_N    pron   ?n  ?en)
+(MRS_concept-H_P-Eng_P    pron   ?p  ?ep)
+(not (id-concept_label	?id1	eka+xUsarA_1)) ;We love each other."
+=>
+(if (or (neq (str-index u ?p) FALSE) (neq (str-index pl ?n) FALSE))
+then
+       (printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 " - " ?n " " ?ep " refl )"crlf)
+       (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_reflexive id-GEN-NUM-PER-PT "?id1 "  " ?eg " " ?n " "?ep " refl)"crlf)
+
+else
+ 	(printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 "  "  ?eg " " ?n " " ?ep " refl )"crlf)
+	(printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_reflexive id-GEN-NUM-PER-PT "?id1 "  " ?eg " " ?n " "?ep " refl)"crlf)
+)
+)
 

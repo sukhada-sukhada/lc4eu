@@ -39,7 +39,7 @@
 (defrule rm_be_v_id-k7p
 (declare (salience 10000))
 ?f<-(id-concept_label	?kri	hE_1)
-(rel_name-ids	k7p	?kri	?k1s)
+(rel_name-ids	k7p	?kri	?k7p)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
 =>
 (retract ?f ?f1)
@@ -358,17 +358,26 @@
 
 ;Rule for changing ARG3 value of verb into i* when it is in a relation of rt.
 ;He challenged the turtle, for a race.
-(defrule verb-ARG3-i
+(defrule verb-ARG3-u
 ?f<-(MRS_info ?rel ?kri ?mrscon ?l ?a0 ?a1 ?a2 ?a3)
 (id-concept_label	?kri	?hinconcept)
 (rel_name-ids	rt	?kri	?noun)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (retract ?f)
-(bind ?arg3 (str-cat "i" (sub-string 2 (str-length ?a3) ?a3)))  
+(bind ?arg3 (str-cat "u" (sub-string 2 (str-length ?a3) ?a3)))  
 (printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?l" "?a0" "?a1" "?a2" "?arg3")"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values verb-ARG3-i "?rel" "?kri" "?mrscon" "?l" "?a0" "?a1" "?a2" "?arg3")"crlf)
 )
 
-
-
+;Rule for converting ARG3 of _give_v_1  into u* when there is no k4 relation.  
+;Bad works give bad results.
+(defrule k4-absent
+(id-hin_concept-MRS_concept ?kri ?hin _give_v_1)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2 ?arg3)
+(not (rel_name-ids k4   ?kri    ?id))
+=>
+(bind ?a3 (str-cat "u" (sub-string 2 (str-length ?arg3) ?arg3)))
+(printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?arg2" "?a3")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values k4-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?arg2" "?a3")"crlf)
+)

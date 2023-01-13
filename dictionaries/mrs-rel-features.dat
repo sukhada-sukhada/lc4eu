@@ -23383,7 +23383,6 @@
 (MRSc-FVs _peninsular/JJ_u_unknown LBL: h* ARG0: e* ARG1: x*)
 (MRSc-FVs _geological_a_1 LBL: h* ARG0: e* ARG1: e*)
 (MRSc-FVs _unconsolidated_a_1 LBL: h* ARG0: e* ARG1: x*)
-(MRSc-FVs _know_v_1 LBL: h* ARG0: e* ARG1: i* ARG2: x*)
 (MRSc-FVs _sharply_x_deg LBL: h* ARG0: e* ARG1: e*) 
 (MRSc-FVs _depositional/JJ_u_unknown LBL: h* ARG0: e* ARG1: x*)
 (MRSc-FVs _doabs/NNS_u_unknown LBL: h* ARG0: x*)
@@ -23917,4 +23916,7 @@
 (MRSc-FVs prpstn_to_prop LBL: h* ARG0: e* ARG1: h* ARG2: i*)
 (MRSc-FVs abstr_deg LBL: h* ARG0: i*)
 (MRSc-FVs measure LBL: h* ARG0: e* ARG1: e* ARG2: i*)
+(MRSc-FVs unspec_manner LBL: h* ARG0: e* ARG1: e* ARG2: x*)
+(MRSc-FVs manner LBL: h* ARG0: x*)
+
 

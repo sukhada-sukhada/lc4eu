@@ -163,7 +163,7 @@
 ;(not (rel_name-ids	kr_vn	?id	?kri_id))
 (not (rel_name-ids	rsk	?id	?kri_id))
 (not (rel_name-ids	rpk	?kri_id	?id))
-(not (rel_name-ids	rpka ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
+(not (rel_name-ids	rblsk ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
 (not (rel_name-ids	rblak ?id 	?kri_id))
 (not (rel_name-ids	rblpk ?id 	?kri_id)) ;rAma ke vana jAne para xaSaraWa mara gaye.
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
@@ -282,7 +282,7 @@
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord
 (not (id-stative ?id1 yes))
-(rel_name-ids	rpk|rpka	?id1	?id2)
+(rel_name-ids	rpk|rblsk	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -354,7 +354,7 @@
 
 (defrule LTOP-subordst
 (id-stative ?id1 yes)
-(rel_name-ids	rpk	?id1	?id2)
+(rel_name-ids	rpk|rblsk	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -672,7 +672,7 @@
 ;Rule for binding RSTR of udef_q with LBL of _and_c 
 ;#rAma Ora sIwA acCe hEM.
 (defrule conj-rstr
-(declare (salience 10000))
+(declare (salience 10))
 (MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?lbl ?arg0 ?first ?second)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?l ?a ?rstr ?body)
 (test (eq (- ?id 490) ?idd))
@@ -782,7 +782,6 @@
 
 ;Rule for binding prpstn_to_prop lbl with ltop ho. 
 ;How are you?
-
 (defrule how-rstrr
 (id-concept_label	?how	kim)
 (rel_name-ids	k1s	?kri	?how)
@@ -798,7 +797,7 @@
 (defrule kim-which-rstr
 (declare (salience 10000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k1s	?kri	?how)
+(rel_name-ids	k1s|k3	?kri	?how)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
 =>
 (assert (which_bind_notrequired ?wq))
@@ -815,3 +814,38 @@
 (assert (ltop_bind_notrequired ?kri_id))
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  kr_vn-notbind ltop_bind_notrequired " ?kri_id ")"crlf)
 )
+
+;Rule for not binding of which_q with the manner. 
+;How did you complete the work?
+(defrule kim-which-rstr-verb
+(declare (salience 10000))
+(id-concept_label	?how	kim)
+(rel_name-ids	k3	?kri	?how)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
+(MRS_info id-MRS_concept-LBL-ARG0 ?m manner ?ml ?ma0)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted "?rsw" "?ml")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values kim-which-rstr-verb  Restr-Restricted "?rsw" "?ml")"crlf)
+)
+
+;Rule for binding _the_q with _and_c and udef_q with the noun. 
+;We met the old men and women.
+(defrule def_conj
+(declare (salience 10000))
+(construction-ids	conj	$?vars ?id1 ?id2)
+(rel_name-ids	mod	?id1	?id3)
+(id-def	?id1	yes)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id4 _the_q ?lt ?a0t ?rt ?rb)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id5 _and_c ?la ?aa0 ?ali ?ari)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id4 udef_q ?ul ?ua0 ?ru ?bu)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id1 ?mrscon ?lbl ?arg0)
+(test (eq (+ ?id1 10) ?id4)) 
+(test (eq (+ ?id1 500) ?id5)) 
+=>
+(retract ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rt" "?la")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values def_conj  Restr-Restricted "?rt" "?la")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?ru" "?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values def_conj  Restr-Restricted "?ru" "?lbl")"crlf)
+)
+

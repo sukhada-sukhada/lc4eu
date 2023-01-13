@@ -28,9 +28,9 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pron )"crlf)
 (printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000 pron )"crlf)
 )
+
 ;(rel_name-ids	r6	30000	20000)
 ;(rel_name-ids coref  10000	20000)
-
 ;rule for possesive pronoun :if ((rel_name-ids r6 ?id) is present, generate (id-MRS_concept ?id def_explicit_q) and (id-MRS_concept ?id poss)
 (defrule mrs_poss_pron
 (rel_name-ids r6 ?viSeRya ?r6)

@@ -50,20 +50,23 @@
 (printout ?*rstr-dbug* "(rule-rel-values respect-honorable id-MRS_concept-LBL-ARG0-ARG1 "?id1" _honorable_a_1 "?lbl1" "?argo2" "?arg0")"crlf)
 )
 
-
 ;Rule for adjective and noun : for (viSeRya-viSeRaNa 	? ?)
 ;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
 ;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
+(declare (salience 100))
 (rel_name-ids mod|intf|card|rvks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
+?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 ;(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
 (test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q"))
 (not (modified_viSeRaNa ?viNa))
+(not (construction-ids	conj	$?vars ?viya ?id2))
 =>
+(retract ?f)
 (assert (modified_viSeRaNa ?viNa))
-(printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
+(assert (MRS_info  ?rel2  ?viNa   ?co   ?lbl1   ?arg0_viNa   ?arg0_viya $?vars))
+;(printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values viya-viNa   "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 )
 
@@ -212,7 +215,7 @@
 ;replace ARG1 of kriyA with ARG0 of karwA
 ;#rAju ko buKAra hE
 (defrule v-k1
-;(declare (salience 10))
+(declare (salience 10))
 (rel_name-ids	k1|k4a	?kriyA ?karwA)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
@@ -354,6 +357,7 @@
 
 ;Rule for verb and its arguments(when both karta and karma are present),Replace ARG1 value of kriyA with ARG0 value of karwA and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k2
+(declare (salience 10))
 (rel_name-ids	k2|k1s       	?kriyA ?karma)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
@@ -361,7 +365,8 @@
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (neq ?arg2 ?argma_0))
 (not (modified_k2 ?karma))
-(not (rel_name-ids rpka ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
+;(not (rel_name-ids rpka ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
+(not (construction-ids	conj	$?vars ?karma $?varss))
 =>
 (retract ?f)
 (assert (modified_k2 ?karma))
@@ -475,6 +480,7 @@
 ;Replace ARG1 value of prep_rel with ARG0 value of ?1 and ARG2 value of prep_rel with ARG0 value of ?2)
 ;Ex. Sera_ne_yuxXa_ke_liye_jaMgala_meM_saBA_bulAI
 (defrule prep-noun
+(declare (salience 10000))
 (rel_name-ids ?relp ?kriyA ?karak)
 ?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?kriyA ?mrsCon1 ?lbl1 ?argv_0 $?vars)
@@ -852,21 +858,24 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
 
-;rule creates TAM for rpk and rpka
+;(id-hin_concept-MRS_concept 50000 KA_1 _eat_v_1)
+;(id-hin_concept-MRS_concept 30000 jA_1 _go_v_1)
+;(rel_name-ids	rpk	50000	30000)
+;rule creates TAM for rpk
 ;#rAma ne skUla jAkara KAnA KAyA
-(defrule rpk_pka
+(defrule rpk
 (rel_name-ids	rpk	?id	?kri)
 (id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values rpk_pka id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rpk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 )
 
 ;It creates TAM for rvks
 ;verified sentence 341 BAgawe hue Sera ko xeKo
 (defrule rvks
-(rel_name-ids	rvks ?id	?kri)
+(rel_name-ids	rvks|rblsk ?id	?kri)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rvks id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
@@ -1039,6 +1048,7 @@ else
 (not (rel_name-ids	rpk	?id	?kri_id)) ;#rAma ne skUla jAkara KAnA KAyA.
 (not (rel_name-ids	rblak	?id	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
 (not (rel_name-ids	rblpk	?id	?kri_id)) ;;rAma ke vana jAne para xaSaraWa mara gaye.
+(not (rblsk_index_notrequired ?id))
 (not (id-stative ?id yes))
 (not (id-causative ?id yes)) ;#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 (not (id-double_causative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
@@ -1343,6 +1353,7 @@ then
 (MRS_info ?rel1 ?id1 ?name ?lbl ?arg0 $?var)
 (MRS_info ?rel2 ?id2 ?name2 ?lbl1 ?arg00 $?varss)
 (not (modified_conj ?id))
+(not (rel_name-ids	mod	?id1	?id3))
 =>
 (retract ?f ?f1)
 (assert (modified_conj ?id))
@@ -1667,7 +1678,9 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values how-adj id-MRS_concept-LBL-ARG0-RSTR-BODY "?w" which_q "?wl" "?aa0" "?wr" "?wb")"crlf)
 )
 
-(defrule rpk
+;Rule for binding arg1 and lbl with the kriya.
+;# कालू खा -खाकर मर गया ।
+(defrule rpk-noun
 (rel_name-ids	rpk ?noun ?id)
 (rel_name-ids	k1	?kriyA	?noun)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?engcon ?lbl ?arg0 ?arg1)
@@ -1676,6 +1689,133 @@ then
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" "?engcon" "?lbl1" "?arg0" "?arg01")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values rpk  id-MRS_concept-LBL-ARG0-ARG1 "?id" "?engcon" "?lbl1" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rpk-noun  id-MRS_concept-LBL-ARG0-ARG1 "?id" "?engcon" "?lbl1" "?arg0" "?arg01")"crlf)
 )
+
+;Rule for changing unspec_manner lbl, arg1, and arg2. Lbl and arg0 of kriya will be it's lbl and arg1. arg2 will be the arg0 of manner. 
+;How did you complete the work?
+(defrule how-verb
+(rel_name-ids	k3	?kri	?how)
+(id-concept_label	?how	kim)
+(sentence_type  interrogative)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?m unspec_manner ?ml ?ma0 ?ma1 ?ma2)
+(MRS_info id-MRS_concept-LBL-ARG0 ?w manner ?wl ?wa0)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?hl ?ha0 ?ha1 ?ha2)
+(test (neq (str-index "_v_" ?mrscon)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?m" unspec_manner "?hl" "?ma0" "?ha0" "?wa0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values how-verb id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?m" unspec_manner "?hl" "?ma0" "?ha0" "?wa0")"crlf)
+)
+
+;Rule for changing arg1 of the rblsk kriya with the arg0 of karwa.
+;Rama being gone to the forest, Sita follows.
+(defrule rblsk
+(rel_name-ids	rblsk	?kri	?rblsk)
+(rel_name-ids	k1	?rblsk	?k1)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?rblsk ?mrscon ?ml ?ma0 ?ma1)
+(MRS_info ?rel ?k1 ?mrsc ?lbl ?arg0 $?v)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?rblsk" "?mrscon" "?ml" "?ma0" "?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rblsk id-MRS_concept-LBL-ARG0-ARG1 "?rblsk" "?mrscon" "?ml" "?ma0" "?arg0")"crlf)
+)
+
+
+;Rule for not binding ARG0 value of the verb with the Index value 
+;Rama being gone to the forest, Sita follows.
+;(defrule rblsk-index
+;(declare (salience 10000))
+;(rel_name-ids	rblsk	?kri	?rblsk)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?kri ?mrscon ?ml ?ma0 ?ma1)
+;=>
+;(assert (rblsk_index_notrequired ?kri))
+;(printout ?*rstr-dbug* "(rule-rel-values  rblsk-index rblsk_index_notrequired " ?kri ")"crlf)
+;)
+
+
+;(defrule rblsk-index
+;(declare (salience 10000))
+;(rrrrrrel_name-ids	rblsk	?kri	?rblsk)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?kri ?mrscon ?ml ?ma0 ?ma1)
+;=>
+;(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+;(printout ?*rstr-dbug* "(rule-rel-values rblsk-index  LTOP-INDEX h0 "?arg0 ")"crlf)
+;)
+
+;Rule for binding udef_q, and_c with the modifier and the nouns.
+;We met the old men and women.
+(defrule conj-mod
+(construction-ids	conj	$?vars ?id1 ?id2)
+(rel_name-ids	mod	?id1	?id3)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?l ?a0 ?li ?ri)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?lbll ?argg ?rstr ?body)
+?f2<-(MRS_info ?rel1 ?id3 ?modifier ?lbl ?arg0 ?arg1)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id4 ?verb ?lbl3 ?arg03 ?arg13 ?arg23)
+(MRS_info ?rel2 ?id1 ?name2 ?lbl1 ?arg00 $?varss)
+(MRS_info ?rel3 ?id2 ?name1 ?lbl2 ?arg02 $?varsss)
+;(not (modified_conj ?id))
+=>
+(retract ?f ?f1)
+(printout ?*rstr-fp*  "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _and_c "?l" "?a0" "?arg00" "?arg02")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-mod  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _and_c "?l" "?a0" "?arg00" "?arg02")"crlf)
+;(printout ?*rstr-dbug* "(rule-rel-values conj-mod  conj_ARG0 "?id" "?a0")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?arg00" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-mod  id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?arg00" "?rstr" "?body")"crlf)
+(printout ?*rstr-fp* "(MRS_info "?rel1" "?id3" "?modifier" "?l" "?arg0" "?a0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-mod "?rel1" "?id3" "?modifier" "?l" "?arg0" "?a0" )"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id4" "?verb" "?lbl3" "?arg03" "?arg13" "?a0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-mod id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id4" "?verb" "?lbl3" "?arg03" "?arg13" "?a0")"crlf)
+)
+
+;Rule for changing lbl of intf and arg1 with lbl and arg0 of the modifier.
+;You are a very good king.
+(defrule intf_mod
+(rel_name-ids intf ?viya ?viNa)
+(MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
+?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
+(test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q"))
+(not (construction-ids	conj	$?vars ?viya ?id2))
+=>
+(assert (MRS_info  ?rel2  ?viNa   ?co   ?lbl1   ?arg0_viNa   ?arg0_viya $?vars))
+(printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values intf_mod   "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
+)
+
+;Rule for binding arg0 of _the_q with the arg0 of the _and_c
+;We met the old men and women.
+(defrule def_conj
+(declare (salience 100))
+(construction-ids	conj	$?vars ?id1 ?id2)
+(rel_name-ids	mod	?id1	?id3)
+(id-def	?id1	yes)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id4 _the_q ?lt ?a0t ?rt ?rb)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id5 _and_c ?la ?aa0 ?ali ?ari)
+(test (eq (+ ?id1 10) ?id4)) 
+(test (eq (+ ?id1 500) ?id5)) 
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id4" _the_q "?lt" "?aa0" "?rt" "?rb")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values def_conj id-MRS_concept-LBL-ARG0-RSTR-BODY "?id4" _the_q "?lt" "?aa0" "?rt" "?rb")"crlf)
+)
+
+;Rule for binding arg0 of recip_pro with pronoun_q.
+;We love each other.
+(defrule reciprocal
+(id-concept_label	?recip	eka+xUsarA_1)
+(rel_name-ids	k2	?kri	?recip)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?recip pronoun_q ?lp ?pa0 ?rp ?bp)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?verb ?lv ?av ?a1v ?a2v)
+(MRS_info id-MRS_concept-LBL-ARG0 ?recippro recip_pro  ?lr ?a0r)
+(test (eq (+ ?recip 1000) ?recippro)) 
+=>
+(retract ?f ?f1)
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?verb ?lv ?av ?a1v ?a0r))
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?recip" pronoun_q "?lp" "?a0r" "?rp" "?bp")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values reciprocal id-MRS_concept-LBL-ARG0-RSTR-BODY "?recip" pronoun_q "?lp" "?a0r" "?rp" "?bp")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?verb" "?lv" "?av" "?a1v" "?a0r")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values reciprocal id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?verb" "?lv" "?av" "?a1v" "?a0r")"crlf)
+)
+
+
 

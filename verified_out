@@ -294,7 +294,6 @@ Ravana is killed by Rama in Lamka.
 #usake xvArA KAnA KAyA gayA WA.
 157
 The food had been eaten by him.
-The food had been eaten by himself.
 #mEMne Pala KA liyA hogA.
 158
 I will have eaten the fruit.
@@ -307,7 +306,6 @@ The boy is reading a new book, in the garden.
 The boy is reading a new book in the garden.
 #KAnA mere xvArA KAyA gayA.
 160
-The food was eaten by myself.
 The food was eaten by me.
 #kyA rAvaNa rAma ke xvArA mArA gayA WA?
 161
@@ -315,7 +313,6 @@ Was Ravana killed by Rama?
 Ravana was killed by Rama?
 #mere xvArA KAnA KAyA gayA WA.
 162
-The food was eaten by myself.
 The food was eaten by me.
 #lomadZI BUKI WI
 163
@@ -495,7 +492,6 @@ Mohana calls Rama, to his house.
 Mohana calls Rama to his house.
 #KAnA mere xvArA KAyA gayA WA.
 200
-Food was eaten by myself.
 Food was eaten by me.
 #ladakA vixyAlaya ke bagIce meM kiwAba paDa rahA hE.
 201
@@ -585,9 +581,7 @@ He used to live, in Ramapura.
 #ayAn ne use pAnI xiyA.
 222
 Ayan gave water to him.
-Ayan gave water to himself.
 Ayan gave him water.
-Ayan gave himself water.
 #mEMne nayI kiwAba paDI.
 223
 I read a new book.
@@ -615,27 +609,15 @@ I came, today.
 I came today.
 #mEM usase kiwAba le rahA hUz.
 227
-I am taking a book, from himself.
 I am taking a book, from him.
-I am taking a book from himself.
 I am taking a book from him.
 #mEM usake lie Sahara se AyA.
 228
-I came from the city, for himself.
 I came, for him from the city.
 I came for him from the city.
 I came from the city, for him.
-I came, for himself from the city.
-I came for himself from the city.
-I came from the city for himself.
-I came, from the city, for himself.
-I came from the city, for himself.
 I came, for him, from the city.
 I came for him, from the city.
-I came, from the city for himself.
-I came from the city for himself.
-I came, for himself, from the city.
-I came for himself, from the city.
 I came from the city for him.
 I came, from the city, for him.
 I came from the city, for him.
@@ -913,10 +895,8 @@ The rabbit had not eaten grass.
 The rabbit had not eaten grass.
 #merI bA muJe KAnA xewI hE 
 283
-My mother gives food to myself.
 My mother gives food to me.
 My mother gives me food.
-My mother gives myself food.
 #KaragoSa jaMgala meM rahawA WA.
 284
 A rabbit used to live in the forest.
@@ -1209,7 +1189,6 @@ Rama ate food having gone, to the school.
 Rama ate food having gone to the school.
 #mEM usase pyAra karawA hUz.
 331
-I love herself.
 I love her.
 #rAvaNa acCA nahIM hE.
 332
@@ -1466,10 +1445,47 @@ Kalu died frequently having eaten.
 Kalu died having frequently been eating.
 Kalu died having eaten frequently.
 Having eaten frequently Kalu died.
+#rAma ke xo bete We.
+377
+Rama had two sons.
+#BIma ke eka betA WA.
+378
+Bima had one son.
+#bure kAma bure Pala xewe hEM.
+379
+Bad works give bad results.
 #rAma ne SyAma xvArA mohana se BiKArI ko xAna xilavAyA.
 38
 Rama asked Syama to make Mohana give the donation to the beggar.
 Rama asked Syama to make Mohana give the beggar the donation.
+#muJe eka Pala xo.
+380
+Give me a fruit.
+Give a fruit to me.
+#hama eka xUsare se pyAra karawe hEM.
+381
+We love one another.
+We love each other.
+#vaha Kuxa se pyAra karawA hE.
+382
+He loves himself.
+#mEM Kuxa se pyAra karawA hUz.
+383
+I love myself.
+#Apane kAma kEse pUrA kiyA?
+384
+How did you complete the work?
+#rAma Gara AwA hE.
+385
+Rama comes home.
+Rama comes home.
+Rama comes, home.
+#muJe hinxI AwI hE.
+386
+I know Hinxi.
+#hama bUDZe AxamI Ora OrawoM se mile.
+387
+We met the old men and women.
 #ye prawIka hE.
 39
 This is a symbol.
@@ -1543,22 +1559,12 @@ I went, to a school in the city.
 I went to a school in the city.
 #ladakA usake lie Sahara gayA.
 51
-The boy went to the city, for himself.
 The boy went to the city, for him.
 The boy went, for him to the city.
 The boy went for him to the city.
-The boy went to the city for himself.
-The boy went, for himself to the city.
-The boy went for himself to the city.
 The boy went to the city for him.
 The boy went, for him, to the city.
 The boy went for him, to the city.
-The boy went, to the city, for himself.
-The boy went to the city, for himself.
-The boy went, for himself, to the city.
-The boy went for himself, to the city.
-The boy went, to the city for himself.
-The boy went to the city for himself.
 The boy went, to the city, for him.
 The boy went to the city, for him.
 The boy went, to the city for him.
@@ -1570,9 +1576,7 @@ You can observe the sky clearly.
 You can clearly observe the sky.
 #mEM usase eka kiwAba le rahA hUz.
 53
-I am taking a book, from himself.
 I am taking a book, from him.
-I am taking a book from himself.
 I am taking a book from him.
 #brahmAMda badA hE.
 54
@@ -1580,7 +1584,6 @@ The universe is huge.
 #mEMne usase eka praSna pUCA.
 55
 I asked him one question.
-I asked himself one question.
 #bacce ko CAwra kahA jAyegA.
 56
 A child will be called a student.
@@ -1592,16 +1595,8 @@ Bring fruits from the forest, for me.
 Bring fruits, from the forest, for me.
 Bring fruits for me, from the forest.
 Bring fruits, for me, from the forest.
-Bring fruits for myself from the forest.
-Bring fruits from the forest, for myself.
-Bring fruits, for myself from the forest.
-Bring fruits, from the forest, for myself.
-Bring fruits for myself, from the forest.
-Bring fruits, for myself, from the forest.
 Bring fruits from the forest for me.
 Bring fruits, from the forest for me.
-Bring fruits from the forest for myself.
-Bring fruits, from the forest for myself.
 #rAma john ke liye Sahara se AyA.
 58
 Rama came from the city, for John.
@@ -1673,10 +1668,8 @@ You are eating bananas.
 I am sleeping.
 #rAma ne muJe kiwAba xI.
 72
-Rama gave the book to myself.
 Rama gave me the book.
 Rama gave the book to me.
-Rama gave myself the book.
 #rAma acCA hE.
 73
 Rama is good.

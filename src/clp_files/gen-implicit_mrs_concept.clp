@@ -37,6 +37,7 @@
 (not  (id-ne ?id yes)) ;#KIra ke liye cAvala KarIxo.
 ;(not (sentence_type	)) ;#kuwwA! ;#billI Ora kuwwA.
 (not (no_a_q_required ?id)) ;Which dog did bark?
+(not (rel_name-ids meas ?id $?v)) ;#rAma bAjAra se wIna kilo cakkI AtA KarIxegA.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "(+ ?id 10)" _a_q)"crlf)
@@ -58,7 +59,7 @@
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
 (defrule mrs_pl_notDef
 (id-gen-num-pers ?id ?g ?n ?p)
-(or (test (eq ?n pl)) (rel_name-ids card  ?id ?) (id-abs ?id yes))
+(or (test (eq ?n pl))(id-abs ?id yes) (rel_name-ids meas ?id ?)(rel_name-ids card ?id ?))
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
 (not (rel_name-ids dem ?id ?v))
@@ -282,7 +283,7 @@
 
 ;#rAma ne skUla jAkara KAnA KAyA.
 (defrule mrs_subord
-(rel_name-ids	rpk	?id	?kri)
+(rel_name-ids	rpk|rblsk	?id	?kri)
 (id-hin_concept-MRS_concept ?id ?hinconcept ?engcon) 	
 (test (eq (str-index _n_ ?engcon) FALSE))
 =>
@@ -650,7 +651,7 @@
 ;Rule for bringing number_q when card is coming in the k2 position.
 ;The cat chased one.
 (defrule eka-k2
-(id-concept_label	?ic	eka_6)
+(id-concept_label	?ic	eka_1)
 (rel_name-ids	k2	?kri	?ic)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
@@ -737,3 +738,17 @@
 (printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj id-MRS_concept "(+ ?id 3) " measure)"crlf)
 )
 
+;Rule for creating unspec_manner, which_q, manner for k3 relation with kim word.
+;How did you complete the work?
+(defrule mrs_inter_how-verb
+(id-concept_label ?id kim)
+(rel_name-ids	k3	?noun	?id)
+(sentence_type  interrogative)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb  id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " unspec_manner)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb id-MRS_concept "(+ ?id 2)" unspec_manner)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 3) " manner)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb id-MRS_concept "(+ ?id 3) " manner)"crlf)
+)
