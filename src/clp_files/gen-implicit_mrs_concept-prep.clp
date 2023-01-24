@@ -9,7 +9,7 @@
 (rel_name-ids ?rel ?kri ?k-id)
 (Karaka_Relation-Preposition    ?rel  ?prep)
 (id-concept_label	?k-id	?comp)
-(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1))
+(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1|pAsa_2))
 (not (rel_name-ids k4 ?kri ?k-id))
 (not (MRS_info  id-MRS_concept ?compeq   comp_equal)) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 ;(not (and (rel_name-ids k1s ?kri ?k-id)) ;rAXA mIrA jEsI sunxara hE. 
