@@ -752,3 +752,26 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 3) " manner)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb id-MRS_concept "(+ ?id 3) " manner)"crlf)
 )
+
+;Rule for creation _or_c for disjunct relation.
+;Is Rama good or bad?
+;I like tea or coffee.
+(defrule disjunct_or
+(construction-ids	disjunct	$?v ?id1 ?id2)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 500)" _or_c)"crlf)
+(printout ?*defdbug* "(rule-rel-values disjunct_or id-MRS_concept "(+ ?id1 500)" _or_c)"crlf)
+)
+
+;Rule for creating udef_q for dijunct entries or noun.
+;I like tea or coffee.
+(defrule disjunct
+(construction-ids	disjunct ?id1 ?id2)
+(rel_name-ids   ?rel        ?id ?id1)
+(id-concept_label	?id1	?hincon)
+(id-gen-num-pers	?id1	?gen ?num ?per)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values disjunct id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
+)
+

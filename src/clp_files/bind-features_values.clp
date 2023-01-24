@@ -66,7 +66,7 @@
 (retract ?f)
 (assert (modified_viSeRaNa ?viNa))
 (assert (MRS_info  ?rel2  ?viNa   ?co   ?lbl1   ?arg0_viNa   ?arg0_viya $?vars))
-;(printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values viya-viNa   "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 )
 
@@ -120,6 +120,7 @@
 (test (neq (str-index _a_ ?mrsCon) FALSE))
 (test (neq ?arg1 ?nonadjarg_0))
 (not (modified_samAnAXi ?nonadjarg_0))
+(not (construction-ids	disjunct	$?vv ?adj $?vvv))
 =>
 (retract ?f)
 (assert (modified_samAnAXi ?nonadjarg_0))
@@ -367,6 +368,7 @@
 (not (modified_k2 ?karma))
 ;(not (rel_name-ids rpka ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
 (not (construction-ids	conj	$?vars ?karma $?varss))
+(not (construction-ids	disjunct	$?vars ?karma $?varss))
 =>
 (retract ?f)
 (assert (modified_k2 ?karma))
@@ -489,6 +491,7 @@
 (test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
 ;(test (neq (str-index "_n_" ?mrsCon2)FALSE))
 (test (or (neq (str-index "_n_" ?mrsCon2)FALSE) (eq ?mrsCon2 nominalization) ))
+(not (rel_name-ids	k1s	?kriyA	?karwA))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
@@ -983,6 +986,7 @@ else
 
 ; Bind feature values for imperative sentence. Replace ARG0 value of pron and pronoun_q with the ARG1 value of verb
 (defrule kriImperPronArg
+(declare (salience 1000))
 (sentence_type  imperative)
 ?f1<-(MRS_info ?rel1 ?kri ?con ?lbl ?arg0 ?arg1  $?var)
 ?f<-(MRS_info ?rel2 ?pron pron ?lbl1 ?arg01  $?vars)
@@ -1024,6 +1028,7 @@ else
 (kriyA-TAM ?kri ?tam)
 (sentence_type  yn_interrogative|interrogative|pass-interrogative)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
+(not (construction-ids	disjunct	?id1 ?id2))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-q id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -1155,6 +1160,7 @@ then
 ?f<-(MRS_info ?rel ?kri ?mrsCon $?vars)
 (test (eq (str-index unspec_adj ?mrsCon) FALSE))
 (test (eq (str-index which_q ?mrsCon) FALSE))
+(test (eq (str-index _near_p ?mrsCon) FALSE))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")" crlf)
@@ -1229,7 +1235,6 @@ then
 (not (modified_conj ?head))
 ;(not (modified_implicit_conj ?head)) ;#rAma, hari Ora sIwA acCe hEM.
 (not (which_bind_notrequired ?dep))
-
 =>
 (retract ?f)
 (printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
@@ -1401,6 +1406,7 @@ then
 (rel_name-ids   k1s        ?id  ?id_adj)
 (MRS_info ?rel ?id_adj ?mrsCon ?lbl ?arg0 $?vars)
 (not (LTOP_value_geneated_4_construction))
+(not (LTOP_value_geneated_4_disjunct_construction))
 (test (neq (str-index _a_ ?mrsCon) FALSE)) 
 =>
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
@@ -1679,7 +1685,7 @@ then
 )
 
 ;Rule for binding arg1 and lbl with the kriya.
-;# कालू खा -खाकर मर गया ।
+;#राम खा -खाकर मर गया ।
 (defrule rpk-noun
 (rel_name-ids	rpk ?noun ?id)
 (rel_name-ids	k1	?kriyA	?noun)
@@ -1818,4 +1824,167 @@ then
 )
 
 
+;Rule for binding preposition with k1s.
+;Am I the best king in the world?
+(defrule prep-noun-k1s
+(declare (salience 10000))
+(rel_name-ids ?relp ?kriyA ?karak)
+(rel_name-ids	k1s	?kriyA	?karwA)
+?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argv_0 $?vars)
+(MRS_info ?rel2 ?karak ?mrsCon2 ?lbl2 ?argn_0 $?varss)
+(test (eq (sub-string 1 1 (str-cat ?prep)) (sub-string 1 1 (str-cat ?karak))))
+(test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
+;(test (neq (str-index "_n_" ?mrsCon2)FALSE))
+(test (or (neq (str-index "_n_" ?mrsCon2)FALSE) (eq ?mrsCon2 nominalization) ))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values prep-noun-k1s "?rel_name " " ?prep " " ?endsWith_p " " ?lbl1" " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
+)
 
+;Rule for changing ARG0 of udef_q with _or_c.
+;Rule for changing _or_c l-index and r-index with arg0 of the first disjunct entry and arg0 of the second disjunct entry repectively.
+;I like tea or coffee. 
+(defrule disjunct
+(declare (salience 1000))
+(construction-ids	disjunct	$?vars ?id1 ?id2)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _or_c ?l ?a0 ?li ?ri)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?lbll ?argg ?rstr ?body)
+(MRS_info ?rel1 ?id1 ?name ?lbl ?arg0 $?var)
+(MRS_info ?rel2 ?id2 ?name2 ?lbl1 ?arg00 $?varss)
+(not (modified_disjunct ?id))
+(test (eq  (+ ?id1 510) ?idd))
+=>
+(retract ?f ?f1)
+(assert (modified_disjunct ?id))
+(assert (MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _or_c ?l ?a0 ?arg0 ?arg00))
+(printout ?*rstr-fp*  "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _or_c "?l" "?a0" "?arg0" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX "?id" _or_c "?l" "?a0" "?arg0" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct  disjunct_ARG0 "?id" "?a0")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct  id-MRS_concept-LBL-ARG0-RSTR-BODY "?idd" udef_q "?lbll" "?a0" "?rstr" "?body")"crlf)
+)
+
+;Rule for binding _or_c arg0 value with the arg2 value of the verb when it has k2 relation.
+;I like tea or coffee. 
+(defrule disjunct-bind-ARG2
+(declare (salience 100))
+(rel_name-ids	k2	?kri	?id1)
+(construction-ids	disjunct	?id1 ?id2)
+?f<-(MRS_info ?rel ?verb ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _or_c ?lbll ?arg00 ?l ?r)
+(test (eq  (+ ?id1 500) ?id))
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+=>
+(printout ?*rstr-fp* "(MRS_info "?rel" "?verb" "?mrsCon" "?lbl" "?arg0" "?arg1" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct-bind-ARG2 "?rel" "?verb" "?mrsCon" "?lbl" "?arg0" "?arg1" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+)
+
+;Rule for no binding arg0 with the ltop h0 when it has k1s relation. 
+;Rule for binding arg0 of _or_c with the ltop h0 when it is disjunct relation.
+;I like tea or coffee.
+(defrule samAnAXi-LTOP-disjunct-pred
+(declare (salience 1000))
+(id-concept_label       ?v   hE_1|WA_1)
+(rel_name-ids   k1s        ?v  ?k1s)
+(construction-ids	disjunct  ?k1s $?k1ses)
+(MRS_info ?rel ?k1sor _or_c ?lbl ?arg0 $?vars)
+(MRS_info ?rel1 ?k1s ?mrsCon $?var)
+(test (eq  (+ ?k1s 500) ?k1sor))
+(test (neq (str-index _a_ ?mrsCon) FALSE))
+=>
+(assert (LTOP_value_geneated_4_disjunct_construction))
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP-disjunct-pred LTOP-INDEX h0 "?arg0 ")"crlf)
+)  
+
+;Rule for binding L_HNDL of _or_c with the previous LBL of the word. R_HNDL with the LBl fo the preceeding word.
+;Rule for binding L-INDEX of _or_c with the ARG0 of previous word and R-INDEX with the preceding word ARG0 
+;It also provides LBL and ARG0 of _and_c for the next rule. 
+;Is Rama good or bad?
+(defrule disjunct-pred
+(declare (salience 1000))
+(construction-ids	disjunct	$?vars ?id1 ?id2)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?id _or_c ?l ?a0 ?li ?ri ?lh ?rh)
+(MRS_info ?rel1 ?id1 ?name ?lbl ?arg0 $?var)
+(MRS_info ?rel2 ?id2 ?name2 ?lbl1 ?arg00 $?varss)
+(not (modified_disjunct ?id))
+=>
+;(retract ?f)
+(assert (modified_disjunct ?id))
+(assert (or_LBL_ARG0 ?id ?l ?a0 ))
+(printout ?*rstr-fp*  "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?id" _or_c "?l" "?a0" "?arg0" "?arg00" "?lbl" "?lbl1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct-pred  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?id" _or_c "?l" "?a0" "?arg0" "?arg00" "?lbl" "?lbl1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct-pred  or_LBL_ARG0 "?id" "?l" "?a0")"crlf)
+)
+
+;Rule for binding arg1 of the disjunct entries with the arg0 of the karwa.
+;#rAma acCA hE yA burA?
+(defrule samAnAXi-disjunct
+(declare (salience 1000))
+(rel_name-ids   k1	?non-adj ?k1) 
+(rel_name-ids	k1s	?non-adj ?adj)
+(construction-ids	disjunct	$?vv ?adj $?vvv)
+?f<-(MRS_info ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
+(test (neq (str-index _a_ ?mrsCon) FALSE))
+(test (neq ?arg1 ?nonadjarg_0))
+(not (modified_samAnAXi ?nonadjarg_0))
+=>
+(retract ?f)
+;(assert (modified_samAnAXi ?nonadjarg_0))
+(assert (MRS_info  ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?nonadjarg_0 $?v))
+(printout ?*rstr-dbug* "(rule-rel-values samAnAXi-disjunct "?rel_name " " ?adj " " ?mrsCon " " ?lbl " " ?nonadjarg_0 ""(implode$ (create$ $?v))")"crlf)
+)
+
+;Rule for creating TAM for adjectives differently in the disjunct relation. 
+;Is Rama good or bad?
+(defrule disjunct-tam
+(construction-ids	disjunct	?id1 ?id2)
+(id-hin_concept-MRS_concept ?id1 ?hin ?mrscon)
+(id-hin_concept-MRS_concept ?id2 ?hin1 ?mrscon1)
+(test (neq (str-index _a_ ?mrscon) FALSE))
+(test (neq (str-index _a_ ?mrscon1) FALSE))
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id1 " prop pres indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct-tam id-SF-TENSE-MOOD-PROG-PERF "?id1 " prop pres indicative - - )"crlf)
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?id2 " ques untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values disjunct-tam id-SF-TENSE-MOOD-PROG-PERF "?id2 " ques untensed indicative - - )"crlf)
+)
+
+;Rule for creating TAM for disjunct _or_c when it has k1s disjunct entries.
+;Is Rama good or bad?
+(defrule or-tam
+(sentence_type  yn_interrogative)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?or _or_c ?l ?a0 ?li ?ri ?lh ?rh)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?or " ques pres indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values or-tam id-SF-TENSE-MOOD-PROG-PERF "?or" ques pres indicative - - )"crlf)
+)
+
+;Rule for binding _near_p with the 
+;The car is near the house.
+(defrule near-binding
+(rel_name-ids	k1	?verb	?karwa)
+(rel_name-ids	r6	?near	?k7p)
+(rel_name-ids	k7p	?verb	?near)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?near _near_p ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0 ?karwa ?mrscon ?ln ?na0)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?k7p ?mrsCon ?lbl ?aa0 ?aa1)
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?near" _near_p " ?l" "?a0" "?na0" "?aa0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values near_binding id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?near" _near_p " ?l" "?a0" "?na0" "?aa0")"crlf)
+)
+
+;Rule for creating TAM for _near_p
+;The car is near the house.
+(defrule near-tam
+(id-concept_label	?near	pAsa_2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?near _near_p ?l ?a0 ?a1 ?a2)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?near " prop pres indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values near-tam id-SF-TENSE-MOOD-PROG-PERF "?near" prop pres indicative - - )"crlf)
+)

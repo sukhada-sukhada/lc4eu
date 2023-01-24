@@ -41,6 +41,7 @@
 ?f<-(id-concept_label	?kri	hE_1)
 (rel_name-ids	k7p	?kri	?k7p)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
+(not (rel_name-ids k1s ?kri ?k1s))
 =>
 (retract ?f ?f1)
 (printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id-k7p id-MRS_concept " ?kri " hE_1)"crlf)
@@ -381,3 +382,27 @@
 (printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?arg2" "?a3")"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values k4-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?arg2" "?a3")"crlf)
 )
+
+
+;Rule for bringing L_HNDL and R_HNDL for _or_c when the construction is in predicative form.
+;Rules of udef_q will not work this rule only works for adjective or verb constructions.
+;It creates L_HNDL and R_HNDL with h values and L_INDEX and R_INDEX with e values. 
+;Is Rama good or bad?
+(defrule or_implicit_handle
+(declare (salience 5000)) 
+(MRSc-FVs implicit_conj LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
+?f<-(rel_name-ids	k1s	?kri	?k1s)
+(construction-ids	disjunct	$? ?k1s $?)
+(MRS_info id-MRS_concept ?implicit ?mrs)
+(MRSc-FVs ?mrscon $?v)
+;(test (eq ?mrs implicit_conj) )
+(test (or (eq ?mrs implicit_conj) (eq ?mrs _or_c)) )
+(test (or (eq  (+ ?k1s 600) ?implicit) (eq  (+ ?k1s 500) ?implicit)))
+;(test (eq  (+ ?k1s 600) ?implicit))
+(test (neq (str-index _a_ ?mrscon) False))
+=>
+(retract ?f) 
+(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values or_implict_handle  MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
+)
+

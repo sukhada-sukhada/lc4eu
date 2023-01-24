@@ -23918,5 +23918,6 @@
 (MRSc-FVs measure LBL: h* ARG0: e* ARG1: e* ARG2: i*)
 (MRSc-FVs unspec_manner LBL: h* ARG0: e* ARG1: e* ARG2: x*)
 (MRSc-FVs manner LBL: h* ARG0: x*)
-
-
+(MRSc-FVs _towards_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
+(MRSc-FVs _or_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
+(MRSc-FVs _because+of_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)

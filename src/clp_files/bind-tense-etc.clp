@@ -181,6 +181,7 @@
 (not (modified_tensexsti ?id1))
 (not (id-double_causative	?id	yes))
 (test (eq ?id1 (+ ?id 1)))
+(not (rel_name-ids   k1s       ?v  ?id2))
 =>
 (assert (modified_tenseexsti ?id1))
 (retract ?f ?f1)

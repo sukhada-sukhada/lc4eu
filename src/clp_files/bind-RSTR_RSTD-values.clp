@@ -80,6 +80,7 @@
 ;(test (neq ?mrsCon "_and_c"))
 (test (eq (str-index _and_c ?mrsCon) FALSE))
 (test (eq (str-index implicit_conj ?mrsCon) FALSE))
+(test (eq (str-index _or_c ?mrsCon) FALSE))
 (not (which_bind_notrequired ?dep)) ;kOna sA kuwwA BOMkA?
 =>
 (retract ?f)
@@ -847,5 +848,40 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values def_conj  Restr-Restricted "?rt" "?la")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted "?ru" "?lbl")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values def_conj  Restr-Restricted "?ru" "?lbl")"crlf)
+)
+
+;Rule for binding rstr of udef_q with _or_c lbl.
+;I like tea or coffee. 
+(defrule disjunct-rstr
+(declare (salience 10))
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _or_c ?lbl ?arg0 ?first ?second)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?l ?a ?rstr ?body)
+(test (eq (+ ?id 10) ?idd))
+=>
+(retract ?f)
+(printout ?*rstr-rstd* "(Restr-Restricted  "?rstr"  "?lbl ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values disjunct-rstr Restr-Restricted  "?rstr" "?lbl ")"crlf)
+)
+
+;Rule for binding ltop h0 with _or_c lbl when disjuct entries are in predicate position.
+;Is Rama good or bad?
+(defrule disjunct-rstr-ltop
+(construction-ids	disjunct	$?vv ?adj $?vvv)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?id _or_c ?lbl ?arg0 ?li ?ri ?lhl ?rhl)
+(id-hin_concept-MRS_concept ?adj ?hin ?mrscon)
+(test (neq (str-index _a_ ?mrscon) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values disjunct-rstr-ltop Restr-Restricted  h0 "?lbl ")"crlf)
+)
+
+;Rule for binding LTOP h0 with lbl of _near_p
+;The car is near the house.
+(defrule near-ltop
+(rel_name-ids	r6	?near	?k7p)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?near _near_p ?l ?a0 ?a1 ?a2)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  h0  "?l ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values near-ltop Restr-Restricted  h0 "?l ")"crlf)
 )
 
