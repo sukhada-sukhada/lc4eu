@@ -331,7 +331,7 @@
 (declare (salience 10000))
 ?f<-(id-concept_label	?kri	hE_1) 
 (id-concept_label	?k1s	kim)
-(rel_name-ids	k1s	?kri	?k1s)
+(rel_name-ids	k1p	?kri	?k1s)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
 (sentence_type  interrogative)
 =>
@@ -348,7 +348,7 @@
 ?f<-(MRSc-FVs which_q LBL: h* ARG0: ?a0 RSTR: h* BODY: h*)
 (id-concept_label	?kri	?word) 
 (id-concept_label	?k1s	kim)
-(rel_name-ids	k1s|degree	?kri	?k1s)
+(rel_name-ids	k1p|degree	?kri	?k1s)
 (sentence_type  interrogative)
 =>
 (retract ?f)
@@ -405,4 +405,18 @@
 (assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*))
    (printout ?*mrs-dbug* "(rule-rel-values or_implict_handle  MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
 )
+
+;Rule for converting arg1 value (x*) of the verb when k1 is absent to u*
+;Ex. Rama went to the school while reading.
+(defrule k1-absent-rsk
+(rel_name-ids rsk   ?kri    ?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?verb ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+=>
+(retract ?f)
+(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
+(printout ?*mrs-fp* "(MRS_info -MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values k1-absent-rsk -MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
+)
+
 
