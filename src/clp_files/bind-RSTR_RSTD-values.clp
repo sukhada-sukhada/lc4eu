@@ -161,7 +161,7 @@
 (not (id-stative ?id1 yes))
 (not (id-double_causative	?id	yes))
 (not (rel_name-ids	rpk	?id	?kri_id))
-;(not (rel_name-ids	kr_vn	?id	?kri_id))
+;(not (rel_name-ids	krvn	?id	?kri_id))
 (not (rel_name-ids	rsk	?id	?kri_id))
 (not (rel_name-ids	rpk	?kri_id	?id))
 (not (rel_name-ids	rblsk ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
@@ -298,11 +298,11 @@
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-subord Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
 )
 
-;It creates binding for vmod_kr_vn with subord abstract typed feature
+;It creates binding for vmod_krvn with subord abstract typed feature
 ;verified sentence 338 #वह लंगडाकर चलता है.
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord-kv
-(rel_name-ids	kr_vn	?id1	?id2)
+(rel_name-ids	krvn	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -335,10 +335,10 @@
  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-while Restr-Restricted  "?arg1 " "?lbl1 ")"crlf)
 )
 
-;It creates binding for vmod_kr_vn with _while_x
+;It creates binding for vmod_krvn with _while_x
 ; verified sentence 340#भागते हुए शेर को देखो
 (defrule LTOP-while-kr
-(rel_name-ids	vmod_kr_vn	?id1	?id2)
+(rel_name-ids	vmod_krvn	?id1	?id2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -30000 _while_x ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
@@ -479,7 +479,7 @@
 (defrule LTOP-rstdeic
 (rel_name-ids deic ?id1    ?id)
 (MRS_info id-MRS_concept-LBL-ARG0 ?id2 generic_entity ?lbl1 ?ARG01)
-(MRS_info ?rel1 ?id _this_q_dem ?lbl ?ARG0 ?ARG1 ?ARG2)
+(MRS_info ?rel1 ?id _this_q_dem|_that_q_dem ?lbl ?ARG0 ?ARG1 ?ARG2)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  "?ARG1 " "?lbl1 ")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeic Restr-Restricted  "?ARG1 " "?lbl1 ")"crlf)
@@ -785,7 +785,7 @@
 ;How are you?
 (defrule how-rstrr
 (id-concept_label	?how	kim)
-(rel_name-ids	k1s	?kri	?how)
+(rel_name-ids	k1p	?kri	?how)
 (sentence_type  interrogative)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
 =>
@@ -798,32 +798,33 @@
 (defrule kim-which-rstr
 (declare (salience 10000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k1s|k3	?kri	?how)
+(rel_name-ids	krvn|k5	?kri	?how) ;k5 for Where did Rama come from?
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
 =>
 (assert (which_bind_notrequired ?wq))
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  kim-which which_bind_notrequired " ?wq ")"crlf)
 )
 
-;Rule for not binding h0 with the lbl of the kr_vn verb. 
-(defrule kr_vn-notbind
+;Rule for not binding h0 with the lbl of the krvn verb. 
+(defrule krvn-notbind
 (declare (salience 10000))
-(rel_name-ids	kr_vn	?kri	?kri_id)
+(rel_name-ids	krvn	?kri	?kri_id)
 (id-hin_concept-MRS_concept ?kri_id ?hin1 ?mrsCon)
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 =>
 (assert (ltop_bind_notrequired ?kri_id))
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  kr_vn-notbind ltop_bind_notrequired " ?kri_id ")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  krvn-notbind ltop_bind_notrequired " ?kri_id ")"crlf)
 )
 
 ;Rule for not binding of which_q with the manner. 
 ;How did you complete the work?
+;Where did Rama come from? k5
 (defrule kim-which-rstr-verb
 (declare (salience 10000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k3	?kri	?how)
+(rel_name-ids	krvn|k5	?kri	?how)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
-(MRS_info id-MRS_concept-LBL-ARG0 ?m manner ?ml ?ma0)
+(MRS_info id-MRS_concept-LBL-ARG0 ?m manner|place_n ?ml ?ma0)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted "?rsw" "?ml")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values kim-which-rstr-verb  Restr-Restricted "?rsw" "?ml")"crlf)
@@ -878,7 +879,7 @@
 ;Rule for binding LTOP h0 with lbl of _near_p
 ;The car is near the house.
 (defrule near-ltop
-(rel_name-ids	r6	?near	?k7p)
+(rel_name-ids	rdl	?near	?k7p)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?near _near_p ?l ?a0 ?a1 ?a2)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?l ")" crlf)

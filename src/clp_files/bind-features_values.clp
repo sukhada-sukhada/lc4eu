@@ -84,8 +84,8 @@
 )
 
 ;Replace LBL values of kriyA_viSeRaNa with the LBL value of kriyA, and Replace ARG1 values of kriyA_viSeRaNa with the ARG0 value of kriyA. Ex. "I walk slowly." 
-(defrule kr_vnn
-(rrrel_name-ids kr_vn ?kri ?kri_vi)
+(defrule krvnn
+(rrrel_name-ids krvn ?kri ?kri_vi)
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
 ?f<-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 =>
@@ -94,19 +94,19 @@
 (printout ?*rstr-dbug* "(rule-rel-values kriyA-kriyA_viSeRaNa  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
 )
 
-(defrule kr_vn
+(defrule krvn
 (declare (salience 1000))
-(rel_name-ids kr_vn ?kri ?kri_vi) ;#aXyApaka aBI Aye hEM.
+(rel_name-ids krvn ?kri ?kri_vi) ;#aXyApaka aBI Aye hEM.
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
 ?f<-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
-(not (modified_kr_vn ?kri_vi))
+(not (modified_krvn ?kri_vi))
 (test (eq (str-index _v_ ?mrsconkrivi) FALSE))
 =>
 ;(retract ?f)
-(assert (modified_kr_vn ?kri_vi))
+(assert (modified_krvn ?kri_vi))
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2 " " ?arg0 " "(implode$ (create$ $?vars)) ")"crlf)
 ;(assert (MRS_info  ?rel2 ?kri_vi  ?mrsconkrivi  ?lbl1 ?arg0_2 ?arg0 $?vars) )
-(printout ?*rstr-dbug* "(rule-rel-values kr_vn  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values krvn  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
 )
 
 ;Rule for predicative adjective (samAnAXi) : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
@@ -868,8 +868,8 @@ else
 ;#rAma ne skUla jAkara KAnA KAyA
 (defrule rpk
 (rel_name-ids	rpk	?id	?kri)
-(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
-(test (neq (str-index _v_ ?mrscon) FALSE))
+;(id-hin_concept-MRS_concept ?kri ?hin ?mrscon)
+;(test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rpk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
@@ -884,17 +884,17 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values rvks id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 )
 
-;It creates TAM for vmod_kr_vn
+;It creates TAM for vmod_krvn
 ;verified sentence 338 vaha laMgadAkara calawA hE.
 ;verified sentence 340 BAgawe hue Sera ko xeKo
-(defrule kr_vn-sf
-(rel_name-ids	kr_vn	?kri	?kvn)
+(defrule krvn-sf
+(rel_name-ids	krvn	?kri	?kvn)
 ;(MRSc-FVs ?mrscon ?lbl ?l ?arg0 ?a0 ARG1: ?a1)
 (id-hin_concept-MRS_concept ?kvn ?hin ?mrscon)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kr_vn-sf id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values krvn-sf id-SF-TENSE-MOOD-PROG-PERF "?kvn " prop untensed indicative + - )"crlf)
 )
 
 ;It creates TAM for rsk
@@ -1072,10 +1072,11 @@ then
 )
 
 ;for modal verb 
+;nA_hE_1 TAM for Rama has to go to the school.
 (defrule tam-modal
 (declare (salience 100))
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense modal)
-(kriyA-TAM ?kri ?tam)
+(kriyA-TAM ?kri ?tam|nA_hE_1)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
 (sentence_type  affirmative|interrogative|yn_interrogative|negative)
 (test (or (neq (str-index _v_modal ?mrs_modal) FALSE) (neq (str-index _v_qmodal ?mrs_modal) FALSE)));_used+to_v_qmodal
@@ -1157,14 +1158,14 @@ then
 
 (defrule printFacts
 (declare (salience -9000))
-?f<-(MRS_info ?rel ?kri ?mrsCon $?vars)
+?f<-(MRS_info ?rel ?kri ?mrsCon ?lbl $?vars)
 (test (eq (str-index unspec_adj ?mrsCon) FALSE))
 (test (eq (str-index which_q ?mrsCon) FALSE))
 (test (eq (str-index _near_p ?mrsCon) FALSE))
 =>
 (retract ?f)
-(printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")" crlf)
-(printout ?*rstr-dbug* "(rule-rel-values printFacts " ?rel " "?kri " "?mrsCon " " (implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " "?lbl" " (implode$ (create$ $?vars)) ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values printFacts " ?rel " "?kri " "?mrsCon " "?lbl" " (implode$ (create$ $?vars)) ")"crlf)
 )
 
 (defrule samAnAXi-deic
@@ -1186,11 +1187,13 @@ then
 ;Rule for generic_entity
 (defrule generic_entity
 (rel_name-ids deic ?id    ?id1) ;#yaha Gara hE.
-(MRS_info ?rel ?id1 _this_q_dem ?lbl ?ARG0 ?rstr ?body)
+(MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
 ?f1<-(MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG1 ?ARG2)
 ?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
 (test (eq  (+ ?id1 10) ?id3))
 (not (modified ?ARG02))
+(test (or (neq (str-index _this_q_dem ?mrscon) FALSE)
+          (neq (str-index _that_q_dem ?mrscon) FALSE)))
 =>
 (retract ?f1 ?f2)
 (assert (modified ?ARG02))
@@ -1222,6 +1225,7 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values dem_adj2 " ?rel2 " "?id3" " mrs_2" " ?lbl2 " " ?arg1" "(implode$ (create$ $?vars)) ")"crlf)
 )
 
+
 ;Replacing ARG0 of implicit mrs concepts like _a_q, pronoun_q with the ARG0 value of their head
 (defrule mrs-info_q
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
@@ -1243,7 +1247,8 @@ then
 
 
 (defrule rstr-rstd4non-implicit
-(rel_name-ids ord|dem|quant ?head ?dep)
+(rel_name-ids dem|quant ?head ?dep) 
+;(rel_name-ids ord|dem|quant ?head ?dep) ;Rama ate the second apple.
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x $?vars)
 =>
@@ -1620,7 +1625,7 @@ then
 ;Rule for binding LTOP h0 with the lbl of the unsepc_adj. 
 ; How are you?
 (defrule how-k1s-ltop
-(rel_name-ids	k1s	?kri	?how)
+(rel_name-ids	k1p	?kri	?how)
 (id-concept_label	?how	kim)
 (sentence_type  interrogative)
 (MRS_info ?rel1  ?id1  unspec_adj ?lbl1 ?arg10 ?arg11 $?var)
@@ -1635,7 +1640,7 @@ then
 (defrule how-k1s
 (declare (salience 1000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k1s	?kri	?how)
+(rel_name-ids	k1p	?kri	?how)
 (sentence_type  interrogative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?us unspec_adj ?lus ?a0us ?a1us)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
@@ -1660,7 +1665,7 @@ then
 (defrule kim-which
 (declare (salience 10000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k1s|degree	?kri	?how)
+(rel_name-ids	k1p|degree	?kri	?how)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
 =>
 (assert (which_bind_notrequired ?wq))
@@ -1701,7 +1706,7 @@ then
 ;Rule for changing unspec_manner lbl, arg1, and arg2. Lbl and arg0 of kriya will be it's lbl and arg1. arg2 will be the arg0 of manner. 
 ;How did you complete the work?
 (defrule how-verb
-(rel_name-ids	k3	?kri	?how)
+(rel_name-ids	krvn	?kri	?how)
 (id-concept_label	?how	kim)
 (sentence_type  interrogative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?m unspec_manner ?ml ?ma0 ?ma1 ?ma2)
@@ -1968,11 +1973,11 @@ then
 ;The car is near the house.
 (defrule near-binding
 (rel_name-ids	k1	?verb	?karwa)
-(rel_name-ids	r6	?near	?k7p)
+(rel_name-ids	rdl	?near	?k7p)
 (rel_name-ids	k7p	?verb	?near)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?near _near_p ?l ?a0 ?a1 ?a2)
 (MRS_info id-MRS_concept-LBL-ARG0 ?karwa ?mrscon ?ln ?na0)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?k7p ?mrsCon ?lbl ?aa0 ?aa1)
+(MRS_info ?relll ?k7p ?mrsCon ?lbl ?aa0 $?vv) ;The cart is near the temple.
 =>
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?near" _near_p " ?l" "?a0" "?na0" "?aa0")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values near_binding id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?near" _near_p " ?l" "?a0" "?na0" "?aa0")"crlf)
@@ -1988,3 +1993,36 @@ then
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?near " prop pres indicative - - )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values near-tam id-SF-TENSE-MOOD-PROG-PERF "?near" prop pres indicative - - )"crlf)
 )
+
+
+;Rule for binding _from_p_dir with kriya and place_n. The label of _from_p_dir will be as kriya lbl, arg1 of this will be place_n arg0.
+;Where did Rama come from?
+(defrule _from_p_dir
+(id-concept_label ?id kim)
+(rel_name-ids	k5	?kri	?id)
+(sentence_type  interrogative)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?from _from_p_dir ?l ?a0 ?a1 ?a2)
+(MRS_info ?rel ?kri ?mrscon ?ln ?aoo ?a11 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl ?aa0)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?from" _from_p_dir " ?ln" "?a0" "?aoo" "?aa0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values _from_p_dir id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?from" _from_p_dir " ?ln" "?a0" "?aa0" "?aa0")"crlf)
+)
+
+;Rule for creating binding with the predicate when the conjoined words are in the predicate position.
+;Rama ate an apple and grapes.
+(defrule conj-bind-final-two-pred
+;(declare (salience 10000))
+(rel_name-ids	k2	?verbid	?id1)
+(construction-ids	conj	?id1 ?id2)
+?f<-(MRS_info ?rel ?verbid ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
+?f1<-(conj_ARG0 ?conj ?Pre_A0)
+(test (eq  (+ ?id1 500) ?conj))
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+=>
+(printout ?*rstr-fp* "(MRS_info "?rel" "?verbid" "?mrsCon" "?lbl" "?arg0" "?arg1" "?Pre_A0" "(implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-bind-final-two-pred "?rel" "?verbid" "?mrsCon" "?lbl" "?arg0" "?arg0" "?Pre_A0"	 "(implode$ (create$ $?v)) ")"crlf)
+)
+

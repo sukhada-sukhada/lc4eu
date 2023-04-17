@@ -1,10 +1,12 @@
-#ladZake eka hokara lade.
-ladZakA_1,eka+ho_1,ladZa_14-yA_1 
-1,2,3 
-,,
-[m pl a],,
-3:k1,1:rpk,0:main
-,,
-,,
-,,
+#rAma ne seba Ora aMgUra KAye.
+rAma,seba_1,aMgUra_1,KA_1-yA_1
+1,2,3,4
+per,,,
+[m sg a],[- sg a],[- pl a],
+4:k1,4:k2,4:k2,0:main
+,,,
+,,,
+,,,
 affirmative
+conj:[2,3]
+

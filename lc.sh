@@ -36,7 +36,7 @@ cp $var/dictionaries/*.dat  .
 echo $var > global_path.clp
 
 python3 $var/src/USR_coref_GNP_mapping.py $var/$1  $var/tmp_dir/$file_name/USR_coref_mapped.dat $var/corefFile
-python3 $var/src/user_csv_to_CLIPS_facts.py $var/tmp_dir/$file_name/USR_coref_mapped.dat $var/tmp_dir/$file_name/hin-clips-facts.dat
+python3 $var/src/USR-CLIPS_facts.py $var/tmp_dir/$file_name/USR_coref_mapped.dat $var/tmp_dir/$file_name/USR-CLIPS-facts.dat
 echo "(defglobal ?*path* = $var)" > global_path.clp
 
 clips -f  $var/src/clp_files/run_modules.bat > err
@@ -45,9 +45,7 @@ python3 $var/src/merge-bound-feature-n-remaining-facts.py mrs_info_binding_featu
 clips -f  $var/src/clp_files/run_modules2.bat >> err
 
 sort -u mrs_info_with_rstr_rstd_values.dat -o mrs_info_with_rstr_rstd_values.dat
-sed -n wfile.merge  hin_concept-to-mrs_concept.dat GNP_values.dat  bind-mrs-tense-etc.dat mrs_info_with_rstr_rstd_values.dat 
-#sed -n wfile.merge  hin_concept-to-mrs_concept.dat GNP_values.dat  bind-mrs-tense-etc.dat mrs_info_with_rstr_rstd_values.dat  mrs_info_neg_rstr-rstd.dat 
-#sed -n wdebug.merge mrs_info_binding_features_values_debug.dat hin_concept-to-mrs_concept_debug.dat implicit_mrs_concept_debug.dat implicit_mrs_concept-prep_debug.dat implicit_mrs_concept-pron_debug.dat mrs_feature_info_debug.dat mrs_info_with_rstr_rstd_values_debug.dat mrs_info_neg_rstr-rstd_debug.dat bind-mrs-tense-etc_debug.dat
+sed -n wfile.merge  GNP_values.dat  bound_MRS_tense.dat mrs_info_with_rstr_rstd_values.dat 
 
 uniq file.merge > file.merge.uniq
 #sort -u file.merge > file.merge.uniq

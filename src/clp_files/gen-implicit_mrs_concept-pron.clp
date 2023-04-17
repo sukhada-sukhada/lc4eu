@@ -35,7 +35,7 @@
 (defrule mrs_poss_pron
 (rel_name-ids r6 ?viSeRya ?r6)
 (not (id-concept_label	?r6	kisa_1))
-(not (id-concept_label	?viSeRya	pAsa_2)) ;#कार घर के पास है
+;(not (id-concept_label	?viSeRya	pAsa_2)) ;#कार घर के पास है
 (not (sentence_type  interrogative))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
