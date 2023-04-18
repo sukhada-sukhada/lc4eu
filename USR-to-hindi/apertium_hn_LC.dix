@@ -2650,10 +2650,10 @@
 <e><p><l>inakI</l><r>Ona<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inakI</l><r>Ona<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inakI</l><r>Ona<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
-<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="parsarg:0"/></r></p></e>
-<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="parsarg:0"/></r></p></e>
-<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="parsarg:0"/></r></p></e>
-<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="parsarg:0"/></r></p></e>
+<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+<e><p><l>Ona</l><r>Ona<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>isa</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
 <e><p><l>isa</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
 <e><p><l>isane</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ne"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>

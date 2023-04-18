@@ -11,8 +11,74 @@ from concept import Concept
 noun_attribute = dict()
 USR_row_info = ['root_words', 'index_data', 'seman_data', 'gnp_data', 'depend_data', 'discourse_data', 'spkview_data', 'scope_data']
 nA_list = ['nA_paDa', 'nA_padZA', 'nA_padA', 'nA_hE', 'nA_tha', 'nA_thI', 'nA_ho', 'nA_hogA', 'nA_cAhie', 'nA_cAhiye']
-
+spkview_list = ['hI', 'BI', 'jI', 'wo', 'waka']
 processed_postpositions_dict = {}
+construction_dict = {}
+spkview_dict = {}
+GNP_dict = {}
+
+def populate_GNP_dict(gnp_info, PPfull_data):
+    populate_GNP_dict = False
+    morpho_seman = ['comper_more', 'comper_less', 'superl', 'mawupa', 'mawup']
+    a = 'after'
+    b = 'before'
+    for i in range(len(gnp_info)):
+        input_string = gnp_info[i]
+        matches = re.findall(r'\[(.*?)\]', input_string)
+        strings = [s.strip() for s in matches]
+
+        for term in strings:
+            if term in morpho_seman:
+                populate_GNP_dict = True
+                if term == 'superl':
+                    temp = (b, 'sabase')
+
+                elif term == 'comper_more':
+                    temp = (b, 'jyAxA')
+
+                elif term == 'comper_less':
+                    temp = (b, 'kama')
+
+                else:
+                    # fetch GNP of next noun
+                    curr_index = i + 1
+                    noun_data = nextNounData_fromFullData(curr_index + 1, PPfull_data)
+                    if noun_data != ():
+                        g = noun_data[4]
+                        n = noun_data[5]
+                        p = noun_data[6]
+                        if g == 'f':
+                            temp = (a, 'vAlI')
+                        elif n == 'p':
+                            temp = (a, 'vAle')
+                        elif n == 's':
+                            temp = (a, 'vAlA')
+                if i + 1 in GNP_dict:
+                    GNP_dict[i + 1].append(temp)
+                else:
+                    GNP_dict[i + 1] = [temp]
+
+
+    # for i in range(len(gnp_info)):
+    #     term = gnp_info[i].strip().strip('][')
+    #     if term == 'superl':
+    #         GNP_dict[i+1] = 'sabase'
+    #         populate_GNP_dict = True
+    #     elif term == 'comper_more':
+    #         GNP_dict[i+1] = 'jyAxA'
+    #         populate_GNP_dict = True
+    #     elif term == 'comper_less':
+    #         GNP_dict[i+1] = 'kama'
+    #         populate_GNP_dict = True
+    return populate_GNP_dict
+def populate_spkview_dict(spkview_info):
+    populate_spk_dict = False
+    for i in range(len(spkview_info)):
+        if spkview_info[i] in spkview_list :
+            spkview_dict[i + 1] = spkview_info[i]
+            populate_spk_dict = True
+    return populate_spk_dict
+
 def add_adj_to_noun_attribute(key, value):
     if key is not None:
         if key in noun_attribute:
@@ -103,6 +169,7 @@ def clean(word, inplace=''):
     'pada'
     >>> clean("caDZa_1")
     'caDa'
+
     """
     newWord = word
     if 'dZ' in word:  # handling words with dZ/jZ -Kirti - 15/12
@@ -117,7 +184,7 @@ def clean(word, inplace=''):
 
 def is_tam_ya(verbs_data):
     ya_tam = '-yA_'
-    if verbs_data != []:
+    if verbs_data != ():
         term = verbs_data[1]
         if ya_tam in term:
             return True
@@ -150,6 +217,7 @@ def getDataByIndex(value: int, searchList: list, index=0):
 def findExactMatch(value: int, searchList: list, index=0):
     '''search and return data by index in an array of tuples.
         Index should be first element of tuples.
+
         Return False when index not found.'''
 
     try:
@@ -164,6 +232,7 @@ def findExactMatch(value: int, searchList: list, index=0):
 def findValue(value: int, searchList: list, index=0):
     '''search and return data by index in an array of tuples.
         Index should be first element of tuples.
+
         Return False when index not found.'''
 
     try:
@@ -442,15 +511,25 @@ def read_file(file_path):
     log(f'File ~ {file_path}')
     try:
         with open(file_path, 'r') as file:
-            data = file.read().splitlines()
+            lines = file.readlines()
+            file_rows = []
+            for i in range(len(lines)):
+                lineContent = lines[i]
+                if i == 10:
+                    if lineContent.strip() == '':
+                        break
+                    else:
+                        file_rows.append(lineContent)
+
             log('File data read.')
     except FileNotFoundError:
         log('No such File found.', 'ERROR')
         sys.exit()
-    return data
+    return lines
 
 def generate_rulesinfo(file_data):
     '''Return list all 10 rules of USR as list of lists'''
+
     if len(file_data) < 10:
         log('Invalid USR. USR does not contain 10 lines.', 'ERROR')
         sys.exit()
@@ -465,10 +544,13 @@ def generate_rulesinfo(file_data):
     spkview_data = file_data[7].strip().split(',')
     scope_data = file_data[8].strip().split(',')
     sentence_type = file_data[9].strip()
+    construction_data = ''
+    if len(file_data) > 10:
+        construction_data = file_data[10].strip()
 
     log('Rules Info extracted succesfully fom USR.')
     return [src_sentence, root_words, index_data, seman_data, gnp_data, depend_data, discourse_data, spkview_data,
-            scope_data, sentence_type]
+            scope_data, sentence_type, construction_data]
 
 def check_USR_format(root_words, index_data, seman_data, gnp_data, depend_data, discourse_data, spkview_data,
                       scope_data):
@@ -578,7 +660,7 @@ def check_noun(word_data):
 
     try:
         if word_data[3] != '':
-            if word_data[3][1:-1] not in ('superl', 'stative', 'causative'):
+            if word_data[3][1:-1] not in ('superl', 'stative', 'causative', 'double_causative'):
                 return True
         return False
     except IndexError:
@@ -666,6 +748,15 @@ def check_adverb(word_data):
 
 def check_indeclinable(word_data):
     """ Check if word is in indeclinable word list."""
+    if word_data[2] == 'unit':
+        return True
+
+    units = (
+        'semI,kimI,mItara'
+    )
+    unit_list = units.split(",")
+    if clean(word_data[1]) in unit_list:
+        return True
 
     indeclinable_words = (
         'aBI,waWA,Ora,paranwu,kinwu,evaM,waWApi,Bale hI,'
@@ -677,6 +768,32 @@ def check_indeclinable(word_data):
     indeclinable_list = indeclinable_words.split(",")
     if clean(word_data[1]) in indeclinable_list:
         return True
+
+    # #Numbers appear without '_' in the USR
+    # num = word_data[1]
+    # if num.isdigit():
+    #     return True
+    # else:
+    #     try:
+    #         float_value = float(num)
+    #         return True
+    #     except ValueError:
+    #         return False
+
+    return False
+
+def check_digit(word_data):
+    # Numbers appear without '_' in the USR
+    # check for yoc and dom
+    num = word_data[1]
+    if num.isdigit():
+        return True
+    else:
+        try:
+            float_value = float(num)
+            return True
+        except ValueError:
+            return False
     return False
 
 def analyse_words(words_list):
@@ -690,11 +807,14 @@ def analyse_words(words_list):
     verbs = []
     others = []
     adverbs = []
-    nominal_form = []
+    nominal_verb = []
     for word_data in words_list:
         if check_indeclinable(word_data):
             log(f'{word_data[1]} identified as indeclinable.')
             indeclinables.append(word_data)
+        elif check_digit(word_data):
+            log(f'{word_data[1]} identified as noun.')
+            nouns.append(word_data)
         elif check_pronoun(word_data):
             log(f'{word_data[1]} identified as pronoun.')
             pronouns.append(word_data)
@@ -704,9 +824,9 @@ def analyse_words(words_list):
         elif check_adverb(word_data):
             log(f'{word_data[1]} identified as adverb.')
             adverbs.append(word_data)
-        elif check_nominal_form(word_data):
+        elif check_nominal_verb(word_data):
             log(f'{word_data[1]} identified as nominal form.')
-            nominal_form.append(word_data)
+            nominal_verb.append(word_data)
         elif check_noun(word_data):
             log(f'{word_data[1]} identified as noun.')
             nouns.append(word_data)
@@ -720,9 +840,9 @@ def analyse_words(words_list):
             log(f'{word_data[1]} identified as other word, but processed as noun with default GNP.')  # treating other words as noun
             # others.append(word_data) #modification by Kirti on 12/12 to handle other words
             nouns.append(word_data)
-    return indeclinables, pronouns, nouns, adjectives, verbs, adverbs, others, nominal_form
+    return indeclinables, pronouns, nouns, adjectives, verbs, adverbs, others, nominal_verb
 
-def check_nominal_form(word_data):
+def check_nominal_verb(word_data):
     rel_list = ['rt', 'rh', 'k7p', 'k7t', 'k2']
     if word_data[4].strip() != '':
         relation = word_data[4].strip().split(':')[1]
@@ -731,7 +851,7 @@ def check_nominal_form(word_data):
             return True
     return False
 
-def process_nominal_form(nominal_forms_data, processed_noun, words_info, verbs_data):
+def process_nominal_verb(nominal_verbs_data, processed_noun, words_info, verbs_data):
 
    nominal_verbs = []
    for verb in verbs_data:
@@ -739,9 +859,9 @@ def process_nominal_form(nominal_forms_data, processed_noun, words_info, verbs_d
            main_verb = verb
            break
 
-   for nominal_form in nominal_forms_data:
-        index = nominal_form[0]
-        term = clean(nominal_form[1])
+   for nominal_verb in nominal_verbs_data:
+        index = nominal_verb[0]
+        term = clean(nominal_verb[1])
         gender = 'm'
         number = 's'
         person = 'a'
@@ -752,10 +872,10 @@ def process_nominal_form(nominal_forms_data, processed_noun, words_info, verbs_d
         log_msg = f'{term} identified as nominal, re-identified as other word and processed as common noun with index {index} gen:{gender} num:{number} person:{person} noun_type:{noun_type} case:{case} and postposition:{postposition}'
 
         relation = ''
-        if nominal_form[4] != '':
-            relation = nominal_form[4].strip().split(':')[1]
+        if nominal_verb[4] != '':
+            relation = nominal_verb[4].strip().split(':')[1]
 
-        case, postposition = preprocess_postposition_new('noun', nominal_form, words_info, main_verb)
+        case, postposition = preprocess_postposition_new('noun', nominal_verb, words_info, main_verb)
         tags = find_tags_from_dix_as_list(term)
         for tag in tags:
             if (tag[0] == 'cat' and tag[1] == 'v'):
@@ -827,39 +947,103 @@ def process_adverbs(adverbs, processed_nouns, processed_verbs, processed_indecli
                     log(f'adverb {adverb[1]} processed indeclinable with form {term}, no processing done')
                     return
 
-def get_root_for_kim(relation, anim):
-    if relation in ('k1', 'k1s'):
-        return 'kOna'
-    elif relation == 'k2' and anim == '':
-        return 'kyA'
-    elif relation in ('k2p', 'k7p'):
+def has_GNP(gnp_info):
+    gnp_data = gnp_info.strip('][').split(' ')
+    if len(gnp_data) != 3:
+        return False
+    return True
+
+def get_root_for_kim(relation, anim, gnp):
+    # kOna is root for - kisakA, kisakI, kisake, kinakA, kinake, kinakI, kOna, kisa, kisane, kise, kisako,
+    # kisase, kisake, kisameM, kisameM_se, isapara, kina, inhoMne, kinheM, kinako, kinase, kinpara, kinake, kinameM, kinameM_se, kisI, kisa
+
+    # kyA = k1s, gnp, inanimate
+    # kyA = k2, non anim
+    # kOna = k1s, gnp, animate
+    # kEsA = k1s, no gnp, inanimate
+
+    #     elif relation in ('k2p', 'k7p'):
+    #     return 'kahAz'
+    #
+    # elif relation == 'k5':
+    # return 'kahAz se'
+        #kaba
+        #kim + gnp + non anim - > kyA
+        #kim + gnp + anim -> kaun
+
+    animate = ['anim', 'per']
+    if relation in ('k2p', 'k7p'):
         return 'kahAz'
-    elif relation == 'k5':
-        return 'kahAz se'
-    elif relation == 'kr_vn':
-        return 'kEse'
-    elif relation == 'k3':
-        return 'kisa se'
-    elif relation == 'k1s':
-        return 'kEsA'
-    elif relation == 'rt':
-        return 'kyoM'
+    elif relation == 'k5' and has_GNP(gnp):
+        return 'kahAz'
     elif relation == 'k7t':
         return 'kaba'
-    elif relation in ('k2', 'k2g', 'k5'):
-        return 'kisa se'
-    else :
+    elif relation == 'rh' and not has_GNP(gnp):
+        return 'kyoM'
+    elif relation == 'rt' and not has_GNP(gnp): #generate kisa
+        return 'kOna'
+    elif has_GNP(gnp) and anim not in animate:
+        return 'kyA'
+    elif has_GNP(gnp) and anim in animate:
+        return 'kOna'
+    else:
         return 'kim'
+
+    # if relation == 'k1s' and len(gnp) > 0 and anim in animate:
+    #     return 'kOna'
+    # #generate kisane, kOna
+    # elif relation == 'k1':
+    #     return 'kOna'
+    # #generate kisase, kisako
+    # elif relation in ('k2', 'k2g', 'k5', 'k3'):
+    #     return 'kOna'
+    #
+    # elif relation == 'k1s' and len(gnp) > 0 and anim not in animate:
+    #     return 'kyA'
+    # elif relation == 'k2' and anim not in animate:
+    #     return 'kyA'
+    #
+    # elif relation in ('k2p', 'k7p'):
+    #     return 'kahAz'
+    # elif relation == 'k5':
+    #     return 'kahAz se'
+    #
+    # elif relation == 'kr_vn':
+    #     return 'kEse'
+    # elif relation == 'k1s' and len(gnp) == 0 and anim in inanimate:
+    #     return 'kEsA'
+    # elif relation == 'rt':
+    #     return 'kyoM'
+    #
+    #
+    #
+    #else:
+    #    return 'kim'
 
 def process_indeclinables(indeclinables):
     '''Processes indeclinable words index, word, 'indec'''
-
     processed_indeclinables = []
     for indec in indeclinables:
-        clean_indec = clean(indec[1])
-        processed_indeclinables.append((indec[0], clean_indec, 'indec'))
+        term = indec[1]
+        if term.isdigit():
+            processed_indeclinables.append((indec[0], term, 'indec'))
+        else:
+            try:
+                float_term = float(term)
+                processed_indeclinables.append((indec[0], float_term, 'indec'))
+            except:
+                clean_indec = clean(indec[1])
+                processed_indeclinables.append((indec[0], clean_indec, 'indec'))
     return processed_indeclinables
 
+
+def has_ques_mark(sentence_type):
+    interrogative_lst = ["yn_interrogative", "yn_interrogative_negative", "pass-yn_interrogative", "interrogative",
+                         "Interrogative", "pass-interrogative"]
+    for i in interrogative_lst:
+        if sentence_type == i:
+            return True
+    return False
 def process_others(other_words):
     '''Process other words. Right now being processed as noun with default gnp'''
 
@@ -902,10 +1086,10 @@ def process_pronouns(pronouns, processed_nouns, processed_indeclinables, words_i
         term = clean(pronoun[1])
         relation = pronoun[4].strip().split(':')[1]
         anim = pronoun[2]
-
+        gnp = pronoun[3]
         if is_kim(term):
-            term = get_root_for_kim(relation, anim)
-            if term in ('kahAz', 'kyoM', 'kaba'):
+            term = get_root_for_kim(relation, anim, gnp)
+            if term == 'kyoM':
                 processed_indeclinables.append((pronoun[0], term, 'indec'))
                 continue
 
@@ -928,7 +1112,7 @@ def process_pronouns(pronouns, processed_nouns, processed_indeclinables, words_i
 
         if pronoun[1] == 'addressee':
             addr_map = {'respect': 'Apa', 'informal': 'wU', '': 'wU'}
-            pronoun_per = {'respect': 'm', 'informal': 'm_h0', '': 'm_h1'}
+            pronoun_per = {'respect': 'm', 'informal': 'm', '': 'm_h1'}
             pronoun_number = {'respect': 'p', 'informal': 's', '': 'p'}
             word = addr_map.get(pronoun[6].strip().lower(), 'wU')
             person = pronoun_per.get(pronoun[6].strip().lower(), 'm_h1')
@@ -939,7 +1123,6 @@ def process_pronouns(pronouns, processed_nouns, processed_indeclinables, words_i
             word = 'vaha'
         else:
             word = term
-
 
         # If dependency is r6 then add fnum and take gnp and case from following noun.
         if "r6" in pronoun[4]:
@@ -955,11 +1138,11 @@ def process_pronouns(pronouns, processed_nouns, processed_indeclinables, words_i
         log(f'{pronoun[1]} processed as pronoun with case:{case} par:{parsarg} gen:{gender} num:{number} per:{person} fnum:{fnum}')
     return processed_pronouns
 
-
 def process_nouns(nouns, words_info, verbs_data):
     '''Process nouns as Process nouns as (index, word, category, case, gender, number, proper/noun type= proper, common, NC, nominal_verb or CP_noun, postposition)'''
     #noun_attribute dict to store all nouns as keys
     processed_nouns = []
+    main_verb = ''
     # fetch the main verb
     for verb in verbs_data:
         if verb[4].strip().split(':')[1] == 'main':
@@ -973,7 +1156,6 @@ def process_nouns(nouns, words_info, verbs_data):
             number = 'p'
         noun_type = 'common' if '_' in noun[1] else 'proper'
 
-
         # to fetch postposition and case logic and update each tuple
         case, postposition = preprocess_postposition_new('noun', noun, words_info, main_verb)
 
@@ -984,15 +1166,37 @@ def process_nouns(nouns, words_info, verbs_data):
                 index = noun[0] + (k * 0.1)
                 noun_type = 'NC'
                 clean_dnouns = clean(dnouns[k])
-                processed_nouns.append((index, clean_dnouns, category, case, gender, number, person, noun_type, postposition))
-                noun_attribute[clean_dnouns] = [[],[]]
+                if k == len(dnouns) - 1:
+                    dict_index = index
+                    processed_nouns.append((index, clean_dnouns, category, case, gender, number, person, noun_type, postposition))
+                else:
+                    processed_nouns.append((index, clean_dnouns, category, case, gender, number, person, noun_type, ''))
+
+            if noun[0] in processed_postpositions_dict:
+                processed_postpositions_dict[dict_index] = processed_postpositions_dict.pop(noun[0])
+                # noun_attribute[clean_dnouns] = [[],[]]
         else:
-            clean_noun = clean(noun[1])
+            term = noun[1]
+            if check_is_digit(term):
+                clean_noun = term
+            else:
+                clean_noun = clean(noun[1])
             processed_nouns.append((noun[0], clean_noun, category, case, gender, number, person, noun_type, postposition))
             noun_attribute[clean_noun] = [[], []]
         log(f'{noun[1]} processed as noun with case:{case} gen:{gender} num:{number} noun_type:{noun_type} postposition: {postposition}.')
 
     return processed_nouns
+
+def check_is_digit(num):
+    if num.isdigit():
+        return True
+    else:
+        try:
+            float_value = float(num)
+            return True
+        except ValueError:
+            return False
+    return False
 
 def get_default_GNP():
     gender = 'm'
@@ -1033,6 +1237,16 @@ def process_adjectives(adjectives, processed_nouns, processed_verbs):
         processed_adjectives.append((index, adj, category, case, gender, number))
         log(f'{adjective[1]} processed as an adjective with case:{case} gen:{gender} num:{number}')
     return processed_adjectives
+
+def process_imp_sentence(words_info, processed_pronouns):
+    # check if dependency does not have k1
+    # Add wuma postulate [0.9,  addressee, d, m,s,m, ' ' ]
+    k1exists = findExactMatch('k1', words_info, index=4)[0]
+    if not k1exists:
+        temp = (0.9, 'wU', 'p', 'd', 'm', 's', 'm_h1', 0, None)
+        processed_pronouns.insert(0, temp)
+
+    return processed_pronouns
 
 def get_gnpcase_from_concept(concept): #computes GNP values from noun or
 
@@ -1164,7 +1378,7 @@ def process_main_CP(index, term):
     # if category == 'adj':
     #     CP = [CP_index, CP_term, 'adj', 'd', gender, number]
     # if category == 'n':
-        CP = [CP_index, CP_term, 'n','d', gender, number, person, 'CP_noun', postposition]
+    CP = [CP_index, CP_term, 'n','d', gender, number, person, 'CP_noun', postposition]
 
     return CP
 
@@ -1182,6 +1396,92 @@ def verb_agreement_with_CP(verb, CP):
     else:
         return verb.gender, verb.number, verb.person
 
+def set_gender_make_plural(processed_words, g, num):
+    process_data = []
+    # for all k1s and main verb change gender to female and number to plural
+    for i in range(len(processed_words)):
+        word_list = list(processed_words[i])
+        if word_list[2] == 'adj':
+            # 4th index - gender, 5th index - number
+            word_list[4] = g
+            word_list[5] = num
+        elif word_list[2] == 'v':
+            # 3rd index - gender, 4th index - number
+            word_list[3] = g
+            word_list[4] = num
+        process_data.append(tuple(word_list))
+
+    return process_data
+def process_construction(processed_words, construction_data, depend_data, gnp_data, index_data):
+    # Adding Ora or yA as a tuple to be sent to morph/ adding it at join_compounds only
+    # if k1 in conj, all k1s and main verb g - m and n - pl
+    # if all k1 male or mix - k1s g - male else g - f
+    # cons list - can be more than one conj
+    # k1 ka m/f/mix nikalkr k1s and verb ko g milega    index dep:gen
+    # map to hold conj kaha aega
+    process_data = processed_words
+    dep_gender_dict = {}
+    if gnp_data != []:
+        gender = []
+        for i in range(len(gnp_data)):
+            gnp_info = gnp_data[i]
+            gnp_info = gnp_info.strip().strip('][')
+            gnp = gnp_info.split(' ')
+            gender.append(gnp[0])
+
+
+    if depend_data != []:
+        dependency = []
+        for dep in depend_data:
+            if dep != '':
+                dep_val = dep.strip().split(':')[1]
+                dependency.append(dep_val)
+
+    for i, dep, g in zip(index_data, dependency, gender):
+        dep_gender_dict[str(i)] = dep + ':' + g
+
+    if construction_data != '' and len(construction_data) > 0:
+        construction = construction_data.strip().split(' ')
+        for cons in construction:
+            conj_type = cons.split(':')[0].strip().lower()
+            index = cons.split(':')[1].strip().strip('][').split(',')
+            length_index = len(index)
+            cnt_m = 0
+            cnt_f = 0
+            PROCESS = False
+            for i in index:
+                relation = dep_gender_dict[i]
+                dep = relation.split(':')[0]
+                gen = relation.split(':')[1]
+
+                if dep == 'k1':
+                    PROCESS = True
+                    if gen == 'm':
+                        cnt_m = cnt_m + 1
+                    elif gen == 'f':
+                        cnt_f = cnt_f + 1
+
+            if PROCESS:
+                if cnt_f == length_index:
+                    g = 'f'
+                    num = 'p'
+                else:
+                    g = 'm'
+                    num = 'p'
+                process_data = set_gender_make_plural(processed_words, g, num)
+
+            update_index = index[length_index - 2]
+            for i in index:
+                if i == update_index:
+                    if conj_type == 'conj':
+                        construction_dict[update_index] = 'Ora'
+                    elif conj_type == 'disjunct':
+                        construction_dict[update_index] = 'yA'
+                    break
+                else:
+                    construction_dict[i] = ','
+
+    return process_data
 
 def process_main_verb(concept: Concept, seman_data, dependency_data, sentence_type, processed_nouns, processed_pronouns, reprocessing):
     """
@@ -1253,15 +1553,19 @@ def process_verb(concept: Concept, seman_data, dependency_data, sentence_type, p
     Example 1:
     kara_1-wA_hE_1
     main verb - kara,  main verb tam: wA, Aux -hE with TAM hE (identified from tam mapping file)
+
     Example 2:
     kara_1-yA_1
     main verb - kara,  main verb tam: yA,
+
     Example 3:
     kara_1-0_rahA_hE_1
     main verb - kara,  main verb tam: 0, Aux verb -rahA with TAM hE, Aux -hE with TAM hE (identified from tam mapping file)
+
     Example 4:
     kara_1-0_sakawA_hE_1
     main verb - kara,  main verb tam: 0, Aux verb -saka with TAM wA, Aux -hE with TAM hE (identified from tam mapping file)
+
     *Aux root and Aux TAM identified from auxillary mapping File
     """
     verb = process_main_verb(concept, seman_data, dependency_data, sentence_type, processed_nouns, processed_pronouns, reprocessing)
@@ -1454,6 +1758,7 @@ def change_gender(current_gender):
 def create_agreement_map(index_row, dependency_data):
     """
     >>> create_agreement_map()
+
     """
 
 
@@ -1502,6 +1807,14 @@ def join_indeclinables(transformed_data, processed_indeclinables, processed_othe
     """Joins Indeclinable data with transformed data and sort it by index number."""
     return sorted(transformed_data + processed_indeclinables + processed_others)
 
+def nextNounData_fromFullData(fromIndex, PP_FullData):
+    index = fromIndex
+    for data in PP_FullData:
+        if index == data[0]:
+            if data[2] == 'n':
+                return data
+
+    return ()
 def nextNounData(fromIndex, word_info):
     index = fromIndex
     for i in range(len(word_info)):
@@ -1583,7 +1896,7 @@ def preprocess_postposition(processed_words, words_info, is_tam_ya):
             data_case = False
         ppost = ''
         if data_case in ('k1', 'pk1'):
-            if is_tam_ya:  # has TAM "yA"
+           # if is_tam_ya:  # has TAM "yA"
                 if findValue('k2', words_info, index=4)[0]: # or if CP_present, then also ne - add
                     ppost = 'ne'
                     if data[2] != 'other':
@@ -1654,13 +1967,20 @@ def preprocess_postposition(processed_words, words_info, is_tam_ya):
         new_processed_words.append(data)
     return new_processed_words, PPdata
 
-#def preprocess_postposition_new(processed_words, words_info, processed_verbs):
+def fetchNextWord(index, words_info):
+    next_word = ''
+    for data in words_info:
+        if index == data[0]:
+            next_word = clean(data[1])
+
+    return next_word
+
 def preprocess_postposition_new(concept_type, np_data, words_info, main_verb):
     '''Calculates postposition to words wherever applicable according to rules.'''
-
-    data_case = np_data[4].strip().split(':')[1]
-    data_index = np_data[0]
-    data_seman = np_data[2]
+    if np_data != ():
+        data_case = np_data[4].strip().split(':')[1]
+        data_index = np_data[0]
+        data_seman = np_data[2]
     ppost = ''
     new_case = 'o'
     if data_case in ('k1', 'pk1'):
@@ -1676,12 +1996,14 @@ def preprocess_postposition_new(concept_type, np_data, words_info, main_verb):
         else:
             log('inside tam ya else')
             #new_case = 'd'
+    elif data_case == 'k2g':
+        ppost = 'ko'
+    elif data_case == 'k2':
+        if data_seman in ("anim", "per"):
+            ppost = 'ko'
+        else:
+            new_case = 'd'
 
-    elif data_case in ('k2g', 'k2'):
-            if data_seman in ("anim", "per"):
-                ppost = 'ko'
-            else:
-                new_case = 'd'
     elif data_case == 'k2p':
         ppost = 'meM'
     elif data_case in ('k3', 'k5', 'k5prk'):
@@ -1703,9 +2025,30 @@ def preprocess_postposition_new(concept_type, np_data, words_info, main_verb):
     elif data_case == 'rsk':
         ppost = 'hue'
     elif data_case == 'ru':
+        # next_word_info = getDataByIndex(data_index+1, words_info)
+        # if next_word_info != ():
+        #     gnp_info = next_word_info[3].strip().strip('][')
+        #     if gnp_info == 'comper_more' or gnp_info == 'comper_less':
+        #         ppost = ''
+        # else:
         ppost = 'jEsI'
+    elif data_case == 'rkl':
+        next_word = fetchNextWord(data_index + 1, words_info)
+        if next_word == 'bAxa':
+            ppost = 'ke'
+        elif next_word == 'pahale':
+            ppost = 'se'
+
+    elif data_case == 'rdl':
+        next_word = fetchNextWord(data_index + 1, words_info)
+        if next_word in ('anxara', 'bAhara', 'Age', 'sAmane', 'pICe', 'Upara', 'nIce', 'xAyeM',
+                         'bAyeM', 'cAroM ora', 'bIca', 'pAsa'):
+            ppost = 'ke'
+        elif next_word == 'xUra':
+            ppost = 'se'
+
     elif data_case == 'rv':
-        ppost = 'kI tulanA meM'
+        ppost = 'se'
     elif data_case == 'rh':
         ppost = 'ke_kAraNa'
     elif data_case == 'rd':
@@ -1713,7 +2056,7 @@ def preprocess_postposition_new(concept_type, np_data, words_info, main_verb):
     elif data_case == 'ras_k1':
         ppost = 'ke sAWa'
     elif data_case == 'r6':
-        ppost = 'ke' #if data[4] == 'f' else 'kA'
+        ppost = 'kA' #if data[4] == 'f' else 'kA'
         nn_data = nextNounData(data_index, words_info)
         if nn_data != False:
             #print('Next Noun data:', nn_data)
@@ -1747,11 +2090,71 @@ def preprocess_postposition_new(concept_type, np_data, words_info, main_verb):
     return new_case, ppost
 
 
-def join_compounds(transformed_data):
+# def join_compounds(transformed_data):
+#     '''joins compound words without spaces'''
+#     resultant_data = []
+#     prevword = ''
+#     previndex = -1
+#     if conjunction_data:
+#         conj_type = conjunction_data.split(':')[0].strip()
+#         index = conjunction_data.split(':')[1].strip('][').split(',')
+#
+#     for data in sorted(transformed_data):
+#         if (data[0]) == previndex and data[2] == 'n':
+#             temp = list(data)
+#             temp[1] = prevword + ' ' + temp[1]
+#             data = tuple(temp)
+#             resultant_data.pop()
+#         resultant_data.append(data)
+def collect_hindi_output(source_text):
+    """Take the output text and find the hindi text from it."""
+
+    hindi_format = WXC(order="wx2utf", lang="hin")
+    generate_hindi_text = hindi_format.convert(source_text)
+    return generate_hindi_text
+#         previndex = data[0]
+#         prevword = data[1]
+#
+#     return resultant_data
+
+
+
+def join_compounds(transformed_data, construction_data):
     '''joins compound words without spaces'''
     resultant_data = []
+    intermediate_data = []
     prevword = ''
     previndex = -1
+    isPrev = False
+    length_index = 0
+    # if construction_data != '':
+    #     conj_type = construction_data.split(':')[0].strip().lower()
+    #     index = construction_data.split(':')[1].strip('][').split(',')
+    #     length_index = len(index)
+    #
+    # i = 0
+    # for data in sorted(transformed_data):
+    #     if i < length_index and data[0] == int(index[i]):
+    #         i = i+1
+    #         if i == length_index:
+    #             intermediate_data.append(data)
+    #         elif i == length_index-1:
+    #             temp = list(data)
+    #             if conj_type == 'conj':
+    #                 temp[1] = temp[1] + ' Ora '
+    #             elif conj_type == 'disjunct':
+    #                 temp[1] = temp[1] + ' yA '
+    #             data = tuple(temp)
+    #             intermediate_data.append(data)
+    #         else:
+    #             temp = list(data)
+    #             temp[1] = temp[1] + ', '
+    #             data = tuple(temp)
+    #             intermediate_data.append(data)
+    #     else:
+    #         intermediate_data.append(data)
+
+    #for data in sorted(intermediate_data):
     for data in sorted(transformed_data):
         if (data[0]) == previndex and data[2] == 'n':
             temp = list(data)
@@ -1781,20 +2184,61 @@ def add_postposition(transformed_fulldata, processed_postpositions):
 
     return PPFulldata
 
+def add_spkview(full_data, spkview_dict):
+    transformed_data = []
+    for data in full_data:
+        index = data[0]
+        if index in spkview_dict:
+            temp = list(data)
+            spkview_info = spkview_dict[index]
+            temp[1] = temp[1] + ' ' + spkview_info
+            data = tuple(temp)
+        transformed_data.append(data)
+
+    return transformed_data
+
+def add_GNP(full_data, GNP_dict):
+    transformed_data = []
+    for data in full_data:
+        index = data[0]
+        if index in GNP_dict:
+            temp = list(data)
+            term = GNP_dict[index]
+            for t in term:
+                tag = t[0]
+                val = t[1]
+                if tag == 'before':
+                    temp[1] = val + ' ' + temp[1]
+                else:
+                    temp[1] = temp[1] + ' ' + val
+            data = tuple(temp)
+        transformed_data.append(data)
+
+    return transformed_data
+
+def add_construction(transformed_data, construction_dict):
+    Constructdata = []
+
+    for data in transformed_data:
+        index = data[0]
+        if str(index) in construction_dict:
+            temp = list(data)
+            construct = construction_dict[str(index)]
+            if construct == ',':
+                temp[1] = temp[1] + construct
+            else:
+                temp[1] = temp[1] + ' ' + construct
+            data = tuple(temp)
+        Constructdata.append(data)
+
+    return Constructdata
+
 
 def rearrange_sentence(fulldata):
     '''Function comments'''
     finalData = sorted(fulldata)
     final_words = [x[1].strip() for x in finalData]
     return " ".join(final_words)
-
-
-def collect_hindi_output(source_text):
-    """Take the output text and find the hindi text from it."""
-
-    hindi_format = WXC(order="wx2utf", lang="hin")
-    generate_hindi_text = hindi_format.convert(source_text)
-    return generate_hindi_text
 
 
 def write_hindi_text(hindi_output, POST_PROCESS_OUTPUT, OUTPUT_FILE):
@@ -1816,7 +2260,7 @@ def write_hindi_test(hindi_output, POST_PROCESS_OUTPUT, src_sentence, OUTPUT_FIL
 
     with open(OUTPUT_FILE, 'a') as file:
         file.write(path.strip('verified_sent/') + ',')
-        file.write(src_sentence.strip('#') + ',')
+        file.write(src_sentence.strip('#').strip('\n') + ',')
         file.write(POST_PROCESS_OUTPUT + ',')
         #file.write(hindi_output)
         file.write(hindi_output + ',')
