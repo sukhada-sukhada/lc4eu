@@ -633,7 +633,7 @@
 (test (or (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p") (neq (str-index "_p_" ?endsWith_p)FALSE)) )
 (test (neq (str-index "_v_" ?mrsCon2)FALSE))
 (test (eq (sub-string 1 1 (str-cat ?prep)) (sub-string 1 1 (str-cat ?id))))
-(test (or (eq ?named named) (eq ?named dofw) (eq ?named mofy))) ;
+(test (or (eq ?named named) (eq ?named dofw) (eq ?named mofy) (eq ?named yoc))) ;
 =>
 (retract ?f1)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?vlbl " " ?arg0 " " ?varg0 " " ?namedarg0 ")"crlf)
@@ -651,7 +651,9 @@
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?idposs poss ?lbl ?arg0 ?arg1 ?arg2)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id_q def_explicit_q ?lbl1 ?arg01 ?rstr ?body)
 (MRS_info ?rel                             ?id ?mrsCon ?lbl6 ?arg00 $?v)  
-(MRS_info ?rel1                             ?id1 ?mrsCon1 ?lbl7 ?arg8 $?v1)  
+(MRS_info ?rel1                             ?id1 ?mrsCon1 ?lbl7 ?arg8 $?v1) 
+(test (eq  (+ ?id 1) ?idposs))  ;Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras.
+;(not (construction-ids	conj	?id $?v))
 =>
 (retract ?f ?f1) 
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
@@ -1162,6 +1164,7 @@ then
 (test (eq (str-index unspec_adj ?mrsCon) FALSE))
 (test (eq (str-index which_q ?mrsCon) FALSE))
 (test (eq (str-index _near_p ?mrsCon) FALSE))
+
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info " ?rel " "?kri " "?mrsCon " "?lbl" " (implode$ (create$ $?vars)) ")" crlf)
@@ -1362,8 +1365,9 @@ then
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?idd udef_q ?lbll ?argg ?rstr ?body)
 (MRS_info ?rel1 ?id1 ?name ?lbl ?arg0 $?var)
 (MRS_info ?rel2 ?id2 ?name2 ?lbl1 ?arg00 $?varss)
+(test (eq  (- ?id 490) ?idd)) 
 (not (modified_conj ?id))
-(not (rel_name-ids	mod	?id1	?id3))
+(not (rel_name-ids	mod	?id1	?id3)) 
 =>
 (retract ?f ?f1)
 (assert (modified_conj ?id))
@@ -1625,10 +1629,12 @@ then
 ;Rule for binding LTOP h0 with the lbl of the unsepc_adj. 
 ; How are you?
 (defrule how-k1s-ltop
-(rel_name-ids	k1p	?kri	?how)
+(rel_name-ids	k1s	?kri	?how)
 (id-concept_label	?how	kim)
 (sentence_type  interrogative)
 (MRS_info ?rel1  ?id1  unspec_adj ?lbl1 ?arg10 ?arg11 $?var)
+(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-anim	?how	yes))
 =>
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg10 ")" crlf)
 (printout ?*rstr-dbug* "(rule-rel-values how-k1s-ltop LTOP-INDEX h0 "?arg10 ")"crlf)
@@ -1640,7 +1646,7 @@ then
 (defrule how-k1s
 (declare (salience 1000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k1p	?kri	?how)
+(rel_name-ids	k1s	?kri	?how)
 (sentence_type  interrogative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?us unspec_adj ?lus ?a0us ?a1us)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
@@ -1649,6 +1655,8 @@ then
 (MRS_info id-MRS_concept-LBL-ARG0 ?p property ?lp ?a0p)
 ;(test (neq (str-index pron ?mrscon) FALSE))
 ;(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-anim	?how	yes))
 =>
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?us" unspec_adj "?lus" "?a0us" "?arg01")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values how-k1s id-MRS_concept-LBL-ARG0-ARG1 "?us" unspec_adj "?lus" "?a0us" "?arg01")"crlf)
@@ -1665,8 +1673,10 @@ then
 (defrule kim-which
 (declare (salience 10000))
 (id-concept_label	?how	kim)
-(rel_name-ids	k1p|degree	?kri	?how)
+(rel_name-ids	k1s|degree	?kri	?how)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
+(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-anim	?how	yes))
 =>
 (assert (which_bind_notrequired ?wq))
 (printout ?*rstr-dbug* "(rule-rel-values  kim-which which_bind_notrequired " ?wq ")"crlf)
@@ -1711,7 +1721,7 @@ then
 (sentence_type  interrogative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?m unspec_manner ?ml ?ma0 ?ma1 ?ma2)
 (MRS_info id-MRS_concept-LBL-ARG0 ?w manner ?wl ?wa0)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?hl ?ha0 ?ha1 ?ha2)
+(MRS_info ?rel ?kri ?mrscon ?hl ?ha0 ?ha1 ?ha2 $?v)
 (test (neq (str-index "_v_" ?mrscon)FALSE))
 =>
 (retract ?f)
@@ -1999,16 +2009,17 @@ then
 ;Where did Rama come from?
 (defrule _from_p_dir
 (id-concept_label ?id kim)
-(rel_name-ids	k5	?kri	?id)
+(rel_name-ids	?relll	?kri	?id)
 (sentence_type  interrogative)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?from _from_p_dir ?l ?a0 ?a1 ?a2)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?from ?prep ?l ?a0 ?a1 ?a2)
 (MRS_info ?rel ?kri ?mrscon ?ln ?aoo ?a11 $?v)
-(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl ?aa0)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id ?head ?lbl ?aa0)
 (test (neq (str-index _v_ ?mrscon) FALSE))
+(test (neq (str-index _p_ ?prep) FALSE))
 =>
 (retract ?f)
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?from" _from_p_dir " ?ln" "?a0" "?aoo" "?aa0")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values _from_p_dir id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?from" _from_p_dir " ?ln" "?a0" "?aa0" "?aa0")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?from" "?prep" " ?ln" "?a0" "?aoo" "?aa0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values _from_p_dir id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?from" "?prep" " ?ln" "?a0" "?aa0" "?aa0")"crlf)
 )
 
 ;Rule for creating binding with the predicate when the conjoined words are in the predicate position.
@@ -2026,3 +2037,117 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values conj-bind-final-two-pred "?rel" "?verbid" "?mrsCon" "?lbl" "?arg0" "?arg0" "?Pre_A0"	 "(implode$ (create$ $?v)) ")"crlf)
 )
 
+;Rule for generating the year number in the CARG value.
+;She was born in 1999.
+(defrule yoc_carg_number
+(id-concept_label	?numid	?num)
+(id-yoc	?numid	yes)
+(rel_name-ids	k7t	?kri	?numid)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?numid yofc ?lbl ?arg0 ?carg)
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-CARG "?numid" yofc " ?lbl" "?arg0" "?num")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values yoc_carg_number id-MRS_concept-LBL-ARG0-CARG "?numid" yofc " ?lbl" "?arg0" "?num")"crlf)
+)
+
+;Rule for creating the binding with yoc, in_p_temp, and verb. 
+;LBL of preposition with verb, arg2 of preposition with yoc arg0, arg1 of preposition with arg0 of verb.
+;She was born in 1999.
+(defrule yoc_binding
+(id-yoc	?numid	yes)
+(rel_name-ids	k7t	?kriya	?numid)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?numid yofc ?lbl ?argo ?num)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?prep ?mrscon ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriya ?hinkri ?lbll ?arg00 ?arg11 ?ar22)
+(test (neq (str-index "_p_temp"  ?mrscon) FALSE)) 
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?prep" "?mrscon" " ?lbll" "?a0" "?arg00" "?argo" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values yoc_binding id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?prep" "?mrscon " " ?lbll" "?a0" "?arg00" "?argo")"crlf)
+)
+
+
+;Rule for changing lbl of preposition with lbl of verb, arg1 of the preposition with arg0 of verb, arg2 of preposition with arg0 of noun. 
+;The train came after the sunrise.
+(defrule rkl
+(rel_name-ids	rkl	?st	?time)
+(rel_name-ids	k7t	?kriya	?st)
+(MRS_info id-MRS_concept-LBL-ARG0 ?time ?mrscc ?lb ?argo)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?st ?mrscon ?l ?a0 ?a1 ?a2)
+(MRS_info ?rel ?kriya ?hinkri ?lbll ?arg00 $?v)
+(test (neq (str-index "_p"  ?mrscon) FALSE)) 
+=>
+;(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?st" "?mrscon" " ?lbll" "?a0" "?arg00" "?argo" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rkl id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?st" "?mrscon " " ?lbll" "?a0" "?arg00" "?argo")"crlf)
+)
+
+;Rule for creating the binding with preposition _for_p with the verb lbl and arg0. 
+;Why does Rama eat food?
+(defrule kim_why
+(id-concept_label	?kim	kim)
+(rel_name-ids	rh	?kri	?kim)
+(sentence_type  interrogative)
+?f1<-(MRS_info ?rel1 ?prep ?mrsconn ?lblll ?arg00 ?arg11 ?arg22)
+(MRS_info ?rel ?kri ?mrscon ?l ?a0 ?a1 ?a2 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0 ?kim reason ?lbl1 ?arg01)
+(test (neq (str-index "_p"  ?mrsconn) FALSE)) 
+(test (neq (str-index "_v_"  ?mrscon) FALSE)) 
+=>
+(retract ?f1)
+(printout ?*rstr-fp* "(MRS_info "?rel1" "?prep" "?mrsconn" "?l" "?arg00" " ?a0 " " ?arg01 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kim_why "?rel1" "?prep" "?mrsconn" "?l" "?arg00" " ?a0 " " ?arg01 ")"crlf)
+)
+
+;Rule for binding ms_n_1 with the udef_q and compound for the sentence ; Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras.
+
+(defrule _ms_n_1
+(declare (salience 1000))
+(id-respect  ?id  yes)
+(rel_name-ids ?rel ?idd ?id)
+(id-gen-num-pers	?id	f sg a)
+(not(id-concept_label	?id 	addressee))
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udef udef_q ?lbl ?arg0 ?rstr ?body)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp compound ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0 ?msn _ms_n_1 ?lb ?ar0)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?name named ?lbb ?argg ?v)
+(test (eq  (+ ?name 10) ?udef))
+(test (eq  (+ ?name 2) ?comp))
+(test (eq  (+ ?name 5) ?msn))
+=>
+(retract ?f )
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?ar0" "?rstr" "?body" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values _ms_n_1 id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?ar0" "?rstr" "?body" )"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" compound " ?lbb" "?a0" "?argg" "?ar0" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values _ms_n_1 id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" compound " ?lbb" "?a0" "?argg" "?ar0" )"crlf)
+)
+
+;Rule for creating binding with the timed entity and location preposition along with noun. 
+(defrule prep-time
+(rel_name-ids	k7t	?kriya	?timeentity)
+(rel_name-ids	k7p	?kriya	?noun)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?prep ?preposition ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0 ?noun ?mrscon ?lb ?arg)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?timeentity ?time ?lbll ?arg00 ?carg)
+(test (eq  (+ ?timeentity 1) ?prep))
+(test (neq (str-index "_p"  ?preposition) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?prep" "?preposition" "?lb" "?arg0" "?arg" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values prep-time id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?prep" "?preposition" "?lb" "?arg0" "?arg" "?arg00")"crlf)
+)	
+
+
+;Rule for creating binding for when conjunction is in k2 position. The ARG2 of verb will replace with the ARG0 of _and_c. 
+(defrule conjk2
+(declare (salience 10000))
+(construction-ids	conj	?id1 ?id2)
+(rel_name-ids	k2	?verb	?id1)
+?f<-(MRS_info ?rel ?verb ?mrscon ?lbl ?arg0 ?arg1 ?arg2 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?iddd _and_c ?lbll ?arg00 ?l ?r)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (neq ?arg2 ?arg00))
+=>
+(retract ?f)
+(assert (MRS_info ?rel ?verb ?mrscon ?lbl ?arg0 ?arg1 ?arg00 ) )
+(printout ?*rstr-dbug* "(rule-rel-values conjk2 "?rel" "?verb" "?mrscon" "?lbl" "?arg0" "?arg1" "?arg00" "(implode$ (create$ $?v)) " )"crlf)
+)

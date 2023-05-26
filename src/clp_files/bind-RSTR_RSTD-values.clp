@@ -17,6 +17,7 @@
 (test (< ?id2 ?id1))
 (test (eq (str-index _v_modal ?noendsq) FALSE))
 (test (neq (str-index poss ?noendsq1) FALSE))
+(test (neq (str-index _and_c ?noendsq1) FALSE)) ;For printing _and_c predicate. ;Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras. 
 =>
 (retract ?f1)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  rm-mrs-info  "?rel1 " " ?id1 " " ?noendsq " " ?lbl1 " " ?arg " " (implode$ (create$ $?arg1)) ")"crlf)
@@ -74,6 +75,7 @@
 (test (neq ?endsWith_q def_explicit_q))
 (test (eq (sub-string 1 1 (implode$ (create$ ?head))) (sub-string 1 1 (implode$ (create$ ?dep)))))
 (test (eq (sub-string (- (str-length ?endsWith_q) 1) (str-length ?endsWith_q) ?endsWith_q) "_q"))
+(test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_q"))
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 (test (neq (sub-string (- (str-length ?mrsCon) 6) (str-length ?mrsCon) ?mrsCon) "_p_temp"))
 (not (Restr-Restricted-fact-generated_for_comp ?dep))
@@ -82,6 +84,7 @@
 (test (eq (str-index implicit_conj ?mrsCon) FALSE))
 (test (eq (str-index _or_c ?mrsCon) FALSE))
 (not (which_bind_notrequired ?dep)) ;kOna sA kuwwA BOMkA?
+(not (udefq_bind_not_required ?lbl2)) ; Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras.
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
@@ -143,6 +146,7 @@
 (rel_name-ids r6	?id  ?id1)
 (MRS_info ?rel1 ?idposs poss ?lbl2 ?ARG_0 ?ARG1 ?ARG2)
 ?f<-(MRS_info ?rel2 ?id_q def_explicit_q ?lbl1 ?x ?rstr $?v)
+(test (eq  (+ ?idposs 9) ?id_q)) ;Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras.
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
@@ -785,9 +789,11 @@
 ;How are you?
 (defrule how-rstrr
 (id-concept_label	?how	kim)
-(rel_name-ids	k1p	?kri	?how)
+(rel_name-ids	k1s	?kri	?how) 
 (sentence_type  interrogative)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
+(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-anim	?how	yes))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 "?lptp")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values how-rstrr Restr-Restricted h0 "?lptp")"crlf)
@@ -885,4 +891,19 @@
 (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?l ")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values near-ltop Restr-Restricted  h0 "?l ")"crlf)
 )
+
+;Rule for stopping the binding with udefq with the noun. 
+;Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras.
+(defrule conj-udefq-noun
+(declare (salience 1000))
+(rel_name-ids	r6	?head	?poss)
+(construction-ids	conj	?head $?var)
+(MRS_info ?rel1   ?id1 udef_q    ?ul ?ua0 ?urstr ?ubody)
+(MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
+(test (eq (+ ?head 10) ?id1))
+=>
+(assert (udefq_bind_not_required ?lbl2))
+(printout ?*rstr-rstd-dbg* "(rule-rel-values conj-udefq-noun udefq_bind_not_required  "?lbl2 ")"crlf)
+)
+
 

@@ -99,7 +99,7 @@ for i in range(len(depRels)):
                         myrel = 'rel_name-ids\t' +  idRel.split(':')[1]
                         ans.write('('+ myrel + '\t' + headId + '\t' + depId + ')\n')
                     else:
-                        kriId = str(int(float(idRel[0]))*10000)
+                        kriId = str(int(float(idRel.split(':')[0]))*10000)
                         karakaId = str((i+1)*10000)
                         myrel = 'rel_name-ids\t' +  idRel.split(':')[1]
                         ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')

@@ -35,15 +35,13 @@
 (printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 )
 
-;Rule for creating udef_q and unknown for non-sentence type.
+;Rule for creating unknown for non-sentence type.
 ;In case of topic names we need to generate unknown and udef_q.
 
 (defrule udef_unknown
 (id-gen-num-pers ?id ?g ?n ?p)
 (sentence_type	)
 =>
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
-;(printout ?*defdbug* "(rule-rel-values  udef_unknown id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept 0000000 unknown)"crlf)
 (printout ?*defdbug* "(rule-rel-values  udef_unknown id-MRS_concept 0000000 unknown)"crlf)
 )
@@ -82,13 +80,13 @@
 (printout ?*defdbug* "(rule-rel-values mrs_inter_what id-MRS_concept "?id" thing)"crlf)
 )
 
+;Who did fill the pot, with water?
 ;rule for interrogative sentences for 'who',
 ;generates (id-MRS_concept "?id " person)
 ;	   (id-MRS_concept "?id " which_q)
-;k1s for Who are you?
 (defrule mrs_inter_who
 (id-concept_label ?id kim)
-(rel_name-ids	k1|k1s	?kri	?id)
+(rel_name-ids	k1	?kri	?id)
 (sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
@@ -97,12 +95,29 @@
 (printout ?*defdbug* "(rule-rel-values mrs_inter_who id-MRS_concept "?id" person)"crlf)
 )
 
+;Who are you?
+;rule for interrogative sentences for 'who',
+;generates (id-MRS_concept "?id " person)
+;	   (id-MRS_concept "?id " which_q)
+(defrule mrs_inter_who-k1s
+(id-concept_label ?id kim)
+(rel_name-ids	k1s	?kri	?id)
+(sentence_type  interrogative)
+(id-gen-num-pers ?id ?g ?n ?m)
+(id-anim	?id	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_who-k1s id-MRS_concept " (+ ?id 10) " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" person)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_who-k1s id-MRS_concept "?id" person)"crlf)
+)
+
 ;rule for interrogative sentences for 'where',
 ;generates (id-MRS_concept "?id " place)
 ;          (id-MRS_concept "?id " which_q)
 (defrule mrs_inter_where
 (id-concept_label ?id kim)
-(rel_name-ids	k7p	?kri	?id)
+(rel_name-ids	k7p|k2p	?kri	?id)
 (sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" which_q)"crlf)
@@ -191,7 +206,7 @@
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
@@ -353,7 +368,7 @@
 (rel_name-ids	k2	?kri	?ic)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values udefq_conj4subj id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values eka-k2 id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
 )
 
 ;Rule to bring def_implicit_q and poss for the sentences with whose word.
@@ -379,8 +394,10 @@
 ;Rule for bringing which_q, property, unspec_adj, prpstn_to_prop for sentence ;How are you?
 (defrule mrs_inter_how
 (id-concept_label	?id	kim)
-(rel_name-ids	k1p	?kri	?id)
+(rel_name-ids	k1s	?kri	?id)
 (sentence_type  interrogative)
+(not (id-gen-num-pers ?id ?g ?n m))
+(not (id-anim	?id	yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_how  id-MRS_concept "?id " which_q)"crlf)
@@ -482,3 +499,32 @@
 (printout ?*defdbug* "(rule-rel-values  years_of_century id-MRS_concept "?id " yofc)"crlf)
 )
 
+(defrule mrs_inter_why
+(id-concept_label ?id kim)
+(rel_name-ids	rh	?kri	?id)
+(sentence_type  interrogative)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_why id-MRS_concept "(+ ?id 10)" which_q)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1)" _for_p)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_why id-MRS_concept "(+ ?id 1)" _for_p)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" reason)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_why id-MRS_concept "?id" reason)"crlf)
+)
+
+;This rule generates MRS concept 'compound' for the feature 'respect' with gender 'f'. 
+;405: rajani ji ne apane bete Ora apanI betI ko somavAra ko kASI ke sabase bade vixyAlaya meM BarawI kiyA. Eng: Ms. Rajani ...
+(defrule respect
+(id-respect  ?id  yes)
+(rel_name-ids ?rel ?idd ?id)
+(id-gen-num-pers	?id	f sg a)
+(not(id-concept_label	?id 	addressee))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect id-MRS_concept " (+ ?id 2)" compound)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+)

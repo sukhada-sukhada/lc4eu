@@ -301,16 +301,6 @@
 (printout ?*mrs-dbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
 )
 
-;This rule creates _honorable_a_1 for the respect word "ji" and doesn't create for the respect word of the addressee.
-;361: manwrIjI ne kala manxira kA uxGAtana kiyA. The honorable minister inaugurated the temple yesterday.
-(defrule respect
-(id-respect  ?id  yes)
-(rel_name-ids ?rel ? ?id)
-(not(id-concept_label	?id 	addressee))
-=>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _honorable_a_1 )"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values respect id-MRS_concept "(+ ?id 1000)" _honorable_a_1 )"crlf)
-)
 
 ;This rules creates _also_a_1 when emphatic exists in the USR
 ;101 verified sentence #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
@@ -429,5 +419,30 @@
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _from_p_dir)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values mrs_inter_where-k5-from id-MRS_concept "(+ ?id 10) " _from_p_dir)"crlf)
+)
+
+;This rule generates ms_n_1 for the feature 'respect' with gender 'f'. 
+;405: rajani ji ne apane bete Ora apanI betI ko somavAra ko kASI ke sabase bade vixyAlaya meM BarawI kiyA. Eng: Ms. Rajani ...
+(defrule respect
+(id-respect  ?id  yes)
+(id-per ?id  yes)
+(rel_name-ids ?rel ?idd ?id)
+(id-gen-num-pers	?id	f sg a)
+(not(id-concept_label	?id 	addressee))
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _ms_n_1 )"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values respect id-MRS_concept "(+ ?id 5)" _ms_n_1 )"crlf)
+)
+
+;This rule creates _honorable_a_1 for the respect word "ji" and doesn't create for the respect word of the addressee.
+;361: manwrIjI ne kala manxira kA uxGAtana kiyA. The honorable minister inaugurated the temple yesterday.
+(defrule respect-honorable
+(id-respect  ?id  yes)
+(rel_name-ids ?rel ? ?id)
+(not(id-concept_label	?id 	addressee))
+(not (id-per ?id  yes))
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _honorable_a_1 )"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values respect-honorable id-MRS_concept "(+ ?id 1000)" _honorable_a_1 )"crlf)
 )
 

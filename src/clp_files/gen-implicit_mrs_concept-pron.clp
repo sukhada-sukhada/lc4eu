@@ -35,8 +35,8 @@
 (defrule mrs_poss_pron
 (rel_name-ids r6 ?viSeRya ?r6)
 (not (id-concept_label	?r6	kisa_1))
-;(not (id-concept_label	?viSeRya	pAsa_2)) ;#कार घर के पास है
 (not (sentence_type  interrogative))
+;(not (construction-ids	conj	$?v1 ?viSeRya $?v))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 10)" def_explicit_q)"crlf)
@@ -79,3 +79,4 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?coref " pron )"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "?coref " pron)"crlf)
 )
+
