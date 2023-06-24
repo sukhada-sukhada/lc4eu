@@ -84,6 +84,7 @@
 (test (eq (str-index implicit_conj ?mrsCon) FALSE))
 (test (eq (str-index _or_c ?mrsCon) FALSE))
 (not (which_bind_notrequired ?dep)) ;kOna sA kuwwA BOMkA?
+(not (which_bind_notrequired2 ?dep)) ;Where did Rama come from?
 (not (udefq_bind_not_required ?lbl2)) ; Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras.
 =>
 (retract ?f)
@@ -804,11 +805,25 @@
 (defrule kim-which-rstr
 (declare (salience 10000))
 (id-concept_label	?how	kim)
-(rel_name-ids	krvn|k5	?kri	?how) ;k5 for Where did Rama come from?
+(rel_name-ids	krvn	?kri	?how) ;k5 for Where did Rama come from?
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
 =>
 (assert (which_bind_notrequired ?wq))
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  kim-which which_bind_notrequired " ?wq ")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  kim-which-rstr which_bind_notrequired " ?wq ")"crlf)
+)
+
+
+;Rule for not binding of which_q with the head it modifies. 
+;Where did Rama come from? ;Who is Rama afraid of?
+(defrule kim-which-rstr-k5
+(declare (salience 10000))
+(id-concept_label	?how	kim)
+(rel_name-ids	k5	?kri	?how) ;k5 for Where did Rama come from?
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
+(not (id-anim	?how	yes))
+=>
+(assert (which_bind_notrequired2 ?wq))
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  kim-which-rstr-k5 which_bind_notrequired2 " ?wq ")"crlf)
 )
 
 ;Rule for not binding h0 with the lbl of the krvn verb. 
@@ -904,6 +919,19 @@
 =>
 (assert (udefq_bind_not_required ?lbl2))
 (printout ?*rstr-rstd-dbg* "(rule-rel-values conj-udefq-noun udefq_bind_not_required  "?lbl2 ")"crlf)
+)
+
+;Rule for generating qeq binding with LTOP h0 value with the predicate label when there is no verb in the sentence 
+;Who is Rama afraid of?
+(defrule k5_anim_kim_LTOP
+(id-concept_label ?id kim)
+(rel_name-ids	k5	?kri	?id)
+(sentence_type  interrogative)
+(MRS_info ?rell ?kri ?mrscon ?l ?a0 $?v)
+(test (eq (str-index _v_ ?mrscon) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  h0  "?l ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values k5_anim_kim_LTOP Restr-Restricted  h0 "?l ")"crlf)
 )
 
 

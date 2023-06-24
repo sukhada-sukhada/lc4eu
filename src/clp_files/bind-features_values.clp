@@ -761,7 +761,7 @@
 ;Rule for generating CARG value 'Mon' in days of week and 'Jan' in months of year
 (defrule dofw
 ?f1<-(id-concept_label	?id	?con)
-(or (mofy ?con ?val) (dofw ?con ?val))
+(or (mofy ?con ?val) (dofw ?con ?val) )
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id ?dofw  ?h1 ?x2 ?carg)
 (test (or (eq ?dofw mofy) (eq ?dofw dofw)))
 =>
@@ -2050,19 +2050,18 @@ then
 )
 
 ;Rule for creating the binding with yoc, in_p_temp, and verb. 
-;LBL of preposition with verb, arg2 of preposition with yoc arg0, arg1 of preposition with arg0 of verb.
-;She was born in 1999.
-(defrule yoc_binding
-(id-yoc	?numid	yes)
+;LBL of preposition with verb, arg2 of preposition with kriya arg0, arg1 of preposition with arg0 of verb.
+;I will come in 1999. Rama has to wake up in the morning. 
+(defrule in_p_temp_verb
 (rel_name-ids	k7t	?kriya	?numid)
-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?numid yofc ?lbl ?argo ?num)
+(MRS_info ?rellll ?numid ?hinconceptt ?lbl ?argo $?v)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?prep ?mrscon ?l ?a0 ?a1 ?a2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriya ?hinkri ?lbll ?arg00 ?arg11 ?ar22)
+(MRS_info ?rel ?kriya ?hinkri ?lbll ?arg00 ?arg11 $?vv)
 (test (neq (str-index "_p_temp"  ?mrscon) FALSE)) 
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?prep" "?mrscon" " ?lbll" "?a0" "?arg00" "?argo" )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values yoc_binding id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?prep" "?mrscon " " ?lbll" "?a0" "?arg00" "?argo")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values in_p_temp_Verb id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?prep" "?mrscon " " ?lbll" "?a0" "?arg00" "?argo")"crlf)
 )
 
 
@@ -2151,3 +2150,88 @@ then
 (assert (MRS_info ?rel ?verb ?mrscon ?lbl ?arg0 ?arg1 ?arg00 ) )
 (printout ?*rstr-dbug* "(rule-rel-values conjk2 "?rel" "?verb" "?mrscon" "?lbl" "?arg0" "?arg1" "?arg00" "(implode$ (create$ $?v)) " )"crlf)
 )
+
+
+;Rule for binding _mister_n_1 with the udef_q and compound for the sentence ;Mr. Sanju came. 
+(defrule _mister_n_1
+(declare (salience 1000))
+(id-respect  ?id  yes)
+(rel_name-ids ?rel ?idd ?id)
+(id-gen-num-pers	?id	m sg a)
+(not(id-concept_label	?id 	addressee))
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udef udef_q ?lbl ?arg0 ?rstr ?body)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp compound ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0 ?msn _mister_n_1 ?lb ?ar0)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?name named ?lbb ?argg ?v)
+(test (eq  (+ ?name 10) ?udef))
+(test (eq  (+ ?name 2) ?comp))
+(test (eq  (+ ?name 5) ?msn))
+=>
+(retract ?f )
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?ar0" "?rstr" "?body" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values _mister_n_1 id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?ar0" "?rstr" "?body" )"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" compound " ?lbb" "?a0" "?argg" "?ar0" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values _mister_n_1 id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" compound " ?lbb" "?a0" "?argg" "?ar0" )"crlf)
+)
+
+
+;Creating of binding with udef_q and season abstract predicate. 
+;Summer is good.
+(defrule season_udef_q
+(id-concept_label	?id	?cl)
+(id-season	?id	yes)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udef udef_q ?lbl ?arg0 ?rstr ?body)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id season ?l ?a0 ?num)
+(test (eq  (+ ?id 10) ?udef))
+=>
+(retract ?f1 ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?a0" "?rstr" "?body" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values season_udef_q id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?a0" "?rstr" "?body" )"crlf)
+)
+
+;Rule for changing season CARG value to season name. 
+;Summer is good.
+(defrule season_name
+(id-concept_label	?id	?cl)
+(season ?cl ?val)
+(id-season	?id	yes)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id season ?l ?a0 ?num)
+=>
+;(retract ?f)
+;(assert (MRS_info  id-MRS_concept-LBL-ARG0-CARG ?id  season ?l ?a0  ?val))
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-CARG "?id" season " ?l" "?a0" "?val")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values season_name id-MRS_concept-LBL-ARG0-CARG "?id" season " ?l" "?a0" "?val")"crlf)
+)
+
+
+;Rule for generating LTOP with INDEX value for a sentence without a verb and having kim word with relation k5 and animacy in the semantic category. 
+;Who is Rama afraid of? 
+(defrule k5_anim_kim_LTOP
+(declare (salience 100))
+(id-concept_label ?id kim)
+(rel_name-ids	k5	?kri	?id)
+(sentence_type  interrogative)
+(MRS_info ?rell ?kri ?mrscon ?l ?a0 $?v)
+(test (eq (str-index _v_ ?mrscon) FALSE))
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX  h0  "?a0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values k5_anim_kim_LTOP LTOP-INDEX  h0  "?a0 ")"crlf)
+)
+
+;Rule for binding k5+anim+kim relation concept with kriya and karwa.
+;#राम किससे डरता है
+(defrule k5_anim_kim
+(id-concept_label ?id kim)
+(rel_name-ids	k5	?kri	?id)
+(rel_name-ids	?rel	?kri	?karwa)
+(sentence_type  interrogative)
+(id-anim	?id	yes)
+?f<-(MRS_info ?rel1 ?kri ?mrscc ?lb ?argo ?arg1 ?arg2 $?v1)
+(MRS_info ?rel2 ?karwa ?mrscon ?l ?a0 $?v)
+(MRS_info ?rel3 ?id ?hinkri ?lbll ?arg00 $?va)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info "?rel1" "?kri" "?mrscc" " ?lb" "?argo" "?a0" "?arg00" "(implode$ (create$ $?v1))")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values k5_anim_kim "?rel1" "?kri" "?mrscc" " ?lb" "?argo" "?a0" "?arg00" "(implode$ (create$ $?v1))" )"crlf)
+)
+

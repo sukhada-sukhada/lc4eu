@@ -416,6 +416,7 @@
 (id-concept_label ?id kim)
 (rel_name-ids	k5	?noun	?id)
 (sentence_type  interrogative)
+(not (id-anim	?id	yes)) ;#राम किससे डरता है
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _from_p_dir)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values mrs_inter_where-k5-from id-MRS_concept "(+ ?id 10) " _from_p_dir)"crlf)
@@ -423,7 +424,7 @@
 
 ;This rule generates ms_n_1 for the feature 'respect' with gender 'f'. 
 ;405: rajani ji ne apane bete Ora apanI betI ko somavAra ko kASI ke sabase bade vixyAlaya meM BarawI kiyA. Eng: Ms. Rajani ...
-(defrule respect
+(defrule respect-feminine
 (id-respect  ?id  yes)
 (id-per ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
@@ -431,7 +432,7 @@
 (not(id-concept_label	?id 	addressee))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _ms_n_1 )"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values respect id-MRS_concept "(+ ?id 5)" _ms_n_1 )"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values respect-feminine id-MRS_concept "(+ ?id 5)" _ms_n_1 )"crlf)
 )
 
 ;This rule creates _honorable_a_1 for the respect word "ji" and doesn't create for the respect word of the addressee.
@@ -446,3 +447,15 @@
 (printout ?*mrs-dbug* "(rule-rel-values respect-honorable id-MRS_concept "(+ ?id 1000)" _honorable_a_1 )"crlf)
 )
 
+;This rule generates mister_n_1 for the feature 'respect' with gender 'm'. 
+;Mr. Sanju came.
+(defrule respect-masculine
+(id-respect  ?id  yes)
+(id-per ?id  yes)
+(rel_name-ids ?rel ?idd ?id)
+(id-gen-num-pers	?id	m sg a)
+(not(id-concept_label	?id 	addressee))
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _mister_n_1 )"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values respect-masculine id-MRS_concept "(+ ?id 5)" _mister_n_1 )"crlf)
+)

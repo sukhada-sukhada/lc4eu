@@ -73,6 +73,7 @@
 (id-concept_label ?id kim)
 (rel_name-ids	k2	?kri	?id)
 (sentence_type  interrogative)
+(not (id-anim	?id	yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "(+ ?id 10)" which_q)"crlf)
@@ -110,6 +111,20 @@
 (printout ?*defdbug* "(rule-rel-values mrs_inter_who-k1s id-MRS_concept " (+ ?id 10) " which_q)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" person)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_who-k1s id-MRS_concept "?id" person)"crlf)
+)
+
+;Rule for generating person and which_q for generating whom in the MRS 
+;Whom did Rama meet? ;Whom did Rama ask a question?
+(defrule mrs_inter_whom
+(id-concept_label ?id kim)
+(rel_name-ids	k2|k2g|k4	?kri	?id)
+(id-anim	?id	yes)
+(sentence_type  interrogative)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whom  id-MRS_concept " (+ ?id 10) " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" person)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whom id-MRS_concept "?id" person)"crlf)
 )
 
 ;rule for interrogative sentences for 'where',
@@ -206,7 +221,7 @@
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1|sarxI_2))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
@@ -484,11 +499,26 @@
 (id-concept_label ?id kim)
 (rel_name-ids	k5	?noun	?id)
 (sentence_type  interrogative)
+(not (id-anim	?id	yes)) ;#राम किससे डरता है
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_where-k5  id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id"  place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_where-k5 "?id" id-MRS_concept place_n)"crlf)
+)
+
+;Rule for bringing person and which_q when kim+anim+k5 form exists in the USR
+;#राम किससे डरता है
+(defrule mrs_inter_where_anim_k5
+(id-concept_label ?id kim)
+(rel_name-ids	k5	?noun	?id)
+(sentence_type  interrogative)
+(id-anim	?id	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_where_anim-k5  id-MRS_concept "(+ ?id 10) " which_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id"  person)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_where_anim-k5 "?id" id-MRS_concept person)"crlf)
 )
 
 (defrule years_of_century
@@ -516,15 +546,41 @@
 
 ;This rule generates MRS concept 'compound' for the feature 'respect' with gender 'f'. 
 ;405: rajani ji ne apane bete Ora apanI betI ko somavAra ko kASI ke sabase bade vixyAlaya meM BarawI kiyA. Eng: Ms. Rajani ...
-(defrule respect
+(defrule respect-feminine
 (id-respect  ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
 (id-gen-num-pers	?id	f sg a)
 (not(id-concept_label	?id 	addressee))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect id-MRS_concept " (+ ?id 2)" compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-feminine id-MRS_concept " (+ ?id 2)" compound)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-feminine id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+)
+
+;This rule generates MRS concept 'compound' for the feature 'respect' with gender 'm'. 
+;Mr. Sanju came.
+(defrule respect-masculine
+(id-respect  ?id  yes)
+(id-per  ?id  yes)
+(rel_name-ids ?rel ?idd ?id)
+(id-gen-num-pers	?id	m sg a)
+(not(id-concept_label	?id 	addressee))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-masculine id-MRS_concept " (+ ?id 2)" compound)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-masculine id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+)
+
+;Rule for generating season abstract predicate
+;Summer is good.
+(defrule season
+(id-season	?id	yes)
+(not (id-def ?id yes))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values season id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 )
