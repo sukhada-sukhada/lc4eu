@@ -68,6 +68,7 @@
 <sdef n="tam:ie" c="ie"/>
 <sdef n="tam:o" c="o"/>
 <sdef n="tam:iegA" c="iegA"/>
+<sdef n="tam:e" c="e"/>
 </sdefs>
 
 <pardefs>
@@ -80,6 +81,7 @@
 <pardef n="parsarg">
 <e><p><l></l><r><s n="cat:prsg"/></r></p></e>
 </pardef>
+
 <pardef n="conjunct">
 <e><p><l></l><r><s n="cat:cnj"/></r></p></e>
 </pardef>
@@ -96,6 +98,42 @@
 
 </pardef>
 <!--added by Kirti Garg for LC project on Dec 7, 2022-->
+
+<pardef n="vahAz/__p">
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+
+
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:ko" /><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:ko" /><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:ko" /><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:ko" /><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:ko" /><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:ko" /><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:ko" /><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:ko" /><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+
+</pardef>
+
+<pardef n="kaba/__p">
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:d"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+    <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0" /><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+
+</pardef>
+<!--added by Fatema Bawahir for LC project on Jun 19, 2023-->
+
 <pardef n="xo/__adj">
 <e><p><l></l><r><s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
@@ -142,12 +180,14 @@
 <e><p><l></l><r><s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>
+
 <pardef n="bAlikA/__adj">
 <e><p><l></l><r><s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>
+
 <pardef n="bAlaka/__adj">
 <e><p><l></l><r><s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
@@ -854,7 +894,6 @@
 <!-- verbal noun -->
 <e><p><l>onA</l><r>onA<s n="cat:vn"/><s n="case:d"/></r></p></e>
 <e><p><l>one</l><r>onA<s n="cat:vn"/><s n="case:o"/></r></p></e>
-
 
 <e><p><l>owA_huA</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:s" /><s n="case:d"/><s n="tam:adj_wA_huA"/></r></p></e>
 <e><p><l>owe_hue</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p" /><s n="case:d"/><s n="tam:adj_wA_huA"/></r></p></e>
@@ -3175,6 +3214,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <!--  <e>           <p><l></l>      <r></r></p><par n="vAl/A__adj"/></e> -->
   <e>           <p><l></l>      <r></r></p><par n="ladak/A__n"/></e>
   <e>           <p><l></l>      <r></r></p><par n="ladak/I__n"/></e>
+
   </pardef>
 
 <!--Added by Kirti Garg kirti.garg@gmail.com for the LC project -->
@@ -3219,6 +3259,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <!-- automatic added parsarg from marathi-hindi tam mapping. -->
 
 <e lm="kyA"><i>kyA</i><par n="kyA/__p"/></e>
+<e lm="kaba"><i>kaba</i><par n="kaba/__p"/></e>
 <e lm="kahAz"><i>kahAz</i><par n="kyA/__p"/></e>
 <e lm="0"><i>0</i><par n="parsarg"/></e>
 <e lm="0~ke_pICe"><i>0~ke_pICe</i><par n="parsarg"/></e>
@@ -5545,6 +5586,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="aMwawaH"><i>aMwawaH</i><par n="kroXa/__n"/></e>
 <e lm="aMwevAsI"><i>aMwevAs</i><par n="Axam/I__n"/></e>
 <e lm="aMwima"><i>aMwima</i><par n="kroXa/__n"/></e>
+<e lm="aMwima"><i>aMwima</i><par n="regular__adj-noun"/></e>
 <e lm="aMwra"><i>aMwr</i><par n="Gar/a__n"/></e>
 <e lm="aMwya"><i>aMwya</i><par n="amIra/__adj"/></e>
 <e lm="aMwyaja"><i>aMwyaj</i><par n="Gar/a__n"/></e>
@@ -6414,7 +6456,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="aPanA"><i>aPanA</i><par n="KA/__v"/></e>
 <e lm="apAna"><i>apAna</i><par n="kroXa/__n"/></e>
 <e lm="ApaNa"><i>ApaN</i><par n="Gar/a__n"/></e>
-<e lm="apanA"><i>apan</i><par n="regular__adj-noun"/></e>
+
 <e lm="apanAma"><i>apanAma</i><par n="kroXa/__n"/></e>
 <e lm="apanApana"><i>apanApana</i><par n="kroXa/__n"/></e>
 <e lm="apanawva"><i>apanawv</i><par n="Gar/a__n"/></e>
@@ -8714,6 +8756,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="bahanoI"><i>bahano</i><par n="Axam/I__n"/></e>
 <e lm="baharahAla"><i>baharahAl</i><par n="Gar/a__n"/></e>
 <e lm="bahAra"><i>bahAr</i><par n="rAw/a__n"/></e>
+<e lm="bAhara"><i>bAhara</i><par n="kroXa/__n"/></e>
 <e lm="bAharavAlA"><i>bAharavAl</i><par n="regular__adj-noun"/></e>
 <e lm="bAharavAlA"><i>bAharavAl</i><par n="regular__adj-noun"/></e>
 <e lm="bAharI"><i>bAharI</i><par n="regular__adj-noun"/></e>
@@ -17093,6 +17136,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="lavaNasamuxra"><i>lavaNasamuxra</i><par n="kroXa/__n"/></e>
 <e lm="lAvanI"><i>lAvan</i><par n="ladak/I__n"/></e>
 <e lm="lAvaNika"><i>lAvaNika</i><par n="amIra/__adj"/></e>
+<e lm="lavaNIya"><i>lavaNIya</i><par n="amIra/__adj"/></e>
 <e lm="lAvaNyA"><i>lAvaNyA</i><par n="ASA/__n"/></e>
 <e lm="lAvaNya"><i>lAvaNya</i><par n="kroXa/__n"/></e>
 <e lm="lAvAparaCana"><i>lAvAparaCana</i><par n="kroXa/__n"/></e>
@@ -17273,6 +17317,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="lista"><i>list</i><par n="rAw/a__n"/></e>
 <e lm="litA"><i>litA</i><par n="KA/__v"/></e>
 <e lm="litara"><i>litar</i><par n="Gar/a__n"/></e>
+<e lm="lItara"><i>lItar</i><par n="Gar/a__n"/></e>
 <e lm="livA"><i>livA</i><par n="KA/__v"/></e>
 <e lm="lIvara"><i>lIvara</i><par n="kroXa/__n"/></e>
 <e lm="lIxa"><i>lIxa</i><par n="BIda/__n"/></e>
@@ -17662,6 +17707,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="mahimna"><i>mahimna</i><par n="kroXa/__n"/></e>
 <e lm="mahIna"><i>mahIna</i><par n="amIra/__adj"/></e>
 <e lm="mahInA"><i>mahIn</i><par n="regular__adj-noun"/></e>
+<e lm="mahinA"><i>mahin</i><par n="ladak/A__n"/></e>
 <e lm="mahIpuwrI"><i>mahIpuwr</i><par n="ladak/I__n"/></e>
 <e lm="mahiRa"><i>mahiRa</i><par n="kroXa/__n"/></e>
 <e lm="mAhira"><i>mAhira</i><par n="kroXa/__n"/></e>
@@ -19120,6 +19166,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="mukutaXArI"><i>mukutaXArI</i><par n="ajAwI/__adj"/></e>
 <e lm="mukwacewA"><i>mukwacew</i><par n="regular__adj-noun"/></e>
 <e lm="mukwahaswa"><i>mukwahaswa</i><par n="amIra/__adj"/></e>
+<e lm="mukwa"><i>mukwa</i><par n="kroXa/__n"/></e>
 <e lm="mukwA"><i>mukwA</i><par n="IrRyA/__n"/></e>
 <e lm="mukwakaMTa"><i>mukwakaMTa</i><par n="amIra/__adj"/></e>
 <e lm="mukwakeSa"><i>mukwakeSa</i><par n="amIra/__adj"/></e>
@@ -27290,9 +27337,9 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="SikAragAha"><i>SikAragAh</i><par n="Gar/a__n"/></e>
 <e lm="SikAra"><i>SikAr</i><par n="Gar/a__n"/></e>
 <e lm="SiKara"><i>SiKar</i><par n="Gar/a__n"/></e>
-<e lm="SikArA"><i>SikAr</i><par n="regular__adj-noun"/></e>
+<!-- <e lm="SikArA"><i>SikAr</i><par n="regular__adj-noun"/></e> -->
 <e lm="SiKarasammelana"><i>SiKarasammelana</i><par n="kroXa/__n"/></e>
-<e lm="SikArI"><i>SikAr</i><par n="Axam/I__n"/></e>
+<e lm="SikArI"><i>SikAr</i><par n="Axam/I__n"/></e>"
 <e lm="SikArIjAnavara"><i>SikArIjAnavar</i><par n="Gar/a__n"/></e>
 <e lm="SikArIkuwwA"><i>SikArIkuww</i><par n="regular__adj-noun"/></e>
 <e lm="SikariNI"><i>SikariN</i><par n="ladak/I__n"/></e>
@@ -29758,6 +29805,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="vAgyamAna"><i>vAgyamAna</i><par n="kroXa/__n"/></e>
 <e lm="vAgyuxXa"><i>vAgyuxXa</i><par n="kroXa/__n"/></e>
 <e lm="vaha"><i></i><par n="/vaha__p"/></e>
+<e lm="vahAz"><i>vahAz</i><par n="vahAz/__p"/></e>
 <e lm="vahA"><i>vah</i><par n="gudiy/A__n"/></e>
 <e lm="vAhakaceka"><i>vAhakaceka</i><par n="kroXa/__n"/></e>
 <e lm="vAhaka"><i>vAhaka</i><par n="amIra/__adj"/></e>
@@ -32101,6 +32149,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="xaMwoRTya"><i>xaMwoRTya</i><par n="amIra/__adj"/></e>
 <e lm="xaMwura"><i>xaMwura</i><par n="amIra/__adj"/></e>
 <e lm="xaMwya"><i>xaMwy</i><par n="Gar/a__n"/></e>
+<e lm="xAMwa"><i>xAMw</i><par n="Gar/a__n"/></e>
 <e lm="XaMXA"><i>XaMX</i><par n="regular__adj-noun"/></e>
 <e lm="XanADya"><i>XanADya</i><par n="amIra/__adj"/></e>
 <e lm="XanahIna"><i>XanahIna</i><par n="amIra/__adj"/></e>

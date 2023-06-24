@@ -8,7 +8,8 @@
 #done
 
 #Go to the directory and fetch file names
-dir="../hindi_gen/verified_sent"
+#dir="../hindi_gen/verified_sent"
+dir="../hindi_gen/lion_story"
 filenames=$(ls $dir)
 
 # Iterate over the list of filenames and call another script for each one
