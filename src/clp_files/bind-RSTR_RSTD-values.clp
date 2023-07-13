@@ -289,7 +289,7 @@
 (defrule LTOP-subord
 (not (id-stative ?id1 yes))
 (rel_name-ids	rpk|rblsk	?id1	?id2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord|_as_x_subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
 =>
@@ -608,21 +608,21 @@
 )
 
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 21000 _also_a_1 h5 e6 h7)
-;This rule creates rstr binding with emphatic word "also" and the verb along it emphasize.
+;This rule creates rstr binding with inclusive word "also" and the verb along it inclusive.
 ;101 verified sentence #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
 ;113 verified sentence #sUrya camakawA BI hE.
-(defrule emph-also-verb
+(defrule inclusive-also-verb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?arg0 ?arg1)
-(id-emph  ?id2  yes)
+(id-inclusive  ?id2  yes)
 ?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 (test (eq (+ ?id2 1000) ?id)) 
 =>
 (retract  ?f ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values emph-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values inclusive-verb Restr-Restricted h0 "?lbl")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values emph-also-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values inclusive-also-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
 )
 
 ;It creates binding with arg2 value of verb with lbl of adjective
@@ -934,4 +934,64 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values k5_anim_kim_LTOP Restr-Restricted  h0 "?l ")"crlf)
 )
 
+;Rule for creating binding with LTOP and the label of definite and ARG1 label of definite with word it emphasis.
+;#rAma ayegA hI
+(defrule emph-definite-verb
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _definite_a_1 ?lbl ?arg0 ?arg1)
+(id-emphasis  ?id2  yes)
+?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (eq (+ ?id2 1000) ?id)) 
+=>
+(retract  ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values emph-definite-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values emph-definite-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+
+;Rule for creating binding with LTOP and the label of definite and ARG1 label of definite with word it exclusive.
+;#SIlA hI apanA piwA ko KilAwi hE
+(defrule exclusive-definite
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _only_a_1 ?lbl ?arg0 ?arg1)
+(id-exclusive  ?id2  yes)
+(rel_name-ids	k1	?id3	?id2)
+?f1<-(MRS_info ?rel2 ?id3 ?mrscon ?lbl1 ?arg01 $?v)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (eq (+ ?id2 1000) ?id)) 
+=>
+(retract  ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values exclusive-definite Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values exclusive-definite  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+
+(defrule assertion-verb
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _certain_a_1 ?lbl ?arg0 ?arg1)
+(id-assertion  ?id2  yes)
+?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (eq (+ ?id2 1000) ?id)) 
+=>
+(retract  ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values assertion-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values assertion-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+
+;Rule for binding ARG3 handle value of ditransitive verb with preposition label. 
+;Abramsa put Brauna in the garden.
+(defrule verb-preposition
+(rel_name-ids	k7p	?id	?preposition)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id ?verb ?lbl ?arg0 ?arg1 ?arg2 ?arg3)
+(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 $?v)
+(test (neq (str-index _p ?mrscon) FALSE))
+(test (eq (+ ?preposition 1) ?id2)) 
+=>
+;(retract  ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted "?arg3" " ?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values verb-preposition Restr-Restricted "?arg3" "?lbl1")"crlf)
+)
 

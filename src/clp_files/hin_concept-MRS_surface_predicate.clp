@@ -205,7 +205,7 @@
 ;mEM Gara jA sakawA hUz
 ;He might go home.
 (defrule might_v_modal
-(kriyA-TAM	?id  0_sakawA_hE_2)
+(kriyA-TAM	?id  0_sakawA_hE_2|yA_hogA_2)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values  might_v_modal  id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
@@ -305,11 +305,11 @@
 ;This rules creates _also_a_1 when emphatic exists in the USR
 ;101 verified sentence #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
 ;113 verified sentence #sUrya camakawA BI hE.
-(defrule emphatic
-(id-emph  ?id  yes)
+(defrule inclusive
+(id-inclusive  ?id  yes)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _also_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values emphatic id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values inclusive id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
 )
 
 ;Rule for bring _before_x_h for the rblak relation. ;gAyoM ke xuhane se pahale rAma Gara gayA.
@@ -458,4 +458,26 @@
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _mister_n_1 )"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values respect-masculine id-MRS_concept "(+ ?id 5)" _mister_n_1 )"crlf)
+)
+
+(defrule emphasis
+(id-emphasis  ?id  yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _definite_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values emphasis id-MRS_concept "(+ ?id 1000)" _definite_a_1)"crlf)
+)
+
+(defrule exclusive
+(id-exclusive  ?id  yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _only_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values exclusive id-MRS_concept "(+ ?id 1000)" _only_a_1)"crlf)
+)
+
+
+(defrule assertion
+(id-assertion  ?id  yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _certain_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values emphasis id-MRS_concept "(+ ?id 1000)" _certain_a_1)"crlf)
 )

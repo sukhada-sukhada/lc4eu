@@ -198,7 +198,7 @@
 (declare (salience 5000))
 (id-concept_label  ?v_id  hE_2)
 ?f1<-(rel_name-ids	k1	?v_id	?k1)
-(rel_name-ids  rsm|rhh     ?k1  ?id2) ;rAma ke xo bete hEM
+(rel_name-ids  rsm|rhh|rsma     ?k1  ?id2) ;rAma ke xo bete hEM
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?k1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
 (MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
@@ -366,7 +366,7 @@
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (neq ?arg2 ?argma_0))
 (not (modified_k2 ?karma))
-;(not (rel_name-ids rpka ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
+(not (rel_name-ids rask2 ?kri	?id)) ;#राम खा -खाकर मोटा हो गया ।
 (not (construction-ids	conj	$?vars ?karma $?varss))
 (not (construction-ids	disjunct	$?vars ?karma $?varss))
 =>
@@ -492,6 +492,8 @@
 ;(test (neq (str-index "_n_" ?mrsCon2)FALSE))
 (test (or (neq (str-index "_n_" ?mrsCon2)FALSE) (eq ?mrsCon2 nominalization) ))
 (not (rel_name-ids	k1s	?kriyA	?karwA))
+(not (rel_name-ids	rask2	?kriyA	?karwA))
+(not (id-concept_label       ?kriyA  raKa_8)) ;Abrams put Browne in the garden.
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
@@ -877,6 +879,7 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values rpk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + + )"crlf)
 )
 
+
 ;It creates TAM for rvks
 ;verified sentence 341 BAgawe hue Sera ko xeKo
 (defrule rvks
@@ -885,7 +888,7 @@ else
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rvks id-SF-TENSE-MOOD-PROG-PERF "?kri " prop untensed indicative + - )"crlf)
 )
-
+ 
 ;It creates TAM for vmod_krvn
 ;verified sentence 338 vaha laMgadAkara calawA hE.
 ;verified sentence 340 BAgawe hue Sera ko xeKo
@@ -1242,6 +1245,7 @@ then
 (not (modified_conj ?head))
 ;(not (modified_implicit_conj ?head)) ;#rAma, hari Ora sIwA acCe hEM.
 (not (which_bind_notrequired ?dep))
+;(not (which_bind_notrequired_rask2 ?dep))
 =>
 (retract ?f)
 (printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
@@ -1261,17 +1265,17 @@ then
 )
 
 ;#sUrya camakawA BI hE.
-(defrule emph-also-nonverb
+(defrule inclusive-also-nonverb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?a0 ?a1)
-(id-emph  ?id1  yes)
+(id-inclusive  ?id1  yes)
 (MRS_info ?rel ?id1 ?mrscon ?l $?v)
 (test (eq (str-index _v_ ?mrscon) FALSE))
 (test (eq (+ ?id1 1000) ?id))
 =>
-(retract  ?f)
+;(retract  ?f)
 (bind ?arg1 (str-cat "e" (sub-string 2 (str-length ?a1) ?a1)))
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l" "?a0" " ?arg1")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values emph-also-nonverb MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l"  "?a0" " ?arg1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values inclusive-also-nonverb MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l"  "?a0" " ?arg1")"crlf)
 )
 ;Rule for creating binding with verb and the word _frequent_a_1.
 ;It creates frequent lbl same as verb lbl and arg1 will be same as arg0 of verb.
@@ -1293,7 +1297,7 @@ then
 ;#rAma mohana se jyAxA buxXimAna hE.
 (defrule comper_more-bind
 (id-degree	?adjid	comper_more)
-(rel_name-ids ru ?id ?id1)          ;?id = upameya/rAma, ?id1 = upamAna/mohana
+(rel_name-ids ru|rv ?id ?id1)          ;?id = upameya/rAma, ?id1 = upamAna/mohana
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?compid comp ?l ?a0 ?a1 ?a2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
 (MRS_info ?rel ?id1 ?mrs ?lbll ?arg ?name)
@@ -2184,11 +2188,12 @@ then
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id season ?l ?a0 ?num)
 (test (eq  (+ ?id 10) ?udef))
 =>
-(retract ?f1 ?f)
+(retract ?f1)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?a0" "?rstr" "?body" )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values season_udef_q id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?a0" "?rstr" "?body" )"crlf)
 )
 
+;(cl-cEn-MRSc sarxI_2 winter_2 season)
 ;Rule for changing season CARG value to season name. 
 ;Summer is good.
 (defrule season_name
@@ -2197,7 +2202,7 @@ then
 (id-season	?id	yes)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id season ?l ?a0 ?num)
 =>
-;(retract ?f)
+(retract ?f)
 ;(assert (MRS_info  id-MRS_concept-LBL-ARG0-CARG ?id  season ?l ?a0  ?val))
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-CARG "?id" season " ?l" "?a0" "?val")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values season_name id-MRS_concept-LBL-ARG0-CARG "?id" season " ?l" "?a0" "?val")"crlf)
@@ -2233,5 +2238,116 @@ then
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info "?rel1" "?kri" "?mrscc" " ?lb" "?argo" "?a0" "?arg00" "(implode$ (create$ $?v1))")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values k5_anim_kim "?rel1" "?kri" "?mrscc" " ?lb" "?argo" "?a0" "?arg00" "(implode$ (create$ $?v1))" )"crlf)
+)
+
+;Rule for changing ARG2 value of rpk verb with the ARG0 of the head of r6 relation. 
+;Having been listening to his word, the lion laughed.
+(defrule r6-rpk-arg2
+(rel_name-ids	r6	?noun	?karwa)
+(rel_name-ids	k2	?kriya	?noun)
+(rel_name-ids	rpk	?kriya	?rpk)
+?f<-(MRS_info ?rel1 ?rpk ?mrscc ?lb ?argo ?arg1 ?arg2 $?v1)
+(MRS_info ?rel2 ?noun ?mrscon ?l ?a0 $?v)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info "?rel1" "?rpk" "?mrscc" " ?lb" "?argo" "?arg1" "?a0" "(implode$ (create$ $?v1))")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values k5_anim_kim "?rel1" "?rpk" "?mrscc" " ?lb" "?argo" "?arg1" "?a0" "(implode$ (create$ $?v1))" )"crlf)
+)
+
+
+;Rule for binding rbks nonfinite verb with the karwa. 
+;The fruit eaten by Rama was sweet.
+(defrule karwa-rbks
+(rel_name-ids	rbks	?noun	?nonfinite)
+(MRS_info ?rel ?noun ?mrscon ?lbl ?arg0)
+?f<-(MRS_info ?rel1 ?nonfinite ?verbconcept ?lbl1 ?arg01 ?arg1 ?arg2 $?v)
+=>
+(assert (MRS_info ?rel1 ?nonfinite ?verbconcept ?lbl ?arg01 ?arg1 ?arg0))
+(printout ?*rstr-dbug* "(rule-rel-values karwa-rbks "?rel1" "?nonfinite" "?verbconcept" " ?lbl" "?arg01" "?arg1" "?arg0" "(implode$ (create$ $?v))" )"crlf)
+)
+
+;Rule for creating binding with kriya ARG2 value with ARG0 of rask2 relation. 
+;Rama ate banana also with milk.
+(defrule rask2
+(declare (salience 100))
+(rel_name-ids	rask2	?kriya	?rask2)
+(MRS_info ?rel ?rask2 ?concept ?lbl ?arg0 $?v)
+?f<-(MRS_info ?rel1 ?kriya ?mrsconcept ?lbl1 ?arg00 ?arg1 ?arg2 $?va)
+=>
+(assert (MRS_info ?rel1 ?kriya ?mrsconcept  ?lbl1 ?arg00 ?arg1 ?arg0))
+(printout ?*rstr-dbug* "(rule-rel-values rask2 "?rel1" "?kriya" "?mrsconcept" " ?lbl1" "?arg00" "?arg1" "?arg0" "(implode$ (create$ $?va))" )"crlf)
+)
+
+(defrule prep-noun-dir
+(declare (salience 10000))
+(rel_name-ids ?relp ?kriyA ?karak)
+?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?kriyA ?mrsCon1 ?lbl1 ?argv_0 $?vars)
+(MRS_info ?rel2 ?karak ?mrsCon2 ?lbl2 ?argn_0 $?varss)
+(test (neq (str-index "_p_dir" ?endsWith_p)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values prep-noun-dir "?rel_name " " ?prep " " ?endsWith_p " " ?lbl1" " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
+)
+
+;Rule for generating TAM for rblsk verb
+(defrule rblsk
+?f<-(rel_name-ids	rblsk	?id	?kri)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop pres indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rpk id-SF-TENSE-MOOD-PROG-PERF "?kri " prop pres indicative - - )"crlf)
+)
+
+;rule for binding ARG1 and ARG2 of the preposition when "put" verb exists. 
+;Abrams put Browne in the garden.
+(defrule prep-verb
+(rel_name-ids ?relp ?kriyA ?karak)
+?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?kriyA ?mrsCon1 ?lbl1 ?argv_0 ?a1 ?arg2 ?arg3)
+(MRS_info ?rel2 ?karak ?mrsCon2 ?lbl2 ?argn_0 $?varss)
+(test (eq (sub-string 1 1 (str-cat ?prep)) (sub-string 1 1 (str-cat ?karak))))
+(test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
+(test (or (neq (str-index "_n_" ?mrsCon2)FALSE) (eq ?mrsCon2 nominalization) ))
+(id-concept_label       ?kriyA  raKa_8)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl " " ?arg0 " " ?arg2 " " ?argn_0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values prep-verb "?rel_name " " ?prep " " ?endsWith_p " " ?lbl" " ?arg0 " " ?arg2 " " ?argn_0 ")"crlf)
+)
+
+;Rule for creating binding with k2 with "with" preposition when rask2 relation exists. 
+;Rama ate banana also with milk.
+(defrule rask2-k2-with
+;(declare (salience 100))
+(rel_name-ids	k2	?kriya	?k2)
+(rel_name-ids	rask2	?kriya	?rask2)
+(MRS_info ?rel ?k2 ?concept ?lbl ?arg0 $?v)
+(MRS_info ?rel3 ?rask2 ?mrscon1 ?lbl3 ?arg000 $?var)
+?f<-(MRS_info ?rel1 ?preposition ?mrsconcept ?lbl1 ?arg00 ?arg1 ?arg2)
+(test (eq  (+ ?rask2 1) ?preposition))
+(test (eq (str-index _p_ ?mrsconcept) FALSE))
+=>
+(retract ?f)
+;(assert (which_bind_notrequired_rask2 ?preposition))
+(printout ?*rstr-fp* "(MRS_info "?rel1" "?preposition" "?mrsconcept" " ?lbl3" "?arg00" "?arg000" "?arg0")"crlf)
+;(assert (MRS_info ?rel1 ?preposition ?mrsconcept ?lbl3 ?arg00 ?arg000 ?arg0))
+(printout ?*rstr-dbug* "(rule-rel-values rask2-k2-with "?rel1" "?preposition" "?mrsconcept" " ?lbl3" "?arg00" "?arg000" "?arg0" )"crlf)
+)
+
+(defrule rask2-prep-also
+;(declare (salience 10))
+(rel_name-ids	rask2	?kriya	?rask2)
+(id-inclusive	?rask2	yes)
+?f<-(MRS_info ?rel ?rask22 _also_a_1 ?lbll ?arg000 ?arg11)
+(MRS_info ?rel1 ?preposition ?mrsconcept ?lbl1 ?arg00 ?arg1 ?arg2)
+(test (eq  (+ ?rask2 1) ?preposition))
+(test (eq  (+ ?rask2 1000) ?rask22))
+(test (eq (str-index _p_ ?mrsconcept) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info "?rel" "?rask22" "?mrsconcept" " ?lbll" "?arg000" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rask2-prep-also "?rel" "?rask22" "?mrsconcept" " ?lbll" "?arg000" "?arg00" )"crlf)
 )
 

@@ -28,7 +28,7 @@
 (defrule noPrep4k2p
 (declare (salience 1000))
 (rel_name-ids k2p ?kri ?k-id)
-(id-concept_label  ?k-id   vahAz_1|vahAz+para_1|Gara_1|yahAz_1)
+(id-concept_label  ?k-id   vahAz_1|vahAz+para_1|Gara_1|yahAz_1|bAhara_1)
 ;(not (generated_prep_for_k2p ?k-id))
 =>
 (assert (do_not_generate_prep_for_k2p ?k-id))
@@ -90,9 +90,10 @@
 (id-concept_label	?k-id  ?num)
 (rel_name-ids k7t	?kri ?k-id)
 (not (id-dow	?k-id	yes))
-(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1|xina_1|aba_1))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 )
+
 

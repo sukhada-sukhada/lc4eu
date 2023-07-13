@@ -210,3 +210,15 @@
 (printout ?*tense-etc-dbg* "(rule-rel-values  print-mrs  "?rel1 " " ?id " " ?mrs " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
+(defrule ya_hoga_2
+(kriyA-TAM	?kriya	yA_hogA_2)
+(id-concept_label	?kriya	?hinconcept)
+?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
+(MRS_info ?rel ?kriya ?mrscon ?lbl ?arg0 $?v)
+(test (eq (str-index _v_modal ?mrscon) FALSE))
+=>
+(printout ?*tense-etc* "(tense-MRS_info "?rel" "?kriya" "?mrscon" "?lbl" "?arg0" "?sf" "?tense" "?mood" "?prog" "?perf" "(implode$ (create$ $?v))")" crlf)
+(printout ?*tense-etc-dbg* "(rule-rel-values ya_hoga_2  "?rel" "?kriya" "?mrscon" "?lbl" "?arg0" "?sf" "?tense" "?mood" "?prog" "?perf" " (implode$ (create$ $?v)) ")" crlf)
+)
+
+

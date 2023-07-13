@@ -1,5 +1,8 @@
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   wA_hE_1  0  -  -  pres -)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_hE_1  be_ing  -  +  pres -)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_wA_1  was_ing  -  +  past -)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_hE_2  has_been_ing  +  +  pres +)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_wA_2  had_been_ing  +  +  past -)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_hE_1  can_0  -  -  pres modal)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_WA_1  could_0  -  -  past modal)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_hE_2  might_0  -  -  pres modal)
@@ -64,6 +67,7 @@
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZA_1  had_to_0  -  -  past modal) 
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZegA_1  will_have_to  -  -  fut modal)
 (H_TAM-E_TAM-Habitual-Perfective_Aspect-Progressive_Aspect-Tense-Type  wA_rahawA_hE_1  keep_ing  + -  +  pres -)
+
 
 
 

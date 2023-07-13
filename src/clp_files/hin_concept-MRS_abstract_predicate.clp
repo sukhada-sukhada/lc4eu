@@ -153,7 +153,8 @@
 ;          (id-MRS_concept "?id " def_implicit_q)
 ;          (id-MRS_concept "?id " loc_nonsp)
 (defrule mrs_place
-(id-concept_label ?id Gara_1|vahAz_1|vahAz+para_1|bAhara_1|bAhara_2)
+(id-concept_label ?id Gara_1|vahAz_1|bAhara_2)
+(not (id-concept_label ?id bAhara_1))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " place_n)"crlf)
@@ -248,7 +249,7 @@
 
 ;#rAma ne skUla jAkara KAnA KAyA.
 (defrule mrs_subord
-(rel_name-ids	rpk|rblsk	?id	?kri)
+(rel_name-ids	rpk	?id	?kri)
 ;(id-hin_concept-MRS_concept ?id ?hinconcept ?engcon) 	
 ;(test (eq (str-index _n_ ?engcon) FALSE))
 =>
@@ -579,8 +580,24 @@
 ;Summer is good.
 (defrule season
 (id-season	?id	yes)
-(not (id-def ?id yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values season id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+)
+
+;rule for bringing parg_d for the rbks relation
+;The fruit eaten by Rama was sweet.
+(defrule mrs_parg_d_rbks
+(sentence_type  affirmative)
+(rel_name-ids	rbks	?id	?kri)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_parg_d_rbks  id-MRS_concept "?kri" parg_d)"crlf)
+)
+
+(defrule mrs_subord_rblsk
+(rel_name-ids	rblsk	?id	?kri)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 _as_x_subord)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_subord_rblsk id-MRS_concept -20000 _as_x_subord)"crlf)
 )
