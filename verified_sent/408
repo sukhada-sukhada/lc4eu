@@ -1,8 +1,8 @@
 #rAma ne kisase eka praSna pUCA? 
 rAma,kim,praSna_1,pUCa_3-yA_1 
 1,2,3,4 
-per,anim,, 
-[m sg a],[m sg a],[- sg a], 
+per male,anim male,, 
+sg,sg,sg, 
 4:k1,4:k2g,4:k2,0:main 
 ,,,
 ,,, 

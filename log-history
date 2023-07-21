@@ -132,3 +132,9 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 4. Added New TAM's in tam_mapping.dat: "0_rahA_wA_1 was_ing - + past -", "0_rahA_hE_2 has_been_ing + + pres +", "0_rahA_wA_2 had_been_ing + + past -".
 5. Handled new Non-Karaka relations: rblsk, rbks, rsma, and rv.
 6. Updated log-history
+
+21/07/2023
+1. Conversion of old USR format into new USR format. 
+2. All verified sentences into new USR format.
+3. Changes in dictionaries: In GNP dicitionary  changed u and m person into speaker and addressee and removed 3rd person entries.
+4. Updated log-history 

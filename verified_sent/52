@@ -1,10 +1,10 @@
 #Apa AsamAna kA avalokana acCI waraha se kara sakawe hEM.
-addressee, AsamAna_1, acCI+waraha_4, avalokana+kara_1-0_sakawA_hE_1
+addressee,AsamAna_1, acCI+waraha_4, avalokana+kara_1-0_sakawA_hE_1
 1,2,3,4
-anim,,,
-[- - m],[- sg a],,
+anim male,,,
+sg,sg,,
 4:k1,4:k2,4:krvn,0:main
 ,,,
-,def,,
+respect,def,,
 ,,,
 affirmative

@@ -1,8 +1,8 @@
 #ladakA calacciwra xeKa rahA hE.
 ladakA_1,calacciwra_1,xeKa_3-0_rahA_hE_1
 1,2,3
-anim,,
-[m sg a],[- sg a],
+anim male,,
+sg,sg,
 3:k1,3:k2,0:main
 ,,
 def,,

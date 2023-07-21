@@ -1,8 +1,8 @@
 #Apa muJe Pala xeM. 
 addressee,speaker,Pala_1,xe_1-eM_1
 1,2,3,4
-anim,anim,,
-[m pl m],[m sg u],[- sg a],
+anim male,anim male,,
+pl,sg,sg,
 4:k1,4:k4,4:k2,0:main
 ,,,
 respect,,def,

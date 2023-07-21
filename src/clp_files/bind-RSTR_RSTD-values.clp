@@ -793,7 +793,7 @@
 (rel_name-ids	k1s	?kri	?how) 
 (sentence_type  interrogative)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
-(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-num	?how	?n))
 (not (id-anim	?how	yes))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 "?lptp")" crlf)

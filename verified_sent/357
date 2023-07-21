@@ -2,7 +2,7 @@
 speaker,kaviwA_1,kiwAba_1,KarIxa_1-yA_1
 1,2,3,4
 anim,,,
-[- sg u],[- pl a],[- sg a],
+sg,pl,sg,
 4:k1,3:r6,4:k2,0:main
 ,,,
 ,,,

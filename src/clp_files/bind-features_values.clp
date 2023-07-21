@@ -1313,7 +1313,7 @@ then
 ;#rAma mohana se kama buxXimAna hE .
 (defrule comper_less-bind
 (id-degree	?adjid	comper_less)
-(rel_name-ids ru ?id ?id1)
+(rel_name-ids rv|ru ?id ?id1)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?compid comp_less ?l ?a0 ?a1 ?a2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
 (MRS_info ?rel ?id1 ?mrs ?lbll ?arg ?name)
@@ -1637,7 +1637,7 @@ then
 (id-concept_label	?how	kim)
 (sentence_type  interrogative)
 (MRS_info ?rel1  ?id1  unspec_adj ?lbl1 ?arg10 ?arg11 $?var)
-(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-num	?how	?n))
 (not (id-anim	?how	yes))
 =>
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg10 ")" crlf)
@@ -1659,7 +1659,7 @@ then
 (MRS_info id-MRS_concept-LBL-ARG0 ?p property ?lp ?a0p)
 ;(test (neq (str-index pron ?mrscon) FALSE))
 ;(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
-(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-num	?how	?n))
 (not (id-anim	?how	yes))
 =>
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?us" unspec_adj "?lus" "?a0us" "?arg01")"crlf)
@@ -1679,7 +1679,7 @@ then
 (id-concept_label	?how	kim)
 (rel_name-ids	k1s|degree	?kri	?how)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?wq which_q ?wl ?a0w ?rsw ?bdw)
-(not (id-gen-num-pers ?how ?g ?n ?m))
+(not (id-num	?how	?n)) 
 (not (id-anim	?how	yes))
 =>
 (assert (which_bind_notrequired ?wq))
@@ -2107,7 +2107,7 @@ then
 (declare (salience 1000))
 (id-respect  ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
-(id-gen-num-pers	?id	f sg a)
+(id-female	?id1	yes)
 (not(id-concept_label	?id 	addressee))
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udef udef_q ?lbl ?arg0 ?rstr ?body)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp compound ?l ?a0 ?a1 ?a2)
@@ -2161,7 +2161,7 @@ then
 (declare (salience 1000))
 (id-respect  ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
-(id-gen-num-pers	?id	m sg a)
+(id-male	?id1	yes)
 (not(id-concept_label	?id 	addressee))
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udef udef_q ?lbl ?arg0 ?rstr ?body)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp compound ?l ?a0 ?a1 ?a2)

@@ -1,8 +1,8 @@
 #gAyoM ke xuhane se pahale rAma gayA.
 gAya_1,xuha_4,rAma,jA_1-yA_1
 1,2,3,4
-anim,,per,
-[f pl a],,[m sg a],
+anim female,,per male,
+pl,,sg,
 2:k2,4:rblak,4:k1,0:main
 ,,,
 def,,,

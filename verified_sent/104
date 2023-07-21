@@ -1,8 +1,8 @@
 #ladake ko nayI kiwAba paDanI cAhie.
 ladakA_1,nayA_1,kiwAba_1,paDa_1-nA_cAhie_2   
 1,2,3,4
-anim,,,
-[m sg a],,[- sg a],
+anim male,,,
+sg,,sg,
 4:k1,3:mod,4:k2,0:main
 ,,,
 def,,def,

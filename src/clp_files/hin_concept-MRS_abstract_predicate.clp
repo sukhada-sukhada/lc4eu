@@ -5,9 +5,10 @@
 (defglobal ?*mrsdef* = mrs-def-fp)
 (defglobal ?*defdbug* = mrs-def-dbug)
 
+;Rule for generating udef_q for plural nouns. 
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
 (defrule mrs_pl_notDef
-(id-gen-num-pers ?id ?g ?n ?p)
+(id-num	?id	?n)
 (or (test (eq ?n pl))(id-abs ?id yes) (rel_name-ids meas ?id ?)(rel_name-ids card ?id ?))
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
@@ -24,7 +25,7 @@
 
 ;Rule for mass noun : if (id-mass ?id yes) , generate (id-MRS_Rel ?id _udef_q)
 (defrule mrs_mass_notDef
-(id-gen-num-pers ?id ?g ?n ?p)
+(id-num	?id	?n)
 (id-mass ?id yes)
 (not (id-def ?id yes))
 (not (rel_name-ids dem ?id ?))
@@ -39,7 +40,7 @@
 ;In case of topic names we need to generate unknown and udef_q.
 
 (defrule udef_unknown
-(id-gen-num-pers ?id ?g ?n ?p)
+(id-num	?id	?n)
 (sentence_type	)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept 0000000 unknown)"crlf)
@@ -57,6 +58,7 @@
 ;Rule for proper noun: if ((id-propn ?id yes) is present, generate (id-MRS_concept ?id proper_q) and  (id-MRS_concept ?id named)
 (defrule mrs_propn
 (or (id-per  ?id yes) (id-place  ?id yes) (id-org  ?id yes)  (id-ne  ?id yes) )
+(not (rel_name-ids coref ?idd	?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_propn  id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
@@ -104,7 +106,7 @@
 (id-concept_label ?id kim)
 (rel_name-ids	k1s	?kri	?id)
 (sentence_type  interrogative)
-(id-gen-num-pers ?id ?g ?n ?m)
+(id-num	?id	?num)
 (id-anim	?id	yes)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
@@ -348,7 +350,7 @@
 (construction-ids	conj  $? ?n $? ?x ?y)
 (rel_name-ids   ?rel        ?id ?n)
 (id-concept_label	?n	?hincon)
-(id-gen-num-pers	?n	?gen ?num ?per)
+(id-num	?n	?sgpl)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values implicit_conj4pred id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
@@ -360,7 +362,7 @@
 (construction-ids	conj  ?n ?y)
 (rel_name-ids   ?rel        ?id ?n)
 (id-concept_label	?n	?hincon)
-(id-gen-num-pers	?n	?gen ?num ?per)
+(id-num	?n	?sgpl)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values implicit_conj4unknown id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
@@ -371,7 +373,7 @@
 (defrule udefq_conj4subj
 (declare (salience 100))
 (construction-ids	conj  $? ?n ?y)
-(id-gen-num-pers	?n	?gen ?num ?per)
+(id-num	?n	?sgpl)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values udefq_conj4subj id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
@@ -412,7 +414,7 @@
 (id-concept_label	?id	kim)
 (rel_name-ids	k1s	?kri	?id)
 (sentence_type  interrogative)
-(not (id-gen-num-pers ?id ?g ?n m))
+(not (id-num	?id	?n))
 (not (id-anim	?id	yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
@@ -475,7 +477,7 @@
 (construction-ids	disjunct ?id1 ?id2)
 (rel_name-ids   ?rel        ?id ?id1)
 (id-concept_label	?id1	?hincon)
-(id-gen-num-pers	?id1	?gen ?num ?per)
+(id-num	?id1	?sgpl)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values disjunct id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
@@ -550,7 +552,8 @@
 (defrule respect-feminine
 (id-respect  ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
-(id-gen-num-pers	?id	f sg a)
+(id-num	?id	?sgpl)
+(id-female	?id	yes)
 (not(id-concept_label	?id 	addressee))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
@@ -566,7 +569,8 @@
 (id-respect  ?id  yes)
 (id-per  ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
-(id-gen-num-pers	?id	m sg a)
+(id-num	?id	?sgpl)
+(id-male	?id	yes)
 (not(id-concept_label	?id 	addressee))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)

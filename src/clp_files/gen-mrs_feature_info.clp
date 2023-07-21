@@ -334,7 +334,7 @@
 (rel_name-ids	k1s	?kri	?k1s)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
 (sentence_type  interrogative)
-(not (id-gen-num-pers ?k1s ?g ?n ?m))
+(not (id-num	?k1s	?n))
 (not (id-anim	?k1s	yes))
 =>
 (retract ?f ?f1)
@@ -352,7 +352,7 @@
 (id-concept_label	?k1s	kim)
 (rel_name-ids	k1s|degree	?kri	?k1s)
 (sentence_type  interrogative)
-(not (id-gen-num-pers ?k1s ?g ?n ?m))
+(not (id-num	?k1s	?n))
 (not (id-anim	?k1s	yes))
 =>
 (retract ?f)

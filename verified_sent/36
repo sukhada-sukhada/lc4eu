@@ -1,8 +1,8 @@
 #mEMne acCA Pala KAyA.
 speaker,acCA_1,Pala_1,KA_1-yA_1
 1,2,3,4
-anim,,,
-[m sg u],,[- sg a],
+anim male,,,
+sg,,sg,
 4:k1,3:mod,4:k2,0:main
 ,,,
 ,,,

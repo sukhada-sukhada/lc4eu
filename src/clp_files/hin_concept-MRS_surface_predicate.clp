@@ -362,11 +362,12 @@
 
 ;Rule for a as a determiner : if the is not present,is not a mass noun and not plural then generate (id-MRS_Rel ?id _a_q)
 (defrule mrsCon_not
-(id-gen-num-pers ?id ?g ?n ?p)
+(id-num	?id	sg)
 (not (id-def ?id yes)) ;#rAma apane piwA ke sAWa vixyAlaya gayA.
 (not (id-mass ?id yes)) ;#wuma pAnI se GadZe ko Baro.
 ;(not (id-anim ?id yes))
-(test (neq ?n  pl)) 
+(not (id-num	?id	pl))
+;(test (neq ?n  pl)) 
 (not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
 (not(id-org ?id yes))
 (not(id-per ?id yes)) ;#rAvana mArA gayA.
@@ -378,6 +379,7 @@
 (not (rel_name-ids r6 ?id ?r6))  ;merA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kim)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
+(not (id-concept_label	?id	saba_4))
 (not (rel_name-ids deic ?ida	?id)) ;#yaha Gara hE.
 (not (rel_name-ids coref ?	?id)) ;#usane nahIM KAyA.
 (not  (id-abs ?id yes)) ;#kyA wumako buKAra hE?
@@ -428,7 +430,7 @@
 (id-respect  ?id  yes)
 (id-per ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
-(id-gen-num-pers	?id	f sg a)
+(id-female ?id  yes)
 (not(id-concept_label	?id 	addressee))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _ms_n_1 )"crlf)
@@ -453,7 +455,7 @@
 (id-respect  ?id  yes)
 (id-per ?id  yes)
 (rel_name-ids ?rel ?idd ?id)
-(id-gen-num-pers	?id	m sg a)
+(id-male ?id  yes)
 (not(id-concept_label	?id 	addressee))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _mister_n_1 )"crlf)

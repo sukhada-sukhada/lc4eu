@@ -1,8 +1,8 @@
 #mEM kAma kara cukA hUz.
 speaker,kAma_1,kara_17-0_cukA_hE_1
 1,2,3
-anim,,
-[m sg u],[- sg a],
+anim male,,
+sg,sg,
 3:k1,3:k2,0:main
 ,,
 ,def,

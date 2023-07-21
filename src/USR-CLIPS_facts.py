@@ -14,7 +14,7 @@ ans=open(sys.argv[2],'w+')
 conceptDict = hinUsrCsv[1].strip().split(',')    # row 2: concept dict info
 wid = hinUsrCsv[2].strip().split(',')            # row 3: concept ids
 pos = hinUsrCsv[3].strip().split(',')            # row 4: semantic cat of nouns
-gnp = hinUsrCsv[4].strip().split(',')            # row 5: GNP info
+morphoSem = hinUsrCsv[4].strip().split(',')            # row 5: morpho-Semantic info
 depRels = hinUsrCsv[5].strip().split(',')        # row 6: dependency relations
 discorseRel = hinUsrCsv[6].strip().split(',')    # row 7: discourse relations
 speakerView = hinUsrCsv[7].strip().split(',')    # row 8: Speaker's view
@@ -46,29 +46,33 @@ for k in idConcept.keys():
 
 
 # Writing gender,number,person:
-for i in range(len(gnp)):
-    if gnp[i] !='':
-        if 'superl' in gnp[i]:
+for i in range(len(morphoSem)):
+    if morphoSem[i] !='':
+        if 'superl' in morphoSem[i]:
             ans.write('(id-degree\t' + str((i+1)*10000) + '\tsuperl)\n')
-        elif 'comper' in gnp[i]:
-            ans.write('(id-degree\t' + str((i+1)*10000) + '\t' + gnp[i][1:-1] + ')\n')
-        elif 'double_causative' in gnp[i]:
+        elif 'comper' in morphoSem[i]:
+            ans.write('(id-degree\t' + str((i+1)*10000) + '\t' + morphoSem[i] + ')\n')
+        elif 'double_causative' in morphoSem[i]:
             ans.write('(id-double_causative\t' + str((i+1)*10000) + '\tyes)\n')        
-        elif 'causative' in gnp[i]:
+        elif 'causative' in morphoSem[i]:
             ans.write('(id-causative\t' + str((i+1)*10000) + '\tyes)\n')
+        elif 'sg' in morphoSem[i]:
+            ans.write('(id-num\t' + str((i+1)*10000) + '\tsg)\n')
+        elif 'pl' in morphoSem[i]:
+            ans.write('(id-num\t' + str((i+1)*10000) + '\tpl)\n')
         else:
-            ans.write('(id-gen-num-pers\t' + str((i+1)*10000) + '\t' + gnp[i][1:-1] + ')\n')
+            pass
 
 # Writing POS values
 for i in range(len(wid)):
-    if pos[i] != '':
+    if pos[i] != '': 
         if ' ' in pos[i]:
             poslst = pos[i].split()
             for j in range(len(poslst)):
                 ans.write('(id-'+poslst[j]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
         else:
             ans.write('(id-'+pos[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
-
+            
 
 # Writing dependency relations
 for i in range(len(depRels)):
