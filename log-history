@@ -138,3 +138,6 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 2. All verified sentences into new USR format.
 3. Changes in dictionaries: In GNP dicitionary  changed u and m person into speaker and addressee and removed 3rd person entries.
 4. Updated log-history 
+
+27/07/2023
+1. Added USR format convertor in src folder: usr_conv_for_file.py 
