@@ -14,8 +14,8 @@
 (not (MRS_info  id-MRS_concept ?compeq   comp_equal)) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 ;(not (and (rel_name-ids k1s ?kri ?k-id)) ;rAXA mIrA jEsI sunxara hE. 
 (not (generated_prep_for ?k-id))
-(not (id-degree ?id	comper_more)) ;#rAma mohana se jyAxA buxXimAna hE.
-(not (id-degree ?id	comper_less)) ;rAma mohana se kama buxXimAna hE .
+(not (id-degree ?id	compermore)) ;#rAma mohana se jyAxA buxXimAna hE.
+(not (id-degree ?id	comperless)) ;rAma mohana se kama buxXimAna hE .
 (not (do_not_generate_prep_for_k2p ?k-id)) ;I am coming home.
 =>
 (bind ?myprep (str-cat "_" ?prep "_p"))

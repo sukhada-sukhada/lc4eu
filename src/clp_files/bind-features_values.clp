@@ -279,7 +279,7 @@
 ;genrates binding for double causative
 ;mAz ne rAma se bacce ko KAnA KilavAyA.
 (defrule v-p1k1
-(id-double_causative	?kriya	yes)
+(id-doublecausative	?kriya	yes)
 (rel_name-ids	pk1	?kriyA ?karwA)
 (MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
@@ -298,7 +298,7 @@
 ;mAz ne rAma se bacce ko KAnA KilavAyA.
 ;Rule to bind ARG1 of make_v_cause with ARG0 of karwa. 
 (defrule v-mk1
-(id-double_causative	?kriya	yes)
+(id-doublecausative	?kriya	yes)
 (rel_name-ids	mk1	?kriyA ?karwA)
 (MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
@@ -320,7 +320,7 @@
 ;Rule for converting arg1 of kriya with arg0 of karwa
 ;mAz ne rAma se bacce ko KAnA KilavAyA.
 (defrule v-j1k1
-(id-double_causative	?kriya	yes)
+(id-doublecausative	?kriya	yes)
 (rel_name-ids	jk1	?kriyA ?karwA)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
@@ -839,19 +839,6 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values kramavAcI_vi id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" ord "?vilbl" "?numARG0" "?viarg0" "?enum")"crlf)
 )
 
-;Rule for demonstrative adjectives.
-;Replace CARG value of cardinal number with English number and LBL value of the same fact with LBL of viSeRya, and ARG1 value with the ARG0 value of viSeRya.
-;Ex. rAma xo kiwAbaeM paDa rahA hE.
-;(defrule demonstrative
-;(rel_name-ids viSeRya-dem	?vi     ?dem)
-;(cl-cEn-MRSc ?hdem ?edem this_q_dem)
-;(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num card ?lbl ?numARG0 ?ARG1 ?CARG)
-;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?dem _this_q_dem ?lbl ?demARG0 ?RSTR ?BODY)
-;(MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
-;=>
-;(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY _this_q_dem "?lbl" "?viarg0" "?RSTR" "?BODY")"crlf)
-;(printout ?*rstr-dbug* "(rule-rel-values demonstrative id-MRS_concept-LBL-ARG0-RSTR-BODY _this_q_dem "?lbl" "?viarg0" "?RSTR" "?BODY")"crlf)
-;)
 
 
 ;Rule for sentence and tam info: (if (kriyA-TAM), value of id = value of kriyA from the facts kriyA-TAM, SF from sentence_type and the rest from tam_mapping.csv)
@@ -1061,7 +1048,7 @@ else
 (not (rblsk_index_notrequired ?id))
 (not (id-stative ?id yes))
 (not (id-causative ?id yes)) ;#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
-(not (id-double_causative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
+(not (id-doublecausative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
 (not(rel_name-ids vAkya_vn ?id1 ?id2)) 
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
@@ -1105,7 +1092,7 @@ then
 
 ;generates LTOP and INDEX values for double causative.
 (defrule ask-LTOP
-(id-double_causative	?id	yes) 
+(id-doublecausative	?id	yes) 
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id1 _ask_v_1 ?lbl ?arg0 $?vars)
 (test (eq  (+ ?id 200) ?id1))
 =>
@@ -1192,7 +1179,8 @@ then
 
 ;Rule for generic_entity
 (defrule generic_entity
-(rel_name-ids deic ?id    ?id1) ;#yaha Gara hE.
+(id-concept_label	?id1	wyax)
+(or (id-proximal	?id1	yes) (id-distal	?id1	yes))
 (MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
 ?f1<-(MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG1 ?ARG2)
 ?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
@@ -1295,8 +1283,8 @@ then
 ;Rule for binding comparitive degree "comp" node with the adjective it specifies and the person it compares.
 ;It replaces lbl of adjective with the lbl of comp, and arg0 of adjective with the arg1 of comp, and arg0 of upamAna with the arg2 of comp. 
 ;#rAma mohana se jyAxA buxXimAna hE.
-(defrule comper_more-bind
-(id-degree	?adjid	comper_more)
+(defrule compermore-bind
+(id-degree	?adjid	compermore)
 (rel_name-ids ru|rv ?id ?id1)          ;?id = upameya/rAma, ?id1 = upamAna/mohana
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?compid comp ?l ?a0 ?a1 ?a2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
@@ -1311,8 +1299,8 @@ then
 ;Rule for binding comparitive degree "comp_less" node with the adjective it specifies and the person it compares.
 ;It converts lbl of adjective as its lbl and arg0 of adjective will be its arg1 and arg2 will the arg0 of the person.
 ;#rAma mohana se kama buxXimAna hE .
-(defrule comper_less-bind
-(id-degree	?adjid	comper_less)
+(defrule comperless-bind
+(id-degree	?adjid	comperless)
 (rel_name-ids rv|ru ?id ?id1)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?compid comp_less ?l ?a0 ?a1 ?a2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjid ?mrs_adj ?lbl ?arg0 ?arg1)
@@ -1827,7 +1815,7 @@ then
 ;Rule for binding arg0 of recip_pro with pronoun_q.
 ;We love each other.
 (defrule reciprocal
-(id-concept_label	?recip	eka+xUsarA_1)
+(id-concept_label	?recip	eka+xUsarA)
 (rel_name-ids	k2	?kri	?recip)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?recip pronoun_q ?lp ?pa0 ?rp ?bp)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?verb ?lv ?av ?a1v ?a2v)
@@ -2180,7 +2168,7 @@ then
 
 
 ;Creating of binding with udef_q and season abstract predicate. 
-;Summer is good.
+;The snow falls in winter.
 (defrule season_udef_q
 (id-concept_label	?id	?cl)
 (id-season	?id	yes)
@@ -2193,21 +2181,27 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values season_udef_q id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?a0" "?rstr" "?body" )"crlf)
 )
 
-;(cl-cEn-MRSc sarxI_2 winter_2 season)
 ;Rule for changing season CARG value to season name. 
-;Summer is good.
+;The snow falls in winter.
 (defrule season_name
+(declare (salience 1000))
 (id-concept_label	?id	?cl)
-(season ?cl ?val)
+(cl-cEn-MRSc ?cl ?english season)
 (id-season	?id	yes)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id season ?l ?a0 ?num)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id season ?l ?a0 ?val)
+(not (english_replaced ?id))
 =>
 (retract ?f)
-;(assert (MRS_info  id-MRS_concept-LBL-ARG0-CARG ?id  season ?l ?a0  ?val))
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-CARG "?id" season " ?l" "?a0" "?val")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values season_name id-MRS_concept-LBL-ARG0-CARG "?id" season " ?l" "?a0" "?val")"crlf)
+(assert (english_replaced ?id))
+(if (neq (str-index "_" ?english) FALSE) then
+  (bind ?myEnglish (string-to-field (sub-string 0 (- (str-index "_" ?english )1) ?english))) ;removing "_digit" from e_concept_label, ex. "winter_2" => "winter"
+     (assert (MRS_info  id-MRS_concept-LBL-ARG0-CARG ?id season ?l ?a0 ?myEnglish ) )
+     (printout ?*rstr-dbug* "(rule-rel-values season_name id-MRS_concept-LBL-ARG0-CARG "?id" " season " "?l" "?a0" "?myEnglish")"crlf)
+else
+   (printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-CARG "?id" " season " "?l" "?a0" "?english")"crlf)
+   (printout ?*rstr-dbug* "(rule-rel-values season_name  id-MRS_concept-LBL-ARG0-CARG "?id" " season " "?l" "?a0" "?english")"crlf)
 )
-
+)
 
 ;Rule for generating LTOP with INDEX value for a sentence without a verb and having kim word with relation k5 and animacy in the semantic category. 
 ;Who is Rama afraid of? 
@@ -2350,4 +2344,27 @@ then
 (printout ?*rstr-fp* "(MRS_info "?rel" "?rask22" "?mrsconcept" " ?lbll" "?arg000" "?arg00")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rask2-prep-also "?rel" "?rask22" "?mrsconcept" " ?lbll" "?arg000" "?arg00" )"crlf)
 )
+
+;Rule for creating binding with LBL of card with the generic_Entity lbl and ARG1 of card with ARG0 of generic_Entity and ARG0 of udef_q with ARG0 of generic_Entity and ARG1 of bark with generic_Entity.
+;Changing CARG value of card into digit.
+;Three barked.
+(defrule generic_Entity
+(declare (salience 1000))
+(id-concept_label	?id1	?number)
+(id-numex	?id1	yes)
+(rel_name-ids	k1	?kri	?id1)
+(numeric ?number ?val)
+(not (rel_name-ids	card	?kri	?id1))
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id udef_q ?lbl ?arg0 ?rstr ?body)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id1 generic_entity ?lbll ?arg00)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG ?id1 ?card ?lbl2 ?arg02 ?arg021 ?carg)
+(test (eq  (+ ?id1 10) ?id))
+=>
+(retract ?f ?f1)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" udef_q "?lbl" "?arg00" "?rstr" "?body" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values generic_Entity id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" udef_q "?lbl" "?arg00" "?rstr" "?body")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG "?id1" "?card" "?lbll" "?arg02" "?arg00" "?val" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values generic_Entity id-MRS_concept-LBL-ARG0-ARG1-CARG "?id1" "?card" "?lbll" "?arg02" "?arg00" "?val")"crlf)
+)
+
 

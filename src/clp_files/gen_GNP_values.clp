@@ -22,7 +22,7 @@
 (id-concept_label	?id1	?hinconcept)
 (id-num	?id1	?num)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(not (id-concept_label	?id1	speaker|addressee|eka+xUsarA_1))
+(not (id-concept_label	?id1	speaker|addressee|eka+xUsarA))
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 " -  "?num"  3 )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_noun-sg id-GEN-NUM-PER "?id1 " - "?num" 3 )"crlf)
@@ -35,7 +35,7 @@
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
 (or (id-concept_label	?id1 	speaker|addressee) (rel_name-ids coref ?x	?id1))
 (MRS_concept-H_P-Eng_P    pron   ?p  ?per)
-(not (id-concept_label	?id1	eka+xUsarA_1)) ;We love each other."
+(not (id-concept_label	?id1	eka+xUsarA)) ;We love each other."
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 " m " ?n " " ?per " std )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron-personal-male id-GEN-NUM-PER-PT "?id1 "  m " ?n " "?per " std)"crlf)
@@ -46,9 +46,9 @@
 (id-num	?id1	?n)
 (id-female	?id1	yes)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(or (id-concept_label	?id1 	speaker|addressee|vaha|yaha) (rel_name-ids coref ?x	?id1))
+(or (id-concept_label	?id1 	speaker|addressee|wyax) (rel_name-ids coref ?x	?id1))
 (MRS_concept-H_P-Eng_P    pron   ?p  ?per)
-(not (id-concept_label	?id1	eka+xUsarA_1)) ;We love each other."
+(not (id-concept_label	?id1	eka+xUsarA)) ;We love each other."
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 " f " ?n " " ?per " std )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron-personal-female id-GEN-NUM-PER-PT "?id1 "  f " ?n " "?per " std)"crlf)
@@ -59,9 +59,9 @@
 (defrule gnp-of-eng_pron-personal-neuter
 (id-num	?id1	?n)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(or (id-concept_label	?id1 	speaker|addressee|vaha|yaha) (rel_name-ids coref ?x	?id1))
+(or (id-concept_label	?id1 	speaker|addressee|wyax) (rel_name-ids coref ?x	?id1))
 (MRS_concept-H_P-Eng_P    pron   ?p  ?per)
-(not (id-concept_label	?id1	eka+xUsarA_1)) ;We love each other."
+(not (id-concept_label	?id1	eka+xUsarA)) ;We love each other."
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 " - " ?n " " ?per " std )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron-personal-neuter id-GEN-NUM-PER-PT "?id1 "  - " ?n " "?per " std)"crlf)
@@ -73,7 +73,7 @@
 (id-num	?id1	?n)
 (id-male	?id1	yes)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(or (id-concept_label	?id1 	vaha|yaha) (rel_name-ids coref ?x	?id1))
+(or (id-concept_label	?id1 	wyax) (rel_name-ids coref ?x	?id1))
 (not (id-num	?id1	pl)) ;They are eating food.
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 " m " ?n " 3 std )"crlf)
@@ -86,7 +86,7 @@
 (id-num	?id1	?n)
 (id-female	?id1	yes)
 (MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
-(or (id-concept_label	?id1 	vaha|yaha) (rel_name-ids coref ?x	?id1))
+(or (id-concept_label	?id1 	wyax) (rel_name-ids coref ?x	?id1))
 (not (id-num	?id1	pl)) ;They are eating food.
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER-PT  "?id1 " f " ?n " 3 std )"crlf)
@@ -177,5 +177,18 @@
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron-personal-1stperson-reflexive id-GEN-NUM-PER-PT "?x "  " - " " ?n " 1 refl)"crlf)
 )
 
+;Rule for generating Neuter gender when number is present but no gender information available.
+;It is clear.
+(defrule gnp-of-eng_neuter
+(id-num ?id1 ?n)
+(not (id-male	?id1	yes))
+(not (id-female	?id1	yes))
+(MRS_info ?rel1 ?id1 ?mrsCon  $?vars)
+(id-concept_label	?id1	wyax)
+(not (id-concept_label	?id1	speaker|addressee|eka+xUsarA))
+=>
+(printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 " n "?n" 3 )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_neuter id-GEN-NUM-PER "?id1 " n "?n" 3  )"crlf)
+)
 
 

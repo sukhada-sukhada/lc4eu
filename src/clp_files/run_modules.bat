@@ -105,6 +105,7 @@
 (load-facts "H_concept-to-mrs-rels.dat")
 (load-facts "mrs_feature_info.dat")
 (load-facts "tam_mapping.dat")
+(load-facts "hin_num.dat")
 (open "mrs_info_binding_features_values.dat" open-file "w")
 (open "mrs_info_binding_features_values_debug.dat" debug_fp "w")
 (run)

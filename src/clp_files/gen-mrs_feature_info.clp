@@ -103,6 +103,7 @@
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
 (not (rel_name-ids k2   ?kri    ?k2))
 (test (eq (str-index _have_v_1 ?mrscon) FALSE))
+(not (verb_bind_notrequired ?mrscon))
 =>
 (retract ?f1 ?f)
 (bind ?a2 (str-cat "u" (sub-string 2 (str-length ?arg2) ?arg2)))
@@ -188,7 +189,7 @@
 ;deleting ARG2 value for irregular adjective forms in comperative and superlative degree
 (defrule rmARG2Irregular-adj
 (declare (salience 5000))
-(id-degree	?id	superl|comper_less|comper_more)
+(id-degree	?id	superl|comperless|compermore)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id ?adj ?lbl ?arg0 ?arg1 ?arg2)
 (test (or (eq ?adj _good_a_at-for-of) (eq ?adj _bad_a_at) (eq ?adj _much_x_deg)))
 =>
@@ -419,8 +420,34 @@
 =>
 (retract ?f)
 (bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
-(printout ?*mrs-fp* "(MRS_info -MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values k1-absent-rsk -MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
+(printout ?*mrs-fp* "(MRS_info MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values k1-absent-rsk MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
 )
 
+;Rule for changing ARG1 value of nominalized verb into i value.
+(defrule arg2_change_h
+(id-concept_label	?verb	?hinconcept)
+(rel_name-ids	k1	?kriya	?verb)
+(MRS_info  id-MRS_concept ?nominalized  nominalization)
+?f<-(MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: ?arg2)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (eq  (+ ?verb 200) ?nominalized))
+=>
+(bind ?a2 (str-cat "h" (sub-string 2 (str-length ?arg2) ?arg2)))
+(printout ?*mrs-fp* "(MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: "?a2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values arg2_change_h MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: "?a2")"crlf)
+)
 
+(defrule arg2change_not_required
+(declare (salience 300))
+(id-concept_label	?verb	?hinconcept)
+(rel_name-ids	k1	?kriya	?verb)
+(MRS_info  id-MRS_concept ?nominalized  nominalization)
+?f<-(MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: x*)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(test (eq  (+ ?verb 200) ?nominalized))
+(not (rel_name-ids k2   ?kri    ?k2))
+=>
+(assert (verb_bind_notrequired ?mrscon))
+(printout ?*mrs-dbug* "(rule-rel-values  arg2change_not_required verb_bind_notrequired "?mrscon")"crlf)
+)

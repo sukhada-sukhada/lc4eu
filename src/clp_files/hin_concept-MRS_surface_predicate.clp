@@ -293,7 +293,7 @@
 )
 
 (defrule make_ask
-(id-double_causative	?id	yes)
+(id-doublecausative	?id	yes)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
@@ -368,7 +368,7 @@
 ;(not (id-anim ?id yes))
 (not (id-num	?id	pl))
 ;(test (neq ?n  pl)) 
-(not(id-concept_label	?id 	speaker|addressee|vaha|yaha))
+(not(id-concept_label	?id 	speaker|addressee|wyax))
 (not(id-org ?id yes))
 (not(id-per ?id yes)) ;#rAvana mArA gayA.
 (not(id-place ?id yes)) ;#rAma xillI meM nahIM hE.
@@ -482,4 +482,31 @@
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _certain_a_1)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values emphasis id-MRS_concept "(+ ?id 1000)" _certain_a_1)"crlf)
+)
+
+(defrule this_q_dem
+(id-concept_label	?id	wyax)
+(rel_name-ids	dem	?kri	?id)
+(not (id-proximal	?id	yes))
+(not (id-distal	?id	yes))
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "?id" _this_q_dem)"crlf)
+)
+
+(defrule this_q_dem_proximal
+(id-concept_label	?id	wyax)
+(id-proximal	?id	yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values this_q_dem_proximal id-MRS_concept "?id" _this_q_dem)"crlf)
+)
+
+
+(defrule that_q_dem_distal
+(id-concept_label	?id	wyax)
+(id-distal	?id	yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _that_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values that_q_dem_distal id-MRS_concept "?id" _that_q_dem)"crlf)
 )

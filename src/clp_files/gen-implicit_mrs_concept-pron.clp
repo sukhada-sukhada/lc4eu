@@ -7,7 +7,10 @@
 ;Rule for pronoun : if (id-pron ?id yes) generate (id-MRS_Rel ?id pronoun_q) and (id-MRS_Rel ?id pron)
 ;#mEM Gara jA sakawA hUz.
 (defrule mrsPron_yes
-(id-concept_label	?id 	speaker|addressee|vaha|yaha)
+(id-concept_label	?id 	speaker|addressee|wyax)
+(not (rel_name-ids	dem	?kri	?id))
+(not (id-proximal	?id	yes))
+(not (id-distal	?id	yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" pronoun_q )"crlf)
 (printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "(+ ?id 10)" pronoun_q )"crlf)
@@ -20,7 +23,7 @@
 ; Ex. Sahara jAo
 (defrule pron4imper
 (sentence_type imperative)
-(not (and (id-concept_label	?id 	speaker|addressee|vaha|yaha) (rel_name-ids k1 ? ?id))) ;#Apa Sahara jAo!
+(not (and (id-concept_label	?id 	speaker|addressee|wyax) (rel_name-ids k1 ? ?id))) ;#Apa Sahara jAo!
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pronoun_q)"crlf) 
 (printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000  pronoun_q )"crlf)
@@ -36,6 +39,7 @@
 (rel_name-ids r6 ?viSeRya ?r6)
 (not (id-concept_label	?r6	kisa_1))
 (not (sentence_type  interrogative))
+(not (id-concept_label	?viSeRya pICA+kara_1))
 ;(not (construction-ids	conj	$?v1 ?viSeRya $?v))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
@@ -55,15 +59,23 @@
 
 
 ;rule for demonstrative pronoun
-(defrule mrs_dem_pron
-(rel_name-ids deic ?obj    ?dem)
-(not (rel_name-ids	dem	?obj	?dem))
+(defrule mrs_dem_pron-this
+(id-concept_label	?dem	wyax)
+(id-proximal	?dem	yes)
+(not (rel_name-ids	dem	?noun	?dem))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_dem_pron id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_dem_pron-this id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
+)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 1)" dem)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_dem_pron id-MRS_concept "(+ ?dem 1)" dem)"crlf)
+;rule for demonstrative pronoun
+(defrule mrs_dem_pron-that
+(id-concept_label	?dem	wyax)
+(id-distal	?dem	yes)
+(not (rel_name-ids	dem	?noun	?dem))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_dem_pron-that id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
 )
 
 ;345: vaha apane piwA  ke sAWa vixyAlaya gayI 
@@ -71,7 +83,7 @@
 (defrule coref
 (rel_name-ids coref  ?referent    ?coref)
 (id-concept_label       ?coref    ?conL)
-(not (id-concept_label	?coref eka+xUsarA_1)) ; 326: #hama eka xUsare se pyAra karawe hEM.
+(not (id-concept_label	?coref eka+xUsarA)) ; 326: #hama eka xUsare se pyAra karawe hEM.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?coref 10)" pronoun_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "(+ ?coref 10)" pronoun_q )"crlf)

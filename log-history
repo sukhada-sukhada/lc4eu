@@ -136,5 +136,12 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 21/07/2023
 1. Conversion of old USR format into new USR format. 
 2. All verified sentences into new USR format.
-3. Changes in dictionaries: In GNP dicitionary  changed u and m person into speaker and addressee and removed 3rd person entries.
+3. Changes in dictionaries: _only_a_1 ARG1: h* into ARG1: x*, in GNP dicitionary  changed u and m person into speaker and addressee and removed 3rd person entries.
 4. Updated log-history 
+
+7/08/2023
+1. Added 430, 431, 432 USRs.
+2. Modified verified USRs about comparitive degree, double causative, pronouns and demonstratives according to the version USR_GUIDELINES - V 4.1 and CLIPS rules accordingly for USR to English generation.
+3. Created dictionary for numbers in Hindi for mapping. 
+4. Updated log-history
+

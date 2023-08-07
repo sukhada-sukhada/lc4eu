@@ -15,7 +15,7 @@
 (not (rel_name-ids dem ?id ?v))
 (not (rel_name-ids quant ?id ?v))
 (not (rel_name-ids r6 ?id ?v))
-(not(id-concept_label	?id 	?concept&speaker|addressee|vaha|yaha|saba_4))
+(not(id-concept_label	?id 	?concept&speaker|addressee|wyax|saba_4))
 (not (rel_name-ids coref ?	?id))
 ;(not (sentence_type	)) ;;#kuwwA! ;#billI Ora kuwwA.
 =>
@@ -279,17 +279,17 @@
 ; #mEM Kelane ke liye krIdAMgaNa meM gayA.
 ; I went to the playground for playing.
 ; (rel_name-ids	kriyArWa_kriyA	40000	20000)
-;(defrule nominalization
-;(rel_name-ids	rt	?kri ?krikri)
-;(id-hin_concept-MRS_concept ?krikri ?hinconcept ?mrsconcept)
-;(test (neq (str-index _v_ ?mrsconcept) FALSE))
-;=>
-;(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
-;(printout ?*defdbug* "(rule-rel-values    nominalization  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
+(defrule nominalization
+(rel_name-ids	k1	?kri ?krikri)
+(id-hin_concept-MRS_concept ?krikri ?hinconcept ?mrsconcept)
+(test (neq (str-index _v_ ?mrsconcept) FALSE))
+=>
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
+(printout ?*defdbug* "(rule-rel-values    nominalization  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
 
-;(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
-;(printout ?*defdbug* "(rule-rel-values  nominalization   id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
-;)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  nominalization   id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
+)
 
 ;Generate 'superl' mrs_concept for superlative degree adjectives
 ;#sUrya sabase badA nakRawra hE.
@@ -304,27 +304,27 @@
 
 ;Rule for creating comp mrs concept for comparative sentences.
 ;#rAma mohana se jyAxA buxXimAna hE.
-(defrule comper_more
-(id-degree	?id	comper_more)
+(defrule compermore
+(id-degree	?id	compermore)
 =>
 (printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 20) "  comp)"crlf)
-(printout ?*defdbug* "(rule-rel-values  comper_more   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*defdbug* "(rule-rel-values  compermore   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
 )
 
 ;Rule for creating comp mrs concept for comparative sentences.
 ;#rAma mohana se kama buxXimAna hE .
-(defrule comper_less
-(id-degree	?id comper_less)
+(defrule comperless
+(id-degree	?id comperless)
 =>
 (printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
-(printout ?*defdbug* "(rule-rel-values  comper_more   id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
+(printout ?*defdbug* "(rule-rel-values  compermore   id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
 )
 
 ;Rule for bringing comp_equal for ru relation.
 (defrule comper-equal
 (rel_name-ids ru ?id ?id1)
-(not (id-degree	?adjid	comper_more)) 
-(not (id-degree	?adjid	comper_less))
+(not (id-degree	?adjid	compermore)) 
+(not (id-degree	?adjid	comperless))
 (rel_name-ids	k1	?kri	?id) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 (rel_name-ids	k1s	?kri	?adj)
 =>
@@ -486,7 +486,7 @@
 ;Rule for creating recip_pro and pronoun_q for reciprocal pronouns
 ;We love each other.
 (defrule mrs_recip_pronoun
-(id-concept_label	?rp	eka+xUsarA_1)
+(id-concept_label	?rp	eka+xUsarA)
 (rel_name-ids	?rell	?kri	?rp)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?rp 10) " pronoun_q)"crlf)
@@ -604,4 +604,18 @@
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 _as_x_subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord_rblsk id-MRS_concept -20000 _as_x_subord)"crlf)
+)
+
+;Rule for bringing generic_entity when no card information available and numex tag available and number concept in the concept row.
+;Three barked.
+(defrule mrs_generic_Entity
+(id-concept_label	?id1	?number)
+(id-numex	?id1	yes)
+(rel_name-ids	k1	?kri	?id1)
+(not (rel_name-ids	card	?kri	?id1))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id1" generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_generic_Entity id-MRS_concept "?id1" generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 10) " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_generic_Entity id-MRS_concept "(+ ?id1 10)" udef_q)"crlf)
 )

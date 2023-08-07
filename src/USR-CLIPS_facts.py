@@ -52,8 +52,8 @@ for i in range(len(morphoSem)):
             ans.write('(id-degree\t' + str((i+1)*10000) + '\tsuperl)\n')
         elif 'comper' in morphoSem[i]:
             ans.write('(id-degree\t' + str((i+1)*10000) + '\t' + morphoSem[i] + ')\n')
-        elif 'double_causative' in morphoSem[i]:
-            ans.write('(id-double_causative\t' + str((i+1)*10000) + '\tyes)\n')        
+        elif 'doublecausative' in morphoSem[i]:
+            ans.write('(id-doublecausative\t' + str((i+1)*10000) + '\tyes)\n')        
         elif 'causative' in morphoSem[i]:
             ans.write('(id-causative\t' + str((i+1)*10000) + '\tyes)\n')
         elif 'sg' in morphoSem[i]:

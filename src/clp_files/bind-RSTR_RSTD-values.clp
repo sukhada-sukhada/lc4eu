@@ -164,7 +164,7 @@
 (not (MRS_info ?rel1 ?id1 neg ?lbl1 $?v))
 (not (id-causative ?id yes))
 (not (id-stative ?id1 yes))
-(not (id-double_causative	?id	yes))
+(not (id-doublecausative	?id	yes))
 (not (rel_name-ids	rpk	?id	?kri_id))
 ;(not (rel_name-ids	krvn	?id	?kri_id))
 (not (rel_name-ids	rsk	?id	?kri_id))
@@ -230,7 +230,7 @@
 
 ;Restrictor for LTOP Restrictor-Restricted default value double causative
 (defrule LTOP-rstdd
-(id-double_causative	?id	yes)
+(id-doublecausative	?id	yes)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id1 _ask_v_1 ?lbl ?arg0 $?vars)
 (test (eq  (+ ?id 200) ?id1))
 =>
@@ -251,7 +251,7 @@
 
 ;Restrictor for  double-causative
 (defrule LTOP-rstdda
-(id-double_causative	?id	yes)
+(id-doublecausative	?id	yes)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id2 _ask_v_1 ?lbl1 ?arg10 ?arg20 ?arg30 ?arg40)
 (MRS_info ?rel1  ?id  ?mrsV ?lbl ?arg0 ?arg1 ?arg2 $?var)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 _make_v_cause ?lbl2 ?arg02 ?arg12 ?arg22)
@@ -482,7 +482,8 @@
 
 ;Restrictor for LTOP Restrictor-Restricted default value deictic
 (defrule LTOP-rstdeic
-(rel_name-ids deic ?id1    ?id)
+(id-concept_label	?id	wyax)
+(or (id-proximal	?id	yes) (id-distal	?id	yes))
 (MRS_info id-MRS_concept-LBL-ARG0 ?id2 generic_entity ?lbl1 ?ARG01)
 (MRS_info ?rel1 ?id _this_q_dem|_that_q_dem ?lbl ?ARG0 ?ARG1 ?ARG2)
 =>

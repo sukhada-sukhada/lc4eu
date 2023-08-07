@@ -7,7 +7,7 @@
 (defrule tense
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
-(not (id-double_causative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
+(not (id-doublecausative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
 (not (id-causative	?id	yes)) ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 (not (id-stative	?id	yes))
 (not (id-concept_label       ?v   hE_1|WA_1))
@@ -23,7 +23,7 @@
 ;example:-mAz ne rAma se bacce ko KAnA KilavAyA
 ;solution:-The mother asked Rama to make the child eat food.
 (defrule tensedc
-(id-double_causative	?id	yes)
+(id-doublecausative	?id	yes)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?kri ?mrs ?l ?a0 $?va)
 (test (eq ?kri (+ ?id 200)))
@@ -109,7 +109,7 @@
 (id-concept_label       ?v   hE_1|WA_1)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
-(not (id-double_causative	?id	yes))
+(not (id-doublecausative	?id	yes))
 (not (modified_tensexs ?id))
 =>
 (assert (modified_tensexs ?id))
@@ -179,7 +179,7 @@
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id1 _in_p ?l ?a0 $?va)
 (not (modified_tensexsti ?id1))
-(not (id-double_causative	?id	yes))
+(not (id-doublecausative	?id	yes))
 (test (eq ?id1 (+ ?id 1)))
 (not (rel_name-ids   k1s       ?v  ?id2))
 =>
