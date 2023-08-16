@@ -15760,7 +15760,7 @@
 (MRSc-FVs _prize_n_for LBL: h* ARG0: x* ARG1: i*)
 (MRSc-FVs _prize_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
 (MRSc-FVs _probability_n_of LBL: h* ARG0: x* ARG1: i*)
-(MRSc-FVs _probable_a_1 LBL: h* ARG0: e* ARG1: x*)
+(MRSc-FVs _probable_a_1 LBL: h* ARG0: e* ARG1: h*)
 (MRSc-FVs _probandum/NN_u_unknown LBL: h* ARG0: x*)
 (MRSc-FVs _probationer/NN_u_unknown LBL: h* ARG0: x*)
 (MRSc-FVs _probation/NN_u_unknown LBL: h* ARG0: x*)

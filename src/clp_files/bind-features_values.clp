@@ -2367,4 +2367,60 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values generic_Entity id-MRS_concept-LBL-ARG0-ARG1-CARG "?id1" "?card" "?lbll" "?arg02" "?arg00" "?val")"crlf)
 )
 
+;Rule for binding with the nominalized verb with the nominalization and the udef_q with the nominalization.
+;#billi kA pICA karanA purAnA hE. 
+(defrule nominalization
+(declare (salience 100))
+(id-concept_label	?nominalization	?mrsverb)
+(rel_name-ids	k1	?mainverb	?nominalization)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?nominalized nominalization ?lbl ?arg0 ?arg1)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?nominalization ?mrscon ?lbl1 ?arg01 ?arg011 ?arg02)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udef udef_q ?lblll ?arg000 ?rstr ?body)
+=>
+(retract ?f1)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?nominalized" nominalization "?lbl" "?arg0" "?lbl1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values nominalization id-MRS_concept-LBL-ARG0-ARG1 "?nominalized" nominalization "?lbl" "?arg0" "?lbl1")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q "?lblll" "?arg0" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values nominalization id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q "?lblll" "?arg0" "?rstr" "?body")"crlf)
+)
+
+;Rule for binding with the nominalization with the noun. 
+;#billi kA pICA karanA purAnA hE. 
+(defrule nominalized
+(rel_name-ids	k1	?mainverb	?nominalization)
+(rel_name-ids	?rel	?nominalization	?noun)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?nominalized nominalization ?lbl ?arg0 ?arg1)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?nominalization ?mrscon ?lbl1 ?arg01 ?arg011 ?arg02)
+(MRS_info id-MRS_concept-LBL-ARG0 ?noun ?nounmrs ?lblb ?arg0000)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?nominalization" "?mrscon" "?lbl1" "?arg01" "?arg011" "?arg0000")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values nominalized id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?nominalization" "?mrscon" "?lbl1" "?arg01" "?arg011" "?arg0000")"crlf)
+)
+
+;#billi kA pICA karanA purAnA hE. 
+(defrule nominalized-adjective
+(rel_name-ids	k1	?mainverb	?nominalization)
+(rel_name-ids	k1s	?mainverb	?adjective)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?nominalized nominalization ?lbl ?arg0 ?arg1)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adjective ?adj ?lblb ?arg0000 ?arg111)
+(test (neq (str-index _a_ ?adj) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?adjective" "?adj" "?lblb" "?arg0000" "?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values nominalized-adjective id-MRS_concept-LBL-ARG0-ARG1 "?adjective" "?adj" "?lblb" "?arg0000" "?arg0")"crlf)
+)
+
+;Rule for creating TAM for the nominalized verb.
+;#billi kA pICA karanA purAnA hE. 
+(defrule nominalization-tam
+(declare (salience 100))
+(rel_name-ids	k1	?mainverb	?nominalization)
+(rel_name-ids	?rel	?nominalization	?noun)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?nominalized nominalization ?lbl ?arg0 ?arg1)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?nominalization ?mrscon ?lbl1 ?arg01 ?arg011 ?arg02)
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?nominalization " prop untensed indicative + - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values nominalization-tam id-SF-TENSE-MOOD-PROG-PERF "?nominalization " prop untensed indicative + - )"crlf)
+)
 

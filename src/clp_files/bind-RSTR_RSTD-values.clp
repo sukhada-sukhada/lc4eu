@@ -968,12 +968,29 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values exclusive-definite  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
 )
 
+;Rule for creating binding with certain word with the verb of the sentence. 
+;Rama certainly will come.
 (defrule assertion-verb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _certain_a_1 ?lbl ?arg0 ?arg1)
 (id-assertion  ?id2  yes)
-?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
+?f1<-(MRS_info ?rel2 ?id3 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 (test (eq (+ ?id2 1000) ?id)) 
+=>
+(retract  ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values assertion-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values assertion-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+
+;Rule for creating binding with probable word with the verb of the sentence when vkvn relation exists. 
+;The dog probably barked.
+(defrule probable-verb
+(rel_name-ids	vkvn	?verb	?probable)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?probable _probable_a_1 ?lbl ?arg0 ?arg1)
+?f1<-(MRS_info ?rel2 ?verb ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (retract  ?f ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)

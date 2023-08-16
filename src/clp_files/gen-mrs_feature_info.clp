@@ -424,20 +424,6 @@
 (printout ?*mrs-dbug* "(rule-rel-values k1-absent-rsk MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
 )
 
-;Rule for changing ARG1 value of nominalized verb into i value.
-(defrule arg2_change_h
-(id-concept_label	?verb	?hinconcept)
-(rel_name-ids	k1	?kriya	?verb)
-(MRS_info  id-MRS_concept ?nominalized  nominalization)
-?f<-(MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: ?arg2)
-(test (neq (str-index _v_ ?mrscon) FALSE))
-(test (eq  (+ ?verb 200) ?nominalized))
-=>
-(bind ?a2 (str-cat "h" (sub-string 2 (str-length ?arg2) ?arg2)))
-(printout ?*mrs-fp* "(MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: "?a2")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values arg2_change_h MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: "?a2")"crlf)
-)
-
 (defrule arg2change_not_required
 (declare (salience 300))
 (id-concept_label	?verb	?hinconcept)
@@ -451,3 +437,5 @@
 (assert (verb_bind_notrequired ?mrscon))
 (printout ?*mrs-dbug* "(rule-rel-values  arg2change_not_required verb_bind_notrequired "?mrscon")"crlf)
 )
+
+

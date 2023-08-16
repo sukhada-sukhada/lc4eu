@@ -1,7 +1,7 @@
 #mEMne usase eka praSna pUCA.
 speaker, wyax, eka_1, praSna_1, pUCa_3-yA_1
 1,2,3,4,5
-anim male,anim male,,,
+anim male,anim male,numex,,
 sg,sg,,sg,
 5:k1,5:k2g,4:card,5:k2,0:main
 ,,,,

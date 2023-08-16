@@ -148,3 +148,9 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 3. Created dictionary for numbers in Hindi for mapping. 
 4. Updated log-history
 
+16/08/2023
+1. Added 433, 434, 435 USRs.
+2. Modified verified USRs about numex tag according to the version USR_GUIDELINES - V 4.1 and CLIPS rules accordingly for USR to English generation.
+3. Handled vkvn, assertion, nominalization constructions. 
+4. Updated log-history
+
