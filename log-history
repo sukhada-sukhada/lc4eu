@@ -154,7 +154,10 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 3. Handled vkvn, assertion, nominalization constructions. 
 4. Updated log-history
 
-22/08/2022
+22/08/2023
 1. Handled discourse connectives- Ora, yA, kinwu and adding 436, 437, 438, 439, 440, 441, 442, 443, 444, and 445 USRs.
 2. Written CLIPS rules accordingly for USR to English generation.
 3. updated log-history
+
+22/08/2023
+1. Updated index and verified_out.
