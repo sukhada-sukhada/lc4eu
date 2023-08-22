@@ -120,8 +120,12 @@
 
 ;Restrictor for LTOP Restrictor-Restricted when neg is present
 (defrule LTOP-neg-rstd
+(rel_name-ids neg ?x    ?id)
 (MRS_info ?rel	?id neg ?lbl $?vars)
 (not (Restr-Restricted-fact-generated))
+(not (rel_name-ids samuccaya ?Id	?x))
+(not (rel_name-ids anyawra ?Id	?x))
+(not (rel_name-ids viroXi ?Id	?x))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-neg-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
@@ -175,6 +179,9 @@
 (not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
 (not(rel_name-ids vAkya_vn ?id_1 ?id_2))
 (not (ltop_bind_notrequired ?kri_id))
+(not (rel_name-ids samuccaya ?kri_id	?id))
+(not (rel_name-ids anyawra ?kri_id	?id))
+(not (rel_name-ids viroXi ?kri_id	?id))
 =>
         (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf) 
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
@@ -539,6 +546,9 @@
 ?f<-(MRS_info ?rel1 ?negId neg ?lbl ?  ?ARG1)
 ?f1<-(MRS_info ?rel3 ?m ?verbORprep ?V_lbl  ?V_A0  ?V_A1 $?vars)
 (test (or (neq (str-index _v_ ?verbORprep) FALSE) (neq (str-index _p ?verbORprep) FALSE) ) )
+(not (rel_name-ids samuccaya ?id	?x))
+(not (rel_name-ids anyawra ?id	?x))
+(not (rel_name-ids viroXi ?id	?x))
 =>
 (retract ?f ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted  h0 " ?lbl")"crlf)
@@ -1013,3 +1023,147 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values verb-preposition Restr-Restricted "?arg3" "?lbl1")"crlf)
 )
 
+;Rule for creating binding LTOP with the lbl of _and_c and R_HNDL value with the lbl of the verb.
+;And he went. Ora vaha gayA.
+(defrule samuccaya-LTOP-verb
+(rel_name-ids samuccaya ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _and_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+(not (rel_name-ids neg ?verb	?neg))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-verb Restr-Restricted "?rhndl" "?lblb")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _and_c and R_HNDL value with the lbl of the adjective.
+;And he is intelligent. #Ora vaha buxXimAna hE.
+(defrule samuccaya-LTOP-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids samuccaya ?previousid	?verb)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _and_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-copula Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-copula Restr-Restricted "?rhndl" "?lblb")"crlf)
+)
+
+;Creating qeq binding with h0 with lbl of the _and_c and R_HNDL of _and_c with the lbl of neg and ARG1 value of neg with the verb of the sentence.
+;And he didn't finish the work.
+(defrule samuccaya-LTOP-verb-neg
+(rel_name-ids samuccaya ?previousid	?verb)
+(rel_name-ids neg ?verb	?neg)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _and_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?neg neg ?lbb ?a ?h)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-verb-neg Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lbb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-verb-neg Restr-Restricted "?rhndl" "?lbb")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?h" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-verb-neg Restr-Restricted "?h" "?lblb")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _or_c and R_HNDL value with the lbl of the verb.
+;Or he is intelligent. #yA vaha buxXimAna hE.
+(defrule anyawra-LTOP-verb
+(rel_name-ids anyawra ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?or _or_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?or))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values anyawra-LTOP-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values anyawra-LTOP-verb Restr-Restricted "?rhndl" "?lblb")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _or_c and R_HNDL value with the lbl of the adjective.
+;Or he is intelligent. #yA vaha buxXimAna hE.
+(defrule or-LTOP-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids anyawra ?previousid	?verb)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _or_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values or-LTOP-copula Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values or-LTOP-copula Restr-Restricted "?rhndl" "?lblb")"crlf)
+)
+
+;Creating qeq binding with h0 with lbl of the _or_c and R_HNDL of _and_c with the lbl of neg and ARG1 value of neg with the verb of the sentence.
+(defrule or-LTOP-verb-neg
+(rel_name-ids anyawra ?previousid	?verb)
+(rel_name-ids neg ?verb	?neg)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _or_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?neg neg ?lbb ?a ?h)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values or-LTOP-verb-neg Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lbb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values or-LTOP-verb-neg Restr-Restricted "?rhndl" "?lbb")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?h" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values or-LTOP-verb-neg Restr-Restricted "?h" "?lblb")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _but_c and R_HNDL value with the lbl of the verb.
+; but He didn't eat food.
+(defrule viroXi-LTOP-verb
+(rel_name-ids viroXi ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?but _but_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?but))
+(not (rel_name-ids neg ?verb	?neg))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values viroXi-LTOP-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values viroXi-LTOP-verb Restr-Restricted "?rhndl" "?lblb")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _but_c and R_HNDL value with the lbl of the adjective.
+;But he is intelligent. #kinwu vaha buxXimAna hE.
+(defrule but-LTOP-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids viroXi ?previousid	?verb)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _but_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values but-LTOP-copula Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values but-LTOP-copula Restr-Restricted "?rhndl" "?lblb")"crlf)
+)
+
+Rule for binding h0 value with lbl of but_c rhndl value of but_c with lbl of neg and arg1 value of neg with lbl of verb. 
+; But he didn't eat food. kinwu vaha KAnA nahIM KAyA.
+(defrule viroXi-LTOP-verb-neg
+(rel_name-ids viroXi ?previousid	?verb)
+(rel_name-ids neg ?verb	?neg)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?but _but_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?neg neg ?lbb ?a ?h)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?but))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values viroXi-LTOP-verb-neg Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lbb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values viroXi-LTOP-verb-neg Restr-Restricted "?rhndl" "?lbb")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?h" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values viroXi-LTOP-verb-neg Restr-Restricted "?h" "?lblb")"crlf)
+)

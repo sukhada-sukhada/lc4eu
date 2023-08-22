@@ -438,4 +438,44 @@
 (printout ?*mrs-dbug* "(rule-rel-values  arg2change_not_required verb_bind_notrequired "?mrscon")"crlf)
 )
 
+;Rule for creating L_HNDL and R_HNDL values for the _and_c predicate when the samuccaya relation exists in the USR.
+;and He went.
+(defrule samuccaya_and_handles
+(declare (salience 5000))
+?f<-(rel_name-ids samuccaya ?previousid	?verb)
+(MRSc-FVs _and_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
+(MRS_info id-MRS_concept ?and ?mrs)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(retract ?f) 
+(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values samuccaya_and_handles MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
+)
 
+;Rule for creating L_HNDL and R_HNDL values for the _or_c predicate when the anyawra relation exists in the USR.
+;or Mohana will go.
+(defrule anyawra_or_handles
+(declare (salience 5000))
+?f<-(rel_name-ids anyawra ?previousid	?verb)
+(MRSc-FVs _or_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
+(MRS_info id-MRS_concept ?or ?mrs)
+(test (eq  (+ ?verb 1000) ?or))
+=>
+(retract ?f) 
+(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values anyawra_or_handles MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
+)
+
+;Rule for creating L_HNDL and R_HNDL values for the _but_c predicate when the viroxi relation exists in the USR.
+;But he didn't eat food.
+(defrule viroXi_but_handles
+(declare (salience 5000))
+?f<-(rel_name-ids viroXi ?previousid	?verb)
+(MRSc-FVs _but_c LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e*)
+(MRS_info id-MRS_concept ?but ?mrs)
+(test (eq  (+ ?verb 1000) ?but))
+=>
+(retract ?f) 
+(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values viroXi_or_handles MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
+)

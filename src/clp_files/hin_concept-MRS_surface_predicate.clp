@@ -462,6 +462,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values respect-masculine id-MRS_concept "(+ ?id 5)" _mister_n_1 )"crlf)
 )
 
+;Rule to generate _definite_a_1 for the emphasis discourse particle.
+;#rAma ayegA hI.
 (defrule emphasis
 (id-emphasis  ?id  yes)
 =>
@@ -469,6 +471,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values emphasis id-MRS_concept "(+ ?id 1000)" _definite_a_1)"crlf)
 )
 
+;Rule to generate _only_a_1 for the exclusive discourse particle.
+;SIlA hI apane piwA ko KilAwI hE.
 (defrule exclusive
 (id-exclusive  ?id  yes)
 =>
@@ -476,7 +480,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values exclusive id-MRS_concept "(+ ?id 1000)" _only_a_1)"crlf)
 )
 
-
+;Rule to generate _certain_a_1 for the assertion discourse particle.
+;#rAma wo ayegA.
 (defrule assertion
 (id-assertion  ?id  yes)
 =>
@@ -484,6 +489,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values emphasis id-MRS_concept "(+ ?id 1000)" _certain_a_1)"crlf)
 )
 
+;Rule for generating this_q_dem for the demonstrative other than proximal and distal words. 
+;This is a book.
 (defrule this_q_dem
 (id-concept_label	?id	wyax)
 (rel_name-ids	dem	?kri	?id)
@@ -494,6 +501,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "?id" _this_q_dem)"crlf)
 )
 
+;Rule for generating this_q_dem for proximal relation.
+;This book is beautiful.
 (defrule this_q_dem_proximal
 (id-concept_label	?id	wyax)
 (id-proximal	?id	yes)
@@ -502,11 +511,39 @@
 (printout ?*mrs-dbug* "(rule-rel-values this_q_dem_proximal id-MRS_concept "?id" _this_q_dem)"crlf)
 )
 
-
+;Rule for generating that_q_dem for distal relation.
+;That book is beautiful.
 (defrule that_q_dem_distal
 (id-concept_label	?id	wyax)
 (id-distal	?id	yes)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _that_q_dem)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values that_q_dem_distal id-MRS_concept "?id" _that_q_dem)"crlf)
+)
+
+;Rule for generating _and_c for the samuccaya relation in the discourse row.
+;and He went.
+(defrule samuccaya_and
+(rel_name-ids samuccaya ?previousid	?verb)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _and_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  samuccaya_and  id-MRS_concept "(+ ?verb 100) "  _and_c)"crlf)
+)
+
+;Rule for generating _or_c for the anyawra relation in the discourse row.
+;or Mohana will go.
+(defrule anyawra_or
+(rel_name-ids anyawra ?previousid	?verb)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _or_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  anyawra_or  id-MRS_concept "(+ ?verb 100) "  _or_c)"crlf)
+)
+
+;Rule for generating _but_c for the viroXI relation in the discourse row.
+;but he didn't eat food.
+(defrule viroXi_but
+(rel_name-ids viroXi ?previousid	?verb)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _but_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  viroXi_but  id-MRS_concept "(+ ?verb 100) "  _but_c)"crlf)
 )

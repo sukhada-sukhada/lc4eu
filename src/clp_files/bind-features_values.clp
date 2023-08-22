@@ -1050,6 +1050,9 @@ else
 (not (id-causative ?id yes)) ;#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 (not (id-doublecausative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
 (not(rel_name-ids vAkya_vn ?id1 ?id2)) 
+(not (rel_name-ids samuccaya ?id	?kri_id))
+(not (rel_name-ids anyawra ?id	?kri_id))
+(not (rel_name-ids viroXi ?id	?kri_id))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -1409,6 +1412,9 @@ then
 (not (LTOP_value_geneated_4_construction))
 (not (LTOP_value_geneated_4_disjunct_construction))
 (test (neq (str-index _a_ ?mrsCon) FALSE)) 
+(not (rel_name-ids samuccaya ?non	?id))
+(not (rel_name-ids anyawra ?non	?id))
+(not (rel_name-ids viroXi ?non	?id))
 =>
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
     (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
@@ -2398,7 +2404,7 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values nominalized id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?nominalization" "?mrscon" "?lbl1" "?arg01" "?arg011" "?arg0000")"crlf)
 )
 
-;#billi kA pICA karanA purAnA hE. 
+;#billI kA pICA karanA purAnA hE. 
 (defrule nominalized-adjective
 (rel_name-ids	k1	?mainverb	?nominalization)
 (rel_name-ids	k1s	?mainverb	?adjective)
@@ -2424,3 +2430,114 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values nominalization-tam id-SF-TENSE-MOOD-PROG-PERF "?nominalization " prop untensed indicative + - )"crlf)
 )
 
+;Rule for creating the binding with samuccaya _and_c with the verb of the sentence. 
+;Rule for changing _and_c R_INDEX with arg0 of the verb and R_HNDL with LBL of verb
+;And he is intelligent. #Ora vaha buxXimAna hE.
+(defrule samuccaya_and-bind-verb
+(rel_name-ids samuccaya ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _and_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _and_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values samuccaya_and-bind-verb id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _and_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+)
+
+;Rule for creating LTOP value with the _and_c arg0 value when samuccaya relation exists.
+;And he is intelligent. #Ora vaha buxXimAna hE.
+(defrule samuccaya-LTOP
+(rel_name-ids samuccaya ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _and_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values samuccaya-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _and_c and R_HNDL value with the lbl of the adjective.
+;And he is intelligent. #Ora vaha buxXimAna hE.
+(defrule samuccaya_and-bind-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids samuccaya ?previousid	?verb)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _and_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _and_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values samuccaya_and-bind-copula id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _and_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+)
+
+;Rule for creating the binding with anyawra _or_c with the verb of the sentence.
+;Rule for changing _or_c R_INDEX with arg0 of the verb and R_HNDL with LBL of verb 
+;Or he is intelligent. #yA vaha buxXimAna hE.
+(defrule anyawra_or-bind-verb
+(rel_name-ids anyawra ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?or _or_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?or))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?or" _or_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values anyawra_or-bind-verb id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?or" _or_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+)
+
+;Rule for creating LTOP value with the _or_c arg0 value when anyawra relation exists.
+;or He is intelligent. #yA vaha buxXimAna hE.
+(defrule anyawra-LTOP
+(rel_name-ids anyawra ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?or _or_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values anyawra-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _and_c and R_HNDL value with the lbl of the adjective.
+;or He is intelligent. #yA vaha buxXimAna hE.
+(defrule or_and-bind-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids anyawra ?previousid	?verb)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _or_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _or_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values or_and-bind-copula id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _and_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+)
+
+;Rule for changing _but_c R_INDEX with arg0 of the verb and R_HNDL with LBL of verb
+;Rule for creating the binding with viroXi _but_c with the verb of the sentence. 
+;But he is intelligent. #kinwu vaha buxXimAna hE.
+(defrule viroXi_but-bind-verb
+(rel_name-ids viroXi ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?but _but_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?but))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?but" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values viroXi_but-bind-verb id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?but" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+)
+
+;Rule for creating LTOP value with the _but_c arg0 value when viroXi relation exists.
+;But he is intelligent. #kinwu vaha buxXimAna hE.
+(defrule viroXi-LTOP
+(rel_name-ids viroXi ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?but _but_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values viroXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+
+;Rule for creating binding LTOP with the lbl of _and_c and R_HNDL value with the lbl of the adjective.
+;But he is intelligent. #kinwu vaha buxXimAna hE.
+(defrule but_and-bind-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids viroXi ?previousid	?verb)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _but_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values but_and-bind-copula id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+)
