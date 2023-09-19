@@ -1,4 +1,5 @@
-from common import *
+# from common import *
+from common_v2 import *
 HAS_CONSTRUCTION_DATA = False
 HAS_SPKVIEW_DATA = False
 ADD_GNP_DATA = False
