@@ -1,10 +1,10 @@
-#सीता घर नहीं गयी.
-sIwA,Gara_1,nahIM_1,jA_1-yA_1
-1,2,3,4
-per,,,
-[f sg a],[- sg a],,
-4:k1,4:k2p,4:neg,0:main
-,,,
-,,,
-,,,
-negative
+#ladakA kiwAbeM paDa rahA hE.
+ladakA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3
+anim male,,
+sg,pl,
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+affirmative

@@ -1,10 +1,12 @@
-#क्या राम के दो बेटेे थे?
-rAma,xo_1,betA_1,hE_2-past
-1,2,3,4
-per,,,
-[m sg a],,[m pl a],
-3:rhh,3:card,4:k1,0:main
-,,,
-,,,
-,,,
-yn_interrogative
+#rAma rojZa eka seba KAwA hE.
+rAma,rojZa_3,eka_1,seba_1, KA_1-wA_hE_1
+1,2,3,4,5
+per male,,numex,,
+sg,,,sg,
+5:k1,5:krvn,4:card,5:k2,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+
+

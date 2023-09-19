@@ -1,10 +1,11 @@
-#राम के पास दो कुत्ते थे.
-rAma,xo_1,kuwwA_1,hE_1-past
-1,2,3,4
-per,,,,
-[m sg a],,[- pl a],
-3:rsm,3:card,4:k1,0:main
-,,,
-,,,
-,,,
+#rAma ko xuHKa hE.
+rAma,xuHKa_4,hE_1-pres
+1,2,3
+per male,abs,
+sg,sg,
+3:k4a,3:k1,0:main
+,,
+,,
+,,
 affirmative
+

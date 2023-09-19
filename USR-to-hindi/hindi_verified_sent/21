@@ -1,10 +1,11 @@
-#आसमान में सितारे चमक चुके थे.
-AsamAna_1,siwArA_1,camaka_1-0_cukA_WA_1
-1,2,3
-,,
-[m sg a],[- pl a],
-3:k7p,3:k1,0:main
-,,
-,,
-,,
+#mEMne acCI kiwAba paDI hE.
+speaker,acCA_1,kiwAba_1,paDa_1-yA_hE_1
+1,2,3,4
+anim male,,,
+sg,,sg,
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
 affirmative
+

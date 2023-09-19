@@ -1,9 +1,9 @@
-#मैं फल खा रही हूँ.
-speaker,Pala_1,KA_1-0_rahA_hE_1
+#rAma xuHKI hE. 
+rAma,xuHKI_2,hE_1-pres
 1,2,3
-anim,,
-[- sg u],[- sg a],
-3:k1,3:k2,0:main
+per,abs,
+sg,,
+3:k1,3:k1s,0:main
 ,,
 ,,
 ,,

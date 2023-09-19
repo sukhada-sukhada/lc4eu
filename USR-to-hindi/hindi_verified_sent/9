@@ -1,10 +1,10 @@
-#सीता ने मोहन को देखा.
-sIwA,mohana,xeKa_1-yA_1
-1,2,3
-per,per,
-[f sg a],[m sg a],
-3:k1,3:k2,0:main
-,,
-,,
-,,
-affirmative
+#kyA Apa jA rahe hEM?
+addressee,jA_1-0_rahA_hE_1
+1,2
+anim male,
+sg,
+2:k1,0:main
+,
+respect,
+,
+yn_interrogative

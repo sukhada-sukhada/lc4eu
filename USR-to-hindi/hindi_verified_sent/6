@@ -1,10 +1,10 @@
-#क्या ये राम का चित्र नहीं है?
-yaha,rAma,ciwra_1,nahIM_1,hE_1-pres
-1,2,3,4,5
-,per,,,
-,[m sg a],[m sg a],,
-5:k1,3:r6,5:k1s,5:neg,0:main
-3:deic,,,,
-,,,,
-,,,,
-yn_interrogative_negative
+#betoM ne Kewa meM bIja bo xiyA.
+betA_1,Kewa_1,bIja_1,bo_3-yA_1
+1,2,3,4
+anim male,,,
+pl,sg,sg,
+4:k1,4:k7p,4:k2,0:main
+,,,
+def,def,def,
+,,,
+affirmative
