@@ -161,3 +161,7 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 
 22/08/2023
 1. Updated index and verified_out.
+
+19/09/2023
+1. Added common_v2 for generating USRs of new format
+2. Updated USR-NLG_Hin.py and constant.py
