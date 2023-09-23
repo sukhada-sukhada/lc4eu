@@ -547,3 +547,21 @@
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _but_c)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values  viroXi_but  id-MRS_concept "(+ ?verb 100) "  _but_c)"crlf)
 )
+
+;Rule for generating _then_a_1 for the AvaSyakwA-pariNAma relation in the discourse row.
+;wo meM jAUMgA. Then I will go.
+(defrule AvaSyakwA-pariNAma_but
+(rel_name-ids AvaSyakwA-pariNAma|samAnakAla ?previousid	?verb)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _then_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakwA-pariNAma_but  id-MRS_concept "(+ ?verb 100) "  _then_a_1)"crlf)
+)
+
+;Rule for generating _because_x for the kArya-kAraNa relation in the discourse row.
+;Because, he has to go home. #kyoMki vo Gara jAnA hE.
+(defrule kArya-kAraNa_because
+(rel_name-ids kArya-kAraNa ?previousid	?verb)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _because_x)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  kArya-kAraNa_because  id-MRS_concept "(+ ?verb 100) "  _because_x)"crlf)
+)

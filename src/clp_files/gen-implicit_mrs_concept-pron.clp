@@ -15,8 +15,8 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" pronoun_q )"crlf)
 (printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "(+ ?id 10)" pronoun_q )"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " pron )"crlf)
-(printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "?id " pron )"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " pron)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "?id " pron)"crlf)
 )
 
 ; Generates new facts (MRS_info id-MRS_concept ID pron) and (MRS_info id-MRS_concept ID _pronoun) for imperative sentences
@@ -28,8 +28,8 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pronoun_q)"crlf) 
 (printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000  pronoun_q )"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pron )"crlf)
-(printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000 pron )"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pron)"crlf)
+(printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000 pron)"crlf)
 )
 
 ;(rel_name-ids	r6	30000	20000)
@@ -88,7 +88,7 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?coref 10)" pronoun_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "(+ ?coref 10)" pronoun_q )"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?coref " pron )"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?coref " pron)"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "?coref " pron)"crlf)
 )
 

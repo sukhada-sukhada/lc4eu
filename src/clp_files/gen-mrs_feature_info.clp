@@ -479,3 +479,18 @@
 (assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
    (printout ?*mrs-dbug* "(rule-rel-values viroXi_or_handles MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
 )
+
+;Rule for changing x* into u* for the unknown abstract predicate when kArya-kAraNa relation. 
+;Because he has to go home. kyoMki vo Gara jAnA hE.
+(defrule kArya-kAraNa-unknown
+(declare (salience 100))
+(MRS_info id-MRS_concept ?unknn  ?mrs)
+?f<-(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(MRSc-FVs ?mrs LBL: h* ARG0: e* ARG: x*)
+(test (eq  (+ ?verb 1) ?unknn))
+=>
+(retract ?f) 
+(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* ARG: u*))
+(printout ?*mrs-dbug* "(rule-rel-values kArya-kAraNa-unknown MRSc-FVs "?mrs" LBL: h* ARG0: e* ARG: u*)" crlf)
+)
+

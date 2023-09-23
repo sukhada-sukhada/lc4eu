@@ -847,6 +847,7 @@ else
 (kriyA-TAM ?kri ?tam)
 (sentence_type  affirmative|pass-affirmative)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type ?tam ?e_tam ?perf ?prog ?tense ?typ)
+(not (rel_name-ids kArya-kAraNa ?previousid	?kri))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf  ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -1053,6 +1054,7 @@ else
 (not (rel_name-ids samuccaya ?id	?kri_id))
 (not (rel_name-ids anyawra ?id	?kri_id))
 (not (rel_name-ids viroXi ?id	?kri_id))
+(not (rel_name-ids kArya-kAraNa ?id	?kri_id))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -1075,6 +1077,7 @@ then
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
 (sentence_type  affirmative|interrogative|yn_interrogative|negative)
 (test (or (neq (str-index _v_modal ?mrs_modal) FALSE) (neq (str-index _v_qmodal ?mrs_modal) FALSE)));_used+to_v_qmodal
+(not (rel_name-ids kArya-kAraNa ?previousid	?kri))
 =>
 (assert (asserted_LTOP-INDEX-for-modal))
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
@@ -2541,3 +2544,39 @@ else
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values but_and-bind-copula id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
 )
+
+
+;Rule for generating LTOP and INDEX values when kArya-kAraNa relation exists. INDEX value will take the ARG0 of unknown. 
+;Because, he has to go home. #kyoMki vo Gara jAnA hE.
+(defrule kArya-kAraNa-LTOP
+(rel_name-ids kArya-kAraNa ?previousid	?verb)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG ?verbb unknown ?id ?arg0 ?arg)
+(test (eq  (+ ?verb 1) ?verbb))
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kArya-kAraNa-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+;Rule for generating TAM for kArya-kAraNa relation with the main verb. 
+;Because he has to go home. kyoMki vo Gara jAnA hE.
+(defrule kArya-kAraNa-TAM
+(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(id-hin_concept-MRS_concept ?verb ?hin ?mrscon)
+(test (neq (str-index _v_ ?mrscon) FALSE))
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?verb " prop-or-ques untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kArya-kAraNa-TAM id-SF-TENSE-MOOD-PROG-PERF "?verb " prop-or-ques untensed indicative - - )"crlf)
+)
+
+;Rule for generating TAM for kArya-kAraNa relation with the modal verb. 
+;Because he has to go home. kyoMki vo Gara jAnA hE.
+(defrule kArya-kAraNa-TAM-modal
+(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modal ?mrscon ?lbl ?arg0 ?arg1)
+(test (neq (str-index _v_qmodal ?mrscon) FALSE))
+(test (eq  (+ ?verb 100) ?modal))
+=>
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?modal " prop pres indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kArya-kAraNa-TAM-modal id-SF-TENSE-MOOD-PROG-PERF "?modal " prop pres indicative - - )"crlf)
+)
+

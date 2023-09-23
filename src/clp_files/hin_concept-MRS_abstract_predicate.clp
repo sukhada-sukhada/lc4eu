@@ -252,8 +252,6 @@
 ;#rAma ne skUla jAkara KAnA KAyA.
 (defrule mrs_subord
 (rel_name-ids	rpk	?id	?kri)
-;(id-hin_concept-MRS_concept ?id ?hinconcept ?engcon) 	
-;(test (eq (str-index _n_ ?engcon) FALSE))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord id-MRS_concept -20000 subord)"crlf)
@@ -619,3 +617,16 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_generic_Entity id-MRS_concept "(+ ?id1 10)" udef_q)"crlf)
 )
+
+;Rule for generating unknown for the kArya-kAraNa relation in the discourse row.
+;Because, he has to go home. #kyoMki vo Gara jAnA hE.
+(defrule unknown
+(rel_name-ids kArya-kAraNa ?previousid	?verb)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?verb 1) "  unknown)"crlf)
+(printout ?*defdbug* "(rule-rel-values  unknown id-MRS_concept "(+ ?verb 1) "  unknown)"crlf)
+)
+
+
+
+
