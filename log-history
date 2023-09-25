@@ -174,3 +174,6 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 1. Added 446, 447, 448 USRs.
 2. AvaSyakwA-pariNAma, samAnakAla, kArya-kAraNa Relations are handled according to the version USR_GUIDELINES - V 4.1 and CLIPS rules accordingly for USR to English generation.
 3. Updated log-history
+
+25/09/2023
+1. Added new USRs from 24 to 68. 
