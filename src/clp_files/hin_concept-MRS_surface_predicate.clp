@@ -305,11 +305,11 @@
 ;This rules creates _also_a_1 when emphatic exists in the USR
 ;101 verified sentence #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
 ;113 verified sentence #sUrya camakawA BI hE.
-(defrule inclusive
-(id-inclusive  ?id  yes)
+(defrule BI_1
+(id-BI_1  ?id  yes)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _also_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values inclusive id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values BI_1 id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
 )
 
 ;Rule for bring _before_x_h for the rblak relation. ;gAyoM ke xuhane se pahale rAma Gara gayA.
@@ -362,7 +362,9 @@
 
 ;Rule for a as a determiner : if the is not present,is not a mass noun and not plural then generate (id-MRS_Rel ?id _a_q)
 (defrule mrsCon_not
-(id-num	?id	sg)
+(cl-cEn-MRSc ?hinconcept ?ceng ?mrscon)
+(id-concept_label	?id	?hinconcept)
+(test (neq (str-index _n_ ?mrscon) FALSE))
 (not (id-def ?id yes)) ;#rAma apane piwA ke sAWa vixyAlaya gayA.
 (not (id-mass ?id yes)) ;#wuma pAnI se GadZe ko Baro.
 ;(not (id-anim ?id yes))
@@ -462,13 +464,13 @@
 (printout ?*mrs-dbug* "(rule-rel-values respect-masculine id-MRS_concept "(+ ?id 5)" _mister_n_1 )"crlf)
 )
 
-;Rule to generate _definite_a_1 for the emphasis discourse particle.
+;Rule to generate _definite_a_1 for the BI_2 discourse particle.
 ;#rAma ayegA hI.
-(defrule emphasis
-(id-emphasis  ?id  yes)
+(defrule BI_2
+(id-BI_2  ?id  yes)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _definite_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values emphasis id-MRS_concept "(+ ?id 1000)" _definite_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values BI_2 id-MRS_concept "(+ ?id 1000)" _definite_a_1)"crlf)
 )
 
 ;Rule to generate _only_a_1 for the exclusive discourse particle.
@@ -486,16 +488,18 @@
 (id-assertion  ?id  yes)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _certain_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values emphasis id-MRS_concept "(+ ?id 1000)" _certain_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values BI_2 id-MRS_concept "(+ ?id 1000)" _certain_a_1)"crlf)
 )
 
 ;Rule for generating this_q_dem for the demonstrative other than proximal and distal words. 
 ;This is a book.
 (defrule this_q_dem
 (id-concept_label	?id	wyax)
-(rel_name-ids	dem	?kri	?id)
-(not (id-proximal	?id	yes))
-(not (id-distal	?id	yes))
+(id-concept_label	?karwa	?hinconcept)
+(or (rel_name-ids	dem	?karwa	?id) (rel_name-ids	k1	?kri	?karwa) (rel_name-ids	k2	?kri	?karwa))
+(id-proximal	?id	yes)
+(not (id-num	?karwa	pl))
+(not (rel_name-ids	r6	?karwa	?id))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "?id" _this_q_dem)"crlf)
@@ -503,19 +507,24 @@
 
 ;Rule for generating this_q_dem for proximal relation.
 ;This book is beautiful.
-(defrule this_q_dem_proximal
-(id-concept_label	?id	wyax)
-(id-proximal	?id	yes)
-=>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values this_q_dem_proximal id-MRS_concept "?id" _this_q_dem)"crlf)
-)
+;(defrule this_q_dem_proximal
+;(id-concept_label	?id	wyax)
+;(id-proximal	?id	yes)
+
+;(not (rel_name-ids	dem	?kri	?id))
+;(not (id-num	?id	?n))
+;=>
+;(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
+;(printout ?*mrs-dbug* "(rule-rel-values this_q_dem_proximal id-MRS_concept "?id" _this_q_dem)"crlf)
+;)
 
 ;Rule for generating that_q_dem for distal relation.
 ;That book is beautiful.
 (defrule that_q_dem_distal
 (id-concept_label	?id	wyax)
+(or (rel_name-ids	dem	?karwa	?id) (rel_name-ids	k1	?kri	?karwa))
 (id-distal	?id	yes)
+(not (id-num	?karwa	?n))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _that_q_dem)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values that_q_dem_distal id-MRS_concept "?id" _that_q_dem)"crlf)
@@ -564,4 +573,35 @@
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _because_x)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values  kArya-kAraNa_because  id-MRS_concept "(+ ?verb 100) "  _because_x)"crlf)
+)
+
+;Rule for generating _here_a_1 for proximal relation with wyax word.
+;He comes here daily.
+(defrule here_a_1
+(id-concept_label	?id	wyax)
+(id-proximal	?id	yes)
+(rel_name-ids	k7p	?kri	?id)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _here_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values here_a_1 id-MRS_concept "?id" _here_a_1)"crlf)
+)
+
+(defrule those_q_dem_distal
+(id-concept_label	?id	wyax)
+(id-distal	?id	yes)
+(rel_name-ids dem ?v ?id)
+(id-num	?v	pl)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _those_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "?id" _those_q_dem)"crlf)
+)
+
+(defrule these_q_dem_distal
+(id-concept_label	?id	wyax)
+(id-proximal	?id	yes)
+(rel_name-ids dem ?v ?id)
+(id-num	?v	pl)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _these_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "?id" _these_q_dem)"crlf)
 )

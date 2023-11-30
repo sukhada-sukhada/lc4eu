@@ -1,11 +1,11 @@
-#rAma nalasAja nahIM hE.
-rAma,nalasAja_1,nahIM_1,hE_1-pres
+#Apa unako XyAna se xeKeMge.
+addressee,wyax,XyAna_11,xeKa_27-gA_1
 1,2,3,4
-per male,,,
-sg,sg,,
-4:k1,4:k1s,4:neg,0:main
+anim,,,
+pl,,,
+4:k1,4:k2,4:krvn,0:main
+,48.1:coref,,457.3:AvaSyakawApariNAma
+respect,distal,,
 ,,,
-,,,
-,,,
-negative
+affirmative
 

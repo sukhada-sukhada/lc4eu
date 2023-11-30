@@ -1,8 +1,8 @@
 #ladake ne KAnA nahIM KAyA.
 ladakA_1,KAnA_1,nahIM_1,KA_1-yA_1
 1,2,3,4
-anim male,mass,,
-sg,sg,,
+anim male,,,
+,,,
 4:k1,4:k2,4:neg,0:main
 ,,,
 def,,,

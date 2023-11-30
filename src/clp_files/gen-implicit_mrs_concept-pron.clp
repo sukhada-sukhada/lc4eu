@@ -40,6 +40,7 @@
 (not (id-concept_label	?r6	kisa_1))
 (not (sentence_type  interrogative))
 (not (id-concept_label	?viSeRya pICA+kara_1))
+(not (id-moy	?r6	yes))
 ;(not (construction-ids	conj	$?v1 ?viSeRya $?v))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
@@ -62,7 +63,7 @@
 (defrule mrs_dem_pron-this
 (id-concept_label	?dem	wyax)
 (id-proximal	?dem	yes)
-(not (rel_name-ids	dem	?noun	?dem))
+(rel_name-ids	k1|k2	?noun	?dem)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_dem_pron-this id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
@@ -72,7 +73,7 @@
 (defrule mrs_dem_pron-that
 (id-concept_label	?dem	wyax)
 (id-distal	?dem	yes)
-(not (rel_name-ids	dem	?noun	?dem))
+(rel_name-ids	k1	?noun	?dem)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_dem_pron-that id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
@@ -90,5 +91,16 @@
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?coref " pron)"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "?coref " pron)"crlf)
+)
+
+(defrule mrs_poss_pron_wyax
+(rel_name-ids r6 ?viSeRya ?r6)
+(id-concept_label	?r6	wyax)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_poss_pron_wyax id-MRS_concept "(+ ?viSeRya 10)" def_explicit_q)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_poss_pron_wyax id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
 )
 

@@ -91,12 +91,12 @@
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2 " " ?arg0 " "(implode$ (create$ $?vars)) ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kriyA-kriyA_viSeRaNa  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values krvnn  "?rel2 " " ?kri_vi " " ?mrsconkrivi " " ?lbl1 " " ?arg0_2" "?arg0" "(implode$ (create$ $?vars)) ")"crlf)
 )
 
 (defrule krvn
 (declare (salience 1000))
-(rel_name-ids krvn ?kri ?kri_vi) ;#aXyApaka aBI Aye hEM.
+(rel_name-ids krvn|freq ?kri ?kri_vi) ;#aXyApaka aBI Aye hEM. ;#vaha rojZa yaha AwA hE.
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
 ?f<-(MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 (not (modified_krvn ?kri_vi))
@@ -513,7 +513,7 @@
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
 (test (neq (str-index "_v_" ?v)FALSE))
 (test (or (eq ?home  _there_a_1)
-(eq ?home  _home_p)))
+(eq ?home  _home_p)(eq ?home  _here_a_1)))
 =>
 (retract ?f ?f1 ?f2 ?f3)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0" " ?arg04 " " ?arg2 ")"crlf)
@@ -534,12 +534,14 @@
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
 ?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
-?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _there_a_1 ?lbl3 ?arg03 ?arg13)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?proxdis ?lbl3 ?arg03 ?arg13)
 (rel_name-ids	AXAra-AXeya	?adhar  ?adhey)
 (MRS_info id-MRS_concept-LBL-ARG0 ?adhey ?mrs ?l ?a0)
 (not (modified loc_nonsp))
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
 ;(test (neq (str-index "_v_" ?v)FALSE))
+(test (or (eq ?proxdis  _there_a_1)
+(eq ?proxdis  _here_a_1)))
 =>
 (retract ?f ?f1 ?f2 ?f3)
 (assert (modified loc_nonsp))
@@ -550,8 +552,8 @@
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg02 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-there  id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg02 ")"crlf)
 
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg02 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v-there  id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg02 ")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " "?proxdis" "?lbl3"  "?arg03" "?arg02 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there  id-MRS_concept-LBL-ARG0-ARG1 "?id " "?proxdis" "?lbl3"  "?arg03" "?arg02 ")"crlf)
 
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-there id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
@@ -1205,6 +1207,29 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
 )
 
+;Rule for generic_entity
+(defrule generic_entity-k2
+(id-concept_label	?id1	wyax)
+(or (id-proximal	?id1	yes) (id-distal	?id1	yes))
+(MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
+?f1<-(MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 ?ARG2)
+?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
+(test (eq  (+ ?id1 10) ?id3))
+(not (modified ?ARG02))
+(test (or (neq (str-index _this_q_dem ?mrscon) FALSE)
+          (neq (str-index _that_q_dem ?mrscon) FALSE)))
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+=>
+(retract ?f1 ?f2)
+(assert (modified ?ARG02))
+
+(assert (MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 ?ARG2))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity-k2 " ?rel1 " "?id2" "?mrsCon" " ?lbl1 " " ?ARG01" " ?ARG1" " ?ARG2")"crlf)
+
+(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity-k2 " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
+)
+
 ;Rule for demonstrative adj
 (defrule dem_adj
 (rel_name-ids deic ?id1    ?id3) ;#yaha Gara hE.
@@ -1237,9 +1262,8 @@ then
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 (test (neq (sub-string (- (str-length ?mrsCon) 6) (str-length ?mrsCon) ?mrsCon) "_p_temp"))
 (not (modified_conj ?head))
-;(not (modified_implicit_conj ?head)) ;#rAma, hari Ora sIwA acCe hEM.
 (not (which_bind_notrequired ?dep))
-;(not (which_bind_notrequired_rask2 ?dep))
+;(not (id-concept_label	?head	eka_1))
 =>
 (retract ?f)
 (printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
@@ -1259,17 +1283,30 @@ then
 )
 
 ;#sUrya camakawA BI hE.
-(defrule inclusive-also-nonverb
+(defrule BI_1-also-nonverb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?a0 ?a1)
-(id-inclusive  ?id1  yes)
+(id-BI_1  ?id1  yes)
 (MRS_info ?rel ?id1 ?mrscon ?l $?v)
-(test (eq (str-index _v_ ?mrscon) FALSE))
 (test (eq (+ ?id1 1000) ?id))
+(not (rel_name-ids	rask2	?kriya	?id1))
+=>
+;(retract  ?f)
+;(bind ?arg1 (str-cat "e" (sub-string 2 (str-length ?a1) ?a1)))
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l" "?a0" " ?a1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values BI_1-also-nonverb MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l"  "?a0" " ?a1")"crlf)
+)
+;#sUrya camakawA BI hE.
+(defrule BI_1-also-nonverb
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?a0 ?a1)
+(iiiiiid-BI_1  ?id1  yes)
+(MRS_info ?rel ?id1 ?mrscon ?l $?v)
+(test (eq (+ ?id1 1000) ?id))
+(not (rel_name-ids	rask2	?kriya	?id1))
 =>
 ;(retract  ?f)
 (bind ?arg1 (str-cat "e" (sub-string 2 (str-length ?a1) ?a1)))
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l" "?a0" " ?arg1")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values inclusive-also-nonverb MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l"  "?a0" " ?arg1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values BI_1-also-nonverb MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _also_a_1 "?l"  "?a0" " ?arg1")"crlf)
 )
 ;Rule for creating binding with verb and the word _frequent_a_1.
 ;It creates frequent lbl same as verb lbl and arg1 will be same as arg0 of verb.
@@ -2340,18 +2377,19 @@ else
 )
 
 (defrule rask2-prep-also
-;(declare (salience 10))
+(declare (salience 10))
 (rel_name-ids	rask2	?kriya	?rask2)
-(id-inclusive	?rask2	yes)
+(id-BI_1	?rask2	yes)
 ?f<-(MRS_info ?rel ?rask22 _also_a_1 ?lbll ?arg000 ?arg11)
 (MRS_info ?rel1 ?preposition ?mrsconcept ?lbl1 ?arg00 ?arg1 ?arg2)
+(MRS_info ?relllll ?rask2 ?concept ?lbl ?arg0 $?v)
 (test (eq  (+ ?rask2 1) ?preposition))
 (test (eq  (+ ?rask2 1000) ?rask22))
 (test (eq (str-index _p_ ?mrsconcept) FALSE))
 =>
 (retract ?f)
-(printout ?*rstr-fp* "(MRS_info "?rel" "?rask22" "?mrsconcept" " ?lbll" "?arg000" "?arg00")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values rask2-prep-also "?rel" "?rask22" "?mrsconcept" " ?lbll" "?arg000" "?arg00" )"crlf)
+(printout ?*rstr-fp* "(MRS_info "?rel" "?rask22" _also_a_1 " ?lbl" "?arg000" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values rask2-prep-also "?rel" "?rask22" _also_a_1 " ?lbl" "?arg000" "?arg00" )"crlf)
 )
 
 ;Rule for creating binding with LBL of card with the generic_Entity lbl and ARG1 of card with ARG0 of generic_Entity and ARG0 of udef_q with ARG0 of generic_Entity and ARG1 of bark with generic_Entity.
@@ -2579,4 +2617,60 @@ else
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?modal " prop pres indicative - - )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kArya-kAraNa-TAM-modal id-SF-TENSE-MOOD-PROG-PERF "?modal " prop pres indicative - - )"crlf)
 )
+
+
+;Rule for generating number in CARG value of the date of month (dofm). 
+;My birthday is 23 September. 
+(defrule dofm_carg_number
+(id-concept_label	?numid	?num)
+(id-dom	?numid	yes)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?numid dofm ?lbl ?arg0 ?carg)
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-CARG "?numid" dofm " ?lbl" "?arg0" "?num")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values yoc_carg_number id-MRS_concept-LBL-ARG0-CARG "?numid" dofm " ?lbl" "?arg0" "?num")"crlf)
+)
+
+(defrule date_of_month_uc
+(id-dom	?id1	yes)
+(id-moy	?id2	yes)
+(rel_name-ids	r6	?id1	?id2)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udef udef_q ?lbl ?arg0 ?rstr ?body)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp compound ?l ?a0 ?a1 ?a2)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id1 dofm ?lbl1 ?arg01 ?carg1)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id2 mofy ?lbl2 ?arg02 ?carg2)
+(test (eq  (+ ?id1 10) ?udef))
+(test (eq  (+ ?id1 2) ?comp))
+=>
+(retract ?f )
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?arg01" "?rstr" "?body" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values date_of_month_uc id-MRS_concept-LBL-ARG0-RSTR-BODY "?udef" udef_q " ?lbl" "?arg01" "?rstr" "?body" )"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" compound " ?lbl1" "?a0" "?arg01" "?arg02" )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values date_of_month_uc id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" compound " ?lbl1" "?a0" "?arg01" "?arg02" )"crlf)
+)
+
+(defrule clock_time_carg
+(id-concept_label	?ct	 ?num)
+(id-clocktime	?ct	yes)
+(rel_name-ids	k7t	?kri	?ct)
+(test (neq (str-index "+baje" ?num) FALSE))
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?numid minute ?lbl ?arg0 ?carg)
+(test (eq  (+ ?ct 1) ?numid))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-CARG "?numid" minute " ?lbl" "?arg0" "?num")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values clock_time_carg id-MRS_concept-LBL-ARG0-CARG "?numid" minute " ?lbl" "?arg0" "?num")"crlf)
+)
+
+(defrule prep-verb-arg1-time
+(rel_name-ids	k7t	?kriya	?time)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?time ?preposition  ?lbl ?arg0 ?arg1)
+(MRS_info ?rel ?kriya ?verb ?lbl1 ?arg00 $?v)
+(test (neq (str-index _p ?preposition) FALSE))
+(test (neq (str-index _v_ ?verb) FALSE))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?time" "?preposition" " ?lbl1" "?arg0" "?arg00")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values prep-verb-arg1-time id-MRS_concept-LBL-ARG0-ARG1 "?time" "?preposition" " ?lbl1" "?arg0" "?arg00")"crlf)
+)
+
+
+
 

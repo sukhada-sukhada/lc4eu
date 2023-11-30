@@ -111,7 +111,7 @@
 ;want to bind LBL of '_yesterday_a_1|_today_a_1|_tomorrow_a_1' with RSTR of 'def_implicit_q
 (defrule dummy
 ?f<-(MRS_info ?rel1 ?id def_implicit_q ?lbl1 ?x ?rstr $?vars)
-(MRS_info ?rel2 ?id _there_a_1|_yesterday_a_1|_today_a_1|_tomorrow_a_1 ?lbl2 ?ARG_0 $?v)
+(MRS_info ?rel2 ?id _there_a_1|_yesterday_a_1|_today_a_1|_tomorrow_a_1|_here_a_1 ?lbl2 ?ARG_0 $?v)
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
@@ -644,21 +644,20 @@
 )
 
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 21000 _also_a_1 h5 e6 h7)
-;This rule creates rstr binding with inclusive word "also" and the verb along it inclusive.
+;This rule creates rstr binding with BI_1 word "also" and the verb along it BI_1.
 ;101 verified sentence #viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
 ;113 verified sentence #sUrya camakawA BI hE.
-(defrule inclusive-also-verb
+(defrule BI_1-also-verb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?arg0 ?arg1)
-(id-inclusive  ?id2  yes)
+(id-BI_1  ?id1  yes)
 ?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index _v_ ?mrscon) FALSE))
-(test (eq (+ ?id2 1000) ?id)) 
 =>
 (retract  ?f ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values inclusive-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values BI_1-verb Restr-Restricted h0 "?lbl")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values inclusive-also-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values BI_1-also-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
 )
 
 ;It creates binding with arg2 value of verb with lbl of adjective
@@ -970,11 +969,11 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values k5_anim_kim_LTOP Restr-Restricted  h0 "?l ")"crlf)
 )
 
-;Rule for creating binding with LTOP and the label of definite and ARG1 label of definite with word it emphasis.
+;Rule for creating binding with LTOP and the label of definite and ARG1 label of definite with word it BI_2.
 ;#rAma ayegA hI
 (defrule emph-definite-verb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _definite_a_1 ?lbl ?arg0 ?arg1)
-(id-emphasis  ?id2  yes)
+(id-BI_2  ?id2  yes)
 ?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 (test (eq (+ ?id2 1000) ?id)) 

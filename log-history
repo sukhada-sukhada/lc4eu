@@ -186,3 +186,8 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 
 1/11/2023
 1. Adding a new concept nondef in the dictionaries/H_concept-to-mrs-rels.dat
+
+30/11/2023
+1. Added 449, 450, 451, 452, 453, 454, 455, and 342, 358, 432 new USRS. 
+2. Handled kArya-kAraNa, viroXi, rask2, rask3, rask4, rask5, rask7, wyax constructions, new format of USR according to the version USR_GUIDELINES - V 4.1 and CLIPS rules accordingly for USR to English generation.
+3. Removed 342, 358, 432 USRs.

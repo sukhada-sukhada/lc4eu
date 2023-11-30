@@ -9,7 +9,7 @@
 (rel_name-ids ?rel ?kri ?k-id)
 (Karaka_Relation-Preposition    ?rel  ?prep)
 (id-concept_label	?k-id	?comp)
-(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1|pAsa_2))
+(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1|pAsa_2)) ;vaha rojZa yaha AwA hE.
 (not (rel_name-ids k4 ?kri ?k-id))
 (not (MRS_info  id-MRS_concept ?compeq   comp_equal)) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 ;(not (and (rel_name-ids k1s ?kri ?k-id)) ;rAXA mIrA jEsI sunxara hE. 
@@ -67,6 +67,7 @@
 (id-moy	?month	yes)
 ;(mofy  ?mahInA    ?month)
 (id-concept_label ?month	?mahInA) 
+(not (rel_name-ids	r6	?id	?month))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?month 1) " _in_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values in_p_temp_month  id-MRS_concept " (+ ?month 1) " _in_p_temp)"crlf)
@@ -90,7 +91,7 @@
 (id-concept_label	?k-id  ?num)
 (rel_name-ids k7t	?kri ?k-id)
 (not (id-dow	?k-id	yes))
-(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1|xina_1|aba_1))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1|xina_1|aba_1|pahale_2|bAxa_14))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
