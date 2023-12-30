@@ -191,3 +191,11 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 1. Added 449, 450, 451, 452, 453, 454, 455, and 342, 358, 432 new USRS. 
 2. Handled kArya-kAraNa, viroXi, rask2, rask3, rask4, rask5, rask7, wyax constructions, new format of USR according to the version USR_GUIDELINES - V 4.1 and CLIPS rules accordingly for USR to English generation.
 3. Removed 342, 358, 432 USRs.
+
+30/12/2023
+1. Removed TAM's from the tam dictionary: 0_legA_1, 0_liyA_1, 0_liyA_hE_1, 0_liyA_hogA_1, 0_liyA_WA_1, nA_se_pahale_1, ne_ke_bAxa_1, hE_nahIM_1, yA_nahIM_1, yA_WA_nahIM_1, 0_WA_1, 0_hE_1, ie_1, eM_1, iegA_1, 0_1
+2. Changing of tams in 144, 397, 144, 145, 158, 149, 152, 183, 448. 
+3. Addition of 456, 457, 458, 459, 460 New USR's
+4. Addition of required entries in Hindi and MRS dictionaries. 
+5. Removed 432 USR. 
+

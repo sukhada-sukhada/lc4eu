@@ -723,13 +723,13 @@
 (printout ?*defdbug* "(rule-rel-values mrs_generic_Entity id-MRS_concept "(+ ?id1 10)" udef_q)"crlf)
 )
 
-;Rule for generating unknown for the kArya-kAraNa relation in the discourse row.
+;Rule for generating unknown for the kAryakAraNa relation in the discourse row.
 ;Because, he has to go home. #kyoMki vo Gara jAnA hE.
-(defrule unknown
-(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(defrule unknown-kAryakAraNa
+(rel_name-ids kAryakAraNa ?previousid	?verb)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?verb 1) "  unknown)"crlf)
-(printout ?*defdbug* "(rule-rel-values  unknown id-MRS_concept "(+ ?verb 1) "  unknown)"crlf)
+(printout ?*defdbug* "(rule-rel-values  unknown-kAryakAraNa id-MRS_concept "(+ ?verb 1) "  unknown)"crlf)
 )
 
 (defrule date_of_month-compound
@@ -779,4 +779,52 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
 (printout ?*defdbug* "(rule-rel-values aps_of_here id-MRS_concept "?id " loc_nonsp)"crlf)
 )
+
+;rule for quantitative pronoun
+(defrule quantitative_pronoun
+(id-concept_label	?quant	kuCa_1)
+(rel_name-ids	quant	?verb	?quant)
+(id-hin_concept-MRS_concept ?verb ?hin ?mrsconcept)
+(test (neq (str-index _v_ ?mrsconcept) FALSE))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?quant 10) " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantitative_pronoun id-MRS_concept "(+ ?quant 10)" generic_entity)"crlf)
+)
+
+;Rule for generating abstract predicates 
+;More than 300 people will come tomorrow.
+(defrule quantmore-abst
+(id-concept_label	?id	?num)
+(rel_name-ids	quantmore	?modifier	?id)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" card)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "?id" card)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*defdbug* "(rule-rel-values  quantmore-abst   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "?id" generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100)" much-many_a)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "(+ ?id 100)" much-many_a)"crlf)
+)
+
+;Rule for generating abstract predicates 
+;Less than 300 people will come tomorrow.
+(defrule quantless-abst
+(id-concept_label	?id	?num)
+(rel_name-ids	quantless	?modifier	?id)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" card)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "?id" card)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*defdbug* "(rule-rel-values  quantless-abst   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "?id" generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100)" little-few_a)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "(+ ?id 100)" little-few_a)"crlf)
+)
+
 

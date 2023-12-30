@@ -36,6 +36,7 @@
    (eq (sub-string (- (str-length ?endsWith_q) 3) (str-length ?endsWith_q) ?endsWith_q) "_dem") ) )
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 (not (Restr-Restricted-fact-generated_for_comp ?dep))
+(test (eq (str-index _v_ ?mrsCon) FALSE))
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
@@ -184,7 +185,7 @@
 (not (rel_name-ids viroXi ?kri_id	?id))
 (not (rel_name-ids AvaSyakwA-pariNAma ?kri_id	?id))
 (not (rel_name-ids samAnakAla ?kri_id	?id))
-(not (rel_name-ids kArya-kAraNa ?kri_id	?id)) ;Because he has to go home.
+(not (rel_name-ids kAryakAraNa ?kri_id	?id)) ;Because he has to go home.
 =>
         (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf) 
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
@@ -408,7 +409,7 @@
     (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1 ")" crlf)
     (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal-verb  Restr-Restricted " ?arg1 " "?lbl1 ")"crlf)
 )
-;(rel_name-ids kArya-kAraNa 438.30000	30000)
+;(rel_name-ids kAryakAraNa 438.30000	30000)
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30100 _have_v_qmodal h23 e24 h25)
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _go_v_1 h26 e27 x28)
 (defrule LTOP-modal
@@ -420,7 +421,7 @@
 (test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
 (test (neq (str-index _v_ ?mrsV) FALSE))
 (test (neq ?id ?id1))
-(not (rel_name-ids kArya-kAraNa ?previousid	?id1))
+(not (rel_name-ids kAryakAraNa ?previousid	?id1))
 =>
     (assert (Restr-Restricted-fact-generated))
     (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl ")" crlf)
@@ -661,17 +662,16 @@
 )
 
 ;It creates binding with arg2 value of verb with lbl of adjective
-;#राम खा -खाकर मोटा हो गया ।
-(defrule rpka
-(rel_name-ids	k1s	?kri	?adj)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?hin ?lbl ?a0 ?a1 ?arg2)
-(MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
-(test (neq (str-index _a_ ?mrs_adj) FALSE))
-(test (neq (str-index _v_ ?hin) FALSE))
-=>
-(printout ?*rstr-rstd* "(Restr-Restricted "?arg2 " "?l")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  rpka  Restr-Restricted "?arg2" "?l")"crlf)
-)
+;(defrule rpka
+;(rel_name-ids	k1s	?kri	?adj)
+;?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?hin ?lbl ?a0 ?a1 ?arg2)
+;(MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
+;(test (neq (str-index _a_ ?mrs_adj) FALSE))
+;(test (neq (str-index _v_ ?hin) FALSE))
+;=>
+;(printout ?*rstr-rstd* "(Restr-Restricted "?arg2 " "?l")" crlf)
+;(printout ?*rstr-rstd-dbg* "(rule-rel-values  rpka  Restr-Restricted "?arg2" "?l")"crlf)
+;)
 
 
 ;Rule for RSTR binding with h0 with lbl of _before_x_h and arg1 and arg2 of before_x_h with the two verb labels. 
@@ -1208,8 +1208,8 @@
 
 ;Rule for generating qeq binding of ARG1 and ARG2 values of because with LBL of unknown abstract predicate and LBL of the predicate of the sentence. 
 ;Because, he has to go home. #kyoMki vo Gara jAnA hE.
-(defrule kArya-kAraNa
-(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(defrule kAryakAraNa
+(rel_name-ids kAryakAraNa ?previousid	?verb)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?because _because_x ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG ?unknown unknown ?lbll $?v)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modal ?mrsverb ?lbbb $?va)
@@ -1219,10 +1219,23 @@
 (test (eq  (+ ?verb 100) ?modal))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values kArya-kAraNa Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values kAryakAraNa Restr-Restricted h0 "?lbl")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted "?arg1" " ?lbll")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values kArya-kAraNa Restr-Restricted "?arg1" " ?lbll")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values kAryakAraNa Restr-Restricted "?arg1" " ?lbll")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted "?arg2" " ?lbbb")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values kArya-kAraNa Restr-Restricted "?arg2" " ?lbbb")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values kAryakAraNa Restr-Restricted "?arg2" " ?lbbb")"crlf)
 )
+
+;Restrictor for LTOP Restrictor-Restricted default value quantitative pronoun
+(defrule LTOP-rstdeic-quantitative
+(id-concept_label	?id	kuCa_1)
+(rel_name-ids	quant	?verb	?id)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id2 generic_entity ?lbl1 ?ARG01)
+(MRS_info ?rel1 ?id _some_q ?lbl ?ARG0 ?rstr ?body)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?rstr " "?lbl1 ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeic-quantitative Restr-Restricted  "?rstr " "?lbl1 ")"crlf)
+)
+
+
 

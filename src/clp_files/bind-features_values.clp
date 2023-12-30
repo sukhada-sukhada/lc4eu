@@ -849,7 +849,7 @@ else
 (kriyA-TAM ?kri ?tam)
 (sentence_type  affirmative|pass-affirmative)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type ?tam ?e_tam ?perf ?prog ?tense ?typ)
-(not (rel_name-ids kArya-kAraNa ?previousid	?kri))
+(not (rel_name-ids kAryakAraNa ?previousid	?kri))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf  ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -1056,7 +1056,7 @@ else
 (not (rel_name-ids samuccaya ?id	?kri_id))
 (not (rel_name-ids anyawra ?id	?kri_id))
 (not (rel_name-ids viroXi ?id	?kri_id))
-(not (rel_name-ids kArya-kAraNa ?id	?kri_id))
+(not (rel_name-ids kAryakAraNa ?id	?kri_id))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -1079,7 +1079,7 @@ then
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
 (sentence_type  affirmative|interrogative|yn_interrogative|negative)
 (test (or (neq (str-index _v_modal ?mrs_modal) FALSE) (neq (str-index _v_qmodal ?mrs_modal) FALSE)));_used+to_v_qmodal
-(not (rel_name-ids kArya-kAraNa ?previousid	?kri))
+(not (rel_name-ids kAryakAraNa ?previousid	?kri))
 =>
 (assert (asserted_LTOP-INDEX-for-modal))
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
@@ -1190,29 +1190,7 @@ then
 (id-concept_label	?id1	wyax)
 (or (id-proximal	?id1	yes) (id-distal	?id1	yes))
 (MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
-?f1<-(MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG1 ?ARG2)
-?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
-(test (eq  (+ ?id1 10) ?id3))
-(not (modified ?ARG02))
-(test (or (neq (str-index _this_q_dem ?mrscon) FALSE)
-          (neq (str-index _that_q_dem ?mrscon) FALSE)))
-=>
-(retract ?f1 ?f2)
-(assert (modified ?ARG02))
-
-(assert (MRS_info ?rel1 ?id2 _be_v_id ?lbl1 ?ARG01 ?ARG0 ?ARG2))
-(printout ?*rstr-dbug* "(rule-rel-values _be_v_id " ?rel1 " "?id2" _be_v_id " ?lbl1 " " ?ARG01" " ?ARG0" " ?ARG2")"crlf)
-
-(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
-(printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
-)
-
-;Rule for generic_entity
-(defrule generic_entity-k2
-(id-concept_label	?id1	wyax)
-(or (id-proximal	?id1	yes) (id-distal	?id1	yes))
-(MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
-?f1<-(MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 ?ARG2)
+?f1<-(MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 $?var)
 ?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
 (test (eq  (+ ?id1 10) ?id3))
 (not (modified ?ARG02))
@@ -1223,8 +1201,31 @@ then
 (retract ?f1 ?f2)
 (assert (modified ?ARG02))
 
-(assert (MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 ?ARG2))
-(printout ?*rstr-dbug* "(rule-rel-values generic_entity-k2 " ?rel1 " "?id2" "?mrsCon" " ?lbl1 " " ?ARG01" " ?ARG1" " ?ARG2")"crlf)
+(assert (MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG0 $?var))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel1 " "?id2" "?mrsCon" " ?lbl1 " " ?ARG01" " ?ARG0" "(implode$ (create$ $?var)) ")"crlf)
+
+(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
+)
+
+;Rule for generic_entity
+(defrule generic_entity-k2
+(id-concept_label	?id1	wyax)
+(or (id-proximal	?id1	yes) (id-distal	?id1	yes))
+(MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
+?f1<-(MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 $?var)
+?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
+(test (eq  (+ ?id1 10) ?id3))
+(not (modified ?ARG02))
+(test (or (neq (str-index _this_q_dem ?mrscon) FALSE)
+          (neq (str-index _that_q_dem ?mrscon) FALSE)))
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+=>
+(retract ?f1 ?f2)
+(assert (modified ?ARG02))
+
+(assert (MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 $?var))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity-k2 " ?rel1 " "?id2" "?mrsCon" " ?lbl1 " " ?ARG01" " ?ARG1" "(implode$ (create$ $?var)) ")"crlf)
 
 (assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
 (printout ?*rstr-dbug* "(rule-rel-values generic_entity-k2 " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
@@ -1276,6 +1277,7 @@ then
 ;(rel_name-ids ord|dem|quant ?head ?dep) ;Rama ate the second apple.
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x $?vars)
+(test (eq (str-index _v_ ?mrsCon) FALSE)) ;Some barked
 =>
 (retract ?f)
 (printout ?*rstr-fp*   "(MRS_info  "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " " ?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
@@ -2584,38 +2586,38 @@ else
 )
 
 
-;Rule for generating LTOP and INDEX values when kArya-kAraNa relation exists. INDEX value will take the ARG0 of unknown. 
+;Rule for generating LTOP and INDEX values when kAryakAraNa relation exists. INDEX value will take the ARG0 of unknown. 
 ;Because, he has to go home. #kyoMki vo Gara jAnA hE.
-(defrule kArya-kAraNa-LTOP
-(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(defrule kAryakAraNa-LTOP
+(rel_name-ids kAryakAraNa ?previousid	?verb)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG ?verbb unknown ?id ?arg0 ?arg)
 (test (eq  (+ ?verb 1) ?verbb))
 =>
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kArya-kAraNa-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kAryakAraNa-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
 )
 
-;Rule for generating TAM for kArya-kAraNa relation with the main verb. 
+;Rule for generating TAM for kAryakAraNa relation with the main verb. 
 ;Because he has to go home. kyoMki vo Gara jAnA hE.
-(defrule kArya-kAraNa-TAM
-(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(defrule kAryakAraNa-TAM
+(rel_name-ids kAryakAraNa ?previousid	?verb)
 (id-hin_concept-MRS_concept ?verb ?hin ?mrscon)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?verb " prop-or-ques untensed indicative - - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kArya-kAraNa-TAM id-SF-TENSE-MOOD-PROG-PERF "?verb " prop-or-ques untensed indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kAryakAraNa-TAM id-SF-TENSE-MOOD-PROG-PERF "?verb " prop-or-ques untensed indicative - - )"crlf)
 )
 
-;Rule for generating TAM for kArya-kAraNa relation with the modal verb. 
+;Rule for generating TAM for kAryakAraNa relation with the modal verb. 
 ;Because he has to go home. kyoMki vo Gara jAnA hE.
-(defrule kArya-kAraNa-TAM-modal
-(rel_name-ids kArya-kAraNa ?previousid	?verb)
+(defrule kAryakAraNa-TAM-modal
+(rel_name-ids kAryakAraNa ?previousid	?verb)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modal ?mrscon ?lbl ?arg0 ?arg1)
 (test (neq (str-index _v_qmodal ?mrscon) FALSE))
 (test (eq  (+ ?verb 100) ?modal))
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?modal " prop pres indicative - - )"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kArya-kAraNa-TAM-modal id-SF-TENSE-MOOD-PROG-PERF "?modal " prop pres indicative - - )"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kAryakAraNa-TAM-modal id-SF-TENSE-MOOD-PROG-PERF "?modal " prop pres indicative - - )"crlf)
 )
 
 
@@ -2671,6 +2673,105 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values prep-verb-arg1-time id-MRS_concept-LBL-ARG0-ARG1 "?time" "?preposition" " ?lbl1" "?arg0" "?arg00")"crlf)
 )
 
+;Rule for generic_entity when the adjective is in predicate position.
+;This is very huge.
+(defrule generic_entity-pred
+(id-concept_label	?id1	wyax)
+(or (id-proximal	?id1	yes) (id-distal	?id1	yes))
+(MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
+?f1<-(MRS_info ?rel1 ?id2 ?MRSCON ?lbl1 ?ARG01 ?ARG1)
+?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
+(test (eq  (+ ?id1 10) ?id3))
+(test (or (neq (str-index _this_q_dem ?mrscon) FALSE)
+          (neq (str-index _that_q_dem ?mrscon) FALSE)))
+(test (neq (str-index _a_ ?MRSCON) FALSE))
+=>
+(retract ?f1 ?f2)
+(printout ?*rstr-fp* "(MRS_info " ?rel1 " "?id2" "?MRSCON" " ?lbl1 " " ?ARG01" " ?ARG0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity-pred " ?rel1 " "?id2" "?MRSCON" " ?lbl1 " " ?ARG01" " ?ARG0" )"crlf)
 
+(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity-pred " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
+)
 
+;Rule for generic_entity
+;Some barked.
+(defrule generic_entity-quantitative
+(id-concept_label	?id1	kuCa_1)
+(rel_name-ids	quant	?id2	?quant)
+(MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
+?f1<-(MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG1 $?var)
+?f2<-(MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG02)
+(test (eq  (+ ?id1 10) ?id3))
+(not (modified ?ARG02))
+(test (neq (str-index _some_q ?mrscon) FALSE))
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+=>
+(retract ?f1 ?f2)
+(assert (modified ?ARG02))
+
+(assert (MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG0 $?var))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity-quantitative " ?rel1 " "?id2" "?mrsCon" " ?lbl1 " " ?ARG01" " ?ARG0" "(implode$ (create$ $?var)) ")"crlf)
+
+(assert (MRS_info ?rel2 ?id3 generic_entity ?lbl2 ?ARG0))
+(printout ?*rstr-dbug* "(rule-rel-values generic_entity-quantitative " ?rel2 " "?id3" generic_entity " ?lbl2 " " ?ARG0")"crlf)
+)
+
+;Rule for creating the binding with comp, generic_entity, much-many_a, udef_q, card, and verb. 
+;More than 300 people will come tomorrow.
+(defrule quant_more_bind
+(id-concept_label	?id	?num)
+(id-numex	?id	yes)
+(rel_name-ids	quantmore	?modifier	?id)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?much much-many_a ?lbl ?arg0 ?arg1)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0 ?id generic_entity ?lbl1 ?arg01)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp comp ?l ?a0 ?a1 ?a2)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udefq udef_q ?ll ?a00 ?rstr ?body)
+?f4<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG ?id card ?lbllll ?arg0000 ?arg1111 ?value)
+?f5<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?verb ?verbmrs ?b ?aooo ?a111)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modifier ?modifermrs ?lob ?ao0 ?a11i)
+=> 
+(retract ?f ?f1 ?f2 ?f3 ?f4 ?f5)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?much" much-many_a "?l" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_more_bind id-MRS_concept-LBL-ARG0-ARG1 ?much much-many_a "?l" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0 "?id" generic_entity "?l" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_more_bind id-MRS_concept-LBL-ARG0 "?id" generic_entity "?l" "?arg01")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" comp "?l" "?a0" "?arg0" "?ao0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_more_bind id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" comp "?l" "?a0" "?arg0" "?ao0")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udefq" udef_q "?ll" "?arg01" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_more_bind id-MRS_concept-LBL-ARG0-RSTR-BODY "?udefq" udef_q "?ll" "?arg01" "?rstr" "?body")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG "?id" card "?lob" "?arg0000" "?ao0" "?num")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_more_bind id-MRS_concept-LBL-ARG0-ARG1-CARG "?id" card "?lob" "?arg0000" "?ao0" "?num")"crlf)
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?verb ?verbmrs ?b ?aooo ?arg01))
+(printout ?*rstr-dbug* "(rule-rel-values quant_more_bind id-MRS_concept-LBL-ARG0-ARG1 "?verb" "?verbmrs" "?b" "?aooo" "?arg01")"crlf)
+)
+
+;Rule for creating the binding with comp, generic_entity, much-many_a, udef_q, card, and verb. 
+;Less than 300 people will come tomorrow.
+(defrule quant_less_bind
+(id-concept_label	?id	?num)
+(id-numex	?id	yes)
+(rel_name-ids	quantless	?modifier	?id)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?less little-few_a ?lbl ?arg0 ?arg1)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0 ?id generic_entity ?lbl1 ?arg01)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp comp ?l ?a0 ?a1 ?a2)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udefq udef_q ?ll ?a00 ?rstr ?body)
+?f4<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG ?id card ?lbllll ?arg0000 ?arg1111 ?value)
+?f5<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?verb ?verbmrs ?b ?aooo ?a111)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modifier ?modifermrs ?lob ?ao0 ?a11i)
+=> 
+(retract ?f ?f1 ?f2 ?f3 ?f4 ?f5)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?less" little-few_a "?l" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_less_bind id-MRS_concept-LBL-ARG0-ARG1 "?less" little-few_a "?l" "?arg0" "?arg01")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0 "?id" generic_entity "?l" "?arg01")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_less_bind id-MRS_concept-LBL-ARG0 "?id" generic_entity "?l" "?arg01")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" comp "?l" "?a0" "?arg0" "?ao0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_less_bind id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?comp" comp "?l" "?a0" "?arg0" "?ao0")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?udefq" udef_q "?ll" "?arg01" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_less_bind id-MRS_concept-LBL-ARG0-RSTR-BODY "?udefq" udef_q "?ll" "?arg01" "?rstr" "?body")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG "?id" card "?lob" "?arg0000" "?ao0" "?num")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values quant_less_bind id-MRS_concept-LBL-ARG0-ARG1-CARG "?id" card "?lob" "?arg0000" "?ao0" "?num")"crlf)
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?verb ?verbmrs ?b ?aooo ?arg01))
+(printout ?*rstr-dbug* "(rule-rel-values quant_less_bind id-MRS_concept-LBL-ARG0-ARG1 "?verb" "?verbmrs" "?b" "?aooo" "?arg01")"crlf)
+)
 
