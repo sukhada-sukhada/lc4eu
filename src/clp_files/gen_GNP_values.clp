@@ -73,6 +73,7 @@
 (not (id-female	?id1	yes))
 (not (id-male	?id1	yes))
 (not (rel_name-ids	dem	?ii	?id1))
+(not (rel_name-ids	k7p	?ii	?id1)) ; He comes here daily.
 =>
 (printout ?*rstr-fp* "(id-GEN-NUM-PER  "?id1 " n sg  3 )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values gnp-of-eng_pron-personal-neuter-k1 id-GEN-NUM-PER "?id1 " n sg  3)"crlf)

@@ -500,6 +500,7 @@
 (id-proximal	?id	yes)
 (not (id-num	?karwa	pl))
 (not (rel_name-ids	r6	?karwa	?id))
+(not (rel_name-ids	k7p	?kri	?id)) ; He comes here daily.
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "?id" _this_q_dem)"crlf)

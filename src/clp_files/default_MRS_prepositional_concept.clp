@@ -9,14 +9,16 @@
 (rel_name-ids ?rel ?kri ?k-id)
 (Karaka_Relation-Preposition    ?rel  ?prep)
 (id-concept_label	?k-id	?comp)
-(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1|pAsa_2)) ;vaha rojZa yaha AwA hE.
+(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1|pAsa_2)) ;vaha rojZa yaha AwA hE. ;He comes here daily.
 (not (rel_name-ids k4 ?kri ?k-id))
+;(not (id-anim	?k-id	yes))
 (not (MRS_info  id-MRS_concept ?compeq   comp_equal)) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 ;(not (and (rel_name-ids k1s ?kri ?k-id)) ;rAXA mIrA jEsI sunxara hE. 
 (not (generated_prep_for ?k-id))
 (not (id-degree ?id	compermore)) ;#rAma mohana se jyAxA buxXimAna hE.
 (not (id-degree ?id	comperless)) ;rAma mohana se kama buxXimAna hE .
 (not (do_not_generate_prep_for_k2p ?k-id)) ;I am coming home.
+(not (do_not_generate_prep_for_k7p ?k-id)) ;He comes here daily.
 =>
 (bind ?myprep (str-cat "_" ?prep "_p"))
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " " ?myprep")"crlf)
@@ -33,6 +35,19 @@
 =>
 (assert (do_not_generate_prep_for_k2p ?k-id))
 (printout ?*defdbug* "(rule-rel-values noPrep4k2p id-MRS_concept " ?k-id ")"crlf)
+)
+
+;not to generate preposition for k7p relation 
+;He comes here daily.
+(defrule noPrepwyax
+(declare (salience 1000))
+(rel_name-ids k7p ?kri ?k-id)
+(id-concept_label  ?k-id   wyax)
+(not (id-anim	10000	yes))
+;(not (generated_prep_for_k2p ?k-id))
+=>
+(assert (do_not_generate_prep_for_k7p ?k-id))
+(printout ?*defdbug* "(rule-rel-values noPrep4k7p id-MRS_concept " ?k-id ")"crlf)
 )
 
 ;Rule for creating _on_p_temp for k7t and k7 relations with days of the week information.
