@@ -19,7 +19,6 @@
 (not (rel_name-ids r6 ?id ?v))
 (not(id-concept_label	?id 	?concept&speaker|addressee|wyax|saba_4))
 (not (rel_name-ids coref ?	?id))
-;(not (sentence_type	)) ;;#kuwwA! ;#billI Ora kuwwA.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
@@ -826,5 +825,38 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100)" little-few_a)"crlf)
 (printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "(+ ?id 100)" little-few_a)"crlf)
 )
+
+;My country.
+(defrule unknown-title
+(id-concept_label	?id	?hinconcept)
+(rel_name-ids	main	0	?id)
+(sentence_type	TITLE)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 0000000 unknown)"crlf)
+(printout ?*defdbug* "(rule-rel-values  unknown-title id-MRS_concept 0000000 unknown)"crlf)
+)
+
+;Flora found in India
+(defrule unknown-heading
+(id-concept_label	?id	?hinconcept)
+(rel_name-ids	main	0	?id)
+(sentence_type	heading)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 0000000 unknown)"crlf)
+(printout ?*defdbug* "(rule-rel-values  unknown-heading id-MRS_concept 0000000 unknown)"crlf)
+)
+
+(defrule mrs_parg_d-heading
+(sentence_type  heading)
+(rel_name-ids	mod	?noun	?modifier)
+(id-hin_concept-MRS_concept ?modifier ?hinconcept ?verb)
+(test (neq (str-index _v_ ?verb) FALSE))
+(construction-ids	conj	?noun ?noun2)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?modifier " parg_d)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_parg_d-heading  id-MRS_concept "?modifier" parg_d)"crlf)
+)
+
+
 
 

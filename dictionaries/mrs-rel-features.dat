@@ -23933,3 +23933,7 @@
 (MRSc-FVs _look_v_at LBL: h* ARG0: e* ARG1: x* ARG2: x*)
 (MRSc-FVs _elliptical_a_1 LBL: h* ARG0: e* ARG1: x*)
 (MRSc-FVs _without_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
+(MRSc-FVs _according+to_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
+(MRSc-FVs _via_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
+(MRSc-FVs _among_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
+(MRSc-FVs _man_a_1 LBL: h* ARG0: e* ARG1: h*)

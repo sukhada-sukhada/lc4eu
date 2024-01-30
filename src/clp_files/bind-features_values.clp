@@ -2775,3 +2775,68 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values quant_less_bind id-MRS_concept-LBL-ARG0-ARG1 "?verb" "?verbmrs" "?b" "?aooo" "?arg01")"crlf)
 )
 
+;Rule for value sharing between the _according+to_p to the verb and samanadhikaran of the sentence.
+;sIwA ke anusAra rAma vIra hE.
+(defrule k7a_according_p
+(id-concept_label	?id	?hinconcept)
+(rel_name-ids	k7a	?kri	?id)
+(rel_name-ids	k1s	?kri	?k1s)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?according _according+to_p ?lbl ?arg0 ?arg1 ?Arg2)
+(MRS_info ?rel ?id ?mrscon ?lbl1 ?Arg0 $?v)
+(MRS_info ?rell ?k1s ?mrsconcept ?lblll ?arg00 $?var)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?according" _according+to_p "?lblll" "?arg0" "?arg00" "?Arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values k7a_according_p id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?according" _according+to_p "?lblll" "?arg0" "?arg00" "?Arg0")"crlf)
+)
+
+;My country
+(defrule unknown_LTOP_TITLE
+(id-concept_label	?id	?hinconcept)
+(rel_name-ids	main	0	?id)
+(sentence_type	TITLE)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values unknown_LTOP_TITLE LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+;Fruits and vegetables found in India.
+(defrule unknown_LTOP_heading
+(id-concept_label	?id	?hinconcept)
+(rel_name-ids	main	0	?id)
+(sentence_type	heading)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values unknown_LTOP_heading LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+;My country
+(defrule unknown_LTOP_value_sharing
+(id-concept_label	?id	?hinconcept)
+(rel_name-ids	main	0	?id)
+(sentence_type	TITLE)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+(MRS_info ?rel ?id ?mrsCon ?lbl1 ?arg01 $?v)
+=>
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?arg01 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values unknown_LTOP_value_sharing id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?arg01 ")"crlf)
+)
+
+;Fruits and vegetables found in India.
+(defrule unknown_LTOP_value_sharing-heading
+(construction-ids	conj	?id ?id1)
+(id-concept_label	?id1	?hinconcept)
+(rel_name-ids	main	0	?id)
+(sentence_type	heading)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
+(MRS_info ?rel ?conj ?mrsCon ?lbl1 ?arg01 $?v)
+(test (eq  (+ ?id 500) ?conj))
+=>
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?arg01 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values unknown_LTOP_value_sharing-heading id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?arg01 ")"crlf)
+)
+
+
+
