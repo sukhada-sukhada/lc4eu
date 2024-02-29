@@ -37,6 +37,7 @@
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 (not (Restr-Restricted-fact-generated_for_comp ?dep))
 (test (eq (str-index _v_ ?mrsCon) FALSE))
+(not (loc_nonsp_bind_notrequired ?dep))
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
@@ -1237,5 +1238,47 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstdeic-quantitative Restr-Restricted  "?rstr " "?lbl1 ")"crlf)
 )
 
+;Rama arrived that hour.
+(defrule loc_nonsp_verb
+(declare (salience 10000))
+(id-concept_label	?time	 ?timehin)
+(id-concept_label	?kriya	 ?hinconcept)
+(rel_name-ids	dem	?time	?dem)
+(rel_name-ids	k7t	?kriya	?time)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?time loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
+;(MRS_info id-MRS_concept-LBL-ARG0 ?time ?nounhour ?lbbbb $?v)
+(MRS_info ?rel ?kriya ?verbconcept ?lbll ?arg000 $?v)
+(MRS_info ?rel1 ?dem ?concept ?l ?ARg0 ?rstr ?body)
+(test (neq (str-index _v_ ?verbconcept) FALSE))
+(test (neq (str-index _q_dem ?concept) FALSE))
+=>
+(assert (loc_nonsp_bind_notrequired ?dem))
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  loc_nonsp_verb loc_nonsp_bind_notrequired "?dem")"crlf)
+)
+
+;Rama arrived that hour.
+(defrule loc_nonsp_verb-bind
+;(declare (salience 10000))
+(id-concept_label	?time	 ?timehin)
+(rel_name-ids	dem	?time	?dem)
+(rel_name-ids	k7t	?kriya	?time)
+(MRS_info id-MRS_concept-LBL-ARG0 ?time ?nounhour ?lbbbb $?v)
+(MRS_info ?rel1 ?dem ?concept ?l ?ARg0 ?rstr ?body)
+(test (neq (str-index _q_dem ?concept) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?rstr " "?lbbbb ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values loc_nonsp_verb-bind Restr-Restricted   "?rstr " "?lbbbb ")"crlf)
+)
 
 
+;Rule for generating the qeq binding with def_implicit_q rstr with numbered hour lbl. 
+;Rama arrived at midday.
+(defrule 12_carg_number-rstr
+(or (id-concept_label	?numid	xopahara_2)(id-clocktime	?numid	yes))
+(rel_name-ids	k7t	?kri	?numid)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-CARG ?numid numbered_hour ?lbl ?arg0 ?arg1 ?arg2 ?carg)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?def def_implicit_q ?lbll ?arg00 ?rstr ?body)
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?rstr " "?lbl ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values 12_carg_number-rstr Restr-Restricted   "?rstr " "?lbl ")"crlf)
+)

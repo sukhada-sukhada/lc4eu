@@ -100,16 +100,39 @@
 (printout ?*defdbug* "(rule-rel-values in_p_AXAra_AXeya  id-MRS_concept " (+ ?AXAra_id 1) " _in_p)"crlf)
 )
 
-;Written by sakshi yadav date -13.06.19
 ;Ex-Rama reads two books in 2019.
 (defrule in_p_temp
 (id-concept_label	?k-id  ?num)
 (rel_name-ids k7t	?kri ?k-id)
 (not (id-dow	?k-id	yes))
-(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1|xina_1|aba_1|pahale_2|bAxa_14))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1|xina_1|aba_1|pahale_2|bAxa_14|GantA_1|xopahara_2))
+;(test (eq (str-index "+baje" ?num) FALSE))
+(not (rel_name-ids	r6	?k-id	?iid)) ; Rama arrived on Tuesday's morning.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 )
 
+;(id-concept_label	20000	2025) (rel_name-ids	k7t	40000	20000)
 
+;Rama arrived on Tuesday's morning.
+(defrule on_p_temp-adverboftime
+(id-concept_label	?dow ?week)
+(rel_name-ids k7t	?kri ?adoftime)
+(id-concept_label  ?adoftime subaha_1)
+(rel_name-ids	r6	?adoftime	?dow)
+(id-dow	?dow	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?dow 1) " _on_p_temp)"crlf)
+(printout ?*defdbug* "(rule-rel-values on_p_temp-adverboftime  id-MRS_concept " (+ ?dow 1) " _on_p_temp)"crlf)
+)
+
+(defrule at_p_temp
+(id-concept_label	?k-id  ?num)
+(rel_name-ids k7t	?kri ?k-id)
+(not (id-dow	?k-id	yes))
+(or (id-concept_label  ?k-id   xopahara_2) (id-clocktime	?k-id	yes))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " _at_p_temp)"crlf)
+(printout ?*defdbug* "(rule-rel-values at_p_temp  id-MRS_concept " (+ ?k-id 1) " _at_p_temp)"crlf)
+)

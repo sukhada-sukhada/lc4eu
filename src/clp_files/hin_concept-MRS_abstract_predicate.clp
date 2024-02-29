@@ -253,7 +253,8 @@
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1|sarxI_2|bAxa_14))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1|sarxI_2|bAxa_14|GantA_1|xopahara_2))
+;(test (eq (str-index "+baje" ?num) FALSE))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
@@ -743,7 +744,6 @@
 (printout ?*defdbug* "(rule-rel-values date_of_month-compound id-MRS_concept "(+ ?id1 10)" udef_q)"crlf)
 )
 
-
 (defrule clock_time
 (id-concept_label	?ct	 ?num)
 (id-clocktime	?ct	yes)
@@ -754,10 +754,22 @@
 (printout ?*defdbug* "(rule-rel-values clock_time id-MRS_concept " ?ct" numbered_hour)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ct 1) " minute)"crlf)
-(printout ?*defdbug* "(rule-rel-values clock_time id-MRS_concept "(+ ?ct 1)" minute)"crlf)
+(printout ?*defdbug* "(rule-rel-values clock_time id-MRS_concept "(+ ?ct 1) " minute)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ct 10) " def_implicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values clock_time id-MRS_concept "(+ ?ct 10) " def_implicit_q)"crlf)
+)
+
+(defrule clock_time-noon
+(id-concept_label	?ct	 ?num)
+(id-concept_label	?ct	 xopahara_2)
+(rel_name-ids	k7t	?kri	?ct)
+;(test (neq (str-index "+baje" ?num) FALSE))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?ct" numbered_hour)"crlf)
+(printout ?*defdbug* "(rule-rel-values clock_time-noon id-MRS_concept " ?ct" numbered_hour)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ct 10) " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values clock_time-noon id-MRS_concept "(+ ?ct 10) " def_implicit_q)"crlf)
 )
 
 ;Example:  He comes here daily. 
@@ -858,5 +870,14 @@
 )
 
 
-
+;#अब्राम उस घंटे पहुंचे थे।
+(defrule dem_time
+(id-concept_label	?dem	 wyax)
+(id-concept_label	?time	 ?hintime)
+(rel_name-ids	dem	?time	?dem)
+(rel_name-ids	k7t	?kriya	?time)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?time " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values aps_of_dow_timeadverb id-MRS_concept "?time" loc_nonsp)"crlf)
+)
 

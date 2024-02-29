@@ -2838,5 +2838,44 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values unknown_LTOP_value_sharing-heading id-MRS_concept-LBL-ARG0-ARG  0 unknown "?lbl" " ?arg0 " " ?arg01 ")"crlf)
 )
 
+;#अब्राम उस घंटे पहुंचे थे।
+(defrule loc_nonsp_verb
+(id-concept_label	?time	 ?timehin)
+(id-concept_label	?kriya	 ?hinconcept)
+(rel_name-ids	dem	?time	?dem)
+(rel_name-ids	k7t	?kriya	?time)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?time loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info ?rel ?kriya ?verbconcept ?lbll ?arg000 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0 ?time ?concept ?l ?ARg0)
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?time" loc_nonsp "?lbll" "?arg0" "?arg000" "?ARg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values loc_nonsp_verb id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?time" loc_nonsp "?lbll" "?arg0" "?arg000" "?ARg0")"crlf)
+)
+
+;Rule for generating the 12 number in the CARG value for midday, noon, twelve time hours. 
+;Rama arrived at midday.
+(defrule 12_carg_number
+(id-concept_label	?numid	xopahara_2)
+(rel_name-ids	k7t	?kri	?numid)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-CARG ?numid numbered_hour ?lbl ?arg0 ?arg1 ?arg2 ?carg)
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-CARG "?numid" numbered_hour "?lbl" "?arg0" "?arg1" "?arg2" 12)"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values 12_carg_number id-MRS_concept-LBL-ARG0-ARG1-ARG2-CARG "?numid" numbered_hour "?lbl" "?arg0" "?arg1" "?arg2" 12)"crlf)
+)
+
+;Rule for generating the 12 number in the CARG value for midday, noon, twelve time hours. 
+;Rama arrived at midday.
+(defrule carg_number
+(id-concept_label	?numid	?hinconcept)
+(rel_name-ids	k7t	?kri	?numid)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?minut minute ?lbb ?arg00 ?arg111)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-CARG ?numid numbered_hour ?lbl ?arg0 ?arg1 ?arg2 ?carg)
+(test (neq (str-index "+baje" ?hinconcept) FALSE))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-CARG "?minut" minute "?lbl" "?arg00" "?arg1" 00)"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values carg_number id-MRS_concept-LBL-ARG0-CARG "?minut" minute "?lbl" "?arg00" "?arg1" 00)"crlf)
+)
+
+
 
 
