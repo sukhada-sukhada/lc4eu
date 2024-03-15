@@ -379,7 +379,7 @@
 ;Rule for converting ARG3 of _give_v_1  into u* when there is no k4 relation.  
 ;Bad works give bad results.
 (defrule k4-absent
-(id-hin_concept-MRS_concept ?kri ?hin _give_v_1)
+(id-hin_concept-MRS_concept ?kri ?hin _give_v_1|_explain_v_to|_describe_v_to)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2 ?arg3)
 (not (rel_name-ids k4   ?kri    ?id))
 =>

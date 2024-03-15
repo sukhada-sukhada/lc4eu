@@ -1187,6 +1187,7 @@ then
 
 ;Rule for generic_entity
 (defrule generic_entity
+;(declare (salience 10))
 (id-concept_label	?id1	wyax)
 (or (id-proximal	?id1	yes) (id-distal	?id1	yes))
 (MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
@@ -1200,7 +1201,6 @@ then
 =>
 (retract ?f1 ?f2)
 (assert (modified ?ARG02))
-
 (assert (MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG0 $?var))
 (printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel1 " "?id2" "?mrsCon" " ?lbl1 " " ?ARG01" " ?ARG0" "(implode$ (create$ $?var)) ")"crlf)
 
@@ -2315,10 +2315,14 @@ else
 (rel_name-ids	rask2	?kriya	?rask2)
 (MRS_info ?rel ?rask2 ?concept ?lbl ?arg0 $?v)
 ?f<-(MRS_info ?rel1 ?kriya ?mrsconcept ?lbl1 ?arg00 ?arg1 ?arg2 $?va)
+
 =>
+;(retract ?f)
 (assert (MRS_info ?rel1 ?kriya ?mrsconcept  ?lbl1 ?arg00 ?arg1 ?arg0))
+;(printout ?*rstr-fp* "(MRS_info "?rel1" "?kriya" "?mrsconcept" " ?lbl1" "?arg00" "?arg1" "?arg0" "(implode$ (create$ $?va))" )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rask2 "?rel1" "?kriya" "?mrsconcept" " ?lbl1" "?arg00" "?arg1" "?arg0" "(implode$ (create$ $?va))" )"crlf)
 )
+
 
 (defrule prep-noun-dir
 (declare (salience 10000))

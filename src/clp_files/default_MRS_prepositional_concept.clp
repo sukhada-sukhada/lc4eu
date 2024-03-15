@@ -19,6 +19,7 @@
 (not (id-degree ?id	comperless)) ;rAma mohana se kama buxXimAna hE .
 (not (do_not_generate_prep_for_k2p ?k-id)) ;I am coming home.
 (not (do_not_generate_prep_for_k7p ?k-id)) ;He comes here daily.
+(not (do_not_generate_prep_for_rt ?k-id)) ;This attempted to spread knowledge.
 =>
 (bind ?myprep (str-cat "_" ?prep "_p"))
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " " ?myprep")"crlf)
@@ -136,3 +137,22 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " _at_p_temp)"crlf)
 (printout ?*defdbug* "(rule-rel-values at_p_temp  id-MRS_concept " (+ ?k-id 1) " _at_p_temp)"crlf)
 )
+
+
+;not to generate preposition for rt with verb relation.
+;This attempted to spread knowledge. 
+(defrule noPreprt
+(declare (salience 1000))
+(rel_name-ids rt ?kri ?k-id)
+(id-concept_label  ?k-id   ?hinconcept)
+(id-hin_concept-MRS_concept ?k-id ?hinconcept ?verbrt)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?verbmain ?lbll ?arg0 ?arg1 ?arg2)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?k-id ?verbrt ?lbl $?v)
+(test (neq (str-index _v_ ?verbrt) FALSE))
+
+=>
+(assert (do_not_generate_prep_for_rt ?k-id))
+(printout ?*defdbug* "(rule-rel-values noPreprt id-MRS_concept " ?k-id ")"crlf)
+)
+
+

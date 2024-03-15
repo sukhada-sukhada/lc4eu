@@ -485,6 +485,8 @@
 (rel_name-ids	krvn	?kri	?kvn)
 (id-hin_concept-MRS_concept ?kvn ?hin1 ?mrsCon) 
 (test (neq (str-index _v_ ?mrsCon) FALSE)) ;Exception to I kicked the blind boy slowly.
+(test (eq (str-index _v_modal ?mrsCon) FALSE)) ;Exception to I kicked the blind boy slowly.
+
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord-kr id-MRS_concept -20000 subord)"crlf)

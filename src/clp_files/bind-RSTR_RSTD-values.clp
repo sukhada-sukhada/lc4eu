@@ -1282,3 +1282,18 @@
 (printout ?*rstr-rstd* "(Restr-Restricted  "?rstr " "?lbl ")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values 12_carg_number-rstr Restr-Restricted   "?rstr " "?lbl ")"crlf)
 )
+
+;rule for creating the binding between the ARG2 handle value of the verb with the rt relation of verb's label.
+;This attempted to spread knowledge.
+(defrule rt-verb-relation
+(id-concept_label	?rt	?rthin)
+(id-concept_label	?kri	?verbhin)
+(rel_name-ids	rt	?kri	?rt)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?verbmain ?lbll ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?rt ?verbrt ?lbl $?v)
+(test (neq (str-index _v_ ?verbrt) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values rt-verb-relation "?arg2 " "?lbl ")"crlf)
+)
+
