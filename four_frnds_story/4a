@@ -1,0 +1,63 @@
+#अगर गांव में कुछ भी गलत होता था।
+gAMva_1,kuCa_10,galawa_5,ho_7-wA_WA_1
+1,2,3,4
+,,,
+,,,
+4:k7p,4:k1,4:k1s,0:main
+,,,
+def,BI_3,,
+,,,
+affirmative
+
+
+#अगर गांव में कुछ भी गलत होता था।
+gAMva_1,kuCa_10,galawa_5,ho_7-wA_hE_1
+1,2,3,4
+,,,
+,,,
+4:k7p,4:k1,4:k1s,0:main
+,,,4b.3:AvaSyakawApariNAma
+def,BI_3,,
+,,,
+affirmative
+
+If anything wrong happened in the village.
+If something happens wrong in the village.  
+
+#अगर गांव में कुछ भी गलत होता था।
+gAMva_1,kuCa,galawa_1,ho_1-wA_WA_1
+1,2,3,4
+,,,
+,,,
+4:k7p,3:quant,4:k1,0:main
+,,,4b.3:AvaSyakawApariNAma
+,BI_3,,
+,,,
+affirmative
+
+
+This tam is very specific to 3rd person singular.
+#अगर गांव में कुछ भी गलत होता था।
+gAMva_1,kuCa_10,galawa_5,ho_2-wA_WA_1
+1,2,3,4
+,,,
+,,,
+4:k7p,3:quant,4:k1,0:main
+,,,4b.3:AvaSyakawApariNAma
+def,BI_3,,
+,,,
+affirmative
+
+
+#अगर गांव में कुछ भी गलत होता था।
+gAMva_1,kuCa_10,galawa+ho_1-wA_WA_1
+1,2,3
+,,
+,,
+3:k7p,3:quant,0:main
+,,4b.3:AvaSyakawApariNAma
+def,BI_3,
+,,,
+affirmative
+
+

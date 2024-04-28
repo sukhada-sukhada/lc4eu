@@ -1,0 +1,48 @@
+#इस कारण उनके माता पिता बहुत परेशान थे
+wyax,mAwA_1+piwA_1,bahuwa_7,pareSAna_1,hE_1-past
+1,2,3,4,5
+,anim,,,
+,pl,,,
+2:rhh,5:k1,4:intf,5:k1s,0:main
+4c.4:coref,,,,4c.5:pariNAma
+,,,,
+,,,,
+affirmative
+
+#इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
+wyax,mAwA_1+piwA_1,bahuwa_7,pareSAna+raha_1-wA_WA_1
+1,2,3,4
+,anim,,
+,pl,,
+2:rhh,4:k1,4:intf,0:main
+4c.4:coref,,,4c.5:pariNAma
+,,,
+,,,
+affirmative
+
+#इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
+wyax,mAwApiwA_1,wyax,bahuwa_7,pareSAna+raha_1-wA_WA_1
+1,2,3,4,5
+,anim,,,
+,,,,
+2:rhh,5:k1,5:rh,5:intf,0:main
+4c.4:coref,,4c.4:coref,,4c.4:pariNAma
+,,,,
+,,,,
+affirmative
+
+unse drop karna he
+is kaaran unke mata pita bahut pareshan te
+
+
+#इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
+wyax,mAwA_1+piwA_1,wyax,bahuwa_7,pareSAna+raha_1-wA_WA_1
+3,4,5,6,7
+,anim,,,
+,pl,pl,,
+4:rhh,7:k1,7:rh,7.1:intf,0:main
+4c.4:coref,,4c.4:coref,,4c.4:pariNAma
+,,,,
+,,,,
+affirmative
+
