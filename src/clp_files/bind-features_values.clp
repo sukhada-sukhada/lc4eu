@@ -55,7 +55,7 @@
 ;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
 (declare (salience 100))
-(rel_name-ids mod|intf|card|rvks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
+(rel_name-ids mod|intf|rvks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 ?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 ;(test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
@@ -142,6 +142,7 @@
 (test (neq ?arg1 ?id1_arg0))
 (not (id-concept_label  ?k-id   ?hiConcept&Aja_1|kala_1|kala_2)) ;to rule out the cases for time adverbs.
 (not (modified_samAnAXi ?k1))
+(not (rel_name-ids vyABIcAra ?previousid	?v_id))
 =>
 (retract ?f)
 (assert (modified_samAnAXi ?k1))
@@ -491,7 +492,8 @@
 (test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
 ;(test (neq (str-index "_n_" ?mrsCon2)FALSE))
 (test (or (neq (str-index "_n_" ?mrsCon2)FALSE) (eq ?mrsCon2 nominalization) ))
-(not (rel_name-ids	k1s	?kriyA	?karwA))
+;(not (rel_name-ids	k1s	?kriyA	?karwA))
+(test (eq (str-index "_v_id" ?mrsCon1)FALSE)) ;Anything wrong in the village.
 (not (rel_name-ids	rask2	?kriyA	?karwA))
 (not (id-concept_label       ?kriyA  raKa_8)) ;Abrams put Browne in the garden.
 =>
@@ -651,7 +653,7 @@
 ;Ex. My friend is playing in the garden.
 ;Ex. The necklace is in the woman's neck. 
 (defrule r6
-(rel_name-ids r6	?id	?id1)
+(rel_name-ids r6|rhh	?id	?id1) ;Because of that his parents used to be very upset.
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?idposs poss ?lbl ?arg0 ?arg1 ?arg2)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id_q def_explicit_q ?lbl1 ?arg01 ?rstr ?body)
 (MRS_info ?rel                             ?id ?mrsCon ?lbl6 ?arg00 $?v)  
@@ -1126,6 +1128,7 @@ then
 ?f<-(rel_name-ids   k7p|k7        ?v  ?id2)
 (MRS_info ?rel ?id3 ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2)
 (test  (or (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p")        (eq ?endsWith_p "loc_nonsp")))
+;(test (neq (str-index "_v_id" ?mrsCon1)FALSE))
 =>
 (retract ?f)
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
@@ -1187,7 +1190,6 @@ then
 
 ;Rule for generic_entity
 (defrule generic_entity
-;(declare (salience 10))
 (id-concept_label	?id1	wyax)
 (or (id-proximal	?id1	yes) (id-distal	?id1	yes))
 (MRS_info ?rel ?id1 ?mrscon ?lbl ?ARG0 ?rstr ?body)
@@ -1201,6 +1203,7 @@ then
 =>
 (retract ?f1 ?f2)
 (assert (modified ?ARG02))
+
 (assert (MRS_info ?rel1 ?id2 ?mrsCon ?lbl1 ?ARG01 ?ARG0 $?var))
 (printout ?*rstr-dbug* "(rule-rel-values generic_entity " ?rel1 " "?id2" "?mrsCon" " ?lbl1 " " ?ARG01" " ?ARG0" "(implode$ (create$ $?var)) ")"crlf)
 
@@ -1271,7 +1274,7 @@ then
 (printout ?*rstr-dbug* "(rule-rel-values  mrs-info_q "?rel1 " " ?dep " " ?endsWith_q " " ?lbl1 " "?ARG_0 " " (implode$ (create$ $?vars)) ")"crlf)
 )
 
-
+;Rule to the share the value of head's ARG0 with the dependent's ARG1 
 (defrule rstr-rstd4non-implicit
 (rel_name-ids dem|quant ?head ?dep) 
 ;(rel_name-ids ord|dem|quant ?head ?dep) ;Rama ate the second apple.
@@ -1892,6 +1895,7 @@ then
 (test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
 ;(test (neq (str-index "_n_" ?mrsCon2)FALSE))
 (test (or (neq (str-index "_n_" ?mrsCon2)FALSE) (eq ?mrsCon2 nominalization) ))
+;(test (neq (str-index "_v_id" ?mrsCon1)FALSE))
 =>
 (retract ?f)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
@@ -2315,14 +2319,10 @@ else
 (rel_name-ids	rask2	?kriya	?rask2)
 (MRS_info ?rel ?rask2 ?concept ?lbl ?arg0 $?v)
 ?f<-(MRS_info ?rel1 ?kriya ?mrsconcept ?lbl1 ?arg00 ?arg1 ?arg2 $?va)
-
 =>
-;(retract ?f)
 (assert (MRS_info ?rel1 ?kriya ?mrsconcept  ?lbl1 ?arg00 ?arg1 ?arg0))
-;(printout ?*rstr-fp* "(MRS_info "?rel1" "?kriya" "?mrsconcept" " ?lbl1" "?arg00" "?arg1" "?arg0" "(implode$ (create$ $?va))" )"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values rask2 "?rel1" "?kriya" "?mrsconcept" " ?lbl1" "?arg00" "?arg1" "?arg0" "(implode$ (create$ $?va))" )"crlf)
 )
-
 
 (defrule prep-noun-dir
 (declare (salience 10000))
@@ -2880,6 +2880,142 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values carg_number id-MRS_concept-LBL-ARG0-CARG "?minut" minute "?lbl" "?arg00" "?arg1" 00)"crlf)
 )
 
+;Rule to generate the number in english and value sharing of cardinal with the modified (noun). 
+;Four boys used to live in a village.
+(defrule viya-viNa-carg
+(declare (salience 100))
+(id-concept_label	?viNa	?hinconcept)
+(id-numex	?viNa	yes)
+(rel_name-ids card ?viya ?viNa)
+(MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG ?viNa card ?lbl2 ?arg0_viNa ?arg1_viNa ?carg)
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG "?viNa" card "?lbl1" "?arg0_viNa" "?arg0_viya" "?hinconcept")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values viya-viNa-carg id-MRS_concept-LBL-ARG0-ARG1-CARG "?viNa" card "?lbl1" "?arg0_viNa" "?arg0_viya" "?hinconcept")"crlf)
+)
+
+;They were not only obedient.
+(defrule hI_6_not_only
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _only_x_deg ?lbl ?a0 ?a1)
+(id-hI_6  ?id1  yes)
+(MRS_info ?rel ?id1 ?mrscon ?l ?arg0 $?v)
+(test (eq (+ ?id1 1000) ?id))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _only_x_deg "?l" "?a0" " ?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values hI_6_not_only MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _only_x_deg "?l"  "?a0" " ?arg0")"crlf)
+)
+
+;Rule for creating LTOP value with the _but_c arg0 value when samuccaya and BI_1 relation exists.
+;#बल्कि वे बहुत समझदार भी थे
+(defrule samuccaya_BI_but-LTOP
+(rel_name-ids samuccaya ?previousid	?verb)
+(id-BI_1	?verb	yes)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?but _but_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values samuccaya_BI_but-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)
+
+;Rule for creating binding LTOP with the lbl of _but_c and R_HNDL value with the lbl of the adjective.
+;#बल्कि वे बहुत समझदार भी थे
+(defrule samuccaya_BI_but-bind-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids samuccaya ?previousid	?verb)
+(id-BI_1	?verb	yes)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _but_c ?lbl ?arg0 ?lindex ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+=>
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values samuccaya_BI_but-bind-copula id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?and" _but_c "?lbl" "?arg0" "?lindex" "?arg00" "?lhndl" "?rhndl")"crlf)
+)
+
+;Rule to create value sharing between the _despite_p, focus_d, and the verb of the sentence.
+;;#इसके बावजूद  वे बहुत घनिष्ठ मित्र थे
+(defrule vyABIcAra_despite_focus
+(rel_name-ids vyABIcAra ?previousid	?id)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?gen _despite_p ?l ?a0 ?a1 ?a2)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?iD focus_d ?ll ?ar0 ?ar1 ?ar2)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?gen generic_entity ?lllll ?Arg0000)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id ?verb ?lll ?a00 ?a11 ?a22)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?iddd ?qdem ?lbl ?arg0 $?var)
+(test (neq (str-index "_q_dem" ?qdem) FALSE))
+(test (neq (str-index "_v_" ?verb) FALSE))
+(test (eq  (+ ?iddd 9) ?gen))
+=>
+(retract ?f ?f1 ?f2)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?gen" _despite_p "?lll" "?a0" "?a00" "?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vyABIcAra_despite_focus id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?gen" _despite_p "?lll" "?a0" "?a00" "?arg0")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0 "?gen" generic_entity "?lllll" "?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vyABIcAra_despite_focus id-MRS_concept-LBL-ARG0 "?gen" generic_entity "?lllll" "?arg0")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?iD" focus_d "?lll" "?ar0" "?a00" "?a0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values vyABIcAra_despite_focus id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?iD" focus_d "?lll" "?ar0" "?a00" "?a0")"crlf)
+)
 
 
+;Rule to create value sharing between the _any_q with the thing AP.
+;Anything wrong happened in the village.
+(defrule kuCa_BI_3
+(id-concept_label	?id	?hinconcept)
+(id-BI_3	?id	yes)
+(rel_name-ids	k1	?kriya	?id)
+(rel_name-ids	k1s	?kriya	?k1s)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id ?quantifier ?ll ?a00 ?rstr ?body)
+(MRS_info ?rel ?k1s ?mrsconcept ?lbl $?v)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0 ?id thing ?l ?arg0)
+=>
+(retract ?f1 ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" "?quantifier" "?ll" "?arg0" "?rstr" "?body")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kuCa_BI_3 id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" "?quantifier" "?ll" "?arg0" "?rstr" "?body")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0 "?id" thing "?lbl" "?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values kuCa_BI_3 id-MRS_concept-LBL-ARG0 "?id" thing "?lbl" "?arg0")"crlf)
+)
 
+;Rule to create value sharing between focus_d and _because+of_p with the verb and the demonstrative.
+;Because of that his parents used to be very upset.
+(defrule pariNAma_focus
+;(declare (salience 1000))
+(rel_name-ids pariNAma ?previousid	?id)
+(rel_name-ids	k1s	?id ?verbid)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?gen _because+of_p ?l ?a0 ?a1 ?a2)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?iD focus_d ?ll ?ar0 ?ar1 ?ar2)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?gen generic_entity ?lllll ?Arg0000)
+(MRS_info ?relll ?verbid ?verb ?lll ?a00 ?a11 $?vvv)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?iddd ?qdem ?lbl ?arg0 $?var)
+(test (neq (str-index "_q_dem" ?qdem) FALSE))
+;(test (neq (str-index "_v_" ?verb) FALSE))
+(test (eq  (+ ?iddd 9) ?gen))
+=>
+(retract ?f ?f1 ?f2)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?gen" _because+of_p "?lll" "?a0" "?a00" "?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values pariNAma_focus id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?gen" _because+of_p "?lll" "?a0" "?a00" "?arg0")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0 "?gen" generic_entity "?lllll" "?arg0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values pariNAma_focus id-MRS_concept-LBL-ARG0 "?gen" generic_entity "?lllll" "?arg0")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?iD" focus_d "?lll" "?ar0" "?a00" "?a0")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values pariNAma_focus id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?iD" focus_d "?lll" "?ar0" "?a00" "?a0")"crlf)
+)
+;(('_because+of_p', 'ARG1'), ('_bothered_a_1', 'ARG0'), ('_very_x_deg', 'ARG1'), ('focus_d', 'ARG1')): Missing
+
+
+;Rule to create value sharing between the predicative adjective and the possessive pronoun "rhh"
+;;Because of that his parents used to be very upset.
+;MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 _upset_a_1 h31 e32 x33)
+(defrule pariNAma_pred_adjective
+(rel_name-ids pariNAma ?previousid	?id)
+(rel_name-ids	k1	?id	?k1id)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?adj ?lbl ?arg0 ?arg1)
+(MRS_info ?rel ?k1id ?noun ?l ?a $?v)
+(test (neq (str-index "_a_" ?adj) FALSE))
+(test (neq (str-index "_n_" ?noun) FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" "?adj" "?lbl" "?arg0" "?a")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values pariNAma_pred_adjective id-MRS_concept-LBL-ARG0-ARG1 "?id" "?adj" "?lbl" "?arg0" "?a")"crlf)
+)

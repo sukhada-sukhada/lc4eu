@@ -122,7 +122,7 @@
 
 ;Restrictor for LTOP Restrictor-Restricted when neg is present
 (defrule LTOP-neg-rstd
-(rel_name-ids neg ?x    ?id)
+(or (rel_name-ids neg ?x    ?id) (id-hI_6	?id	yes))
 (MRS_info ?rel	?id neg ?lbl $?vars)
 (not (Restr-Restricted-fact-generated))
 (not (rel_name-ids samuccaya ?Id	?x))
@@ -137,7 +137,7 @@
 ;Ex. rAvaNa acCA nahIM hE.  Ravana is not good.
 (defrule neg-pred_adj
 (rel_name-ids	k1s	?kri	?adj)
-(rel_name-ids	neg	?kri	?neg)
+(or (rel_name-ids	neg	?kri	?neg) (id-hI_6	?neg	yes)) ; They were not only obedient.
 (MRS_info ?rel   ?neg neg ?lbl ?a0 ?a1)
 (MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg1 $?v)
 (test (neq (str-index _a_ ?mrs_adj) FALSE))
@@ -150,7 +150,7 @@
 ; written by sakshi yadav (NIT Raipur) date- 02.06.19
 ;want to bind RSTR of def_explicit_q  with LBL of poss
 (defrule defexpq
-(rel_name-ids r6	?id  ?id1)
+(rel_name-ids r6|rhh	?id  ?id1) ;Because of that his parents used to be very upset.
 (MRS_info ?rel1 ?idposs poss ?lbl2 ?ARG_0 ?ARG1 ?ARG2)
 ?f<-(MRS_info ?rel2 ?id_q def_explicit_q ?lbl1 ?x ?rstr $?v)
 (test (eq  (+ ?idposs 9) ?id_q)) ;Ms. Rajini admitted her son and her daughter in the Kashi's largest school in Banaras.
@@ -986,11 +986,11 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values emph-definite-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
 )
 
-;Rule for creating binding with LTOP and the label of definite and ARG1 label of definite with word it exclusive.
+;Rule for creating binding with LTOP and the label of definite and ARG1 label of definite with word it hI_2.
 ;#SIlA hI apanA piwA ko KilAwi hE
-(defrule exclusive-definite
+(defrule hI_2-definite
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _only_a_1 ?lbl ?arg0 ?arg1)
-(id-exclusive  ?id2  yes)
+(id-hI_2  ?id2  yes)
 (rel_name-ids	k1	?id3	?id2)
 ?f1<-(MRS_info ?rel2 ?id3 ?mrscon ?lbl1 ?arg01 $?v)
 (test (neq (str-index _v_ ?mrscon) FALSE))
@@ -998,9 +998,9 @@
 =>
 (retract  ?f ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values exclusive-definite Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values hI_2-definite Restr-Restricted h0 "?lbl")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values exclusive-definite  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values hI_2-definite  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
 )
 
 ;Rule for creating binding with certain word with the verb of the sentence. 
@@ -1283,17 +1283,51 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values 12_carg_number-rstr Restr-Restricted   "?rstr " "?lbl ")"crlf)
 )
 
-;rule for creating the binding between the ARG2 handle value of the verb with the rt relation of verb's label.
-;This attempted to spread knowledge.
-(defrule rt-verb-relation
-(id-concept_label	?rt	?rthin)
-(id-concept_label	?kri	?verbhin)
-(rel_name-ids	rt	?kri	?rt)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?verbmain ?lbll ?arg0 ?arg1 ?arg2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?rt ?verbrt ?lbl $?v)
-(test (neq (str-index _v_ ?verbrt) FALSE))
+
+;Rule for creating binding LTOP with the lbl of _but_c and R_HNDL value with the lbl of the emphatic marker of the sentence BI_1 _also_a_1 when predicate adjective exists.
+;But he is intelligent. #kinwu vaha buxXimAna hE.
+(defrule samuccaya_BI_but-LTOP-copula
+(id-concept_label	?verb	hE_1)
+(rel_name-ids samuccaya ?previousid	?verb)
+(id-BI_1	?verb	yes)
+(rel_name-ids	k1s	?verb	?adj)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and _but_c ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
+(MRS_info ?rel ?also ?mrsss ?lblb ?arg00 $?v)
+(test (eq  (+ ?verb 1000) ?and))
+(test (eq  (+ ?adj 1000) ?also))
 =>
-(printout ?*rstr-rstd* "(Restr-Restricted  "?arg2 " "?lbl ")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values rt-verb-relation "?arg2 " "?lbl ")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya_BI_but-LTOP-copula Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted "?rhndl" " ?lblb")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya_BI_but-LTOP-copula Restr-Restricted "?rhndl" "?lblb")"crlf)
+)
+
+;Rule to create binding with ARG1 of also with the lbl of the predicative adjective. 
+(defrule BI_1-also-predadj
+(id-concept_label	?id1	hE_1)
+(rel_name-ids	k1s	?id1	?id2)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?arg0 ?arg1)
+(id-BI_1  ?id1  yes)
+?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
+(test (neq (str-index _a_ ?mrscon) FALSE))
+=>
+(retract  ?f ?f1)
+;(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+;(printout ?*rstr-rstd-dbg* "(rule-rel-values BI_1-predadj Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values BI_1-also-predadj  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+
+;rule to create binding with demonstratives rstr with the generic_entity lbl when the relations are vyABIcAra and pariNAma. 
+;Because of that his parents used to be very upset.
+(defrule vyABIcAra_generic_this
+(rel_name-ids vyABIcAra|pariNAma ?previousid	?id)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?gen generic_entity ?lllll ?Arg0000)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?iddd ?qdem ?lbl ?arg0 ?rstr ?body)
+(test (neq (str-index "_q_dem" ?qdem) FALSE))
+(test (eq  (+ ?iddd 9) ?gen))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted " ?rstr " "?lllll")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values vyABIcAra_generic_this  Restr-Restricted " ?rstr " "?lllll")"crlf)
 )
 

@@ -307,6 +307,7 @@
 ;113 verified sentence #sUrya camakawA BI hE.
 (defrule BI_1
 (id-BI_1  ?id  yes)
+(not (rel_name-ids samuccaya ?previousid	?id))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _also_a_1)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values BI_1 id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
@@ -381,6 +382,7 @@
 (not (rel_name-ids r6 ?id ?r6))  ;merA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kim)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
+(not (id-concept_label	?id	mAwA_1+piwA_1))
 (not (id-concept_label	?id	saba_4))
 (not (rel_name-ids deic ?ida	?id)) ;#yaha Gara hE.
 (not (rel_name-ids coref ?	?id)) ;#usane nahIM KAyA.
@@ -475,8 +477,8 @@
 
 ;Rule to generate _only_a_1 for the exclusive discourse particle.
 ;SIlA hI apane piwA ko KilAwI hE.
-(defrule exclusive
-(id-exclusive  ?id  yes)
+(defrule hI_2
+(id-hI_2  ?id  yes)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _only_a_1)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values exclusive id-MRS_concept "(+ ?id 1000)" _only_a_1)"crlf)
@@ -501,6 +503,7 @@
 (not (id-num	?karwa	pl))
 (not (rel_name-ids	r6	?karwa	?id))
 (not (rel_name-ids	k7p	?kri	?id)) ; He comes here daily.
+(not (rel_name-ids coref ?kuchh	?id))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "?id" _this_q_dem)"crlf)
@@ -526,6 +529,7 @@
 (or (rel_name-ids	dem	?karwa	?id) (rel_name-ids	k1	?kri	?karwa))
 (id-distal	?id	yes)
 (not (id-num	?karwa	?n))
+(not (rel_name-ids coref ?kuch	?id))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _that_q_dem)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values that_q_dem_distal id-MRS_concept "?id" _that_q_dem)"crlf)
@@ -535,6 +539,7 @@
 ;and He went.
 (defrule samuccaya_and
 (rel_name-ids samuccaya ?previousid	?verb)
+(not (id-BI_1	?verb	yes))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _and_c)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values  samuccaya_and  id-MRS_concept "(+ ?verb 100) "  _and_c)"crlf)
@@ -606,3 +611,71 @@
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _these_q_dem)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "?id" _these_q_dem)"crlf)
 )
+
+;Rule for generating _if_x_then for the AvaSyakawApariNAma relation in the discourse row.
+(defrule AvaSyakawApariNAma
+(rel_name-ids AvaSyakawApariNAma ?previousid	?verb)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _if_x_then)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakawApariNAma  id-MRS_concept "(+ ?verb 100) "  _if_x_then)"crlf)
+)
+
+;Rule to generate _certain_a_1 for the assertion discourse particle.
+;#rAma wo ayegA.
+(defrule hI_6
+(id-hI_6 ?id  yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _only_x_deg)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values hI_6 id-MRS_concept "(+ ?id 1000)" _only_x_deg)"crlf)
+)
+
+;Rule to generate _but_c when we have samuccaya and BI_1 relation 
+;Rule for generating _but_c for the viroXI relation in the discourse row.
+;but he didn't eat food.
+(defrule samuccaya_BI_but
+(rel_name-ids samuccaya ?previousid	?verb)
+(id-BI_1	?verb	yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _but_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  samuccaya_BI_but  id-MRS_concept "(+ ?verb 100) "  _but_c)"crlf)
+)
+
+;Rule to generate _that_q_dem for vyABIcAra discourse relation and when there is distal.
+;#इसके बावजूद  वे बहुत घनिष्ठ मित्र थे
+(defrule vyABIcAra_that
+(rel_name-ids vyABIcAra ?previousid	?id)
+(rel_name-ids	k1	?id	?karwa)
+(id-distal	?karwa	yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1) " _that_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values vyABIcAra_that id-MRS_concept "(+ ?id 1) "  _that_q_dem)"crlf)
+)
+;Rule to generate _that_q_dem for vyABIcAra discourse relation and when there is distal.
+;#इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
+(defrule pariNAma_that
+(rel_name-ids pariNAma ?previousid	?id)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1) " _that_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values pariNAma_that id-MRS_concept "(+ ?id 1) "  _that_q_dem)"crlf)
+)
+
+;Rule to generate _despite_p for vyABIcAra discourse relation. 
+;#इसके बावजूद  वे बहुत घनिष्ठ मित्र थे
+(defrule vyABIcAra_despite
+(rel_name-ids vyABIcAra ?previousid	?id)
+(rel_name-ids	k1	?id	?karwa)
+(id-distal	?karwa	yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _despite_p)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values vyABIcAra_despite id-MRS_concept "(+ ?id 10) " _despite_p)"crlf)
+)
+
+;Rule to generate _because+of_p for vyABIcAra discourse relation. 
+;#इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
+(defrule _because+of_p
+(rel_name-ids pariNAma ?previousid	?id)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _because+of_p)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values _because+of_p id-MRS_concept "(+ ?id 10) " _because+of_p)"crlf)
+)
+

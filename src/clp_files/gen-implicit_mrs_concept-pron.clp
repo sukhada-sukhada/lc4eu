@@ -64,6 +64,7 @@
 (id-concept_label	?dem	wyax)
 (id-proximal	?dem	yes)
 (rel_name-ids	k1|k2	?noun	?dem)
+(not (rel_name-ids coref ?kuchh	?dem))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_dem_pron-this id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
@@ -74,6 +75,7 @@
 (id-concept_label	?dem	wyax)
 (id-distal	?dem	yes)
 (rel_name-ids	k1	?noun	?dem)
+(not (rel_name-ids coref ?ddd	?dem))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_dem_pron-that id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
@@ -85,6 +87,7 @@
 (rel_name-ids coref  ?referent    ?coref)
 (id-concept_label       ?coref    ?conL)
 (not (id-concept_label	?coref eka+xUsarA)) ; 326: #hama eka xUsare se pyAra karawe hEM.
+(not (rel_name-ids	dem	?ddd	?coref))
 ;(not (id-proximal	?coref	yes))
 ;(not (id-distal	?coref	yes))
 ;(not (id-num	?coref	pl))
@@ -96,8 +99,9 @@
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "?coref " pron)"crlf)
 )
 
+;Rule to generate poss and def_explicit_q for r6 and rhh relation with wyax as a concept in the concept row.
 (defrule mrs_poss_pron_wyax
-(rel_name-ids r6 ?viSeRya ?r6)
+(rel_name-ids r6|rhh ?viSeRya ?r6)
 (id-concept_label	?r6	wyax)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)

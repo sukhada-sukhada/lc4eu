@@ -17,12 +17,15 @@
 (not (rel_name-ids dem ?id ?v))
 (not (rel_name-ids quant ?id ?v))
 (not (rel_name-ids r6 ?id ?v))
-(not(id-concept_label	?id 	?concept&speaker|addressee|wyax|saba_4))
+(not(id-concept_label	?id 	?concept&speaker|addressee|wyax|saba_4|mAwA_1+piwA_1)) 
 (not (rel_name-ids coref ?	?id))
+(not (rel_name-ids	dem	?	?v)) ;Those two boys must have done it.
+;(not (rel_name-ids	rhh	?id	?)) ;इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 )
+
 
 ;Rule for mass noun : if (id-mass ?id yes) , generate (id-MRS_Rel ?id _udef_q)
 (defrule mrs_mass_notDef
@@ -39,7 +42,7 @@
 
 ;Rule for mass noun : if (id-mass ?id yes) , generate (id-MRS_Rel ?id _udef_q)
 (defrule mrs_numex
-(id-concept_label	?id	eka_1)
+(id-concept_label	?id	1)
 (id-concept_label	?noun	?hinconcept)
 (rel_name-ids	card	?noun	?id)
 (id-numex ?id yes)
@@ -70,7 +73,7 @@
 
 ;rAma dAktara nahIM hE.	 rAma xillI meM nahIM hE. #usane KAnA nahIM KAyA. #use Gara nahIM jAnA cAhie.
 (defrule mrs_neg_notDef
-(rel_name-ids neg  ?kid ?negid)
+(or (rel_name-ids neg  ?kid ?negid) (id-hI_6	?negid	yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?negid " neg)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_neg_notDef id-MRS_concept "?negid " neg)"crlf)
@@ -485,8 +488,6 @@
 (rel_name-ids	krvn	?kri	?kvn)
 (id-hin_concept-MRS_concept ?kvn ?hin1 ?mrsCon) 
 (test (neq (str-index _v_ ?mrsCon) FALSE)) ;Exception to I kicked the blind boy slowly.
-(test (eq (str-index _v_modal ?mrsCon) FALSE)) ;Exception to I kicked the blind boy slowly.
-
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -20000 subord)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_subord-kr id-MRS_concept -20000 subord)"crlf)
@@ -593,6 +594,17 @@
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " yofc)"crlf)
 (printout ?*defdbug* "(rule-rel-values  years_of_century id-MRS_concept "?id " yofc)"crlf)
+)
+
+;#एक गांव में चार लडके रहते थे
+(defrule numbers
+(id-concept_label	?id	?hinconcept)
+(id-numex	?id	yes)
+(rel_name-ids	card	?noun	?id)
+
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " card)"crlf)
+(printout ?*defdbug* "(rule-rel-values  numbers id-MRS_concept "?id " card)"crlf)
 )
 
 ;My birthday is 23 September.
@@ -882,4 +894,53 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?time " loc_nonsp)"crlf)
 (printout ?*defdbug* "(rule-rel-values aps_of_dow_timeadverb id-MRS_concept "?time" loc_nonsp)"crlf)
 )
+
+;Rule for generating unknown for the AvaSyakawApariNAma relation in the discourse row.
+(defrule AvaSyakawApariNAma_ap
+(rel_name-ids AvaSyakawApariNAma ?previousid	?verb)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?verb 1) "  unknown)"crlf)
+(printout ?*defdbug* "(rule-rel-values  AvaSyakawApariNAma id-MRS_concept "(+ ?verb 1) "  unknown)"crlf)
+)
+
+;Rule for generating thing AP for BI_3 discourse particle.
+;If anything go wrong in the village.
+(defrule anything
+(id-concept_label	?id	?hinconcept)
+(id-BI_3	?id	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" thing)"crlf)
+(printout ?*defdbug* "(rule-rel-values anything id-MRS_concept "?id" thing)"crlf)
+)
+
+;Rule to generate focus_d for vyABIcAra discourse relation.
+;#इसके बावजूद  वे बहुत घनिष्ठ मित्र थे
+(defrule vyABIcAra
+(rel_name-ids vyABIcAra|pariNAma ?previousid	?id)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1) " focus_d)"crlf)
+(printout ?*defdbug* "(rule-rel-values vyABIcAra id-MRS_concept "(+ ?id 1) " focus_d)"crlf)
+)
+
+;Rule to generate generic_entity for vyABIcAra discourse relation.
+;#इसके बावजूद  वे बहुत घनिष्ठ मित्र थे
+(defrule vyABIcAra-ge
+(rel_name-ids vyABIcAra ?previousid	?id)
+(rel_name-ids	k1	?id	?karwa)
+(id-distal	?karwa	yes)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values vyABIcAra-ge id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
+)
+
+;Rule to generate generic_entity for pariNAma discourse relation.
+;#इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
+(defrule pariNAma-ge
+(rel_name-ids pariNAma ?previousid	?id)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values pariNAma-ge id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
+)
+
+
 
