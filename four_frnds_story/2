@@ -10,26 +10,3 @@ distal,,,,
 affirmative
 
 
-
-#उनमें बहुत घनिष्ठ मित्रता थी
-wyax,bahuwa_7,GaniRTa_1,miwrawA_1,hE_2-past
-1,2,3,4,5
-,,,,
-pl,,,,
-5:k7,3:intf,4:mod,5:k1,0:main
-1.4:coref,,,,
-distal,,,,
-,,,,
-affirmative
-
-
-#उनमें बहुत घनिष्ठ मित्रता थी
-wyax,bahuwa_1,GaniRTa_1,miwrawA_1,hE_1-past
-1,2,3,4,5
-,,,,
-,,,,
-5:k7,3:intf,4:mod,5:k1,0:main
-1.4:coref,,,,
-proximal,,,,
-,,,,
-affirmative
