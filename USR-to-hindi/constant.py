@@ -6,7 +6,7 @@ INDECLINABLE_WORDS = [
         'eKana','waWA','Ara','paranwu','kinwu','evaM','waWApi','kiCu',
         'wo','yaxi','wabe','awaH','kAraNa','kenanA','yeBAbe',
         'waKana','waKani','bA', 'nAhale','anyaWA', 'yaKana', 'naile',
-        'yAwe','yaxi', 'aWabA','Aja','nA', 'yawa', 'wawa', 'yA', 'ye']
+        'yAwe','yaxi', 'aWabA','Aja','nA', 'yawa', 'wawa', 'yA', 'ye','nahIM',]
 
 UNITS = ['semI', 'kimI', 'mItara', 'lItara', 'kilomItara', 'kilolItara']
 

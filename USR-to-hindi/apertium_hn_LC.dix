@@ -4064,6 +4064,8 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="camadZA"><i>camadZ</i><par n="regular__adj-noun"/></e>
 <e lm="camadZI"><i>camadZI</i><par n="AjAxI/__n"/></e>
 <e lm="cidiyZA"><i>cidiyZ</i><par n="gudiy/A__n"/></e>
+<e lm="gesira"><i>gesir</i><par n="Gar/a__n"/></e>
+<e lm="gIjara"><i>gIjar</i><par n="Gar/a__n"/></e>
 <e lm="cidiyZAGara"><i>cidiyZAGar</i><par n="Gar/a__n"/></e>
 <e lm="cidiyAGara"><i>cidiyAGar</i><par n="Gar/a__n"/></e>
 <e lm="AryAvarwa"><i>AryAvarw</i><par n="Gar/a__n"/></e>
@@ -29514,6 +29516,7 @@ addition ended by Kirti Garg kirti.garg@gmail.com on 7/12/22-->
 <e lm="uwkRipwa"><i>uwkRipwa</i><par n="amIra/__adj"/></e>
 <e lm="uwpala"><i>uwpala</i><par n="kroXa/__n"/></e>
 <e lm="uwpanna"><i>uwpanna</i><par n="kroXa/__n"/></e>
+<e lm="uwpanna"><i>uwpanna</i><par n="amIra/__adj"/></e>
 <e lm="uwpAta"><i>uwpAta</i><par n="kroXa/__n"/></e>
 <e lm="uwpAtana"><i>uwpAtana</i><par n="kroXa/__n"/></e>
 <e lm="uwpAtiwa"><i>uwpAtiwa</i><par n="amIra/__adj"/></e>
