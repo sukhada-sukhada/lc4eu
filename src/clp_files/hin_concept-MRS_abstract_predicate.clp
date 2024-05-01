@@ -204,6 +204,26 @@
 (printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " loc_nonsp)"crlf)
 )
 
+;Rule to generate place_n, def_implicit_q, loc_nonsp for wyax with k7p relation.
+;A mouse used to live in the hole, there.
+(defrule mrs_place_there
+(id-concept_label ?id wyax)
+(rel_name-ids	k7p	?kri	?id)
+(not (id-proximal	?id	yes))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place_there id-MRS_concept "?id " place_n)"crlf)
+
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place_there id-MRS_concept "?id " def_implicit_q)"crlf)
+
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place_there id-MRS_concept "?id " loc_nonsp)"crlf)
+)
+
+
 ; written by sakshi yadav (NIT-Raipur)
 ; date-27.05.19
 ;rule for sentence -consists of words 'yesterday','today','tomorrow' 

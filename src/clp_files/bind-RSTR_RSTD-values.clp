@@ -1331,3 +1331,17 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values vyABIcAra_generic_this  Restr-Restricted " ?rstr " "?lllll")"crlf)
 )
 
+;Restrictor for ARG2 value of the verb with the rt LBL. 
+;This attempted to spread knowledge.
+(defrule ARG2_LBL_rt
+(id-concept_label	?rt	?hincon1)
+(id-concept_label	?kriya	?hincon2)
+(rel_name-ids	rt	?kriya	?rt)
+(MRS_info ?rel ?rt ?verb1 ?lbl $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriya ?verb2 ?lbbb ?ar00 ?ar11 ?Ar22)
+(test (neq (str-index "_v_" ?verb1) FALSE))
+(test (neq (str-index "_v_" ?verb2) FALSE))
+=>
+(printout ?*rstr-rstd* "(Restr-Restricted  "?Ar22 " "?lbl ")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values ARG2_LBL_rt Restr-Restricted  "?Ar22 " "?lbl ")"crlf)
+)

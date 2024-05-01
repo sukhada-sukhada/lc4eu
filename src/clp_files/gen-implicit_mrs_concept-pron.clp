@@ -9,6 +9,7 @@
 (defrule mrsPron_yes
 (id-concept_label	?id 	speaker|addressee|wyax)
 (not (rel_name-ids	dem	?kri	?id))
+(not (rel_name-ids	k7p	?kri	?id)) ;A mouse used to live in the hole, there.
 (not (id-proximal	?id	yes))
 (not (id-distal	?id	yes))
 =>
@@ -88,9 +89,7 @@
 (id-concept_label       ?coref    ?conL)
 (not (id-concept_label	?coref eka+xUsarA)) ; 326: #hama eka xUsare se pyAra karawe hEM.
 (not (rel_name-ids	dem	?ddd	?coref))
-;(not (id-proximal	?coref	yes))
-;(not (id-distal	?coref	yes))
-;(not (id-num	?coref	pl))
+(not (rel_name-ids	k7p	?ddd	?coref))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?coref 10)" pronoun_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "(+ ?coref 10)" pronoun_q )"crlf)

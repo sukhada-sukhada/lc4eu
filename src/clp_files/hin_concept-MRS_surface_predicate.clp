@@ -679,3 +679,15 @@
 (printout ?*mrs-dbug* "(rule-rel-values _because+of_p id-MRS_concept "(+ ?id 10) " _because+of_p)"crlf)
 )
 
+;Rule to generate _there_a_1 for wyax relation with k7p relation.
+;#vahIM para bila meM eka cUhA rahawA WA.
+(defrule _there_a_1
+(id-concept_label	?id	wyax)
+(rel_name-ids	k7p	?kriya	?id)
+(not (id-proximal	?id	yes)) ; He comes here daily.
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id " _there_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values _there_a_1 id-MRS_concept " ?id " _there_a_1)"crlf)
+)
+
+

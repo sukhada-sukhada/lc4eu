@@ -485,7 +485,7 @@
 (defrule prep-noun
 (declare (salience 10000))
 (rel_name-ids ?relp ?kriyA ?karak)
-?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
+?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1 ?kriyA ?mrsCon1 ?lbl1 ?argv_0 $?vars)
 (MRS_info ?rel2 ?karak ?mrsCon2 ?lbl2 ?argn_0 $?varss)
 (test (eq (sub-string 1 1 (str-cat ?prep)) (sub-string 1 1 (str-cat ?karak))))
