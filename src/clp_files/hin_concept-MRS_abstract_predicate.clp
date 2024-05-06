@@ -962,5 +962,16 @@
 (printout ?*defdbug* "(rule-rel-values pariNAma-ge id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
 )
 
+;Rule to generate loc_nonsp for xina word in the concept row with k7t relation.
+;I will certainly help you one day.
+(defrule loc_nonsp_xina
+(id-concept_label	?id	?number)
+(id-concept_label	?id1	xina_1)
+(rel_name-ids	card	?id1	?id)
+(rel_name-ids	k7t	?kriya	?id1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id1 " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values loc_nonsp_xina id-MRS_concept "?id1" loc_nonsp)"crlf)
+)
 
 

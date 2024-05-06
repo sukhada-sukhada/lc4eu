@@ -127,6 +127,7 @@
 )
 
 ;matches concept from hin-clips-facts.dat
+;This rule generates the concepts from concept dictionary using the clips facts.
 (defrule mrs-rels
 ;(declare (salience 100))
 (id-concept_label       ?id   ?conLabel)
@@ -159,7 +160,7 @@
 )
 
 ;It creates mrs rel feature _while_x for sentences with rsk
-;verified sentence 339 #rAma sowe hue KarrAte BarawA hE. 
+; #rAma sowe hue KarrAte BarawA hE. 
 (defrule mrs_while
 (rel_name-ids	rsk		?id	?kri)
 =>
@@ -292,6 +293,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values  _make_v_cause  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
 )
 
+;Rule to genrate _make_v_cause and _ask_v_1 when doublecausative morphological information exists in morpho-semantic row
+;#mAz ne rAma se bacce ko KAnA KilavAyA.
 (defrule make_ask
 (id-doublecausative	?id	yes)
 =>
@@ -409,6 +412,7 @@
 )
 
 ;Rules for common noun with the as a determiner : if (id-def ? yes), generate (id-MRS_Rel ?id _the_q)
+;The book is good.
 (defrule mrsCon_yes
 (id-def  ?id  yes)
 =>
@@ -509,19 +513,6 @@
 (printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "?id" _this_q_dem)"crlf)
 )
 
-;Rule for generating this_q_dem for proximal relation.
-;This book is beautiful.
-;(defrule this_q_dem_proximal
-;(id-concept_label	?id	wyax)
-;(id-proximal	?id	yes)
-
-;(not (rel_name-ids	dem	?kri	?id))
-;(not (id-num	?id	?n))
-;=>
-;(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
-;(printout ?*mrs-dbug* "(rule-rel-values this_q_dem_proximal id-MRS_concept "?id" _this_q_dem)"crlf)
-;)
-
 ;Rule for generating that_q_dem for distal relation.
 ;That book is beautiful.
 (defrule that_q_dem_distal
@@ -592,6 +583,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values here_a_1 id-MRS_concept "?id" _here_a_1)"crlf)
 )
 
+;rule to generate _those_q_dem.
+;Those two books are good.
 (defrule those_q_dem_distal
 (id-concept_label	?id	wyax)
 (id-distal	?id	yes)
@@ -602,6 +595,8 @@
 (printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "?id" _those_q_dem)"crlf)
 )
 
+;rule to generate _these_q_dem.
+;these two have done it.
 (defrule these_q_dem_distal
 (id-concept_label	?id	wyax)
 (id-proximal	?id	yes)

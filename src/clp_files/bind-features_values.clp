@@ -3019,3 +3019,4 @@ else
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" "?adj" "?lbl" "?arg0" "?a")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values pariNAma_pred_adjective id-MRS_concept-LBL-ARG0-ARG1 "?id" "?adj" "?lbl" "?arg0" "?a")"crlf)
 )
+
