@@ -141,7 +141,7 @@
 (bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
 (bind ?a2 (str-cat "u" (sub-string 2 (str-length ?arg2) ?arg2)))
 (printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values rpk "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?a2")"crlf)
 )
 
 ;This rule converts kridant arg1 x* to u* when k1 is absent for any type of sentence.
@@ -278,20 +278,18 @@
 ;It creates L_HNDL and R_HNDL with h values and L_INDEX and R_INDEX with e values. 
 (defrule implict_handle
 (declare (salience 5000)) 
-(MRSc-FVs implicit_conj LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
+(MRSc-FVs ?mrscon LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
 ?f<-(rel_name-ids	k1s	?kri	?k1s)
 (construction-ids	conj	$? ?k1s $?)
-(MRS_info id-MRS_concept ?implicit ?mrs)
-(MRSc-FVs ?mrscon $?v)
-;(test (eq ?mrs implicit_conj) )
-(test (or (eq ?mrs implicit_conj) (eq ?mrs _and_c)) )
-(test (or (eq  (+ ?k1s 600) ?implicit) (eq  (+ ?k1s 500) ?implicit)))
-;(test (eq  (+ ?k1s 600) ?implicit))
+(MRS_info id-MRS_concept ?implicit ?mrscon)
+(test (or (eq ?mrscon implicit_conj) (eq ?mrscon _and_c)) )
+(test (or (eq  (+ ?k1s 200) ?implicit) (eq 100 ?implicit)))
+;(test (eq  (+ ?k1s 200) ?implicit))
 (test (neq (str-index _a_ ?mrscon) False))
 =>
 (retract ?f) 
-(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*))
-   (printout ?*mrs-dbug* "(rule-rel-values implict_handle  MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
+(assert (MRSc-FVs ?mrscon LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values implict_handle  MRSc-FVs "?mrscon" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
 )
 
 ;Rule to change the ARG2 value x* to h* of the verb want when it takes a verb as k2
@@ -343,24 +341,6 @@
 )
 
 
-;Rule for changing arg0 of which_q from e to i.
-;How are you?
-;How happy was Abrama?
-(defrule which_q_e-i
-;(declare (salience 300))
-?f<-(MRSc-FVs which_q LBL: h* ARG0: ?a0 RSTR: h* BODY: h*)
-(id-concept_label	?kri	?word) 
-(id-concept_label	?k1s	kim)
-(rel_name-ids	k1s|degree	?kri	?k1s)
-(sentence_type  interrogative)
-(not (id-num	?k1s	?n))
-(not (id-anim	?k1s	yes))
-=>
-(retract ?f)
-(bind ?arg0 (str-cat "i" (sub-string 2 (str-length ?a0) ?a0)))  
-(printout ?*mrs-fp* "(MRSc-FVs which_q LBL: h* ARG0: "?arg0" RSTR: h* BODY: h*)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values which_q_e-i MRSc-FVs which_q LBL: h* ARG0: "?arg0" RSTR: h* BODY: h*)"crlf)
-)
 
 ;Rule for changing ARG3 value of verb into i* when it is in a relation of rt.
 ;He challenged the turtle, for a race.
@@ -402,7 +382,7 @@
 (MRSc-FVs ?mrscon $?v)
 ;(test (eq ?mrs implicit_conj) )
 (test (or (eq ?mrs implicit_conj) (eq ?mrs _or_c)) )
-(test (or (eq  (+ ?k1s 600) ?implicit) (eq  (+ ?k1s 500) ?implicit)))
+;(test (or (eq  (+ ?k1s 600) ?implicit) (eq  (+ ?k1s 500) ?implicit)))
 ;(test (eq  (+ ?k1s 600) ?implicit))
 (test (neq (str-index _a_ ?mrscon) False))
 =>
@@ -444,13 +424,14 @@
 (declare (salience 5000))
 ?f<-(rel_name-ids samuccaya ?previousid	?verb)
 (MRSc-FVs _and_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
-(MRS_info id-MRS_concept ?and ?mrs)
-(test (eq  (+ ?verb 1000) ?and))
+(MRS_info id-MRS_concept 100 _and_c)
+;(test (eq  (+ ?verb 1000) ?and))
 =>
 (retract ?f) 
-(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
-   (printout ?*mrs-dbug* "(rule-rel-values samuccaya_and_handles MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
+(assert (MRSc-FVs _and_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values samuccaya_and_handles MRSc-FVs _and_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
 )
+;(MRS_info id-MRS_concept 100  _or_c)
 
 ;Rule for creating L_HNDL and R_HNDL values for the _or_c predicate when the anyawra relation exists in the USR.
 ;or Mohana will go.
@@ -458,26 +439,26 @@
 (declare (salience 5000))
 ?f<-(rel_name-ids anyawra ?previousid	?verb)
 (MRSc-FVs _or_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
-(MRS_info id-MRS_concept ?or ?mrs)
-(test (eq  (+ ?verb 1000) ?or))
+(MRS_info id-MRS_concept 100 _or_c)
+;(test (eq  (+ ?verb 1000) ?or))
 =>
 (retract ?f) 
-(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
-   (printout ?*mrs-dbug* "(rule-rel-values anyawra_or_handles MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
+(assert (MRSc-FVs _or_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values anyawra_or_handles MRSc-FVs _or_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
 )
-
+;(MRS_info id-MRS_concept 100  _but_c)
 ;Rule for creating L_HNDL and R_HNDL values for the _but_c predicate when the viroxi relation exists in the USR.
 ;But he didn't eat food.
 (defrule viroXi_but_handles
 (declare (salience 5000))
 ?f<-(rel_name-ids viroXi ?previousid	?verb)
 (MRSc-FVs _but_c LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e*)
-(MRS_info id-MRS_concept ?but ?mrs)
-(test (eq  (+ ?verb 1000) ?but))
+(MRS_info id-MRS_concept 100 _but_c)
+;(test (eq  (+ ?verb 1000) ?but))
 =>
 (retract ?f) 
-(assert (MRSc-FVs ?mrs LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
-   (printout ?*mrs-dbug* "(rule-rel-values viroXi_or_handles MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
+(assert (MRSc-FVs _but_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
+   (printout ?*mrs-dbug* "(rule-rel-values viroXi_or_handles MRSc-FVs _but_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
 )
 
 ;Rule for changing x* into u* for the unknown abstract predicate when kAryakAraNa relation. 

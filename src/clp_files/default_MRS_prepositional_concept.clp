@@ -114,8 +114,6 @@
 (printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 )
 
-;(id-concept_label	20000	2025) (rel_name-ids	k7t	40000	20000)
-
 ;Rama arrived on Tuesday's morning.
 (defrule on_p_temp-adverboftime
 (id-concept_label	?dow ?week)
@@ -124,8 +122,8 @@
 (rel_name-ids	r6	?adoftime	?dow)
 (id-dow	?dow	yes)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?dow 1) " _on_p_temp)"crlf)
-(printout ?*defdbug* "(rule-rel-values on_p_temp-adverboftime  id-MRS_concept " (+ ?dow 1) " _on_p_temp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?adoftime 1) " _on_p_temp)"crlf)
+(printout ?*defdbug* "(rule-rel-values on_p_temp-adverboftime  id-MRS_concept " (+ ?adoftime 1) " _on_p_temp)"crlf)
 )
 
 (defrule at_p_temp
