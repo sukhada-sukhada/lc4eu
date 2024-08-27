@@ -237,3 +237,7 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 2. Made explicit of 370, 374, 387, 433, and 457 verified sentences. 
 3. Updated verified output. 
 4. Due to generalzed rules sentences no. 366, 38, 433, 472 are not generating will update them later. 
+
+27/08/2024
+1. Updated H_concept-to-mrs-rels.dat
+
