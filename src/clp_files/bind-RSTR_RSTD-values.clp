@@ -90,6 +90,7 @@
 (not (rel_name-ids samuccaya ?Id	?x))
 (not (rel_name-ids anyawra ?Id	?x))
 (not (rel_name-ids viroXi ?Id	?x))
+;(not (id-hI_2	?id	yes))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-neg-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
@@ -322,6 +323,7 @@
 (not (rel_name-ids samuccaya ?id	?x))
 (not (rel_name-ids anyawra ?id	?x))
 (not (rel_name-ids viroXi ?id	?x))
+;(not (id-hI_2  ?idd  yes))
 =>
 (retract ?f ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted  h0 " ?lbl")"crlf)

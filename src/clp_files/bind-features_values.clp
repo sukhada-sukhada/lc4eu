@@ -55,7 +55,7 @@
 ;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
 (declare (salience 100))
-(rel_name-ids mod|intf|rvks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
+(rel_name-ids mod|rvks ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 ?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 (test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q"))
@@ -68,6 +68,25 @@
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values viya-viNa   "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 )
+
+;Rule for adjective and noun : for (viSeRya-viSeRaNa 	? ?)
+;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
+;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
+(defrule viya-viNa-intf
+(rel_name-ids intf ?viya ?viNa);verified sentences: 16,309,167,341 respectively.
+(MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
+?f<-(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
+(test (neq (sub-string (- (str-length ?co) 1) (str-length ?co) ?co) "_q"))
+(not (modified_viSeRaNa ?viNa))
+(not (construction-ids	conj	$?vars ?viya ?id2))
+=>
+(retract ?f)
+(assert (modified_viSeRaNa ?viNa))
+(assert (MRS_info  ?rel2  ?viNa   ?co   ?lbl1   ?arg0_viNa   ?arg0_viya $?vars))
+(printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values viya-viNa-intf   "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
+)
+
 
 ;Rule for predicative adjective (samAnAXi) : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;replace ARG1 of adjective with ARG0 of non-adjective
@@ -187,6 +206,8 @@
 (test (neq (str-index "_v_" ?mrsCon)FALSE))
 (test (eq (str-index card ?mrsCon1)FALSE)) ;Three barked.
 (not (modified_possessed ?karwA))
+(not (verb_bind_notrequired ?kriyA))
+;(not (modified_k4a ?arg00))
 =>
 (retract ?f)
 (assert (modified_k1 ?karwA))
@@ -336,6 +357,8 @@
 ;(test (eq (str-index _ask_v_1 ?mrsCon) FALSE))
 ;(test (and (eq (str-index _ask_v_1 ?mrsCon) FALSE)(eq (id-doublecausative	?kriyA	yes) FALSE)))
 ;(not (id-doublecausative	?kriyA	yes))
+;(not (verb_bind_notrequired_not ?kriyA))
+(not (construction-ids	conj	$?V ?k4 $?vaa))
 =>
 (retract ?f)
 (assert (arg3_bind ?argk4_0 ))
@@ -1008,10 +1031,25 @@ then
 (construction-ids	conj	?id1 ?id2)
 ?f<-(MRS_info ?rel ?adjid ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX ?id _and_c ?lbll ?arg00 ?l ?r)
-;(test (eq  (+ ?id1 500) ?id))
 =>
 (printout ?*rstr-fp* "(MRS_info "?rel" "?adjid" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values conj-bind-final-two "?rel" "?adjid" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+)
+
+;Rule for binding ARG1 of the predicative word with ARG0 of _and_c  when construction is in subjective position with two entries. 
+(defrule conj-bind-final-two_verb
+(declare (salience 1000))
+(construction-ids	conj	?id1 ?id2)
+(rel_name-ids	k1	?kri	?id1)
+(rel_name-ids	k1	?kri	?id2)
+(MRS_info ?rel ?kri ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX 100 _and_c ?lb ?arg00 ?l ?r)
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+=>
+(assert (verb_bind_notrequired ?kri))
+(printout ?*rstr-dbug* "(rule-rel-values  conj-bind-final-two_verb verb_bind_notrequired " ?kri ")"crlf)
+(printout ?*rstr-fp* "(MRS_info "?rel" "?kri" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-bind-final-two_verb "?rel" "?kri" "?mrsCon" "?lbl" "?arg0" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
 )
 
 ;Rule for binding LTOP_INDEX with arg0 of unknown typed feature.
@@ -1840,23 +1878,7 @@ else
 )
 
 
-;Rule to create value sharing between the _any_q with the thing AP.
-;Anything wrong happened in the village.
-(defrule kuCa_BI_3
-(id-concept_label	?id	?hinconcept)
-(id-BI_3	?id	yes)
-(rel_name-ids	k1	?kriya	?id)
-(rel_name-ids	k1s	?kriya	?k1s)
-?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id ?quantifier ?ll ?a00 ?rstr ?body)
-(MRS_info ?rel ?k1s ?mrsconcept ?lbl $?v)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0 ?id thing ?l ?arg0)
-=>
-(retract ?f1 ?f)
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" "?quantifier" "?ll" "?arg0" "?rstr" "?body")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kuCa_BI_3 id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" "?quantifier" "?ll" "?arg0" "?rstr" "?body")"crlf)
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0 "?id" thing "?lbl" "?arg0")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values kuCa_BI_3 id-MRS_concept-LBL-ARG0 "?id" thing "?lbl" "?arg0")"crlf)
-)
+
 
 ;Rule to create value sharing between focus_d and _because+of_p with the verb and the demonstrative.
 ;Because of that his parents used to be very upset.
@@ -1902,5 +1924,43 @@ else
 (printout ?*rstr-dbug* "(rule-rel-values pariNAma_pred_adjective id-MRS_concept-LBL-ARG0-ARG1 "?id" "?adj" "?lbl" "?arg0" "?a")"crlf)
 )
 
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 50040 _only_x_deg h44 e45 u46)
+;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 50010 def_explicit_q h5 x6 h7 h8)
 
+
+;Rule to change the LBL value of _only_x_deg with the def_explicit_q LBL.
+;Rama and Siwa did not talk with only their brother, in the temple.
+(defrule only_x_deg_explicit
+(declare (salience 1001))
+(id-hI_1	?id	yes)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?quant def_explicit_q  ?lbl ?arg0 ?rstr ?body)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?deg _only_x_deg ?l ?a0 ?a1)
+(test (eq  (+ ?id 10) ?quant))
+(test (eq  (+ ?id 40) ?deg))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?deg" _only_x_deg "?lbl" "?a0" "?a1")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values only_x_deg_explicit id-MRS_concept-LBL-ARG0-ARG1 "?deg" _only_x_deg "?lbl" "?a0" "?a1")"crlf)
+)
+
+
+
+;Rule for binding ARG1 of the predicative word with ARG0 of _and_c  when construction is in subjective position with two entries. 
+(defrule conj-bind-final-two_k4
+(declare (salience 1000))
+(construction-ids	conj	?id1 ?id2)
+(rel_name-ids	k4	?kri	?id1)
+(rel_name-ids	k4	?kri	?id2)
+(MRS_info ?rel ?kri ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 ?arg3 $?v)
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX 100 _and_c ?lb ?arg00 ?l ?r)
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+;(not (modified_k4a ?arg3))
+=>
+;(assert (modified_k4a ?arg00))
+;(assert (verb_bind_notrequired_not ?kri))
+;(printout ?*rstr-dbug* "(rule-rel-values  conj-bind-final-two_k4 verb_bind_notrequired_not " ?kri ")"crlf)
+;(assert (MRS_info ?rel  ?kri  ?mrsCon  ?lbl ?arg0 ?arg1 ?arg2 ?arg00 ))
+(printout ?*rstr-fp* "(MRS_info "?rel" "?kri" "?mrsCon" "?lbl" "?arg0" "?arg1" "?arg2" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values conj-bind-final-two_k4 "?rel" "?kri" "?mrsCon" "?lbl" "?arg0" "?arg1" "?arg2" "?arg00" "(implode$ (create$ $?v)) ")"crlf)
+)
 

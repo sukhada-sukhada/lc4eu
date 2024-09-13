@@ -132,7 +132,6 @@
 ;(declare (salience 100))
 (id-concept_label       ?id   ?conLabel)
 (cl-cEn-MRSc ?conLabel ?enCon ?mrsConcept)
-;(not (id-concept_label       ?id  bAxa_14|bAxa_1))
 =>
 (assert (id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept))
 (printout ?*mrs-dbug* "(rule-rel-values mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " "?mrsConcept ")"crlf)
@@ -413,7 +412,7 @@
 ;The book is good.
 (defrule mrsCon_yes
 (id-def  ?id  yes)
-;(not (construction-ids	conj	$?vars ?id ?id2))
+
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _the_q )"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values mrsCon_yes id-MRS_concept "(+ ?id 10)" _the_q )"crlf)
@@ -488,6 +487,7 @@
 (printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 40)"  _only_a_1)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values exclusive id-MRS_concept "(+ ?id 40)" _only_a_1)"crlf)
 )
+
 
 ;Rule to generate _certain_a_1 for the assertion discourse particle.
 ;#rAma wo ayegA.
@@ -714,6 +714,15 @@
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "?id " _there_a_1)"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values _there_a_1 id-MRS_concept " ?id " _there_a_1)"crlf)
+)
+
+;Rule to generate _only_a_1 for the exclusive discourse particle.
+;SIlA hI apane piwA ko KilAwI hE.
+(defrule hI_1
+(id-hI_1  ?id  yes)
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 40)"  _only_x_deg)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values hI_1 id-MRS_concept "(+ ?id 40)" _only_x_deg)"crlf)
 )
 
 
