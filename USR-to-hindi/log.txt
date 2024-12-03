@@ -1,5 +1,0 @@
-[START] : Program Started
-[OK] : File ~ 6stnd_4ch/52
-[ERROR] : No such File found.
-6stnd_4ch/52
-[OK] : Output data write successfully

@@ -1,0 +1,5 @@
+# print("kaaraka_sambandha_data: ",kaaraka_sambandha_data)
+# print("index_morph_map: ",index_morph_map)
+# print("word_index_map: ",word_index_map)
+# print("dependency_drop_list: ",dependency_drop_list)
+# print("kaaraka_sambandha_morph_dict: ",kaaraka_sambandha_morph_dict)

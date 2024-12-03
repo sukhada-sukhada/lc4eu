@@ -1,0 +1,2353 @@
+<sent_id=001_1>
+#तपः-स्वाध्याय-निरतम् तपस्वी वाक्-विदाम् वरम् नारदम् परिपप्रच्छ वाल्मीकिः मुनि-पुङ्गवम् .
+wapas_1	1	-	-	-:-	-
+svAXyAya_1	2	-	-	-:-	-
+nirawa_1	3	-	-	8:mod	-
+wapasvin_1	4	-	-	10:mod	-
+vAc_1	5	-	-	-:-	-
+vix_1	6	-	pl	7:rn	-
+vara_1	7	-	-	8:mod	-
+nAraxa_1	8	per/male	-	9:k2	-
+pari_praC1_1-a_1	9	-	-	0:main	-
+vAlmIki_1	10	per/male	-	9:k1	-
+muni_1	11	-	-	-:-	-
+pufgava_1	12	-	-	8:mod	-
+[द्वन्द्व_1]	13	-	-	-:-	-
+[7-tat_1]	14	-	-	-:-	-
+[upa-tat_1]	15	-	-	-:-	-
+[7-tat_2]	16	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=002_1>
+#कः नु अस्मिन् साम्प्रतम् लोके गुणवान् अस्ति .
+kim_1	1	-	-	5:k1	nu_1
+ixam_1	2	-	-	3:mod	-
+loka_1	3	-	-	5:k7p	-
+guNa_1	4	-	mawupa	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=002_2>
+#कः च वीर्यवान् अस्ति .
+kim_1	1	-	-	3:k1	-
+vIryavaw_1	2	-	mawupa	1:k1s	-
+as2_1-awi_1	3	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=002_3>
+#कः च धर्मज्ञः अस्ति .
+kim_1	1	-	-	3:k1	-
+XarmajFa_1	2	-	-	1:k1s	-
+as2_1-awi_1	3	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=002_4>
+#कः च कृतज्ञः सत्य-वाक्यः दृढ-व्रतः च अस्ति .
+kim_1	1	-	-	7:k1	-
+kqwajFa_1	2	-	-	6:k1	-
+sawya_1	3	-	-	-:-	-
+vAkya_1	4	-	-	6:k1	-
+xqDa_1	5	-	-	-:-	-
+vrawa_1	6	-	-	1:k1s	-
+as2_1-awi_1	7	-	-	0:main	-
+[6-bahu_1]	8	-	-	-:-	-
+[6-bahu_2]	9	-	-	-:-	-
+%interrogative
+</sent_id>
+
+
+<sent_id=003_1>
+#चारित्रेण च कः युक्तः अस्ति .
+cAriwra_1	1	-	-	3:rask1	-
+kim_1	2	-	-	4:k1	-
+yukwa_1	3	-	-	2:k1s	-
+as2_1-awi_1	4	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=003_2>
+#सर्व-भूतेषु कः हितः अस्ति .
+sarva_1	1	-	-	-:-	-
+BUwa_1	2	-	pl	5:k7p	-
+kim_1	3	-	-	5:k1	-
+hiwa_1	4	-	-	3:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[karmaXAraya_1]	6	-	-	-:-	-
+%interrogative
+</sent_id>
+
+
+<sent_id=003_3>
+#विद्वान् कः अस्ति .
+vixvas_1	1	-	-	2:k1s	-
+kim_1	2	-	-	3:k1	-
+as2_1-awi_1	3	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=003_4>
+#कः समर्थः च अस्ति .
+kim_1	1	-	-	3:k1	-
+samarWa_1	2	-	-	1:k1s	-
+as2_1-awi_1	3	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=003_5>
+#कः च एक-प्रिय-दर्शनः अस्ति .
+kim_1	1	-	-	5:k1	-
+eka_1	2	-	-	-:-	-
+priya_1	3	-	-	-:-	-
+xarSana_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[षष्ठी_बहुव्रीहि_1]	6	-	-	-:-	-
+[karmaXAraya_1]	7	-	-	-:-	-
+%interrogative
+</sent_id>
+
+
+<sent_id=004_1>
+#आत्मवान् कः अस्ति .
+Awman_1	1	-	mawupa	2:k1s	-
+kim_1	2	-	-	3:k1	-
+as2_1-awi_1	3	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=004_2>
+#जितक्रोधः द्युतिमान् च कः अस्ति .
+jiwakroXa_1	1	-	-	2:k1	-
+xyuwi_1	2	-	mawupa	3:k1s	-
+kim_1	3	-	-	4:k1	-
+as2_1-awi_1	4	-	-	0:main	-
+%interrogative
+</sent_id>
+
+
+<sent_id=004_3>
+#कः अन्-असूयकः च अस्ति .
+kim_1	1	-	-	4:k1	-
+an_1	2	-	-	-:-	-
+asUyaka_1	3	-	-	1:k1s	-
+as2_1-awi_1	4	-	-	0:main	-
+[naF-tat_1]	5	-	-	-:-	-
+%interrogative
+</sent_id>
+
+
+<sent_id=005_1>
+#एतद् इच्छामि अहं श्रोतुं .
+ewax_1	1	-	-	4:k2	-
+iR2_1-awi_1	2	-	-	0:main	-
+asmax_1	3	-	-	2:k1	-
+Sru1_1	4	-	-	2:k2	-
+%affirmative
+</sent_id>
+
+
+<sent_id=005_2>
+#परं कौतूहलं हि मे अस्ति .
+para_1	1	-	-	2:mod	-
+kOwUhala_1	2	-	-	4:k1	-
+asmax_1	3	-	-	4:rt	-
+as2_1-awi_1	4	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=005_3>
+#महर्षे त्वं समर्थः असि ज्ञातुम् एवं-विधं नरम् .
+maharRi_1	1	-	-	4:rad	-
+yuRmax_1	2	-	-	4:k1	-
+samarWa_1	3	-	-	2:k1s	-
+as2_1-awi_1	4	-	-	0:main	-
+jFA1_1	5	-	-	3:rt	-
+evaM_1	6	-	-	-:-	-
+viXa_1	7	-	-	8:mod	-
+nq_1	8	-	-	5:k2	-
+[6-bahu_1]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=006_1>
+#श्रुत्वा च एतत् त्रि-लोक ज्ञः वाल्मीकेः नारदः वचः श्रूयताम् इति च आमन्त्र्य प्रहृष्टः वाक्यम् अब्रवीत् .
+Sru1_1	1	-	-	13:rpk	-
+ewax_1	2	-	-	8:mod	-
+wri_1	3	-	-	-:-	-
+loka_1	4	-	-	5:k2	-
+jFa_1	5	-	-	7:mod	-
+vAlmIki_1	6	per/male	-	8:r6	-
+nAraxa_1	7	per/male	-	13:k1	-
+vacas_1	8	-	-	1:k2	-
+Sru1_1-ya_wAm_1	9	-	-	10:वाक्यकर्म	-
+Af_mawr1_1	10	-	-	13:rpk	-
+prahqRta_1	11	-	-	7:mod	-
+vAkya_1	12	-	-	13:k2	-
+brU1_1-aw_1	13	-	-	0:main	-
+[द्विगु_1]	14	-	-	-:-	-
+%imperative
+</sent_id>
+
+
+<sent_id=007_1>
+#बहवः दुर्लभाः च एव .
+bahu_1	1	-	pl	2:k1	-
+xurlaBa_1	2	-	pl	nan:nan	-
+%affirmative
+</sent_id>
+
+
+<sent_id=007_2>
+#ये त्वया कीर्तिताः गुणाः .
+yax_1	1	-	pl	4:mod	-
+yuRmax_1	2	-	-	3:k1	-
+kIrwiwa_1	3	-	pl	nan:nan	-
+guNa_1	4	-	pl	3:k2	-
+%affirmative
+</sent_id>
+
+
+<sent_id=007_3>
+#मुने वक्ष्यामि अहं बुद्ध्वा तैः युक्तः नरः कः अस्ति इति .
+muni_1	1	-	-	2:rad	-
+vac1_1-syawi_1	2	-	-	0:main	-
+asmax_1	3	-	-	2:k1	-
+buX3_1	4	-	-	2:rpk	-
+wax_1	5	-	pl	6:rask1	-
+yukwa_1	6	-	-	8:k1s	-
+nq_1	7	-	pl	6:rad	-
+kim_1	8	-	-	9:k1	-
+as2_1-awi_1	9	-	-	2:वाक्यकर्म	-
+%interrogative
+</sent_id>
+
+
+<sent_id=007_4>
+#भवान् श्रूयतां .
+Bavaw_1	1	-	-	2:k2	-
+Sru1_1-ya_wAm_1	2	-	-	0:main	-
+%imperative
+</sent_id>
+
+
+<sent_id=008_1>
+#इक्ष्वाकु-वंश-प्रभवः रामः नाम जनैः श्रुतः .
+ikRvAku_1	1	-	-	-:-	-
+vaMSa_1	2	-	-	-:-	-
+praBava_1	3	-	-	4:mod	-
+rAma_1	4	per/male	-	3.1:rs	-
+jana_1	5	-	pl	6:k1	-
+Sruwa_1	6	-	-	nan:nan	-
+[षष्ठी_तत्पुरुष_1]	7	-	-	-:-	-
+[6-bahu_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=008_2>
+#सः नियत-आत्मा महा-वीर्यः च अस्ति .
+wax_1	1	-	-	6:k1	-
+niyawa(ni_yaw1;GaF;BvAxiH)_1	2	-	-	-:-	-
+Awman_1	3	-	-	5:k1	-
+mahaw_1	4	-	-	-:-	-
+vIrya_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[6-bahu_1]	7	-	-	-:-	-
+[6-bahu_2]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=008_3>
+#सः द्युतिमान् धृतिमान् वशी च अस्ति .
+wax_1	1	-	-	5:k1	-
+xyuwi_1	2	-	mawupa	4:k1	-
+Xqwi_1	3	-	mawupa	4:k1	-
+vaSin_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=009_1>
+#सः बुद्धिमान् नीतिमान् च अस्ति .
+wax_1	1	-	-	4:k1	-
+buxXi_1	2	-	mawupa	3:k1	-
+nIwi_1	3	-	mawupa	1:k1s	-
+as2_1-awi_1	4	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=009_2>
+#सः वाग्ग्मी श्रीमान् च अस्ति .
+wax_1	1	-	-	4:k1	-
+vAggmin_1	2	-	-	3:k1	-
+SrI_1	3	-	mawupa	1:k1s	-
+as2_1-awi_1	4	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=009_3>
+#सः शत्रु-निबर्हणः विपुल-अंशः च अस्ति .
+wax_1	1	-	-	6:k1	-
+Sawru_1	2	-	-	-:-	-
+nibarhaNa_1	3	-	-	5:k1	-
+vipula_1	4	-	-	-:-	-
+aMSa_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[upa-tat_1]	7	-	-	-:-	-
+[6-bahu_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=009_4>
+#सः महा-बाहुः कम्बु-ग्रीवः महा-हनुः च अस्ति .
+wax_1	1	-	-	8:k1	-
+mahaw_1	2	-	-	-:-	-
+bAhu_1	3	-	-	7:k1	-
+kambu_1	4	-	-	-:-	-
+grIva_1	5	-	-	7:k1	-
+mahaw_1	6	-	-	-:-	-
+hanu_1	7	-	-	1:k1s	-
+as2_1-awi_1	8	-	-	0:main	-
+[6-bahu_1]	9	-	-	-:-	-
+[6-bahu_2]	10	-	-	-:-	-
+[6-bahu_3]	11	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=010_1>
+#सः महा-उरस्कः महा-ईष्वासः च अस्ति .
+wax_1	1	-	-	6:k1	-
+mahaw_1	2	-	-	-:-	-
+uraska_1	3	-	-	5:k1	-
+mahaw_1	4	-	-	-:-	-
+IRvAsa_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[6-bahu_1]	7	-	-	-:-	-
+[6-bahu_2]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=010_2>
+#सः गूढ-जत्रुः अरिन्-दमः च अस्ति .
+wax_1	1	-	-	6:k1	-
+gUDa(guh1;kwa;BvAxiH)_1	2	-	-	-:-	-
+jawru_1	3	-	-	5:k1	-
+arin_1	4	-	-	-:-	-
+xama_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[6-bahu_1]	7	-	-	-:-	-
+[upa-tat_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=010_3>
+#सः आजानु-बाहुः सु-शिराः च अस्ति .
+wax_1	1	-	-	6:k1	-
+AjAnu_1	2	-	-	-:-	-
+bAhu_1	3	-	-	5:k1	-
+su_1	4	-	-	-:-	-
+Siras_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[6-bahu_1]	7	-	-	-:-	-
+[bahu_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=010_4>
+#सः सु-ललाटः सु-विक्रमः च अस्ति .
+wax_1	1	-	-	6:k1	-
+su_1	2	-	-	-:-	-
+lalAta_1	3	-	-	5:k1	-
+su_1	4	-	-	-:-	-
+vikrama_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[bahu_1]	7	-	-	-:-	-
+[bahu_2]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=011_1>
+#सः समः सम-विभक्त-अङ्गः च अस्ति .
+wax_1	1	-	-	6:k1	-
+sama_1	2	-	-	5:k1	-
+sama_1	3	-	-	-:-	-
+viBakwa(vi_Baj1;kwa;BvAxiH)_1	4	-	-	-:-	-
+afga_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[bahu-bahu_1]	7	-	-	-:-	-
+[bahu-bahu_2]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=011_2>
+#सः स्निग्ध-वर्णः प्रतापवान् च अस्ति .
+wax_1	1	-	-	5:k1	-
+snigXa(Rnih1;kwa;xivAxiH)_1	2	-	-	-:-	-
+varNa_1	3	-	-	4:k1	-
+prawApa_1	4	-	mawupa	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[6-bahu_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=011_3>
+#सः पीन-वक्षः विशाल-अक्षः लक्ष्मीवान् शुभ-लक्षणः च अस्ति .
+wax_1	1	-	-	9:k1	-
+pIna_1	2	-	-	-:-	-
+vakRas_1	3	-	-	8:k1	-
+viSAla_1	4	-	-	-:-	-
+akRa_1	5	-	-	8:k1	-
+lakRmI_1	6	per/NA	-	8:k1	-
+SuBa_1	7	-	-	-:-	-
+lakRaNa_1	8	-	-	1:k1s	-
+as2_1-awi_1	9	-	-	0:main	-
+[6-bahu_1]	10	-	-	-:-	-
+[6-bahu_2]	11	-	-	-:-	-
+[6-bahu_3]	12	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=012_1>
+#सः धर्मज्ञः सत्य-सन्धः च अस्ति .
+wax_1	1	-	-	5:k1	-
+XarmajFa_1	2	-	-	4:k1	-
+sawya_1	3	-	-	-:-	-
+sanXa_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[6-bahu_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=012_2>
+#सः प्रजानां च हिते रतः अस्ति .
+wax_1	1	-	-	5:k1	-
+prajA_1	2	-	pl	3:r6	-
+hiwa_1	3	-	dl	4:k2	-
+rawa_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=012_3>
+#सः यशस्वी ज्ञान-सम्पन्नः च अस्ति .
+wax_1	1	-	-	5:k1	-
+yaSasvin_1	2	-	-	1:mod	-
+jFAna_1	3	-	-	-:-	-
+sampanna_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[3-tat_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=012_4>
+#सः शुचिः वश्यः समा धीमान् च अस्ति .
+wax_1	1	-	-	6:k1	-
+Suci_1	2	-	-	5:k1	-
+vaSya_1	3	-	-	5:k1	-
+samA_1	4	-	-	5:k1	-
+XImaw_1	5	-	mawupa	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=013_1>
+#सः प्रजा-पति-समः श्रीमान् च अस्ति .
+wax_1	1	-	-	6:k1	-
+prajA_1	2	-	-	-:-	-
+pawi_1	3	-	-	-:-	-
+sama_1	4	-	-	5:k1	-
+SrImaw_1	5	-	mawupa	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[6-tat_1]	7	-	-	-:-	-
+[3-tat_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=013_2>
+#सः धाता रिपु-निषूदनः च अस्ति .
+wax_1	1	-	-	5:k1	-
+XAwq_1	2	-	-	4:k1	-
+ripu_1	3	-	-	-:-	-
+niRUxana_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[upa-tat_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=013_3>
+#सः रक्षिता जीव-लोकस्य धर्मस्य परिरक्षिता च अस्ति .
+wax_1	1	-	-	7:k1	-
+rakRiwq_1	2	-	-	6:k1	-
+jIva_1	3	-	-	-:-	-
+loka_1	4	-	-	2:r6	-
+Xarma_1	5	-	-	6:r6	-
+parirakRiwq_1	6	-	-	1:k1s	-
+as2_1-awi_1	7	-	-	0:main	-
+[6-tat_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=014_1>
+#सः रक्षिता स्वस्य धर्मस्य स्व स्वजनस्य च रक्षिता अस्ति .
+wax_1	1	-	-	8:k1	-
+rakRiwq_1	2	-	-	7:समुच्चितम्	-
+sva_1	3	-	-	4:r6	-
+Xarma_1	4	-	-	2:r6	-
+sva-_1	5	-	-	6:r6	-
+svajana_1	6	-	-	7:r6	-
+rakRiwq_1	7	-	-	1:k1s	-
+as2_1-awi_1	8	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=014_2>
+#सः वेद-वेद-अङ्ग-तत्त्व-ज्ञः धनुर्वेदे च निष्ठितः अस्ति .
+wax_1	1	-	-	9:k1	-
+vexa_1	2	-	-	-:-	-
+vexa_1	3	-	-	-:-	-
+afga_1	4	-	-	-:-	-
+wawwva_1	5	-	-	-:-	-
+wawwvajFa_1	6	-	-	1:mod	-
+Xanurvexa_1	7	-	-	8:k7p	-
+niRTiwa_1	8	-	-	1:k1s	-
+as2_1-awi_1	9	-	-	0:main	-
+[द्वन्द्व_1]	10	-	-	-:-	-
+[6-tat_1]	11	-	-	-:-	-
+[6-tat_2]	12	-	-	-:-	-
+[upa-tat_1]	13	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=015_1>
+#सः सर्व-शास्त्र-अर्थ-तत्त्व ज्ञः स्मृतिमान् च अस्ति .
+wax_1	1	-	-	8:k1	-
+sarva_1	2	-	-	-:-	-
+SAswra_1	3	-	-	-:-	-
+arWa_1	4	-	-	-:-	-
+wawwva_1	5	-	-	6:k2	-
+jFa_1	6	-	-	7:k1	-
+smqwi_1	7	-	mawupa	1:k1s	-
+as2_1-awi_1	8	-	-	0:main	-
+[karmaXAraya_1]	9	-	-	-:-	-
+[6-tat_1]	10	-	-	-:-	-
+[6-tat_2]	11	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=015_2>
+#सः प्रतिभावान् सर्व-लोक-प्रियः च अस्ति .
+wax_1	1	-	-	6:k1	-
+prawiBA_1	2	-	mawupa	5:k1	-
+sarva_1	3	-	-	-:-	-
+loka_1	4	-	-	-:-	-
+priya_1	5	-	-	1:k1s	-
+as2_1-awi_1	6	-	-	0:main	-
+[karmaXAraya_1]	7	-	-	-:-	-
+[6-bahu_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=015_3>
+#सः साधुः अ-दीन-आत्मा विचक्षणः च अस्ति .
+wax_1	1	-	-	7:k1	-
+sAXu_1	2	-	-	6:k1	-
+a-_1	3	-	-	-:-	-
+xIna_1	4	-	-	-:-	-
+Awman_1	5	-	-	6:k1	-
+vicakRaNa_1	6	-	-	1:k1s	-
+as2_1-awi_1	7	-	-	0:main	-
+[naF-tat_1]	8	-	-	-:-	-
+[6-bahu_1]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=016_1>
+#सः सर्वदा अभिगतः सद्भिः समुद्रः इव सिन्धुभिः इव .
+wax_1	1	-	-	2:k2	-
+aBigawa_1	2	-	-	nan:nan	-
+saw_1	3	-	pl	2:k1	-
+samuxra_1	4	-	-	1:ru	-
+sinXu_1	5	-	pl	3:ru	iva_1
+%affirmative
+</sent_id>
+
+
+<sent_id=016_2>
+#सः आर्यः सर्व-समः च एव सदा एव प्रिय-दर्शनः च अस्ति .
+wax_1	1	-	-	2:mod	-
+Arya_1	2	-	-	7:k1	-
+sarva_1	3	-	-	-:-	-
+sama_1	4	-	-	2:k1s	-
+priya_1	5	-	-	-:-	-
+xarSana_1	6	-	-	4:k1	-
+as2_1-awi_1	7	-	-	0:main	-
+[तृतीया_तत्पुरुष_1]	8	-	-	-:-	-
+[6-bahu_1]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=017_1>
+#सः सर्व-गुण-उपेतः कौसल्या-आनन्द-वर्धनः च अस्ति .
+wax_1	1	-	-	8:k1	-
+sarva_1	2	-	-	-:-	-
+guNa_1	3	-	-	-:-	-
+upewa_1	4	-	-	1:k1s	-
+kOsalyA_1	5	-	-	-:-	-
+Ananxa_1	6	-	-	-:-	-
+varXana_1	7	-	-	1:mod	-
+as2_1-awi_1	8	-	-	0:main	-
+[karmaXAraya_1]	9	-	-	-:-	-
+[3-tat_1]	10	-	-	-:-	-
+[6-tat_1]	11	-	-	-:-	-
+[6-tat_2]	12	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=017_2>
+#सः समुद्रः इव गाम्भीर्ये अस्ति .
+wax_1	1	-	-	4:k1	-
+samuxra_1	2	-	-	1:ru	iva_1
+gAmBIrya_1	3	-	-	4:k7p	-
+as2_1-awi_1	4	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=017_3>
+#सः धैर्येण हिमवान् इव अस्ति .
+wax_1	1	-	-	4:k1	-
+XErya_1	2	-	-	4:rh	-
+hima_1	3	-	mawupa	1:ru	iva_1
+as2_1-awi_1	4	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=018_1>
+#सः विष्णुना सदृशः वीर्ये अस्ति .
+wax_1	1	-	-	5:k1	-
+viRNu_1	2	per/male	-	3:ru	-
+saxqSa_1	3	-	-	1:k1s	-
+vIrya_1	4	-	-	5:k7p	-
+as2_1-awi_1	5	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=018_2>
+#सः सोमवत् प्रिय-दर्शनः च अस्ति .
+wax_1	1	-	-	5:k1	-
+soma_1	2	-	mawupa	1:उपमान	-
+priya_1	3	-	-	-:-	-
+xarSana_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[6-bahu_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=018_3>
+#सः कालाग्नि-सदृशः क्रोधे अस्ति .
+wax_1	1	-	-	5:k1	-
+kAlAgni_1	2	-	-	-:-	-
+saxqSa_1	3	-	-	1:k1s	-
+kroXa_1	4	-	-	5:k7p	-
+as2_1-awi_1	5	-	-	0:main	-
+[karmaXAraya_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=018_4>
+#सः क्षमया पृथिवी-समः अस्ति .
+wax_1	1	-	-	5:k1	-
+kRamA_1	2	-	-	5:rh	-
+pqWivI_1	3	-	-	-:-	-
+sama_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+[3-tat_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=019_1>
+#सः धनदेन समः त्यागे अस्ति .
+wax_1	1	-	-	5:k1	-
+Xanaxa_1	2	-	-	5:rh	-
+sama_1	3	-	-	1:k1s	-
+wyAga_1	4	-	-	5:k7p	-
+as2_1-awi_1	5	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=019_2>
+#सः सत्ये धर्मः इव अपरः अस्ति .
+wax_1	1	-	-	5:k1	-
+sawya_1	2	-	-	5:k7p	-
+Xarma_1	3	-	-	1:ru	iva_1
+apara_1	4	-	-	1:k1s	-
+as2_1-awi_1	5	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=019_3-21_1>
+#मही-पतिः दशरथः तम् एवं-गुण-सम्पन्नं सत्य-पराक्रमम् ज्येष्ठ-गुणैः युक्तं प्रकृतीनां हितैः युक्तं प्रियं ज्येष्ठं सुतम् च रामं प्रकृति-प्रिय-काम्यया प्रीत्या यौवराज्येन संयोक्तुम् ऐच्छत् .
+mahI_1	1	-	-	-:-	-
+pawi_1	2	-	-	3:mod	-
+xaSaraWa_1	3	-	-	26:k1	-
+wax_1	4	-	-	18:k1	-
+evaM_1	5	-	-	-:-	-
+guNa_1	6	-	-	-:-	-
+sampanna_1	7	-	-	9:mod	-
+sawya_1	8	-	-	-:-	-
+parAkrama_1	9	-	-	18:k1	-
+jyeRTa_1	10	-	-	-:-	-
+guNa_1	11	-	pl	12:rask1	-
+yukwa_1	12	-	-	16:mod	-
+prakqwi_1	13	-	pl	14:r6	-
+hiwa_1	14	-	pl	15:rask1	-
+yukwa_1	15	-	-	16:mod	-
+priya_1	16	-	-	18:k1	-
+jyeRTa_1	17	-	-	18:k1	-
+suwa_1	18	-	-	25:k2	-
+rAma_1	19	per/male	-	18:k1	-
+prakqwi_1	20	-	-	-:-	-
+priya_1	21	-	-	-:-	-
+kAmyA_1	22	-	-	25:rh	-
+prIwi_1	23	-	-	25:rh	-
+yOvarAjya_1	24	-	-	25:rh	-
+sam_yuj1_1	25	-	-	26:rt	-
+iR2_1-aw_1	26	-	-	0:main	-
+[6-tat_1]	27	-	-	-:-	-
+[karmaXAraya_1]	28	-	-	-:-	-
+[3-tat_1]	29	-	-	-:-	-
+[6-bahu_1]	30	-	-	-:-	-
+[karmaXAraya_2]	31	-	-	-:-	-
+[6-tat_2]	32	-	-	-:-	-
+[upa-tat_1]	33	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=021_2-22_1>
+#तस्य अभिषेक-सम्भारान् दृष्ट्वा भार्या अथ कैकयी पूर्वं दत्त-वरा देवी वरम् एनम् अयाचत .
+wax_1	1	-	-	5:r6	-
+aBiReka_1	2	-	-	-:-	-
+samBAra_1	3	-	pl	4:k2	-
+xqS1_1	4	-	-	13:rpk	-
+BAryA_1	5	-	-	6:mod	-
+kEkayI_1	6	-	-	13:k1	-
+pUrva_1	7	-	-	8:k7t	-
+xawwa(xA1;kwa;BvAxiH)_1	8	-	-	-:-	-
+varA_1	9	-	-	6:mod	-
+xevI_1	10	-	-	6:mod	-
+vara_1	11	-	-	13:k2	-
+ixam_1	12	-	-	13:k2	-
+yAc1_1	13	-	-	nan:nan	-
+[6-tat_1]	14	-	-	-:-	-
+[4-bahu_1]	15	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=022_2>
+#विवासनं च रामस्य भरतस्य अभिषेचनम् .
+vivAsana_1	1	-	-	nan:nan	-
+rAma_1	2	per/male	-	1:r6	-
+Barawa_1	3	per/male	-	4:r6	-
+aBiRecana_1	4	-	-	1:k1	-
+%affirmative
+</sent_id>
+
+
+<sent_id=023_1>
+#सः सत्य-वचनाद् राजा धर्म-पाशेन संयतः विवासयामास सुतं रामं दशरथः प्रियम् .
+wax_1	1	-	-	11:mod	-
+sawya_1	2	-	-	-:-	-
+vacana_1	3	-	-	7:rh	-
+rAjan_1	4	-	-	11:mod	-
+Xarma_1	5	-	-	-:-	-
+pASa_1	6	-	-	7:rh	-
+saMyawa_1	7	-	-	11:mod	-
+vi_vas1_1	8	-	-	0:main	-
+suwa_1	9	-	-	10:mod	-
+rAma_1	10	per/male	-	8:k2	-
+xaSaraWa_1	11	-	-	8:k1	-
+priya_1	12	-	-	10:mod	-
+[karmaXAraya_1]	13	-	-	-:-	-
+[karmaXAraya_2]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=024_1>
+#सः जगाम वनं वीरः प्रतिज्ञाम् अनुपालयन् पितुः वचन-निर्देशात् कैकेय्याः प्रिय-कारणात् च .
+wax_1	1	-	-	4:mod	-
+gam1_1-a_1	2	-	-	0:main	-
+vana_1	3	-	-	2:k2	-
+vIra_1	4	-	-	2:k1	-
+prawijFA_1	5	-	-	6:k2	-
+anupAlayaw_1	6	-	-	2:rvks	-
+piwq_1	7	-	-	9:r6	-
+vacana_1	8	-	-	-:-	-
+nirxeSa_1	9	-	-	12:k1	-
+kEkeyI_1	10	per/female	-	12:r6	-
+priya_1	11	-	-	-:-	-
+kAraNa_1	12	-	-	6:rh	-
+[6-tat_1]	13	-	-	-:-	-
+[karmaXAraya_1]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=025_1-26_1>
+#तं व्रजन्तं प्रियः भ्राता लक्ष्मणः अनुजगाम स्नेहात् विनय-सम्पन्नः सुमित्रा-आनन्द-वर्धनः भ्रातरं दयितः भ्रातुः सौभ्रात्रम् अनुदर्शयन् .
+wax_1	1	-	-	2:k2	-
+vrajaw_1	2	-	-	13:mod	-
+priya_1	3	-	-	5:mod	-
+BrAwq_1	4	-	-	5:mod	-
+lakRmaNa_1	5	per/male	-	6:k1	-
+gam1_1-a_1	6	-	-	0:main	-
+sneha_1	7	-	-	6:rh	-
+vinaya_1	8	-	-	-:-	-
+sampanna_1	9	-	-	5:mod	-
+sumiwrA_1	10	-	-	-:-	-
+Ananxa_1	11	-	-	-:-	-
+varXana_1	12	-	-	5:mod	-
+BrAwq_1	13	-	-	6:k2	-
+xayiwa_1	14	-	-	5:mod	-
+BrAwq_1	15	-	-	14:r6	-
+sOBrAwra_1	16	-	-	17:k2	-
+anuxarSayaw_1	17	-	-	6:rvks	-
+[3-tat_1]	18	-	-	-:-	-
+[6-tat_1]	19	-	-	-:-	-
+[6-tat_2]	20	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=026_2>
+#रामस्य दयिता भार्या नित्यं प्राण-समा च हिता अस्ति .
+rAma_1	1	per/male	-	3:r6	-
+xayiwA_1	2	-	-	3:mod	-
+BAryA_1	3	-	-	6:k1	-
+niwya_1	4	-	-	6:k1	-
+prANa_1	5	-	-	-:-	-
+samA_1	6	-	-	7:k1s	-
+hiwA_1	7	-	-	8:k1	-
+as2_1-awi_1	8	-	-	0:main	-
+[3-tat_1]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=027_1>
+#जनकस्य कुले जाता सा देव-माया इव निर्मिता अस्ति .
+janaka_1	1	-	-	2:r6	-
+kula_1	2	-	-	3:k7p	-
+jAwA_1	3	-	-	4:mod	-
+wax_1	4	-	-	8:k1	-
+xeva_1	5	-	-	-:-	-
+mAyA_1	6	-	-	4:ru	iva_1
+nirmiwA_1	7	-	-	6:k1s	-
+as2_1-awi_1	8	-	-	0:main	-
+[6-tat_1]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=027_2>
+#सा सर्व-लक्षण-सम्पन्ना नारीणाम् उत्तमा वधूः अस्ति .
+wax_1	1	-	-	6:mod	-
+sarva_1	2	-	-	-:-	-
+lakRaNa(lakR1;lyut;curAxiH)_1	3	-	-	-:-	-
+sampannA_1	4	-	-	6:mod	-
+nArI_1	5	-	pl	6:rn	-
+uwwamA_1	6	-	-	8:k1	-
+vaXU_1	7	-	-	6:k1s	-
+as2_1-awi_1	8	-	-	0:main	-
+[karmaXAraya_1]	9	-	-	-:-	-
+[3-tat_1]	10	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=028_1>
+#सीता अपि अनुगता रामं शशिनं रोहिणी इव .
+sIwA_1	1	per/female	-	2:k1	-
+anugawA_1	2	-	-	nan:nan	-
+rAma_1	3	per/male	-	2:k2	-
+SaSin_1	4	per/male	-	3:ru	-
+rohiNI_1	5	per/female	-	1:ru	iva_1
+%affirmative
+</sent_id>
+
+
+<sent_id=028_2-29_1>
+#पौरैः पित्रा दशरथेन च दूरं अनुगतः धर्मात्मा शृङ्गवेर-पुरे निषाद-अधिपतिं प्रियम् गुहम् आसाद्य सूतं गङ्गा-कूले व्यसर्जयत् .
+pOra_1	1	-	pl	3:k1	-
+piwq_1	2	-	-	3:k1	-
+xaSaraWa_1	3	-	-	5:rh	-
+xUra_1	4	-	-	5:k2	-
+anugawa_1	5	-	-	6:mod	-
+XarmAwman_1	6	-	-	17:k1	-
+Sqfgavera_1	7	-	-	-:-	-
+pura_1	8	-	-	9:k7p	-
+niRAxa(ni_Rax1;GaF;BvAxiH)_1	9	-	-	-:-	-
+aXipawi_1	10	-	-	12:mod	-
+priya_1	11	-	-	12:mod	-
+guha_1	12	-	-	13:k2	-
+Af_Rax1_1	13	-	causative	17:rpk	-
+sUwa_1	14	-	-	17:k2	-
+gafgA_1	15	-	-	-:-	-
+kUla_1	16	-	-	17:k7p	-
+vi_sq2_1-aw_1	17	-	-	0:main	-
+[karmaXAraya_1]	18	-	-	-:-	-
+[6-tat_1]	19	-	-	-:-	-
+[6-tat_2]	20	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=030-32_1>
+#रामः गुहेन लक्ष्मणेन सीतया च सहितः वनेन वनं गत्वा बहु-उदकाः नदीः तीर्त्वा चित्रकूटम् अनुप्राप्य भरद्वाजस्य शासनात् रम्यम् आवसथं कृत्वा देव-गन्धर्व-सङ्काशाः वने रममाणाः ते त्रयः तत्र सुखम् न्यवसन् .
+rAma_1	1	per/male	-	nan:nan	-
+guha_1	2	-	-	4:k1	-
+lakRmaNa_1	3	per/male	-	4:k1	-
+sIwA_1	4	per/female	-	8:rask1	-
+sahiwa_1	5	-	-	4:rask1	-
+vana_1	6	-	-	8:करणम्?	-
+vana_1	7	-	-	8:k2	-
+gam1_1	8	-	-	27:rpk	-
+bahu_1	9	-	pl	-:-	-
+uxakA_1	10	-	pl	11:mod	-
+naxI_1	11	-	pl	12:k2	-
+wa1_1	12	-	-	27:rpk	-
+ciwrakUta_1	13	per/male	-	14:k2	-
+anu_pra_Ap1_1	14	-	-	27:rpk	-
+BaraxvAja_1	15	per/male	-	16:k1	-
+SAsana_1	16	-	-	19:rh	-
+ramya_1	17	-	-	18:mod	-
+AvasaWa_1	18	-	-	19:k2	-
+kq2_1	19	-	-	27:rpk	-
+xeva_1	20	-	-	-:-	-
+ganXarva_1	21	-	-	-:-	-
+safkASA_1	22	-	pl	24:k2	-
+vana_1	23	-	-	24:k7p	-
+ramamANa_1	24	-	pl	26:mod	-
+wax_1	25	-	pl	26:mod	-
+wri_1	26	-	pl	27:k1	-
+ni_vas1_1-aw_1	27	-	pl	0:main	-
+[6-bahu_1]	28	-	-	-:-	-
+[द्वन्द्व_1]	29	-	-	-:-	-
+[bahu_1]	30	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=032_2-33_1>
+#चित्रकूटं गते रामे पुत्र-शोक-आतुरः तथा राजा दशरथः स्वर्गं जगाम विलपन् सुतम् .
+ciwrakUta_1	1	per/male	-	2:k2	-
+gawa_1	2	-	-	10:rblak	-
+rAma_1	3	per/male	-	2:k7p	-
+puwra_1	4	-	-	-:-	-
+Soka_1	5	-	-	-:-	-
+Awura_1	6	-	-	8:mod	-
+rAjan_1	7	-	-	8:mod	-
+xaSaraWa_1	8	-	-	10:k1	-
+svarga_1	9	-	-	10:k2	-
+gam1_1-a_1	10	-	-	0:main	-
+vilapaw_1	11	-	-	10:rvks	-
+suwa_1	12	-	-	11:k2	-
+[6-tat_1]	13	-	-	-:-	-
+[3-tat_1]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=033_2-34_1>
+#गते तु तस्मिन् भरतः वसिष्ठ-प्रमुखैः द्विजैः नियुज्यमानः राज्याय न ऐच्छत् राज्यं महा-बलः .
+gawa_1	1	-	-	2:mod	-
+wax_1	2	-	-	7:k7p	-
+Barawa_1	3	per/male	-	9:k1	-
+vasiRTa_1	4	-	-	-:-	-
+pramuKa_1	5	-	pl	6:mod	-
+xvija_1	6	-	pl	7:rask1	-
+niyujyamAna_1	7	-	-	3:mod	-
+rAjya_1	8	-	-	7:rt	-
+iR2_1-aw_1	9	-	-	0:main	-
+rAjya_1	10	-	-	9:k2	-
+mahA_1	11	-	-	-:-	-
+bala_1	12	-	-	9:k1	-
+[6-bahu_1]	13	-	-	-:-	-
+[6-bahu_2]	14	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=034_2>
+#सः जगाम वनं वीरः राम-पाद-प्रसादकः .
+wax_1	1	-	-	4:mod	-
+gam1_1-a_1	2	-	-	0:main	-
+vana_1	3	-	-	2:k2	-
+vIra_1	4	-	-	2:k1	-
+rAma_1	5	per/NA	-	-:-	-
+pAxa_1	6	-	-	-:-	-
+prasAxaka_1	7	-	-	4:mod	-
+[6-tat_1]	8	-	-	-:-	-
+[upa-tat_1]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=035_1>
+#गत्वा तु सः महात्मानं रामं सत्य-पराक्रमम् अयाचत् भ्रातरं रामम् आर्य-भाव-पुरस्कृतः .
+gam1_1	1	-	-	7:rpk	-
+wax_1	2	-	-	12:mod	-
+mahAwman_1	3	-	-	4:mod	-
+rAma_1	4	per/male	-	7:k2	-
+sawya_1	5	-	-	-:-	-
+parAkrama_1	6	-	-	4:mod	-
+yAc1_1-aw_1	7	-	-	0:main	-
+BrAwq_1	8	-	-	9:mod	-
+rAma_1	9	per/male	-	7:k2	-
+Arya_1	10	-	-	-:-	-
+BAva(BU1;GaF;BvAxiH)_1	11	-	-	-:-	-
+puraskqwa_1	12	-	-	7:k1	-
+[6-bahu_1]	13	-	-	-:-	-
+[karmaXAraya_1]	14	-	-	-:-	-
+[3-tat_1]	15	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=036_1>
+#त्वम् एव राजा धर्मज्ञः असि इति रामं वचः अब्रवीत् .
+yuRmax_1	1	-	-	4:k1	eva_1
+rAjan_1	2	-	-	1:mod	-
+XarmajFa_1	3	-	-	1:k1s	-
+as2_1-awi_1	4	-	-	7:वाक्यकर्म	-
+rAma_1	5	per/male	-	7:k2	-
+vaca_1	6	-	-	7:k1	-
+brU1_1-aw_1	7	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=036_2-37_1>
+#रामः अपि परम-उदारः सुमुखः सु-महा-यशाः न च ऐच्छत् पितुः आदेशात् राज्यं .
+rAma_1	1	per/male	-	8:k1	-
+parama_1	2	-	-	-:-	-
+uxAra_1	3	-	-	4:mod	-
+sumuKa_1	4	-	-	1:k1	-
+su_1	5	-	-	-:-	-
+mahA_1	6	-	-	-:-	-
+yaSas_1	7	-	-	1:k1	-
+iR2_1-aw_1	8	-	-	0:main	-
+piwq_1	9	-	-	8:rh	-
+AxeSa_1	10	-	-	9:mod	-
+rAjya_1	11	-	-	1:k1	-
+[karmaXAraya_1]	12	-	-	-:-	-
+[bahu_1]	13	-	-	-:-	-
+[karmaXAraya_2]	14	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=037_2-38_1>
+#रामः महा-बलः पादुके च अस्य राज्याय न्यासं दत्त्वा पुनः पुनः निवर्तयामास ततः भरतं भरत-अग्र-जः .
+rAma_1	1	per/male	-	9:k1	-
+mahA_1	2	-	-	-:-	-
+bala_1	3	-	-	1:mod	-
+pAxuka_1	4	-	-	8:k7p	-
+ixam_1	5	-	-	6:r6	-
+rAjya_1	6	-	-	8:rt	-
+nyAsa_1	7	-	-	8:k2	-
+xA1_1	8	-	-	9:rpk	-
+ni_vqw1_1-a_1	9	-	-	0:main	-
+Bq1_1-awu_1	10	-	dl	nan:nan	-
+Barawa_1	11	per/NA	-	-:-	-
+agra-_1	12	-	-	-:-	-
+ja_1	13	-	-	1:mod	-
+[6-bahu_1]	14	-	-	-:-	-
+[6-bahu_2]	15	-	-	-:-	-
+[upa-tat_1]	16	-	-	-:-	-
+%imperative
+</sent_id>
+
+
+<sent_id=038_2-39_1>
+#सः कामम् अन्-अवाप्य एव राम-पादौ उपस्पृशन् नन्दि-ग्रामे अकरोत् राज्यं राम-आगमन-काङ्क्षया .
+wax_1	1	-	-	10:k1	-
+kAma_1	2	-	-	4:k2	-
+an_1	3	-	-	-:-	-
+ava_Ap1_1	4	-	-	10:rpk	-
+rAma_1	5	per/NA	-	-:-	-
+pAxa_1	6	-	dl	7:k2	-
+upaspqSaw_1	7	-	-	10:rvks	-
+nanxi_1	8	-	-	-:-	-
+grAma_1	9	-	-	7:k7p	-
+kq3_1-aw_1	10	-	-	0:main	-
+rAjya_1	11	-	-	10:k2	-
+rAma_1	12	per/NA	-	-:-	-
+Agamana(Af_gam1;lyut;BvAxiH)_1	13	-	-	-:-	-
+kAfkRA_1	14	-	-	10:k3	-
+[naF-tat_1]	15	-	-	-:-	-
+[6-tat_1]	16	-	-	-:-	-
+[karmaXAraya_1]	17	-	-	-:-	-
+[6-tat_2]	18	-	-	-:-	-
+[6-tat_3]	19	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=039_2-40>
+#गते तु भरते श्रीमान् सत्य-सन्धः जितेन्द्रियः रामः तु पुनः आलक्ष्य नागरस्य जनस्य च तत्र आगमनम् एकाग्रः दण्डकान् प्रविवेश ह .
+gawa_1	1	-	-	2:mod	-
+Barawa_1	2	per/male	-	8:k7p	-
+SrImaw_1	3	-	mawupa	7:mod	-
+sawya_1	4	-	-	-:-	-
+sanXa_1	5	-	-	7:mod	-
+jiwenxriya_1	6	-	-	7:mod	-
+rAma_1	7	per/male	-	14:k1	-
+Af_lakR2_1	8	-	-	14:rpk	-
+nAgara_1	9	-	-	10:k1	-
+jana_1	10	-	-	12:r6	-
+Agamana_1	11	-	-	8:k2	-
+ekAgra_1	12	-	-	7:mod	-
+xaNdaka_1	13	-	pl	14:k2	-
+pra_viS1_1-a_1	14	-	-	0:main	-
+[6-tat_1]	15	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=041_1-42_1>
+#प्रविश्य तु महारण्यं रामः राजीव-लोचनः विराधं राक्षसं हत्वा शरभङ्गं ददर्श ह सुतीक्ष्णं च अपि अगस्त्यं च अगस्त्य-भ्रातरं तथा .
+pra_viS1_1	1	-	-	10:rpk	-
+mahAraNya_1	2	-	-	1:k2	-
+rAma_1	3	per/male	-	10:k1	-
+rAjIva_1	4	-	-	-:-	-
+locana_1	5	-	-	3:mod	-
+virAXa_1	6	-	-	7:mod	-
+rAkRasa_1	7	-	-	8:k2	-
+han1_1	8	-	-	10:rpk	-
+SaraBafga_1	9	per/male	-	11:k1	-
+xqS1_1-a_1	10	-	-	0:main	-
+suwIkRNa_1	11	-	-	10:k2	-
+agaswya_1	12	per/male	-	11:k1	-
+agaswya_1	13	per/NA	-	-:-	-
+BrAwq_1	14	-	-	11:k1	waWA_1
+[6-bahu_1]	15	-	-	-:-	-
+[6-tat_1]	16	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=042_2-43_1>
+#अगस्त्य-वचनात् च एव जग्राह ऐन्द्रं शरासनम् .
+agaswya_1	1	per/NA	-	-:-	-
+vacana_1	2	-	-	3:rh	-
+grah1_1-a_1	3	-	-	nan:nan	-
+Enxra_1	4	-	-	5:mod	-
+SarAsana_1	5	-	-	3:k2	-
+[6-tat_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=043_2-44_1>
+#तस्य रामस्य वने वसतः वनचरैः सह सर्वे ऋषयः असुर-रक्षसाम् वधाय अभ्यागमन् .
+wax_1	1	-	-	2:mod	-
+rAma_1	2	per/male	-	3:r6	-
+vana_1	3	-	-	4:k7p	-
+vasaw_1	4	-	-	5:r6	-
+vanacara_1	5	-	pl	11:rask1	-
+sarva_1	6	-	pl	7:mod	-
+qRi_1	7	-	pl	11:k1	-
+asura_1	8	-	-	-:-	-
+rakRas_1	9	-	pl	10:r6	-
+vaXa_1	10	-	-	11:rt	-
+aBi_Af_gam1_1-Iw_1	11	-	pl	0:main	-
+[द्वन्द्व_1]	12	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=044_2>
+#सः तेषां प्रतिशुश्राव राक्षसानां वधम् तदा वने .
+wax_1	1	-	-	3:k1	-
+wax_1	2	-	pl	4:mod	-
+prawi_Sru1_1-a_1	3	-	-	0:main	-
+rAkRasa_1	4	-	pl	5:r6	-
+vaXa_1	5	-	-	3:k2	-
+waxA_1	6	-	-	3:k7t	-
+vana_1	7	-	-	3:k7p	-
+%affirmative
+</sent_id>
+
+
+<sent_id=045_1>
+#प्रतिज्ञातः च रामेण वधः संयति रक्षसाम् सन्निधौ ऋषीणाम् अग्नि-कल्पानां दण्डक-अरण्य-वासिनाम् .
+prawijFAwa_1	1	-	-	nan:nan	-
+rAma_1	2	per/male	-	1:k1	-
+vaXa_1	3	-	-	1:k2	-
+saMyaw_1	4	-	-	1:k7p	-
+rakRas_1	5	-	pl	3:r6	-
+sanniXi_1	6	-	-	1:k7p	-
+qRi_1	7	-	pl	6:r6	-
+agni_1	8	-	-	-:-	-
+kalpa_1	9	-	pl	7:mod	-
+xaNdaka_1	10	-	-	-:-	-
+araNya_1	11	-	-	-:-	-
+vAsin_1	12	-	pl	7:mod	-
+[6-bahu_1]	13	-	-	-:-	-
+[karmaXAraya_1]	14	-	-	-:-	-
+[6-tat_1]	15	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=046_1>
+#तेन तत्र एव वसता जन-स्थान-निवासिनी कृता विरूपिता शूर्पणखा राक्षसी काम-रूपिणी .
+wax_1	1	-	-	6:k1	-
+vasaw_1	2	-	-	1:mod	-
+jana_1	3	-	-	-:-	-
+sWAna_1	4	-	-	-:-	-
+nivAsinI_1	5	-	-	8:mod	-
+kqwA_1	6	-	-	nan:nan	-
+virUpiwA_1	7	-	-	8:mod	-
+SUrpaNaKA_1	8	per/female	-	6:k2	-
+rAkRasI_1	9	-	-	8:mod	-
+kAma_1	10	-	-	-:-	-
+rUpin_1	11	-	dl	6:rad	-
+[6-tat_1]	12	-	-	-:-	-
+[7-tat_1]	13	-	-	-:-	-
+[6-bahu_1]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=047-48_1>
+#ततः शूर्पणखा-वाक्यात् उद्युक्तान् सर्व-राक्षसान् खरं त्रिशिरसं दूषणं च एव राक्षसम् तेषां पदानुगान् च एव रणे रामः निजघान .
+SUrpaNaKA_1	1	per/NA	-	-:-	-
+vAkya_1	2	-	-	3:rh	-
+uxyukwa_1	3	-	pl	5:mod	-
+sarva_1	4	-	-	-:-	-
+rAkRasa_1	5	-	pl	11:k1	-
+Kara_1	6	-	-	11:k1	-
+wriSiras_1	7	-	-	11:k1	-
+xURaNa_1	8	-	-	9:mod	-
+rAkRasa_1	9	-	-	11:k1	-
+wax_1	10	-	pl	11:r6	-
+paxAnuga_1	11	-	pl	14:k2	-
+raNa_1	12	-	-	14:k7p	-
+rAma_1	13	per/male	-	14:k1	-
+ni_han1_1-a_1	14	-	-	0:main	-
+[6-tat_1]	15	-	-	-:-	-
+[karmaXAraya_1]	16	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=049_2>
+#ततः ज्ञाति-वधं श्रुत्वा रावणः क्रोध-मूर्छितः .
+jFAwi_1	1	-	-	-:-	-
+vaXa_1	2	-	-	3:k2	-
+Sru1_1	3	-	-	6:rpk	-
+rAvaNa_1	4	per/male	-	6:k1	-
+kroXa_1	5	-	-	-:-	-
+mUrCiwa_1	6	-	-	nan:nan	-
+[6-tat_1]	7	-	-	-:-	-
+[3-tat_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=050_1>
+#सहायं वरयामास मारीचं नाम राक्षसम् .
+sahAya_1	1	-	-	2:k2	-
+vq2_1-a_1	2	-	-	nan:nan	-
+mArIca_1	3	per/male	-	4:rs	-
+rAkRasa_1	4	-	-	2:k2	-
+%affirmative
+</sent_id>
+
+
+<sent_id=052_2-53_1>
+#तेन मायाविना नृप-आत्म-जौ दूरम् अपवाह्य गृध्रं जटायुषम् हत्वा रामस्य भार्यां जहार .
+wax_1	1	-	-	2:mod	-
+mAyAvin_1	2	-	-	7:jk1	-
+nqpa_1	3	-	-	-:-	-
+Awma-_1	4	-	-	-:-	-
+ja_1	5	-	dl	7:k2	-
+xUra_1	6	-	-	7:k2	-
+apa_vah1_1	7	-	causative	13:rpk	-
+gqXra_1	8	-	-	9:mod	-
+jatAyus_1	9	per/male	-	10:k2	-
+han1_1	10	-	-	13:rpk	-
+rAma_1	11	per/male	-	12:r6	-
+BAryA_1	12	-	-	13:k2	-
+hq2_1-a_1	13	-	-	nan:nan	-
+[6-tat_1]	14	-	-	-:-	-
+[upa-tat_1]	15	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=053_2-54_1>
+#गृध्रं च निहतं दृष्ट्वा हृतां श्रुत्वा च मैथिलीम् राघवः शोक-संतप्तः विललाप आकुल-इन्द्रियः .
+gqXra_1	1	-	-	2:k2	-
+nihawa_1	2	-	-	3:k2	-
+xqS1_1	3	-	-	5:k1	-
+hqwA_1	4	-	-	5:k2	-
+Sru1_1	5	-	-	10:rpk	-
+mEWilI_1	6	-	-	4:k2	-
+rAGava_1	7	per/male	-	10:k1	-
+Soka_1	8	-	-	-:-	-
+sanwapwa_1	9	-	-	7:mod	-
+vi_lap1_1-a_1	10	-	-	0:main	-
+Akula_1	11	-	-	-:-	-
+inxriya_1	12	-	-	7:mod	-
+[3-tat_1]	13	-	-	-:-	-
+[6-bahu_1]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=054_2-55_1>
+#तेन एव शोकेन गृध्रं दग्ध्वा जटायुषम् मार्गमाणः वने सीतां राक्षसं संददर्श ह कबन्धं नाम रूपेण विकृतं घोर-दर्शनम् .
+wax_1	1	-	-	4:k3	-
+Soka_1	2	-	-	4:rh	-
+gqXra_1	3	-	-	5:mod	-
+xah1_1	4	-	-	10:rpk	-
+jatAyus_1	5	per/male	-	4:k2	-
+mArgamANa_1	6	-	-	10:k1	-
+vana_1	7	-	-	6:k7p	-
+sIwA_1	8	per/female	-	6:k2	-
+rAkRasa_1	9	-	-	10:k2	-
+sam_xqS1_1-a_1	10	-	-	0:main	-
+kabanXa_1	11	per/male	-	9:rs	-
+rUpa_1	12	-	-	13:ib	-
+vikqwa_1	13	-	-	9:mod	-
+Gora_1	14	-	-	-:-	-
+xarSana_1	15	-	-	9:mod	-
+[6-bahu_1]	16	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=056_1>
+#तं निहत्य महा-बाहुः ददाह .
+wax_1	1	-	-	2:k2	-
+ni_han1_1	2	-	-	5:rpk	-
+mahA_1	3	-	-	-:-	-
+bAhu_1	4	-	-	5:k1	-
+xah1_1-a_1	5	-	-	0:main	-
+[6-bahu_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=056_2>
+#स्वर्गम् गतः च सः .
+svarga_1	1	-	-	2:k2	-
+gawa_1	2	-	-	nan:nan	-
+wax_1	3	-	-	2:k1	-
+%affirmative
+</sent_id>
+
+
+<sent_id=056_3-57_1>
+#सः च तम् कथयामास शबरीं धर्मचारिणीम् श्रमणां धर्म-निपुणाम् अभिगच्छ इति राघव .
+wax_1	1	-	-	3:k1	-
+wax_1	2	-	-	3:k2	-
+kaWa1_1-a_1	3	-	-	0:main	-
+SabarI_1	4	per/female	-	9:k2	-
+XarmacAriNI_1	5	-	-	4:mod	-
+SramaNA_1	6	-	-	4:mod	-
+Xarma_1	7	-	-	-:-	-
+nipuNA_1	8	-	-	4:mod	-
+aBi_gam1_1-awu_1	9	-	-	3:वाक्यकर्म	-
+rAGava_1	10	per/male	-	9:rad	-
+[7-tat_1]	11	-	-	-:-	-
+%imperative
+</sent_id>
+
+
+<sent_id=057_2>
+#सः अभ्यगच्छत् महा-तेजाः शबरीं शत्रु-सूदनः .
+wax_1	1	-	-	2:k1	-
+aBi_gam1_1-aw_1	2	-	-	0:main	-
+mahaw_1	3	-	-	-:-	-
+wejas_1	4	-	-	1:mod	-
+SabarI_1	5	per/female	-	2:k2	-
+Sawru_1	6	-	-	-:-	-
+sUxana_1	7	-	-	1:mod	-
+[6-bahu_1]	8	-	-	-:-	-
+[6-bahu_2]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=058_1>
+#शबर्या पूजितः सम्यक् रामः दशरथ-आत्मजः .
+SabarI_1	1	per/female	-	2:k1	-
+pUjiwa_1	2	-	-	nan:nan	-
+rAma_1	3	per/male	-	2:k2	-
+xaSaraWa_1	4	-	-	-:-	-
+Awma-ja_1	5	-	-	3:mod	-
+[6-tat_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=058_2>
+#पम्पा-तीरे हनुमता सङ्गतः वानरेण ह .
+pampA_1	1	-	-	-:-	-
+wIra_1	2	-	dl	4:k2	-
+hanumaw_1	3	per/male	-	4:rh	-
+safgawa_1	4	-	-	nan:nan	-
+vAnara_1	5	-	-	4:rask1	ha_1
+[compound_1]	6	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=059_1>
+#हनुमद् वचनात् च एव सुग्रीवेण समागतः .
+hanu_1	1	-	mawupa	4:k2	-
+vacana_1	2	-	-	4:rh	-
+sugrIva_1	3	per/male	-	4:rask1	-
+samAgawa_1	4	-	-	nan:nan	-
+%affirmative
+</sent_id>
+
+
+<sent_id=059_2-60_1>
+#सुग्रीवाय च तत् सर्वं अशंसत् रामः महाबलः आदितः यथावृत्तं सीतायाः च विशेषतः .
+sugrIva_1	1	per/male	-	4:rt	-
+wax_1	2	-	-	8:mod	-
+sarva_1	3	-	-	8:mod	-
+Sans1_1-aw_1	4	-	-	0:main	-
+rAma_1	5	per/male	-	4:k1	-
+mahAbala_1	6	-	-	5:mod	-
+Axi_1	7	-	-	4:rh	-
+yaWAvqwwa_1	8	-	-	4:k2	-
+sIwA_1	9	per/female	-	8:r6	-
+%affirmative
+</sent_id>
+
+
+<sent_id=060_2-61_1>
+#रामेण प्रीतः वानरः सुग्रीवः च अपि रामस्य तत्-सर्वं श्रुत्वा अग्नि-साक्षिकम् सख्यं च एव चकार .
+rAma_1	1	per/male	-	2:k1	-
+prIwa_1	2	-	-	3:mod	-
+vAnara_1	3	-	-	4:k1	-
+sugrIva_1	4	per/male	-	12:k1	-
+rAma_1	5	per/male	-	7:r6	-
+waw_1	6	-	-	-:-	-
+sarva_1	7	-	-	8:k2	-
+Sru1_1	8	-	-	12:rpk	-
+agni_1	9	-	-	-:-	-
+sAkRika_1	10	-	-	11:k1	-
+saKya_1	11	-	-	12:k2	-
+kq3_1-a_1	12	-	-	0:main	-
+[compound_1]	13	-	-	-:-	-
+[6-bahu_1]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=063_1>
+#वालिनः च बलं तत्र कथयामास वानरः सुग्रीवः .
+vAlin_1	1	per/male	pl	3:k2	-
+bala_1	2	-	-	3:k2	-
+kaWa1_1-a_1	3	-	-	0:main	-
+vAnara_1	4	-	-	5:mod	-
+sugrIva_1	5	per/male	-	3:k1	-
+%affirmative
+</sent_id>
+
+
+<sent_id=063_2>
+#शङ्कितः च आसीत् नित्यं वीर्येण राघवे .
+Safkiwa_1	1	-	-	2:k1	-
+as2_1-aw_1	2	-	-	0:main	-
+niwya_1	3	-	-	2:krvn	-
+vIrya_1	4	-	-	1:k1	-
+rAGava_1	5	per/male	-	1:k7p	-
+%affirmative
+</sent_id>
+
+
+<sent_id=064_1>
+#राघव-प्रत्ययार्थं तु दुन्दुभेः कायम् उत्तमम् दर्शयामास सुग्रीवः महा-पर्वत-संनिभम् .
+rAGava_1	1	per/NA	-	-:-	-
+prawyaya_1	2	-	-	nan:nan	wu_1
+xunxuBi_1	3	-	-	4:r6	-
+kAya_1	4	-	-	6:k2	-
+uwwama_1	5	-	-	4:mod	-
+xqS1_1-a_1	6	-	causative	0:main	-
+sugrIva_1	7	per/male	-	6:pk1	-
+mahA_1	8	-	-	-:-	-
+parvawa_1	9	-	-	-:-	-
+sanniBa_1	10	-	-	4:mod	-
+[nan_1]	11	-	-	-:-	-
+[karmaXAraya_1]	12	-	-	-:-	-
+[6-bahu_1]	13	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=065_1>
+#उत्स्मयित्वा महा-बाहुः प्रेक्ष्य च अस्थि महा-बलः पाद-अङ्गुष्ठेन चिक्षेप सम्पूर्णं दश-योजनम् .
+uw_smi1_1	1	-	-	10:rpk	-
+mahA_1	2	-	-	-:-	-
+bAhu_1	3	-	-	7:mod	-
+pra_IkR1_1	4	-	-	10:rpk	-
+asWi_1	5	-	-	4:k2	-
+mahA_1	6	-	-	-:-	-
+bala_1	7	-	-	10:k1	-
+pAxa_1	8	-	-	-:-	-
+afguRTa_1	9	-	-	10:k3	-
+kRip2_1-a_1	10	-	-	0:main	-
+sampUrNa_1	11	-	-	10:k2	-
+xaSan_1	12	-	-	-:-	-
+yojana_1	13	-	-	11:mod	-
+[6-bahu_1]	14	-	-	-:-	-
+[6-bahu_2]	15	-	-	-:-	-
+[6-tat_1]	16	-	-	-:-	-
+[karmaXAraya_1]	17	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=066_1>
+#बिभेद च पुनः सालान् सप्त एकेन महा-इषुणा गिरिं रसातलं च एव जनयन् प्रत्ययं तदा .
+Bix1_1-a_1	1	-	-	0:main	-
+sAla_1	2	-	pl	8:k1	-
+sapwan_1	3	-	pl	2:mod	-
+eka_1	4	-	-	6:mod	-
+mahaw_1	5	-	-	-:-	-
+iRu_1	6	-	-	1:k3	-
+giri_1	7	-	-	8:k1	-
+rasAwala_1	8	-	-	1:k2	-
+janayaw_1	9	-	causative	1:k1	-
+prawyaya_1	10	-	-	9:k2	-
+waxA_1	11	-	-	1:k7t	-
+[karmaXAraya_1]	12	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=067_1>
+#ततः प्रीत-मनाः तेन विश्वस्तः सः महा-कपिः तदा राम-सहितः किष्किन्धां गुहां जगाम च .
+prIwa(prI2;kwa;kryAxiH)_1	1	-	-	-:-	-
+manas_1	2	-	-	5:mod	-
+wax_1	3	-	-	4:k1	-
+viSvaswa_1	4	-	-	5:mod	-
+wax_1	5	-	-	13:k1	-
+mahA_1	6	-	-	-:-	-
+kapi_1	7	-	-	10:mod	-
+waxA_1	8	-	-	13:k7t	-
+rAma_1	9	per/NA	-	-:-	-
+sahiwa_1	10	-	-	13:rask1	-
+kiRkinXA_1	11	-	-	12:mod	-
+guhA_1	12	-	-	13:k2	-
+gam1_1-a_1	13	-	-	0:main	-
+[6-bahu_1]	14	-	-	-:-	-
+[karmaXAraya_1]	15	-	-	-:-	-
+[3-tat_1]	16	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=068_1>
+#ततः अगर्जत् हरि-वरः सुग्रीवः हेम-पिङ्गलः .
+garj1_1-aw_1	1	-	-	0:main	-
+hari_1	2	-	-	-:-	-
+vara_1	3	-	-	4:mod	-
+sugrIva_1	4	per/male	-	1:k1	-
+hema_1	5	-	-	-:-	-
+pifgala_1	6	-	-	4:mod	-
+[6-tat_1]	7	-	-	-:-	-
+[bahu_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=068_2>
+#तेन नादेन महता निर्जगाम हरि-ईश्वरः .
+wax_1	1	-	-	2:mod	-
+nAxa_1	2	-	-	4:rh	-
+mahaw_1	3	-	-	2:mod	-
+nir_gam1_1-a_1	4	-	-	0:main	-
+hari_1	5	-	-	-:-	-
+ISvara_1	6	-	-	4:k1	-
+[6-tat_1]	7	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=069_1>
+#अनुमान्य तदा तारां सुग्रीवेण समागतः .
+anu_man2_1	1	-	causative	5:rpk	-
+waxA_1	2	-	-	5:k7t	-
+wArA_1	3	-	-	1:k2	-
+sugrIva_1	4	per/male	-	5:rask1	-
+samAgawa_1	5	-	-	nan:nan	-
+%affirmative
+</sent_id>
+
+
+<sent_id=069_2>
+#निजघान च तत्र एनं शरेण एकेन राघवः .
+ni_han1_1-a_1	1	-	-	0:main	-
+ixam_1	2	-	-	1:k2	-
+Sara_1	3	-	-	1:k3	-
+eka_1	4	-	-	3:mod	-
+rAGava_1	5	per/male	-	1:k1	-
+%affirmative
+</sent_id>
+
+
+<sent_id=070_1>
+#ततः सुग्रीव-वचनात् हत्वा वालिनम् आहवे सुग्रीवम् एव तद्-राज्ये राघवः प्रत्यपादयत् .
+sugrIva_1	1	per/NA	-	-:-	eva_1
+vacana_1	2	-	-	3:rh	-
+han1_1	3	-	-	10:rpk	-
+vAlin_1	4	per/male	-	3:k2	-
+Ahava_1	5	-	-	3:k7p	-
+sugrIva_1	6	per/male	-	10:k2	eva_1
+wax_1	7	-	-	-:-	-
+rAjya_1	8	-	-	10:k7p	-
+rAGava_1	9	per/male	-	10:pk1	-
+prawi_pax1_1-aw_1	10	-	causative	0:main	-
+[6-tat_1]	11	-	-	-:-	-
+[7-tat_1]	12	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=071_1>
+#सः च सर्वान् समानीय वानरान् वानरर्षभः दिशः प्रस्थापयामास दिदृक्षुः जनक-आत्मजाम् .
+wax_1	1	-	-	7:k1	-
+sarva_1	2	-	pl	4:mod	-
+sam_Af_NI1_1	3	-	-	6:rpk	-
+vAnara_1	4	-	pl	6:k2	-
+xiS_1	5	-	pl	6:jk1	-
+pra_RWA1_1-a_1	6	-	causative	0:main	-
+xixqkRu_1	7	-	-	6:pk1	-
+janaka_1	8	-	-	-:-	-
+AwmajA_1	9	-	-	7:k2	-
+[6-tat_1]	10	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=072_1>
+#ततः गृध्रस्य वचनात् सम्पातेः हनुमान् बली शत-योजन-विस्तीर्णं पुप्लुवे लवण-अर्णवम् .
+gqXra_1	1	-	-	3:mod	-
+vacana_1	2	-	-	9:rh	-
+sampAwi_1	3	per/male	-	2:r6	-
+hanu_1	4	-	mawupa	5:mod	-
+balin_1	5	-	-	9:k1	-
+Sawa_1	6	-	-	-:-	-
+yojana_1	7	-	-	-:-	-
+viswIrNa_1	8	-	-	9:k2	-
+plu1_1	9	-	-	0:main	-
+lavaNa_1	10	-	-	-:-	-
+arNava_1	11	-	-	8:mod	-
+[karmaXAraya_1]	12	-	-	-:-	-
+[6-bahu_1]	13	-	-	-:-	-
+[6-tat_1]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=073_1>
+#तत्र रावण-पालिताम् लङ्कां पुरीं समासाद्य अशोक-वनिकां गताम् ध्यायन्तीम् सीतां ददर्श .
+rAvaNa_1	1	per/NA	-	-:-	-
+pAliwA_1	2	-	-	4:mod	-
+lafkA_1	3	per/female	-	4:mod	-
+purI_1	4	-	-	5:k2	-
+sam_Af_Rax1_1	5	-	causative	11:rpk	-
+aSoka_1	6	-	-	-:-	-
+vanikA_1	7	-	-	8:k2	-
+gawA_1	8	-	-	9:k2	-
+XyAyanwI_1	9	-	-	10:mod	-
+sIwA_1	10	per/female	-	11:k2	-
+xqS1_1-a_1	11	-	-	nan:nan	-
+[तृतीया_तत्पुरुष_1]	12	-	-	-:-	-
+[karmaXAraya_1]	13	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=074_1>
+#निवेद्य अभिज्ञानं प्रवृत्तिं विनिवेद्य च समाश्वास्य च वैदेहीं मर्दयामास तोरणम् .
+ni_vix1_1	1	-	-	5:k1	-
+aBi_jFAna_1	2	-	-	1:k2	-
+pravqwwi_1	3	-	-	4:k2	-
+vi_ni_vix1_1	4	-	-	5:k1	-
+sam_Af_Svas1_1	5	-	causative	7:rpk	-
+vExehI_1	6	per/female	-	5:k2	-
+mqx1_1-a_1	7	-	causative	nan:nan	-
+woraNa_1	8	-	-	7:k2	-
+%affirmative
+</sent_id>
+
+
+<sent_id=075_1>
+#पञ्च सेन-अग्रगान् हत्वा सप्त मन्त्रि-सुतान् अपि शूरम् अक्षं च निष्पिष्य ग्रहणं समुपागमत् .
+paFcan_1	1	-	pl	3:mod	-
+sena_1	2	-	-	-:-	-
+agraga_1	3	-	pl	7:k1	-
+han1_1	4	-	-	12:rpk	-
+sapwan_1	5	-	pl	4:k2	-
+manwrin_1	6	-	-	-:-	-
+suwa_1	7	-	pl	5:mod	-
+SUra_1	8	-	-	9:mod	-
+akRa_1	9	-	-	10:k2	-
+nis_piR1_1	10	-	-	12:rpk	-
+grahaNa_1	11	-	-	12:k2	-
+sam_upa_Af_gam1_1-Iw_1	12	-	-	nan:nan	-
+[6-tat_1]	13	-	-	-:-	-
+[6-tat_2]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=076_1>
+#अस्त्रेण उन्मुक्तम् आत्मानं ज्ञात्वा पैतामहात् वरात् मर्षयन् राक्षसान् वीरः यन्त्रिणः तान् यदृच्छया रावणं प्राप्तवान् .
+aswra_1	1	-	-	2:rh	-
+unmukwa_1	2	-	-	4:k2	-
+Awman_1	3	-	-	2:mod	-
+jFA1_1	4	-	-	14:rpk	-
+pEwAmaha_1	5	-	-	6:mod	-
+vara_1	6	-	-	7:rh	-
+marRayaw_1	7	-	causative	14:rvks	-
+rAkRasa_1	8	-	pl	7:k2	-
+vIra_1	9	-	-	14:k1	-
+yanwrin_1	10	-	-	9:r6	-
+wax_1	11	-	pl	8:mod	-
+yaxqcCA_1	12	-	-	14:rh	-
+rAvaNa_1	13	per/male	-	14:k2	-
+prApwavaw_1	14	-	-	nan:nan	-
+%affirmative
+</sent_id>
+
+
+<sent_id=078_1>
+#सः अभिगम्य महात्मानं कृत्वा रामं प्रदक्षिणम् न्यवेदयत् अमेयात्मा .
+wax_1	1	-	-	8:mod	-
+aBi_gam1_1	2	-	-	7:rpk	-
+mahAwman_1	3	-	-	2:k2	-
+kq2_1	4	-	-	7:rpk	-
+rAma_1	5	per/male	-	4:k2	-
+praxakRiNa_1	6	-	-	4:k2	-
+ni_vix1_1-aw_1	7	-	-	0:main	-
+ameyAwman_1	8	-	-	7:k1	-
+%affirmative
+</sent_id>
+
+
+<sent_id=078_2>
+#दृष्टा सीता इति तत्त्वतः .
+xqRtA_1	1	-	-	nan:nan	-
+sIwA_1	2	per/female	-	1:k2	-
+%affirmative
+</sent_id>
+
+
+<sent_id=079_1>
+#ततः सुग्रीव-सहितः गत्वा तीरं महोदधेः समुद्रं क्षोभयामास शरैः आदित्य-सन्निभैः .
+sugrIva_1	1	per/NA	-	-:-	-
+sahiwq_1	2	-	-	3:rask1	-
+gam1_1	3	-	-	7:rpk	-
+wIra_1	4	-	-	3:k2	-
+mahoxaXi_1	5	-	-	4:r6	-
+samuxra_1	6	-	-	7:k2	-
+kRuB2_1-a_1	7	-	causative	nan:nan	-
+Sara_1	8	-	pl	7:k3	-
+Axiwya_1	9	-	-	-:-	-
+sanniBa_1	10	-	pl	8:mod	-
+[3-tat_1]	11	-	-	-:-	-
+[bahu_1]	12	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=080_1>
+#दर्शयामास च आत्मानं समुद्रः सरितां पतिः .
+xqS1_1-a_1	1	-	causative	0:main	-
+Awman_1	2	-	-	1:k2	-
+samuxra_1	3	-	-	1:pk1	-
+sariw_1	4	-	pl	5:r6	-
+pawi_1	5	-	-	3:mod	-
+%affirmative
+</sent_id>
+
+
+<sent_id=080_2>
+#रामः समुद्र-वचनात् च एव नलं सेतुम् अकारयत् .
+rAma_1	1	per/male	-	6:pk1	-
+samuxra_1	2	-	-	-:-	-
+vacana_1	3	-	-	6:rh	-
+nala_1	4	per/male	-	6:k2	-
+sewu_1	5	-	-	6:jk1	-
+kq3_1-aw_1	6	-	causative	0:main	-
+[6-tat_1]	7	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=081_1>
+#तेन गत्वा पुरीं लङ्कां हत्वा रावणम् आहवे रामः सीताम् अनुप्राप्य परां व्रीडाम् उपागमत् .
+wax_1	1	-	-	2:k3	-
+gam1_1	2	-	-	13:rpk	-
+purI_1	3	-	-	2:k2	-
+lafkA_1	4	per/female	-	3:mod	-
+han1_1	5	-	-	13:rpk	-
+rAvaNa_1	6	per/male	-	5:k2	-
+Ahava_1	7	-	-	5:k7p	-
+rAma_1	8	per/male	-	13:k1	-
+sIwA_1	9	per/female	-	10:k2	-
+anu_pra_Ap1_1	10	-	-	13:rpk	-
+parA_1	11	-	-	12:mod	-
+vrIdA_1	12	-	-	13:k2	-
+upa_Af_gam1_1-Iw_1	13	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=082_1>
+#ताम् उवाच ततः रामः परुषं जन-संसदि .
+wax_1	1	-	-	2:k2	-
+vac1_1-a_1	2	-	-	0:main	-
+rAma_1	3	per/male	-	2:k1	-
+paruRa_1	4	-	-	2:k2	-
+jana_1	5	-	-	-:-	-
+saMsax_1	6	-	-	2:k7p	-
+[6-tat_1]	7	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=082_2>
+#अ-मृष्यमाणा सा सीता विवेश ज्वलनं सती .
+a_1	1	-	-	-:-	-
+mqRyamANA_1	2	-	-	4:mod	-
+wax_1	3	-	-	4:mod	-
+sIwA_1	4	per/female	-	5:k1	-
+viS1_1-a_1	5	-	-	0:main	-
+jvalana_1	6	-	-	5:k2	-
+sawI_1	7	-	-	4:mod	-
+[naF-tat_1]	8	-	-	-:-	-
+%pass_affirmative
+</sent_id>
+
+
+<sent_id=083_1>
+#ततः अग्नि-वचनात् सीतां ज्ञात्वा विगत-कल्मषाम् अङ्गीचकार .
+agni_1	1	-	-	-:-	-
+vacana_1	2	-	-	4:rh	-
+sIwA_1	3	per/female	-	7:k2	-
+jFA1_1	4	-	-	7:rpk	-
+vigawa(vi_gam1;kwa;BvAxiH)_1	5	-	-	-:-	-
+kalmaRA_1	6	-	-	4:k2	-
+afgI_kq3_1-a_1	7	-	-	nan:nan	-
+[6-tat_1]	8	-	-	-:-	-
+[5-bahu_1]	9	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=083_2-84_1>
+#कर्मणा तेन महता त्रैलोक्यं स-चर अचरम् स-देव-ऋषि-गणं तुष्टं अभवत् राघवस्य महात्मनः .
+karman_1	1	-	-	2:mod	-
+wax_1	2	-	-	13:k3	-
+mahaw_1	3	-	-	2:mod	-
+wrElokya_1	4	-	-	13:k1	-
+sa-_1	5	-	-	-:-	-
+cara-_1	6	-	-	nan:nan	-
+acara_1	7	-	-	4:mod	-
+sa_1	8	-	-	-:-	-
+xeva_1	9	-	-	-:-	-
+qRi_1	10	-	-	-:-	-
+gaNa_1	11	-	-	4:mod	-
+wuRta_1	12	-	-	4:k1s	-
+BU1_1-aw_1	13	-	-	0:main	-
+rAGava_1	14	per/male	-	15:r6	-
+mahAwman_1	15	-	-	13:rh	-
+[bahu_1]	16	-	-	-:-	-
+[bahu_2]	17	-	-	-:-	-
+[द्वन्द्व_1]	18	-	-	-:-	-
+[6-tat_1]	19	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=084_2>
+#बभौ रामः संप्रहृष्टः पूजितः सर्व-दैवतैः .
+BA1_1-a_1	1	-	-	0:main	-
+rAma_1	2	per/male	-	1:k1	-
+saMprahqRta_1	3	-	-	2:mod	-
+pUjiwa_1	4	-	-	2:mod	-
+sarva_1	5	-	-	-:-	-
+xEvawa_1	6	-	pl	4:k1	-
+[karmaXAraya_1]	7	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=085_1>
+#अभिषिच्य च लङ्कायां राक्षस-इन्द्रं विभीषणम् कृतकृत्यः तदा रामः विज्वरः प्रमुमोद ह .
+aBi_Ric1_1	1	-	-	10:rpk	-
+lafkA_1	2	per/female	-	1:k7p	-
+rAkRasa_1	3	-	-	-:-	-
+inxra_1	4	per/male	-	5:mod	-
+viBIRaNa_1	5	-	-	1:k2	-
+kqwakqwya_1	6	-	-	8:mod	-
+waxA_1	7	-	-	10:k7t	-
+rAma_1	8	per/male	-	10:k1	-
+vijvara_1	9	-	-	8:mod	-
+pra_mux1_1-a_1	10	-	-	0:main	-
+[6-tat_1]	11	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=086_1>
+#देवताभ्यः वरं प्राप्य समुत्थाप्य च वानरान् अयोध्यां प्रस्थितः रामः पुष्पकेण सुहृद्-वृतः .
+xevawA_1	1	-	pl	3:k5	-
+vara_1	2	-	-	3:k2	-
+pra_Ap1_1	3	-	-	4:k1	-
+sam_uw_RWA1_1	4	-	causative	7:rpk	-
+vAnara_1	5	-	pl	4:k2	-
+ayoXyA_1	6	per/female	-	7:k2	-
+prasWiwa_1	7	-	-	nan:nan	-
+rAma_1	8	per/male	-	7:k1	-
+puRpaka_1	9	-	-	7:k3	-
+suhq_1	10	-	-	-:-	-
+vqw_1	11	-	-	9:r6	-
+[3-tat_1]	12	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=087_1>
+#भरद्वाज-आश्रमं गत्वा आरामः सत्य-पराक्रमः भरतस्य अन्तिके रामः हनूमन्तं व्यसर्जयत् .
+BaraxvAja_1	1	per/NA	-	-:-	-
+ASrama_1	2	-	-	3:k2	-
+gam1_1	3	-	-	11:rpk	-
+ArAma_1	4	-	-	9:mod	-
+sawya_1	5	-	-	-:-	-
+parAkrama_1	6	-	-	9:mod	-
+Barawa_1	7	per/male	-	8:r6	-
+anwika_1	8	-	-	11:k7p	-
+rAma_1	9	per/male	-	11:k1	-
+hanUmaw_1	10	-	-	11:k2	-
+vi_sq2_1-aw_1	11	-	-	0:main	-
+[6-tat_1]	12	-	-	-:-	-
+[6-bahu_1]	13	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=088_1>
+#पुनः आख्यायिकां जल्पन् सुग्रीव-सहितः तदा पुष्पकं तत् समारुह्य नन्दि-ग्रामं ययौ तदा .
+AKyAyikA_1	1	-	-	2:k2	-
+jalpaw_1	2	-	-	11:k1	-
+sugrIva_1	3	per/NA	-	-:-	-
+sahiwa_1	4	-	-	2:rask1	-
+waxA_1	5	-	-	11:k7t	-
+puRpaka_1	6	-	-	8:k2	-
+wax_1	7	-	-	10:mod	-
+sam_Af_ruh1_1	8	-	-	11:rpk	-
+nanxi_1	9	-	-	-:-	-
+grAma_1	10	-	-	11:k2	-
+yA1_1-a_1	11	-	-	0:main	-
+waxA_1	12	-	-	11:k7t	-
+[3-tat_1]	13	-	-	-:-	-
+[karmaXAraya_1]	14	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=089_1>
+#नन्दि-ग्रामे जटां हित्वा भ्रातृभिः सहितः अनघः रामः सीताम् अनुप्राप्य राज्यं पुनः अवाप्तवान् .
+nanxi_1	1	-	-	-:-	-
+grAma_1	2	-	-	4:k7p	-
+jatA_1	3	-	-	4:k2	-
+hA2_1	4	-	-	12:rpk	-
+BrAwq_1	5	-	pl	4:rask1	-
+sahiwa_1	6	-	-	5:rask1	-
+anaGa_1	7	-	-	8:mod	-
+rAma_1	8	per/male	-	12:k1	-
+sIwA_1	9	per/female	-	10:k2	-
+anu_pra_Ap1_1	10	-	-	12:rpk	-
+rAjya_1	11	-	-	12:k2	-
+avApwavaw_1	12	-	-	nan:nan	-
+[karmaXAraya_1]	13	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=090_1>
+#प्रहृष्ट-मुदितः लोकः तुष्टः पुष्टः सु-धार्मिकः भविष्यति .
+prahqRta(pra_hqR2;kwa;xivAxiH)_1	1	-	-	-:-	-
+muxiwa_1	2	-	-	3:mod	-
+loka_1	3	-	-	8:k1	-
+wuRta_1	4	-	-	3:mod	-
+puRta_1	5	-	-	3:mod	-
+su_1	6	-	-	-:-	-
+XArmika_1	7	-	-	3:k1s	-
+BU1_1-syawi_1	8	-	-	0:main	-
+[3-tat_1]	9	-	-	-:-	-
+[karmaXAraya_1]	10	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=090_2>
+#निरामयः हि अ-रोगः च दुर्भिक्ष-भय-वर्जितः भविष्यति .
+nirAmaya_1	1	-	-	3:k1	-
+a_1	2	-	-	-:-	-
+roga_1	3	-	-	6:k1s	-
+xurBikRa_1	4	-	-	-:-	-
+Baya_1	5	-	-	-:-	-
+varjiwa_1	6	-	-	7:k1	-
+BU1_1-syawi_1	7	-	-	0:main	-
+[naF-tat_1]	8	-	-	-:-	-
+[6-tat_1]	9	-	-	-:-	-
+[5-tat_1]	10	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=091_1>
+#न पुत्र-मरणं केचित् द्रक्ष्यन्ति पुरुषाः .
+puwra_1	1	-	-	-:-	-
+maraNa_1	2	-	-	4:k2	-
+kiFciw_1	3	-	pl	5:mod	-
+xqS1_1-syawi_1	4	-	pl	0:main	-
+puruRa_1	5	-	pl	4:k1	-
+[6-tat_1]	6	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=091_2>
+#क्वचित् नार्यः च अविधवाः नित्यं भविष्यन्ति पतिव्रताः .
+nArI_1	1	-	pl	4:k1	-
+aviXavA_1	2	-	pl	1:k1s	-
+niwya_1	3	-	-	4:krvn	-
+BU1_1-syawi_1	4	-	pl	0:main	-
+pawivrawA_1	5	-	pl	1:k1	-
+%affirmative
+</sent_id>
+
+
+<sent_id=092_1>
+#न च अग्नि-जम् भयम् किञ्चित् अस्ति .
+agni_1	1	-	-	-:-	-
+j-ja_1	2	-	-	3:k1s	-
+Baya_1	3	-	-	4:k1	-
+as2_1-awi_1	4	-	-	0:main	-
+[upa-tat_1]	5	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=092_2>
+#न अप्सु मज्जन्ति जन्तवः .
+ap_1	1	-	pl	2:k7p	-
+masj1_1-awi_1	2	-	pl	0:main	-
+janwu_1	3	-	pl	2:k1	-
+%negative
+</sent_id>
+
+
+<sent_id=092_3>
+#न च वात-जम् भयम् किञ्चित् अस्ति .
+vAwa(vA1;kwa;axAxiH)_1	1	-	-	-:-	-
+ja_1	2	-	-	3:k1s	-
+Baya_1	3	-	-	4:k1	-
+as2_1-awi_1	4	-	-	0:main	-
+[upa-tat_1]	5	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=092_4>
+#न अपि ज्वर-कृतं भयं तथा अस्ति .
+jvara_1	1	-	-	-:-	-
+kqwa_1	2	-	-	3:mod	-
+Baya_1	3	-	-	4:k1	-
+as2_1-awi_1	4	-	-	0:main	-
+[3-tat_1]	5	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=093_1>
+#न च अपि क्षुद्-भयं तत्र अस्ति .
+kRux_1	1	-	-	-:-	-
+Baya_1	2	-	-	3:k1	-
+as2_1-awi_1	3	-	-	0:main	-
+[5-tat_1]	4	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=093_2>
+#न तस्कर-भयं तथा अस्ति .
+waskara_1	1	-	-	-:-	-
+Baya_1	2	-	-	3:k1	-
+as2_1-awi_1	3	-	-	0:main	-
+[5-tat_1]	4	-	-	-:-	-
+%negative
+</sent_id>
+
+
+<sent_id=093_3>
+#नगराणि च राष्ट्राणि धन-धान्य-युतानि च सन्ति .
+nagara_1	1	-	pl	6:k1	-
+rARtra_1	2	-	pl	1:k1	-
+Xana_1	3	-	-	-:-	-
+XAnya_1	4	-	-	-:-	-
+yuwa_1	5	-	pl	1:k1s	-
+as2_1-awi_1	6	-	pl	0:main	-
+[द्वन्द्व_1]	7	-	-	-:-	-
+[bahu_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=094_1>
+#नित्यं प्रमुदिताः सर्वे यथा कृत-युगे सन्ति तथा सन्ति .
+niwya_1	1	-	-	2:k2	-
+pramuxiwa_1	2	-	pl	6:k1	-
+sarva_1	3	-	pl	2:k1s	-
+kqwa(kq2;kwa;svAxiH)_1	4	-	-	-:-	-
+yuga_1	5	-	-	6:k7p	-
+as2_1-awi_1	6	-	pl	0:main	-
+as2_1-awi_1	7	-	pl	nan:nan	-
+[karmaXAraya_1]	8	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=094_2-96_1>
+#अश्वमेध-शतैः इष्ट्वा गवां कोटि अयुतं दत्त्वा विद्वद्भ्यः विधि-पूर्वकम् अ-संख्येयं धनं दत्त्वा ब्राह्मणेभ्यः महा-यशाः राज-वंशान् शत-गुणान् स्थापयिष्यति .
+aSvameXa_1	1	-	-	-:-	-
+Sawa_1	2	-	pl	3:k2	-
+yaj1_1	3	-	-	22:rpk	-
+go_1	4	-	pl	5:r6	-
+koti_1	5	-	-	6:r6	-
+ayuwa_1	6	-	-	7:k2	-
+xA1_1	7	-	-	22:rpk	-
+vixvas_1	8	-	pl	7:k4	-
+viXi_1	9	-	-	-:-	-
+pUrvaka_1	10	-	-	7:krvn	-
+a_1	11	-	-	-:-	-
+safKyeya_1	12	-	-	13:mod	-
+Xana_1	13	-	-	14:k2	-
+xA1_1	14	-	-	22:rpk	-
+brAhmaNa_1	15	-	pl	14:k4	-
+mahA_1	16	-	-	-:-	-
+yaSas_1	17	-	-	22:pk1	-
+rAjan_1	18	-	-	-:-	-
+vaMSa_1	19	-	pl	21:mod	-
+Sawa_1	20	-	-	-:-	-
+guNa_1	21	-	pl	22:jk1	-
+RWA1_1-syawi_1	22	-	causative	0:main	-
+[6-tat_1]	23	-	-	-:-	-
+[bahu_1]	24	-	-	-:-	-
+[naF-tat_1]	25	-	-	-:-	-
+[6-bahu_1]	26	-	-	-:-	-
+[6-tat_2]	27	-	-	-:-	-
+[6-bahu_2]	28	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=096_2>
+#राघवः चातुर्वर्ण्यं च लोके अस्मिन् स्वे स्वे धर्मे नियोक्ष्यति .
+rAGava_1	1	per/male	-	8:k1	-
+cAwurvarNya_1	2	-	-	8:k2	-
+loka_1	3	-	-	8:k7p	-
+ixam_1	4	-	-	3:mod	-
+sve_1	5	-	-	6:k4	-
+sva_1	6	-	-	7:mod	-
+Xarma_1	7	-	-	8:k7p	-
+ni_yuj2_1-syawi_1	8	-	-	0:main	-
+%affirmative
+</sent_id>
+
+
+<sent_id=097_1>
+#दश-वर्ष-सहस्राणि दश-वर्ष-शतानि च रामः राज्यम् उपासित्वा ब्रह्मलोकं प्रयास्यति .
+xaSan_1	1	-	-	-:-	-
+varRa_1	2	-	-	-:-	-
+sahasra_1	3	-	pl	6:k1	-
+xaSan_1	4	-	-	-:-	-
+varRa_1	5	-	-	-:-	-
+Sawa_1	6	-	pl	11:k2	-
+rAma_1	7	per/male	-	11:k1	-
+rAjya_1	8	-	-	9:k2	-
+upa_As1_1	9	-	-	11:rpk	-
+brahmaloka_1	10	-	-	6:k1	-
+pra_yA1_1-syawi_1	11	-	-	0:main	-
+[karmaXAraya_1]	12	-	-	-:-	-
+[6-tat_1]	13	-	-	-:-	-
+[karmaXAraya_2]	14	-	-	-:-	-
+[6-tat_2]	15	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=098_1>
+#इदं पवित्रं पापघ्नं पुण्यं वेदैः च सम्मितम् यः पठेत् रामचरितं .
+ixam_1	1	-	-	9:mod	-
+paviwra_1	2	-	-	9:mod	-
+pApaGna_1	3	-	-	9:mod	-
+puNya_1	4	-	-	9:mod	-
+vexa_1	5	-	pl	6:k1	-
+sammiwa_1	6	-	-	9:mod	-
+yax_1	7	-	-	8:k1	-
+paT1_1-yAw_1	8	-	-	0:main	-
+rAmacariwa_1	9	-	-	8:k2	-
+%imperative
+</sent_id>
+
+
+<sent_id=098_2>
+#सः सर्व-पापैः प्रमुच्यते .
+wax_1	1	-	-	4:k2	-
+sarva_1	2	-	-	-:-	-
+pApa_1	3	-	pl	4:k1	-
+pra_muc1_1-ya_we_1	4	-	-	0:main	-
+[karmaXAraya_1]	5	-	-	-:-	-
+%pass_affirmative
+</sent_id>
+
+
+<sent_id=099_1>
+#एतत् आख्यानम् आयुष्यं पठन् रामायणं नरः स--पुत्र-पौत्रः सगणः प्रेत्य स्वर्गे महीयते .
+ewax_1	1	-	-	2:mod	-
+AKyAna_1	2	-	-	4:k2	-
+AyuRya_1	3	-	-	2:mod	-
+paTaw_1	4	-	-	13:rvks	-
+rAmAyaNa_1	5	-	-	2:mod	-
+nq_1	6	-	pl	13:rad	-
+sa-_1	7	-	-	-:-	-
+-puwra-_1	8	-	-	-:-	-
+pOwra_1	9	-	-	10:mod	-
+sagaNa_1	10	-	-	13:k1	-
+pra_i1_1	11	-	-	13:rpk	-
+svarga_1	12	-	-	11:k7p	-
+mahI_1	13	-	-	0:main	-
+[bahu_1]	14	-	-	-:-	-
+[इतरेतर-स्वन्स्व_1]	15	-	-	-:-	-
+%affirmative
+</sent_id>
+
+
+<sent_id=100_1>
+#पठन् द्विजः वाक्-ऋषभत्वम् ईयात् .
+paTaw_1	1	-	-	5:rvks	-
+xvija_1	2	-	dl	5:k1	-
+vAc_1	3	-	-	-:-	-
+qRaBa_1	4	-	-	5:k2	-
+i1_1-yAw_1	5	-	-	0:main	-
+[6-tat_1]	6	-	-	-:-	-
+%imperative
+</sent_id>
+
+
+<sent_id=100_2>
+#स्यात् क्षत्रियः .
+as2_1-yAw_1	1	-	-	0:main	-
+kRawriya_1	2	-	-	1:k1	-
+%imperative
+</sent_id>
+
+
+<sent_id=100_3>
+#भूमि-पतित्वम् ईयात् .
+BUmi_1	1	-	-	-:-	-
+pawi_1	2	-	-	3:k2	-
+i1_1-yAw_1	3	-	-	nan:nan	-
+[6-tat_1]	4	-	-	-:-	-
+%imperative
+</sent_id>
+
+
+<sent_id=100_4>
+#वणिक्-जनः पण्य-फलम् ईयात् .
+vaNij_1	1	-	-	-:-	-
+jana_1	2	-	-	5:k1	-
+paNya(paN1;yaw;BvAxiH)_1	3	-	-	-:-	-
+Pala_1	4	-	-	5:k2	-
+i1_1-yAw_1	5	-	-	0:main	-
+[karmaXAraya_1]	6	-	-	-:-	-
+[6-tat_1]	7	-	-	-:-	-
+%imperative
+</sent_id>
+
+
+<sent_id=100_5>
+#जनः च शूद्रः अपि महत्त्वम् ईयात् .
+jana_1	1	-	-	4:k1	-
+SUxra_1	2	-	-	1:mod	-
+mahawwva_1	3	-	-	4:k2	-
+i1_1-yAw_1	4	-	-	0:main	-
+%imperative
+</sent_id>
+
+

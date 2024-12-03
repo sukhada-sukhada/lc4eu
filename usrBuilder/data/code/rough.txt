@@ -1,0 +1,91 @@
+self.markers = {
+ 'warhi', 
+ 'kinwu', 'paranwu', 
+ 'ca', 'kiMca', 
+ 'aWavA', 'vA', 
+ 'wawaH', 'ananwaram', 'waxananwaram', 'aWa', 
+ 'yawohi', 'yawaH', 
+ 'awaH', 'pariNAmasvarUpam',
+ 'awirikwam',  
+ 'yena', 'yawaH', 'yasmAw', 
+ 'anyeRu SabxeRu', 'anyaSabxeRu', 'SabxAnwareRu', 
+ 'yaWA', 'uxAharaNasvarUpam', 'uxAharaNArWam', 
+ 'awrAnware'}
+          
+           #set of multi words marker
+           self.multi_word_markers = {
+        'api ca', 'api ca', 'aWa ca','yaxyapi waWApi', 'yaxyapi punarapi','na kevalam apiwu',
+        'saha eva', 'anena saha eva', 'wena saha eva', 'ewena saha eva','wasmAw kAraNAw', 'ewasmAw kAraNAw',
+        'awirikwam api', 'ewax awirikwam', 'ewax awiricya','yasmAw kAraNAw','iwi kAraNena','yaxA wu',
+                               }
+          
+           #maps all the markers to respective discourse relations
+           self.discourse_relation = {
+                   
+                #    "yaxi warhi" : "AvaSyakawApariNAma",
+                   'warhi' : "AvaSyakawApariNAma",
+                   "kinwu" : "viroXI",
+                   "paranwu" : "viroXI",
+                   'ca':'samuccaya' ,
+                   'kiMca':'samuccaya' ,
+                   'api ca':'samuccaya' ,
+                   'api ca':'samuccaya' ,
+                   'aWa ca':'samuccaya' ,
+                   "aWavA": "anyawra",
+                   'vA':"anyawra",
+                   'yaxyapi waWApi': "vyaBicAra",
+                   'yaxyapi punarapi': "vyaBicAra",
+                   'wawaH':'uwwarakAla',
+                   'ananwaram':'uwwarakAla',
+                   'waxananwaram':'uwwarakAla',
+                   'aWa':'uwwarakAla',
+                   'iwi kAraNena':"kAryakAraNa",
+                   'yawohi': "kAryakAraNa",
+                   'yawaH' : "kAryakAraNa",
+                   'awaH' : "pariNAma",
+                   'pariNAmasvarUpam':"pariNAma",
+                   'wasmAw kAraNAw':"pariNAma",
+                   'ewasmAw kAraNAw':"pariNAma",
+                   'awirikwam api':'samuccaya.awirikwa',
+                   'ewax awirikwam':'samuccaya.awirikwa',
+                   'ewax awiricya':'samuccaya.awirikwa',
+                   'awirikwam': 'samuccaya.alAvA',
+                   'na kevalam apiwu':'samuccaya.BI',
+                   'saha eva':'samuccaya.samAveSI',
+                   'anena saha eva':'samuccaya.samAveSI',
+                   'wena saha eva':'samuccaya.samAveSI',
+                   'ewena saha eva':'samuccaya.samAveSI',
+                   'yaxA wu':"viroXI_xyowaka",
+                   'yena':'kArya.xyowaka',
+                   'yawaH':'kArya.xyowaka',
+                   'yasmAw':'kArya.xyowaka',
+                   'yasmAw kAraNAw': 'kArya.xyowaka',
+                   'anyeRu SabxeRu':'arWAwa',
+                   'anyaSabxeRu':'arWAwa',
+                   'SabxAnwareRu':'arWAwa',
+                   'yaWA':'uxAharaNasvarUpa',
+                   'uxAharaNasvarUpam':'uxAharaNasvarUpa',
+                   'uxAharaNArWam':'uxAharaNasvarUpa',
+                   'awrAnware':''
+
+           }
+          
+           #maps whether the discourse relation is to be
+           #concatenated to current USR or previous USR
+           #0  means discourse relation to be added to prev_usr
+           #1  means discourse relation to be added to curr_usr
+           #x  means discourse relation to be added to curr_usr and 'x' to be added in the 8th row
+           self.discourse_pos = {
+               "samuccaya" : "1",
+            #    "vAkya-karma" : "1",
+               "anyawra": "1",
+            #    "samAnakAla":"0",
+               "viroXI": "1",
+               "vyaBicAra":"0",
+               "kAryakAraNa": "1",
+               "AvaSyakawApariNAma": "0",
+               "samuccaya x" : 'x',
+               "viroXI_xyowaka" : '1',
+               "vavicAra" : 'x',
+               "pariNAma" : "1",
+           }

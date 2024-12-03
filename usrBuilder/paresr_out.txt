@@ -1,0 +1,181 @@
+
+10	चुनाव	NNC	11	pof__cn	11	सहयोगी	NN	13	nmod
+12	फॉरवर्ड	NNPC	13	pof__cn	13	ब्लॉक	NNP	16	r6
+15	रामनरेश	NNPC	16	pof__cn	16	सिंह	NNP	19	rt
+7	वोट	NNC	8	pof__cn	8	बैंक	NN	11	k2
+4	अटल	NNPC	6	pof__cn	5	बिहारी	NNPC	6	pof__cn	6	वाजपेयी	NNP	16	k1
+9	डॉ.	NNPC	11	pof__cn	10	मनमोहन	NNPC	11	pof__cn	11	सिंह	NNP	13	k2
+22	शांति	NNC	23	pof__cn	23	प्रक्रिया	NN	18	k2
+13	विधानसभा	NNC	14	pof__cn	14	चुनाव	NN	16	r6
+20	भगवान	NNC	21	pof__cn	21	शिव	NNP	25	k7p
+6	खरीद	NNC	7	pof__cn	7	फरोख्त	NN	9	r6
+15	एम.	NNPC	17	pof__cn	16	एम.	NNPC	17	pof__cn	17	साम	NNP	23	vmod
+12	कर	NNC	13	pof__cn	13	छूट	NN	14	jjmod
+8	सेकेंडरी	NNC	9	pof__cn	9	स्कूल	NN	12	k7p
+8	दूरसंचार	NNC	9	pof__cn	9	जिले	NN	12	k7a
+1	न्यासी	NNPC	2	pof__cn	2	बोर्ड	NN	4	r6
+6	ब्याज	NNC	7	pof__cn	7	दर	NN	15	vmod
+18	हैं-सामाजिक	NNC	20	pof__cn	19	सुरक्षा	NNC	20	pof__cn	20	नंबर	NN	24	k2
+50	पेंशन	NNC	51	pof__cn	51	फण्ड	NN	52	ccof
+53	ग्रेचुटी	NNPC	54	pof__cn	54	फण्ड	NN	52	ccof
+26	बेरोजगारी	NNC	27	pof__cn	27	भत्ता	NN	28	k2
+8	लाइफ	NNC	10	pof__cn	9	टाइम	NNC	10	pof__cn	10	कनेक्शन	NN	12	nmod
+1	उधर,	NNPC	2	pof__cn	2	होडल	NNP	5	r6
+4	पुलिस	NNC	5	pof__cn	5	उपाधीक्षक	NN	7	nmod
+6	रणधीर	NNPC	7	pof__cn	7	सिंह	NNP	9	k1
+1	मोबाइल	NNC	2	pof__cn	2	फोन	NN	4	r6
+9	अनबिलिवेबल,	NNPC	11	pof__cn	10	और,	NNPC	11	pof__cn	11	ऐस,	NNP	12	nmod__adj
+1	महिला	NNPC	5	pof__cn	2	एवं	NNPC	5	pof__cn	3	बाल	NNPC	5	pof__cn	4	विकास	NNPC	5	pof__cn	5	सचिव	NN	7	nmod__adj
+6	रेवा	NNPC	7	pof__cn	7	नैयर	NNP	9	k1
+10	बिजली	NNC	11	pof__cn	11	संकट	NN	13	k2
+7	संजय	NNPC	8	pof__cn	8	पांडे	NNP	10	k1
+12	बम	NNC	13	pof__cn	13	विस्फोट	NN	14	k1
+2	गोविंद	NNPC	3	pof__cn	3	साह	NNP	10	k1
+4	पुलिस	NNC	5	pof__cn	5	बल	NN	10	ras-k1
+10	मेंटल	NNC	11	pof__cn	11	हॉस्पिटल	NN	13	k7p
+1	रक्षा	NNC	2	pof__cn	2	अधिकारी	NN	7	k1
+1	कृषि	NNPC	2	pof__cn	2	मंत्री	NNP	4	nmod__adj
+3	शरद	NNPC	4	pof__cn	4	पवार	NNP	6	r6
+9	उप	NNC	10	pof__cn	10	समिति	NN	18	k1
+11	कृषि	NNC	12	pof__cn	12	क्षेत्र	NN	14	r6
+5	ब्याज	NNC	6	pof__cn	6	दरों	NN	15	rh
+8	बैंक	NNC	9	pof__cn	9	अधिकारियों	NN	10	ccof
+17	बम	NNC	18	pof__cn	18	विस्फोट	NN	19	pof
+11	उमा	NNPC	12	pof__cn	12	भारती	NNP	21	k1
+16	चुनाव	NNC	17	pof__cn	17	प्रचार	NN	21	rh
+5	विनिवेश	NNC	6	pof__cn	6	नीति	NN	12	k4a
+16	केंद्रीय	NNPC	18	pof__cn	17	स्टील	NNPC	18	pof__cn	18	मंत्री	NNP	20	nmod__adj
+19	रामविलास	NNPC	20	pof__cn	20	पासवान	NNP	37	k1
+22	स्टील	NNPC	23	pof__cn	23	मंत्रालय	NNP	26	k7a
+1	मि.	NNPC	2	pof__cn	2	ठिमलौतिया	NN	15	k1
+8	थे,	NNC	9	pof__cn	9	रिजर्वेशन	NN	15	k1u
+8	रघुवंश	NNPC	10	pof__cn	9	प्रसाद	NNPC	10	pof__cn	10	सिंह	NNP	13	k1
+27	मंत्री	NNC	28	pof__cn	28	पद	NN	29	ccof
+33	विधान	NNC	35	pof__cn	34	परिषद	NNC	35	pof__cn	35	सदस्यता	NN	37	r6-k2
+5	केदारनाथ	NNPC	7	pof__cn	6	यात्रा	NNC	7	pof__cn	7	मार्ग	NN	22	k7p
+12	अगस्त	NNPC	13	pof__cn	13	मुनि	NNP	14	nmod__adj
+8	तेल,	NNPC	11	pof__cn	9	नमक,	NNPC	11	pof__cn	10	लाल	NNPC	11	pof__cn	11	मिर्च	NN	12	ccof
+1	रिसर्च	NNC	3	pof__cn	2	कंपनी	NNPC	3	pof__cn	3	नील्सन	NNP	5	r6
+13	स्मार्टफोन	NNC	14	pof__cn	14	यूजर्स	NN	26	k1
+18	शॉपिंग	NNC	19	pof__cn	19	एप्स	NN	26	vmod
+22	ऑनलाइन	NNC	23	pof__cn	23	शॉपिंग	NN	24	k2
+3	बैगल,	NNPC	4	pof__cn	4	एआई	NNP	12	k1
+17	ऐड्रस	NNPC	18	pof__cn	18	बुक	NN	20	jjmod
+22	ई-मेल	NNC	23	pof__cn	23	पतों	NN	25	k7
+3	जनसंख्या	NNC	4	pof__cn	4	वृद्धि	NN	12	k7
+13	अप्रावासन	NNPC	14	pof__cn	14	मंत्री	NNP	16	nmod
+15	क्रिस	NNPC	16	pof__cn	16	बोवेन	NNP	21	k1
+8	चुनाव	NNC	9	pof__cn	9	क्षेत्रों	NN	19	k5
+1	उत्तर	NNPC	2	pof__cn	2	प्रदेश	NNP	5	r6
+10	कैबिनेट	NNC	11	pof__cn	11	सहयोगियों	NN	7	ccof
+1	वीकएंड	NNC	2	pof__cn	2	कलेक्शन	NN	4	r6
+1	मि.	NNPC	2	pof__cn	2	उधम-चलो	NNP	4	nmod__adj
+3	मि.	NNPC	4	pof__cn	4	राम	NNP	9	k1
+7	पुनर्गठन	NNC	8	pof__cn	8	बोर्ड	NNP	13	k4
+25	न्यूनतम	NNPC	27	pof__cn	26	साझा	NNPC	27	pof__cn	27	कार्यक्रम	NNP	36	k7a
+8	बाल	NNPC	9	pof__cn	9	ठाकरे	NNP	21	k1
+15	पार्टी	NNC	16	pof__cn	16	संगठन	NN	19	k2
+3	सब-डिवीजनल	NNC	4	pof__cn	4	मजिस्ट्रेट	NN	6	nmod
+5	कोमल	NNPC	6	pof__cn	6	राम	NNP	29	k1
+15	हिना	NNC	16	pof__cn	16	सहाब,	NNP	17	nmod__adj
+18	एस.	NNPC	20	pof__cn	19	एम.	NNPC	20	pof__cn	20	हबीबुल्लाह	NNP	21	ccof
+26	गिरफ्तारी	NNC	27	pof__cn	27	वारंट	NN	29	k2
+5	नगर	NNC	7	pof__cn	6	निगम	NNC	7	pof__cn	7	अधिकारियों	NN	18	k1
+5	सीक्रेट	NNPC	9	pof__cn	6	आर्मी-होल्डर्स	NNPC	9	pof__cn	7	ऑफ	NNC	9	pof__cn	8	ब्लैक	NNPC	9	pof__cn	9	बैनर्स	NNP	10	jjmod
+14	२१	NNPC	15	pof__cn	15	जुलाई	NNP	25	k7t
+21	ट्रक	NNC	22	pof__cn	22	ड्राइवरों	NN	24	r6-k2
+7	विदेश	NNC	8	pof__cn	8	दौरे	NN	18	k7
+1	कृषि	NNC	3	pof__cn	2	विज्ञान	NNC	3	pof__cn	3	केंद्रों	NN	20	k4
+6	मल्टीमीडिया	NNC	7	pof__cn	7	नेटवर्क	NN	10	k2
+13	भारतीय	NNPC	16	pof__cn	14	कृषि	NNPC	16	pof__cn	15	अनुसंधान	NNPC	16	pof__cn	16	परिषद	NNP	20	k1
+3	गांधी	NNPC	4	pof__cn	4	मैदान	NN	33	k7p
+14	नितीश	NNPC	15	pof__cn	15	सरकार	NN	20	k2
+26	पुलिस	NNC	27	pof__cn	27	अधिकारियों	NN	33	vmod
+6	कार्यवाही	NNC	7	pof__cn	7	रिपोर्ट	NN	15	k7
+4	निगरानी	NNC	5	pof__cn	5	कमेटी	NN	6	ccof
+7	मध्य	NNPC	8	pof__cn	8	प्रदेश	NNP	9	nmod__adj
+19	निगरानी	NNC	20	pof__cn	20	कमेटी	NN	30	k4
+1	पार्टी	NNC	2	pof__cn	2	सूत्रों	NN	12	k7a
+3	सीताराम	NNPC	4	pof__cn	4	येचुरी	NNP	6	k1
+8	वामपंथी	NNC	9	pof__cn	9	दल	NN	20	k1
+9	यात्री	NNC	10	pof__cn	10	दल	NN	20	k1
+11	25	NNPC	12	pof__cn	12	मई	NNP	20	k7t
+23	6	NNPC	24	pof__cn	24	अक्तूबर	NNP	33	k7t
+1	ठाकुर	NNPC	2	pof__cn	2	चाचा	NNP	5	k1
+23	मि.	NNPC	24	pof__cn	24	ठिमलौतिया	NNP	26	r6
+10	आंसू	NNC	11	pof__cn	11	गैस	NN	13	r6
+2	मुलायम	NNPC	4	pof__cn	3	सिंह	NNPC	4	pof__cn	4	यादव	NNP	7	k1
+12	लोकसभा	NNC	13	pof__cn	13	क्षेत्र	NN	25	k7p
+8	संजय	NNPC	9	pof__cn	9	पासवान	NNP	22	k1
+1	मुख्तार	NNPC	3	pof__cn	2	अब्बास	NNPC	3	pof__cn	3	नकवी	NNP	10	k4
+5	मुख्यालय	NNC	6	pof__cn	6	प्रभारी	NN	9	r6
+11	कोटमोल	NNPC	12	pof__cn	12	चांद	NNP	13	ccof
+19	पैसेंजर	NNC	20	pof__cn	20	ट्रेन	NN	22	r6
+8	आयुर्वेद	NNC	9	pof__cn	9	विशेषज्ञों	NN	24	k2
+13	आयुर्वेद	NNPC	15	pof__cn	14	चिकित्सा	NNC	15	pof__cn	15	पद्घति	NNP	17	r6
+3	चुनाव	NNC	4	pof__cn	4	आयोग	NN	8	k1
+5	ने,	NNPC	7	pof__cn	6	नो	NNC	7	pof__cn	7	फोटो	NN	8	k2
+9	कार्ड	NNPC	11	pof__cn	11	वोट,	NNP	12	jjmod
+20	राहत	NNC	21	pof__cn	21	शिविरों	NN	23	k7
+2	पार्टी	NNC	3	pof__cn	3	सूत्रों	NN	6	k2
+8	रक्षा	NNC	9	pof__cn	9	सौदे	NN	10	k2
+1	महंत	NNPC	2	pof__cn	2	गिरि	NNP	4	k1
+2	एक	QC	3	nmod__adj
+20	नितीश	NNPC	21	pof__cn	21	कुमार	NNP	22	ccof
+23	राज्य	NNPC	26	pof__cn	24	भवन	NNPC	26	pof__cn	25	निर्माण	NNPC	26	pof__cn	26	विभाग	NNP	22	ccof
+29	अणे	NNPC	30	pof__cn	30	मार्ग	NN	36	k7p
+34	आईटी	NNC	35	pof__cn	35	सेंटर	NN	36	k2
+3	स्वतंत्रता	NNC	4	pof__cn	4	संग्राम	NNP	6	r6-k2
+11	साप्ताहिक,	NNPC	12	pof__cn	12	आउटलुक,	NNP	16	k4
+1	पार्टी	NNC	2	pof__cn	2	सूत्रों	NN	9	k7a
+7	सोनिया	NNPC	8	pof__cn	8	गांधी	NNP	9	k1
+15	मीडिया	NNC	16	pof__cn	16	क्षेत्र	NN	19	k1
+3	प्रजनन	NNC	4	pof__cn	4	केंद्र	NN	6	k1
+4	जनता	NNC	5	pof__cn	5	र्क्वाटर	NN	11	r6
+9	मीडिल	NNC	11	pof__cn	10	क्लास	NNPC	11	pof__cn	11	कालोनी	NNP	14	k7p
+1	कांट्रैक्ट	NNC	2	pof__cn	2	मजदूरों	NN	4	r6
+7	प्रशिक्षण	NNC	8	pof__cn	8	शिविर	NN	10	r6
+13	अखिल	NNPC	16	pof__cn	14	भारतीय	NNPC	16	pof__cn	15	महिला	NNPC	16	pof__cn	16	कांग्रेस	NNP	29	k1
+24	प्रशिक्षण	NNC	25	pof__cn	25	शिविर	NN	26	k2
+3	हैमिश	NNPC	4	pof__cn	4	रदरफोर्ड	NNP	19	k1
+11	खेल	NNPC	12	pof__cn	12	मॉर्गन	NNP	15	r6
+10	शेयर	NNC	11	pof__cn	11	ब्रोकर	NN	13	r6
+14	वैभव	NNPC	15	pof__cn	15	अग्रवाल	NNP	17	r6
+8	मैसर्स	NNPC	13	pof__cn	9	ट्यूलिप	NNPC	13	pof__cn	10	हॉस्पिटेलिटी	NNPC	13	pof__cn	11	सर्विसेज	NNPC	13	pof__cn	12	प्राइवेट	NNPC	13	pof__cn	13	लिमिटेड	NNP	14	k1s
+1	विकेट	NNC	2	pof__cn	2	कीपर	NN	16	k7
+7	दिनेश	NNPC	8	pof__cn	8	कार्तिक	NNP	16	ras-neg
+11	पार्थिव	NNPC	12	pof__cn	12	पटेल	NNP	16	k7
+2	मौसम	NNC	3	pof__cn	3	वैज्ञानिकों	NN	5	k1
+3	जिला	NNC	6	pof__cn	4	पुलिस	NNC	6	pof__cn	5	कार्यालय	NNC	6	pof__cn	6	परिसर	NN	8	k5
+9	भोलानाथ	NNPC	10	pof__cn	10	नगर	NNP	11	jjmod
+13	हौज़री	NNPC	14	pof__cn	14	फैक्टरी	NN	17	k7p
+5	विश्व	NNC	6	pof__cn	6	धरोहर	NN	8	r6-k2
+3	जल	NNC	4	pof__cn	4	संसाधनों	NN	6	r6
+9	डॉ.	NNPC	12	pof__cn	10	भगवती	NNPC	12	pof__cn	11	प्रसाद	NNPC	12	pof__cn	12	पुरोहित	NNP	21	k4
+14	मैदीनी	NNPC	16	pof__cn	15	पुरस्कार	NNPC	16	pof__cn	16	योजना	NN	21	k2
+6	राज्य	NNC	7	pof__cn	7	सरकार	NN	16	k2
+5	आपदा	NNC	7	pof__cn	6	राहत	NNC	7	pof__cn	7	विशेषज्ञ	NN	20	k1
+15	सहायता	NNC	16	pof__cn	16	सामग्री	NN	18	r6-k2
+3	अतिरिक्त	NNC	6	pof__cn	4	मुख्य	NNC	6	pof__cn	5	कार्यकारी	NNC	6	pof__cn	6	अधिकारी	NN	8	nmod
+7	रोहित	NNPC	8	pof__cn	8	कंसल	NNP	10	k1
+26	स्पीड	NNC	27	pof__cn	27	पोस्ट	NN	39	k3
+32	ऑनलाइन	NNPC	37	pof__cn	33	माता	NNPC	37	pof__cn	34	वैष्णोदेवी	NNPC	37	pof__cn	35	प्रसाद	NNPC	37	pof__cn	36	बुकिंग	NNPC	37	pof__cn	37	परियोजना	NNP	39	k2
+14	स्कूल	NNC	15	pof__cn	15	कालेज	NNP	17	nmod__adj
+16	गांव	NNC	17	pof__cn	17	स्तर	NN	19	k7p
+3	डिवीजनल	NNC	4	pof__cn	4	कमिश्नर	NN	7	nmod
+5	बशारत	NNPC	7	pof__cn	6	अहमद	NNPC	7	pof__cn	7	डार	NNP	9	k1
+1	जिलाधिकारी	NNC	2	pof__cn	2	यादव	NNP	4	k1
+13	गीगा	NNC	14	pof__cn	14	हर्टस	NN	15	k1s
+4	रेलवे	NNC	5	pof__cn	5	पुलिस	NN	3	ccof
+24	डाउन	NNC	25	pof__cn	25	रेलगाड़ियों	NN	23	ccof
+5	ए.	NNPC	7	pof__cn	6	एस.	NNPC	7	pof__cn	7	रॉय	NNP	9	r6
+11	पुलिस	NNC	12	pof__cn	12	टीम	NN	26	k1
+18	सुरक्षा	NNC	19	pof__cn	19	अधिकारी	NN	26	k2
+3	पंजीकरण	NNC	4	pof__cn	4	केंद्र	NNP	19	k5
+16	यात्रा	NNC	17	pof__cn	17	पर्ची	NN	19	k2
+6	प्रेस	NNC	7	pof__cn	7	विज्ञप्ति	NN	9	k2
+7	उमा	NNPC	8	pof__cn	8	भारती	NNP	13	k1
+1	एशियॉटिक	NNPC	4	pof__cn	2	सोसायटी	NNPC	4	pof__cn	3	ऑफ	NNPC	4	pof__cn	4	बंगाल,	NNP	8	jjmod
+9	अब्दुल	NNPC	11	pof__cn	10	हामिद	NNPC	11	pof__cn	11	लाहौरी	NNP	20	k1
+13	लिखित,	NNPC	14	pof__cn	14	बादशाहनामा,	NNP	20	k7
+16	ताज	NNPC	17	pof__cn	17	वक्फ	NNP	18	nmod__adj				

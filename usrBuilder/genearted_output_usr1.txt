@@ -1,0 +1,70 @@
+
+
+
+filename:  001_1.tsv
+#तपः- स्वाध्याय- निरतम् तपस्वी वाक्- विदाम् वरम् नारदम् परिपप्रच्छ वाल्मीकिः मुनि- पुङ्गवम् .
+wapas_1,svAXyAya_1,nirawa_1,wapasvin_1,vAc_1,vix_1,vara_1,nAraxa,pari~praC1_1,vAlmIki,muni_1,pufgava_1
+1,2,3,4,5,6,7,8,9,10,11,12
+,,male,male,,male,male,male,,male,,male
+,,,,,pl,,,,,,
+2:k7,3:k7,8:mod,10:mod,6:k2,7:rn,8:mod,9:k2,0:main,9:k1,12:k7,8:mod
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+affirmative
+
+
+
+filename:  002_1.tsv
+#कः नु अस्मिन् साम्प्रतम् लोके गुणवान् अस्ति .
+$kim,$wyax,loka_1,guNa_1,as2_1
+1,2,3,4,5
+male,male,male,male,
+,,,,
+5:k1,3:mod,5:k7p,1:k1s,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+
+
+
+filename:  002_2.tsv
+#कः च वीर्यवान् अस्ति .
+$kim,vIryavaw_1,as2_1
+1,2,3
+male,male,
+,,
+3:k1,1:k1s,0:main
+,,
+,,
+,,
+affirmative
+
+
+
+filename:  002_3.tsv
+#कः च धर्मज्ञः अस्ति .
+$kim,XarmajFa_1,as2_1
+1,2,3
+male,male,
+,,
+3:k1,1:k1s,0:main
+,,
+,,
+,,
+affirmative
+
+
+
+filename:  002_4.tsv
+#कः च कृतज्ञः सत्य- वाक्यः दृढ- व्रतः च अस्ति .
+$kim,kqwajFa_1,sawya_1,vAkya_1,xqDa_1,vrawa_1,as2_1
+1,2,3,4,5,6,7
+male,male,,male,,male,
+,,,,,,
+7:k1,6:k1,4:mod,6:k1,6:mod,1:k1s,0:main
+,,,,,,
+,,,,,,
+,,,,,,
+affirmative

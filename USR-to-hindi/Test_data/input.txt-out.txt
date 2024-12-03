@@ -1,3 +1,0 @@
-^acCA/acCA<cat:adj><case:d><gen:m><num:s>/acCA<cat:n><case:d><gen:m><num:s>$
-^acCI/acCA<cat:adj><case:d><gen:f><num:s>/acCA<cat:adj><case:d><gen:f><num:p>/acCA<cat:adj><case:o><gen:f><num:s>/acCA<cat:adj><case:o><gen:f><num:p>/acCA<cat:n><case:d><gen:f><num:s>/acCA<cat:n><case:d><gen:f><num:p>/acCA<cat:n><case:o><gen:f><num:s>/acCI<cat:n><case:d><gen:f><num:s>/acCI<cat:n><case:o><gen:f><num:s>$
-^acCe/acCA<cat:adj><case:d><gen:m><num:p>/acCA<cat:adj><case:o><gen:m><num:s>/acCA<cat:adj><case:o><gen:m><num:p>/acCA<cat:n><case:d><gen:m><num:p>/acCA<cat:n><case:o><gen:m><num:s>$
