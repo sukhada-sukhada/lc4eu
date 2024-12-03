@@ -1,0 +1,155 @@
+Gen-hin_concept-to-mrs_concept.clp:
+
+First file that we run is gen-hin_concept-to-mrs_concept.clp which generates the output files hin_concept-to-mrs_concept.dat and its debug file hin_concept-to-mrs_concept_debug.dat.
+This CLIPS program requires:  
+"hin-clips-facts.dat"
+"H_concept-to-mrs-rels.dat" files as input files.
+It takes the hindi concept and its ids from "hin-clips-facts.dat" file and its corresponding MRS concept from "H_concept-to-mrs-rels.dat" file and displays it in the format :
+"(id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"
+It's debug file shows whether the rule is fired or not , also the number of times it was fired.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Gen-implicit_mrs_concept.clp:
+
+generates output files "implicit_mrs_concept.dat" and "implicit_mrs_concept_debug.dat" as output files.
+
+It requires "hin-clips-facts.dat" and "mrs-rel-features.dat" as input files.
+
+1) Rule mrsDef_yes: is the rule which gives id and MRS concept when "the" is present as a determiner.If in hin-clips-facts.dat id-def is present then the respective id and its MRS_concept "the_q" should be displayed.
+
+2) Rule mrsDef_not: is the rule which gives id and MRS concept for the determiner a. If in hin-clips-facts.dat if for a particular id which we rae getting from (id-gen-num-pers ?id ?g ?n ?p)
+there is no id-def, id-mass, id-pron,not plural and no sankhya-visheshan is present, in that case id for a and its's concept "a_q" is generated.
+
+3) Rule mrs_pl_notDef: This is rule generates id and MRS concept when plural nouns are present. If in hin-clips-facts.dat ,for a particular id ,the value it's number i.e. ?n (id-gen-num-pers ?id ?g ?n ?p) is pl and id-def, id-mass and id-pron for the same is not preent, in that case that id with it's respective MRS Concept "udef_q" is generated.
+
+4) Rule mrs_mass_notDef: This rule does the same as above but for mass nouns. If for a particular id from (id-gen-num-pers ?id ?g ?n ?p), we have id-mass as yes, then it displays the id and it's MRS concept as "udef_q".
+
+5) Rule mrs_neg_notDef: This is the rule when the sentence is a negation. If in "hin-clips-facts.dat" file kriyA-NEG ?id1 ?id2 is present then for that id , id and MRS concept "neg" is generated.
+
+For these rules a debug file "implicit_mrs_concept_debug.dat" is generated to see which rules are bieng fired and how many times.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Gen-implicit_mrs_concept-pron.clp:
+
+This file generates "implicit_mrs_concept-pron.dat" and "implicit_mrs_concept-pron_debug.dat" as output files.
+
+we take hin-clips-facts.dat file as input file
+
+1) Rule mrsPron_yes: checks if in "hin-clips-facts.dat" id-pron is yes, it generates two MRS concepts pronoun_q and pron with the same id.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Gen-implicit_mrs_concept-prep.clp:
+
+This file generates "implicit_mrs_concept-prep.dat" and "implicit_mrs_concept-prep_debug.dat" as output files. 
+
+It takes "hin-clips-facts.dat"and "karaka_relation_preposition_default_mapping.dat" as input files.
+
+1) Rule mrsPrep: this rule first takes the relation name from (rel_name-ids ?rel ?kri ?k-id) from "hin-clips-facts.dat" and check if the relation present with kriyA is present in the "karaka_relation_preposition_default_mapping.dat", if present the final output has id and its respective preposition we get for the particular relation we got after checking in "karaka_relation_preposition_default_mapping.dat" dictionary.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Gen-mrs_feature_info.clp:
+
+This file generates "mrs_feature_info.dat" and "mrs_feature_info_debug.dat" as output files.
+
+It takes "hin_concept-to-mrs_concept.dat", "mrs-rel-features.dat", "implicit_mrs_concept.dat", "implicit_mrs_concept-pron.dat" and "implicit_mrs_concept-prep.dat" as input files.
+
+1) Rule initial-mrs-info: It takes values from "hin_concept-to-mrs_concept.dat" and prints it's corresponding id, MRS concept and it's corresponding relation features  from "mrs-rel-features.dat" file and generate some random values for those features.
+
+2) Rule initial-mrs-info-other: It takes values from all the implicit-mrs-concept files and generates the same for concepts that are being generated in those files.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Gen_GNP_values.clp: This file generates "GNP_values.dat" and "GNP_values_debug.dat" as the output files.
+
+It takes "hin-clips-facts.dat","mrs_feature_info.dat" and "H_GNP_to_MRS_GNP.dat" files as input files.
+
+1) Rule gnp-of-eng_noun: This rules takes an id from hin-clips-facts.dat file, check if it's concept contains _n_ and it is not a pronoun, 
+then it generates the id and its gender , number and person value in the format 
+(id-GEN-NUM-PER ?id1 -  ?n  3 )
+
+2) Rule gnp-of-eng_pron: This does the same but for pronouns. If id-pron is yes in hin-clips-facts.dat file, the this rule is fired.Here if the oerson for the id is first person (i.e. ?p is u) or if the number is plural, then it's gender information is not generated , else it is generated accordingly.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+bind-features_values.clp:
+
+It generates output file(mrs_info_binding_features_values.dat")
+Input files required:
+hin-clips-facts.dat
+mrs_feature_info.dat
+H_GNP_to_MRS_GNP.dat
+tam_mapping.dat
+
+1) Rule viya-viNa:Rule for visheshan and its arguements
+Checks the id of visheshan and visheshya from the "hindi-clips-facts.dat" file in the format "(viSeRya-viSeRaNa ?viya ?viNa)" and then find its corresponding MRS concept and its arguements.Further we replace LBL value of visheshan with the LBL value of visheshya and replace ARG1 value of visheshan with ARG0 value of visheshya.
+The generated fact is in the format:(MRS_info  "?rel " " visheshan " " MRS concept " " LBL " " arg0 " " arg1 " )
+
+
+2) Rule v-kartA:Rule for verb without karma and its arguement
+Checks the id of kriya and its corresponding karta from "hindi-clips-facts.dat" file in the format (kriyA-k1 ?kriyA ?kartA) and its corresponding MRS concept from "mrs_feature_info.dat" file. Also it verifies if the concept doesn't ends with _q and no karma is present in the sentence. Now we replace the ARG1 value of kriya with ARG0 value of karta.
+The generated fact is in the format:(MRS_info  "?rel " "preposition" " MRS concept " " LBL " " arg0 " " arg1 ")
+
+3)Rule v-karwA:Rule for verb along with karma and its arguement 
+Checks the id of kriya , karta and karma in the sentence from "hindi-clips-facts.dat" file in the format (kriyA-k1 ?kriya ?karta),(kriyA-k2  ?kriyA ?karma) and its corrsponding MRS concepts and its arguements.Also it verifies if both the concepts don't end with _q.We further replace ARG1 value of kriyA with ARG0 value of karta and ARG2 value of kriya with ARG0 value of karma.
+The generated fact is in the format:(MRS_info  "?rel " " kriya " " MRS concept " " LBL " " arg0 " " arg1 " "arg2")
+
+4)Rule prep-noun:Rule for preposition for noun
+Checks the id of preposition(corresponding noun) and its kriya from "hindi-clips-facts.dat" file in the format (rel_name-ids ?relp ?kriyA ?prep) and its corresponding MRS concept and arguements. It replaces ARG1 value of preposition with ARG0 value of kriya and ARG2 value of preposition with ARG0 value of its corresponding noun.
+The generated fact is in the format:(MRS_info  "?rel " " preposition " " MRS concept " " LBL " " arg0 " " arg1 " "arg2")
+
+5)Rule prep-pron:Rule for preposition for pronoun
+Checks the id of preposition(corresponding pronoun) and its kriya from "hindi-clips-facts.dat" file in the format (rel_name-ids ?relp ?kriyA ?prep) and its corresponding MRS concept and arguements. It replaces ARG1 value of preposition with ARG0 value of kriya and ARG2 value of preposition with ARG0 value of its corresponding pronoun.
+The generated fact is in the format:(MRS_info  "?rel " " preposition" " MRS concept " " LBL " " arg0 " " arg1 " "arg2")
+
+6)Rule kri-tam-asser: Rule for sentence and tam information
+Checks the id id kriya and its corresponding tam in the format (kriyA-TAM ?kri ?tam), its sentence type information (sentence_type  assertive) from the "hindi-clips-facts.dat" file. Further we find its tam and other information(sentence form,tense,mood) of the sentence from tam_mapping.dat file.  
+The generated fact is in the format:(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")
+
+7)Rule kri-tam-neg:Rule for negation type sentence information
+Checks the id id kriya and its corresponding tam in the format (kriyA-TAM ?kri ?tam), its sentence type information (sentence_type  negation) from the "hindi-clips-facts.dat" file. Further we find its tam and other information(sentence form,tense,mood) of the sentence from tam_mapping.dat file.  
+The generated fact is in the format:(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")
+
+8)Rule kri-tam-imper: Rule for imperative type sentence information
+Checks the id id kriya and its corresponding tam in the format (kriyA-TAM ?kri ?tam), its sentence type information (sentence_type  imperative) from the "hindi-clips-facts.dat" file. Further we find its tam and other information(sentence form,tense,mood) of the sentence from tam_mapping.dat file.  
+The generated fact is in the format:(id-SF-TENSE-MOOD-PROG-PERF "?kri " comm " ?tense " indicative " ?prog " " ?perf ")
+
+9)Rule kri-tam-ques: Rule for question type sentence information
+Checks the id id kriya and its corresponding tam in the format (kriyA-TAM ?kri ?tam), its sentence type information (sentence_type  question) from the "hindi-clips-facts.dat" file. Further we find its tam and other information(sentence form,tense,mood) of the sentence from tam_mapping.dat file.  
+The generated fact is in the format:(id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")
+
+10)Rule for v-LTOP:Rule for LTOP and INDEX
+It checks the The LBL value and ARG0 value of verb which becomes the value of LTOP and INDEX.Iif the following words are not there in the sentence: "possibly", "suddenly". "not".If they exist, the LTOP value becomes the LBL value of that word and INDEX value is the ARG0 value of verb. For "not" we get a node "neg" in the MRS.
+The generated fact is in the format:(LTOP-INDEX h0 "agr0 ")
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Bind-RSTR_RSTD-values.clp: This generates "mrs_info_with_rstr_rstd_values.dat" and "mrs_info_with_rstr_rstd_values_debug.dat" as output files.
+
+It takes "hin-clips-facts.dat" and "mrs_feature_info.dat" as input files.
+
+1) Rule mrs-info: This rule deletes a fact that belongs to a set id but the fact should not have the max ID and its MRS concept value should not end with "_q". For example, out of the following 3 facts for the phrase 'a new book' in the sentence: "The boy is reading a new book." "f-2' would be deleted.
+   f-1    (initial_MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 21000 _a_q h8 x9 h10 h11)
+   f-2    (initial_MRS_info id-MRS_concept-LBL-ARG0-ARG1 22000 _new_a_1 h16 x17 x18)
+   f-3    (initial_MRS_info id-MRS_concept-LBL-ARG0-ARG1 23000 _book_n_of h5 x6 x7)
+Deleting the facts prevents from generating unwanted "Restr-Restricted * *" relations by the "mrs_feature_info.dat" rule.
+
+
+2) Rule mrs-info_q: If id of two facts are identical or they are of the same set and id of one fact has value *_q for MRS_Rel,then it generates
+ (Restr-Restricted RSTR_of_*_q LBL_the_other_fact). Also,replace ARG0 value of *_q with ARG0 value of the other fact.
+
+3)Rule LTOP-neg-rstd: If for a id, it's concept is neg, then the Restrictor for the same is it's label value.
+
+4)Rule LTOP-rstd: This generates Restrictor-Resticted values for LTOP, where the Restricted has the value of concepts that have _v_, except if we have possible or sudden. In that case it Restricted value it the label values of possible and sudden.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Gen-neg_rstr-rstd.clp: This file generates "mrs_info_neg_rstr-rstd.dat" and "mrs_info_neg_rstr-rstd_debug.dat" as output files.
+
+It takes "mrs_feature_info.dat" and "mrs_info_binding_features_values.dat" as input files.
+
+1) Rule neg-rstd : This program generates Restrictor-Restricted for neg
+in (MRS_info ?rel1 ?id1 ?mrsCon ?lbl ?ARG0 ?ARG1) check ?mrsCon is equal to neg and ARG1 value of kriyA should be equal to ARG0 value of karwA
+
+------------------------------------------------------------------------------------------------------------------------------------------------------ 
+

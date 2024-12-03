@@ -1,0 +1,372 @@
+ladakA_0,vixyAlaya_meM,eka_0~nayA_0~kiwAba_0,paDa-0_rahA_hE,.	
+ladakA_1,vixyAlaya_0,eka_1~nayA_1~kiwAba_1,paDa_1-0_rahA_hE	
+1,2,3,4						
+def,def,,						
+[m sg a],[- sg a],[- sg a],				
+,,3.3:viSeRaNa~2.3:viSeRaNa,			
+4:k1,4:k7p,4:k2,					
+,,,
+
+The boy is reading a new book in the school
+[ LTOP: h0
+INDEX: e2 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ]
+RELS: < [ _the_q<0:3> LBL: h4 ARG0: x3 [ x PERS: 3 NUM: sg IND: + ] RSTR: h5 BODY: h6 ]
+ [ _boy_n_1<4:7> LBL: h7 ARG0: x3 ]
+ [ _read_v_1<11:18> LBL: h1 ARG0: e2 ARG1: x3 ARG2: x8 [ x PERS: 3 NUM: sg IND: + ] ]
+ [ _a_q<19:20> LBL: h9 ARG0: x8 RSTR: h10 BODY: h11 ]
+ [ _new_a_1<21:24> LBL: h12 ARG0: e13 [ e SF: prop TENSE: untensed MOOD: indicative PROG: - PERF: - ] ARG1: x8 ]
+ [ _book_n_of<25:29> LBL: h12 ARG0: x8 ARG1: i14 ]
+ [ _in_p<30:32> LBL: h1 ARG0: e15 [ e SF: prop TENSE: untensed MOOD: indicative PROG: - PERF: - ] ARG1: e2 ARG2: x16 [ x PERS: 3 NUM: sg ] ]
+ [ _the_q<33:36> LBL: h17 ARG0: x16 RSTR: h18 BODY: h19 ]
+ [ _school_n_1<37:44> LBL: h20 ARG0: x16 ] >
+HCONS: < h0 qeq h1 h5 qeq h7 h10 qeq h12 h18 qeq h20 > ]
+
+
+Generated Clips facts from user.csv:
+(id-concept		10000 ladakA_1)					
+(id-concept		21000 eka_1)
+(id-concept		22000 nayA_1)
+(id-concept		23000 kiwAba_1)
+(id-concept		30000 paDa_1)
+(id-def			10000 yes)
+(id-gen-num-per		10000 m sg a)
+(id-gen-num-per		23000 - sg a)
+(viSeRya-viSeRaNa 	23000 21000)
+(viSeRya-viSeRaNa 	23000 22000)
+(kriyA-karwA		30000 10000)
+(kriyA-karma		30000 22000)
+(kriyA-TAM		30000 0_rahA_hE)
+(sentence_type	assertion)
+(viSeRya-PSP		10000 0)
+(viSeRya-PSP		23000 0)
+
+(id-concept		?1 neg)
+(kriyA-NEG		30000 ?1)
+
+Hindi Clips fact + H_Concept_to_MRS_Rel  > Intermediary_1
+
+(id-concept-MRS_Rel	10000 ladakA_1 boy_n_1)		(by matching concept from Hindi Clips fact))			
+(id-concept-MRS_Rel	21000 eka_1 a_q)
+(id-concept-MRS_Rel	22000 nayA_1 new_a_1)
+(id-concept-MRS_Rel	23000 kiwAba_1 book_n_of)
+(id-concept-MRS_Rel	30000 paDa_2 read_v_1)
+(id-concept-MRS_Rel	40000 vixyAlaya_1 school_n_1)
+(id-gen-num-per		10000 m sg a)
+(id-gen-num-per		22000 - sg a)
+(viSeRya-viSeRaNa 	22000 21000)
+(kriyA-karwA		30000 10000)
+(kriyA-karma		30000 22000)
+(kriyA-TAM		30000 0_rahA_hE)
+(sentence_type	assertion)
+(viSeRya-PSP		10000 0)
+(viSeRya-PSP		23000 0)
+(viSeRya-PSP		40000 meM)
+
+Hindi Clips fact + Intermediary_1 + Rules for creating extra rels > Intermediary_2
+Rules for common noun with a determiner : if (id-def ?1 yes), generate (id-MRS_Rel	?1 _the_q)
+
+**10Sep 2018: Rules for inserting preposition:** 
+load dic = "default_karaka_prep_mapping.txt";
+if (kriyA-k*/r* ?1 ?2), generate (id-MRS_Rel ?2 prep_rel of the corresponding k*/r* from dic)
+
+**14Sep 2018: Rules for deleting 'be' when predicate is adjective****
+for (eq-uddeshya-vidheya	?1 ?2 ?3)
+if MRS_Rel of ?3 is *_a, remove the fact
+
+*******12Sep: Rules for creating extra relation for temporal and spatial adverb********
+if (id-concept-MRS_Rel	?1 kala_1 _tomorrow_a_1) OR
+   (id-concept-MRS_Rel	?1 kala_1 _yesterday_a_1) OR
+   (id-concept-MRS_Rel	?1 Aja_1 _today_a_1) OR
+   (id-concept-MRS_Rel	?1 parasoM_1 _day-after-tomorrow_a_1)	
+
+generate (id-MRS_Rel	?1 time_n) AND 
+         (id-MRS_Rel	?1 def_implicit_q) AND
+      if (viSeRya-PSP	?1 ?2) and ?2 eq 0 
+         generate (id-MRS_Rel	?1 loc_nonsp)
+
+
+*******15sep : Rules for creating parg_d relation for passive sentence ********
+
+if (kriya-TAM ?1 -yA-gayA-hE/-yA-gayA-WA/-yA-gayA-hogA/-yA-jAegA/-yA-jA-rahA-hE/...)
+generate (id-MRS_Rel	?1 parg_d)
+
+
+Intermediary_2 + MRS_Rel_Feat > Intermediary_3
+
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	10000 _the_q h9 x9 h7 h8) (by matching MRS_Rel and assigning unique h, x and e value)	
+(id-MRS_Rel-LBL-ARG0		10000 _boy_n_1 h1 x1)	
+(id-MRS_Rel-LBL-ARG0-ARG1	23000 _book_n_of h2 x2 x3)
+(id-MRS_Rel-LBL-ARG0-ARG1	22000 _new_a_1 h7 x7 x8)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	21000 _a_q h3 x4 h4 h5)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	30000 _read_v_1 h6 e1 x5 x6)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	40000 _the_q h10 x10 h11 h12)
+(id-MRS_Rel-LBL-ARG0		40000 _school_n_1 h14 x12)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	40000 _in_p h13 e2 e3 x11)
+
+(id-MRS_Rel-LBL-ARG0-ARG1	20000 _tomorrow_a_1 h* e* x*)
+(id-MRS_Rel-LBL-ARG0		20000 time_n h* x*)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	20000 loc_nonsp h* e* e* x*)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	20000 def_implicit_q h* x* h* h*)
+
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	? parg_d h* e* e* x*)
+(id-MRS_Rel-LBL-ARG0-ARG1	? neg h* e* h*)
+
+Hindi Clips fact + Intermediary_3 + binding rules > Intermediary_4
+Rules for binding RSTR value : 
+If id of two facts are identical or they are of the same set and id of one fact has value *_q for MRS_Rel,
+	then Generate (Restr-Restricted RSTR_of_*_q LBL_the_other_fact)
+	     Replace ARG0 value of *_q with ARG0 value of the other fact 	
+
+
+Rule for adjective and noun, adverb and adjective : for (viSeRya-viSeRaNa 	? ?)
+				revise LBL value of viSeRaNa to the LBL value of viSeRya
+				Replace ARG1 value of viSeRaNa with ARG0 value of viSeRya
+
+Rule for verb and its arguments : for (kriyA-karwA	? ?),    Replace ARG1 value of kriyA with ARG0 value of karwA
+				  (kriyA-karma		? ?),    Replace ARG2 value of kriyA with ARG0 value of karma
+
+Rule for prep and its arguments : for (kriyA-k*/r* ?1 ?2) and (id-MRS_Rel ?2 k*/r* corresponding prep_rel from dic)
+Replace ARG1 value of prep_rel with ARG0 value of ?1 and ARG2 value of prep_rel with ARG0 value of ?2
+
+Rules for loc_nonsp and time :
+if (id-MRS_Rel-LBL-ARG0-ARG1	?1 _tomorrow_a_1 h* e* x*) OR
+   (id-concept-MRS_Rel	?1 kala_1 _yesterday_a_1) OR
+   (id-concept-MRS_Rel	?1 Aja_1 _today_a_1) OR
+   (id-concept-MRS_Rel	?1 parasoM_1 _day-after-tomorrow_a_1)	
+AND if (id-MRS_Rel-LBL-ARG0	?2 time_n h* x*) and ?1 eq ?2, 
+	Replace ARG1 value of (MRS_Rel = _tomorrow_a_1) with ARG0 value of (MRS_Rel = time_n)
+AND if (id-MRS_Rel-LBL-ARG0-ARG1-ARG2	?3 loc_nonsp h* e* e* x*) and ?1 eq ?3
+	Replace ARG1 value of (MRS_Rel = loc_nonsp) with ARG0 value of 
+
+Rules for passive parg_d binding
+
+For (kriyA-TAM ?1 and ?2) and (id-MRS_Rel-LBL-ARG0-ARG1-ARG2	?3 parg_d h* e* e* x*)
+if ?1 eq ?3, replace the ARG1 value of MRS_Rel with ARG0 value of kriya
+           And replace the ARG2 value of MRS_Rel with ARG2 value of kriya
+      
+Rules for negation binding
+
+For (kriyA-NEG ?1 ?2)
+Generate (Restr-Restricted RSTR_of ?2 LBL of ?1)
+
+
+(id-MRS_Rel	10000 _the_q)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	10000 _the_q h9 x1 h7 h8)
+(id-MRS_Rel-LBL-ARG0		10000 boy_n_1 h1 x1)
+(id-MRS_Rel-LBL-ARG0-ARG1	23000 book_n_of h2 x2 x3)
+(id-MRS_Rel-LBL-ARG0-ARG1	22000 new_a_1 h2 e2 x2)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	21000 a_q h3 x2 h4 h5)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	30000 read_v_1 h6 e1 x1 x2)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	40000 _the_q h10 x12 h11 h12)
+(id-MRS_Rel-LBL-ARG0		40000 _school_n_1 h14 x12)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	40000 _in_p h13 e2 e1 x12)
+(Restr-Restricted	h7 h1)
+(Restr-Restricted	h4 h2)	
+(Restr-Restricted	h11 h14)	
+
+Hindi Clips fact + Intermediary_4 + H_GNP_to_MRS_GNP + tam_mapping.csv > Intermediary_5
+Generate from the following Hin Clips facts
+(id-gen-num-per		10000 m sg a)
+(id-gen-num-per		23000 m sg a)
+(id-gen-num-per		40000 m sg a)
+(kriyA-TAM		30000 0_rahA_hE)
+(sentence_type	assertion)
+
+(id-GEN-NUM-PER			10000 - sg 3)			(by matching id)
+(id-GEN-NUM-PER			23000 - sg 3)			(by matching id)
+(id-GEN-NUM-PER			40000 - sg 3)			(by matching id)
+(id-SF-TENSE-MOOD-PROG-PERF	30000 prop pres indicative + -) 
+	(if (kriyA-TAM), value of id = value of kriyA from the facts kriyA-TAM, SF from sentence_type and the rest from tam_mapping.csv)
+	(if (State-TAM), value of id = value of vidheya from the fact (eq-uddeshya-vidheya), SF from sentence_type and the rest from 			tam_mapping.csv of STATE)
+
+
+Output:
+(id-MRS_Rel	10000 _the_q)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	10000 _the_q h9 x1 h7 h8)
+(id-MRS_Rel-LBL-ARG0		10000 boy_n_1 h1 x1)
+(id-MRS_Rel-LBL-ARG0-ARG1	23000 book_n_of h2 x2 x3)
+(id-MRS_Rel-LBL-ARG0-ARG1	22000 new_a_1 h2 e2 x2)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	21000 a_q h3 x2 h4 h5)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	30000 read_v_1 h6 e1 x1 x2)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	40000 _the_q h10 x12 h11 h12)
+(id-MRS_Rel-LBL-ARG0		40000 _school_n_1 h14 x12)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	40000 _in_p h13 e2 e1 x12)
+(Restr-Restricted	h7 h1)
+(Restr-Restricted	h4 h2)
+(Restr-Restricted	h11 h14)		
+
+Intermediary_5 > Final		Adding the fact (LTOP-INDEX)
+The LBL value and ARG0 value of *_v_* becomes the value of LTOP and INDEX if the following words are not there in the sentence: "possibly", "suddenly". "not"
+If they exist, the LTOP value becomes the LBL value of that word and INDEX value is the ARG0 value of *_v_*. For "not" we get a node "neg" in the MRS
+if ()
+
+(id-MRS_Rel	10000 _the_q)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	10000 _the_q h9 x1 h7 h8)
+(id-MRS_Rel-LBL-ARG0		10000 boy_n_1 h1 x1)
+(id-MRS_Rel-LBL-ARG0-ARG1	23000 book_n_of h2 x2 x3)
+(id-MRS_Rel-LBL-ARG0-ARG1	22000 new_a_1 h2 e2 x2)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	21000 a_q h3 x2 h4 h5)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	30000 read_v_1 h6 e1 x1 x2)
+(id-MRS_Rel-LBL-ARG0-RSTR-BODY	40000 _the_q h10 x12 h11 h12)
+(id-MRS_Rel-LBL-ARG0		40000 _school_n_1 h14 x12)
+(id-MRS_Rel-LBL-ARG0-ARG1-ARG2	40000 _in_p h13 e2 e1 x12)
+(Restr-Restricted	h7 h1)
+(Restr-Restricted	h4 h2)	
+(Restr-Restricted	h11 h14)	
+(id-GEN-NUM-PER			10000 - sg 3)			(by matching id)
+(id-GEN-NUM-PER			22000 - sg 3)			(by matching id)
+(id-SF-TENSE-MOOD-PROG-PERF	30000 prop pres indicative + -) (from the facts kriyA-TAM, sentence_type and tam_mapping.csv )
+(LTOP-INDEX	h0 e1)
+(Restr-Restricted	h0 h6)	
+
+*********** samAnAXikaraNa**************  
+
+ladakA_0,bahuwa~AlasI_0,WA-WA,.
+ladakA_1,bahuwa_2~AlasI_1,WA_1
+1,2,3
+def,,state
+[m sg a],,
+,2.2:viSeRaNa,
+uddeshya,vidheya,eq_past
+,,
+
+
+Generated Clips facts from user.csv:
+(id-concept		10000 ladakA_1)					
+(id-concept		21000 bahuwa_1)
+(id-concept		22000 AlasI_1)
+(id-concept		30000 WA_1)
+(id-def			10000 yes)
+(id-state		30000 yes)
+(id-gen-num-per		10000 m sg a)
+(viSeRaNa-viSeRaNa 	22000 21000)
+(state-TAM		30000 0_WA)
+(eq-uddeshya-vidheya	30000 10000 22000)
+(sentence_type	assertion)
+(viSeRya-PSP		11000 0)
+(viSeRya-PSP		22000 0)
+
+if (id-state ?1 yes) and ((eq-uddeshya-vidheya	?1 ?2 ?3)
+
+
+[ LTOP: h0
+INDEX: e2 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ]
+RELS: < [ _the_q<0:3> LBL: h4 ARG0: x3 [ x PERS: 3 NUM: sg IND: + ] RSTR: h5 BODY: h6 ]
+ [ _boy_n_1<4:7> LBL: h7 ARG0: x3 ]
+[ _very_x_deg<12:16> LBL: h1 ARG0: e8 ARG1: e2 ]
+ [ _lazy_a_1<17:22> LBL: h1 ARG0: e2 ARG1: x3 ] >
+HCONS: < h0 qeq h1 h5 qeq h7 > ]
+
+Hindi Clips fact + Intermediary_3 + binding rules > Intermediary_4
+Rules for predicative adjective and predicative noun
+for (eq-uddeshya-vidheya	?1 ?2 ?3)
+if MRS_Rel of ?3 is *_a, Replace the ARG1 value of ?3 with ARG0 value of ?2; 
+if MRS_Rel of ?2 is *_n, Replace the ARG1 value of ?1 with ARG0 value of ?2 and ARG2 value of ?2 with ARG0 value of ?3
+
+vaha_0,eka_0~acCA_0~dakTara_0,WA-WA,.
+vaha_1,eka_1~acCA_1~dakTara_1,WA_1
+1,2,3
+pron,,state
+[m sg a],,
+,2.3:viSeRaNa,
+uddeshya,vidheya,eq_past
+,,
+
+
+Generated Clips facts from user.csv:
+(id-concept		10000 vaha_1)					
+(id-concept		21000 eka_1)
+(id-concept		22000 acCA_1)
+(id-concept		23000 daktara_1)
+(id-concept		30000 WA_1)
+(id-pron		10000 yes)
+(id-state		30000 yes)
+(id-gen-num-per		10000 m sg a)
+(id-gen-num-per		23000 - sg a)
+(viSeRya-viSeRaNa 	23000 21000)
+(viSeRya-viSeRaNa 	23000 22000)
+(eq-uddeshya-vidheya	30000 10000 23000)
+(kriyA-TAM		30000 0_WA)
+(sentence_type	assertion)
+(viSeRya-PSP		10000 0)
+(viSeRya-PSP		23000 0)
+
+SENT: He was a good doctor.
+[ LTOP: h0
+INDEX: e2 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ]
+RELS: < [ pron<0:2> LBL: h4 ARG0: x3 [ x PERS: 3 NUM: sg GEND: m PT: std ] ]
+ [ pronoun_q<0:2> LBL: h5 ARG0: x3 RSTR: h6 BODY: h7 ]
+ [ _be_v_id<3:6> LBL: h1 ARG0: e2 ARG1: x3 ARG2: x8 [ x PERS: 3 NUM: sg IND: + ] ]
+ [ _a_q<7:8> LBL: h9 ARG0: x8 RSTR: h10 BODY: h11 ]
+ [ _good_a_at-for-of<9:13> LBL: h12 ARG0: e13 ARG1: x8 ARG2: i14 ]
+ [ _doctor_n_1<14:21> LBL: h12 ARG0: x8 ] >
+HCONS: < h0 qeq h1 h6 qeq h4 h10 qeq h12 > ]
+
+
+*********** Time and Place adverb ***********
+ladakA_0,kala_0,A-gA
+ladakA_1,kala_1,A_1
+1,2,3
+def,,
+[m sg a],,
+,,
+3:k1,3:k7t,
+,,
+
+(id-concept		10000 ladakA_1)					
+(id-concept		20000 kala_1)
+(id-concept		30000 A_1)
+(id-def			10000 yes)
+(id-gen-num-per		10000 m sg a)
+(kriyA-TAM		30000 gA)
+(sentence_type	assertion)
+(kriyA-k1		30000 10000)
+(kriyA-k7t		30000 20000)
+(viSeRya-PSP		10000 0)
+(viSeRya-PSP		20000 0)
+
+SENT: The boy will come tomorrow.
+[ LTOP: h0
+INDEX: e2 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ]
+RELS: < [ _the_q<0:3> LBL: h4 ARG0: x3 [ x PERS: 3 NUM: sg IND: + ] RSTR: h5 BODY: h6 ]
+ [ _boy_n_1<4:7> LBL: h7 ARG0: x3 ]
+ [ _come_v_1<13:17> LBL: h1 ARG0: e2 ARG1: x3 ]
+ [ loc_nonsp<18:27> LBL: h1 ARG0: e8 ARG1: e2 ARG2: x9 [ x PERS: 3 NUM: sg ] ]
+ [ time_n<18:27> LBL: h10 ARG0: x9 ]
+ [ def_implicit_q<18:27> LBL: h11 ARG0: x9 RSTR: h12 BODY: h13 ]
+ [ _tomorrow_a_1<18:27> LBL: h10 ARG0: e14 ARG1: x9 ] >
+HCONS: < h0 qeq h1 h5 qeq h7 h12 qeq h10 > ]
+
+-----------------
+
+***********passive sentence**********   - Done
+
+*******Causative : The lady made the maid wash all utensils : Orat ne sAre bartana kAmawAlI se DUlavawI **********
+made : ARG1 : lady, ARG2: h, qeq to LBL of wash
+Concept dict: causative_of_dhonA,dhulavA_1,make+wash
+
+********* Equi deletion : The boy tried to reach office early : ladakA jaladI Gara pahUMcane kI koSISa kI  *******
+try : ARG1 : man, ARG2: h, qeq to LBL of reach
+****** Raising : The man seems to reach the office early.
+seems: ARG1: i*, ARG2 : h qeq to LBL of reach
+
+******* negation : The boy does not eat rice. Nobody know her.
+neg : ARG1: h, qeq to LBL of eat; LBL is the value of LTOP
+
+****** Question: What is your name? What did the boy tell you? Why did he not come to the school? Why was he angry with you?
+		 How did you reach there?
+
+**********Emphatic: Ram will also learn music *********
+
+
+******** Number adjective: The boy eats three fruits daily ***********
+[ card<22:27> LBL: h17 CARG: "3" ARG0: e19 [ e SF: prop TENSE: untensed MOOD: indicative PROG: - PERF: - ] ARG1: x8 ]
+ [ _fruit_n_1<28:35> LBL: h17 ARG0: x8 ] >
+
+********* Co-referencing
+She broke her hand.  Two analyses should come. One is co-referencing which is missing.
+She broke her own hand. In this case, only analyses should come and that is the co-referencing one. That is also not coming.
+
+
+
+

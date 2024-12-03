@@ -1,0 +1,438 @@
+					-------USER CSV GUIDELINES----------
+######################################################################################################################
+
+
+
+The user csv file will contain 10 rows. The rows are
+*********************************************************************************************************************
+1: Original Sentence without grouping
+2: Grouping
+3: Concept from Concept dictionary
+4: Index for the groups
+5: Semantic Category of nouns
+6: GNP (Gender, Number, Person) Information
+7: Intrachunk Dependency Relations
+8: Interchunk Dependency Relations
+9: Discourse Relations
+10: Sentence Types
+
+The groups in each row are separated with a comma (,).
+For a sentence "राम ने बस-अड्डे पर एक अच्छे ही लड़के के साथ बात की", we will build the information of each row as we describe them below:
+
+Row 1: Original sentence without grouping
+----------------------------------------
+This row will be commented out by "#" symbol.
+#राम ने बस-अड्डे पर एक अच्छे ही लड़के के साथ बात की
+-----------------------------------------
+Row 2 : Grouping 
+------------------- 
+For an introduction of Grouping see Appendix 1.
+For an introduction of TAM and the list of TAM see Appendix 2
+
+
+Nouns - The relation between a noun and a verb or another noun are either unmarked or marked by a post-position.
+	When unmarked, zero is postulated, otherwise postpositions are grouped with the noun by an underscore.
+		 राम_ने,फल_0,घर_के_पास
+
+
+Compound Nouns - The constituent nouns are joined with a '+'.
+		बस्+अड्डा (bus-stop)
+
+Verbs - Verbs can be of tinangta (finite) form or kridanta (non-finite, verbal noun, participial) form.re
+tinangta:
+	करेगा, कर रहा है, किया था 
+Verb can be split into root and TAM. The TAM can be 
+	(i)  Attached with the verb as in करेगा ; or 
+	(ii) Written separately when the root can be either
+		(a) In a bare form as in कर रहा है  ; or
+		(b) Not bare as in किया था
+
+The TAM is separated from the root by '-'. When the root is in bare form, we postulate a zero.
+The mulitword TAM is written with an underscore.
+Following are the representation of 
+	करेगा, 	कर रहा है, 		किया था 
+	कर-गा, 	कर-0_रहा_है	कर-या_था
+
+है/था,थी are irregular verbs in the language. There are represented as it is.
+
+Negation - Negation indicators should be written after the verb.
+	e.g. रहा_है,नहीं
+The relation will be given with the verb id as shown below:
+	<verb_id>:neg
+
+
+Complex Predicate - A complex predicate consists of a क्रियामूल and a क्रिया. They are joined by "+".
+	For स्नान किया - स्नान+कर-या
+
+Pronouns -
+		तुम्हारे, मैं, मुझे, मेरा
+		तुम_का, मैं_0, मैं_को, मैं_का	
+
+Adjectives, Quantifier and संख्या/number are grouped with nouns and the symbol used is ~. 
+
+	e.g. एक~अच्छा*ही~लड़का_के_साथ	
+	
+Adjectives -	अच्छा~लड़का, छोटा~लड़का
+
+Quantifier - बहुत~काम
+
+Adverbs -	धीरे
+
+Particles - तक, ही, भी
+	Particles will be joined by '*'. e.g घर*तक, राम*ही, तुम*भी
+	Other words such as 'साहब', 'जी' which denote respect will also be joined by '*'.
+
+saMKyA (number) - A number can be followed by a measuring unit or by noun or (viSeRaNa+noun).
+When the following word is a measuring unit then join by "#". e.g. चार#किलोमीटर, 4#किलोमीटर
+
+
+When the following word is noun or (viSeRaNa+noun), then join the number by '@'. 
+			e.g. 4@लड़का, चार@लड़का, चार@छोटा~लड़का
+
+		
+परिमाणवाची (Measurement words) -	किलोमीटर, मीटर, ग्राम
+	
+	If the word is a measuring unit (see the list), then join the unit with the following noun or (viSeRaNa+noun) by '@'.
+			e.g. चार#किलोमीटर@लम्बा~रस्ता, एक#दर्जन@केला.
+
+क्रमवाची (ordinal numbers) -	प्रथम, द्वितीय, पहला, दूसरा
+	क्रमवाची words are joined with '@' as adjectives. e.g. पहला@घर
+
+Comparatives -	तर, तम, सबसे
+	Comparatives are joined with '^'. e.g. सबसे^अच्छा, सुन्दर^तम, सुन्दर^तर
+
+Connectives - कि, अगर, तो
+
+Constructions: - 
+Noun conjunctions - और, या, आदि
+	If two or more nouns are joined by the conjunctions, then we have to make the construction format as shown below:
+	sent: राम, श्याम और सीता को विद्यालय जाना चाहिए
+	construction: {[[राम][श्याम][सीता]_को]और} विद्यालय_0 जा-ना_चाहिए
+	sent: राम, श्याम और सीता विद्यालय जा रहे हैं
+	construction: {[राम][श्याम][सीता]और} विद्यालय_0 जा-0_रहा_है
+	All the nouns/pronouns/propernouns which are joined with the conjunction(s), will be written in separate "[]" and the vibhakti (if any) will be added after all the nouns/pronouns/propernouns.
+At the end of the construction, और will be added within "{}".
+
+End of the sentence - The punctualtion occurs at the last column of the row 1.
+		राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+
+This row will be commented out by "#" symbol.
+Row 2:	#राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Row 3: Concept from Concept dictionary
+--------------
+
+
+The prakrti (base form) of row 1 is substituted by a concept.  In other words, the word is disambiguated.
+For the correct concept id, check the concept dictionary.
+As the TAMs are also considered as concepts and can be ambiguous at times, these too are to be provided with concept ids.
+For the correct concept id, check the TAM dictionary and concept dictionary.
+
+Note: a) No id will be used for pronouns or propernouns.
+      b) For stative verbs, write state_existential, state_copula, state_anuBUwi, state_possession according to the nature of the particular stative verb.
+      c) The TAM part of the stative verb(s) will contain pres/past accordingly.
+e.g. राम अच्छा है.
+     The verb-TAM info of है will be as given below:
+      state_copula-pres
+
+Row 3:
+	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Row 4: Index for Concepts
+--------
+Each concept (i.e. the prakrti) is indexed
+
+Row 4:
+	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Row 5: Ontological information about Noun
+-----------
+Only the categories such as proper noun, pronoun will be provided in the 4th row.
+
+The abbreviations of categories are given below
+
+		Category		Abbr.
+		pronoun			pron	#Ex: वह, मैं, तुम, आप
+		Inclusive pronoun	incl_pron #Ex. हम (हम आज घूमने जा रहे हैं) (When the speaker includes the hearer when s/he says "हम")
+		Exclusive pronoun	excl_pron (when the hearer is not included)
+		proper_noun     	propn	#Ex: राम, सीता
+		
+
+Row 5:
+	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+	propn,def,,
+
+Ontological Information about nouns
+---------
+
+If the noun is a definite noun and not preceeded by a possessive pronoun or a determiner, write 'def'. Otherwise leave it blank as it is. If the noun is a mass noun then write 'mass'.
+
+Ontological Information about predicative adjectives
+--------------
+If the adjective is a predicative adjective then write the suitable Ontological information under it.
+For example: गुणवाची if it denotes गुण.
+
+Row 4:
+ 	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+	propn,def,,
+	
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Row 6: GNP (Gender, Number, Person) Information
+---------
+GNP information is mentioned for nouns, proper nouns and pronouns. It is written within [].
+
+	The value of Gender: m/f
+		where 'm' stands for masculine
+		      'f' stands for feminine
+Only inherent gender is marked and not grammatical gender. For e.g. बालक is inherently masculine. Therefore, we give the tag 'm'.
+However, किताब remains unmarked although, in Hindi, this word is considered to be feminine.
+	The value of Number: sg/pl
+		where 'sg' stands for singular
+		      'pl' stands for plural
+	The value of Person: u/m/a
+		where 'u' stands for उत्तम पुरुष (1st person)
+		      'm' stands for मध्यम पुरुष (2nd person)
+		      'a' stands for अन्य (3rd person)
+
+	If any of the above fields are not neccessary then mark the field as '-'  
+
+####Note: For 1st person gender information is not necessary. For 2nd person both gender and number fields can be left blank and marked as '-'. For nouns, gender information is not required.#####
+
+Row 6:
+ 	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+	propn,def,,
+	[m sg a],[- sg a],[m sg a],
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Row 7:	Intrachunk Dependency Relations
+
+
+At Intrachunk level, the relations between a chunk head and its modifiers (dependents) are specified. Some relations are listed below:
+		Relation	Abbr.
+
+		संख्या-विशेषण	संख्या-विशेषण
+		विशेषण		विशेषण
+		परिमाणवाची-विशेषण	परिमाणवाची
+		क्रमवाची-विशेषण	क्रमवाची
+The head and dependents are indexed internally. For example, the intra-chunk index of the NP एक~अच्छा_ही~लड़का_के_साथ  which as index 3 (see below in the example) is:
+	एक@अच्छा*ही~लड़का_के_साथ
+	3.1~3.2~3.3
+परिमाणवाची e.g: तीन#किलो@आटा
+क्रमवाची e.g: पहला/प्रथम@लड़का
+The relation is written for the child with the intra-chunk index id of its head specified:
+
+Row 7:	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+	propn,def,,
+	[m sg a],[- sg a],[m sg a],
+	,,3.3:संख्या-विशेषण~3.3:विशेषण,
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Row 8: Interchunk Relations
+-------------
+
+a. karaka relation between a verb and its participants:
+
+		Relation		Abbr.
+
+		कर्ता			k1
+		कर्म			k2
+		करण			k3
+		संप्रदान			k4
+		अपादान			k5
+		स्थानाधिकरण		k7p
+		कालाधिकरण		k7t
+		अधिकरण			k7
+		मध्यस्थ-कर्ता		mk1
+		प्रयोजक-कर्ता		pk1
+		प्रयोज्य-कर्ता		jk1
+		सह-कर्ता			ras-k1
+		destiantion		k2p
+		अनुभव-कर्ता		k4a
+		कर्म-समानाधिकरण		k2s
+		frequency		k7tf	(e.g. प्रतिदिन)
+
+b. Non-karaka relations between the participants of the sentence.
+i) AXAra-AXeya
+e.g. राम दिल्ली में है (राम - AXeya; दिल्ली - AXAra)
+
+ii) possessor-possessed
+e.g. राम के पास किताब है (राम - possessor; किताब - possessed)
+
+iii) anuBAvaka-anuBava
+e.g. राम को बुखार है (राम - anuBAvaka; बुखार - anuBava)
+
+iv) samAnAXi-samAnAXi
+e.g. राम अच्छा है/राम एक छात्र है (राम, अच्छा both are samAnAXiin the 1st sentence; राम and छात्र are samAnAXi in the second.)
+Note: अच्छा is not in samAnAXi relation with राम in राम एक अच्छा छात्र है as it is an attributive adjective. Only राम and छात्र are in samAnAXi relations with each other.
+
+v) anuBAvaka-anuBAvya-anuBava 
+e.g. राम को श्याम के प्रति प्यार है (राम - anuBAvaka; श्याम - anuBAvya; प्यार - anuBava)
+
+There will be no verb id given for non-karaka relations.
+e.g. Row 1:#rAma xillI meM hE.
+     Row 2:#rAma_0,xillI_meM,hE,.
+     Row 3:rAma,xillI,state_existential-pres
+     Row 4:1,2,3
+     ...
+     Row 8:AXeya,AXAra,
+     ...
+
+Row 8: 	
+	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+	propn,def,,
+	[m sg a],[- sg a],[m sg a],
+	,,3.3:संख्या-विशेषण~3.3:विशेषण,
+	4:k1,4:k7p,4:ras-k1,
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Row 9: Discourse Relations
+-----------
+
+Relations such as emphasis, delimitation, co-refencing, negation are marked in this row.
+
+		Relation	Abbr.		
+		emphasis	emph
+		boundary/	सीमा
+		Co-reference	co-ref
+		negation	neg
+
+Row 9:
+ 	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+	propn,def,,
+	[m sg a],[- sg a],[m sg a],
+	,,3.3:संख्या-विशेषण~3.3:विशेषण,
+	4:k1,4:k7p,4:ras-k1,
+	,,3.2:emph,
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Row 10: Sentence Types
+------------
+
+The user has to mention the sentence type in the 9th row.
+Examples of sentence types:
+
+राम ने बस अड्डे पर एक अच्छे ही लड़के के साथ बात की -assertive
+राम आज स्कूल नहीं गया - negative
+क्या तुमने एक नयी गाड़ी खरीदी है? - question
+तुम घर जाओ - imperative
+
+Row 10:
+ 	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
+	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
+	1,2,3,4
+	propn,def,,
+	[m sg a],[- sg a],[m sg a],
+	,,3.3:संख्या-विशेषण~3.3:विशेषण,
+	4:k1,4:k7p,4:ras-k1,
+	,,3.2:emph,
+	assertive
+-------------------------------------------
+
+
+Examples of different types of sentences and USRs
+------------------------
+Stative verbs:
+-----
+i) Copulative
+
+#rAma dAktara hE.
+#rAma_0,dAktara_0,hE,.
+rAma,dAktara_1,state_copula-pres
+1,2,3
+propn,,
+[m sg a],[- sg a],
+,,
+samAnAXi,samAnAXi,
+,,
+assertive
+-----------------------
+
+ii) predicative adjective
+
+#rAma acCA hE.
+#rAma_0,acCA_0,hE,.
+rAma,acCA_1,state_copula-pres
+1,2,3
+propn,guNavAcI,
+[- sg a],,
+,,
+samAnAXi,samAnAXi,
+,,
+assertive
+------------------------
+
+iii) existential
+
+#rAma xillI meM hE.
+#rAma_0,xillI_meM,hE,.
+rAma,xillI,state_existential-pres
+1,2,3
+propn,propn,
+[m sg a],[- sg a],
+,,
+AXeya,AXAra,
+,,
+assertive
+----------------------------
+
+iv) experiencer (anuBAvaka-anuBava relation)
+
+#rAma ko buKAra hE.
+#rAma_ko,buKAra_0,hE,.
+rAma,buKAra_1,state_anuBUwi-pres
+1,2,3
+propn,mass,
+[m sg a],[- sg a],
+,,
+anuBAvaka,anuBava,
+,,
+assertive
+---------------------------------
+
+v) experiencer (anuBAvaka-anuBAvya-anuBava relation)
+
+#rAma ko SyAma se pyAra hE.
+#rAma_ko,SyAma_se,pyAra_0,hE,.
+rAma,SyAma,pyAra_1,state_anuBUwi-pres
+1,2,3,4
+propn,propn,mass,
+[m sg a],[m sg a],[- sg a],
+,,,
+anuBAvaka,anuBAvya,anuBava,
+,,,
+assertive
+--------------------------------------
+
+vi) possession
+
+#rAma ke pAsa kiwAba hE.
+#rAma_ke_pAsa,kiwAba_0,hE.
+rAma,kiwAba_1,state_possession-pres
+1,2,3
+propn,def,
+[m sg a],[- sg a],
+,,
+possessor,possessed,
+,,
+assertive
+-------------------------------------
