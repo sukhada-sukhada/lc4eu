@@ -1,0 +1,44 @@
+# Pre-requisites:
+   - lttoolbox 3.1 or above
+   - apertium 3.1 or above
+   - xsltproc
+---------------------------  
+     
+[1] Run the following commands for installing the pre-requisites:
+   
+   (i) To install lttoolbox 3.1 or above
+           $ sudo apt-get update
+           $ sudo apt-get install lttoolbox
+   (ii) To install apertium
+           $ sudo apt-get install apertium
+   (iii) To install xsltproc
+           $ sudo apt-get update -y
+           $ sudo apt-get install -y xsltproc
+     
+[2] Go to the "USR-to-hindi" directory using command prompt (terminal) and run the following command for compilation:  
+      $ sh compile_dict.sh
+
+[3] For generating Hindi Sentences from USR:
+
+    [a] Run the following command on the terminal:
+        $ python3 USR-NLG_Hin.py <PATH of USR_file>
+        For Example: 
+             $ python3 USR-NLG_Hin.py hindi_verified_sent/1
+          
+    [b] Output will come in the following file: morph_input.txt-out.txt
+
+-----------------------------------------------------------------------   
+Troubleshooting:
+   Q.1: ModuleNotFoundError: No module named 'wxconv'
+   Ans. Run the following command:
+            $ pip install wxconv
+            
+   Q.2: Unable to parse package file /var/lib/apt/lists/           i    in.archive.ubuntu.com_ubuntu_dists_jammy_universe_binary-amd64_Packages
+   Ans. sudo rm -r /var/lib/apt/lists/*
+   
+   Q.3: lt-comp: not found
+   Ans. lt-comp lr apertium_hn_LC.dix hi.morfLC.bin
+   
+   Q.4: Command 'lt-comp' not found
+   Ans. sudo apt-get install lttoolbox-dev
+       

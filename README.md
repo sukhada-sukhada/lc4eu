@@ -13,8 +13,8 @@ Install git:
 copy the following command on terminal:
         sudo apt-get install git
 
-To clone the SKA-En tool from github copy the following command and paste it on the terminal:
-        git clone https://github.com/sukhada-sukhada/SKA
+To clone the language communicator tool from github copy the following command and paste it on the terminal:
+        git clone https://github.com/sukhada-sukhada/lc4eu
 
 #Language Communicator
 #Readme to generate English sentences using a USR csv input 
@@ -30,7 +30,7 @@ Pre-requisites:
 	)
 3. CLIPS
     1. Download zip file : (https://sourceforge.net/projects/clipsrules/files/CLIPS/6.40_Beta_1/clips_core_source_640.zip/download)
-    2. copy the zip file in SKA-En folder
+    2. copy the zip file in lc4eu folder
     3. unzip clips_core_source_640.zip
 
  
@@ -46,8 +46,8 @@ Run following command to open the bashrc file:
 1. Copy and paste the following lines at the end of ~/.bashrc 
 
         export PYDELPHIN=$HOME/pydelphin
-        export SKAtoEng=$HOME/SKA-En
-        export PATH=$SKAtoEng/bin:$PATH
+        export lang_comm=$HOME/lc4eu
+        export PATH=$lang_comm/bin:$PATH
 
 2. Save and close the ~/.bashrc file 
 3. On terminal run following command:
@@ -56,9 +56,9 @@ Run following command to open the bashrc file:
 Compile:
 -----------
 Run the following commands on terminal:
-        cd $SKAtoEng/clips_core_source_640/core
+        cd $lang_comm/clips_core_source_640/core
         make -f makefile
-        mv clips $SKAtoEng/bin/
+        mv clips $lang_comm/bin/
 
 
 4. Run Language Communicator Tool:

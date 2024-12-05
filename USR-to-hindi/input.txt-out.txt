@@ -1,0 +1,1 @@
+^vaha/vaha<cat:p><case:d><parsarg:0><gen:m><num:s><per:a>/vaha<cat:p><case:d><parsarg:0><gen:f><num:s><per:a>$

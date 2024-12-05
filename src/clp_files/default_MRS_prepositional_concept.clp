@@ -9,7 +9,7 @@
 (rel_name-ids ?rel ?kri ?k-id)
 (Karaka_Relation-Preposition    ?rel  ?prep)
 (id-concept_label	?k-id	?comp)
-(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1|pAsa_2)) ;vaha rojZa yaha AwA hE. ;He comes here daily.
+(not (id-concept_label	?k-id	?hiConcept&kim|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1|bAhara_2|yaha_1|pAsa_2)) ;vaha rojZa yaha AwA hE. ;He comes here daily. ;wyax for A mouse lived in the hole, there.
 (not (rel_name-ids k4 ?kri ?k-id))
 ;(not (id-anim	?k-id	yes))
 (not (MRS_info  id-MRS_concept ?compeq   comp_equal)) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
@@ -114,8 +114,6 @@
 (printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 )
 
-;(id-concept_label	20000	2025) (rel_name-ids	k7t	40000	20000)
-
 ;Rama arrived on Tuesday's morning.
 (defrule on_p_temp-adverboftime
 (id-concept_label	?dow ?week)
@@ -124,8 +122,8 @@
 (rel_name-ids	r6	?adoftime	?dow)
 (id-dow	?dow	yes)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?dow 1) " _on_p_temp)"crlf)
-(printout ?*defdbug* "(rule-rel-values on_p_temp-adverboftime  id-MRS_concept " (+ ?dow 1) " _on_p_temp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?adoftime 1) " _on_p_temp)"crlf)
+(printout ?*defdbug* "(rule-rel-values on_p_temp-adverboftime  id-MRS_concept " (+ ?adoftime 1) " _on_p_temp)"crlf)
 )
 
 (defrule at_p_temp

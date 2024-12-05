@@ -60,6 +60,17 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept 0000000 unknown)"crlf)
 (printout ?*defdbug* "(rule-rel-values  udef_unknown-pl id-MRS_concept 0000000 unknown)"crlf)
 )
+;Rule for creating udef_q for when the sentence consists of only two noun entries in the construction for unknown.
+;#billI Ora kuwwA.
+(defrule implicit_conj4unknown
+(construction-ids	conj  ?n ?y)
+(id-concept_label	?n	?hincon)
+(id-num	?n	?pl)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 110 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values implicit_conj4unknown-pl id-MRS_concept 110 udef_q)"crlf)
+)
+
 
 ;Rule for creating unknown for non-sentence type.
 ;In case of topic names we need to generate unknown and udef_q for Plurals
@@ -174,8 +185,8 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_where id-MRS_concept "(+ ?id 10)" which_q)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_where id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_where id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_where id-MRS_concept "?id" place_n)"crlf)
@@ -195,14 +206,30 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " place_n)"crlf)
 
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "(+ ?id 10) " def_implicit_q)"crlf)
 
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " loc_nonsp)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
 )
+
+;Rule to generate place_n, def_implicit_q, loc_nonsp for wyax with k7p relation.
+;A mouse used to live in the hole, there.
+(defrule mrs_place_there
+(id-concept_label ?id wyax)
+(rel_name-ids	k7p	?kri	?id)
+(not (id-proximal	?id	yes))
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place_there id-MRS_concept "?id " place_n)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place_there id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_place_there id-MRS_concept "(+ ?id 1) " loc_nonsp)"crlf)
+)
+
 
 ; written by sakshi yadav (NIT-Raipur)
 ; date-27.05.19
@@ -218,14 +245,12 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " time_n)"crlf)
 
-;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id" def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
 
 (if (neq ?relname samAnAXi) then	;;To restrict the generation of "loc_nonsp" when "kala, Aja" are in "samanadhikaran" relation.e.g Today is Monday.
- ;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
- (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" loc_nonsp)"crlf)
- (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id" loc_nonsp)"crlf)
+ (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
+ (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
 )
 )
 
@@ -256,7 +281,7 @@
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1|sarxI_2|bAxa_14|GantA_1|xopahara_2))
+(not (id-concept_label  ?k-id   ?hiConcept&kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1|sarxI_2|bAxa_14|GantA_1|xopahara_2|garamI_3))
 ;(test (eq (str-index "+baje" ?num) FALSE))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
@@ -268,17 +293,27 @@
 (rel_name-ids k7t ?kri  ?id&:(numberp ?id))
 (id-concept_label  ?k-id   ?hiConcept&rAwa_1)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id" def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
 )
 
 (defrule mrs_parg_d
 (sentence_type  pass-affirmative|pass-interrogative)
 (kriyA-TAM ?kri ?tam)
 (not (rel_name-ids	rpk	?id	?kri))
+(not (rel_name-ids	rblak	?kri	?id)) ;Before the cows were milked, Rama went.
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_parg_d  id-MRS_concept "?kri" parg_d)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?kri 1) " parg_d)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_parg_d  id-MRS_concept "(+ ?kri 1)" parg_d)"crlf)
+)
+
+;Before the cows were milked, Rama went.
+(defrule mrs_parg_d_rblak
+(sentence_type  pass-affirmative|pass-interrogative)
+(rel_name-ids	rblak	?kri	?id)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1) " parg_d)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_parg_d_rblak  id-MRS_concept "(+ ?id 1)" parg_d)"crlf)
 )
 
 ;#rAma ne skUla jAkara KAnA KAyA.
@@ -300,8 +335,8 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " time_n)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "(+ ?id 10) " loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1)" loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "(+ ?id 1) " loc_nonsp)"crlf)
 )
 
 ;Rule for generating the mrs_concept: nominalization, for kriyArWa_kriyA
@@ -313,8 +348,8 @@
 (id-hin_concept-MRS_concept ?krikri ?hinconcept ?mrsconcept)
 (test (neq (str-index _v_ ?mrsconcept) FALSE))
 =>
-(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
-(printout ?*defdbug* "(rule-rel-values    nominalization  id-MRS_concept "(+ ?krikri 200) "  nominalization)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "?krikri "  nominalization)"crlf)
+(printout ?*defdbug* "(rule-rel-values    nominalization  id-MRS_concept "?krikri "  nominalization)"crlf)
 
 (printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  nominalization   id-MRS_concept "(+ ?krikri 10) "  udef_q)"crlf)
@@ -327,8 +362,8 @@
 (defrule superl
 (id-degree	?id	superl)
 =>
-(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 10) "  superl)"crlf)
-(printout ?*defdbug* "(rule-rel-values  superl   id-MRS_concept "(+ ?id 10) "  superl)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 2) "  superl)"crlf)
+(printout ?*defdbug* "(rule-rel-values  superl   id-MRS_concept "(+ ?id 2) "  superl)"crlf)
 )
 
 ;Rule for creating comp mrs concept for comparative sentences.
@@ -336,8 +371,8 @@
 (defrule compermore
 (id-degree	?id	compermore)
 =>
-(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 20) "  comp)"crlf)
-(printout ?*defdbug* "(rule-rel-values  compermore   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 1) "  comp)"crlf)
+(printout ?*defdbug* "(rule-rel-values  compermore   id-MRS_concept "(+ ?id 1) "  comp)"crlf)
 )
 
 ;Rule for creating comp mrs concept for comparative sentences.
@@ -345,8 +380,8 @@
 (defrule comperless
 (id-degree	?id comperless)
 =>
-(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
-(printout ?*defdbug* "(rule-rel-values  compermore   id-MRS_concept "(+ ?id 30) "  comp_less)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 1) "  comp_less)"crlf)
+(printout ?*defdbug* "(rule-rel-values  compermore   id-MRS_concept "(+ ?id 1) "  comp_less)"crlf)
 )
 
 ;Rule for bringing comp_equal for ru relation.
@@ -355,8 +390,8 @@
 (rel_name-ids	k1	?kri	?id) ;#गुलाब जैसे फूल पानी में नहीं उगते हैं।
 (rel_name-ids	k1s	?kri	?adj)
 =>
-(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 40) "  comp_equal)"crlf)
-(printout ?*defdbug* "(rule-rel-values  comper-equal   id-MRS_concept "(+ ?id 40) "  comp_equal)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id1 1) "  comp_equal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  comper-equal   id-MRS_concept "(+ ?id 1) "  comp_equal)"crlf)
 )
 
 ;Rule for creating implicit_conj when the construction is more than two values. 
@@ -367,20 +402,47 @@
 (bind ?count (length$ (create$ $?v)))
 (if (> ?count 2)  then
   (loop-for-count (?i 1  (- ?count 2))
-   (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 600)" implicit_conj)"crlf)
-   (printout ?*defdbug* "(rule-rel-values implicit_conj id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 600)" implicit_conj)"crlf)
+   (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 200)" implicit_conj)"crlf)
+   (printout ?*defdbug* "(rule-rel-values implicit_conj id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 200)" implicit_conj)"crlf)
 )))
 
 ;Rule for creating ude_q when the construction values are in subjective position with noun entries. 
 ;Ex. rAma, hari Ora sIwA acCe hEM.
 (defrule implicit_conj4pred-pl
-(construction-ids	conj  $? ?n $? ?x ?y)
-(rel_name-ids   ?rel        ?id ?n)
-(id-per	?n	yes)
+(construction-ids	conj   $?v)
+;(not (which_bind_notrequired ?dep))
+;(not (udef_q_notrequired "$?v"))
+;(construction-ids	conj  $? ?n $? ?x ?y)
+;(id-hin_concept-MRS_concept $?v ?hin ?mrscon)
+;(not (id-num	?n	?pl))
+;(test (eq (str-index _a_ ?mrscon) FALSE))
+;(id-hin_concept-MRS_concept 40000 acCA_1 _good_a_at-for-of)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values implicit_conj4pred-pl id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
-)
+(bind ?count (length$ (create$ $?v)))
+(if (> ?count 2)  then
+  (loop-for-count (?i 1  (- ?count 2))
+   (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 210)" udef_q)"crlf)
+  (printout ?*defdbug* "(rule-rel-values implicit_conj4pred-pl id-MRS_concept "(+  (nth$ ?i (create$ $?v)) 210)" udef_q)"crlf)
+)))
+
+;(defrule implicit_conj4pred-pl_not
+;(declare (salience 10000))
+;(construction-ids	conj  $?va ?n $?v)
+;(MRSc-FVs ?mrscon LBL: h* ARG0: e* $?var)
+;(rel_name-ids	k1s	?kriya	?n)
+;(id-hin_concept-MRS_concept ?n ?hin ?mrscon)
+;(not (id-num	?n	?pl))
+;(test (eq (str-index _a_ ?mrscon) FALSE))
+;=>
+;(assert (udef_q_notrequired ?n))
+;(printout ?*defdbug* "(rule-rel-values  implicit_conj4pred-pl_not udef_q_notrequired "?n")"crlf)
+;)
+
+
+;
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept 210 udef_q)"crlf)
+;(printout ?*defdbug* "(rule-rel-values implicit_conj4pred-pl id-MRS_concept 210 udef_q)"crlf)
+;)
 
 ;Rule for creating ude_q when the construction values are in subjective position with noun entries. 
 ;Ex. rAma, hari Ora sIwA acCe hEM.
@@ -392,19 +454,8 @@
 (not (id-num	?n	?pl))
 (test (eq (str-index _a_ ?mrscon) FALSE))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values implicit_conj4pred-sg id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
-)
-
-;Rule for creating udef_q for when the sentence consists of only two noun entries in the construction for unknown.
-;#billI Ora kuwwA.
-(defrule implicit_conj4unknown
-(construction-ids	conj  ?n ?y)
-(id-concept_label	?n	?hincon)
-(id-num	?n	?pl)
-=>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values implicit_conj4unknown-pl id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 210 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values implicit_conj4pred-sg id-MRS_concept 210 udef_q)"crlf)
 )
 
 ;Rule for creating udef_q for the construction with two subjective entries. 
@@ -415,8 +466,8 @@
 (id-concept_label	?n	?hincon)
 (id-per	?n	yes)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values udefq_conj4subj-pl id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 110 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values udefq_conj4subj-pl id-MRS_concept 110 udef_q)"crlf)
 )
 
 ;Rule for creating udef_q for the construction with two subjective entries. 
@@ -429,8 +480,8 @@
 (test (eq (str-index _a_ ?mrscon) FALSE))
 (not (id-num	?n	?pl))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values udefq_conj4subj-sg id-MRS_concept "(+ ?n 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 110 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values udefq_conj4subj-sg id-MRS_concept 110 udef_q)"crlf)
 )
 
 ;Rule for bringing number_q when card is coming in the k2 position.
@@ -439,8 +490,8 @@
 (id-concept_label	?ic	eka_1)
 (rel_name-ids	k2	?kri	?ic)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values eka-k2 id-MRS_concept "(+ ?ic 50)" number_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?ic 10)" number_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values eka-k2 id-MRS_concept "(+ ?ic 10)" number_q)"crlf)
 )
 
 ;Rule to bring def_implicit_q and poss for the sentences with whose word.
@@ -449,11 +500,11 @@
 (id-concept_label ?id kim)
 (rel_name-ids	r6	?noun	?id)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?noun 10) " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "(+ ?noun 10)" def_implicit_q)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 11) " poss)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "(+ ?id 11)" poss)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?noun 20) " poss)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "(+ ?noun 20)" poss)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " person)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_whose  id-MRS_concept "?id " person)"crlf)
@@ -497,28 +548,28 @@
 ;;How happy was Abramas? 
 (defrule mrs_inter_how-adj
 (id-concept_label ?id kim)
-(rel_name-ids	degree	?noun	?id)
+(rel_name-ids	degree	?degree	?id)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj  id-MRS_concept "(+ ?id 10) " which_q)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " abstr_deg)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj id-MRS_concept "(+ ?id 2)" abstr_deg)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 3) " measure)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj id-MRS_concept "(+ ?id 3) " measure)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id  " abstr_deg)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj id-MRS_concept "?id " abstr_deg)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?degree 1) " measure)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-adj id-MRS_concept "(+ ?degree 1) " measure)"crlf)
 )
 
 ;Rule for creating unspec_manner, which_q, manner for k3 relation with kim word.
 ;How did you complete the work?
 (defrule mrs_inter_how-verb
 (id-concept_label ?id kim)
-(rel_name-ids	krvn	?noun	?id)
+(rel_name-ids	krvn	?kriya	?id)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb  id-MRS_concept "(+ ?id 10) " which_q)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " unspec_manner)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb id-MRS_concept "(+ ?id 2)" unspec_manner)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 3) " manner)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb id-MRS_concept "(+ ?id 3) " manner)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1) " unspec_manner)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb id-MRS_concept "(+ ?id 1)" unspec_manner)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " manner)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_how-verb id-MRS_concept "?id " manner)"crlf)
 )
 
 ;Rule for creating udef_q for dijunct entries or noun.
@@ -531,8 +582,8 @@
 (test (eq (str-index _a_ ?mrscon) FALSE))
 (id-num	?id1	?pl)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values disjunct-pl id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 110 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values disjunct-pl id-MRS_concept 110 udef_q)"crlf)
 )
 
 ;Rule for creating udef_q for dijunct entries or noun.
@@ -545,8 +596,8 @@
 (test (eq (str-index _a_ ?mrscon) FALSE))
 (not (id-num	?id1	?pl))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values disjunct-sg id-MRS_concept "(+ ?id1 510)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 110 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values disjunct-sg id-MRS_concept 110 udef_q)"crlf)
 )
 
 ;Rule for creating recip_pro and pronoun_q for reciprocal pronouns
@@ -603,8 +654,8 @@
 (rel_name-ids	card	?noun	?id)
 
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " card)"crlf)
-(printout ?*defdbug* "(rule-rel-values  numbers id-MRS_concept "?id " card)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?noun 20) " card)"crlf)
+(printout ?*defdbug* "(rule-rel-values  numbers id-MRS_concept "(+ ?noun 20)" card)"crlf)
 )
 
 ;My birthday is 23 September.
@@ -640,11 +691,11 @@
 (id-female	?id	yes)
 (not(id-concept_label	?id 	addressee))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-feminine-pl id-MRS_concept " (+ ?id 2)" compound)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 320 compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-feminine-pl id-MRS_concept 320 compound)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-feminine-pl id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 310 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-feminine-pl id-MRS_concept 310 udef_q)"crlf)
 )
 
 ;This rule generates MRS concept 'compound' for the feature 'respect' with gender 'f'. 
@@ -656,11 +707,11 @@
 (not(id-concept_label	?id 	addressee))
 (not (id-num	?id	?pl))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-feminine-sg id-MRS_concept " (+ ?id 2)" compound)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 320 compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-feminine-sg id-MRS_concept 320 compound)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-feminine-sg id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 310 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-feminine-sg id-MRS_concept 310 udef_q)"crlf)
 )
 
 ;This rule generates MRS concept 'compound' for the feature 'respect' with gender 'm'. 
@@ -673,11 +724,11 @@
 (id-male	?id	yes)
 (not(id-concept_label	?id 	addressee))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-masculine-pl id-MRS_concept " (+ ?id 2)" compound)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 320 compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-masculine-pl id-MRS_concept 320 compound)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-masculine-pl id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 310 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-masculine-pl id-MRS_concept 310 udef_q)"crlf)
 )
 
 ;This rule generates MRS concept 'compound' for the feature 'respect' with gender 'm'. 
@@ -690,11 +741,11 @@
 (not(id-concept_label	?id 	addressee))
 (not (id-num	?id	?pl))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 2) " compound)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-masculine-sg id-MRS_concept " (+ ?id 2)" compound)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 320 compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-masculine-sg id-MRS_concept 320 compound)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values respect-masculine-sg id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept 310 udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values respect-masculine-sg id-MRS_concept 310 udef_q)"crlf)
 )
 
 ;Rule for generating season abstract predicate
@@ -712,8 +763,8 @@
 (sentence_type  affirmative)
 (rel_name-ids	rbks	?id	?kri)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_parg_d_rbks  id-MRS_concept "?kri" parg_d)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?kri 1) " parg_d)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_parg_d_rbks  id-MRS_concept "(+ ?kri 1)" parg_d)"crlf)
 )
 
 (defrule mrs_subord_rblsk
@@ -751,8 +802,8 @@
 (id-moy	?id2	yes)
 (rel_name-ids	r6	?id1	?id2)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 2) " compound)"crlf)
-(printout ?*defdbug* "(rule-rel-values date_of_month-compound id-MRS_concept " (+ ?id1 2)" compound)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 30) " compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values date_of_month-compound id-MRS_concept " (+ ?id1 30)" compound)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values date_of_month-compound id-MRS_concept "(+ ?id1 10)" udef_q)"crlf)
@@ -798,11 +849,11 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values aps_of_here id-MRS_concept "?id " place_n)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" def_implicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values aps_of_here id-MRS_concept "?id " def_implicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values aps_of_here id-MRS_concept "(+ ?id 10)" def_implicit_q)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values aps_of_here id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 1) " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values aps_of_here id-MRS_concept "(+ ?id 1) " loc_nonsp)"crlf)
 )
 
 ;rule for quantitative pronoun
@@ -812,8 +863,8 @@
 (id-hin_concept-MRS_concept ?verb ?hin ?mrsconcept)
 (test (neq (str-index _v_ ?mrsconcept) FALSE))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?quant 10) " generic_entity)"crlf)
-(printout ?*defdbug* "(rule-rel-values quantitative_pronoun id-MRS_concept "(+ ?quant 10)" generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?quant" generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantitative_pronoun id-MRS_concept "?quant" generic_entity)"crlf)
 )
 
 ;Rule for generating abstract predicates 
@@ -822,16 +873,16 @@
 (id-concept_label	?id	?num)
 (rel_name-ids	quantmore	?modifier	?id)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" card)"crlf)
-(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "?id" card)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 20)" card)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "(+ ?id 20)" card)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 20) "  comp)"crlf)
-(printout ?*defdbug* "(rule-rel-values  quantmore-abst   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 1) "  comp)"crlf)
+(printout ?*defdbug* "(rule-rel-values  quantmore-abst   id-MRS_concept "(+ ?id 1) "  comp)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" generic_entity)"crlf)
 (printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "?id" generic_entity)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100)" much-many_a)"crlf)
-(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "(+ ?id 100)" much-many_a)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 20)" much-many_a)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantmore-abst id-MRS_concept "(+ ?id 20)" much-many_a)"crlf)
 )
 
 ;Rule for generating abstract predicates 
@@ -840,16 +891,16 @@
 (id-concept_label	?id	?num)
 (rel_name-ids	quantless	?modifier	?id)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" card)"crlf)
-(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "?id" card)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 20)" card)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "(+ ?id 20)" card)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 20) "  comp)"crlf)
-(printout ?*defdbug* "(rule-rel-values  quantless-abst   id-MRS_concept "(+ ?id 20) "  comp)"crlf)
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?id 1) "  comp)"crlf)
+(printout ?*defdbug* "(rule-rel-values  quantless-abst   id-MRS_concept "(+ ?id 1) "  comp)"crlf)
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id" generic_entity)"crlf)
 (printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "?id" generic_entity)"crlf)
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100)" little-few_a)"crlf)
-(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "(+ ?id 100)" little-few_a)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 20)" little-few_a)"crlf)
+(printout ?*defdbug* "(rule-rel-values quantless-abst id-MRS_concept "(+ ?id 20)" little-few_a)"crlf)
 )
 
 ;My country.
@@ -879,8 +930,8 @@
 (test (neq (str-index _v_ ?verb) FALSE))
 (construction-ids	conj	?noun ?noun2)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?modifier " parg_d)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_parg_d-heading  id-MRS_concept "?modifier" parg_d)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?modifier 10)" parg_d)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_parg_d-heading  id-MRS_concept "(+ ?modifier 10)" parg_d)"crlf)
 )
 
 
@@ -891,8 +942,8 @@
 (rel_name-ids	dem	?time	?dem)
 (rel_name-ids	k7t	?kriya	?time)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?time " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values aps_of_dow_timeadverb id-MRS_concept "?time" loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?time 1) " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values aps_of_dow_timeadverb id-MRS_concept "(+ ?time 1) " loc_nonsp)"crlf)
 )
 
 ;Rule for generating unknown for the AvaSyakawApariNAma relation in the discourse row.
@@ -929,8 +980,8 @@
 (rel_name-ids	k1	?id	?karwa)
 (id-distal	?karwa	yes)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
-(printout ?*defdbug* "(rule-rel-values vyABIcAra-ge id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id  " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values vyABIcAra-ge id-MRS_concept "?id " generic_entity)"crlf)
 )
 
 ;Rule to generate generic_entity for pariNAma discourse relation.
@@ -938,9 +989,20 @@
 (defrule pariNAma-ge
 (rel_name-ids pariNAma ?previousid	?id)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
-(printout ?*defdbug* "(rule-rel-values pariNAma-ge id-MRS_concept "(+ ?id 10) " generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values pariNAma-ge id-MRS_concept "?id " generic_entity)"crlf)
 )
 
+;Rule to generate loc_nonsp for xina word in the concept row with k7t relation.
+;I will certainly help you one day.
+(defrule loc_nonsp_xina
+(id-concept_label	?id	?number)
+(id-concept_label	?id1	xina_1)
+(rel_name-ids	card	?id1	?id)
+(rel_name-ids	k7t	?kriya	?id1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 1) " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values loc_nonsp_xina id-MRS_concept "(+ ?id1 1)" loc_nonsp)"crlf)
+)
 
 

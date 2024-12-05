@@ -1,10 +1,10 @@
 #ve calacciwra xeKa rahe hEM.
 wyax,calacciwra_1,xeKa_3-0_rahA_hE_1
 1,2,3
-anim male,,
-pl,,
-3:k1,3:k2,0:main
 ,,
+,,
+3:k1,3:k2,0:main
+6.1:coref,,
 ,,
 ,,
 affirmative

@@ -127,13 +127,24 @@
 )
 
 ;matches concept from hin-clips-facts.dat
+;This rule generates the concepts from concept dictionary using the clips facts.
 (defrule mrs-rels
 ;(declare (salience 100))
 (id-concept_label       ?id   ?conLabel)
 (cl-cEn-MRSc ?conLabel ?enCon ?mrsConcept)
+;(not (id-concept_label       ?id  bAxa_14|bAxa_1))
 =>
 (assert (id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept))
 (printout ?*mrs-dbug* "(rule-rel-values mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " "?mrsConcept ")"crlf)
+)
+
+(defrule print-mrs-rels
+;(declare (salience 100))
+?f<-(id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept)
+=>
+(retract ?f)
+(printout ?*mrsCon* "(id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
 )
 
 ;rule for generating  _have_v_1 for k4a
@@ -149,35 +160,23 @@
 (printout ?*mrs-dbug* "(rule-rel-values  k4a  id-MRS_concept "?kri"  _have_v_1)"crlf)
 )
 
-(defrule print-mrs-rels
-;(declare (salience 100))
-?f<-(id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept)
-=>
-(retract ?f)
-(printout ?*mrsCon* "(id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
-)
-
 ;It creates mrs rel feature _while_x for sentences with rsk
-;verified sentence 339 #rAma sowe hue KarrAte BarawA hE. 
+; #rAma sowe hue KarrAte BarawA hE. 
 (defrule mrs_while
 (rel_name-ids	rsk		?id	?kri)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept -30000  _while_x)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values mrs_while id-MRS_concept -30000  _while_x)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 500  _while_x)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values mrs_while id-MRS_concept 500  _while_x)"crlf)
 )
 
 ;It creates mrs rel feature _frequent_a_1 for sentences with rpk
 ;rAma KA -KAkara motA ho gayA .
 (defrule mrs_frequent
 (rel_name-ids	rpk	?id	?kri)
-;(id-hin_concept-MRS_concept ?id ?hinconcept ?engcon) 	
-;(test (eq (str-index _n_ ?engcon) FALSE))
 (not (rel_name-ids	k2	?id	?karma))
-
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept -5000 _frequent_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values mrs_frequent id-MRS_concept -5000  _frequent_a_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?kri 2)" _frequent_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values mrs_frequent id-MRS_concept "(+ ?kri 2)"  _frequent_a_1)"crlf)
 )
 
 ;rule for generating  _should_v_modal
@@ -186,8 +185,8 @@
 (defrule should_v_modal
 (kriyA-TAM	?id  nA_cAhie_1)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  should_v_modal  id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _should_v_modal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  should_v_modal  id-MRS_concept "?id "  _should_v_modal)"crlf)
 )
 
 ;rule for generating  _would_v_modal
@@ -197,8 +196,8 @@
 (kriyA-TAM ?id  gA_2)
 ;(sentence_type  assertive|question|negation)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _would_v_modal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  would_v_modal  id-MRS_concept "(+ ?id 100) "  _would_v_modal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _would_v_modal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  would_v_modal  id-MRS_concept "?id "  _would_v_modal)"crlf)
 )
 
 ;rule for generating  _might_v_modal
@@ -207,8 +206,8 @@
 (defrule might_v_modal
 (kriyA-TAM	?id  0_sakawA_hE_2|yA_hogA_2)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  might_v_modal  id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _might_v_modal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  might_v_modal  id-MRS_concept "?id "  _might_v_modal)"crlf)
 )
 
 ;rule for generating  _may_v_modal
@@ -217,8 +216,8 @@
 (defrule may_v_modal
 (kriyA-TAM	?id  0_sakawA_hE_3)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _may_v_modal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  may_v_modal  id-MRS_concept "(+ ?id 100) "  _may_v_modal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id"  _may_v_modal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  may_v_modal  id-MRS_concept "?id "  _may_v_modal)"crlf)
 )
 
 ;rule for generating  _can_v_modal 
@@ -228,8 +227,8 @@
 (defrule can_v_modal
 (kriyA-TAM	?id  0_sakawA_hE_1|0_sakawA_1|0_sakawA_WA_1|0_sakA_1)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _can_v_modal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  can_v_modal  id-MRS_concept "?id "  _can_v_modal)"crlf)
 )
 
 
@@ -239,8 +238,8 @@
 (defrule must_v_modal
 (kriyA-TAM	?id  nA_cAhie_2|nA_hogA_1|nA_padegA_1)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  must_v_modal  id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _must_v_modal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  must_v_modal  id-MRS_concept "?id "  _must_v_modal)"crlf)
 )
 
 ;rule for generating  _used+to_v_qmodal
@@ -249,8 +248,8 @@
 (defrule _used+to_v_qmodal
 (kriyA-TAM      ?id  wA_WA_1|0_jAwA_WA_1)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _used+to_v_qmodal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  _used+to_v_qmodal  id-MRS_concept "(+ ?id 100) "  _used+to_v_qmodal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _used+to_v_qmodal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  _used+to_v_qmodal  id-MRS_concept "?id"  _used+to_v_qmodal)"crlf)
 )
 
 ;rule for generating  _have_v_qmodal
@@ -259,8 +258,8 @@
 (defrule _have_v_qmodal
 (kriyA-TAM	?id  nA_hE_1|nA_padZA_1|nA_padZawA_hE_1|nA_padZawA_WA_1|nA_padZegA_1)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  _have_v_qmodal  id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _have_v_qmodal)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  _have_v_qmodal  id-MRS_concept "?id "  _have_v_qmodal)"crlf)
 )
 ;To generate "_want_v_1" MRS concept for the TAM "nA_cAhawA_hE_1" 
 ;rAma sonA cAhawA hE.
@@ -268,8 +267,8 @@
 (defrule _want_v_1
 (kriyA-TAM      ?id  nA_cAhawA_hE_1)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _want_v_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  _want_v_1  id-MRS_concept "(+ ?id 100) "  _want_v_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _want_v_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  _want_v_1  id-MRS_concept "?id "  _want_v_1)"crlf)
 )
 
 ;To generate "_get_v_state" MRS concept for the TAM "yA_gayA_1" 
@@ -278,8 +277,8 @@
 (defrule _get_v_state
 (id-stative	?id	yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  _get_v_state  id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id " _get_v_state)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  _get_v_state  id-MRS_concept "?id " _get_v_state)"crlf)
 )
 
 ;rule for generating  _make_v_cause
@@ -288,17 +287,19 @@
 (defrule make_v_cause
 (id-causative	?id	yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  _make_v_cause  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _make_v_cause)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  _make_v_cause  id-MRS_concept "?id "  _make_v_cause)"crlf)
 )
 
+;Rule to genrate _make_v_cause and _ask_v_1 when doublecausative morphological information exists in morpho-semantic row
+;#mAz ne rAma se bacce ko KAnA KilavAyA.
 (defrule make_ask
 (id-doublecausative	?id	yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 100) "  _make_v_cause)"crlf)
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 200) "  _ask_v_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _make_v_cause)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  _make_ask  id-MRS_concept "?id "  _make_v_cause)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id "  _ask_v_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  _make_ask  id-MRS_concept "(+ ?id 3) "  _ask_v_1)"crlf)
 )
 
 
@@ -309,24 +310,24 @@
 (id-BI_1  ?id  yes)
 (not (rel_name-ids samuccaya ?previousid	?id))
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _also_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values BI_1 id-MRS_concept "(+ ?id 1000)" _also_a_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 40)"  _also_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values BI_1 id-MRS_concept "(+ ?id 40)" _also_a_1)"crlf)
 )
 
 ;Rule for bring _before_x_h for the rblak relation. ;gAyoM ke xuhane se pahale rAma Gara gayA.
 (defrule rblak
 (rel_name-ids	rblak	?id	?kri)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept -40000 _before_x_h)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values rblak id-MRS_concept -40000 _before_x_h)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 500 _before_x_h)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values rblak id-MRS_concept 500 _before_x_h)"crlf)
 )
 
 ;Rule for bring _when_x_subord for the rblk relation. ;rAma ke vana jAne para xaSaraWa mara gaye.
 (defrule rblpk
 (rel_name-ids	rblpk	?id	?kri)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept -50000 _when_x_subord)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values rblpk id-MRS_concept -50000 _when_x_subord)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 500 _when_x_subord)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values rblpk id-MRS_concept 500 _when_x_subord)"crlf)
 )
 
 ;Rule for bringing _and_c for conj relation.
@@ -336,8 +337,8 @@
 (defrule conj
 (construction-ids	conj	$?v ?id1 ?id2)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id1 500)" _and_c)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values conj id-MRS_concept "(+ ?id1 500)" _and_c)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 100 _and_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values conj id-MRS_concept 100 _and_c)"crlf)
 )
 
 ;Rule for bringing _which_q for kim with modifier relation.
@@ -347,8 +348,8 @@
 (rel_name-ids	mod	?noun	?id)
 (sentence_type  interrogative)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id " _which_q)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values mrs_inter_which  id-MRS_concept "?id " _which_q)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?noun 10)" _which_q)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values mrs_inter_which  id-MRS_concept "(+ ?noun 10)" _which_q)"crlf)
 )
 
 ;Rule for creation _or_c for disjunct relation.
@@ -357,8 +358,8 @@
 (defrule disjunct_or
 (construction-ids	disjunct	$?v ?id1 ?id2)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id1 500)" _or_c)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values disjunct_or id-MRS_concept "(+ ?id1 500)" _or_c)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 100 _or_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values disjunct_or id-MRS_concept 100 _or_c)"crlf)
 )
 
 ;Rule for a as a determiner : if the is not present,is not a mass noun and not plural then generate (id-MRS_Rel ?id _a_q)
@@ -409,12 +410,16 @@
 )
 
 ;Rules for common noun with the as a determiner : if (id-def ? yes), generate (id-MRS_Rel ?id _the_q)
+;The book is good.
 (defrule mrsCon_yes
 (id-def  ?id  yes)
+;(not (construction-ids	conj	$?vars ?id ?id2))
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _the_q )"crlf)
 (printout ?*mrs-dbug* "(rule-rel-values mrsCon_yes id-MRS_concept "(+ ?id 10)" _the_q )"crlf)
 )
+
+
 
 ;Rule for bringing _from_p_dir for the sentence with k5 relation along with kim word. 
 ;Where did you come from?
@@ -424,8 +429,8 @@
 (sentence_type  interrogative)
 (not (id-anim	?id	yes)) ;#राम किससे डरता है
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _from_p_dir)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values mrs_inter_where-k5-from id-MRS_concept "(+ ?id 10) " _from_p_dir)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 1) " _from_p_dir)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values mrs_inter_where-k5-from id-MRS_concept "(+ ?id 1) " _from_p_dir)"crlf)
 )
 
 ;This rule generates ms_n_1 for the feature 'respect' with gender 'f'. 
@@ -437,8 +442,8 @@
 (id-female ?id  yes)
 (not(id-concept_label	?id 	addressee))
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _ms_n_1 )"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values respect-feminine id-MRS_concept "(+ ?id 5)" _ms_n_1 )"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  300  _ms_n_1 )"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values respect-feminine id-MRS_concept 300 _ms_n_1 )"crlf)
 )
 
 ;This rule creates _honorable_a_1 for the respect word "ji" and doesn't create for the respect word of the addressee.
@@ -449,8 +454,8 @@
 (not(id-concept_label	?id 	addressee))
 (not (id-per ?id  yes))
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _honorable_a_1 )"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values respect-honorable id-MRS_concept "(+ ?id 1000)" _honorable_a_1 )"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 20)"  _honorable_a_1 )"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values respect-honorable id-MRS_concept "(+ ?id 20)" _honorable_a_1 )"crlf)
 )
 
 ;This rule generates mister_n_1 for the feature 'respect' with gender 'm'. 
@@ -462,8 +467,8 @@
 (id-male ?id  yes)
 (not(id-concept_label	?id 	addressee))
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 5)"  _mister_n_1 )"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values respect-masculine id-MRS_concept "(+ ?id 5)" _mister_n_1 )"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  300  _mister_n_1 )"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values respect-masculine id-MRS_concept 300 _mister_n_1 )"crlf)
 )
 
 ;Rule to generate _definite_a_1 for the BI_2 discourse particle.
@@ -471,8 +476,8 @@
 (defrule BI_2
 (id-BI_2  ?id  yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _definite_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values BI_2 id-MRS_concept "(+ ?id 1000)" _definite_a_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 40)"  _definite_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values BI_2 id-MRS_concept "(+ ?id 40)" _definite_a_1)"crlf)
 )
 
 ;Rule to generate _only_a_1 for the exclusive discourse particle.
@@ -480,8 +485,8 @@
 (defrule hI_2
 (id-hI_2  ?id  yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _only_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values exclusive id-MRS_concept "(+ ?id 1000)" _only_a_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 40)"  _only_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values exclusive id-MRS_concept "(+ ?id 40)" _only_a_1)"crlf)
 )
 
 ;Rule to generate _certain_a_1 for the assertion discourse particle.
@@ -489,50 +494,67 @@
 (defrule assertion
 (id-assertion  ?id  yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _certain_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values BI_2 id-MRS_concept "(+ ?id 1000)" _certain_a_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 40)"  _certain_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values BI_2 id-MRS_concept "(+ ?id 40)" _certain_a_1)"crlf)
 )
 
 ;Rule for generating this_q_dem for the demonstrative other than proximal and distal words. 
-;This is a book.
+;This is a book. 
 (defrule this_q_dem
 (id-concept_label	?id	wyax)
 (id-concept_label	?karwa	?hinconcept)
-(or (rel_name-ids	dem	?karwa	?id) (rel_name-ids	k1	?kri	?karwa) (rel_name-ids	k2	?kri	?karwa))
+(or (rel_name-ids	k1	?kri	?id) (rel_name-ids	k2	?kri	?id))
+(id-proximal	?id	yes)
+(not (id-num	?karwa	pl))
+(not (rel_name-ids	r6	?karwa	?id))
+(not (rel_name-ids	dem	?karwa	?id))
+(not (rel_name-ids	k7p	?kri	?id)) ; He comes here daily.
+(not (rel_name-ids coref ?kuchh	?id))
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 10)"  _this_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "(+ ?id 10)" _this_q_dem)"crlf)
+)
+
+;Rule for generating this_q_dem for the demonstrative other than proximal and distal words.
+;Rama can do this work.
+(defrule this_q_dem_noun
+(id-concept_label	?id	wyax)
+(id-concept_label	?karwa	?hinconcept)
+(rel_name-ids	dem	?karwa	?id)
 (id-proximal	?id	yes)
 (not (id-num	?karwa	pl))
 (not (rel_name-ids	r6	?karwa	?id))
 (not (rel_name-ids	k7p	?kri	?id)) ; He comes here daily.
 (not (rel_name-ids coref ?kuchh	?id))
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values this_q_dem id-MRS_concept "?id" _this_q_dem)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?karwa 10)"  _this_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values this_q_dem_noun id-MRS_concept "(+ ?karwa 10)" _this_q_dem)"crlf)
 )
-
-;Rule for generating this_q_dem for proximal relation.
-;This book is beautiful.
-;(defrule this_q_dem_proximal
-;(id-concept_label	?id	wyax)
-;(id-proximal	?id	yes)
-
-;(not (rel_name-ids	dem	?kri	?id))
-;(not (id-num	?id	?n))
-;=>
-;(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _this_q_dem)"crlf)
-;(printout ?*mrs-dbug* "(rule-rel-values this_q_dem_proximal id-MRS_concept "?id" _this_q_dem)"crlf)
-;)
 
 ;Rule for generating that_q_dem for distal relation.
 ;That book is beautiful.
-(defrule that_q_dem_distal
+(defrule that_q_dem_distal_noun
 (id-concept_label	?id	wyax)
-(or (rel_name-ids	dem	?karwa	?id) (rel_name-ids	k1	?kri	?karwa))
+(rel_name-ids	dem	?karwa	?id)  ;Rama arrived that hour.
 (id-distal	?id	yes)
 (not (id-num	?karwa	?n))
 (not (rel_name-ids coref ?kuch	?id))
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _that_q_dem)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values that_q_dem_distal id-MRS_concept "?id" _that_q_dem)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?karwa 10)"  _that_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values that_q_dem_distal_noun id-MRS_concept "(+ ?karwa 10)" _that_q_dem)"crlf)
+)
+
+;Rule for generating that_q_dem for distal relation.
+;That is a book.
+(defrule that_q_dem_distal
+(id-concept_label	?id	wyax) 
+(or (rel_name-ids	k1	?kri	?id)) ;Rama arrived that hour.
+(id-distal	?id	yes)
+(not (id-num	?karwa	?n))
+(not (rel_name-ids coref ?kuch	?id))
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 10)"  _that_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values that_q_dem_distal id-MRS_concept "(+ ?id 10)" _that_q_dem)"crlf)
 )
 
 ;Rule for generating _and_c for the samuccaya relation in the discourse row.
@@ -541,8 +563,8 @@
 (rel_name-ids samuccaya ?previousid	?verb)
 (not (id-BI_1	?verb	yes))
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _and_c)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  samuccaya_and  id-MRS_concept "(+ ?verb 100) "  _and_c)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 100  _and_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  samuccaya_and  id-MRS_concept 100  _and_c)"crlf)
 )
 
 ;Rule for generating _or_c for the anyawra relation in the discourse row.
@@ -550,8 +572,8 @@
 (defrule anyawra_or
 (rel_name-ids anyawra ?previousid	?verb)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _or_c)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  anyawra_or  id-MRS_concept "(+ ?verb 100) "  _or_c)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 100  _or_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  anyawra_or  id-MRS_concept 100  _or_c)"crlf)
 )
 
 ;Rule for generating _but_c for the viroXI relation in the discourse row.
@@ -559,8 +581,8 @@
 (defrule viroXi_but
 (rel_name-ids viroXi ?previousid	?verb)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _but_c)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  viroXi_but  id-MRS_concept "(+ ?verb 100) "  _but_c)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 100  _but_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  viroXi_but  id-MRS_concept 100  _but_c)"crlf)
 )
 
 ;Rule for generating _then_a_1 for the AvaSyakwA-pariNAma relation in the discourse row.
@@ -568,8 +590,8 @@
 (defrule AvaSyakwA-pariNAma_but
 (rel_name-ids AvaSyakwA-pariNAma|samAnakAla ?previousid	?verb)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _then_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakwA-pariNAma_but  id-MRS_concept "(+ ?verb 100) "  _then_a_1)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 40) "  _then_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakwA-pariNAma_but  id-MRS_concept "(+ ?verb 40) "  _then_a_1)"crlf)
 )
 
 ;Rule for generating _because_x for the kAryakAraNa relation in the discourse row.
@@ -577,8 +599,8 @@
 (defrule kAryakAraNa_because
 (rel_name-ids kAryakAraNa ?previousid	?verb)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _because_x)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  kAryakAraNa_because  id-MRS_concept "(+ ?verb 100) "  _because_x)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 500  _because_x)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  kAryakAraNa_because  id-MRS_concept 500  _because_x)"crlf)
 )
 
 ;Rule for generating _here_a_1 for proximal relation with wyax word.
@@ -592,32 +614,36 @@
 (printout ?*mrs-dbug* "(rule-rel-values here_a_1 id-MRS_concept "?id" _here_a_1)"crlf)
 )
 
+;rule to generate _those_q_dem.
+;Those two books are good.
 (defrule those_q_dem_distal
 (id-concept_label	?id	wyax)
 (id-distal	?id	yes)
 (rel_name-ids dem ?v ?id)
 (id-num	?v	pl)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _those_q_dem)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "?id" _those_q_dem)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?v 10)"  _those_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "(+ ?v 10)" _those_q_dem)"crlf)
 )
 
+;rule to generate _these_q_dem.
+;these two have done it.
 (defrule these_q_dem_distal
 (id-concept_label	?id	wyax)
 (id-proximal	?id	yes)
 (rel_name-ids dem ?v ?id)
 (id-num	?v	pl)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "?id"  _these_q_dem)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "?id" _these_q_dem)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?v 10)"  _these_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values those_q_dem_distal id-MRS_concept "(+ ?v 10)" _these_q_dem)"crlf)
 )
 
 ;Rule for generating _if_x_then for the AvaSyakawApariNAma relation in the discourse row.
 (defrule AvaSyakawApariNAma
 (rel_name-ids AvaSyakawApariNAma ?previousid	?verb)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _if_x_then)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakawApariNAma  id-MRS_concept "(+ ?verb 100) "  _if_x_then)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 40) "  _if_x_then)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakawApariNAma  id-MRS_concept "(+ ?verb 40) "  _if_x_then)"crlf)
 )
 
 ;Rule to generate _certain_a_1 for the assertion discourse particle.
@@ -625,8 +651,8 @@
 (defrule hI_6
 (id-hI_6 ?id  yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1000)"  _only_x_deg)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values hI_6 id-MRS_concept "(+ ?id 1000)" _only_x_deg)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 40)"  _only_x_deg)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values hI_6 id-MRS_concept "(+ ?id 40)" _only_x_deg)"crlf)
 )
 
 ;Rule to generate _but_c when we have samuccaya and BI_1 relation 
@@ -636,8 +662,8 @@
 (rel_name-ids samuccaya ?previousid	?verb)
 (id-BI_1	?verb	yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 1000) "  _but_c)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  samuccaya_BI_but  id-MRS_concept "(+ ?verb 100) "  _but_c)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept 100  _but_c)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  samuccaya_BI_but  id-MRS_concept 100  _but_c)"crlf)
 )
 
 ;Rule to generate _that_q_dem for vyABIcAra discourse relation and when there is distal.
@@ -647,16 +673,16 @@
 (rel_name-ids	k1	?id	?karwa)
 (id-distal	?karwa	yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1) " _that_q_dem)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values vyABIcAra_that id-MRS_concept "(+ ?id 1) "  _that_q_dem)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 10) " _that_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values vyABIcAra_that id-MRS_concept "(+ ?id 10) "  _that_q_dem)"crlf)
 )
 ;Rule to generate _that_q_dem for vyABIcAra discourse relation and when there is distal.
 ;#इस कारण उनके माता पिता उनसे बहुत परेशान रहते थे
 (defrule pariNAma_that
 (rel_name-ids pariNAma ?previousid	?id)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 1) " _that_q_dem)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values pariNAma_that id-MRS_concept "(+ ?id 1) "  _that_q_dem)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept  "(+ ?id 10) " _that_q_dem)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values pariNAma_that id-MRS_concept "(+ ?id 10) "  _that_q_dem)"crlf)
 )
 
 ;Rule to generate _despite_p for vyABIcAra discourse relation. 
@@ -666,8 +692,8 @@
 (rel_name-ids	k1	?id	?karwa)
 (id-distal	?karwa	yes)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _despite_p)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values vyABIcAra_despite id-MRS_concept "(+ ?id 10) " _despite_p)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 1) " _despite_p)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values vyABIcAra_despite id-MRS_concept "(+ ?id 1) " _despite_p)"crlf)
 )
 
 ;Rule to generate _because+of_p for vyABIcAra discourse relation. 
@@ -675,7 +701,19 @@
 (defrule _because+of_p
 (rel_name-ids pariNAma ?previousid	?id)
 =>
-(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 10) " _because+of_p)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values _because+of_p id-MRS_concept "(+ ?id 10) " _because+of_p)"crlf)
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?id 1) " _because+of_p)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values _because+of_p id-MRS_concept "(+ ?id 1) " _because+of_p)"crlf)
 )
+
+;Rule to generate _there_a_1 for wyax relation with k7p relation.
+;#vahIM para bila meM eka cUhA rahawA WA.
+(defrule _there_a_1
+(id-concept_label	?id	wyax)
+(rel_name-ids	k7p	?kriya	?id)
+(not (id-proximal	?id	yes)) ; He comes here daily.
+=>
+(printout ?*mrsCon* "(MRS_info id-MRS_concept "?id " _there_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values _there_a_1 id-MRS_concept " ?id " _there_a_1)"crlf)
+)
+
 

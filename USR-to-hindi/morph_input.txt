@@ -1,0 +1,1 @@
+^Apa<cat:p><case:d><parsarg:0><gen:m><num:p><per:m>$ ^kahAz<cat:p><case:o><parsarg:0><gen:m><num:s><per:a>$ ^raha<cat:v><gen:m><num:p><per:m><tam:wA>$ ^hE<cat:v><gen:m><num:p><per:m><tam:hE>$

@@ -12,7 +12,7 @@
 (not (id-stative	?id	yes))
 (not (id-concept_label       ?v   hE_1|WA_1))
 (not (modified_tense ?id))
-;(not (modified_tense_modal ?id1) )
+(test (eq (str-index "_x_" ?mrs)FALSE)) ;Before the cows were milked, Rama went.
 =>
 (assert (modified_tense ?id))
 (retract ?f1 ?f)
@@ -25,9 +25,9 @@
 (defrule tensedc
 (id-doublecausative	?id	yes)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
-?f<-(MRS_info ?rel ?kri ?mrs ?l ?a0 $?va)
-(test (eq ?kri (+ ?id 200)))
+?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 (not (modified_tense ?id))
+(test (neq (str-index _ask_v_1 ?mrs) FALSE))
 =>
 (assert (modified_tense ?id))
 (retract ?f ?f1)
@@ -37,12 +37,13 @@
 
 ;example:-SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 ;solution:-The teacher made the students clean the class.
+;Rama made Mohana buy a ticket.
 (defrule tensec
 (id-causative	?id	yes)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?kri ?mrs ?l ?a0 $?va)
-(test (eq ?kri (+ ?id 100)))
 (not (modified_tense ?id))
+(test (neq (str-index "_v_" ?mrs)FALSE)) 
 =>
 (assert (modified_tense ?id))
 (retract ?f1 ?f)
@@ -163,7 +164,7 @@
 (construction-ids	conj	?k1s $?)
 (id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?imconid implicit_conj ?lbl ?arg0 $?vs)
-(test (eq  (+ ?k1s 600) ?imconid))
+(test (eq  (+ ?k1s 200) ?imconid))
 =>
 (retract ?f)
 (printout ?*tense-etc* "(tense-MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL "?imconid" implicit_conj "?lbl" "?arg0" " ?sf " "?tense" " ?mood " " ?prog " " ?perf " " (implode$ (create$ $?vs)) ")" crlf)

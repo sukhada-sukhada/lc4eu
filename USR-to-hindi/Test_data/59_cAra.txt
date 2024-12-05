@@ -1,0 +1,10 @@
+#rAma cAra kiwAbeM paDa rahA hE.
+rAma,cAra_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4
+per,,,
+[- sg a],,[- pl a],
+4:k1,3:card,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative

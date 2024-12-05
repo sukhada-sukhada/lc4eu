@@ -9,6 +9,7 @@
 (defrule mrsPron_yes
 (id-concept_label	?id 	speaker|addressee|wyax)
 (not (rel_name-ids	dem	?kri	?id))
+(not (rel_name-ids	k7p	?kri	?id)) ;A mouse used to live in the hole, there.
 (not (id-proximal	?id	yes))
 (not (id-distal	?id	yes))
 =>
@@ -19,17 +20,19 @@
 (printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "?id " pron)"crlf)
 )
 
-; Generates new facts (MRS_info id-MRS_concept ID pron) and (MRS_info id-MRS_concept ID _pronoun) for imperative sentences
+; Generates new facts (MRS_info id-MRS_concept ID pron) and (MRS_info id-MRS_concept ID _pronoun) for imperative sentences ;(rel_name-ids	k1	30000	10000)
+
 ; Ex. Sahara jAo
 (defrule pron4imper
 (sentence_type imperative)
-(not (and (id-concept_label	?id 	speaker|addressee|wyax) (rel_name-ids k1 ? ?id))) ;#Apa Sahara jAo!
+(or (kriyA-TAM	?id1	o_1) (kriyA-TAM	?id1	o_2))
+(not (and (id-concept_label	?id 	speaker|addressee|wyax) (rel_name-ids k1 ?id1 ?id))) ;#Apa Sahara jAo!
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pronoun_q)"crlf) 
-(printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000  pronoun_q )"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id1 10)" pronoun_q)"crlf) 
+(printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept "(+ ?id1 10)"  pronoun_q )"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pron)"crlf)
-(printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000 pron)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id1 " pron)"crlf)
+(printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept "?id1 " pron)"crlf)
 )
 
 ;(rel_name-ids	r6	30000	20000)
@@ -46,8 +49,8 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 10)" def_explicit_q)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 20)" poss)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 20)" poss)"crlf)
 )
 
 ;rule for generating MRS concept 'every_q' for 'saba_4/everyone/everybody'.
@@ -66,8 +69,8 @@
 (rel_name-ids	k1|k2	?noun	?dem)
 (not (rel_name-ids coref ?kuchh	?dem))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_dem_pron-this id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?dem " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_dem_pron-this id-MRS_concept "?dem" generic_entity)"crlf)
 )
 
 ;rule for demonstrative pronoun
@@ -77,8 +80,8 @@
 (rel_name-ids	k1	?noun	?dem)
 (not (rel_name-ids coref ?ddd	?dem))
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?dem 10) " generic_entity)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_dem_pron-that id-MRS_concept "(+ ?dem 10)" generic_entity)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?dem " generic_entity)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_dem_pron-that id-MRS_concept "?dem" generic_entity)"crlf)
 )
 
 ;345: vaha apane piwA  ke sAWa vixyAlaya gayI 
@@ -88,9 +91,7 @@
 (id-concept_label       ?coref    ?conL)
 (not (id-concept_label	?coref eka+xUsarA)) ; 326: #hama eka xUsare se pyAra karawe hEM.
 (not (rel_name-ids	dem	?ddd	?coref))
-;(not (id-proximal	?coref	yes))
-;(not (id-distal	?coref	yes))
-;(not (id-num	?coref	pl))
+(not (rel_name-ids	k7p	?ddd	?coref))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?coref 10)" pronoun_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  coref  id-MRS_concept "(+ ?coref 10)" pronoun_q )"crlf)
@@ -107,8 +108,8 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_poss_pron_wyax id-MRS_concept "(+ ?viSeRya 10)" def_explicit_q)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_poss_pron_wyax id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 20)" poss)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_poss_pron_wyax id-MRS_concept "(+ ?viSeRya 20)" poss)"crlf)
 )
 
 

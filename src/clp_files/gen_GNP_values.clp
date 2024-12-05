@@ -170,10 +170,10 @@
 ;Rule for generating 3rd person reflexive pronouns with reflexive "refl" pronoun type and masculine gender. 
 ;Ex: He loves himself.
 (defrule gnp-of-eng_pron-personal-male-3rdperson-reflexive
-(id-male	?id1	yes)
-(id-anim	?id1	yes)
+(id-male	?x	yes)
+;(id-anim	?id1	yes)
 (MRS_info ?rel1 ?id1 pron  $?vars)
-(or (id-concept_label	?id1	Kuxa|KZuxa|svayam|svayaM) (rel_name-ids coref ?x	?id1))
+(and (id-concept_label	?id1	Kuxa|KZuxa|svayam|svayaM) (rel_name-ids coref ?x	?id1))
 (not (id-num	?id1	pl)) ;They are eating food.
 (not (id-concept_label	?id1	apanA)) ;Rama calls everybody in his school.
 =>
@@ -186,7 +186,7 @@
 (defrule gnp-of-eng_pron-personal-female-3rdperson-reflexive
 (id-female	?id1	yes)
 (MRS_info ?rel1 ?id1 pron  $?vars)
-(or (id-concept_label	?id1	Kuxa|KZuxa|svayam|svayaM) (rel_name-ids coref ?x	?id1))
+(and (id-concept_label	?id1	Kuxa|KZuxa|svayam|svayaM) (rel_name-ids coref ?x	?id1)) ;He climbed in the lion.
 (not (id-num	?id1	pl)) ;They are eating food.
 (not (id-concept_label	?idx 	apanA)) ;Ms Rajani admitted to her son and her daughter, on Monday, in Kasi's largest school.
 =>
