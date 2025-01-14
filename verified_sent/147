@@ -1,5 +1,6 @@
+<sent_id=147>
 #vaha so cukA hogA.
-wyax,so_1-0_cukA_hogA_1
+$wyax,so_1-0_cukA_hogA_1
 1,2
 ,
 ,
@@ -7,4 +8,7 @@ wyax,so_1-0_cukA_hogA_1
 142.1:coref,
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

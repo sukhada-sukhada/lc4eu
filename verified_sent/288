@@ -1,11 +1,14 @@
+<sent_id=288>
 #usane kaCue ko xOdZa ke liye cunOwI xI.
-wyax,kaCuA_1,xOdZa_1,cunOwI+xe_1-yA_1
-1,2,3,4
-,anim male,,
-,,,
-4:k1,4:k2,4:rt,0:main
-9.1:coref,,,
-,def,,
-,,,
-affirmative
+$wyax,kaCuA_1,xOdZa_1,cunOwI_1,xe_1-yA_1,[cp_1]
+1,2,3,5,6,4
+,anim/male,,,,
+,,,,,
+4:k1,4:k2,4:rt,,,0:main
+9.1:coref,,,,,
+,def,,,,
+,,,,,
+,,,4:kriyAmUla,4:verbalizer,
+%affirmative
+</sent_id>
 

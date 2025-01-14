@@ -1,11 +1,14 @@
+<sent_id=432>
 #jala ke binA jIva jIviwa nahIM rahawe hE.
-jala_1, jIva_1,nahIM_1,jIviwa+raha_3-wA_hE_1
-1,2,3,4
-,anim,,
-,pl,,
-4:rasneg,4:k1,4:neg,0:main
-,,,
-,,,
-,,,
-negative
+jala_1,jIva_1,nahIM,jIviwa_1,raha_3-wA_hE_1,[cp_1]
+1,2,3,5,6,4
+,anim,,,,
+,pl,,,,
+4:rasneg,4:k1,4:neg,,,0:main
+,,,,,
+,,,,,
+,,,,,
+,,,4:kriyAmUla,4:verbalizer,
+%negative
+</sent_id>
 

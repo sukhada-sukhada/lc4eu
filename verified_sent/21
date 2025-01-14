@@ -1,10 +1,14 @@
+<sent_id=21>
 #rAma ne mohana ko nIlI kiwAba xI.
 rAma,mohana,nIlA_1,kiwAba_1,xe_1-yA_1
 1,2,3,4,5
-per male,per male,,,
+per/male,per/male,,,
 ,,,,
 5:k1,5:k4,4:mod,5:k2,0:main
 ,,,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

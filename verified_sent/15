@@ -1,10 +1,14 @@
+<sent_id=15>
 #kyA rAma jA rahA hE?
 rAma,jA_1-0_rahA_hE_1
 1,2
-per male,
+per/male,
 ,
 2:k1,0:main
 ,
 ,
 ,
-yn_interrogative
+,
+%yn_interrogative
+</sent_id>
+

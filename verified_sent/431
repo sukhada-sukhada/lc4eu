@@ -1,3 +1,4 @@
+<sent_id=431>
 #sarxI meM barPa girawI hE.
 sarxI_2,barPa_1,girA_1-wA_hE_1
 1,2,3
@@ -7,4 +8,7 @@ season,,
 ,,
 ,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

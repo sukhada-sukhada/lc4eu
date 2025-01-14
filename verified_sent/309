@@ -1,5 +1,6 @@
+<sent_id=309>
 #vaha bahuwa aBimAnI WA.
-wyax,bahuwa_7,aBimAnI_3,hE_1-past
+$wyax,bahuwa_7,aBimAnI_3,hE_1-past
 1,2,3,4
 ,,,
 ,,,
@@ -7,5 +8,7 @@ wyax,bahuwa_7,aBimAnI_3,hE_1-past
 9.1:coref,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

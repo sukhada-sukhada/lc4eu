@@ -1,11 +1,14 @@
+<sent_id=99>
 #camadZe se jUwe banAo.
-camadZA_1,jUwA_1, banA_1-o_1
+camadZA_1,jUwA_1,banA_1-o_1
 1,2,3
 ,,
 ,pl,
-3:k5prk, 3:k2,0:main
+3:k5prk,3:k2,0:main
 ,,
 ,,
 ,,
-imperative
+,,
+%imperative
+</sent_id>
 

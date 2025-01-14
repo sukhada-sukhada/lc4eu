@@ -1,10 +1,14 @@
+<sent_id=383>
 #mEM Kuxa se pyAra karawA hUz.
-speaker,Kuxa,pyAra+kara_1-wA_hE_1
-1,2,3
-anim,,
-,,
-3:k1,3:k2,0:main
-,1:coref,
-,,
-,,
-affirmative
+$speaker,Kuxa,pyAra_1,kara_1-wA_hE_1,[cp_1]
+1,2,4,5,3
+anim,,,,
+,,,,
+3:k1,3:k2,,,0:main
+,1:coref,,,
+,,,,
+,,,,
+,,3:kriyAmUla,3:verbalizer,
+%affirmative
+</sent_id>
+

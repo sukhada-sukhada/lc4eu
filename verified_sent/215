@@ -1,3 +1,4 @@
+<sent_id=215>
 #wAlAba meM haMsa hE.
 wAlAba_2,haMsa_1,hE_1-pres
 1,2,3
@@ -7,5 +8,7 @@ wAlAba_2,haMsa_1,hE_1-pres
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

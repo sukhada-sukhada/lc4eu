@@ -1,3 +1,4 @@
+<sent_id=323>
 #sUrya sabase badA nakRawra hE.
 sUrya_1,badZA_1,nakRawra_1,hE_1-pres
 1,2,3,4
@@ -7,4 +8,7 @@ sUrya_1,badZA_1,nakRawra_1,hE_1-pres
 ,,,
 def,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

@@ -1,11 +1,14 @@
+<sent_id=74>
 #vaha apane piwA ke sAWa vixyAlaya jAyegI.
-wyax, apanA, piwA_1,vixyAlaya_1,jA_1-gA_1
+$wyax,apanA,piwA_1,vixyAlaya_1,jA_1-gA_1
 1,2,3,4,5
-anim,,anim male,,
+anim,,anim/male,,
 ,,,,
 5:k1,3:r6,5:rask1,5:k2p,0:main
 173.1:coref,173.1:coref,,,
 ,,,def,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
 

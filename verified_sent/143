@@ -1,10 +1,14 @@
+<sent_id=143>
 #rAma yaha kAma nahIM kara sakawA.
-rAma,wyax,kAma_1,nahIM_1,kara_17-0_sakawA_1
+rAma,$wyax,kAma_1,nahIM,kara_17-0_sakawA_1
 1,2,3,4,5
-per male,,,,
+per/male,,,,
 ,,,,
 5:k1,3:dem,5:k2,5:neg,0:main
 ,,,,
 ,proximal,,,
 ,,,,
-negative
+,,,,
+%negative
+</sent_id>
+

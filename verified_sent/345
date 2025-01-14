@@ -1,3 +1,4 @@
+<sent_id=345>
 #rAma hazsawe hue bolawA hE.
 rAma,hazsa_1,bola_18-wA_hE_1
 1,2,3
@@ -7,4 +8,7 @@ per,,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

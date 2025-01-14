@@ -1,10 +1,14 @@
+<sent_id=200>
 #KAnA mere xvArA KAyA gayA WA.
-KAnA_1,speaker,KA_1-yA_gayA_WA_1
+KAnA_1,$speaker,KA_1-yA_gayA_WA_1
 1,2,3
-,anim male,
+,anim/male,
 ,,
 3:k2,3:k1,0:main
 ,,
 ,,
 ,,
-pass-affirmative
+,,
+%pass_affirmative
+</sent_id>
+

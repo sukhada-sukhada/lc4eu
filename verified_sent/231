@@ -1,10 +1,14 @@
+<sent_id=231>
 #vaha acCA doYktara hE
-wyax,acCA_1,doYktara_1,hE_1-pres
+$wyax,acCA_1,doYktara_1,hE_1-pres
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,3:mod,4:k1s,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

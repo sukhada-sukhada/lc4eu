@@ -1,11 +1,14 @@
+<sent_id=49>
 #mEM Sahara meM eka vixyAlaya gayA.
-speaker,Sahara_1,vixyAlaya_1,jA_1-yA_1
+$speaker,Sahara_1,vixyAlaya_1,jA_1-yA_1
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,4:k7p,4:k2p,0:main
 ,,,
 ,def,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

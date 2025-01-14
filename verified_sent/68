@@ -1,10 +1,14 @@
+<sent_id=68>
 #pqWvI ko graha kahA jAwA hE.
 pqWvI_1,graha_1,kaha_1-yA_jAwA_hE_1
 1,2,3
 ,,
 ,,
-3:k2g,3:k2,0:main
+3:k2s,3:k2,0:main
 ,,
 def,,
 ,,
-pass-affirmative
+,,
+%pass_affirmative
+</sent_id>
+

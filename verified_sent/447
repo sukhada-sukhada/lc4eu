@@ -1,5 +1,6 @@
+<sent_id=447>
 #wo meM jAUMgA.
-speaker,jA_1-gA_1
+$speaker,jA_1-gA_1
 1,2
 anim,
 ,
@@ -7,4 +8,7 @@ anim,
 ,438.3:samAnakAla
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

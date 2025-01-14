@@ -1,5 +1,6 @@
+<sent_id=462>
 #merA xeSa.
-speaker,xeSa_1
+$speaker,xeSa_1
 1,2
 anim,
 ,
@@ -7,4 +8,7 @@ anim,
 ,
 ,
 ,
-TITLE
+,
+%TITLE
+</sent_id>
+

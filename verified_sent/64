@@ -1,5 +1,6 @@
+<sent_id=64>
 #unhone Kewa meM bIja bo xiye.
-wyax,Kewa_1,bIja_1,bo_3-0_xiyA_1
+$wyax,Kewa_1,bIja_1,bo_3-0_xiyA_1
 1,2,3,4
 ,,,
 ,,pl,
@@ -7,5 +8,7 @@ wyax,Kewa_1,bIja_1,bo_3-0_xiyA_1
 6.1:coref,,,
 ,def,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

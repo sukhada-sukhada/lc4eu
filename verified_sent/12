@@ -1,3 +1,4 @@
+<sent_id=12>
 #jAnavara saBA meM Aye.
 jAnavara_1,saBA_3,A_1-yA_1
 1,2,3
@@ -7,4 +8,7 @@ pl,,
 ,,
 def,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

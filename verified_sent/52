@@ -1,10 +1,14 @@
+<sent_id=52>
 #Apa AsamAna kA avalokana acCI waraha se kara sakawe hEM.
-addressee,AsamAna_1, acCI+waraha_4, avalokana+kara_1-0_sakawA_hE_1
-1,2,3,4
-anim male,,,
-,,,
-4:k1,4:k2,4:krvn,0:main
-,,,
-respect,def,,
-,,,
-affirmative
+$addressee,AsamAna_1,acCI_2,waraha_4,[nc_1],avalokana_1,kara_1-0_sakawA_hE_1,[cp_1]
+1,2,7,8,3,5,6,4
+anim/male,,,,,,,
+,,,,,,,
+4:k1,4:k2,,,4:krvn,,,0:main
+,,,,,,,
+respect,def,,,,,,
+,,,,,,,
+,,3:mod,3:head,,4:kriyAmUla,4:verbalizer,
+%affirmative
+</sent_id>
+

@@ -1,11 +1,14 @@
+<sent_id=332>
 #rAvaNa acCA nahIM hE.
-rAvaNa,acCA_1,nahIM_1,hE_1-pres
+rAvaNa,acCA_1,nahIM,hE_1-pres
 1,2,3,4
-per male,,,
+per/male,,,
 ,,,
 4:k1,4:k1s,4:neg,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

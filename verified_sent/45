@@ -1,3 +1,4 @@
+<sent_id=45>
 #BArawa meM xvIpasamUha hEM.
 BArawa,xvIpasamUha_1,hE_1-pres
 1,2,3
@@ -7,4 +8,7 @@ place,,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

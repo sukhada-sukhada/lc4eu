@@ -1,5 +1,6 @@
+<sent_id=325>
 #mEMne rAma se praSna pUCA.
-speaker,rAma,praSna_1,pUCa_3-yA_1
+$speaker,rAma,praSna_1,pUCa_3-yA_1
 1,2,3,4
 anim,per,,
 ,,,
@@ -7,5 +8,7 @@ anim,per,,
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

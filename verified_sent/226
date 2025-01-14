@@ -1,5 +1,6 @@
+<sent_id=226>
 #mEM Aja AyA.
-speaker,Aja_1,A_1-yA_1
+$speaker,Aja_1,A_1-yA_1
 1,2,3
 anim,,
 ,,
@@ -7,4 +8,7 @@ anim,,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

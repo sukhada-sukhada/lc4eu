@@ -1,5 +1,6 @@
+<sent_id=158>
 #mEMne Pala KA liyA hogA.
-speaker,Pala_1,KA_1-yA_hogA_1
+$speaker,Pala_1,KA_1-yA_hogA_1
 1,2,3
 anim/male,,
 ,,
@@ -7,4 +8,7 @@ anim/male,,
 ,,
 ,def,[shade:le_1]
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

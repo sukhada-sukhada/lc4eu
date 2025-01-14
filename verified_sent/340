@@ -1,3 +1,4 @@
+<sent_id=340>
 #BAgawe hue Sera ko xeKo.
 BAga_8,Sera_1,xeKa_3-o_1
 1,2,3
@@ -7,4 +8,7 @@ BAga_8,Sera_1,xeKa_3-o_1
 ,,
 ,def,
 ,,
-imperative
+,,
+%imperative
+</sent_id>
+

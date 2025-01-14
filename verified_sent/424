@@ -1,11 +1,14 @@
+<sent_id=424>
 #rAma ke vana jAne para sIwA anusaraNa karawI hE.
-rAma,vana_2,jA_1,sIwA,anusaraNa+kara_1-wA_hE_1
-1,2,3,4,5
-per male,,,per female,
-,,,,
-3:k1,3:k2p,5:rblsk,5:k1,0:main      
-,,,, 
-,def,,,
-,,,,
-affirmative
+rAma,vana_2,jA_1,sIwA,anusaraNa_1,kara_1-wA_hE_1,[cp_1]
+1,2,3,4,6,7,5
+per/male,,,per/female,,,
+,,,,,,
+3:k1,3:k2p,5:rblsk,5:k1,,,0:main
+,,,,,,
+,def,,,,,
+,,,,,,
+,,,,5:kriyAmUla,5:verbalizer,
+%affirmative
+</sent_id>
 

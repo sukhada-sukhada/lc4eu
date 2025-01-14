@@ -1,10 +1,14 @@
-#billI kA pICA karanA purAnA hE. 	 
-billI_1,pICA+kara_1,purAnA_1,hE_1-pres
-1,2,3,4
-anim,,,
-,,,
-2:r6,4:k2,4:k1s,0:main
-,,,
-def,,,
-,,,
-affirmative
+<sent_id=433>
+#billI kA pICA karanA purAnA hE.
+billI_1,pICA_1,kara_1,[cp_1],purAnA_1,hE_1-pres
+1,5,6,2,3,4
+anim,,,,,
+,,,,,
+2:r6,,,4:k2,4:k1s,0:main
+,,,,,
+def,,,,,
+,,,,,
+,2:kriyAmUla,2:verbalizer,,,
+%affirmative
+</sent_id>
+

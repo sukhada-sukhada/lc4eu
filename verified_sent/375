@@ -1,11 +1,14 @@
+<sent_id=375>
 #BIma ne jarAsanXa ko mAra dAlA.
 BIma,jarAsanXa,mAra_1-yA_1
 1,2,3
-per male,per male,
+per/male,per/male,
 ,,
 3:k1,3:k2,0:main
 ,,
 ,,[shade:dAla_1]
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

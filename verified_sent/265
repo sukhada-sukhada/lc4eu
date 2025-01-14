@@ -1,10 +1,14 @@
+<sent_id=265>
 #riweSa ke liye jaMgala se Pala lAo!
 riweSa,jaMgala_1,Pala_1,lA_1-o_1
 1,2,3,4
-per male,,,
+per/male,,,
 ,,pl,
 4:rt,4:k5,4:k2,0:main
 ,,,
 ,def,,
 ,,,
-imperative
+,,,
+%imperative
+</sent_id>
+

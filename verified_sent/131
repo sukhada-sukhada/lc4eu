@@ -1,3 +1,4 @@
+<sent_id=131>
 #saBI bacce Kela rahe hEM.
 saBI_1,baccA_2,Kela_1-0_rahA_hE_1
 1,2,3
@@ -7,5 +8,7 @@ saBI_1,baccA_2,Kela_1-0_rahA_hE_1
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

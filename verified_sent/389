@@ -1,11 +1,14 @@
+<sent_id=389>
 #mEMne mohana kI vajaha se kiwAba KarIxI.
-speaker,mohana,kiwAba_1,KarIxa_1-yA_1
+$speaker,mohana,kiwAba_1,KarIxa_1-yA_1
 1,2,3,4
-anim female,per male,,
+anim/female,per/male,,
 ,,,
 4:k1,4:rh,4:k2,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

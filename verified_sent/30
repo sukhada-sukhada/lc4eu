@@ -1,4 +1,5 @@
-#rAma xuHKI hE. 
+<sent_id=30>
+#rAma xuHKI hE.
 rAma,xuHKI_2,hE_1-pres
 1,2,3
 per,,
@@ -7,4 +8,7 @@ per,,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

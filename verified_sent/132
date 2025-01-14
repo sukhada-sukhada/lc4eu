@@ -1,3 +1,4 @@
+<sent_id=132>
 #prawyeka pedZa lambA hE.
 prawyeka_1,pedZa_1,lambA_4,hE_1-pres
 1,2,3,4
@@ -7,5 +8,7 @@ prawyeka_1,pedZa_1,lambA_4,hE_1-pres
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

@@ -1,5 +1,6 @@
+<sent_id=394>
 #vaha eka kiwAba hE.
-wyax,kiwAba_1,hE_1-pres
+$wyax,kiwAba_1,hE_1-pres
 1,2,3
 ,,
 ,,
@@ -7,5 +8,7 @@ wyax,kiwAba_1,hE_1-pres
 ,,
 distal,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

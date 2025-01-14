@@ -1,3 +1,4 @@
+<sent_id=393>
 #kAra Gara ke pAsa hE.
 kAra_1,Gara_2,pAsa_2,hE_1-pres
 1,2,3,4
@@ -7,4 +8,7 @@ kAra_1,Gara_2,pAsa_2,hE_1-pres
 ,,,
 def,def,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

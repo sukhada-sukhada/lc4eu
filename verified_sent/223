@@ -1,5 +1,6 @@
+<sent_id=223>
 #mEMne nayI kiwAba paDI.
-speaker,nayA_1,kiwAba_1,paDa_1-yA_1
+$speaker,nayA_1,kiwAba_1,paDa_1-yA_1
 1,2,3,4
 anim,,,
 ,,,
@@ -7,5 +8,7 @@ anim,,,
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

@@ -1,10 +1,14 @@
+<sent_id=29>
 #mEM A rahA hUz.
-speaker,A_1-0_rahA_hE_1
+$speaker,A_1-0_rahA_hE_1
 1,2
-anim male,
+anim/male,
 ,
 2:k1,0:main
 ,
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

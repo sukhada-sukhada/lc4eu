@@ -1,54 +1,67 @@
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   wA_hE_1  0  -  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_hE_1  be_ing  -  +  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_wA_1  was_ing  -  +  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_hE_2  has_been_ing  +  +  pres +)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_wA_2  had_been_ing  +  +  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_hE_1  can_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_WA_1  could_0  -  -  past modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_hE_2  might_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_hE_3  may_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakawA_1  can_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_1  ed  -  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   gA_1  will_0  -  -  fut -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   gA_2  would_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_WA_1  was_ing  -  +  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_gayA_WA_1  was_en  -  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_gayA_WA_2  had_been_en  +  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_gayA_1  got_en  -  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_gayA_hE_1  are_en  -  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_gayA_hE_2  has_been_en  +  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_hE_1  has_en  +  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   past  was  -  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   wA_WA_1  usedto_0  -  -  past modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_jAwA_WA_1  usedto_0  -  -  past modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   pres  is  -  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   AI_xI_1    +  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_gayA_1  ed  -  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_gayA_WA_1  had_en  +  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_WA_1  did_0  -  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_WA_2  had_en  +  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   o_1  imper  -  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   o_2  imper  -  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_cukA_WA_1  had_en  +  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_cukA_hogA_1  have_en  +  -  fut -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_sakA_1  could_0  -  -  past modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_hogA_1  will_have_been_ing  +  +  fut -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_hogA_2  shall_be_ing  -  +  fut -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_hE_1  have_to_0  -  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_cukA_hE_1  have_en  +  -  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_hogA_1  will_have_en  +  -  fut -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_hogA_2  might_have_en  +  -  past modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_hogA_3  must_have_en  +  -  past modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_xiyA_1  ed  -  -  past -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_cAhie_1  should_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_hE_2  be_ing  -  +  pres -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_cAhie_2  must_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_hogA_1  must_0  -  -  pres modal)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_jAwA_hE_1  is_en  -  -  pres -) 
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_jAwA_WA_1  was_en  -  -  past -) 
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_jAyegA_1  will_be_en  -  -  fut -)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZawA_hE_1 have_to_0  -  -  pres modal) 
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZawA_WA_1  had_to_0  -  -  past modal) 
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZA_1  had_to_0  -  -  past modal) 
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   nA_padZegA_1  will_have_to  -  -  fut modal)
-(H_TAM-E_TAM-Habitual-Perfective_Aspect-Progressive_Aspect-Tense-Type  wA_rahawA_hE_1  keep_ing  + -  +  pres -)
+U_TAM Hin_TAM San_TAM E_TAM Perfective_Aspect Progressive_Aspect Tense Modal
+nA_cAhie_4 nA_cAhie_4 anIya_1 must_0 - - pres +
+nA_hE_1 nA_hE_1 anIyar_1 have_to_0 - - pres -
+0_gayA_1 0_gayA_1 aw_2 ed - - past -
+0_sakA_1 0_sakA_1 aw_4 could_0 - - past +
+0_xiyA_1 0_xiyA_1 aw_3 ed - - past -
+yA_1 yA_1 aw_1 ed - - past -
+yA_WA_1 yA_WA_1 aw_5 did_0 - - past -
+0_rahA_hogA_1 0_rahA_hogA_1 awi_3 will_have_been_ing + + fut -
+wA_hE_1 wA_hE_1 awi_2 0 - - pres -
+yA_hE_2 yA_hE_2 awi_1 be_ing - + pres -
+0_jAwA_WA_1 0_jAwA_WA_1 awi_sma_2 usedto_0 - - past +
+gA_2 gA_2 awi_sma_3 would_0 - - pres +
+wA_WA_1 wA_WA_1 awi_sma_1 usedto_0 - - past +
+0_sakawA_hE_3 0_sakawA_hE_3 awu_7 may_0 - - pres +
+nA_cAhie_1 nA_cAhie_1 awu_6 should_0 - - pres +
+nA_cAhie_2 nA_cAhie_2 awu_5 must_0 - - pres +
+nA_hE_2 nA_hE_2 awu_3 have_to_0 - - pres -
+nA_hogA_1 nA_hogA_1 awu_4 must_0 - - pres +
+nA_padZawA_hE_1 nA_padZawA_hE_1 awu_8 have_to_0 - - pres +
+o_1 o_1 awu_1 imper - - pres -
+o_2 o_2 awu_2 imper - - pres -
+nA_padZawA_WA_1 nA_padZawA_WA_1 awu_sma_1 had_to_0 - - past +
+nA_padZA_1 nA_padZA_1 awu_sma_2 had_to-0 - - past +
+yA_gayA_WA_1 yA_gayA_WA_1 kq_kwa_1 was_en - - past -
+0_cukA_hE_1 0_cukA_hE_1 kwa_1 have_en + - pres -
+yA_WA_2 yA_WA_2 kwa_as_aw_1 had_en + - past -
+AI_xI_1 AI_xI_1 kwa_2 0 + - past -
+0_cukA_WA_1 0_cukA_WA_1 kwa_as_aw_1 had_en + - past -
+0_gayA_WA_1 0_gayA_WA_1 kwa_as_aw_2 had_en + - past -
+0_rahA_wA_2 0_rahA_wA_2 kwa_as_sma_1 had_been_ing + + past -
+0_rahA_hE_2 0_rahA_hE_2 kwa_as_awi_1 has_been_ing + + pres +
+yA_gayA_hE_2 yA_gayA_hE_2 kwa_as_awi_2 has_been_en + - pres -
+0_cukA_hogA_1 0_cukA_hogA_1 kwa_awi_1 have_en + - fut -
+yA_gayA_1 yA_gayA_1 kwa_BU_aw_1 got_en - - past -
+yA_1 yA_1 kwa_gam_1 ed - - past -
+yA_WA_1 yA_WA_1 kwvawu_1 did_0 - - past -
+wA_rahawA_hE_1 wA_rahawA_hE_1 sawq_1 keep_ing + - pres -
+0_rahA_wA_1 0_rahA_wA_1 Sawq_as_aw_2 was_ing - + past -
+0_rahA_hE_1 0_rahA_hE_1 Sawq_as_awi_1 be_ing - + pres -
+yA_jAyegA_1 yA_jAyegA_1 syawe_1 will_be_en - - fut -
+0_rahA_hogA_2 0_rahA_hogA_2 syawi_2 shall_be_ing - + fut -
+gA_1 gA_1 syawi_1 will_0 - - fut -
+yA_hogA_1 yA_hogA_1 wA_1 will_have_en + - fut -
+nA_cAhie_3 nA_cAhie_3 wavya_2 must_0 - - pres +
+nA_hE_1 nA_hE_1 wavya_1 have_to_0 - - pres -
+nA_hogA_1 nA_hogA_1 wavya_3 must_0 - - pres +
+nA_padZawA_hE_2 nA_padZawA_hE_2 wavya_4 have_to_0 - - pres +
+nA_padZA_2 nA_padZA_2 wavya_5 had_to_0 - - past +
+nA_padZawA_WA_2 nA_padZawA_WA_2 wavya_as_aw_1 had_to_0 - - past +
+nA_padZegA_1 nA_padZegA_1 wavya_syawi_1 will_have_to - - fut +
+yA_hogA_2 yA_hogA_2 wum_awi_sma_1 might_have_en + - past +
+0_sakawA_1 0_sakawA_1 wum_Sak_1 can_0 - - pres +
+0_sakawA_WA_1 0_sakawA_WA_1 wum_Sak_aw_1 could_0 - - past +
+0_sakawA_hE_1 0_sakawA_hE_1 wum_Sak_awi_1 can_0 - - pres +
+0_sakawA_hE_2 0_sakawA_hE_2 wum_Sak_awi_2 might_0 - - pres +
+0_sakawA_WA_1 0_sakawA_WA_1 wum_Sak_awi_sma_1 could_0 - - past +
+0_sakawA_hE_2 0_sakawA_hE_2 wum_samarWa_1 can_0 - - pres +
+yA_gayA_WA_1 yA_gayA_WA_1 ya_wa_1 was_en - - past -
+yA_jAwA_WA_1 yA_jAwA_WA_1 ya_wa_2 was_en - - past -
+yA_gayA_WA_2 yA_gayA_WA_2 ya_wa_3 had_been_en + - past -
+yA_gayA_hE_1 yA_gayA_hE_1 ya_we_2 are_en - - pres -
+yA_hE_1 yA_hE_1 ya_we_3 has_en + - pres -
+yA_jAwA_hE_1 yA_jAwA_hE_1 ya_we_1 is_en - - pres -
+yA_hogA_3 yA_hogA_3 yAw_1 must_have_en + - past +
+past past past was - - past -
+pres pres pres is - - pres -

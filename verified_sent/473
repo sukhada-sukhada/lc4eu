@@ -1,5 +1,6 @@
+<sent_id=473>
 #Ora viRaya kI rocakawA ko baDAwA hE.
-wyax,viRaya_1,rocakawA_1,baDA_1-wA_hE_1
+$wyax,viRaya_1,rocakawA_1,baDA_1-wA_hE_1
 1,2,3,4
 ,,,
 ,,,
@@ -7,5 +8,7 @@ wyax,viRaya_1,rocakawA_1,baDA_1-wA_hE_1
 ,,,
 proximal,def,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

@@ -1,5 +1,6 @@
+<sent_id=461>
 #vaha rojZa yaha AwA hE.
-wyax,rojZa_2,wyax, A_1-wA_hE_1
+$wyax,rojZa_2,$wyax,A_1-wA_hE_1
 1,2,3,4
 ,,,
 ,,,
@@ -7,4 +8,7 @@ wyax,rojZa_2,wyax, A_1-wA_hE_1
 436.1:coref,,,
 ,,proximal,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

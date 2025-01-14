@@ -1,11 +1,14 @@
+<sent_id=331>
 #mEM usase pyAra karawA hUz.
-speaker,wyax,pyAra+kara_1-wA_hE_1
-1,2,3
-anim male,,
-,,
-3:k1,3:k2,0:main
-,240.1:coref,
-,,
-,,
-affirmative
+$speaker,$wyax,pyAra_1,kara_1-wA_hE_1,[cp_1]
+1,2,4,5,3
+anim/male,,,,
+,,,,
+3:k1,3:k2,,,0:main
+,240.1:coref,,,
+,,,,
+,,,,
+,,3:kriyAmUla,3:verbalizer,
+%affirmative
+</sent_id>
 

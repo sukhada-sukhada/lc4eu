@@ -1,10 +1,14 @@
-#rAma kA peta BarA huA hE. 
-rAma, peta_2,BarA_1, hE_1-pres
+<sent_id=463>
+#rAma kA peta BarA huA hE.
+rAma,peta_2,BarA_1,hE_1-pres
 1,2,3,4
-per male,,,
+per/male,,,
 ,,kqw,
 2:r6,4:k1,4:k1s,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

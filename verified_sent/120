@@ -1,5 +1,6 @@
+<sent_id=120>
 #yaha Gara hE.
-wyax,Gara_2,hE_1-pres
+$wyax,Gara_2,hE_1-pres
 1,2,3
 ,,
 ,,
@@ -7,5 +8,7 @@ wyax,Gara_2,hE_1-pres
 ,,
 proximal,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

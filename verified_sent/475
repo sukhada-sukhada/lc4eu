@@ -1,11 +1,14 @@
+<sent_id=475>
 #BUgola kI aXyayana viXi parivarwiwa ho rahI hE.
-BUgola_1,aXXyayana_1+viXi_1,parivarwiwa+ho_2-0_rahA_hE_1
-1,2,3
-,,
-,,
-2:r6,3:k1,0:main
-,,
-,,
-,,
-affirmative
+BUgola_1,aXXyayana_1_2,viXi_1,[nc_1],parivarwiwa_1,ho_2-0_rahA_hE_1,[cp_1]
+1,6,7,2,4,5,3
+,,,,,,
+,,,,,,
+2:r6,,,3:k1,,,0:main
+,,,,,,
+,,,,,,
+,,,,,,
+,2:mod,2:head,,3:kriyAmUla,3:verbalizer,
+%affirmative
+</sent_id>
 

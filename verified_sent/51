@@ -1,11 +1,14 @@
+<sent_id=51>
 #ladakA usake lie Sahara gayA.
-ladakA_1,wyax,Sahara_1,jA_1-yA_1
+ladakA_1,$wyax,Sahara_1,jA_1-yA_1
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,4:rt,4:k2p,0:main
 ,9.1:coref,,
 def,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

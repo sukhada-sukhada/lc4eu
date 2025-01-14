@@ -1,5 +1,6 @@
+<sent_id=164>
 #usane eka Kewa xeKA
-wyax,Kewa_1,xeKa_1-yA_1
+$wyax,Kewa_1,xeKa_1-yA_1
 1,2,3
 ,,
 ,,
@@ -7,5 +8,7 @@ wyax,Kewa_1,xeKa_1-yA_1
 9.1:coref,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

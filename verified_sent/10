@@ -1,10 +1,14 @@
+<sent_id=10>
 #betoM ne Kewa meM bIja bo xiyA.
 betA_1,Kewa_1,bIja_1,bo_3-yA_1
 1,2,3,4
-anim male,,,
+anim/male,,,
 pl,,,
 4:k1,4:k7p,4:k2,0:main
 ,,,
 def,def,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

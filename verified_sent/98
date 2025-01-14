@@ -1,3 +1,4 @@
+<sent_id=98>
 #hAra mahilA ke gale meM hE.
 hAra_4,mahilA_1,galA_1,hE_1-pres
 1,2,3,4
@@ -7,5 +8,7 @@ hAra_4,mahilA_1,galA_1,hE_1-pres
 ,,,
 def,def,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

@@ -1,11 +1,14 @@
+<sent_id=198>
 #muJe sonA cAhie.
-speaker,so_1-nA_cAhie_1
+$speaker,so_1-nA_cAhie_1
 1,2
-anim male,
+anim/male,
 ,
 2:k1,0:main
 ,
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
 

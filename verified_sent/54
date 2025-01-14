@@ -1,3 +1,4 @@
+<sent_id=54>
 #brahmAMda badA hE.
 brahmAMda_3,badA_2,hE_1-pres
 1,2,3
@@ -7,4 +8,7 @@ brahmAMda_3,badA_2,hE_1-pres
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

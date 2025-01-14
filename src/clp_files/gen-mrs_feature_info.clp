@@ -9,8 +9,8 @@
 ;Rama is good.
 (defrule rm_be_v_id
 (declare (salience 10000))
-?f<-(id-concept_label	?kri	hE_1)
-(rel_name-ids	k1s	?kri	?k1s)
+?f<-(id-cl	?kri	hE_1)
+(rel-ids	k1s	?kri	?k1s)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
 (id-hin_concept-MRS_concept ?k1s ?hinCon ?adj)
 (test (neq (str-index _a_ ?adj) FALSE) )
@@ -23,8 +23,8 @@
 ;Ex. गुलाब जैसे फूल पानी में नहीं उगते हैं।
 (defrule rm_be_v_id-ru
 (declare (salience 10000))
-?f<-(id-concept_label	?kri	hE_1)
-(rel_name-ids	ru	?pru	?wal)
+?f<-(id-cl	?kri	hE_1)
+(rel-ids	ru	?pru	?wal)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
 (id-hin_concept-MRS_concept ?ru ?hinCon ?mrscon)
 (test (neq (str-index _n_ ?mrscon) FALSE) )
@@ -38,10 +38,10 @@
 ;Rama is in Delhi.
 (defrule rm_be_v_id-k7p
 (declare (salience 10000))
-?f<-(id-concept_label	?kri	hE_1)
-(rel_name-ids	k7p	?kri	?k7p)
+?f<-(id-cl	?kri	hE_1)
+(rel-ids	k7p	?kri	?k7p)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
-(not (rel_name-ids k1s ?kri ?k1s))
+(not (rel-ids k1s ?kri ?k1s))
 =>
 (retract ?f ?f1)
 (printout ?*mrs-dbug* "(rule-rel-values   rm_be_v_id-k7p id-MRS_concept " ?kri " hE_1)"crlf)
@@ -52,7 +52,7 @@
 ;Each kid is playing.          Every kid is playing.     All kids are playing.     Each tree is tall.
 (defrule rm-qcon4quantifier
 (declare (salience 10000))
-(rel_name-ids mod	?vi 	?vina)
+(rel-ids mod	?vi 	?vina)
 (id-hin_concept-MRS_concept ?vina ?qntfr ?vinaq) 
 ?f<-(MRS_info id-MRS_concept ?q_id  ?aq)
 (test (eq (+ 10 ?vi) ?q_id))
@@ -68,7 +68,7 @@
 (defrule want-k2-v
 (declare (salience 300))
 ?f<-(MRS_info ?rel ?kri _want_v_1 ?l ?a0 ?a1 ?a2)
-(rel_name-ids k2   ?kri	?k2)
+(rel-ids k2   ?kri	?k2)
 (MRS_info ?r ?k2  ?k2v $?v)
 (test (neq (str-index _v_ ?k2v) FALSE))
 =>
@@ -83,9 +83,9 @@
 ;Ex. Ravana was killed.
 (defrule passive-v-k1
 (declare (salience 200))
-?f1<-(sentence_type     pass-affirmative)
+?f1<-(sent_type     %pass_affirmative)
 ?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2 $?var)
-(not (rel_name-ids k1   ?kri    ?k1))
+(not (rel-ids k1   ?kri    ?k1))
 =>
 (retract ?f1 ?f)
 (bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
@@ -94,14 +94,32 @@
 (printout ?*mrs-dbug* "(rule-rel-values passive-v-k1 MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2" "(implode$ (create$ $?var))")"crlf)
 )
 
+;Rule for converting arg1 value (x*) of transtive verb when k1 is absent to u*
+;Ex. rAma ne skUla jAkara KAnA KAyA.
+;   Having gone to the school Rama ate food.
+(defrule k1-absent
+(declare (salience 200))
+?f1<-(sent_type    %affirmative|%negative|%interrogative|%yn_interrogative)
+?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 $?v)
+(not (rel-ids k1   ?kri    ?k1))
+(test (neq (str-index _v_ ?mrscon) FALSE))
+(not (rel-ids rsk   ?kri    ?verb))
+=>
+(retract ?f1 ?f)
+;(retract ?f1)
+(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
+;(assert (MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?a1 $?v))
+(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
+)
 ;Rule for converting arg2 value (x*) of transtive verb when k2 is absent to u*
 ;Ex. #usane nahIM KAyA.  
 ;     He did not eat.
 (defrule active-k2-absent
 (declare (salience 200))
-?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative|imperative)
+?f1<-(sent_type    %affirmative|%negative|%interrogative|%yn_interrogative|%imperative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
-(not (rel_name-ids k2   ?kri    ?k2))
+(not (rel-ids k2   ?kri    ?k2))
 (test (eq (str-index _have_v_1 ?mrscon) FALSE))
 (not (verb_bind_notrequired ?mrscon))
 =>
@@ -112,29 +130,13 @@
 )
 
 
-;Rule for converting arg1 value (x*) of transtive verb when k1 is absent to u*
-;Ex. rAma ne skUla jAkara KAnA KAyA.
-;   Having gone to the school Rama ate food.
-(defrule k1-absent
-(declare (salience 200))
-?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
-?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 $?v)
-(not (rel_name-ids k1   ?kri    ?k1))
-(test (neq (str-index _v_ ?mrscon) FALSE))
-=>
-(retract ?f1 ?f)
-(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
-(printout ?*mrs-fp* "(MRS_info "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values k1-absent "?rel" "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
-)
-
 ;Rule converts arg1 and arg2 of rpk kriya into u*
 ;#rAma KA -KAkara motA ho gayA .
 (defrule rpk
 (declare (salience 500))
-;?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
+;?f1<-(sent_type    %affirmative|%negative|%interrogative|%yn_interrogative)
 ?f<-(MRS_info ?rel ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
-(rel_name-ids rpk  ?id    ?kri)
+(rel-ids rpk  ?id    ?kri)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (retract ?f)
@@ -148,10 +150,10 @@
 ; verified sentence 340 #BAgawe hue Sera ko xeKo
 (defrule k1-absent-4-vmod
 (declare (salience 200))
-;?f1<-(sentence_type    affirmative|negative|interrogative|yn_interrogative)
+;?f1<-(sent_type    %affirmative|%negative|%interrogative|%yn_interrogative)
 ?f<-(MRS_info ?rel ?kridant ?mrscon ?lbl ?arg0 ?arg1 $?v)
-(rel_name-ids ?vmod   ?main    ?kridant)
-(not (rel_name-ids k1   ?kridant    ?k1))
+(rel-ids ?vmod   ?main    ?kridant)
+(not (rel-ids k1   ?kridant    ?k1))
 (test (neq (str-index _v_ ?mrscon) FALSE))
 (test (neq (str-index r ?vmod) FALSE))
 =>
@@ -161,12 +163,12 @@
 (printout ?*mrs-dbug* "(rule-rel-values k1-absent-4-vmod "?rel" "?kridant" "?mrscon" "?lbl" "?arg0" "?a1" "(implode$ (create$ $?v))")"crlf)
 )
 
-;Changing the ARG0 value (e*) to i* for imperative(-nagetive) sentences.
+;Changing the ARG0 value (e*) to i* for %imperative(-nagetive) sentences.
 ;Ex. 320 Sahara mawa jAo!  =  Don't go to the city.
 (defrule imper-neg
 (declare (salience 2200))
-(sentence_type	imperative)
-(rel_name-ids neg	?kri	?negid)
+(sent_type	%imperative)
+(rel-ids neg	?kri	?negid)
 ?f<-(MRSc-FVs neg LBL: h* ARG0: e* ARG1: h*)
 =>
 (retract ?f)
@@ -179,7 +181,7 @@
 (declare (salience 5000))
 (id-hin_concept-MRS_concept ?id ?hinlbl _speak_v_to)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id _speak_v_to ?lbl ?arg0 ?arg1 ?arg2)
-(not (rel_name-ids k2 ?id ?k2))
+(not (rel-ids k2 ?id ?k2))
 =>
 (retract ?f)
 (printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id" _speak_v_to "?lbl" "?arg0" "?arg1")"crlf)
@@ -189,7 +191,7 @@
 ;deleting ARG2 value for irregular adjective forms in comperative and superlative degree
 (defrule rmARG2Irregular-adj
 (declare (salience 5000))
-(id-degree	?id	superl|comperless|compermore)
+(id-morph_sem	?id	superl|comperless|compermore)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id ?adj ?lbl ?arg0 ?arg1 ?arg2)
 (test (or (eq ?adj _good_a_at-for-of) (eq ?adj _bad_a_at) (eq ?adj _much_x_deg)))
 =>
@@ -200,7 +202,7 @@
 
 
 
-;Rule for generating initial mrs info for concepts in file "id-concept_label-mrs_concept.dat"
+;Rule for generating initial mrs info for concepts in file "id-cl-mrs_concept.dat"
 (defrule mrs-info
 (id-hin_concept-MRS_concept ?id  ?conLbl  ?mrsCon)
 (MRSc-FVs ?mrsCon $?vars)
@@ -279,12 +281,11 @@
 (defrule implict_handle
 (declare (salience 5000)) 
 (MRSc-FVs ?mrscon LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
-?f<-(rel_name-ids	k1s	?kri	?k1s)
+?f<-(rel-ids	k1s	?kri	?k1s)
 (construction-ids	conj	$? ?k1s $?)
 (MRS_info id-MRS_concept ?implicit ?mrscon)
 (test (or (eq ?mrscon implicit_conj) (eq ?mrscon _and_c)) )
-(test (or (eq  (+ ?k1s 200) ?implicit) (eq 100 ?implicit)))
-;(test (eq  (+ ?k1s 200) ?implicit))
+(test (eq  (+ ?k1s 200) ?implicit))
 (test (neq (str-index _a_ ?mrscon) False))
 =>
 (retract ?f) 
@@ -297,7 +298,7 @@
 (defrule want-k2-v
 (declare (salience 300))
 ?f<-(MRS_info ?rel ?kri _want_v_1 ?l ?a0 ?a1 ?a2)
-(rel_name-ids k2   ?kri	?k2)
+(rel-ids k2   ?kri	?k2)
 (MRS_info ?r ?k2  ?k2v $?v)
 (test (neq (str-index _v_ ?k2v) FALSE))
 =>
@@ -313,7 +314,7 @@
 (defrule card-x-i
 (declare (salience 300))
 ?f<-(MRS_info ?rel ?ic card ?l ?a0 ?a1 ?carg)
-(rel_name-ids k2   ?kri	?ic)
+(rel-ids k2   ?kri	?ic)
 (MRS_info ?r ?kri  ?mrscon $?v)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
@@ -324,16 +325,16 @@
 (printout ?*mrs-dbug* "(rule-rel-values card-x-i "?rel" "?ic" card "?l" "?arg0" "?arg1" "?carg")"crlf)
 )
 
-;Removing be_v_id for for kim with k1s relation. 
+;Removing be_v_id for for $kim with k1s relation. 
 ;How are you?
 (defrule rm_be_v_id-how
 (declare (salience 10000))
-?f<-(id-concept_label	?kri	hE_1) 
-(id-concept_label	?k1s	kim)
-(rel_name-ids	k1s	?kri	?k1s)
+?f<-(id-cl	?kri	hE_1) 
+(id-cl	?k1s	$kim)
+(rel-ids	k1s	?kri	?k1s)
 ?f1<-(id-hin_concept-MRS_concept ?kri  hE_1   _be_v_id)
-(sentence_type  interrogative)
-(not (id-num	?k1s	?n))
+(sent_type  %interrogative)
+(not (id-morph_sem	?k1s	?n))
 (not (id-anim	?k1s	yes))
 =>
 (retract ?f ?f1)
@@ -346,8 +347,8 @@
 ;He challenged the turtle, for a race.
 (defrule verb-ARG3-u
 ?f<-(MRS_info ?rel ?kri ?mrscon ?l ?a0 ?a1 ?a2 ?a3)
-(id-concept_label	?kri	?hinconcept)
-(rel_name-ids	rt	?kri	?noun)
+(id-cl	?kri	?hinconcept)
+(rel-ids	rt	?kri	?noun)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 =>
 (retract ?f)
@@ -361,7 +362,7 @@
 (defrule k4-absent
 (id-hin_concept-MRS_concept ?kri ?hin _give_v_1|_explain_v_to|_describe_v_to)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2 ?arg3)
-(not (rel_name-ids k4   ?kri    ?id))
+(not (rel-ids k4   ?kri    ?id))
 =>
 (bind ?a3 (str-cat "u" (sub-string 2 (str-length ?arg3) ?arg3)))
 (printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 "?kri" "?mrscon" "?lbl" "?arg0" "?arg1" "?arg2" "?a3")"crlf)
@@ -376,14 +377,11 @@
 (defrule or_implicit_handle
 (declare (salience 5000)) 
 (MRSc-FVs implicit_conj LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
-?f<-(rel_name-ids	k1s	?kri	?k1s)
+?f<-(rel-ids	k1s	?kri	?k1s)
 (construction-ids	disjunct	$? ?k1s $?)
 (MRS_info id-MRS_concept ?implicit ?mrs)
 (MRSc-FVs ?mrscon $?v)
-;(test (eq ?mrs implicit_conj) )
 (test (or (eq ?mrs implicit_conj) (eq ?mrs _or_c)) )
-;(test (or (eq  (+ ?k1s 600) ?implicit) (eq  (+ ?k1s 500) ?implicit)))
-;(test (eq  (+ ?k1s 600) ?implicit))
 (test (neq (str-index _a_ ?mrscon) False))
 =>
 (retract ?f) 
@@ -391,28 +389,15 @@
    (printout ?*mrs-dbug* "(rule-rel-values or_implict_handle  MRSc-FVs "?mrs" LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e* L_HNDL: h* R_HNDL: h*)"crlf)
 )
 
-;Rule for converting arg1 value (x*) of the verb when k1 is absent to u*
-;Ex. Rama went to the school while reading.
-(defrule k1-absent-rsk
-(rel_name-ids rsk   ?kri    ?verb)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?verb ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
-(test (neq (str-index _v_ ?mrscon) FALSE))
-=>
-(retract ?f)
-(bind ?a1 (str-cat "u" (sub-string 2 (str-length ?arg1) ?arg1)))
-(printout ?*mrs-fp* "(MRS_info MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values k1-absent-rsk MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?verb" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
-)
-
 (defrule arg2change_not_required
 (declare (salience 300))
-(id-concept_label	?verb	?hinconcept)
-(rel_name-ids	k1	?kriya	?verb)
+(id-cl	?verb	?hinconcept)
+(rel-ids	k1	?kriya	?verb)
 (MRS_info  id-MRS_concept ?nominalized  nominalization)
 ?f<-(MRSc-FVs ?mrscon LBL: h* ARG0: e* ARG1: x* ARG2: x*)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 (test (eq  (+ ?verb 200) ?nominalized))
-(not (rel_name-ids k2   ?kri    ?k2))
+(not (rel-ids k2   ?kri    ?k2))
 =>
 (assert (verb_bind_notrequired ?mrscon))
 (printout ?*mrs-dbug* "(rule-rel-values  arg2change_not_required verb_bind_notrequired "?mrscon")"crlf)
@@ -422,25 +407,22 @@
 ;and He went.
 (defrule samuccaya_and_handles
 (declare (salience 5000))
-?f<-(rel_name-ids samuccaya ?previousid	?verb)
+?f<-(rel-ids samuccaya ?previousid	?verb)
 (MRSc-FVs _and_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
-(MRS_info id-MRS_concept 100 _and_c)
-;(test (eq  (+ ?verb 1000) ?and))
+(MRS_info id-MRS_concept ?iddd _and_c)
 =>
 (retract ?f) 
 (assert (MRSc-FVs _and_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
    (printout ?*mrs-dbug* "(rule-rel-values samuccaya_and_handles MRSc-FVs _and_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)"crlf)
 )
-;(MRS_info id-MRS_concept 100  _or_c)
 
 ;Rule for creating L_HNDL and R_HNDL values for the _or_c predicate when the anyawra relation exists in the USR.
 ;or Mohana will go.
 (defrule anyawra_or_handles
 (declare (salience 5000))
-?f<-(rel_name-ids anyawra ?previousid	?verb)
+?f<-(rel-ids anyawra ?previousid	?verb)
 (MRSc-FVs _or_c LBL: h* ARG0: x* L_INDEX: x* R_INDEX: x*)
-(MRS_info id-MRS_concept 100 _or_c)
-;(test (eq  (+ ?verb 1000) ?or))
+(MRS_info id-MRS_concept ?iddd _or_c)
 =>
 (retract ?f) 
 (assert (MRSc-FVs _or_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*))
@@ -451,9 +433,9 @@
 ;But he didn't eat food.
 (defrule viroXi_but_handles
 (declare (salience 5000))
-?f<-(rel_name-ids viroXi ?previousid	?verb)
+?f<-(rel-ids viroXi ?previousid	?verb)
 (MRSc-FVs _but_c LBL: h* ARG0: e* L_INDEX: e* R_INDEX: e*)
-(MRS_info id-MRS_concept 100 _but_c)
+(MRS_info id-MRS_concept ?iddd _but_c)
 ;(test (eq  (+ ?verb 1000) ?but))
 =>
 (retract ?f) 
@@ -466,7 +448,7 @@
 (defrule kAryakAraNa-unknown
 (declare (salience 100))
 (MRS_info id-MRS_concept ?unknn  ?mrs)
-?f<-(rel_name-ids kAryakAraNa ?previousid	?verb)
+?f<-(rel-ids kAryakAraNa ?previousid	?verb)
 (MRSc-FVs ?mrs LBL: h* ARG0: e* ARG: x*)
 (test (eq  (+ ?verb 1) ?unknn))
 =>
@@ -474,4 +456,24 @@
 (assert (MRSc-FVs ?mrs LBL: h* ARG0: e* ARG: u*))
 (printout ?*mrs-dbug* "(rule-rel-values kAryakAraNa-unknown MRSc-FVs "?mrs" LBL: h* ARG0: e* ARG: u*)" crlf)
 )
+
+
+
+;Rule for converting arg1 value (x*) of the verb when k1 is absent to u*
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _read_v_1 h22 e23 x24 u25)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 _go_v_1 h26 e27 x28)
+;(rel-ids	rsk	jana	2padna0000)
+;Ex. Rama went to the school while reading.
+(defrule rsk-k1present_ARG1absent
+(rel-ids rsk   ?kri    ?verb)
+(id-hin_concept-MRS_concept ?verb ?hinconcept ?verbC)
+?f<-(MRSc-FVs ?verbC LBL: h* ARG0: e* ARG1: x* ARG2: x*)
+(test (neq (str-index _v_ ?verbC) FALSE))
+=>
+(retract ?f)
+(assert (MRSc-FVs ?verbC LBL: h* ARG0: e* ARG1: u* ARG2: u*))
+(printout ?*mrs-dbug* "(rule-rel-values rsk-k1present_ARG1absent  MRSc-FVs "?verbC" LBL: h* ARG0: e* ARG1: u* ARG2: u*)"crlf)
+)
+
+
 

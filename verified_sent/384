@@ -1,11 +1,14 @@
+<sent_id=384>
 #Apane kAma kEse pUrA kiyA?
-addressee,kAma_1,kim,pUrA+kara_11-yA_1
-1,2,3,4
-anim female,,,
-,,,
-4:k1,4:k2,4:krvn,0:main
-,,,
-respect,def,,
-,,,
-interrogative
+$addressee,kAma_1,$kim,pUrA_1,kara_11-yA_1,[cp_1]
+1,2,3,5,6,4
+anim/female,,,,,
+,,,,,
+4:k1,4:k2,4:krvn,,,0:main
+,,,,,
+respect,def,,,,
+,,,,,
+,,,4:kriyAmUla,4:verbalizer,
+%interrogative
+</sent_id>
 

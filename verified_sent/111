@@ -1,10 +1,14 @@
+<sent_id=111>
 #mEM Kela Kela sakawA hUz.
-speaker,Kela_2,Kela_1-0_sakawA_hE_3
+$speaker,Kela_2,Kela_1-0_sakawA_hE_3
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k1,3:k2,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

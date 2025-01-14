@@ -1,11 +1,14 @@
+<sent_id=219>
 #ayAn kA miwra vixyAlaya meM paDawA WA.
 ayAn,miwra_1,vixyAlaya_1,paDa_2-wA_WA_1
 1,2,3,4
-per male,anim,,
+per/male,anim,,
 ,,,
 2:r6,4:k1,4:k7p,0:main
 ,,,
 ,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

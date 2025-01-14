@@ -1,5 +1,6 @@
-#kisaka kuwwA BOMkA? 
-kim,kuwwA_1,BOMka_1-yA_1
+<sent_id=372>
+#kisaka kuwwA BOMkA?
+$kim,kuwwA_1,BOMka_1-yA_1
 1,2,3
 anim,,
 ,,
@@ -7,4 +8,7 @@ anim,,
 ,,
 ,,
 ,,
-interrogative    
+,,
+%interrogative
+</sent_id>
+

@@ -1,3 +1,4 @@
+<sent_id=427>
 #kuwwA BOMka rahA hE.
 kuwwA_1,BOMka_1-0_rahA_hE_2
 1,2
@@ -7,5 +8,7 @@ anim,
 ,
 def,
 ,
-affirmative 
+,
+%affirmative
+</sent_id>
 

@@ -1,5 +1,6 @@
+<sent_id=255>
 #usane KAnA nahIM KAyA.
-wyax,KAnA_1,nahIM_1,KA_1-yA_1
+$wyax,KAnA_1,nahIM,KA_1-yA_1
 1,2,3,4
 ,,,
 ,,,
@@ -7,4 +8,7 @@ wyax,KAnA_1,nahIM_1,KA_1-yA_1
 9.1:coref,,,
 ,,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
+

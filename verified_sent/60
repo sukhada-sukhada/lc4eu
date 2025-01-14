@@ -1,11 +1,14 @@
+<sent_id=60>
 #rAvana mArA gayA.
 rAvaNa,mAra_1-yA_gayA_1
 1,2
-per male,
+per/male,
 ,
 2:k2,0:main
 ,
 ,
 ,
-pass-affirmative
+,
+%pass_affirmative
+</sent_id>
 

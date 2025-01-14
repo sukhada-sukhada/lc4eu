@@ -1,5 +1,6 @@
+<sent_id=386>
 #muJe hinxI AwI hE.
-speaker,hinxI,A_10-wA_hE_1
+$speaker,hinxI,A_10-wA_hE_1
 1,2,3
 anim,ne,
 ,,
@@ -7,5 +8,7 @@ anim,ne,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

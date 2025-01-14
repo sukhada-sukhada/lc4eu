@@ -1,11 +1,14 @@
+<sent_id=324>
 #gulAba jEse PUla pAnI meM nahIM ugawe hEM.
-gulAba_1,PUla_1,pAnI_1,nahIM_1,uga_1-wA_hE_1
+gulAba_1,PUla_1,pAnI_1,nahIM,uga_1-wA_hE_1
 1,2,3,4,5
-,,,,        
-pl,pl,,,
-2:ru,5:k1,5:k7p,5:neg,0:main
+,,,,
+pl,pl,,,0:main
+2:ru,5:k1,5:k7p,5:neg,
 ,,,,
 ,,,,
 ,,,,
-negative    
+,,,,
+%negative
+</sent_id>
 

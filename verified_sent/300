@@ -1,3 +1,4 @@
+<sent_id=300>
 #KaragoSa so gayA.
 KaragoSa_1,so_1-0_gayA_1
 1,2
@@ -7,5 +8,7 @@ anim,
 ,
 def,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
 

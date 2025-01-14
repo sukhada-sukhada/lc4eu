@@ -7,7 +7,7 @@ fr = open(sys.argv[1], 'r')
 hinUSR = list(fr)
 hinUSRcopy = copy.deepcopy(hinUSR)
 newHinUSR = open(sys.argv[2], 'w')
-discourseRow = hinUSR[6].strip()
+discourseRow = hinUSR[7].strip()
 
 if ':coref' in discourseRow:
     discourseRel = discourseRow.strip().split(',')
@@ -16,9 +16,9 @@ if ':coref' in discourseRow:
     myspovlist=[]
     myConceptLabelList=[]
     origConceptLabelList = hinUSR[1].split(",") #getting list for spov from original input file
-    origspovlist = hinUSR[7].split(",") #getting list for spov from original input file
-    origsemcatlist = hinUSR[3].split(",") #getting list of sem categories from original input file
-    origGNPlist = hinUSR[4].split(',') #getting list of GNP values from original input file
+    origspovlist = hinUSR[8].split(",") #getting list for spov from original input file
+    origsemcatlist = hinUSR[4].split(",") #getting list of sem categories from original input file
+    origGNPlist = hinUSR[5].split(',') #getting list of GNP values from original input file
     for j in range(len(discourseRel)):
         if 'coref' in discourseRel[j]:
             mycoref = discourseRel[j].split(':')
@@ -28,9 +28,9 @@ if ':coref' in discourseRow:
                 myfile = open(os.path.dirname(sys.argv[1])+'/'+corefFile, 'r')         #reading coref file
                 corefUSR = list(myfile)                
                 corefConceptLabelList=corefUSR[1].split(",") #getting list of concept labels from corefUSR
-                corefsemcatlist=corefUSR[3].split(",") #getting list of sem cat from corefUSR
-                corefGNPlist = corefUSR[4].split(',') #getting list of GNP values from coref file
-                corefspovlist= corefUSR[7].split(",") #getting list of spov values from coref file
+                corefsemcatlist=corefUSR[4].split(",") #getting list of sem cat from corefUSR
+                corefGNPlist = corefUSR[5].split(',') #getting list of GNP values from coref file
+                corefspovlist= corefUSR[8].split(",") #getting list of spov values from coref file
                 if corefGNPlist[int(corefIndex)-1] == '\n':
                     myUSRgnplist.append('')
                 else: 
@@ -47,8 +47,8 @@ if ':coref' in discourseRow:
         else:
             myUSRgnplist.append(origGNPlist[j]) #appending GNP values from original input file
             mysemcatlist.append(origsemcatlist[j])
-    hinUSRcopy[3] = ",".join(mysemcatlist)
-    hinUSRcopy[4] = ','.join(myUSRgnplist)
+    hinUSRcopy[4] = ",".join(mysemcatlist)
+    hinUSRcopy[5] = ','.join(myUSRgnplist)
     for k in range(len(hinUSRcopy)): #writing updated coref USR
         newHinUSR.write(hinUSRcopy[k])
 else:

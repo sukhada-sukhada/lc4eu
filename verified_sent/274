@@ -1,10 +1,14 @@
-#vaha Gara meM KaragoSa ko DUzDZa rahA WA 
-wyax,Gara_2,KaragoSa_1,DUzDZa_1-0_rahA_WA_1 
+<sent_id=274>
+#vaha Gara meM KaragoSa ko DUzDZa rahA WA
+$wyax,Gara_2,KaragoSa_1,DUzDZa_1-0_rahA_WA_1
 1,2,3,4
-anim male,,anim male,
+anim/male,,anim/male,
 ,,,
 4:k1,4:k7p,4:k2,0:main
 ,,,
 ,def,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

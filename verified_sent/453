@@ -1,10 +1,14 @@
+<sent_id=453>
 #unhone rAjanIwika muxxoM sahiwa anya viRayoM para kiwAbeM liKI hEM.
-wyax,rAjanIwika_1,muxxA_1,anya_1,viRaya_2,kiwAba_1,liKa_1-yA_hE_1
+$wyax,rAjanIwika_1,muxxA_1,anya_1,viRaya_2,kiwAba_1,liKa_1-yA_hE_1
 1,2,3,4,5,6,7
-anim male,,,,,,
+anim/male,,,,,,
 ,,pl,,pl,pl,
 7:k1,3:mod,7:rask7,5:mod,7:k7,7:k2,0:main
 436.1:coref,,,,,,
 ,,,,,,
 ,,,,,,
-affirmative
+,,,,,,
+%affirmative
+</sent_id>
+

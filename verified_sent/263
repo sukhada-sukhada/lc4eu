@@ -1,10 +1,15 @@
+<sent_id=263>
 #rAma ne mohana se tikata KarIxavAye.
-rAma,mohana,tikata_1,KarIxa_1-yA_1
-1,2,3,4
-per male,per male,,
-,,,causative
-4:pk1,4:jk1,4:k2,0:main
-,,,
-,,,
-,,,
-affirmative
+rAma,mohana,tikata_1
+1,2,3
+per/male,per/male,
+,,
+4:pk1,4:jk1,4:k2
+,,
+,,
+,,
+,,
+KarIxa_1-yA_1	4	-	causative	0:main	-	-	-	-
+%affirmative
+</sent_id>
+

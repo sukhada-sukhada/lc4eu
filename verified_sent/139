@@ -1,10 +1,14 @@
+<sent_id=139>
 #kyA wuma nahIM Keloge?
-addressee,nahIM_1,Kela_1-gA_2
+$addressee,nahIM,Kela_1-gA_2
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k1,3:neg,0:main
 ,,
 ,,
 ,,
-yn_interrogative
+,,
+%yn_interrogative
+</sent_id>
+

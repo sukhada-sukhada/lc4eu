@@ -1,3 +1,4 @@
+<sent_id=459>
 #kala 300 se kama loga Ayege.
 kala_2,300,loga_2,A_1-gA_1
 1,2,3,4
@@ -7,5 +8,7 @@ kala_2,300,loga_2,A_1-gA_1
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

@@ -1,5 +1,6 @@
+<sent_id=157>
 #usake xvArA KAnA KAyA gayA WA.
-wyax,KAnA_1,KA_1-yA_gayA_WA_2
+$wyax,KAnA_1,KA_1-yA_gayA_WA_2
 1,2,3
 ,,
 ,,
@@ -7,5 +8,7 @@ wyax,KAnA_1,KA_1-yA_gayA_WA_2
 9.1:coref,,
 ,def,
 ,,
-pass-affirmative
+,,
+%pass_affirmative
+</sent_id>
 

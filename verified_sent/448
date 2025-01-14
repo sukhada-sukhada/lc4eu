@@ -1,5 +1,6 @@
+<sent_id=448>
 #kyoMki use Gara jAnA hE.
-wyax,Gara_1, jA_1-nA_hE_1
+$wyax,Gara_1,jA_1-nA_hE_1
 1,2,3
 ,,
 ,,
@@ -7,4 +8,7 @@ wyax,Gara_1, jA_1-nA_hE_1
 438.1:coref,,438.3:kAryakAraNa
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

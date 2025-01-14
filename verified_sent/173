@@ -1,11 +1,14 @@
+<sent_id=173>
 #ismA puswakeM paDegI.
 ismA,puswaka_1,paDa_1-gA_1
 1,2,3
-per female,,
+per/female,,
 ,pl,
 3:k1,3:k2,0:main
 ,,
 ,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

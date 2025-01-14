@@ -1,5 +1,6 @@
+<sent_id=315>
 #kisane pAnI se GadZe ko BarA?
-kim,pAnI_1,GadZA_2,Bara_7-yA_1
+$kim,pAnI_1,GadZA_2,Bara_7-yA_1
 1,2,3,4
 ,,,
 ,,,
@@ -7,4 +8,7 @@ kim,pAnI_1,GadZA_2,Bara_7-yA_1
 ,,,
 ,,def,
 ,,,
-interrogative
+,,,
+%interrogative
+</sent_id>
+

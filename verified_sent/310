@@ -1,11 +1,14 @@
+<sent_id=310>
 #usane pramANa pawra xeKA.
-wyax,pramANa_1+pawra_1,xeKa_1-yA_1
-1,2,3
-,,
-,,
-3:k1,2.2/2.1:rt 3:k2,0:main
-9.1:coref,,
-,def,
-,,
-affirmative
+$wyax,pramANa_1,pawra_1,[nc_1],xeKa_1-yA_1
+1,4,5,2,3
+,,,,
+,,,,
+3:k1,,,3:k2,0:main
+9.1:coref,,,,
+,,def,,
+,,,,
+,2:mod,2:head,,
+%affirmative
+</sent_id>
 

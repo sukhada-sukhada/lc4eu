@@ -1,11 +1,14 @@
+<sent_id=390>
 #muJe cAya yA kAPI xo.
-speaker,cAya_1,kOPI_1,xe_1-o_1
-1,2,3,4
-anim female,,,
-,,,
-4:k4,4:k2,4:k2,0:main
-,,,
-,,,
-,,,
-imperative
-disjunct:[2,3]
+$speaker,cAya_1,kOPI_1,xe_1-o_1,[disjunct_1]
+1,2,3,4,5
+anim/female,,,,
+,,,,
+4:k4,,,0:main,4:k2
+,,,,
+,,,,
+,,,,
+,5:op1,5:op2,,
+%imperative
+</sent_id>
+

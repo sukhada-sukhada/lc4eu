@@ -1,11 +1,14 @@
+<sent_id=55>
 #mEMne usase eka praSna pUCA.
-speaker, wyax, 1, praSna_1, pUCa_3-yA_1
+$speaker,$wyax,1,praSna_1,pUCa_3-yA_1
 1,2,3,4,5
-anim male,,numex,,
+anim/male,,numex,,
 ,,,,
 5:k1,5:k2g,4:card,5:k2,0:main
 ,9.1:coref,,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
 

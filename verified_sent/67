@@ -1,5 +1,6 @@
+<sent_id=67>
 #vaha kaba jA rahA hE?
-wyax,kim,jA_1-0_rahA_hE_1
+$wyax,$kim,jA_1-0_rahA_hE_1
 1,2,3
 ,,
 ,,
@@ -7,5 +8,7 @@ wyax,kim,jA_1-0_rahA_hE_1
 9.1:coref,,
 ,,
 ,,
-interrogative
+,,
+%interrogative
+</sent_id>
 

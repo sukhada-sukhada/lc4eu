@@ -1,10 +1,14 @@
+<sent_id=356>
 #rAma ke eka betI hE.
 rAma,betI_1,hE_2-pres
 1,2,3
-per male,anim female,
+per/male,anim/female,
 ,,
 2:rhh,3:k1,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

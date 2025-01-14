@@ -1,11 +1,14 @@
+<sent_id=207>
 #haMsoM ne cidiyA ko mukkA mArA.
-haMsa_1, cidiyA_1, mukkA+mAra_1-yA_1
-1,2,3
-anim,anim,
-pl,,
-3:k1,3:k2,0:main
-,,
-def,def,
-,,
-affirmative
+haMsa_1,cidiyA_1,mukkA_2,mAra_1-yA_1,[nc_1]
+1,2,4,5,3
+anim,anim,,,
+pl,,,,
+3:k1,3:k2,,,0:main
+,,,,
+def,def,,,
+,,,,
+,,3:mod,3:head,
+%affirmative
+</sent_id>
 

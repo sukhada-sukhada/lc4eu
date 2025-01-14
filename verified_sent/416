@@ -1,10 +1,14 @@
+<sent_id=416>
 #rAma ayegA hI.
 rAma,A_1-gA_1
 1,2
-per male,
+per/male,
 ,
 2:k1,0:main
 ,
-,BI_2
+,hI_2
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

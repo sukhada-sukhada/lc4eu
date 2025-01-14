@@ -1,5 +1,6 @@
+<sent_id=42>
 #mEMne nayA Pala KAyA.
-speaker,nayA_1,Pala_1,KA_1-yA_1
+$speaker,nayA_1,Pala_1,KA_1-yA_1
 1,2,3,4
 ,,,
 ,,,
@@ -7,4 +8,7 @@ speaker,nayA_1,Pala_1,KA_1-yA_1
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

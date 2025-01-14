@@ -1,3 +1,4 @@
+<sent_id=130>
 #hara baccA Kela rahA hE.
 hara_2,baccA_2,Kela_1-0_rahA_hE_1
 1,2,3
@@ -7,4 +8,7 @@ hara_2,baccA_2,Kela_1-0_rahA_hE_1
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

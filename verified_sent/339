@@ -1,10 +1,14 @@
+<sent_id=339>
 #rAma sowe hue KarrAte BarawA hE.
-rAma,so_1,KarrAte+Bara_1-wA_hE_1
-1,2,3
-per male,,
-,,
-3:k1,3:rsk,0:main
-,,
-,,
-,,
-affirmative
+rAma,so_1,KarrAte_2,Bara_1-wA_hE_1,[nc_1]
+1,2,4,5,3
+per/male,,,,
+,,,,
+3:k1,3:rsk,,,0:main
+,,,,
+,,,,
+,,,,
+,,3:mod,3:head,
+%affirmative
+</sent_id>
+

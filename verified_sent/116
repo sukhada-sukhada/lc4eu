@@ -1,5 +1,6 @@
+<sent_id=116>
 #kyA usane nahIM KAyA?
-wyax,nahIM_1,KA_1-yA_1
+$wyax,nahIM,KA_1-yA_1
 1,2,3
 ,,
 ,,
@@ -7,4 +8,7 @@ wyax,nahIM_1,KA_1-yA_1
 101.1:coref,,
 ,,
 ,,
-yn_interrogative
+,,
+%yn_interrogative
+</sent_id>
+

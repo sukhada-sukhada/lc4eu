@@ -1,10 +1,14 @@
+<sent_id=381>
 #hama eka xUsare se pyAra karawe hEM.
-speaker,eka+xUsarA,pyAra+kara_1-wA_hE_1
-1,2,3
-anim,,
-pl,,
-3:k1,3:k2,0:main
-,1:coref,
-,,
-,,
-affirmative
+$speaker,eka_2,xUsarA,[nc_1],pyAra_1,kara_1-wA_hE_1,[cp_1]
+1,6,7,2,4,5,3
+anim,,,,,,
+pl,,,,,,
+3:k1,,,3:k2,,,0:main
+,,,1:coref,,,
+,,,,,,
+,,,,,,
+,2:mod,2:head,,3:kriyAmUla,3:verbalizer,
+%affirmative
+</sent_id>
+

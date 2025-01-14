@@ -1,3 +1,4 @@
+<sent_id=125>
 #rAvaNa mArA gayA WA.
 rAvaNa,mAra_1-yA_gayA_WA_1
 1,2
@@ -7,4 +8,7 @@ per,
 ,
 ,
 ,
-pass-affirmative
+,
+%pass_affirmative
+</sent_id>
+

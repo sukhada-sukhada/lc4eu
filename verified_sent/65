@@ -1,10 +1,14 @@
+<sent_id=65>
 #BArawa ko AryAvarwa kahA jAwA WA.
 BArawa,AryAvarwa,kaha_1-yA_jAwA_WA_1
 1,2,3
 ne,ne,
 ,,
-3:k2g,3:k2,0:main
+3:k2s,3:k2,0:main
 ,,
 ,,
 ,,
-pass-affirmative
+,,
+%pass_affirmative
+</sent_id>
+

@@ -1,10 +1,14 @@
+<sent_id=91>
 #rAma apane piwA ke sAWa vixyAlaya gayA.
 rAma,apanA,piwA_1,vixyAlaya_1,jA_1-yA_1
 1,2,3,4,5
-per male,,anim male,,
+per/male,,anim/male,,
 ,,,,
 5:k1,3:r6,5:rask1,5:k2p,0:main
 ,1:coref,,,
 ,,,def,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

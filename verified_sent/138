@@ -1,10 +1,14 @@
+<sent_id=138>
 #kyA usane KAyA?
-wyax,KA_1-yA_1
+$wyax,KA_1-yA_1
 1,2
-anim male,
+anim/male,
 ,
 2:k1,0:main
 101.1:coref,
 ,
 ,
-yn_interrogative
+,
+%yn_interrogative
+</sent_id>
+

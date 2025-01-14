@@ -1,11 +1,14 @@
+<sent_id=415>
 #mEM 2025 meM BArawa AUMgA.
-speaker,2025,BArawa,A_1-gA_1
+$speaker,2025,BArawa,A_1-gA_1
 1,2,3,4
-anim male,yoc,ne,
+anim/male,yoc,ne,
 ,,,
 4:k1,4:k7t,4:k2p,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

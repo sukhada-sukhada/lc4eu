@@ -1,12 +1,14 @@
+<sent_id=400>
 #rajani ji ne apane bete Ora apanI betI ko somavAra ko kASI ke sabase bade vixyAlaya meM BarawI kiyA.
-rajani, apanA, betA_1,apanA, betI_1,somavAra_1,kASI,badZA_2, vixyAlaya_1,BarawI+kara_6-yA_1
-1,2,3,4,5,6,7,8,9,10
-per female,,anim female,,anim female,dow,place,,,
-,,,,,,,superl,,
-10:k1,3:r6,10:k2,5:r6,10:k2,10:k7t,9:r6,9:mod,10:k7p,0:main
-,1:coref,,1:coref,,,,,,
-respect,,,,,,,,,
-,,,,,,,,,
-affirmative
-conj:[3,5]
+rajani,apanA,betA_1,apanA,betI_1,somavAra_1,kASI,badZA_2,vixyAlaya_1,BarawI_1,kara_6-yA_1,[cp_1],[conj_1]
+1,2,3,4,5,6,7,8,9,11,12,10,13
+per/female,,anim/female,,anim/female,dow,place,,,,,,
+,,,,,,,superl,,,,,
+10:k1,3:r6,,5:r6,,10:k7t,9:r6,9:mod,10:k7p,,,0:main,10:k2
+,1:coref,,1:coref,,,,,,,,,
+respect,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,13:op1,,13:op2,,,,,10:kriyAmUla,10:verbalizer,,
+%affirmative
+</sent_id>
 

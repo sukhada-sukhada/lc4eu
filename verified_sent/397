@@ -1,11 +1,14 @@
-#Apa muJe Pala xeM. 
-addressee,speaker,Pala_1,xe_1-o_1
+<sent_id=397>
+#Apa muJe Pala xeM.
+$addressee,$speaker,Pala_1,xe_1-o_1
 1,2,3,4
-anim male,anim male,,
+anim/male,anim/male,,
 pl,,,
 4:k1,4:k4,4:k2,0:main
 ,,,
 respect,,def,
 ,,,
-imperative
+,,,
+%imperative
+</sent_id>
 

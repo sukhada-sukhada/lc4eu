@@ -1,11 +1,14 @@
+<sent_id=366>
 #rAma buxXimAna, praSAMwa, xilera Ora acCA hE.
-rAma, buxXimAna_1, praSAMwa_5, xilera_3, acCA_1,hE_1-pres
-1,2,3,4,5,6
-per male,,,,,
-,,,,,
-6:k1,6:k1s,6:k1s,6:k1s,6:k1s,0:main
-,,,,,
-,,,,,
-,,,,,
-affirmative
-conj:[2,3,4,5]
+rAma,buxXimAna_1,praSAMwa_5,xilera_3,acCA_1,hE_1-pres,[conj_1]
+1,2,3,4,5,6,7
+per/male,,,,,,
+,,,,,,
+6:k1,,,,,0:main,6:k1s
+,,,,,,
+,,,,,,
+,,,,,,
+,7:op1,7:op2,7:op3,7:op4,,
+%affirmative
+</sent_id>
+

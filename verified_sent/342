@@ -1,10 +1,14 @@
+<sent_id=342>
 #Apa unakI gaNanA nahIM kara sakawe.
-addressee,wyax,nahIM_1,gaNanA+kara_1-0_sakawA_hE_1
-1,2,3,4
-anim,,,
-pl,,,
-4:k1,4:k2,4:neg,0:main
-,48.1:coref,,
-respect,distal,,
-,,,
-negative
+$addressee,$wyax,nahIM,gaNanA_1,kara_1-0_sakawA_hE_1,[cp_1]
+1,2,3,5,6,4
+anim,,,,,
+pl,,,,,
+4:k1,4:k2,4:neg,,,0:main
+,48.1:coref,,,,
+respect,distal,,,,
+,,,,,
+,,,4:kriyAmUla,4:verbalizer,
+%negative
+</sent_id>
+

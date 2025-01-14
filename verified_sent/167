@@ -1,11 +1,14 @@
+<sent_id=167>
 #saviwA rImA ko xasa seba xegI.
-saviwA, rImA, 10, seba_1, xe_1-gA_1
+saviwA,rImA,10,seba_1,xe_1-gA_1
 1,2,3,4,5
-per female,per female,numex,,
+per/female,per/female,numex,,
 ,,,pl,
 5:k1,5:k4,4:card,5:k2,0:main
 ,,,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
 

@@ -1,10 +1,14 @@
+<sent_id=228>
 #mEM usake lie Sahara se AyA.
-speaker,wyax,Sahara_1,A_1-yA_1
+$speaker,$wyax,Sahara_1,A_1-yA_1
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,4:rt,4:k5,0:main
 ,9.1:coref,,
 ,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

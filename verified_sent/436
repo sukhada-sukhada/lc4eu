@@ -1,11 +1,14 @@
-#rAma accA hE. 
-rAma, acCA_1, hE_1-pres
+<sent_id=436>
+#rAma accA hE.
+rAma,acCA_1,hE_1-pres
 1,2,3
-per male,,
+per/male,,
 ,,
 3:k1,3:k1s,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

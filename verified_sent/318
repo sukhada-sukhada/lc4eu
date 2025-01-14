@@ -1,11 +1,14 @@
+<sent_id=318>
 #hari ne pAnI se GadZe ko nahIM BarA.
-hari,pAnI_1,GadZA_2,nahIM_1,Bara_7-yA_1
+hari,pAnI_1,GadZA_2,nahIM,Bara_7-yA_1
 1,2,3,4,5
-per male,,,,
+per/male,,,,
 ,,,,
 5:k1,5:k3,5:k2,4:neg,0:main
 ,,,,
 ,,def,,
-,,,
-negative
+,,,,
+,,,,
+%negative
+</sent_id>
 

@@ -1,10 +1,28 @@
+<sent_id=151>
 #SikRikA ne CAwroM se kakRA ko sAPa karAyA.
-SikRaka_1,CAwra_1,kakRA_1,sAPa+kara_2-yA_1-past
-1,2,3,4
-anim,anim,,
-,pl,,causative
-4:pk1,4:jk1,4:k2,0:main
-,,,
-def,def,def,
-,,,
-affirmative
+SikRaka_1,CAwra_1,kakRA_1,sAPa_1,kara_2-yA_1-past,[cp_1]
+1,2,3,4,5,6
+anim,anim,,,,
+,pl,,,,causative
+6:pk1,6:jk1,6:k2,,,0:main
+,,,,,
+def,def,def,,,
+,,,,,
+,,,6:kriyAmUla,6:verbalizer,
+%affirmative
+</sent_id>
+
+
+<sent_id=151>
+#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+SikRaka_1,CAwra_1,kakRA_1,sAPa_1,kara_2-yA_1,[cp_1]
+1,2,3,4,5,6
+anim,anim,,,,
+,pl,,,,causative
+6:pk1,6:jk1,6:k2,,,0:main
+,,,,,
+def,def,def,,,
+,,,,,
+,,,6:kriyAmUla,6:verbalizer,
+%affirmative
+</sent_id>

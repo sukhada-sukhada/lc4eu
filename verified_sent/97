@@ -1,3 +1,4 @@
+<sent_id=97>
 #somavAra pahalA xina hE.
 somavAra,pahalA_1,xina_1,hE_1-pres
 1,2,3,4
@@ -7,5 +8,7 @@ dow,,,
 ,,,
 ,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

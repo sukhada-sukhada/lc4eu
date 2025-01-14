@@ -1,3 +1,4 @@
+<sent_id=304>
 #kaCuA xOdZa jIwa gayA.
 kaCuA_1,xOdZa_1,jIwa_7-yA_1
 1,2,3
@@ -7,5 +8,7 @@ anim,,
 ,,
 def,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

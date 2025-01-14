@@ -1,11 +1,14 @@
+<sent_id=412>
 #rAma KAnA kyoM KAwA hE?
-rAma,KAnA_1,kim,KA_1-wA_hE_1
+rAma,KAnA_1,$kim,KA_1-wA_hE_1
 1,2,3,4
-per male,,,
+per/male,,,
 ,pl,,
 4:k1,4:k2,4:rh,0:main
 ,,,
 ,,,
 ,,,
-interrogative 
-	
+,,,
+%interrogative
+</sent_id>
+

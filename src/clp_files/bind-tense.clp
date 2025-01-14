@@ -7,10 +7,10 @@
 (defrule tense
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
-(not (id-doublecausative	?id	yes)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
-(not (id-causative	?id	yes)) ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+(not (id-morph_sem	?id	doublecausative)) ;mAz ne rAma se bacce ko KAnA KilavAyA.
+(not (id-morph_sem	?id	causative)) ;SikRikA ne CAwroM se kakRA ko sAPa karAyA.
 (not (id-stative	?id	yes))
-(not (id-concept_label       ?v   hE_1|WA_1))
+(not (id-cl       ?v   hE_1|WA_1))
 (not (modified_tense ?id))
 (test (eq (str-index "_x_" ?mrs)FALSE)) ;Before the cows were milked, Rama went.
 =>
@@ -23,7 +23,7 @@
 ;example:-mAz ne rAma se bacce ko KAnA KilavAyA
 ;solution:-The mother asked Rama to make the child eat food.
 (defrule tensedc
-(id-doublecausative	?id	yes)
+(id-morph_sem	?id	doublecausative)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 (not (modified_tense ?id))
@@ -39,7 +39,7 @@
 ;solution:-The teacher made the students clean the class.
 ;Rama made Mohana buy a ticket.
 (defrule tensec
-(id-causative	?id	yes)
+(id-morph_sem	?id	causative)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?kri ?mrs ?l ?a0 $?va)
 (not (modified_tense ?id))
@@ -72,7 +72,7 @@
 ;solution:-Having seen the snake Rama got scared.
 (defrule tensest
 (id-stative	?id	yes)
-(rel_name-ids	rpk	?id	?id1)
+(rel-ids	rpk	?id	?id1)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf untensed ?mood ?prog ?perf)
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 ?f2<-(id-SF-TENSE-MOOD-PROG-PERF ?id1 ?sf1 untensed ?mood1 ?prog1 ?perf1)
@@ -107,10 +107,10 @@
 ;solution:-This is a house.
 (defrule tensexs
 (declare (salience -10))
-(id-concept_label       ?v   hE_1|WA_1)
+(id-cl       ?v   hE_1|WA_1)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
-(not (id-doublecausative	?id	yes))
+(not (id-morph_sem	?id	doublecausative))
 (not (modified_tensexs ?id))
 =>
 (assert (modified_tensexs ?id))
@@ -122,8 +122,8 @@
 ;example:-vaha kiwAba suMxara hE.
 ;solution:-That book is beautiful.
 (defrule tensexstad
-(id-concept_label       ?v   hE_1|WA_1)
-(rel_name-ids   k1s        ?v  ?id)
+(id-cl       ?v   hE_1|WA_1)
+(rel-ids   k1s        ?v  ?id)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
 (test(neq (str-index "_a_" ?mrs)FALSE))
@@ -141,8 +141,8 @@
 ;#Rama buxXimAna, motA, xilera, Ora accA hE.
 (defrule tenseConj_adj
 (declare (salience 1000))
-(id-concept_label       ?v   hE_1|WA_1)
-(rel_name-ids   k1s        ?v  ?id)
+(id-cl       ?v   hE_1|WA_1)
+(rel-ids   k1s        ?v  ?id)
 (construction-ids	conj	$? ?id $? ?x ?y)
 (id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id ?mrs ?l ?a0 $?va)
@@ -160,7 +160,7 @@
 ;Rama is intelligent, calm, brave, and good.
 (defrule tenseimplicit_conjarg0
 (declare (salience 1000))
-(rel_name-ids   k1s        ?v  ?k1s)
+(rel-ids   k1s        ?v  ?k1s)
 (construction-ids	conj	?k1s $?)
 (id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?imconid implicit_conj ?lbl ?arg0 $?vs)
@@ -175,14 +175,14 @@
 ;example:-mEM Delhi meM hUz.
 ;Eng-I am in Delhi.
 (defrule tensexsti
-(id-concept_label       ?v   hE_1|WA_1)
-(rel_name-ids   k7p        ?v  ?id)
+(id-cl       ?v   hE_1|WA_1)
+(rel-ids   k7p        ?v  ?id)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?v ?sf ?tense ?mood ?prog ?perf )
 ?f<-(MRS_info ?rel ?id1 _in_p ?l ?a0 $?va)
 (not (modified_tensexsti ?id1))
-(not (id-doublecausative	?id	yes))
+(not (id-morph_sem	?id	doublecausative))
 (test (eq ?id1 (+ ?id 1)))
-(not (rel_name-ids   k1s       ?v  ?id2))
+(not (rel-ids   k1s       ?v  ?id2))
 =>
 (assert (modified_tenseexsti ?id1))
 (retract ?f ?f1)
@@ -213,7 +213,7 @@
 
 (defrule ya_hoga_2
 (kriyA-TAM	?kriya	yA_hogA_2)
-(id-concept_label	?kriya	?hinconcept)
+(id-cl	?kriya	?hinconcept)
 ?f1<-(id-SF-TENSE-MOOD-PROG-PERF ?id ?sf ?tense ?mood ?prog ?perf )
 (MRS_info ?rel ?kriya ?mrscon ?lbl ?arg0 $?v)
 (test (eq (str-index _v_modal ?mrscon) FALSE))

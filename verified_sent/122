@@ -1,10 +1,14 @@
+<sent_id=122>
 #vaha so sakawA hE.
-wyax,so_1-0_sakawA_hE_1
+$wyax,so_1-0_sakawA_hE_1
 1,2
-anim male,
+anim/male,
 ,
 2:k1,0:main
 101.1:coref,
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

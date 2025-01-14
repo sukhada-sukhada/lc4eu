@@ -1,3 +1,4 @@
+<sent_id=301>
 #kaCuA niraMwara calA.
 kaCuA_1,niraMwara_4,cala_6-yA_1
 1,2,3
@@ -7,5 +8,7 @@ anim,,
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

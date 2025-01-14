@@ -1,10 +1,14 @@
+<sent_id=171>
 #mEMne aMXe ladake ko xeKA.
-speaker,aMXA_1,ladakA_1,xeKa_1-yA_1
+$speaker,aMXA_1,ladakA_1,xeKa_1-yA_1
 1,2,3,4
-anim male,,anim male,
+anim/male,,anim/male,
 ,,,
 4:k1,3:mod,4:k2,0:main
 ,,,
 ,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

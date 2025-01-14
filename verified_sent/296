@@ -1,11 +1,14 @@
+<sent_id=296>
 #vaha kaCuA ko nahIM xeKa sakawA WA.
-wyax,kaCuA_1,nahIM_1,xeKa_1-0_sakawA_WA_1
+$wyax,kaCuA_1,nahIM,xeKa_1-0_sakawA_WA_1
 1,2,3,4
-,anim male,,
+,anim/male,,
 ,,,
 4:k1,4:k2,4:neg,0:main
 9.1:coref,,,
 ,def,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
 

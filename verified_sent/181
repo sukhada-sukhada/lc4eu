@@ -1,11 +1,14 @@
+<sent_id=181>
 #mEM kala AUMgA.
-speaker,kala_2,A_1-gA_1
+$speaker,kala_2,A_1-gA_1
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k1,3:k7t,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

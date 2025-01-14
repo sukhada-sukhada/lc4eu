@@ -1,10 +1,14 @@
+<sent_id=395>
 #wU kahAz rahawA hE?
-addressee,kim,raha_1-wA_hE_1 
+$addressee,$kim,raha_1-wA_hE_1
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k1,3:k7p,0:main
 ,,
 informal,,
 ,,
-interrogative
+,,
+%interrogative
+</sent_id>
+

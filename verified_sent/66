@@ -1,11 +1,14 @@
+<sent_id=66>
 #vaha aMXe AxamI kI sahAyawA karegA.
-wyax,aMXA_1,AxamI_1,sahAyawA+kara_1-gA_1
-1,2,3,4
-,,anim male,
-,,,
-4:k1,3:mod,4:k2,0:main
-9.1:coref,,,
-,,,
-,,,
-affirmative
+$wyax,aMXA_1,AxamI_1,sahAyawA_1,kara_1-gA_1,[cp_1]
+1,2,3,5,6,4
+,,anim/male,,,
+,,,,,
+4:k1,3:mod,4:k2,,,0:main
+9.1:coref,,,,,
+,,,,,
+,,,,,
+,,,4:kriyAmUla,4:verbalizer,
+%affirmative
+</sent_id>
 

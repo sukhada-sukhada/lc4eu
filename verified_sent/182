@@ -1,10 +1,14 @@
+<sent_id=182>
 #mEM saBA ke lie Sahara AyA
-speaker,saBA_3,Sahara_1,A_1-yA_1
+$speaker,saBA_3,Sahara_1,A_1-yA_1
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,4:rt,4:k2p,0:main
 ,,,
 ,def,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

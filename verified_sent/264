@@ -1,10 +1,14 @@
+<sent_id=264>
 #riweSa vixyAlaya meM bagIce meM kiwAba paDa rahA hE.
 riweSa,vixyAlaya_1,bagIcA_1,kiwAba_1,paDa_2-0_rahA_hE_1
 1,2,3,4,5
-per male,,,,
+per/male,,,,
 ,,,,
 5:k1,5:k7p,5:k7p,5:k2,0:main
 ,,,,
 ,def,def,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

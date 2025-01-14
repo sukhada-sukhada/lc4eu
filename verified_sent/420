@@ -1,11 +1,14 @@
+<sent_id=420>
 #Rama kala so rahA hogA.
 rAma,kala_2,so_1-0_rahA_hogA_1
 1,2,3
-per male,,
+per/male,,
 ,,
 3:k1,3:k7t,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

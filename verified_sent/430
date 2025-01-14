@@ -1,3 +1,4 @@
+<sent_id=430>
 #wIna BOMke.
 wIna_1,BOMka_1-yA_1
 1,2
@@ -7,5 +8,7 @@ numex,
 ,
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
 

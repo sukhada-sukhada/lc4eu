@@ -1,5 +1,6 @@
+<sent_id=27>
 #mEca kisane jIwA?
-mEca_1,kim,jIwa_7-yA_1
+mEca_1,$kim,jIwa_7-yA_1
 1,2,3
 ,anim,
 ,,
@@ -7,4 +8,7 @@ mEca_1,kim,jIwa_7-yA_1
 ,,
 def,,
 ,,
-interrogative
+,,
+%interrogative
+</sent_id>
+

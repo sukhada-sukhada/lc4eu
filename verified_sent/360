@@ -1,10 +1,14 @@
+<sent_id=360>
 #mEM akAraNa kAma karawA hUz.
-speaker,akAraNa_1,kAma+kara_3-wA_hE_1
-1,2,3
-anim,,
-,,
-3:k1,3:krvn,0:main
-,,
-,,
-,,
-affirmative
+$speaker,akAraNa_1,kAma_1,kara_3-wA_hE_1,[cp_1]
+1,2,4,5,3
+anim,,,,
+,,,,
+3:k1,3:krvn,,,0:main
+,,,,
+,,,,
+,,,,
+,,3:kriyAmUla,3:verbalizer,
+%affirmative
+</sent_id>
+

@@ -1,10 +1,14 @@
+<sent_id=355>
 #rAma ke xo bete hEM.
 rAma,2,betA_1,hE_2-pres
 1,2,3,4
-per male,numex,,
+per/male,numex,,
 ,,pl,
 3:rhh,3:card,4:k1,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

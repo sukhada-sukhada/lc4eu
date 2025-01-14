@@ -1,12 +1,14 @@
+<sent_id=217>
 #rAma xvArA KIra KAyI gayI.
-rAma, KIra, KA_1-yA_gayA_1
+rAma,KIra,KA_1-yA_gayA_1
 1,2,3
-per male,ne,
+per/male,ne,
 ,,
 3:k1,3:k2,0:main
 ,,
 ,,
 ,,
-pass-affirmative
-
+,,
+%pass_affirmative
+</sent_id>
 

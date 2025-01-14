@@ -1,10 +1,14 @@
+<sent_id=346>
 #rAma mohana se jyAxA buxXimAna hE.
-rAma, mohana, buxXimAna_1, hE_1-pres
+rAma,mohana,buxXimAna_1,hE_1-pres
 1,2,3,4
-per male,per male,,
+per/male,per/male,,
 ,,compermore,
 4:k1,1:rv,4:k1s,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

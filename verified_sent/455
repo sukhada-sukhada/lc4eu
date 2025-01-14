@@ -1,5 +1,6 @@
+<sent_id=455>
 #ve kalama sunxara hEM.
-wyax,kalama_1,sunxara_1,hE_1-pres
+$wyax,kalama_1,sunxara_1,hE_1-pres
 1,2,3,4
 ,,,
 ,pl,,
@@ -7,5 +8,7 @@ wyax,kalama_1,sunxara_1,hE_1-pres
 ,,,
 distal,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

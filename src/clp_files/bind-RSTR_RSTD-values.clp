@@ -25,7 +25,7 @@
 
 ;Restr-Trstricted fact for mrs concepts like _each_q, _which_q etc
 (defrule rstr-rstd4non-implicit
-(rel_name-ids ord|card|dem|quant ?head ?dep)
+(rel-ids ord|card|dem|quant ?head ?dep)
 (MRS_info ?rel2 ?head ?mrsCon ?lbl2 ?ARG_0 $?v)
 ?f<-(MRS_info ?rel1 ?dep ?endsWith_q ?lbl1 ?x ?rstr $?vars)
 (test (neq ?endsWith_q ?mrsCon))
@@ -82,24 +82,12 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values mrs-info_q  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
 )
 
-;Restrictor for LTOP Restrictor-Restricted when neg is present
-(defrule LTOP-neg-rstd
-(or (rel_name-ids neg ?x    ?id) (id-hI_6	?id	yes))
-(MRS_info ?rel	?id neg ?lbl $?vars)
-(not (Restr-Restricted-fact-generated))
-(not (rel_name-ids samuccaya ?Id	?x))
-(not (rel_name-ids anyawra ?Id	?x))
-(not (rel_name-ids viroXi ?Id	?x))
-=>
-(printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-neg-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
-)
 
 ;Restrictor for ARG1 value of neg and LBL value of predicative adjective
 ;Ex. rAvaNa acCA nahIM hE.  Ravana is not good.
 (defrule neg-pred_adj
-(rel_name-ids	k1s	?kri	?adj)
-(or (rel_name-ids	neg	?kri	?neg) (id-hI_6	?neg	yes)) ; They were not only obedient.
+(rel-ids	k1s	?kri	?adj)
+(or (rel-ids	neg	?kri	?neg) (id-dis_part	?neg	hI_1)) ; They were not only obedient.
 (MRS_info ?rel   ?neg neg ?lbl ?a0 ?a1)
 (MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg1 $?v)
 (test (neq (str-index _a_ ?mrs_adj) FALSE))
@@ -107,36 +95,34 @@
 (printout ?*rstr-rstd* "(Restr-Restricted "?a1 " "?l")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  neg-pred_adj  Restr-Restricted "?a1" "?l")"crlf)
 )
-;(rel_name-ids	rt	40000	30000)
 
 ;;Restrictor for LTOP Restrictor-Restricted default value
 (defrule LTOP-rstd
 (MRS_info ?rel	?id ?mrsCon ?lbl $?vars)
-(rel_name-ids	main	0	?id)
+(rel-ids	main	0	?id)
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (eq (str-index _v_qmodal ?mrsCon) FALSE)) ;Rama has to go home.
 (not (MRS_info ?rel ?id ?mrsCon ?lbl2 $?vaa)) ;I cannot speak Rusi.
 (not (Restr-Restricted-fact-generated))
 (not (MRS_info ?rel1 ?id1 neg ?lbl1 $?v))
-(not (id-causative ?id yes))
-(not (id-stative ?id1 yes))
-(not (id-doublecausative	?id	yes))
-(not (rel_name-ids	rpk	?id	?kri_id))
-;(not (rel_name-ids	krvn	?id	?kri_id))
-(not (rel_name-ids	rsk	?id	?kri_id))
-(not (rel_name-ids	rpk	?kri_id	?id))
-(not (rel_name-ids	rblsk ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
-(not (rel_name-ids	rblak ?id 	?kri_id))
-(not (rel_name-ids	rblpk ?id 	?kri_id)) ;rAma ke vana jAne para xaSaraWa mara gaye.
+(not (id-morph_sem ?id causative))
+(not (id-morph_sem	?id	doublecausative))
+(not (rel-ids	rpk	?id	?kri_id))
+;(not (rel-ids	krvn	?id	?kri_id))
+(not (rel-ids	rsk	?id	?kri_id))
+(not (rel-ids	rpk	?kri_id	?id))
+(not (rel-ids	rblsk ?id 	?kri_id)) ;gAyoM ke xuhane se pahale rAma Gara gayA.
+(not (rel-ids	rblak ?id 	?kri_id))
+(not (rel-ids	rblpk ?id 	?kri_id)) ;rAma ke vana jAne para xaSaraWa mara gaye.
 ;(not (MRS_info ?rel2 ?id2  _make_v_cause ?lbl2 $?va))
-(not(rel_name-ids vAkya_vn ?id_1 ?id_2))
+(not(rel-ids vAkya_vn ?id_1 ?id_2))
 (not (ltop_bind_notrequired ?kri_id))
-(not (rel_name-ids samuccaya ?kri_id	?id))
-(not (rel_name-ids anyawra ?kri_id	?id))
-(not (rel_name-ids viroXi ?kri_id	?id))
-(not (rel_name-ids AvaSyakwA-pariNAma ?kri_id	?id))
-(not (rel_name-ids samAnakAla ?kri_id	?id))
-(not (rel_name-ids kAryakAraNa ?kri_id	?id)) ;Because he has to go home.
+(not (rel-ids samuccaya ?kri_id	?id))
+(not (rel-ids anyawra ?kri_id	?id))
+(not (rel-ids viroXi ?kri_id	?id))
+(not (rel-ids AvaSyakwA-pariNAma ?kri_id	?id))
+(not (rel-ids samAnakAla ?kri_id	?id))
+(not (rel-ids kAryakAraNa ?kri_id	?id)) ;Because he has to go home.
 =>
         (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf) 
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
@@ -144,7 +130,7 @@
 
 ;Restrictor for LTOP Restrictor-Restricted default value causative
 (defrule LTOP-rstdc
-(id-causative	?id	yes)
+(id-morph_sem	?id	causative)
 (MRS_info ?rel1  ?id  ?mrsV ?lbl1 $?var)
 ?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id _make_v_cause ?lbl ?arg0 ?a1 ?a2)
 (test (eq (str-index _v_cause ?mrsV) FALSE))
@@ -159,7 +145,7 @@
 
 ;Restrictor for LTOP Restrictor-Restricted default value double causative
 (defrule LTOP-rstdd
-(id-doublecausative	?id	yes)
+(id-morph_sem	?id	doublecausative)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id1 _ask_v_1 ?lbl ?arg0 $?vars)
 =>
  (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
@@ -168,7 +154,7 @@
 
 ;Restrictor for  double-causative
 (defrule LTOP-rstdda
-(id-doublecausative	?id	yes)
+(id-morph_sem	?id	doublecausative)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id _ask_v_1 ?lbl1 ?arg10 ?arg20 ?arg30 ?arg40)
 (MRS_info ?rel1  ?id  ?mrsV ?lbl ?arg0 ?arg1 ?arg2 $?var)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id _make_v_cause ?lbl2 ?arg02 ?arg12 ?arg22)
@@ -183,9 +169,8 @@
 
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord
-(not (id-stative ?id1 yes))
-(rel_name-ids	rpk|rblsk	?id1	?id2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord|_as_x_subord ?lbl ?arg0 ?arg1 ?arg2)
+(rel-ids	rpk|rblsk	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?subord subord|_as_x_subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
 =>
@@ -203,8 +188,8 @@
 ;verified sentence 338 #वह लंगडाकर चलता है.
 ;Restrictor for LTOP Restrictor-Restricted default value subord
 (defrule LTOP-subord-kv
-(rel_name-ids	krvn	?id1	?id2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord ?lbl ?arg0 ?arg1 ?arg2)
+(rel-ids	krvn	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?subord subord ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
 =>
@@ -222,8 +207,8 @@
 ;It creates binding for vmod_krvn with _while_x
 ; verified sentence 340#भागते हुए शेर को देखो
 (defrule LTOP-while-kr
-(rel_name-ids	vmod_krvn	?id1	?id2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -30000 _while_x ?lbl ?arg0 ?arg1 ?arg2)
+(rel-ids	vmod_krvn	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?while _while_x ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
 =>
@@ -242,14 +227,14 @@
 ;;Restrictor for LTOP Restrictor-Restricted default value
 (defrule LTOP-modal-verb
 (declare (salience 100))
-(not (sentence_type	negative))
-;(not (sentence_type	interrogative))
+(not (sent_type	%negative))
+;(not (sent_type	%interrogative))
 (MRS_info ?rel  ?id ?mrsModal  ?lbl ?arg0 ?arg1 $?vars)
 (MRS_info ?rel1  ?id ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
 (test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
 (test (eq (str-index _v_qmodal ?mrsV) FALSE))
 (test (neq ?lbl ?lbl1)) ;Rama must eat a fruit.
-;(not (rel_name-ids kAryakAraNa ?previouid ?id))
+;(not (rel-ids kAryakAraNa ?previouid ?id))
 =>
     ;(assert (Restr-Restricted-fact-generated))
     ;(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl ")" crlf)
@@ -261,14 +246,14 @@
 
 (defrule LTOP-modal-verb_LTOP
 (declare (salience 100))
-(not (sentence_type	negative))
-;(not (sentence_type	interrogative))
+(not (sent_type	%negative))
+;(not (sent_type	%interrogative))
 (MRS_info ?rel  ?id ?mrsModal  ?lbl ?arg0 ?arg1 $?vars)
 (MRS_info ?rel1  ?id ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
 (test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
 (test (eq (str-index _v_qmodal ?mrsV) FALSE))
 (test (neq ?lbl ?lbl1)) ;Rama must eat a fruit.
-(not (rel_name-ids kAryakAraNa ?previouid ?id))
+(not (rel-ids kAryakAraNa ?previouid ?id))
 =>
     (assert (Restr-Restricted-fact-generated))
     (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl ")" crlf)
@@ -280,7 +265,7 @@
 
 (defrule LTOP-neg-modal
 (declare (salience 100))
-(sentence_type	negative)
+(sent_type	%negative)
 (MRS_info ?rel  ?id ?mrsModal  ?lbl ?arg0 ?arg1 $?vars)
 (MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
 (test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
@@ -299,8 +284,8 @@
 
 ;changing the ARG0 value (i.e. e*) of neg to i300
 (defrule neg-arg0-i
-(sentence_type  imperative)
-(rel_name-ids neg ?kri  ?negId)
+(sent_type  %imperative)
+(rel-ids neg ?kri  ?negId)
 ?f<-(MRS_info ?rel1 ?negId neg ?lbl ?arg0  ?ARG1)
 (not (modified_ARG0_value_to_i ?negId))
 =>
@@ -315,20 +300,35 @@
 ;Ex. 236: "ayAn ne KAnA nahIM KAyA WA." = Ayan had not eaten food.
 ;    25: "ladake ne KAnA nahIM KAyA." = The boy did not eat food.       
 (defrule neg-rstd
-(rel_name-ids neg ?x    ?negId)
+(rel-ids neg ?x    ?negId)
 ?f<-(MRS_info ?rel1 ?negId neg ?lbl ?  ?ARG1)
 ?f1<-(MRS_info ?rel3 ?m ?verbORprep ?V_lbl  ?V_A0  ?V_A1 $?vars)
 (test (or (neq (str-index _v_ ?verbORprep) FALSE) (neq (str-index _p ?verbORprep) FALSE) ) )
-(not (rel_name-ids samuccaya ?id	?x))
-(not (rel_name-ids anyawra ?id	?x))
-(not (rel_name-ids viroXi ?id	?x))
+(not (rel-ids samuccaya ?id	?x))
+(not (rel-ids anyawra ?id	?x))
+(not (rel-ids viroXi ?id	?x))
 =>
-(retract ?f ?f1)
-(printout ?*rstr-rstd* "(Restr-Restricted  h0 " ?lbl")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-rstd Restr-Restricted  h0 "?lbl")"crlf)
-
+(retract ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?ARG1  "  " ?V_lbl ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values neg-rstd Restr-Restricted  "?ARG1"  "?V_lbl")"crlf)
+)
+
+;Restrictor-Restricted between ARG1 value neg and LBL value of verb
+;Ex. 236: "ayAn ne KAnA nahIM KAyA WA." = Ayan had not eaten food.
+;    25: "ladake ne KAnA nahIM KAyA." = The boy did not eat food.       
+(defrule neg-rstd_LTOP
+(rel-ids neg ?x    ?negId)
+?f<-(MRS_info ?rel1 ?negId neg ?lbl ?  ?ARG1)
+?f1<-(MRS_info ?rel3 ?m ?verbORprep ?V_lbl  ?V_A0  ?V_A1 $?vars)
+(test (or (neq (str-index _v_ ?verbORprep) FALSE) (neq (str-index _p ?verbORprep) FALSE) ) )
+(not (rel-ids samuccaya ?id	?x))
+(not (rel-ids anyawra ?id	?x))
+(not (rel-ids viroXi ?id	?x))
+(not (and (id-dis_part	?id	hI_1)(rel-ids	k1	?x	?id)))
+=>
+(retract ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted  h0 " ?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-rstd_LTOP Restr-Restricted  h0 "?lbl")"crlf)
 )
 
 ; Ex. mEM so nahIM sakawA hUz.
@@ -355,7 +355,7 @@
 ;Rule to generate Rester-Restricted values for the verb want when it takes a verb as k2
 ;Ex. Rama wants to sleep.
 (defrule want-k2-rstr
-(rel_name-ids k2   ?kri ?k2)
+(rel-ids k2   ?kri ?k2)
 (MRS_info ?rel ?kri _want_v_1 $?vars ?arg2)
 ?f1<-(MRS_info ?r ?k2  ?k2v ?l  $?v)
 (test (neq (str-index _v_ ?k2v) FALSE))
@@ -368,8 +368,8 @@
 ;Rule for RSTR binding with h0 with lbl of _before_x_h and arg1 and arg2 of before_x_h with the two verb labels. 
 ;gAyoM ke xuhane se pahale rAma Gara gayA.
 (defrule rule_for_x
-(rel_name-ids	rblak|rblpk|rsk	?id1	?id2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 500 ?MRSCON ?lbl ?arg0 ?arg1 ?arg2)
+(rel-ids	rblak|rblpk|rsk	?id1	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?iddd ?MRSCON ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
 (test (neq (str-index _x ?MRSCON) FALSE))
@@ -389,9 +389,8 @@
 ;Rule for not binding h0 with the lbl of the krvn verb. 
 (defrule rule_for_x_required
 (declare (salience 10000))
-(rel_name-ids kAryakAraNa ?previousid	?id2)
-;(rel_name-ids	rblak|rblpk|rsk	?id1	?id2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 500 ?MRSCON ?lbl ?arg0 ?arg1 ?arg2)
+(rel-ids kAryakAraNa ?previousid	?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?iddd ?MRSCON ?lbl ?arg0 ?arg1 ?arg2)
 ;(MRS_info ?rel1	?id1 ?mrsCon1 ?lbl1 $?var)
 (MRS_info ?rel2	?id2 ?mrsCon2 ?lbl2 $?vars)
 (test (neq (str-index _qmodal ?mrsCon2) FALSE))
@@ -405,7 +404,7 @@
 ;Rule for generating qeq binding of ARG1 and ARG2 values of because with LBL of unknown abstract predicate and LBL of the predicate of the sentence. 
 ;Because, he has to go home. #kyoMki vo Gara jAnA hE.
 (defrule kAryakAraNa
-(rel_name-ids kAryakAraNa ?previousid	?verb)
+(rel-ids kAryakAraNa ?previousid	?verb)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?because _because_x ?lbl ?arg0 ?arg1 ?arg2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG ?unknown unknown ?lbll $?v)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?verb ?mrsverb ?lbbb $?va)
@@ -423,11 +422,11 @@
 ;This rule not fires when predicates are in the construction order. 
 ;#Rama buxXimAna, motA, xilera, Ora accA hE.
 (defrule adjective
-(rel_name-ids	k1s	?id ?adj)
+(rel-ids	k1s	?id ?adj)
 (MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
 (test (neq (str-index _a_ ?mrs_adj) FALSE))
 (MRS_info ?rel ?idd ?hin ?lbl ?a0 $?v1)
-(not (rel_name-ids neg	?iddd	?neg))
+(not (rel-ids neg	?iddd	?neg))
 (test (eq (str-index _v_ ?hin) FALSE))
 (not (construction-ids	conj 	$? ?adj $?))
 (MRS_info ?rel2 ?impl implicit_conj $?var)
@@ -440,11 +439,11 @@
 ;Rule for binding h0 with the lbl of the karwa in construction. When there is no verb in the construction and having only two subjective construction.
 ;#rAma Ora sIwA acCe hEM.
 (defrule adjective-conjj
-(rel_name-ids	k1s	?id ?adj)
+(rel-ids	k1s	?id ?adj)
 (MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
 (test (neq (str-index _a_ ?mrs_adj) FALSE))
 (MRS_info ?rel ?idd ?hin ?lbl ?a0 $?v1)
-(not (rel_name-ids neg	?iddd	?neg))
+(not (rel-ids neg	?iddd	?neg))
 (test (eq (str-index _v_ ?hin) FALSE))
 (MRS_info ?rel3  ?k1 ?mrsconk1 $?vs)
 (construction-ids	conj 	?k1 ?x)
@@ -457,7 +456,7 @@
 ;Rule for binding lbl of first implicit_conj with the h0 when the construction is having predicates. 
 ;#Rama buxXimAna, motA, xilera, Ora accA hE.
 (defrule implicit-adjective
-(rel_name-ids	k1s	?kri ?adj)
+(rel-ids	k1s	?kri ?adj)
 (MRS_info ?rel1  ?adj ?mrs_adj ?l ?arg0 $?v)
 (construction-ids	conj	?adj $?var)
 (MRS_info ?rel ?id1 implicit_conj ?lbl1 ?arg01 $?vars)
@@ -468,11 +467,11 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  implicit-adjective  Restr-Restricted h0 "?lbl1")"crlf)
 )
 
-;Rule for binding lbl of the unknown with h0 when the sentence_type is unknown.
+;Rule for binding lbl of the unknown with h0 when the sent_type is unknown.
 ;#kuwwA!
 ;#billI Ora kuwwA.
 (defrule unknown_rstr
-(sentence_type	)
+(sent_type	)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG 0 unknown ?lbl ?arg0 ?arg1)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 "?lbl")" crlf)
@@ -482,11 +481,11 @@
 ;Rule for binding prpstn_to_prop lbl with ltop ho. 
 ;How are you?
 (defrule how-rstrr
-(id-concept_label	?how	kim)
-(rel_name-ids	k1s	?kri	?how) 
-(sentence_type  interrogative)
+(id-cl	?how	$kim)
+(rel-ids	k1s	?kri	?how) 
+(sent_type  %interrogative)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?ptp prpstn_to_prop ?lptp ?a0ptp ?a1ptp ?a2ptp)
-(not (id-num	?how	?n))
+(not (id-morph_sem	?how	?n))
 (not (id-anim	?how	yes))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 "?lptp")" crlf)
@@ -496,7 +495,7 @@
 ;Rule for not binding h0 with the lbl of the krvn verb. 
 (defrule krvn-notbind
 (declare (salience 10000))
-(rel_name-ids	krvn	?kri	?kri_id)
+(rel-ids	krvn	?kri	?kri_id)
 (id-hin_concept-MRS_concept ?kri_id ?hin1 ?mrsCon)
 (test (neq (str-index _v_ ?mrsCon) FALSE))
 =>
@@ -533,7 +532,7 @@
 ;Rule for binding LTOP h0 with lbl of _near_p
 ;The car is near the house.
 (defrule near-ltop
-(rel_name-ids	rdl	?near	?k7p)
+(rel-ids	rdl	?near	?k7p)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?near _near_p ?l ?a0 ?a1 ?a2)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?l ")" crlf)
@@ -544,7 +543,7 @@
 ;#rAma ayegA hI ; The sun also shines.
 (defrule emph-definite-verb
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?MRSCON ?lbl ?arg0 ?arg1)
-(or (id-BI_2  ?id2  yes) (id-BI_1  ?id1  yes) (id-hI_2  ?id2  yes) (id-assertion  ?id3  yes) (rel_name-ids	vkvn	?id2	?id))
+(or (id-dis_part  ?id2  hI_2) (id-dis_part  ?id1  BI_1) (id-dis_part  ?id2  hI_6) (id-dis_part  ?id3  wo_1) (rel-ids	vkvn	?id2	?id))
 ?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index _v_ ?mrscon) FALSE))
 (test (or (eq ?MRSCON  _definite_a_1)(eq ?MRSCON _also_a_1)  (eq ?MRSCON _only_a_1) (eq ?MRSCON _probable_a_1) (eq ?MRSCON _certain_a_1)))
@@ -556,10 +555,26 @@
 (printout ?*rstr-rstd-dbg* "(rule-rel-values emph-definite-verb  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
 )
 
+;Rule for creating binding with LTOP and the label of definite and ARG1 label of definite with word it hI_6.
+;Hari only did not send Riya, Mohana and Sanju his fruits.
+(defrule hI_6-definite-noun
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?MRSCON ?lbl ?arg0 ?arg1)
+(id-dis_part	?iddd	hI_6)
+(and (rel-ids	neg	?kri	?id2)(rel-ids	k1	?kri	?iddd))
+?f1<-(MRS_info ?rel2 ?id2 neg ?lbl1 ?arg01 ?arg11 $?v)
+(test (or (eq ?MRSCON  _definite_a_1)(eq ?MRSCON _also_a_1)  (eq ?MRSCON _only_a_1) (eq ?MRSCON _probable_a_1) (eq ?MRSCON _certain_a_1)))
+=>
+(retract  ?f ?f1)
+(printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values hI_6-definite-noun Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1")" crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values hI_6-definite-noun  Restr-Restricted " ?arg1 " "?lbl1")"crlf)
+)
+
 ;Rule for binding ARG3 handle value of ditransitive verb with preposition label. 
 ;Abramsa put Brauna in the garden.
 (defrule verb-preposition
-(rel_name-ids	k7p	?id	?preposition)
+(rel-ids	k7p	?id	?preposition)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?id ?verb ?lbl ?arg0 ?arg1 ?arg2 ?arg3)
 (MRS_info ?rel2 ?id2 ?mrscon ?lbl1 $?v)
 (test (neq (str-index _p ?mrscon) FALSE))
@@ -573,11 +588,11 @@
 ;Generalized rule for creating binding LTOP with the lbl of _and_c, _or_c, _but_c 's and R_HNDL value with the lbl of the verb.
 ;And he went. Ora vaha gayA. ;Or he went. , But he went.
 (defrule samuccaya-LTOP-verb
-(or (rel_name-ids samuccaya ?previousid	?verb) (rel_name-ids anyawra ?previousid	?verb) (rel_name-ids viroXi ?previousid	?verb))
+(or (rel-ids samuccaya ?previousid	?verb) (rel-ids anyawra ?previousid	?verb) (rel-ids viroXi ?previousid	?verb))
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and ?MRSCON ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
 (MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
 (test (or (eq ?MRSCON  _and_c)(eq ?MRSCON _or_c)(eq ?MRSCON _but_c)))
-(not (rel_name-ids neg ?verb	?neg))
+(not (rel-ids neg ?verb	?neg))
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values samuccaya-LTOP-verb Restr-Restricted h0 "?lbl")"crlf)
@@ -588,9 +603,9 @@
 ;Generalized rule for creating binding LTOP with the lbl of _and_c, _or_c, _but_c 's  and R_HNDL value with the lbl of the predicative adjective.
 ;And he is intelligent. #Ora vaha buxXimAna hE. Or he is intelligent. but he is intelligent.
 (defrule samuccaya-LTOP-copula
-(id-concept_label	?verb	hE_1)
-(or (rel_name-ids samuccaya ?previousid	?verb) (rel_name-ids anyawra ?previousid	?verb) (rel_name-ids viroXi ?previousid	?verb))
-(rel_name-ids	k1s	?verb	?adj)
+(id-cl	?verb	hE_1)
+(or (rel-ids samuccaya ?previousid	?verb) (rel-ids anyawra ?previousid	?verb) (rel-ids viroXi ?previousid	?verb))
+(rel-ids	k1s	?verb	?adj)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and ?MRSCON ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
 (MRS_info ?rel ?adj ?mrsss ?lblb ?arg00 $?v)
 (test (or (eq ?MRSCON  _and_c)(eq ?MRSCON _or_c)(eq ?MRSCON _but_c)))
@@ -604,8 +619,8 @@
 ;Generalized rule for Creating qeq binding with h0 with lbl of the _and_c, _or_c, _but_c 's and R_HNDL of _and_c with the lbl of neg and ARG1 value of neg with the verb of the sentence.
 ;And he didn't finish the work., or and but. 
 (defrule samuccaya-LTOP-verb-neg
-(or (rel_name-ids samuccaya ?previousid	?verb) (rel_name-ids anyawra ?previousid	?verb) (rel_name-ids viroXi ?previousid	?verb))
-(rel_name-ids neg ?verb	?neg)
+(or (rel-ids samuccaya ?previousid	?verb) (rel-ids anyawra ?previousid	?verb) (rel-ids viroXi ?previousid	?verb))
+(rel-ids neg ?verb	?neg)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL ?and ?MRSCON ?lbl ?arg0 ?lindeh1x ?rindex ?lhndl ?rhndl)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?neg neg ?lbb ?a ?h)
 (MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
@@ -622,7 +637,7 @@
 ;Rule for creating binding LTOP h0 value with lbl of the _then_a_1 and arg1 value of _then_a_1 with lbl of the verb.
 ;;#wo meM jAUMgA. Then I will go.
 (defrule AvaSyakwA-pariNAma_samAnakAla-LTOP-verb
-(rel_name-ids AvaSyakwA-pariNAma|samAnakAla ?previousid	?verb)
+(rel-ids AvaSyakwA-pariNAma|samAnakAla ?previousid	?verb)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?then _then_a_1 ?lbl ?arg0 ?arg11)
 (MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
 =>
@@ -634,8 +649,8 @@
 
 ;Restrictor for LTOP Restrictor-Restricted default value quantitative pronoun
 (defrule LTOP-rstdeic-quantitative
-(id-concept_label	?id	kuCa_1)
-(rel_name-ids	quant	?verb	?id)
+(id-cl	?id	kuCa_1)
+(rel-ids	quant	?verb	?id)
 (MRS_info id-MRS_concept-LBL-ARG0 ?id2 generic_entity ?lbl1 ?ARG01)
 (MRS_info ?rel1 ?id _some_q ?lbl ?ARG0 ?rstr ?body)
 =>
@@ -646,8 +661,8 @@
 ;Rule for generating the qeq binding with def_implicit_q rstr with numbered hour lbl. 
 ;Rama arrived at midday.
 (defrule 12_carg_number-rstr
-(or (id-concept_label	?numid	xopahara_2)(id-clocktime	?numid	yes))
-(rel_name-ids	k7t	?kri	?numid)
+(or (id-cl	?numid	xopahara_2)(id-clocktime	?numid	yes))
+(rel-ids	k7t	?kri	?numid)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-CARG ?numid numbered_hour ?lbl ?arg0 ?arg1 ?arg2 ?carg)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?def def_implicit_q ?lbll ?arg00 ?rstr ?body)
 =>
@@ -657,10 +672,10 @@
 
 ;Rule to create binding with ARG1 of also with the lbl of the predicative adjective. 
 (defrule BI_1-also-predadj
-(id-concept_label	?id1	hE_1)
-(rel_name-ids	k1s	?id1	?id2)
+(id-cl	?id1	hE_1)
+(rel-ids	k1s	?id1	?id2)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _also_a_1 ?lbl ?arg0 ?arg1)
-(id-BI_1  ?id1  yes)
+(id-dis_part  ?id1  BI_1)
 ?f1<-(MRS_info ?rel2 ?id2 ?mrscon ?lbl1 ?arg01 ?arg11 $?v)
 (test (neq (str-index _a_ ?mrscon) FALSE))
 =>
@@ -674,7 +689,7 @@
 ;rule to create binding with demonstratives rstr with the generic_entity lbl when the relations are vyABIcAra and pariNAma. 
 ;Because of that his parents used to be very upset.
 (defrule vyABIcAra_generic_this
-(rel_name-ids vyABIcAra|pariNAma ?previousid	?id)
+(rel-ids vyABIcAra|pariNAma ?previousid	?id)
 ?f2<-(MRS_info id-MRS_concept-LBL-ARG0 ?gen generic_entity ?lllll ?Arg0000)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?iddd ?qdem ?lbl ?arg0 ?rstr ?body)
 (test (neq (str-index "_q_dem" ?qdem) FALSE))
@@ -687,9 +702,9 @@
 ;Restrictor for ARG2 value of the verb with the rt LBL. 
 ;This attempted to spread knowledge.
 (defrule ARG2_LBL_rt
-(id-concept_label	?rt	?hincon1)
-(id-concept_label	?kriya	?hincon2)
-(rel_name-ids	rt	?kriya	?rt)
+(id-cl	?rt	?hincon1)
+(id-cl	?kriya	?hincon2)
+(rel-ids	rt	?kriya	?rt)
 (MRS_info ?rel ?rt ?verb1 ?lbl $?v)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kriya ?verb2 ?lbbb ?ar00 ?ar11 ?Ar22)
 (test (neq (str-index "_v_" ?verb1) FALSE))

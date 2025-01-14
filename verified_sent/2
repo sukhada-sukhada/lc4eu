@@ -1,5 +1,6 @@
+<sent_id=2>
 #rAma kahAz se AyA?
-rAma,kim,A_1-yA_1
+rAma,$kim,A_1-yA_1
 1,2,3
 per male,,
 ,,
@@ -7,5 +8,7 @@ per male,,
 ,,
 ,,
 ,,
-interrogative 
+,,
+%interrogative
+</sent_id>
 

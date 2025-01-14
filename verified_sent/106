@@ -1,11 +1,14 @@
+<sent_id=106>
 #muJe kala AnA hogA.
-speaker,kala_2,A_1-nA_hogA_1
+$speaker,kala_2,A_1-nA_hogA_1
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k1,3:k7t,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

@@ -1,3 +1,4 @@
+<sent_id=128>
 #rAvaNa rAma ke xvArA laMkA meM mArA gayA.
 rAvaNa,rAma,laMkA,mAra_1-yA_gayA_WA_1
 1,2,3,4
@@ -7,4 +8,7 @@ per,per,place,
 ,,,
 ,,,
 ,,,
-pass-affirmative
+,,,
+%pass_affirmative
+</sent_id>
+

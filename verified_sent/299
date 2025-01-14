@@ -1,11 +1,14 @@
+<sent_id=299>
 #mEM ArAma kara sakawA hUz.
-speaker,ArAma+kara_2-0_sakawA_hE_1
-1,2
-anim,
-,
-2:k1,0:main
-,
-,
-,
-affirmative
+$speaker,ArAma_1,kara_2-0_sakawA_hE_1,[cp_1]
+1,3,4,2
+anim,,,
+,,,
+2:k1,,,0:main
+,,,
+,,,
+,,,
+,2:kriyAmUla,2:verbalizer,
+%affirmative
+</sent_id>
 

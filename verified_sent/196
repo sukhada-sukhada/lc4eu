@@ -1,10 +1,14 @@
+<sent_id=196>
 #rAma ko KIra KAnI padZI.
-rAma, KIra, KA_1-nA_padZA_1
+rAma,KIra,KA_1-nA_padZA_1
 1,2,3
-per male,ne,
+per/male,ne,
 ,,
 3:k1,3:k2,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

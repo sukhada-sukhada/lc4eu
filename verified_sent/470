@@ -1,12 +1,14 @@
+<sent_id=470>
 #praswAviwa pATa kA uxxeSya viRaya ke svarUpa kI vyAKyA karanA hE.
-praswuwa_3,pATa_11,uxxeSya_5,viRaya_1,svarUpa_5,vyAKyA+kara_2-nA_hE_1
-1,2,3,4,5,6
-,,,,,
-,,,,,
-2:mod,3:r6,6:k1,5:r6,6:k2,0:main
-,,,,,
-,,,,,
-,,,,,
-affirmative
-
+praswuwa_3,pATa_11,uxxeSya_5,viRaya_1,svarUpa_5,vyAKyA_1,kara_2-nA_hE_1,[cp_1]
+1,2,3,4,5,7,8,6
+,,,,,,,
+,,,,,,,
+2:mod,3:r6,6:k1,5:r6,6:k2,,,0:main
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,6:kriyAmUla,6:verbalizer,
+%affirmative
+</sent_id>
 

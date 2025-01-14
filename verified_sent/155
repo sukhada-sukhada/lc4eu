@@ -1,10 +1,14 @@
+<sent_id=155>
 #BEravanAWa mAz vERNo ke xvArA katarA  meM mArA gayA hE.
-BEravanAWa,mAz+vERNo,katarA,mAra_1-yA_gayA_hE_2
-1,2,3,4
-per male,per female,place,
-,,,
-4:k2,4:k1,4:k7p,0:main
-,,,
-,,,
-,,,
-pass-affirmative
+BEravanAWa,mAz_2,vERNo,[nc_1],katarA,mAra_1-yA_gayA_hE_2
+1,5,6,2,3,4
+per/male,,,per/female,place,
+,,,,,
+4:k2,,,4:k1,4:k7p,0:main
+,,,,,
+,,,,,
+,,,,,
+,2:mod,2:head,,,
+%pass_affirmative
+</sent_id>
+

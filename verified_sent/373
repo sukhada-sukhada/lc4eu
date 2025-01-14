@@ -1,10 +1,14 @@
+<sent_id=373>
 #abrAma kiwanA KuSa WA?
-abrAma, kim, KuSa_1,hE_1-past
+abrAma,$kim,KuSa_1,hE_1-past
 1,2,3,4
 ne,,,
-,,
-4:k1,3:degree,4:k1s,0:main
+,,,0:main
+4:k1,3:degree,4:k1s,
 ,,,
 ,,,
 ,,,
-interrogative
+,,,
+%interrogative
+</sent_id>
+

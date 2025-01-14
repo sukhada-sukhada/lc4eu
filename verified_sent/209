@@ -1,5 +1,6 @@
+<sent_id=209>
 #haMsa IrRyAlu hEM.
-haMsa_1, IrRyAlu_1,hE_1-pres
+haMsa_1,IrRyAlu_1,hE_1-pres
 1,2,3
 anim,,
 pl,,
@@ -7,4 +8,7 @@ pl,,
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

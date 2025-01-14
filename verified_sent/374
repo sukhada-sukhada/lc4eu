@@ -1,11 +1,14 @@
+<sent_id=374>
 #billI ne eka kuwwA kA pICA kiyA.
-billI_1,1,kuwwA_1,pICA+kara_1-yA_1
-1,2,3,4
-anim,numex,anim,
-,,,
-4:k1,3:card,4:k2,0:main
-,,,
-def,,,
-,,,
-affirmative
+billI_1,1,kuwwA_1,pICA_1,kara_1-yA_1,[cp_1]
+1,2,3,5,6,4
+anim,numex,anim,,,
+,,,,,
+4:k1,3:card,4:k2,,,0:main
+,,,,,
+def,,,,,
+,,,,,
+,,,4:kriyAmUla,4:verbalizer,
+%affirmative
+</sent_id>
 

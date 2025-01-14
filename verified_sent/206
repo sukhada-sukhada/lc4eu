@@ -1,5 +1,6 @@
+<sent_id=206>
 #use Gara nahIM jAnA cAhie.
-wyax,Gara_1,nahIM_1,jA_1-nA_cAhie_1
+$wyax,Gara_1,nahIM,jA_1-nA_cAhie_1
 1,2,3,4
 ,,,
 ,,,
@@ -7,5 +8,7 @@ wyax,Gara_1,nahIM_1,jA_1-nA_cAhie_1
 9.1:coref,,,
 ,,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
 

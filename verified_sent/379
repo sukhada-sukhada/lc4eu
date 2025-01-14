@@ -1,3 +1,4 @@
+<sent_id=379>
 #bure kAma bure Pala xewe hEM.
 burA_1,kAma_1,burA_1,Pala_6,xe_1-wA_hE_1
 1,2,3,4,5
@@ -7,4 +8,7 @@ burA_1,kAma_1,burA_1,Pala_6,xe_1-wA_hE_1
 ,,,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

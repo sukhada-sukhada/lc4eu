@@ -1,11 +1,14 @@
+<sent_id=126>
 #rAma doYktara nahIM hE.
-rAma,doYktara_1,nahIM_1,hE_1-pres
+rAma,doYktara_1,nahIM,hE_1-pres
 1,2,3,4
-per male,anim,,
+per/male,anim,,
 ,,,
 4:k1,4:k1s,4:neg,0:main
 ,,,
 ,,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
 

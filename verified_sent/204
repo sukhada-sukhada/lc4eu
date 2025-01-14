@@ -1,5 +1,6 @@
+<sent_id=204>
 #haMsa sabaka sIKa gaye.
-haMsa_1, sabaka_1, sIKa_6-yA_1
+haMsa_1,sabaka_1,sIKa_6-yA_1
 1,2,3
 anim,,
 pl,,
@@ -7,4 +8,7 @@ pl,,
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

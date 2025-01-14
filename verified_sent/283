@@ -1,10 +1,14 @@
-#merI bA muJe KAnA xewI hE 
-speaker,bA_1,speaker,KAnA_1,xe_1-wA_hE_1
+<sent_id=283>
+#merI bA muJe KAnA xewI hE
+$speaker,bA_1,$speaker,KAnA_1,xe_1-wA_hE_1
 1,2,3,4,5
-anim male,anim female,anim male,,
+anim/male,anim/female,anim/male,,
 ,,,,
 2:r6,5:k1,5:k4,5:k2,0:main
 ,,,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

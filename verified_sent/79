@@ -1,3 +1,4 @@
+<sent_id=79>
 #rAma xillI meM hE.
 rAma,xillI,hE_1-pres
 1,2,3
@@ -7,5 +8,7 @@ per,place,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

@@ -1,5 +1,6 @@
+<sent_id=192>
 #pariNAma burA WA
-pariNAma_1, burA_2,hE_1-past
+pariNAma_1,burA_2,hE_1-past
 1,2,3
 ,,
 ,,
@@ -7,5 +8,7 @@ pariNAma_1, burA_2,hE_1-past
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

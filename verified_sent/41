@@ -1,10 +1,14 @@
+<sent_id=41>
 #mEMne aMXe ladake ko XIre se XakkA mArA.
-speaker,aMXA_1,ladakA_1,XIre+se_1,XakkA+mAra_1-yA_1
-1,2,3,4,5
-anim,,anim male,,
-,,,,
-5:k1,3:mod,5:k2,5:krvn,0:main
-,,,,
-,,def,,
-,,,,
-affirmative
+$speaker,aMXA_1,ladakA_1,XIre_2,se_1,[nc_1],XakkA_2,mAra_1-yA_1,[nc_2]
+1,2,3,6,7,4,8,9,5
+anim,,anim/male,,,,,,
+,,,,,,,,
+5:k1,3:mod,5:k2,,,5:krvn,,,0:main
+,,,,,,,,
+,,def,,,,,,
+,,,,,,,,
+,,,4:mod,4:head,,5:mod,5:head,
+%affirmative
+</sent_id>
+

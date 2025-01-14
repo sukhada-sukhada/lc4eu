@@ -1,5 +1,6 @@
+<sent_id=402>
 #mEM apanA kAma nahIM kara sakA.
-speaker,apanA,kAma_1,nahIM,kara_17-0_sakA_1
+$speaker,apanA,kAma_1,nahIM,kara_17-0_sakA_1
 1,2,3,4,5
 anim,,,,
 ,,,,
@@ -7,5 +8,7 @@ anim,,,,
 ,1:coref,,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
 

@@ -1,10 +1,14 @@
+<sent_id=63>
 #Sera ne yuxXa ke liye jaMgala meM saBA bulAI.
 Sera_1,yuxXa_1,jaMgala_1,saBA_3,bulA_1-yA_1
 1,2,3,4,5
-anim male,,,,
+anim/male,,,,
 ,,,,
 5:k1,5:rt,5:k7p,5:k2,0:main
 ,,,,
 def,def,def,def,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

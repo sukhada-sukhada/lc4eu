@@ -1,11 +1,14 @@
+<sent_id=403>
 #Apa kOna ho?
-addressee,kim,hE_1-pres
+$addressee,$kim,hE_1-pres
 1,2,3
-anim male,anim male,
+anim/male,anim/male,
 ,,
 3:k1,3:k1s,0:main
 ,,
 respect,,
 ,,
-interrogative
+,,
+%interrogative
+</sent_id>
 

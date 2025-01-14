@@ -1,5 +1,6 @@
+<sent_id=113>
 #sUrya camakawA BI hE.
-sUrya_1, camaka_13-wA_hE_1
+sUrya_1,camaka_13-wA_hE_1
 1,2
 ,
 ,
@@ -7,4 +8,7 @@ sUrya_1, camaka_13-wA_hE_1
 ,
 def,BI_1
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

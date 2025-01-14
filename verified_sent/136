@@ -1,5 +1,6 @@
+<sent_id=136>
 #mEM souMgA.
-speaker,so_1-gA_2
+$speaker,so_1-gA_2
 1,2
 anim,
 ,
@@ -7,4 +8,7 @@ anim,
 ,
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

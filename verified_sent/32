@@ -1,10 +1,15 @@
+<sent_id=32>
 #mAz ne rAma se bacce ko KAnA KilavAyA.
-mAz_1,rAma, baccA_1, KAnA_1,KA_1-yA_1
-1,2,3,4,5
-,per male, anim male,,
-,,,,doublecausative
-5:pk1,5:mk1,5:jk1,5:k2,
-,,,,
-def,,def,,
-,,,,
-affirmative
+mAz_1,rAma,baccA_1,KAnA_1
+1,2,3,4
+,per/male,anim/male,
+,,,
+5:pk1,5:mk1,5:jk1,5:k2
+,,,
+def,,def,
+,,,
+,,,
+KA_1-yA_1	5	-	doublecausative	-	-	-	-	-
+%affirmative
+</sent_id>
+

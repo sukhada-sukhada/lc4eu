@@ -1,5 +1,6 @@
+<sent_id=358>
 #Apa unako XyAna se xeKeMge.
-addressee,wyax,XyAna_11,xeKa_27-gA_1
+$addressee,$wyax,XyAna_11,xeKa_27-gA_1
 1,2,3,4
 anim,,,
 pl,,,
@@ -7,5 +8,7 @@ pl,,,
 ,48.1:coref,,
 respect,distal,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

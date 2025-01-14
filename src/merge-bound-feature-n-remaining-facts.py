@@ -30,7 +30,8 @@ for i in range(len(fr1)):
                     fw.write(fr1[i])
                 except:
                     pass
-		#print('The fact was already deleted')
+                    #print('The fact was already deleted', fr1[j])
+                    #print('The fact was already deleted', fr2[i])
     else:
         fw.write(fr1[i])
 

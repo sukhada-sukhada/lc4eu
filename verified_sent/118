@@ -1,10 +1,14 @@
+<sent_id=118>
 #kyA muJe jAnA cAhie?
-speaker,jA_1-nA_cAhie_1
+$speaker,jA_1-nA_cAhie_1
 1,2
-anim male,
+anim/male,
 ,
 2:k1,0:main
 ,
 ,
 ,
-yn_interrogative
+,
+%yn_interrogative
+</sent_id>
+

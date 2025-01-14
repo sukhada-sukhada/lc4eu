@@ -1,10 +1,14 @@
+<sent_id=194>
 #kyA wuma Delhi meM ho?
-addressee,Delhi,hE_1-pres
+$addressee,Delhi,hE_1-pres
 1,2,3
-anim male,place,
+anim/male,place,
 ,,
 3:k1,3:k7p,0:main
 ,,
 ,,
 ,,
-yn_interrogative
+,,
+%yn_interrogative
+</sent_id>
+

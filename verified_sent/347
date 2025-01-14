@@ -1,10 +1,14 @@
+<sent_id=347>
 #Rama vixyArWiyoM ke muxxoM para carcA kara rahA hE.
-Rama,vixyArWI_1,muxxA_1,carcA+kara_1-0_rahA_hE_1
-1,2,3,4
-per male,,,
-,pl,,
-4:k1,3:r6,4:k7,0:main
-,,,
-,def,,
-,,,
-affirmative
+Rama,vixyArWI_1,muxxA_1,carcA_1,kara_1-0_rahA_hE_1,[cp_1]
+1,2,3,5,6,4
+per/male,,,,,
+,pl,,,,
+4:k1,3:r6,4:k7,,,0:main
+,,,,,
+,def,,,,
+,,,,,
+,,,4:kriyAmUla,4:verbalizer,
+%affirmative
+</sent_id>
+

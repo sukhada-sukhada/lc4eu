@@ -1,5 +1,6 @@
+<sent_id=250>
 #unhoMne bagIce meM KAnA KAyA.
-wyax,bagIcA_1,KAnA_1,KA_1-yA_1
+$wyax,bagIcA_1,KAnA_1,KA_1-yA_1
 1,2,3,4
 ,,,
 pl,,,
@@ -7,4 +8,7 @@ pl,,,
 9.1:coref,,,
 ,def,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

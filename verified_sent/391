@@ -1,12 +1,14 @@
-#rAma acCA hE yA burA?
-rAma,acCA_1,hE_1-pres,burA_1
-1,2,3,4
-per male,,,
-,,,
-3:k1,3:k1s,0:main,3:k1s
-,,,
-,,,
-,,,
-yn_interrogative
-disjunct:[2,4]
+<sent_id=391>
+#hari ne hI apane Pala riyA Ora mohana ko nahIM xiye.
+hari,apanA,Pala_1,riyA,mohana,sanju,nahIM,xe_1-yA_1,[conj_1]
+1,2,3,4,5,6,7,8,9
+per/male,,,per/female,per/male,per/male,,,
+,,pl,,,,,,
+8:k1,3:r6,8:k2,,,,8:neg,0:main,8:k4
+,1:coref,,,,,,,
+hI_6,,,,,,,,
+,,,,,,,,
+,,,9:op1,9:op2,9:op3,,,
+%negative
+</sent_id>
 

@@ -1,5 +1,6 @@
+<sent_id=249>
 #usane calaciwra xeKA.
-wyax,calaciwra_1,xeKa_3-yA_1
+$wyax,calaciwra_1,xeKa_3-yA_1
 1,2,3
 ,,
 ,,
@@ -7,4 +8,7 @@ wyax,calaciwra_1,xeKa_3-yA_1
 9.1:coref,,
 ,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

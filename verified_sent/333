@@ -1,11 +1,14 @@
+<sent_id=333>
 #XaniyA iwanI vyavahAra kuSala nahIM WI.
-XaniyA,iwanA_1,vyavahAra_1+kuSala_1,nahIM_1,hE_1-past
-1,2,3,4,5
-per female,,,,
-,,,,
-5:k1,3:intf,3.1/3.2:mod 5:k1s,5:neg,0:main
-,,,,
-,,,,
-,,,,
-affirmative
+XaniyA,iwanA_1,vyavahAra_1_2,kuSala_1,[nc_1],nahIM,hE_1-past
+1,2,6,7,3,4,5
+per/female,,,,,,
+,,,,,,
+5:k1,3:intf,5:k1s,,3.1/3.2:mod,5:neg,0:main
+,,,,,,
+,,,,,,
+,,,,,,
+,,3:mod,3:head,,,
+%affirmative
+</sent_id>
 

@@ -1,10 +1,14 @@
+<sent_id=109>
 #Apa kahAz raha sakawe ho?
-addressee,kim,raha_1-0_sakawA_hE_2
+$addressee,$kim,raha_1-0_sakawA_hE_2
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k1,3:k7p,0:main
 ,,
 respect,,
 ,,
-interrogative
+,,
+%interrogative
+</sent_id>
+

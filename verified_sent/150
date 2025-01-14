@@ -1,11 +1,14 @@
+<sent_id=150>
 #rAma ne KAnA nahIM KAyA WA
-rAma,KAnA_1,nahIM_2,KA_1-yA_WA_1
+rAma,KAnA_1,nahIM,KA_1-yA_WA_1
 1,2,3,4
-per male,,,
-,,
+per/male,,,
+,,,
 4:k1,4:k2,4:neg,0:main
 ,,,
 ,def,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
 

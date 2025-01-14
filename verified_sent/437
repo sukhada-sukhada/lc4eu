@@ -1,5 +1,6 @@
+<sent_id=437>
 #Ora vaha buxXimAna hE.
-wyax,buxXimAna_1,hE_1-pres
+$wyax,buxXimAna_1,hE_1-pres
 1,2,3
 ,,
 ,,
@@ -7,6 +8,7 @@ wyax,buxXimAna_1,hE_1-pres
 436.1:coref,,436.3:samuccaya
 ,,
 ,,
-affirmative
-
+,,
+%affirmative
+</sent_id>
 

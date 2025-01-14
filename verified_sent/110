@@ -1,10 +1,14 @@
+<sent_id=110>
 #muJe kalama xiyA gayA.
-speaker,kalama_1,xe_1-yA_gayA_1
+$speaker,kalama_1,xe_1-yA_gayA_1
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k4,3:k2,0:main
 ,,
 ,,
 ,,
-pass-affirmative
+,,
+%pass_affirmative
+</sent_id>
+

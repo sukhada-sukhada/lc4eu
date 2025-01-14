@@ -1,11 +1,14 @@
+<sent_id=287>
 #KaragoSa ne kaCue kI KillI udZAI.
-KaragoSa_1,kaCuA_1,KillI+udZA_1-yA_1
-1,2,3
-anim,anim,
-,,
-3:k1,3:k2,0:main
-,,
-def,def,
-,,
-affirmative
+KaragoSa_1,kaCuA_1,KillI_2,udZA_1-yA_1,[cp_1]
+1,2,4,5,3
+anim,anim,,,
+,,,,
+3:k1,3:k2,,,0:main
+,,,,
+def,def,,,
+,,,,
+,,3:kriyAmula,3:verbalizer,
+%affirmative
+</sent_id>
 

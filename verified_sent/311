@@ -1,11 +1,14 @@
+<sent_id=311>
 #usane rAma ke kAryAlaya kI AXAraSilA raKI.
-wyax,rAma,kAryAlaya_1,AXAraSilA_1,raKa_4-yA_1
+$wyax,rAma,kAryAlaya_1,AXAraSilA_1,raKa_4-yA_1
 1,2,3,4,5
-,per male,,,
+,per/male,,,
 ,,,,
 5:k1,3:r6,4:rt,5:k2,0:main
 101.1:coref,,,,
 ,,,def,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
 

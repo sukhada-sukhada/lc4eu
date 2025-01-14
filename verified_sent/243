@@ -1,10 +1,14 @@
+<sent_id=243>
 #rAma KIra KAwA hE.
 rAma,KIra,KA_1-wA_hE_1
 1,2,3
-per male,ne,
+per/male,ne,
 ,,
 3:k1,3:k2,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

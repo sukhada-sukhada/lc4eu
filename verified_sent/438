@@ -1,10 +1,14 @@
+<sent_id=438>
 #rAma kAma Kawama kiyA.
-rAma,kAma_1,Kawama+kara_1-yA_1
-1,2,3
-per male,,
-,,
-3:k1,3:k2,0:main
-,,
-,def,
-,,
-affirmative
+rAma,kAma_1,Kawama_1,kara_1-yA_1,[cp_1]
+1,2,4,5,3
+per/male,,,,
+,,,,
+3:k1,3:k2,,,0:main
+,,,,
+,def,,,
+,,,,
+,,3:kriyAmUla,3:verbalizer,
+%affirmative
+</sent_id>
+

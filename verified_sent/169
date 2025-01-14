@@ -1,11 +1,14 @@
+<sent_id=169>
 #mEM Sivama ke lie Sahara se AyA.
-speaker,Sivama,Sahara_1,A_1-yA_1
+$speaker,Sivama,Sahara_1,A_1-yA_1
 1,2,3,4
-anim male,per male,,
+anim/male,per/male,,
 ,,,
 4:k1,4:rt,4:k5,0:main
 ,,,
 ,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

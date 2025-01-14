@@ -1,3 +1,4 @@
+<sent_id=282>
 #KaragoSa ne GAsa nahIM KAyI WI
 KaragoSa_1,GAsa_1,nahIM,KA_1-yA_WA_2
 1,2,3,4
@@ -7,4 +8,7 @@ anim,,,
 ,,,
 def,,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
+

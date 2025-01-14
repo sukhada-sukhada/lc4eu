@@ -1,10 +1,14 @@
+<sent_id=378>
 #BIma ke eka betA WA.
 BIma,1,betA_1,hE_2-past
 1,2,3,4
-per male,numex,,
+per/male,numex,,
 ,,,
 3:rhh,3:card,4:k1,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

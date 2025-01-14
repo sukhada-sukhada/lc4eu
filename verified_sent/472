@@ -1,11 +1,14 @@
+<sent_id=472>
 #yaha jFAna ko viswqwa karane kA prayAsa karawA hE.
-wyax,jFAna_4,viswqwa+kara_2,prayAsa+kara_1-yA_1
-1,2,3,4
-,mass,,
-,,,
-4:k1,3:k2,4:rt,0:main
-,,,
-proximal,,,
-,,,
-affirmative
+$wyax,jFAna_4,viswqwa_1,kara_2,[cp_1],prayAsa_1,kara_1-yA_1,[cp_2]
+1,2,5,6,3,7,8,4
+,,,,,,,
+,,,,,,,
+4:k1,3:k2,,,4:rt,,,0:main
+,,,,,,,
+proximal,,,,,,,
+,,,,,,,
+,,3:kriyAmUla,3:verbalizer,,4:kriyAmUla,4:verbalizer,
+%affirmative
+</sent_id>
 

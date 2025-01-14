@@ -1,11 +1,14 @@
-#rAma ne kisase eka praSna pUCA? 
-rAma,kim,praSna_1,pUCa_3-yA_1 
-1,2,3,4 
-per male,anim male,, 
-,,, 
-4:k1,4:k2g,4:k2,0:main 
+<sent_id=408>
+#rAma ne kisase eka praSna pUCA?
+rAma,$kim,praSna_1,pUCa_3-yA_1
+1,2,3,4
+per/male,anim/male,,
 ,,,
-,,, 
-,,, 
-interrogative
+4:k1,4:k2g,4:k2,0:main
+,,,
+,,,
+,,,
+,,,
+%interrogative
+</sent_id>
 

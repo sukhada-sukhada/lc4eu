@@ -1,11 +1,14 @@
+<sent_id=317>
 #wuma pAnI se GadZe ko Baro.
-addressee,pAnI_1,GadZA_2,Bara_7-o_1
+$addressee,pAnI_1,GadZA_2,Bara_7-o_1
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,4:k3,4:k2,0:main
 ,,,
 ,,def,
 ,,,
-imperative
+,,,
+%imperative
+</sent_id>
 

@@ -1,10 +1,14 @@
+<sent_id=238>
 #rAma Delhi meM rahawA hE
 rAma,Delhi,raha_1-wA_hE_1
 1,2,3
-per male,place,
+per/male,place,
 ,,
 3:k1,3:k7p,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

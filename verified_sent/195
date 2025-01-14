@@ -1,3 +1,4 @@
+<sent_id=195>
 #bacce Pala KAwe hEM.
 baccA_1,Pala_1,KA_1-wA_hE_1
 1,2,3
@@ -7,4 +8,7 @@ pl,pl,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

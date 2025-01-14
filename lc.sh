@@ -14,9 +14,11 @@ if ! [ -d $var/tmp_dir ] ; then
 	mkdir $var/tmp_dir
 fi
 
-ls $1 > f 
+
+ls $2 > f 
 sed -i 's/.*\/\(.*\)/\1/g' f 
 file_name=`cat f`
+lang="$1"
 echo $file_name
 #Creating sentence dir
 if ! [ -d $var/tmp_dir/$file_name ] ; then
@@ -35,8 +37,10 @@ cd $var/tmp_dir/$file_name
 cp $var/dictionaries/*.dat  .
 echo $var > global_path.clp
 
-python3 $var/src/USR_coref_GNP_mapping.py $var/$1  $var/tmp_dir/$file_name/USR_coref_mapped.dat $var/corefFile
+python3 $var/src/USR_coref_GNP_mapping.py $var/$2  $var/tmp_dir/$file_name/USR_coref_mapped.dat $var/corefFile
 python3 $var/src/USR-CLIPS_facts.py $var/tmp_dir/$file_name/USR_coref_mapped.dat $var/tmp_dir/$file_name/USR-CLIPS-facts.dat
+python3 $var/src/gen_clips_from_multiling_dict.py $lang $var/$2 $var/tmp_dir/$file_name/compiled_dict.dat $var/tmp_dir/$file_name/tam_mapped.dat
+
 echo "(defglobal ?*path* = $var)" > global_path.clp
 
 clips -f  $var/src/clp_files/run_modules.bat > err

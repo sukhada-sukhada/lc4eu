@@ -1,12 +1,14 @@
+<sent_id=364>
 #rAma, hari, viveka, riyA, rajanI Ora mohana acCe hEM.
-rAma,hari,viveka,riyA,rajanI,mohana,acCA_1,hE_1-pres
-1,2,3,4,5,6,7,8
-per male,per male,per male,per female,per female,per male,,
-,,,,,,,
-8:k1,8:k1,8:k1,8:k1,8:k1,8:k1,8:k1s,0:main
-,,,,,,,
-,,,,,,,
-,,,,,,,
-affirmative
-conj:[1,2,3,4,5,6]
+rAma,hari,viveka,riyA,rajanI,mohana,acCA_1,hE_1-pres,[conj_1]
+1,2,3,4,5,6,7,8,9
+per/male,per/male,per/male,per/female,per/female,per/male,,,
+,,,,,,,,
+,,,,,,8:k1s,0:main,7:k1
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+9:op1,9:op2,9:op3,9:op4,9:op5,9:op6,,,
+%affirmative
+</sent_id>
 

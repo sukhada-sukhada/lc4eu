@@ -1,12 +1,14 @@
+<sent_id=319>
 #GadZe meM pAnI hari ne BarA.
 GadZA_2,pAnI_1,hari,Bara_7-yA_1
 1,2,3,4
-,,per male,
+,,per/male,
 ,,,
 4:k7p,4:k2,4:k1,0:main
 ,,,
 def,,,
 ,,,
-affirmative
-
+,,,
+%affirmative
+</sent_id>
 

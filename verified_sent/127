@@ -1,11 +1,14 @@
+<sent_id=127>
 #rAma xillI meM nahIM hE.
-rAma,xillI,nahIM_1,hE_1-pres
+rAma,xillI,nahIM,hE_1-pres
 1,2,3,4
-per male,place,,
+per/male,place,,
 ,,,
 4:k1,4:k7p,4:neg,0:main
 ,,,
 ,,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
 

@@ -1,11 +1,14 @@
+<sent_id=316>
 #hari ne kyA GadZe meM BarA?
-hari,kim,GadZA_2,Bara_7-yA_1
+hari,$kim,GadZA_2,Bara_7-yA_1
 1,2,3,4
-per male,,,
+per/male,,,
 ,,,
 4:k1,4:k2,4:k7p,0:main
 ,,,
 ,,def,
 ,,,
-interrogative
+,,,
+%interrogative
+</sent_id>
 

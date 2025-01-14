@@ -1,12 +1,14 @@
+<sent_id=387>
 #hama bUDZe AxamI Ora OrawoM se mile.
-speaker,bUdZA_1,AxamI_1,Orawa_1,mila_1-yA_1
-1,2,3,4,5
-anim,,anim male,anim female,
-pl,,pl,pl,
-5:k1,3:mod,5:k2,5:k2,0:main
-,,,,
-,,,,
-,,,,
-affirmative
-conj:[3,4]
+$speaker,bUdZA_1,AxamI_1,Orawa_1,mila_1-yA_1,[conj_1]
+1,2,3,4,5,6
+anim,,anim/male,anim/female,,
+pl,,pl,pl,,
+5:k1,3:mod,,,0:main,5:k2
+,,,,,
+,,,,,
+,,,,,
+,,6:op1,6:op2,,
+%affirmative
+</sent_id>
 

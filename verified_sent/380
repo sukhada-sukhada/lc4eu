@@ -1,5 +1,6 @@
+<sent_id=380>
 #muJe eka Pala xo.
-speaker,Pala_1,xe_1-o_1
+$speaker,Pala_1,xe_1-o_1
 1,2,3
 anim,,
 ,,
@@ -7,4 +8,7 @@ anim,,
 ,,
 ,,
 ,,
-imperative
+,,
+%imperative
+</sent_id>
+

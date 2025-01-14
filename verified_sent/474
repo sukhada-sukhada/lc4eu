@@ -1,4 +1,5 @@
-#BUgola eka prAcInawama BU-vijFAna hE. 
+<sent_id=474>
+#BUgola eka prAcInawama BU-vijFAna hE.
 BUgola_1,prAcIna_2,OxyogikI_1,hE_1-pres
 1,2,3,4
 ,,,
@@ -7,7 +8,7 @@ BUgola_1,prAcIna_2,OxyogikI_1,hE_1-pres
 ,,,
 def,,,
 ,,,
-affirmative
-
-
+,,,
+%affirmative
+</sent_id>
 

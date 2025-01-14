@@ -1,10 +1,14 @@
+<sent_id=335>
 #rAma sabako apane skUla bulAwA hE.
-rAma,saba_4,apanA,skUla_1, bulA_1-wA_hE_1
+rAma,saba_4,apanA,skUla_1,bulA_1-wA_hE_1
 1,2,3,4,5
-per male,,,,
+per/male,,,,
 ,,,,
 5:k1,5:k2,4:r6,5:k7p,0:main
 ,,1:coref,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

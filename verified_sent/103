@@ -1,3 +1,4 @@
+<sent_id=103>
 #betoM ko Kewa meM bIja bonA cAhie.
 betA_1,Kewa_1,bIja_1,bo_3-nA_cAhie_2
 1,2,3,4
@@ -7,4 +8,7 @@ pl,,,
 ,,,
 def,def,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

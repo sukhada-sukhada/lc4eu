@@ -1,3 +1,4 @@
+<sent_id=298>
 #kaCuA XIre cala rahA hE.
 kaCuA_1,XIre_1,cala_6-0_rahA_hE_1
 1,2,3
@@ -7,5 +8,7 @@ anim,,
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

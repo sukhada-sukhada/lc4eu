@@ -1,3 +1,4 @@
+<sent_id=133>
 #kuCa bacce koI Kela Kela sakawe hEM.
 kuCa_1,baccA_2,koI_1,Kela_2,Kela_1-0_sakawA_hE_1
 1,2,3,4,5
@@ -7,5 +8,7 @@ kuCa_1,baccA_2,koI_1,Kela_2,Kela_1-0_sakawA_hE_1
 ,,,,
 ,,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
 

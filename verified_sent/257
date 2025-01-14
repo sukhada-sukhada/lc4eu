@@ -1,5 +1,6 @@
+<sent_id=257>
 #merA xoswa bagIce meM Kela rahA hE.
-speaker,xoswa_1,bagIcA_1,Kela_1-0_rahA_hE_1
+$speaker,xoswa_1,bagIcA_1,Kela_1-0_rahA_hE_1
 1,2,3,4
 anim,anim,,
 ,,,
@@ -7,4 +8,7 @@ anim,anim,,
 ,,,
 ,,def,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+

@@ -1,10 +1,14 @@
+<sent_id=16>
 #ladakA bagIce meM nayI kiwAba paDa rahA hE.
 ladakA_1,bagIcA_1,nayA_1,kiwAba_1,paDa_1-0_rahA_hE_1
 1,2,3,4,5
-anim male,,,,
+anim/male,,,,
 ,,,,
 5:k1,5:k7p,4:mod,5:k2,0:main
 ,,,,
 def,def,,,
 ,,,,
-affirmative
+,,,,
+%affirmative
+</sent_id>
+

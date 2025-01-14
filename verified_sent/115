@@ -1,10 +1,14 @@
+<sent_id=115>
 #kyA mEM kala Gara jA sakawA hUz?
-speaker,kala_2,Gara_1,jA_1-0_sakawA_hE_3
+$speaker,kala_2,Gara_1,jA_1-0_sakawA_hE_3
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,4:k7t,4:k2p,0:main
 ,,,
 ,,,
 ,,,
-yn_interrogative
+,,,
+%yn_interrogative
+</sent_id>
+

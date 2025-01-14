@@ -1,12 +1,14 @@
+<sent_id=9>
 #rAma rojZa eka seba KAwA hE.
-rAma,rojZa_3,1,seba_1, KA_1-wA_hE_1
+rAma,rojZa_3,1,seba_1,KA_1-wA_hE_1
 1,2,3,4,5
-per male,,numex,,
+per/male,,numex,,
 ,,,,
 5:k1,5:krvn,4:card,5:k2,0:main
 ,,,,
 ,,,,
 ,,,,
-affirmative
-
+,,,,
+%affirmative
+</sent_id>
 

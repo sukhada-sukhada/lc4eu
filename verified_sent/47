@@ -1,3 +1,4 @@
+<sent_id=47>
 #AkASagaMgA badI hE.
 AkASagaMgA_1,badA_2,hE_1-pres
 1,2,3
@@ -7,4 +8,7 @@ AkASagaMgA_1,badA_2,hE_1-pres
 ,,
 def,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

@@ -1,11 +1,14 @@
+<sent_id=75>
 #rAma acCA doYktara hE.
 rAma,acCA_1,doYktara_1,hE_1-pres
 1,2,3,4
-per male,,,
+per/male,,,
 ,,,
 4:k1,3:mod,4:k1s,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

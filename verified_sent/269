@@ -1,10 +1,14 @@
+<sent_id=269>
 #riweSa ke pAsa KaragoSa WA.
 riweSa,KaragoSa_1,hE_2-past
 1,2,3
-per male,anim,
+per/male,anim,
 ,,
 2:rsm,3:k1,0:main
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

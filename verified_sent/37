@@ -1,11 +1,14 @@
+<sent_id=37>
 #mEMne acCI kiwAba paDI hE.
-speaker,acCA_1,kiwAba_1,paDa_1-yA_hE_1
+$speaker,acCA_1,kiwAba_1,paDa_1-yA_hE_1
 1,2,3,4
-anim male,,,
+anim/male,,,
 ,,,
 4:k1,3:mod,4:k2,0:main
 ,,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

@@ -1,10 +1,14 @@
+<sent_id=235>
 #kyA mEM ApakI sahAyawA kara sakawA hUz?
-speaker,addressee,sahAyawA+kara_1-0_sakawA_hE_3
-1,2,3
-anim male,anim male,
-,,
-3:k1,3:k2,0:main
-,,
-,,
-,,
-yn_interrogative
+$speaker,$addressee,sahAyawA_1,kara_1-0_sakawA_hE_3,[cp_1]
+1,2,4,5,3
+anim/male,anim/male,,,
+,,,,
+3:k1,3:k2,,,0:main
+,,,,
+,,,,
+,,,,
+,,3:kriyAmUla,3:verbalizer,
+%yn_interrogative
+</sent_id>
+

@@ -1,5 +1,6 @@
+<sent_id=320>
 #Sahara mawa jAo!
-Sahara_1,nahIM_1,jA_1-o_1
+Sahara_1,nahIM,jA_1-o_1
 1,2,3
 ,,
 ,,
@@ -7,5 +8,7 @@ Sahara_1,nahIM_1,jA_1-o_1
 ,,
 def,,
 ,,
-imperative
+,,
+%imperative
+</sent_id>
 

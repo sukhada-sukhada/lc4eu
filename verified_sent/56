@@ -1,11 +1,14 @@
+<sent_id=56>
 #bacce ko CAwra kahA jAyegA.
 baccA_1,CAwra_1,kaha_1-yA_jAyegA_1
 1,2,3
 anim,,
 ,,
-3:k2g,3:k2,0:main
+3:k2s,3:k2,0:main
 ,,
 ,,
 ,,
-pass-affirmative
+,,
+%pass_affirmative
+</sent_id>
 

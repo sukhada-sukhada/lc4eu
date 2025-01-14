@@ -1,10 +1,14 @@
+<sent_id=186>
 #Sera rAjA ko xeKA.
-Sera_1, rAjA_1, xeKa_1-yA_1
+Sera_1,rAjA_1,xeKa_1-yA_1
 1,2,3
-anim male,anim male,
+anim/male,anim/male,
 ,,
 3:k1,3:k2,0:main
 ,,
 def,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

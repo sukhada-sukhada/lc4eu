@@ -1,5 +1,6 @@
+<sent_id=458>
 #billI ne nahIM BOMkA.
-koI_1,billI_1,nahIM_1,BOMka_1-yA_1
+koI_1,billI_1,nahIM,BOMka_1-yA_1
 1,2,3,4
 ,anim,,
 ,,,
@@ -7,5 +8,7 @@ koI_1,billI_1,nahIM_1,BOMka_1-yA_1
 ,,,
 ,,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
 

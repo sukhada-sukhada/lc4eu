@@ -1,10 +1,14 @@
+<sent_id=90>
 #kyA wumhe buKAra hE?
-addressee,buKAra_1,hE_1-pres
+$addressee,buKAra_1,hE_1-pres
 1,2,3
-anim male,,
+anim/male,,
 ,,
 3:k4a,3:k1,0:main
 ,,
 ,,
 ,,
-yn_interrogative
+,,
+%yn_interrogative
+</sent_id>
+

@@ -1,5 +1,6 @@
+<sent_id=100>
 #mEM rUsI nahIM bola sakawA hUz.
-speaker,rUsI,nahIM_1,bola_1-0_sakawA_hE_1
+$speaker,rUsI,nahIM,bola_1-0_sakawA_hE_1
 1,2,3,4
 anim,ne,,
 ,,,
@@ -7,4 +8,7 @@ anim,ne,,
 ,,,
 ,,,
 ,,,
-negative
+,,,
+%negative
+</sent_id>
+

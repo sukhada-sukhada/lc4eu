@@ -1,11 +1,14 @@
+<sent_id=222>
 #ayAn ne use pAnI xiyA.
-ayAn,wyax,pAnI_1,xe_1-yA_1
+ayAn,$wyax,pAnI_1,xe_1-yA_1
 1,2,3,4
-per male,,,
+per/male,,,
 ,,,
 4:k1,4:k4,4:k2,0:main
 ,9.1:coref,,
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
 

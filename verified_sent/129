@@ -1,3 +1,4 @@
+<sent_id=129>
 #prawyeka baccA Kela rahA hE.
 prawyeka_1,baccA_2,Kela_1-0_rahA_hE_1
 1,2,3
@@ -7,5 +8,7 @@ prawyeka_1,baccA_2,Kela_1-0_rahA_hE_1
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

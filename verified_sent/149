@@ -1,10 +1,14 @@
+<sent_id=149>
 #Sahara jA.
-Sahara_1,jA_1-o_1
-1,2
+Sahara_1,jA_1-o_1,-
+1,2,
 ,,
-,
-2:k2p,0:main
-,
-def,
-,
-imperative
+,,
+2:k2p,0:main,
+,,
+def,,
+,,
+,,
+%imperative
+</sent_id>
+

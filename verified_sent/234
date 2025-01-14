@@ -1,5 +1,6 @@
+<sent_id=234>
 #mEM Gara A rahA hUz.
-speaker,Gara_1,A_1-0_rahA_hE_1
+$speaker,Gara_1,A_1-0_rahA_hE_1
 1,2,3
 anim,,
 ,,
@@ -7,4 +8,7 @@ anim,,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

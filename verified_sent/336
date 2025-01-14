@@ -1,10 +1,14 @@
+<sent_id=336>
 #rAma kyA cAhawA hE?
-rAma,kim,cAha_1-wA_hE_1
+rAma,$kim,cAha_1-wA_hE_1
 1,2,3
-per male,,
+per/male,,
 ,,
 3:k1,3:k2,0:main
 ,,
 ,,
 ,,
-interrogative
+,,
+%interrogative
+</sent_id>
+

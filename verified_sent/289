@@ -1,12 +1,14 @@
+<sent_id=289>
 #kaCue ne cunOwI ko svIkAra kIyA.
-kaCuA_1,cunOwI_1,svIkAra+kara_6-yA_1
-1,2,3
-anim male,,
-,,
-3:k1,3:k2,0:main
-,,
-def,def,
-,,
-affirmative
-
+kaCuA_1,cunOwI_1,svIkAra_1,kara_6-yA_1,[cp_1]
+1,2,4,5,3
+anim/male,,,,
+,,,,
+3:k1,3:k2,,,0:main
+,,,,
+def,def,,,
+,,,,
+,,3:kriyAmUla,3:verbalizer,
+%affirmative
+</sent_id>
 

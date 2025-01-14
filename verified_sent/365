@@ -1,12 +1,14 @@
+<sent_id=365>
 #rAma, mohana Ora sIwA acCe hEM.
-rAma,mohana,sIwA,acCA_1,hE_1-pres
-1,2,3,4,5
-per male,per male,per female,,
-,,,,
-5:k1,5:k1,5:k1,5:k1s,0:main
-,,,,
-,,,,
-,,,,
-affirmative
-conj:[1,2,3]
+rAma,mohana,sIwA,acCA_1,hE_1-pres,[conj_1]
+1,2,3,4,5,6
+per/male,per/male,per/female,,,
+,,,,,
+,,,5:k1s,0:main,5:k1
+,,,,,
+,,,,,
+,,,,,
+6:op1,6:op2,6:op3,,,
+%affirmative
+</sent_id>
 

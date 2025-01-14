@@ -1,10 +1,14 @@
-#sanju jI A gaye. 
+<sent_id=410>
+#sanju jI A gaye.
 sanju,A_1-yA_1
 1,2
-per male,
+per/male,
 ,
 2:k1,0:main
 ,
 respect,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

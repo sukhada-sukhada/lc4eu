@@ -1,10 +1,14 @@
+<sent_id=161>
 #kyA rAvaNa rAma ke xvArA mArA gayA WA?
 rAvaNa,rAma,mAra_1-yA_gayA_WA_1
 1,2,3
-per male,per male,
+per/male,per/male,
 ,,
 3:k2,3:k1,0:main
 ,,
 ,,
 ,,
-pass-interrogative
+,,
+%pass_interrogative
+</sent_id>
+

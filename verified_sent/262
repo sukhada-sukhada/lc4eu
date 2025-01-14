@@ -1,3 +1,4 @@
+<sent_id=262>
 #kyA riweSa jA rahA hE?
 riweSa,jA_1-0_rahA_hE_1
 1,2
@@ -7,4 +8,7 @@ per,
 ,
 ,
 ,
-yn_interrogative
+,
+%yn_interrogative
+</sent_id>
+

@@ -1,3 +1,4 @@
+<sent_id=102>
 #rAma ko Pala KAnA hogA.
 rAma,Pala_1,KA_1-nA_hogA_1
 1,2,3
@@ -7,4 +8,7 @@ per,,
 ,,
 ,,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

@@ -1,3 +1,4 @@
+<sent_id=284>
 #KaragoSa jaMgala meM rahawA WA.
 KaragoSa_1,jaMgala_1,raha_1-wA_WA_1
 1,2,3
@@ -7,4 +8,7 @@ anim,,
 ,,
 ,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
+

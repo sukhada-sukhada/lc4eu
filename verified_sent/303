@@ -1,3 +1,4 @@
+<sent_id=303>
 #kaCuA ganwavya pe pahuzca gayA.
 kaCuA_1,ganwavya_1,pahuzca_7-yA_1
 1,2,3
@@ -7,5 +8,7 @@ anim,,
 ,,
 def,def,
 ,,
-affirmative
+,,
+%affirmative
+</sent_id>
 

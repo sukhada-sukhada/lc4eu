@@ -1,5 +1,6 @@
+<sent_id=439>
 #Ora vaha gayA.
-wyax,jA_1-yA_1
+$wyax,jA_1-yA_1
 1,2
 ,
 ,
@@ -7,4 +8,7 @@ wyax,jA_1-yA_1
 438.1:coref,438.3:samuccaya
 ,
 ,
-affirmative
+,
+%affirmative
+</sent_id>
+

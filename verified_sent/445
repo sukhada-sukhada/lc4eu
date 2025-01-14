@@ -1,5 +1,6 @@
+<sent_id=445>
 #kinwu usane KAnA nahIM KAyA.
-wyax,KAnA_1,nahIM,KA_1-yA_1
+$wyax,KAnA_1,nahIM,KA_1-yA_1
 1,2,3,4
 ,,,
 ,,,
@@ -7,4 +8,7 @@ wyax,KAnA_1,nahIM,KA_1-yA_1
 438.1:coref,,,438.3:viroXi
 ,,,
 ,,,
-affirmative
+,,,
+%affirmative
+</sent_id>
+
