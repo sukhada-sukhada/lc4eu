@@ -1,5 +1,7 @@
 import sys
+from pathlib import Path
 
+HOME = str(Path.home())
 def print_usage_and_exit():
     #print("Usage: python3 code.py <language>")
     #print("Available languages: eng, skt, hin")
@@ -23,7 +25,7 @@ def process_search_words(third_line):
 def search_in_files(processed_search_words, parts_list, valid_languages, language):
     with open(sys.argv[3], "w") as output_file:   # Compiled Dictionary(Acc. to selected language)
 
-        with open("/home/lc4eu/lc4eu/dictionaries/concept-to-mrs-rels.dat", "r") as file2:   # Reading the multi-lingual concept dictionary
+        with open(f"{HOME}/lc4eu/dictionaries/concept-to-mrs-rels.dat", "r") as file2:   # Reading the multi-lingual concept dictionary
             for line in file2:
                 columns = line.strip().split(' ')
 
@@ -35,7 +37,7 @@ def search_in_files(processed_search_words, parts_list, valid_languages, languag
                         
     with open(sys.argv[4], "w") as tam_out_file:   # Compiled Dictionary(Acc. to selected language)
 
-        with open("/home/lc4eu/lc4eu/dictionaries/tam_mapping.dat", "r") as tam_file:  # Reading the multi-lingual TAM dictionary
+        with open(f"{HOME}/lc4eu/dictionaries/tam_mapping.dat", "r") as tam_file:  # Reading the multi-lingual TAM dictionary
             for tam_line in tam_file:
                 tam_columns = tam_line.strip().split(' ')
                 # print(tam_columns, '=================')
