@@ -246,3 +246,7 @@ Deleted phrases with multiple words from dictionaries/H_concept-to-mrs-rels.dat
 2. USR format has been changed in all verified sentences. 
 3. Dictionary format has been changed. 
 4. New CLIPS and Python files have been added. 
+
+
+15/01/2024
+1. 188, 245, 274, 279, 388 verified sentences are running in the current version. 
