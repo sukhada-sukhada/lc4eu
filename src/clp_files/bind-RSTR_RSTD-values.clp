@@ -120,7 +120,7 @@
 (not (rel-ids samuccaya ?kri_id	?id))
 (not (rel-ids anyawra ?kri_id	?id))
 (not (rel-ids viroXi ?kri_id	?id))
-(not (rel-ids AvaSyakwA-pariNAma ?kri_id	?id))
+(not (rel-ids AvaSyakwApariNAma ?kri_id	?id))
 (not (rel-ids samAnakAla ?kri_id	?id))
 (not (rel-ids kAryakAraNa ?kri_id	?id)) ;Because he has to go home.
 =>
@@ -636,15 +636,15 @@
 
 ;Rule for creating binding LTOP h0 value with lbl of the _then_a_1 and arg1 value of _then_a_1 with lbl of the verb.
 ;;#wo meM jAUMgA. Then I will go.
-(defrule AvaSyakwA-pariNAma_samAnakAla-LTOP-verb
-(rel-ids AvaSyakwA-pariNAma|samAnakAla ?previousid	?verb)
+(defrule AvaSyakwApariNAma_samAnakAla-LTOP-verb
+(rel-ids AvaSyakwApariNAma|samAnakAla ?previousid	?verb)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?then _then_a_1 ?lbl ?arg0 ?arg11)
 (MRS_info ?rel ?verb ?mrsss ?lblb ?arg00 $?v)
 =>
 (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values AvaSyakwA-pariNAma_samAnakAla-LTOP-verb Restr-Restricted h0 "?lbl")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values AvaSyakwApariNAma_samAnakAla-LTOP-verb Restr-Restricted h0 "?lbl")"crlf)
 (printout ?*rstr-rstd* "(Restr-Restricted "?arg11" " ?lblb")" crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values AvaSyakwA-pariNAma_samAnakAla-LTOP-verb Restr-Restricted "?arg11" "?lblb")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values AvaSyakwApariNAma_samAnakAla-LTOP-verb Restr-Restricted "?arg11" "?lblb")"crlf)
 )
 
 ;Restrictor for LTOP Restrictor-Restricted default value quantitative pronoun

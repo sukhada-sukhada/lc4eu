@@ -33,7 +33,7 @@ def search_in_files(processed_search_words, parts_list, valid_languages, languag
                 if len(columns) > valid_languages[language]:
                     lang_column_value = columns[valid_languages[language]]
                     if lang_column_value in processed_search_words:
-                        output_file.write(f"(cl-ls-mrs {columns[0]} {lang_column_value} {columns[-1]})\n")
+                        output_file.write(f"(cl-ls-mrs {columns[0]} {columns[-2]} {columns[-1]})\n")
                         
     with open(sys.argv[4], "w") as tam_out_file:   # Compiled Dictionary(Acc. to selected language)
 

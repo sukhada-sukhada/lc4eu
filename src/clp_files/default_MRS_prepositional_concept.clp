@@ -106,7 +106,7 @@
 (id-cl	?k-id  ?num)
 (rel-ids k7t	?kri ?k-id)
 (not (id-dow	?k-id	yes))
-(not (id-cl  ?k-id   ?hiConcept&$kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1|xina_1|aba_1|pahale_2|bAxa_14|GantA_1|xopahara_2|xera_9|aBI_4))
+(not (id-cl  ?k-id   ?hiConcept&$kim|Aja_1|kala_1|kala_2|pahale_4|rojZa_2|bAxa_1|xina_1|aba_1|pahale_2|bAxa_14|GantA_1|xopahara_2|xera_9|aBI_4|eka+bAra_1))
 ;(test (eq (str-index "+baje" ?num) FALSE))
 (not (rel-ids	r6	?k-id	?iid)) ; Rama arrived on Tuesday's morning.
 =>

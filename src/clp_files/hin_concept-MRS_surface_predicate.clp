@@ -596,13 +596,13 @@
 )
 
 
-;Rule for generating _then_a_1 for the AvaSyakwA-pariNAma relation in the discourse row.
+;Rule for generating _then_a_1 for the AvaSyakwApariNAma relation in the discourse row.
 ;wo meM jAUMgA. Then I will go.
-(defrule AvaSyakwA-pariNAma_but
-(rel-ids AvaSyakwA-pariNAma|samAnakAla ?previousid	?verb)
+(defrule AvaSyakwApariNAma_but
+(rel-ids AvaSyakwApariNAma|samAnakAla ?previousid	?verb)
 =>
 (printout ?*mrsCon* "(MRS_info id-MRS_concept "(+ ?verb 40) "  _then_a_1)"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakwA-pariNAma_but  id-MRS_concept "(+ ?verb 40) "  _then_a_1)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values  AvaSyakwApariNAma_but  id-MRS_concept "(+ ?verb 40) "  _then_a_1)"crlf)
 )
 
 ;Rule for generating _because_x for the kAryakAraNa relation in the discourse row.

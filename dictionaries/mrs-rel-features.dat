@@ -14032,7 +14032,6 @@
 (MRSc-FVs _orchestration/NN_u_unknown LBL: h* ARG0: x*)
 (MRSc-FVs _ordainer/NN_u_unknown LBL: h* ARG0: x*)
 (MRSc-FVs _ordain_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
-(MRSc-FVs ord ,CARG:_VALUES)
 (MRSc-FVs _ordeal_n_1 LBL: h* ARG0: x*)
 (MRSc-FVs _orderliness/NN_u_unknown LBL: h* ARG0: x*)
 (MRSc-FVs _orderly_a_1 LBL: h* ARG0: e* ARG1: x*)

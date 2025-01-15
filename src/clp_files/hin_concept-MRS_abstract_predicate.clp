@@ -268,7 +268,7 @@
 (defrule yearsofcenturies
 (id-cl ?id ?num)
 (rel-ids k7t ?kri  ?id&:(numberp ?id))
-(not (id-cl  ?k-id   ?hiConcept&$kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1|sarxI_2|bAxa_14|GantA_1|xopahara_2|garamI_3|SAma_1|xera_9|aBI_4))
+(not (id-cl  ?k-id   ?hiConcept&$kim|Aja_1|kala_1|kala_2|rAwa_1|xina_1|jalxI_9|xera_11|aba_1|pahale_4|rojZa_2|subaha_1|bAxa_1|sarxI_2|bAxa_14|GantA_1|xopahara_2|garamI_3|SAma_1|xera_9|aBI_4|eka+bAra_1))
 ;(test (eq (str-index "+baje" ?num) FALSE))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" proper_q)"crlf)

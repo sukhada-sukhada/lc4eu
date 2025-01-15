@@ -1,14 +1,13 @@
 <sent_id=286>
 #usane eka bAra ek kaCuA ko xeKA.
-$wyax,eka_2,bAra_1,[nc_1],kaCuA_1,xeKa_1-yA_1
-1,5,6,2,3,4
-,,,,anim,
-,,,,,
-4:k1,,,4:krvn,4:k2,0:main
-9.1:coref,,,,,
-,,,,,
-,,,,,
-,2:mod,2:head,,,
+$wyax,eka+bAra_1,eka_2,kaCuA_1,xeKa_1-yA_1
+1,2,3,4,5
+,,,anim,
+,,,,
+5:k1,5:k7t,4:quant,5:k2,0:main
+172.1:coref,,,,
+proximal,,,,
+,,,,
+,,,,
 %affirmative
 </sent_id>
-

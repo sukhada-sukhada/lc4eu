@@ -61,6 +61,14 @@
 (printout ?*defdbug* "(rule-rel-values mrs_every_q  id-MRS_concept "(+ ?id 10)" every_q)"crlf)
 )
 
+;rule for generating MRS concept _any_q for anybody.
+(defrule mrs_any_q
+(id-cl ?id koI_2)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" _any_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_any_q  id-MRS_concept "(+ ?id 10)" _any_q)"crlf)
+)
+
 
 ;rule for demonstrative pronoun
 (defrule mrs_dem_pron-this

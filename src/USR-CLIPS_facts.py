@@ -23,26 +23,26 @@ if len(concept_label) == len(indexing):
         # Extract TAM if hyphen is in concept_label
         if '-' in concept_label[i]:
             TAM = concept_label[i].split('-')[1]
-            ans.write(f"(USRinfo kriyA-TAM\t {indexing[i]+'0000'}\t {TAM})\n")
+            ans.write(f"(kriyA-TAM\t {indexing[i]+'0000'}\t {TAM})\n")
             concepts_without_TAM = concept_label[i].split('-')[0]
         else:
             concepts_without_TAM = concept_label[i]
         
-        ans.write(f"(USRinfo id-lsl\t {indexing[i]+'0000'}\t {concepts_without_TAM})\n")
+        ans.write(f"(id-cl\t {indexing[i]+'0000'}\t {concepts_without_TAM})\n")
 
     # Process Semantic Category (sem_cat)
     for i in range(len(sem_cat)):
         if sem_cat[i]:
             Sem_Cat = [item.strip() for item in sem_cat[i].replace('/', ' ').split()]
             for category in Sem_Cat:
-                ans.write(f"(USRinfo id-{category}\t {indexing[i]+'0000'}\t yes)\n")
+                ans.write(f"(id-{category}\t {indexing[i]+'0000'}\t yes)\n")
 
     # Process Morphological Semantic Category (morpho_semcat)
     for i in range(len(morpho_semcat)):
         if morpho_semcat[i]:
             morph_sem = morpho_semcat[i].split()
             for sem in morph_sem:
-                ans.write(f"(USRinfo id-morph_sem\t {indexing[i]+'0000'}\t {sem})\n")
+                ans.write(f"(id-morph_sem\t {indexing[i]+'0000'}\t {sem})\n")
 
 
     # Process Dependency Relations (dependency)
@@ -50,7 +50,7 @@ if len(concept_label) == len(indexing):
         if dependency[i]:
             dep_row = dependency[i].split(':')
             value1, value2 = dep_row[0], dep_row[1]
-            ans.write(f"(USRinfo rel-ids\t {value2}\t {value1+'0000' if value1 != '0' else value1}\t {indexing[i]+'0000'})\n")
+            ans.write(f"(rel-ids\t {value2}\t {value1+'0000' if value1 != '0' else value1}\t {indexing[i]+'0000'})\n")
 
 
     # Process Discourse Relations (discourse)
@@ -58,7 +58,7 @@ if len(concept_label) == len(indexing):
         if discourse[i]:
             dep_row = discourse[i].split(':')
             value1, value2 = dep_row[0], dep_row[1]
-            ans.write(f"(USRinfo rel-ids\t {value2}\t {value1+'0000'}\t {indexing[i]+'0000'})\n")
+            ans.write(f"(rel-ids\t {value2}\t {value1+'0000'}\t {indexing[i]+'0000'})\n")
 
     # Process Speaker's View (speakers_view)
     for i in range(len(speakers_view)):
@@ -66,11 +66,11 @@ if len(concept_label) == len(indexing):
             word = speakers_view[i].strip('[]')
             if "shade:" in word:
                 shade_value = word.split(":")[1]
-                ans.write(f"(USRinfo id-shade\t {indexing[i]+'0000'}\t {shade_value})\n")
+                ans.write(f"(id-shade\t {indexing[i]+'0000'}\t {shade_value})\n")
             elif "_" in word and ":" not in word:
-                ans.write(f"(USRinfo id-dis_part\t {indexing[i]+'0000'}\t {word})\n")
+                ans.write(f"(id-dis_part\t {indexing[i]+'0000'}\t {word})\n")
             else:
-                ans.write(f"(USRinfo id-speakers_view\t {indexing[i]+'0000'}\t {word})\n")
+                ans.write(f"(id-speakers_view\t {indexing[i]+'0000'}\t {word})\n")
                 
     # Process Construction Information (construction)
     cxn_values_map = {}
@@ -90,18 +90,18 @@ if len(concept_label) == len(indexing):
     for label, data in cxn_values_map.items():
         values_str = ' '.join(data['values'])
         indices_str = ' '.join(data['indices'])
-        ans.write(f"(USRinfo cxnlbl-id-values {label} {data['index']} {values_str})\n")
-        ans.write(f"(USRinfo cxnlbl-id-val_ids {label} {data['index']} {indices_str})\n")
+        ans.write(f"(cxnlbl-id-values {label} {data['index']} {values_str})\n")
+        ans.write(f"(cxnlbl-id-val_ids {label} {data['index']} {indices_str})\n")
         
     # Process construction relations like dependency relations
     for i in range(len(construction)):
         if construction[i]:
             cxn_row = construction[i].split(':')
             value1, value2 = cxn_row[0], cxn_row[1]
-            ans.write(f"(USRinfo cxn_rel-ids\t {value2}\t {value1+'0000' if value1 != '0' else value1}\t {indexing[i]+'0000'})\n")
+            ans.write(f"(cxn_rel-ids\t {value2}\t {value1+'0000' if value1 != '0' else value1}\t {indexing[i]+'0000'})\n")
    
 
     # Print Sentence Type as final fact
-    ans.write(f"(USRinfo sent_type\t {sentence_type.strip()})\n")
+    ans.write(f"(sent_type\t {sentence_type.strip()})\n")
 
 
