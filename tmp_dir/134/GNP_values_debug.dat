@@ -1,0 +1,3 @@
+(rule-rel-values gnp-of-eng_noun-pl id-GEN-NUM-PER 10000 - pl 3 )
+(rule-rel-values no_def-pl id-GEN-NUM-PER 10000  - pl 3 )
+(rule-rel-values no_plural_no_def-singular id-GEN-NUM-PER 30000 - sg 3 )

@@ -1,0 +1,3 @@
+(rule-rel-values mrs_inter_where id-MRS_concept 20010 which_q)
+(rule-rel-values mrs_inter_where id-MRS_concept 20010 loc_nonsp)
+(rule-rel-values mrs_inter_where id-MRS_concept 20000 place_n)

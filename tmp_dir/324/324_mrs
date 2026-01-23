@@ -1,0 +1,14 @@
+[ LTOP: h0
+INDEX: e25
+RELS: < 
+[ _grow_v_1 LBL: h24 ARG0: e25 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x28 ]
+[ neg LBL: h17 ARG0: e18 ARG1: h19 ]
+[ _water_n_1 LBL: h20 ARG0: x21 [ x NUM: sg PERS: 3 ] ]
+[ _flower_n_1 LBL: h27 ARG0: x28 [ x NUM: pl PERS: 3 ] ]
+[ _rose_n_1 LBL: h22 ARG0: x23 [ x NUM: pl PERS: 3 ] ]
+[ _a_q LBL: h29 ARG0: x21 RSTR: h31 BODY: h32 ]
+[ udef_q LBL: h13 ARG0: x28 RSTR: h15 BODY: h16 ]
+[ udef_q LBL: h9 ARG0: x23 RSTR: h11 BODY: h12 ]
+[ _in_p LBL: h24 ARG0: e2 ARG1: e25 ARG2: x21 ]
+[ _like_p LBL: h27 ARG0: e6 ARG1: x28 ARG2: x23 ] >
+HCONS: < h0 qeq h17 h11 qeq h22 h15 qeq h27 h19 qeq h24 h31 qeq h20 > ]

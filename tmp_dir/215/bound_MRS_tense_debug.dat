@@ -1,0 +1,6 @@
+(rule-rel-values  tensexsti  id-MRS_concept-LBL-ARG0-ARG1-ARG2 10001 _in_p h1 e2 prop pres indicative - - x10 x12)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 10000 _pool_n_of h11 x12 i13)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 20000 _swan_n_1 h9 x10)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h14 x10 h16 h17)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h5 x12 h7 h8)

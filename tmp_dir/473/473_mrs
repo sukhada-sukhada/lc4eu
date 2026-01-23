@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e26
+RELS: < 
+[ _add_v_to LBL: h25 ARG0: e26 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x12 ARG2: x23 ]
+[ _this_q_dem LBL: h11 ARG0: x12 [ x GEND: n NUM: sg PERS: 3 ] RSTR: h13 BODY: h14 ]
+[ def_explicit_q LBL: h5 ARG0: x23 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ poss LBL: h22 ARG0: e2 ARG1: x23 ARG2: x20 ]
+[ _interest_n_in LBL: h22 ARG0: x23 ARG1: i24 ]
+[ _subject_n_of LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ARG1: i21 ]
+[ generic_entity LBL: h9 ARG0: x12 ]
+[ _the_q LBL: h15 ARG0: x20 RSTR: h17 BODY: h18 ] >
+HCONS: < h0 qeq h25 h13 qeq h9 h17 qeq h19 h7 qeq h22 > ]

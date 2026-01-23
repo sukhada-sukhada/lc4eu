@@ -1,0 +1,3 @@
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x4 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _arrogant_a_1 h7 e8 x9)

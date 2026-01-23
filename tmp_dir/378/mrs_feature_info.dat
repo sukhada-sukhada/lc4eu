@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 n3)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x5 h6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 udef_q h8 x9 h10 h11)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG 20000 card h12 e13 x14 n15)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _have_v_1 h19 e20 x21 x22)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _son_n_of h16 x17 i18)

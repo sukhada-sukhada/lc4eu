@@ -1,0 +1,7 @@
+(id-GEN-NUM-PER-PT  10000 - sg 1 std )
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _come_v_1 h7 e8 prop pres indicative + - x2)
+(LTOP-INDEX  h0 e8)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)
+(Restr-Restricted  h0  h7)
+(Restr-Restricted     h5  h1)

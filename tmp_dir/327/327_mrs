@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e22
+RELS: < 
+[ _come_v_1 LBL: h21 ARG0: e22 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ def_implicit_q LBL: h12 ARG0: x11 RSTR: h14 BODY: h15 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ loc_nonsp LBL: h21 ARG0: e9 ARG1: e22 ARG2: x11 ]
+[ _early_a_1 LBL: h18 ARG0: e19 ARG1: x11 ]
+[ time_n LBL: h18 ARG0: x11 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h21 h14 qeq h18 h6 qeq h1 > ]

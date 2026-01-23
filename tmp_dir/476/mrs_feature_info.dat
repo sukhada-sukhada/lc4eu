@@ -1,0 +1,7 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 50000 _be_v_id h11 e12 x13 u14)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 40010 _a_q h15 x16 h17 h18)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h19 x20 h21 h22)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _descriptive_a_1 h8 e9 x10)
+(MRS_info id-MRS_concept-LBL-ARG0 40000 _geographer_n_1 h6 x7)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 10000 _initial_a_1 h3 e4 x5)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _scholar_n_1 h1 x2)

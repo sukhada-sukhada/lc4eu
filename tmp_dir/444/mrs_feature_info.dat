@@ -1,0 +1,7 @@
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL 41000 _and_c h1 e2 u3 e4 u5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h7 x8)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h9 x10 h11 h12)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 neg h13 e14 h15)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h22 x23 h24 h25)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _eat_v_1 h18 e19 x20 x21)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _food_n_1 h16 x17)

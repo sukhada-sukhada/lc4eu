@@ -1,0 +1,5 @@
+(MRS_info id-MRS_concept 10010 proper_q)
+(MRS_info id-MRS_concept 10000 named)
+(MRS_info id-MRS_concept 20000 place_n)
+(MRS_info id-MRS_concept 20000 def_implicit_q)
+(MRS_info id-MRS_concept 20000 loc_nonsp)

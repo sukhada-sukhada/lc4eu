@@ -1,0 +1,11 @@
+#yaha pArWiva GatanAoM kA aXyayana karawA hE, jisameM muKya rUpa se pqWvI kI sawaha ke sAWa-sAWa sUrya, caMxramA Ora sOramaMdala ke grahoM ko SAmila kiyA jAwA hE 
+wyax,pArWiva_1,GatanA_1,aXyayana+kara_2-wA_hE_1,yax,muKya_18+rUpa_20,pqWvI_1,sawaha_1,sUrya_1,caMxramA_1,sOramaMdala_1,graha_1,SAmila+kara_1-yA_jAwA_hE_1
+1,2,3,4,5,6,7,8,9,10,11,12,13
+,,,,,,,,,,,,
+,,pl,,,,,,,,,pl,
+4:k1,3:mod,4:k2,0:main,13:k7p,13:k3,8:r6,9:r6,12:r6,12:r6,12:r6,13:k2,3:rcdelim
+,,,,3:coref,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+pass-affirmative
+conj:[9,10,11]

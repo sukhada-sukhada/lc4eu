@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e15
+RELS: < 
+[ _complete_v_2 LBL: h14 ARG0: e15 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x9 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _work_n_1 LBL: h8 ARG0: x9 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h10 ARG0: x9 RSTR: h12 BODY: h13 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h14 h12 qeq h8 h6 qeq h1 > ]

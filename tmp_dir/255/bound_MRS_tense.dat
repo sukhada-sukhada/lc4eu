@@ -1,0 +1,7 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _eat_v_1 h12 e13 prop past indicative - - x2 x11)
+(LTOP-INDEX  h0 e13)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 30000 neg h7 e8 h9)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 _food_n_1 h10 x11)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h16 x11 h18 h19)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)

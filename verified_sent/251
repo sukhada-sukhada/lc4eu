@@ -1,6 +1,5 @@
-<sent_id=251>
 #muJe Gara jAnA cAhie
-$speaker,Gara_1,jA_1-nA_cAhie_1
+speaker,Gara_1,jA_1-nA_cAhie_1
 1,2,3
 anim,,
 ,,
@@ -8,7 +7,4 @@ anim,,
 ,,
 ,,
 ,,
-,,
-%affirmative
-</sent_id>
-
+affirmative

@@ -1,6 +1,5 @@
-<sent_id=134>
 #bacce koI Kela nahIM KeleMge.
-baccA_2,koI_1,Kela_2,nahIM,Kela_1-gA_1
+baccA_2,koI_1,Kela_2,nahIM_1,Kela_1-gA_1
 1,2,3,4,5
 anim,,,,
 pl,,,,
@@ -8,7 +7,5 @@ pl,,,,
 ,,,,
 ,,,,
 ,,,,
-,,,,
-%negative
-</sent_id>
+negative
 

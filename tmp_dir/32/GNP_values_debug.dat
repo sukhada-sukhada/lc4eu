@@ -1,0 +1,3 @@
+(rule-rel-values def_no_plural-singular id-GEN-NUM-PER 10000  - sg 3 )
+(rule-rel-values no_plural_no_def-singular id-GEN-NUM-PER 40000 - sg 3 )
+(rule-rel-values def_no_plural-singular id-GEN-NUM-PER 30000  - sg 3 )

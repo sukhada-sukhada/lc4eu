@@ -1,0 +1,7 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30001 _to_p h1 e2 e3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 _the_q h8 x9 h10 h11)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h12 x13 h14 h15)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 _come_v_1 h22 e23 x24)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _forest_n_of h19 x20 i21)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _king_n_of h16 x17 i18)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 10000 _urban_a_1 h5 e6 x7)

@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e27
+RELS: < 
+[ _must_v_modal LBL: h26 ARG0: e27 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h28 ]
+[ _sow_v_1 LBL: h17 ARG0: e18 ARG1: x22 ARG2: x25 ]
+[ _field_n_of LBL: h29 ARG0: x30 [ x NUM: sg PERS: 3 ] ARG1: i31 ]
+[ _son_n_of LBL: h21 ARG0: x22 [ x NUM: pl PERS: 3 ] ARG1: i23 ]
+[ _seed_n_1 LBL: h24 ARG0: x25 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h5 ARG0: x25 RSTR: h7 BODY: h8 ]
+[ _the_q LBL: h9 ARG0: x30 RSTR: h11 BODY: h12 ]
+[ _the_q LBL: h13 ARG0: x22 RSTR: h15 BODY: h16 ]
+[ _in_p LBL: h17 ARG0: e2 ARG1: e18 ARG2: x30 ] >
+HCONS: < h0 qeq h26 h11 qeq h29 h15 qeq h21 h28 qeq h17 h7 qeq h24 > ]

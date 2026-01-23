@@ -1,0 +1,3 @@
+The dog is barking now.
+The dog is barking, now.
+

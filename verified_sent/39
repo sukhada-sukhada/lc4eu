@@ -1,6 +1,5 @@
-<sent_id=39>
 #ye prawIka hE.
-$wyax,prawIka_1,hE_1-pres
+wyax,prawIka_1,hE_1-pres
 1,2,3
 ,male,
 ,,
@@ -8,7 +7,4 @@ $wyax,prawIka_1,hE_1-pres
 ,,
 proximal,,
 ,,
-,,
-%affirmative
-</sent_id>
-
+affirmative

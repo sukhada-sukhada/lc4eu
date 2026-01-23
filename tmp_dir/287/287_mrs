@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e14
+RELS: < 
+[ _mock_v_1 LBL: h13 ARG0: e14 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x12 ARG2: x2 ]
+[ _turtle_n_1 LBL: h1 ARG0: x2 [ x NUM: sg PERS: 3 ] ]
+[ _rabbit_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _the_q LBL: h7 ARG0: x12 RSTR: h9 BODY: h10 ] >
+HCONS: < h0 qeq h13 h5 qeq h1 h9 qeq h11 > ]

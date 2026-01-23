@@ -1,0 +1,5 @@
+(MRS_info id-MRS_concept 90001 _in_p)
+(MRS_info id-MRS_concept 20001 _of_p)
+(MRS_info id-MRS_concept 40001 _of_p)
+(MRS_info id-MRS_concept 70001 _of_p)
+(MRS_info id-MRS_concept 60001 _on_p_temp)

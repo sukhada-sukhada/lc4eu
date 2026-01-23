@@ -1,0 +1,4 @@
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 udef_q h1 x2 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 generic_entity h5 x6)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _bark_v_1 h11 e12 x13)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG 10000 card h7 e8 x9 n10)

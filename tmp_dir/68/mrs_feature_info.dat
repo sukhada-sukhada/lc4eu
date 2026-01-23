@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 parg_d h1 e2 e3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 30000 _call_v_name h13 e14 u15 x16 x17)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h18 x19 h20 h21)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _earth_n_1 h11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _planet_n_1 h9 x10)

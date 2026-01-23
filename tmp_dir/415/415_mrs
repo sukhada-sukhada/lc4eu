@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e30
+RELS: < 
+[ _come_v_1 LBL: h29 ARG0: e30 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ named LBL: h18 ARG0: x19 CARG: "Barawa" ]
+[ yofc LBL: h15 ARG0: x16 CARG: "2025" ]
+[ _in_p_temp LBL: h29 ARG0: e8 ARG1: e30 ARG2: x16 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ proper_q LBL: h21 ARG0: x19 RSTR: h23 BODY: h24 ]
+[ proper_q LBL: h25 ARG0: x16 RSTR: h27 BODY: h28 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _to_p LBL: h29 ARG0: e12 ARG1: e30 ARG2: x19 ] >
+HCONS: < h0 qeq h29 h23 qeq h18 h27 qeq h15 h5 qeq h1 > ]

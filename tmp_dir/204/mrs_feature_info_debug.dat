@@ -1,0 +1,8 @@
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h1 x2 h3 h4)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 10000 _swan_n_1 h5 x6)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 20000 _lesson_n_1 h7 x8)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _learn_v_1 h9 e10 x11 x12)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h13 x14 h15 h16)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _learn_v_1 h9 e10 x11 x12)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 20000 _lesson_n_1 h7 x8)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 10000 _swan_n_1 h5 x6)

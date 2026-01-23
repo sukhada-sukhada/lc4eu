@@ -1,0 +1,7 @@
+(rule-rel-values   rm_be_v_id id-MRS_concept 30000 hE_1)
+(rule-rel-values samuccaya_and_handles MRSc-FVs _and_c LBL: h* ARG0: e* L_INDEX: u* R_INDEX: e* L_HNDL: u* R_HNDL: h*)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL 31000 _and_c h1 e2 u3 e4 u5 h6)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0 10000 pron h7 x8)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h9 x10 h11 h12)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _intelligent_a_1 h13 e14 x15)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _intelligent_a_1 h13 e14 x15)

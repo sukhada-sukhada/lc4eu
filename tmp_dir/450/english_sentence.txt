@@ -1,0 +1,9 @@
+He is eating vegetables, with a fork, along with a spoon.
+He is eating vegetables, along with a spoon, with a fork.
+He is eating vegetables with a fork, along with a spoon.
+He is eating vegetables along with a spoon, with a fork.
+He is eating vegetables, along with a spoon with a fork.
+He is eating vegetables, with a fork along with a spoon.
+He is eating vegetables along with a spoon with a fork.
+He is eating vegetables with a fork along with a spoon.
+

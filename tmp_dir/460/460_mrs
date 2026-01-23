@@ -1,0 +1,16 @@
+[ LTOP: h0
+INDEX: e39
+RELS: < 
+[ _come_v_1 LBL: h38 ARG0: e39 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ] ARG1: x9 ]
+[ udef_q LBL: h14 ARG0: x9 RSTR: h16 BODY: h17 ]
+[ def_implicit_q LBL: h26 ARG0: x25 RSTR: h28 BODY: h29 ]
+[ card LBL: h35 ARG0: e19 ARG1: x36 CARG: "300" ]
+[ comp LBL: h10 ARG0: e11 ARG1: e6 ARG2: x36 ]
+[ loc_nonsp LBL: h38 ARG0: e23 ARG1: e39 ARG2: x25 ]
+[ _people_n_of LBL: h35 ARG0: x36 [ x NUM: pl PERS: 3 ] ARG1: i37 ]
+[ much-many_a LBL: h10 ARG0: e6 ARG1: x9 ]
+[ _tomorrow_a_1 LBL: h32 ARG0: e33 ARG1: x25 ]
+[ generic_entity LBL: h10 ARG0: x9 ]
+[ time_n LBL: h32 ARG0: x25 ]
+[ udef_q LBL: h1 ARG0: x36 RSTR: h3 BODY: h4 ] >
+HCONS: < h0 qeq h38 h16 qeq h10 h28 qeq h32 h3 qeq h35 > ]

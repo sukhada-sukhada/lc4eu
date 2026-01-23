@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _have_v_qmodal LBL: h18 ARG0: e19 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h20 ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ _go_v_1 LBL: h21 ARG0: e22 ARG1: x6 ]
+[ _school_n_1 LBL: h16 ARG0: x17 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h12 ARG0: x17 RSTR: h14 BODY: h15 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ]
+[ _to_p LBL: h21 ARG0: e2 ARG1: e22 ARG2: x17 ] >
+HCONS: < h0 qeq h18 h10 qeq h5 h14 qeq h16 h20 qeq h21 > ]

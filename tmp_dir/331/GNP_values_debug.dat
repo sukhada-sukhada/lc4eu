@@ -1,0 +1,6 @@
+(rule-rel-values gnp-of-eng_pron-1stperson-sg id-GEN-NUM-PER-PT 10000 - sg 1 std )
+(rule-rel-values gnp-of-eng_pron-personal-female-she id-GEN-NUM-PER-PT 20000  f  sg  3 std)
+(rule-rel-values gnp-of-eng_pron-personal-female-she id-GEN-NUM-PER-PT 20000  f  sg  3 std)
+(rule-rel-values gnp-of-eng_pron-personal-female-she id-GEN-NUM-PER-PT 20000  f  sg  3 std)
+(rule-rel-values gnp-of-eng_pron-personal-female-she id-GEN-NUM-PER-PT 20000  f  sg  3 std)
+(rule-rel-values gnp-of-eng_pron-1stperson-sg id-GEN-NUM-PER-PT 10000 - sg 1 std )

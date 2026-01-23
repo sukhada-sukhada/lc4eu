@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e13
+RELS: < 
+[ _eat_v_1 LBL: h12 ARG0: e13 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x11 ]
+[ _fruit_n_1 LBL: h10 ARG0: x11 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _a_q LBL: h16 ARG0: x11 RSTR: h18 BODY: h19 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _new_a_1 LBL: h10 ARG0: e8 ARG1: x11 ] >
+HCONS: < h0 qeq h12 h18 qeq h10 h5 qeq h1 > ]

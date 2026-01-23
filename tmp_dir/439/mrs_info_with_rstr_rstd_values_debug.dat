@@ -1,0 +1,3 @@
+(rule-rel-values samuccaya-LTOP-verb Restr-Restricted h0 h1)
+(rule-rel-values samuccaya-LTOP-verb Restr-Restricted h6 h13)
+(rule-rel-values mrs-info_q  Restr-Restricted  h11  h7)

@@ -1,0 +1,7 @@
+[ LTOP: h0
+INDEX: e6
+RELS: < 
+[ _stop_v_1 LBL: h5 ARG0: e6 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x10 ARG2: u8 ]
+[ _rabbit_n_1 LBL: h9 ARG0: x10 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h1 ARG0: x10 RSTR: h3 BODY: h4 ] >
+HCONS: < h0 qeq h5 h3 qeq h9 > ]

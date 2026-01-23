@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e17
+RELS: < 
+[ _sweet_a_to LBL: h16 ARG0: e17 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x21 ARG2: u19 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _eat_v_1 LBL: h20 ARG0: e23 ARG1: x2 ARG2: x21 ]
+[ _fruit_n_1 LBL: h20 ARG0: x21 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h12 ARG0: x21 RSTR: h14 BODY: h15 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ parg_d LBL: h20 ARG0: e9 ARG1: e23 ARG2: x21 ] >
+HCONS: < h14 qeq h20 h6 qeq h1 > ]

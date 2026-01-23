@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e13
+RELS: < 
+[ _must_v_modal LBL: h12 ARG0: e13 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h14 ]
+[ named LBL: h5 ARG0: x6 CARG: "Raju" ]
+[ _eat_v_1 LBL: h17 ARG0: e18 ARG1: x6 ARG2: x16 ]
+[ _fruit_n_1 LBL: h15 ARG0: x16 [ x NUM: pl PERS: 3 ] ]
+[ udef_q LBL: h1 ARG0: x16 RSTR: h3 BODY: h4 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ] >
+HCONS: < h0 qeq h12 h10 qeq h5 h14 qeq h17 h3 qeq h15 > ]

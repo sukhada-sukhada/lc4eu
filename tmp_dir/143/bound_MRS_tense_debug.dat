@@ -1,0 +1,8 @@
+(rule-rel-values  tensemodal  id-MRS_concept-LBL-ARG0-ARG1 50000 _can_v_modal h21 e22 prop pres indicative - - h23)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e22)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 Rama)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1-ARG2 50000 _do_v_1 h17 e18 x2 x12)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 40000 neg h8 e9 h10)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 30000 _work_n_1 h11 x12)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 _this_q_dem h13 x12 h15 h16)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x2 h6 h7)

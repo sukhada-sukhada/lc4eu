@@ -1,0 +1,7 @@
+[ LTOP: h0
+INDEX: e8
+RELS: < 
+[ _open_v_1 LBL: h7 ARG0: e8 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x4 ]
+[ _that_q_dem LBL: h3 ARG0: x4 RSTR: h5 BODY: h6 ]
+[ generic_entity LBL: h1 ARG0: x4 ] >
+HCONS: < h0 qeq h7 h5 qeq h1 > ]

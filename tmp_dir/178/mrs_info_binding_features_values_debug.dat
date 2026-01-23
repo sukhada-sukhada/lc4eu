@@ -1,0 +1,8 @@
+(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF 30000 prop past indicative - -)
+(rule-rel-values existential id-MRS_concept-LBL-ARG0-ARG1-ARG2 10001 _in_p h1 e2 x10 x12)
+(rule-rel-values Existential-LTOP LTOP-INDEX h0 e2)
+(rule-rel-values  mrs-info_q id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h14 x10 h16 h17)
+(rule-rel-values  mrs-info_q id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h5 x12 h7 h8)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1-ARG2 10001 _in_p h1 e2 x10 x12)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0 20000 _lion_n_1 h9 x10)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1 10000 _forest_n_of h11 x12 i13)

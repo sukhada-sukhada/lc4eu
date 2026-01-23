@@ -1,0 +1,6 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0 20000 _rain_v_1 h14 e15 prop past indicative - - )
+(LTOP-INDEX  h0 e15)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 def_implicit_q h5 x4 h7 h8)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 10000 loc_nonsp h14 e2 e15 x4)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 10000 _yesterday_a_1 h11 e12 x4)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 time_n h11 x4)

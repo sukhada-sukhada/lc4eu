@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _give_v_1 LBL: h23 ARG0: e24 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x29 ARG3: x9 ]
+[ named LBL: h8 ARG0: x9 CARG: "Rima" ]
+[ named LBL: h1 ARG0: x2 CARG: "Saviwa" ]
+[ card LBL: h28 ARG0: e16 ARG1: x29 CARG: "10" ]
+[ _apple_n_1 LBL: h28 ARG0: x29 [ x NUM: pl PERS: 3 ] ]
+[ udef_q LBL: h19 ARG0: x29 RSTR: h21 BODY: h22 ]
+[ proper_q LBL: h11 ARG0: x9 RSTR: h13 BODY: h14 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h23 h13 qeq h8 h21 qeq h28 h6 qeq h1 > ]

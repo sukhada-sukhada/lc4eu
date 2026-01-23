@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e16
+RELS: < 
+[ _must_v_modal LBL: h15 ARG0: e16 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h17 ]
+[ _study_v_1 LBL: h9 ARG0: e10 ARG1: x19 ARG2: u12 ]
+[ _school_n_1 LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ]
+[ _boy_n_1 LBL: h18 ARG0: x19 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h20 ARG0: x14 RSTR: h22 BODY: h23 ]
+[ _the_q LBL: h5 ARG0: x19 RSTR: h7 BODY: h8 ]
+[ _in_p LBL: h9 ARG0: e2 ARG1: e10 ARG2: x14 ] >
+HCONS: < h0 qeq h15 h17 qeq h9 h22 qeq h13 h7 qeq h18 > ]

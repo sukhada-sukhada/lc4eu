@@ -1,0 +1,8 @@
+(rule-rel-values propn id-MRS_concept-LBL-ARG0-CARG 10000  named h1 x2 Ravana)
+(rule-rel-values samAnAXi id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _good_a_at-for-of h11 x2 u14)
+(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 e12)
+(rule-rel-values  mrs-info_q id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x2 h6 h7)
+(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF 40000 prop pres indicative - -)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _good_a_at-for-of h11 e12 x2 u14)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 Ravana)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1 30000 neg h8 e9 h10)

@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e16
+RELS: < 
+[ _kick_v_1 LBL: h15 ARG0: e16 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x20 ]
+[ named LBL: h1 ARG0: x2 CARG: "Sivama" ]
+[ _boy_n_1 LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h8 ARG0: x20 RSTR: h10 BODY: h11 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ _slow_a_1 LBL: h15 ARG0: e13 ARG1: e16 ]
+[ _blind_a_1 LBL: h19 ARG0: e22 ARG1: x20 ] >
+HCONS: < h0 qeq h15 h10 qeq h19 h6 qeq h1 > ]

@@ -1,0 +1,2 @@
+(rule-rel-values mrsPrep id-MRS_concept 10001 _at_p)
+(rule-rel-values in_p_temp  id-MRS_concept 10001 _in_p_temp)

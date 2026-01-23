@@ -1,0 +1,2 @@
+(rule-rel-values  numbers id-MRS_concept 30000 card)
+(rule-rel-values  mrs_numex id-MRS_concept 40010 udef_q)

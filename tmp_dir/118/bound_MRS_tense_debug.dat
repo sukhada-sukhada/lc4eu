@@ -1,0 +1,5 @@
+(rule-rel-values  tensemodal  id-MRS_concept-LBL-ARG0-ARG1 20000 _should_v_modal h7 e8 ques pres indicative - - h9)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e8)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 20000 _go_v_1 h10 e11 x2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)

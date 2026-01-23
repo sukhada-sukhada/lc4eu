@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e9
+RELS: < 
+[ _play_v_1 LBL: h8 ARG0: e9 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ] ARG1: x13 ARG2: x15 ]
+[ neg LBL: h5 ARG0: e6 ARG1: h7 ]
+[ _game_n_1 LBL: h14 ARG0: x15 [ x NUM: sg PERS: 3 ] ]
+[ _kid_n_1 LBL: h12 ARG0: x13 [ x NUM: pl PERS: 3 ] ]
+[ _any_q LBL: h16 ARG0: x15 RSTR: h18 BODY: h19 ]
+[ udef_q LBL: h1 ARG0: x13 RSTR: h3 BODY: h4 ] >
+HCONS: < h0 qeq h5 h18 qeq h14 h3 qeq h12 h7 qeq h8 > ]

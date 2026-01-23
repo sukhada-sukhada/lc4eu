@@ -1,0 +1,809 @@
+Kept vala information vala usr's not available in verified sentences
+
+vo cUhe para bahuwa gussA karawA hE. 
+vaha,cUhA_1,bahUwa_7,gussA+kara_1-wA_hE
+1,2,3,4
+,anim,,
+,[- sg a],,
+4:k1,4:k7,4:kr_vn,0:main
+4a.1:coref,,,
+,def,,
+,,,
+affirmative
+
+#rAXA mIrA kI apekRA aXika sunxara hE.
+rAXA, mIrA, sunxara_1, hE_1-pres
+1,2,3,4
+per,per,,
+[f sg a],[f sg a],[comper-more],
+5:k1,1:rv,5:k1s,0:main
+,,,
+,,,
+,,,
+affirmative
+
+#mere xoswa Ora sahayogI A gaye
+speaker,xoswa_1,sahayogI_1,A_1-yA_1
+1,2,3,4
+anim,anim,anim,
+[m sg a],[m sg a],[m sg a],
+2:r6 3:r6,4:k1,4:k1,0:main
+,,,
+,,,[shade:unk]
+,,,
+affirmative
+conj:[2,3]
+
+
+#abrAma BOMkane lagawA hE
+abrAma,BOmka_3-wA_hE_1
+1,2
+ne,
+[- sg a],
+2:k1,0:main
+,
+,
+,
+affirmative 
+
+
+#sIwA ne xillI meM cidayAGara xeKA
+sIwA,xillI,cidiyAGara_1,xeKa_1-yA_1
+1,2,3,4
+per female,place,,
+sg,sg,sg,
+4:k1,4:k7p,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+
+Apka pehla nAm kyA hE
+addressee,pahalA_1,nAma_1,kim,hE_1-pres
+1,2,3,4,5
+anim,,,,
+[m sg m],,[- sg a],,
+3:r6,3:ord,5:k1,5:k1s,0:main
+,,,,
+,,,,
+,,,,
+interrogative
+
+
+#rAma ne kisase sabjI kAtA?
+rAma,kim,sabjI_1,CAzta_3-yA_1
+1,2,3,4
+per,,mass,
+[m sg a],,[- sg a],
+4:k1,4:k3,4:k2,0:main
+,,,
+,,def,
+,,,
+interrogative
+
+
+#śāma ko eka yā do camakate tāre bhī najara āte haiṃ.
+SAma_1,eka_1, do_1,camaka_13, wArA_1, najZara+A_1-wA_hE_1
+1,2,3,4,5,6
+time,,,,,
+[- sg a],,,,[- pl a],
+6:k7t,5:card,5:card,5:rvks,6:k1,0:main
+,,,,,
+def,,,,hI,
+,,,,,
+affirmative
+disjunct:[2,3]
+
+
+#राम के द्वारा खाया गया फल मीठा था।
+rAma,KA_1,Pala_1,mITA_1,hE_1-past
+1,2,3,4,5
+per,,,,
+[m sg a],,[- sg a],,
+2:k1,3:rbks,5:k1,5:k1s,0:main
+,,,,
+,,def,,
+,,,,
+pass-affirmative
+
+
+
+
+
+
+The fruit, eaten by Rama was sweet
+
+
+#पूर्ण चंद्रमा वाली रात को पूर्णिमा कहा जाता है । 
+pUrNa_1,caMxramA_1,rAwa_1,pUrNimA,kaha_1-yA_jAwA_hE_1
+1,2,3,4,5
+,,,,
+,[- sg a],[- sg a],[- sg a],
+2:mod,3:rm,5:k2g,5:k2,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+
+
+#manuRyoM meM kRwriya sabase aXika SUra howe hEM
+manuRya_1,kRwriya,SUra_2,ho_6-wA_hE_1
+1,2,3,4
+,ne,,
+[- pl a],[- pl a],[superl],
+2:rn,4:k1,4:k1s,0:main
+,,,
+,def,def,
+,,,
+affirmative
+
+
+rAma aura SyAma ne kiwAbeM paDZI WIM
+rAma,SyAma,kiwAba_1,paDZa_1-yA_WA_1
+1,2,3,4
+per,per,,
+[m sg a],[m sg a],[- pl a],
+4:k1,4:k1,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+conj:[1,2]
+
+राम के पास  महेश की एक किताब है 
+rAma, maheSa,eka_1,kiwAba_1,hE_1
+1,2,3,4,5
+anim,anim,,,
+[m sg a],[a sg a],[- sg a],,
+4:rsma,4:r6,4:card,5:k1,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+
+
+#हमारी पृथ्वी थलशाला के समान है.
+speaker,pqWvI_1,geMxa_1,hE_1-pres
+1,2,3,4 
+anim,,,
+[- pl u],[- sg a],[- sg a],
+2:r6,4:k1,2:ru,0:main
+,,,
+,,,
+,,,
+affirmative
+
+
+#sIwA ko rAXA mIrA jEsI sunxara lagI
+sIwA, rAXA, mIrA, sunxara_1,laga_22-yA_1
+1,2,3,4,5
+per,per,per,,
+[f sg a],[f sg a],[f sg a],,
+5:k4a,5:k1,2:ru,5:k1s,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+
+#ayAn garmI mE paDegA.
+ayAn,garmI_,paDa_2-gA_1
+1,2,3
+per,
+[m sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+
+
+Apa kOna ho?
+addressee,kim,hE_1-pres
+1,2,3
+anim,anim,
+[m sg m],[- sg a],
+3:k1,3:k1s,0:main
+,,
+respect,,
+,,
+interrogative
+
+
+#Apa kEse ho?
+addressee,kim,hE_1-pres
+1,2,3
+anim,,
+[m sg m],,
+3:k1,3:k1s,0:main
+,,
+respect,,
+,,
+interrogative
+
+
+ #p = प्रकारवाची
+ 
+ #abrAmsa BOMkawA rahA
+abrAmsa,BOMka_1-wA_raha_1
+1,2
+ne,
+[- sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+
+
+English sentence: Abrama kept barking.
+
+
+#rAma Ora Apa rAjanIwi para carcA kara rahe We.
+rAma,addressee,rAjanIwi_1,carcA+kara_1-0_rahA_WA_1
+1,2,3,4
+per,anim,,
+[m sg a],[- sg m],[- pl a],
+4:k1,4:k1,4:k7,0:main
+,,,
+,respect,def,
+,,,
+affirmative
+conj:[1,2]
+
+#abrAmsa kI wasvIra pahuMca gaI
+abrAmsa,wasvIra_1,pahuzca_6-yA_1
+1,2,3
+ne,,
+[- sg a],[- sg a],
+2:r6,3:k1,0:main
+,,
+,def,[shade:unk]
+,,
+affirmative
+
+
+
+
+The picture of Abrams arrived.
+
+#brAuna ne billI ko aMxara KIMca liyA    
+brAuna,billI_1,aMxara_2,KIMca_1-yA_1
+1,2,3,4
+ne,anim,,
+[- sg a],[- sg a],
+4:k1,4:k2,4:k7p,0:main
+,,,
+,def,,[shade:unk]
+,,,
+affirmative
+
+
+#राजा ने मन्त्री से यह कहा
+rAjA_1,manwrI_1,yaha,kaha_1-yA_1
+1,2,3,4
+anim,anim,,
+[m sg a],[m sg a],,
+4:k1,4:k4,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+
+
+The king told this to the minister.
+
+#xo sO bIsa kuwwe BOMke
+xo_1+sO_1+bIsa_1,kuwwA_1,BOMka_1-yA_1
+1,2,3
+,anim,
+,[- pl a],
+2:card,3:k1,0:main
+,,
+,,
+,,
+affirmative
+
+rAma kOna hE?
+rAma, kim,hE_1-pres
+1,2,3
+per,,
+[m sg a],,
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+interrogative	
+
+#आप कौन हो?
+addressee,kim,hE_1-pres
+1,2,3
+anim,anim,
+[m pl a],[m sg a],
+3:k1,3:k1s,0:main
+,,
+respect,,
+,,
+interrogative 
+
+
+#abrAmsa ne meja sAPa kara xI
+abrAmsa,meja_1,sAPa+kara_2-yA_1
+1,2,3
+ne,,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,[shade:unk]
+,,
+affirmative
+
+
+
+Abrams wiped the table clean.
+
+
+#राम कल घर गया होगा।
+rAma,kala_1,Gara_1,jA_1-yA_hogA_1
+1,2,3,4
+per,,,
+[m sg a],[- - a],[- sg a],
+4:k1,4:k7t,4:k2p,0:main
+,,,
+,,def,
+,,,
+affirmative
+
+mErA janma 1999 meM huA
+speaker,1999,janmA+huA_1-yA_1
+1,2,3
+anim,yoc,
+[f sg a],,
+3:k2,3:k7t,0:main
+,,
+,,
+,,
+pass-affirmative
+
+
+#गाय कैसी है?
+gAya_1,kim,hE_1-pres
+1,2,3
+anim,,
+[f sg a],,
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+interrogative 
+
+
+#राम कहाँ जा रहा है।
+rAma,kim,jA_1-0_rahA_hE_1
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,,
+,,
+interrogative 
+
+
+#हम जल का संरक्षण और प्रबंधन कैसे करें ?
+speaker,jala_1,saMrakRaNa_3,prabanXana_1,kim,kara_17-e_1
+1,2,3,4,5,6
+anim,mass,,,,
+[m pl u],[- pl a],[- sg a],[- sg a],,
+7:k1,3:r6,7:k2,7:k2,7:krvn,0:main
+,,,,,
+,,,,,
+,,,,,
+interrogative
+
+#राम कैसे खाना बनाता है?
+rAma,kim,KAnA_1,banA_1-wA_hE_1
+1,2,3,4
+per,,mass,
+[m sg a],,[- pl a],
+4:k1,4:krvn,4:k2,0:main
+,,,
+,,,
+,,,
+interrogative
+
+#सेब कहाँ से गिरा? 
+seba_1,kim,girA_1-yA_1 
+1,2,3
+,,
+[- sg a],[- sg a], 
+3:k1,3:k5,0:main 
+,,
+,, 
+,,
+interrogative
+
+
+सीता कहाँ गई?
+siwA,kim,jA_1-yA_1
+1,2,3
+per,,
+[f sg a],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,,
+,,
+interrogative 
+
+
+#आप पिछले अध्याय में ग्लोब के महत्त्व के बारे में पढ़ चुके हैं । 
+addressee,piCalA_8,aXyAya_1,globa_1,mahawwva_6,paDZa_7-0_cukA_hE_1
+1,2,3,4,5,6
+anim,,,ne,,
+[m sg m],,[- sg a],[- sg a],[- sg a],
+6:k1,3:mod,6:k7p,5:r6,6:k7,0:main
+,,,,,
+respect,,,,,
+,,,,,
+affirmative
+
+
+#आप पिछले अध्याय में ग्लोब के महत्त्व के बारे में पढ़ चुके हैं । 
+addressee,piCalA_8,aXyAya_1,globa_1,mahawwva_6,paDZa_7-0_cukA_hE_1
+1,2,3,4,5,6
+anim,,,ne,,
+[m sg m],,[- sg a],[- sg a],[- sg a],
+6:k1,3:mod,6:k7p,5:r6,6:k7,0:main
+,,,,,
+respect,,,,,
+,,,,,
+affirmative
+
+bAriSa huI WI
+bAriSa+ho_1-yA_WA_1
+1
+
+
+1:k1 0:main
+
+
+
+affirmative
+
+
+
+
+It rained.
+
+
+मोहन ने सबसे ज़्यादा अंक प्राप्त किये।
+mohana,jZyAxA_1,aMka_1,prApwa_1+ kara_1-yA_1
+1,2,3,4
+per,,,
+[m sg a],[superl],[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+
+Aja kI vyaswa jiMxagI meM Kuxa ko svasWa raKanA kaTina hE.
+Aja_1, vyasawa_1,jiMxagI_1, Kuxo, savasWa+raKa_1,kaTina_1,hE_1-pres
+1,2,3,4,5,6,7
+,,,abs,,,
+,,[- - a],[- - a],[- - a],,
+3:r6,3:mod,7:k7,5:k2,7:k1,7:k1s,0:main
+,,,,,,
+,,,,,,
+,,,,,,
+affirmative
+
+KAna-pAna para XyAna xenA hogA
+KAna+pAna_1,XyAna_1,xe_1-nA_hogA_1
+1,2,3
+mass,,
+[- pl a],,
+3:k7,3:k2,0:main
+,,
+,,
+,,
+affirmative
+
+jIvanaSElI meM WodA baxalAva lAnA hogA
+jIvana+SelI_1,WodA_1,baxalAva_1,lA_1-nA_hogA_1
+1,2,3,4
+,,,
+[- - a],,,
+4:k7,3:quant,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+
+isase Apa kaI bImAriyoM se BI xUra rahawe hEM .
+yaha_1,addressee, kaI_1,bimArI_1,xura_1,raha_1-wA_hE_1
+1,2,3,4,5,6
+,anim,abs,,,
+,[m sg m],,[- - a],,
+6:rh,6:k1,4:mod,6:k5,6:k2,0:main
+,,,,,
+,,,,,
+,,,,,
+affirmative
+
+
+#rAma wo ayegA hI
+rAma,A_1-gA_1
+1,2
+per,
+[m sg a],
+2:k1,0:main
+,
+assertion,
+,
+affirmative
+
+
+#SIlA hI apane piwA ko KilAwI hE.
+SIlA,apanA,piwA_1,KA_1-wA_hE_1
+1,2,3,4
+per,,anim,
+[f sg a],,[m sg a],[causative]
+4:pk1,3:r6,4:jk1,0:main
+,1:coref,,
+exclusive,,,
+,,,
+affirmative
+
+
+Shila only makes her father eat.
+
+#शिला ही अपने पिता को खिलाती है।
+SilA,apanA,piwA_1,KA_1-wA_hE_1
+1,2,3,4
+per,,anim,
+[f sg a],,[m sg a],causative 
+4:pk1,3:r6,4:jk1,0:main
+,1:coref,,
+hI,,,
+,,,
+affirmative 
+
+
+pICA karane vAlA kuwwA BOMka rahA hE.
+pICA+kara_1,kuwwA_1,BOMka_1-0_rahA_hE_1
+1,2,3
+,anim,
+,[- sg a],
+2:mod,3:k1,0:main
+,,
+,def,
+,,
+affirmative
+
+leave this
+Discussion The dog who chase is barking.
+
+kuwwA SAyaxa BOMkA.
+kuwwA_1,SAyaxa_2,BOMka_1-yA_1
+1,2,3
+anim,,
+[-sg a],,
+3:k1,3:krvn,0:main
+,,
+def,,
+,,
+affirmative
+
+ask the linguists
+discussion
+
+
+
+#bagIce kA kuwwA BOMkA.
+bagIcA_1,kuwwA_1,BOMka_1-yA_1
+1,2,3
+,anim,
+[- sg a],[- sg a],
+2:r6,3:k1,0:main
+,,
+def,,
+,,
+affirmative
+    
+Discussion about the ace parse only one exists
+[ LTOP: h0
+INDEX: e2 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ]
+RELS: < [ _the_q<0:3> LBL: h4 ARG0: x3 [ x PERS: 3 NUM: sg IND: + ] RSTR: h5 BODY: h6 ]
+ [ compound<4:14> LBL: h7 ARG0: e8 [ e SF: prop TENSE: untensed MOOD: indicative PROG: - PERF: - ] ARG1: x3 ARG2: x9 [ x IND: + ] ]
+ [ udef_q<4:10> LBL: h10 ARG0: x9 RSTR: h11 BODY: h12 ]
+ [ _garden_n_1<4:10> LBL: h13 ARG0: x9 ]
+ [ _dog_n_1<11:14> LBL: h7 ARG0: x3 ]
+ [ _bark_v_1<15:22> LBL: h1 ARG0: e2 ARG1: x3 ] >
+HCONS: < h0 qeq h1 h5 qeq h7 h11 qeq h13 > ]
+
+talk about this later. 
+     The tobacco garden dog barked. Discussion
+
+
+
+#pICA kiye hue kuwwe BOMke 	 
+pICA+kara_1,kuwwA_1,BOMka_1-yA_1
+1,2,3
+,anim,
+,[- pl a],
+2:rbks,3:k1,0:main
+,,
+,,
+,,
+affirmative
+
+How to bring chased dogs bark. Instead chasing dogs barked.
+
+
+
+#billiyoM kA pICA karanA purAnA hE  	 
+billI_1,pICA+kara_1,purAnA_1,hE_1
+1,2,3,4
+anim,,,
+[- pl a],,[- sg a],
+2:r6,4:k1,4:k1s,0:main
+,,,
+def,,,
+,,,
+affirmative
+
+
+k1+verb entity - bring nominalization
+Nominalization information how to capture in USR?
+
+
+
+#kuwwA hara xina BOMkawA WA?  The dog barked every day. 
+kuwwA_1,hara_2,xina_1,BOMka_1-wA_wA_1
+1,2,3,4
+anim,,,
+[- sg a],,[- sg a],
+4:k1,3:quant,4:krvn,0:main
+,,,
+def,,,
+,,,
+affirmative 
+
+
+
+#kuwwA roja BOMkawA WA  
+kuwwA_1,rojZa_1,BOMka_1-wA_wA_1
+1,2,3
+anim,,
+[- sg a],,
+3:k1,3:krvn,0:main
+,,
+def,,
+,,
+affirmative
+
+Talk about this mrs every day you are getting loc_nonsp.
+
+
+run other sentences and bring loc_nonsp
+
+#wIna  BOMke
+wIna_1,BOMka_1-yA_1
+1,2
+numex,
+,
+2:k1,0:main
+,
+,
+,
+affirmative
+
+numex+k1+numberin the concept bring generic enmtity
+
+generic_Entity issue. 
+
+
+
+#abrAmsa BOMkawA rahA
+abrAmsa,BOMka_1-wA_rahA_1
+1,2
+ne,
+[- sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+
+
+wA_raha tam send to sudarsgamn ji
+
+#abrAmsa BOMkawA rahA
+abrAmsa,BOMka_1-wA_1
+1,2
+ne,
+[- sg a],
+2:k1,0:main
+,
+,[shade:raha_1]
+,
+affirmative
+
+Asked about wA_rahA_1 tam information 
+Abrams kept barking.
+
+
+
+#brAuna ne billI ko aMxara KIMca liyA    
+brAuna,billI_1,aMxara_2,KiMca_3-yA_1
+1,2,3,4
+ne,anim,,
+[- sg a],[- sg a],
+4:k1,4:k2,4:k7p,0:main
+,,,
+,def,,[shade:unk]
+,,,
+affirmative
+
+
+Browne squeezed the cat in. For this inside and in are coming. What to do?
+
+anything
+
+#yaha sAPa hE
+yaha,sAPa_1,hE_1-pres
+1,2,3
+,,
+[- sg a],,
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+
+It is clear generating it instead he, she, it GEND: n how to generate it. 
+
+male female nahhi he then generate neuter gender
+
+
+Tag questions how to mention in the question types. 
+
+
+#abrAma BOMkane lagawA hE
+abrAma,BOmka_3-wA_hE_1
+1,2
+ne,
+[- sg a],
+2:k1,0:main
+,
+,
+,
+affirmative 
+
+
+
+ask sudarshan ji
+Ask about laga information.
+
+
+#brAuna BOMkane lagA
+brAuna,BOMKa_3,laga_?-yA_1
+1,2,3
+ne,,
+[- sg a],,
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+
+#SIlA hI piwA ko KilAwi hE
+SIlA,piwA_1,KilA_1-wA_hE_1
+1,2,3
+per,anim,
+[f sg a],[m sg a],
+3:k1,3:k4,0:main
+,,
+exclusive,,
+,,
+affirmative

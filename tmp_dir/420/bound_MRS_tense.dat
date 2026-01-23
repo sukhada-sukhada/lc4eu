@@ -1,0 +1,8 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _sleep_v_1 h21 e22 prop fut indicative + + x2)
+(LTOP-INDEX  h0 e22)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 def_implicit_q h12 x11 h14 h15)
+(MRS_info  id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 Rama)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp h21 e9 e22 x11)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _tomorrow_a_1 h18 e19 x11)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 time_n h18 x11)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x2 h6 h7)

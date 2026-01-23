@@ -1,0 +1,14 @@
+[ LTOP: h0
+INDEX: e33
+RELS: < 
+[ _be_v_id LBL: h32 ARG0: e33 [ e SF: ques TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x26 ]
+[ _king_n_of LBL: h25 ARG0: x26 [ x NUM: sg PERS: 3 ] ARG1: i27 ]
+[ superl LBL: h25 ARG0: e12 ARG1: e29 ]
+[ _world_n_of LBL: h14 ARG0: x15 [ x NUM: sg PERS: 3 ] ARG1: i16 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _the_q LBL: h17 ARG0: x26 RSTR: h19 BODY: h20 ]
+[ _the_q LBL: h21 ARG0: x15 RSTR: h23 BODY: h24 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _in_p LBL: h25 ARG0: e8 ARG1: x26 ARG2: x15 ]
+[ _good_a_at-for-of LBL: h25 ARG0: e29 ARG1: x26 ] >
+HCONS: < h0 qeq h32 h19 qeq h25 h23 qeq h14 h5 qeq h1 > ]

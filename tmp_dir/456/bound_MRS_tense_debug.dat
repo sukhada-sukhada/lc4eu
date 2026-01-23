@@ -1,0 +1,4 @@
+(rule-rel-values  tense  id-MRS_concept-LBL-ARG0-ARG1 20000 _open_v_1 h7 e8  prop past indicative - - x4)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e8)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _that_q_dem h3 x4 h5 h6)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 10010 generic_entity h1 x4)

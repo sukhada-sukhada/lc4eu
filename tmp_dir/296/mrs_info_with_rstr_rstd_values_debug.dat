@@ -1,0 +1,5 @@
+(rule-rel-values neg-modal  Restr-Restricted  h0 h7)
+(rule-rel-values neg-modal  Restr-Restricted  h9 h20)
+(rule-rel-values neg-modal  Restr-Restricted  h22 h16)
+(rule-rel-values mrs-info_q  Restr-Restricted  h14  h10)
+(rule-rel-values mrs-info_q  Restr-Restricted  h5  h1)

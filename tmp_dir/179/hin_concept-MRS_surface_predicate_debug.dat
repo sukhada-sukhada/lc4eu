@@ -1,0 +1,5 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 hE_1 _be_v_id)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 hE_1 _be_v_id)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 doYktara_1 _doctor_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 doYktara_1 _doctor_n_1)
+(rule-rel-values  mrsCon_not id-MRS_concept 20010 _a_q)

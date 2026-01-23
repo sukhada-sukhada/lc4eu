@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e13
+RELS: < 
+[ _snore_v_1 LBL: h12 ARG0: e13 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+
+[ _sleep_v_1 LBL: h15 ARG0: e16 [ e SF: prop TENSE: untensed MOOD: indicative PROG: + PERF: - ] ARG1: u17 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _while_x LBL: h8 ARG0: e9 ARG1: h10 ARG2: h11 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h8 h10 qeq h12 h11 qeq h15 h6 qeq h1 > ]

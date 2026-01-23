@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e15
+RELS: < 
+[ _give_v_1 LBL: h14 ARG0: e15 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x10 ARG2: x12 ARG3: u18 ]
+[ _result_n_of LBL: h11 ARG0: x12 [ x NUM: pl PERS: 3 ] ARG1: i13 ]
+[ _work_n_1 LBL: h9 ARG0: x10 [ x NUM: pl PERS: 3 ] ]
+[ udef_q LBL: h5 ARG0: x12 RSTR: h7 BODY: h8 ]
+[ udef_q LBL: h1 ARG0: x10 RSTR: h3 BODY: h4 ]
+[ _bad_a_at LBL: h11 ARG0: e24 ARG1: x12 ARG2: i26 ]
+[ _bad_a_at LBL: h9 ARG0: e20 ARG1: x10 ARG2: u22 ] >
+HCONS: < h0 qeq h14 h3 qeq h9 h7 qeq h11 > ]

@@ -1,0 +1,8 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 bagIcA_1 _garden_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 bagIcA_1 _garden_n_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 10000 baccA_2 _kid_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 10000 baccA_2 _kid_n_1)
+(rule-rel-values mrsCon_yes id-MRS_concept 20010 _the_q )
+(rule-rel-values mrsCon_yes id-MRS_concept 10010 _the_q )

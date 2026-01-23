@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e20
+RELS: < 
+[ _die_v_1 LBL: h19 ARG0: e20 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+
+[ _eat_v_1 LBL: h15 ARG0: e16 [ e SF: prop TENSE: untensed MOOD: indicative PROG: + PERF: + ] ARG1: u17 ARG2: u18 ]
+[ named LBL: h1 ARG0: x2 CARG: "Kalu" ]
+[ subord LBL: h8 ARG0: e9 ARG1: h10 ARG2: h11 ]
+[ _frequent_a_1 LBL: h15 ARG0: e13 ARG1: e16 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h8 h10 qeq h19 h11 qeq h15 h6 qeq h1 > ]

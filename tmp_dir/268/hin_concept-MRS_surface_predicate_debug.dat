@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 vixyAlaya_1 _school_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 vixyAlaya_1 _school_n_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 paDa_2 _study_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 paDa_2 _study_v_1)
+(rule-rel-values mrsCon_yes id-MRS_concept 20010 _the_q )
+(rule-rel-values  _used+to_v_qmodal  id-MRS_concept 30100  _used+to_v_qmodal)

@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e20
+RELS: < 
+[ _beautiful_a_1 LBL: h19 ARG0: e20 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ named LBL: h8 ARG0: x9 CARG: "Mira" ]
+[ named LBL: h1 ARG0: x2 CARG: "Raxa" ]
+[ comp_equal LBL: h19 ARG0: e16 ARG1: e20 ARG2: x9 ]
+[ proper_q LBL: h11 ARG0: x9 RSTR: h13 BODY: h14 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h13 qeq h8 h6 qeq h1 > ]

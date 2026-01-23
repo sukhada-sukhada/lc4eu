@@ -1,0 +1,8 @@
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 20050 number_q h1 x2 h3 h4)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h5 x6 h7 h8)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _chase_v_1 h9 e10 x11 x12)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 10000 _cat_n_1 h13 x14)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG 20000 card h15 e16 x17 n18)
+(rule-rel-values card-x-i id-MRS_concept-LBL-ARG0-ARG1-CARG 20000 card h15 x16 i17 n18)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 10000 _cat_n_1 h13 x14)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _chase_v_1 h9 e10 x11 x12)

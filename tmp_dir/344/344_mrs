@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e6
+RELS: < 
+[ _walk_v_1 LBL: h5 ARG0: e6 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x12 ]
+
+[ _sway_v_1 LBL: h8 ARG0: e9 [ e SF: prop TENSE: untensed MOOD: indicative PROG: + PERF: - ] ARG1: u10 ]
+[ subord LBL: h1 ARG0: e2 ARG1: h3 ARG2: h4 ]
+[ _elephant_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h13 ARG0: x12 RSTR: h15 BODY: h16 ] >
+HCONS: < h0 qeq h1 h15 qeq h11 h3 qeq h5 h4 qeq h8 > ]

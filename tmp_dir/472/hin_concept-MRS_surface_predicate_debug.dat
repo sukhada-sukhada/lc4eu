@@ -1,0 +1,8 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 viswqwa+kara_2 _spread_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 viswqwa+kara_2 _spread_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 40000 prayAsa+kara_1 _attempt_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 40000 prayAsa+kara_1 _attempt_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 jFAna_4 _knowledge_n_of)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 jFAna_4 _knowledge_n_of)
+(rule-rel-values this_q_dem id-MRS_concept 10000 _this_q_dem)
+(rule-rel-values this_q_dem id-MRS_concept 10000 _this_q_dem)

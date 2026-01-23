@@ -1,0 +1,4 @@
+(id-hin_concept-MRS_concept 20000 Pala_1 _fruit_n_1)
+(MRS_info id-MRS_concept 20010 _a_q)
+(id-hin_concept-MRS_concept 30000 KA_1 _eat_v_1)
+(MRS_info id-MRS_concept 30100  _must_v_modal)

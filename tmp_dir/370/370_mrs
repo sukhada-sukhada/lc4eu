@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < [ udef_q LBL: h4 ARG0: x9 RSTR: h6 BODY: h7 ]
+[ _and_c LBL: h8 ARG0: x9 L-INDEX: x21 R-INDEX: x23 ]
+[ _cat_n_1 LBL: h22 ARG0: x23 [ x NUM: sg PERS: 3 ] ]
+[ _dog_n_1 LBL: h20 ARG0: x21 [ x NUM: pl PERS: 3 ] ]
+[ _the_q LBL: h12 ARG0: x23 RSTR: h14 BODY: h15 ]
+[ _the_q LBL: h16 ARG0: x21 RSTR: h18 BODY: h19 ]
+[ unknown LBL: h1 ARG0: e2 ARG: x9 ] >
+HCONS: < h0 qeq h1 h14 qeq h22 h18 qeq h20 h6 qeq h8 > ]

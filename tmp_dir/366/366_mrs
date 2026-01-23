@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e8
+RELS: < 
+[ _calm_a_1 LBL: h33 ARG0: e34 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x20 ]
+
+[ _intelligent_a_1 LBL: h26 ARG0: e27 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x20 ]
+
+[ implicit_conj LBL: h7 ARG0: e8 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] L-INDEX: e27 R-INDEX: e14 L-HNDL: h26 R-HNDL: h13 ]
+[ _and_c LBL: h1 ARG0: e2 L-INDEX: e37 R-INDEX: e30 L-HNDL: h36 R-HNDL: h29 ]
+[ implicit_conj LBL: h13 ARG0: e14 L-INDEX: e34 R-INDEX: e2 L-HNDL: h33 R-HNDL: h1 ]
+[ named LBL: h19 ARG0: x20 CARG: "Rama" ]
+[ _good_a_at-for-of LBL: h29 ARG0: e30 ARG1: x20 ARG2: u32 ]
+[ _brave_a_1 LBL: h36 ARG0: e37 ARG1: x20 ]
+[ proper_q LBL: h22 ARG0: x20 RSTR: h24 BODY: h25 ] >
+HCONS: < h0 qeq h7 h24 qeq h19 > ]

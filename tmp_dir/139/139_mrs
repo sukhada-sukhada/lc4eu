@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e11
+RELS: < 
+[ _would_v_modal LBL: h10 ARG0: e11 [ e SF: ques TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h12 ]
+[ _play_v_1 LBL: h13 ARG0: e14 ARG1: x2 ARG2: u16 ]
+[ neg LBL: h7 ARG0: e8 ARG1: h9 ]
+[ pron LBL: h1 ARG0: x2 [ x PERS: 2 ] ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h7 h12 qeq h13 h5 qeq h1 h9 qeq h10 > ]

@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e26
+RELS: < 
+[ _see_v_1 LBL: h25 ARG0: e26 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: x20 ]
+[ named LBL: h12 ARG0: x13 CARG: "Xilli" ]
+[ named LBL: h5 ARG0: x6 CARG: "Siwa" ]
+[ _zoo_n_1 LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h21 ARG0: x20 RSTR: h23 BODY: h24 ]
+[ proper_q LBL: h15 ARG0: x13 RSTR: h17 BODY: h18 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ]
+[ _in_p LBL: h25 ARG0: e2 ARG1: e26 ARG2: x13 ] >
+HCONS: < h0 qeq h25 h10 qeq h5 h17 qeq h12 h23 qeq h19 > ]

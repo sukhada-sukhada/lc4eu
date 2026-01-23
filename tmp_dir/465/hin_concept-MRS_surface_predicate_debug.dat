@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 trena_1 _train_n_of)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 trena_1 _train_n_of)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 50000 jA_1 _go_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 50000 jA_1 _go_v_1)
+(rule-rel-values this_q_dem id-MRS_concept 10000 _this_q_dem)
+(rule-rel-values this_q_dem id-MRS_concept 10000 _this_q_dem)

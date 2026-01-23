@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e35
+RELS: < 
+[ _call_v_1 LBL: h34 ARG0: e35 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x24 ARG2: x33 ]
+[ def_explicit_q LBL: h9 ARG0: x31 [ x NUM: sg PERS: 3 ] RSTR: h11 BODY: h12 ]
+[ named LBL: h23 ARG0: x24 CARG: "Rama" ]
+[ poss LBL: h30 ARG0: e6 ARG1: x31 ARG2: x14 ]
+[ _school_n_1 LBL: h30 ARG0: x31 ]
+[ pron LBL: h13 ARG0: x14 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ person LBL: h32 ARG0: x33 ]
+[ pronoun_q LBL: h15 ARG0: x14 RSTR: h17 BODY: h18 ]
+[ every_q LBL: h1 ARG0: x33 RSTR: h3 BODY: h4 ]
+[ proper_q LBL: h26 ARG0: x24 RSTR: h28 BODY: h29 ]
+[ _in_p LBL: h34 ARG0: e20 ARG1: e35 ARG2: x31 ] >
+HCONS: < h0 qeq h34 h11 qeq h30 h17 qeq h13 h28 qeq h23 h3 qeq h32 > ]

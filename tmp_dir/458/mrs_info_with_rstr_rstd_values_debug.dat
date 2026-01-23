@@ -1,0 +1,3 @@
+(rule-rel-values neg-rstd Restr-Restricted  h0 h1)
+(rule-rel-values neg-rstd Restr-Restricted  h3  h6)
+(rule-rel-values rstr-rstd4non-implicit  Restr-Restricted  h11  h4)

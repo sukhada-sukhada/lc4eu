@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _give_v_1 LBL: h18 ARG0: e19 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x8 ARG2: x24 ARG3: x2 ]
+[ named LBL: h7 ARG0: x8 CARG: "Rama" ]
+[ _book_n_of LBL: h23 ARG0: x24 [ x NUM: sg PERS: 3 ] ARG1: i25 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _the_q LBL: h14 ARG0: x24 RSTR: h16 BODY: h17 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ proper_q LBL: h10 ARG0: x8 RSTR: h12 BODY: h13 ] >
+HCONS: < h0 qeq h18 h12 qeq h7 h16 qeq h23 h5 qeq h1 > ]

@@ -1,0 +1,4 @@
+The rabbit ran, quickly.
+The rabbit ran quickly.
+The rabbit quickly ran.
+

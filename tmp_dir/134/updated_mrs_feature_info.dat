@@ -1,0 +1,8 @@
+(LTOP-INDEX h0 e9)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 udef_q h1 x13 h3 h4)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 _any_q h16 x15 h18 h19)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _kid_n_1 h12 x13)
+(MRS_info id-MRS_concept-LBL-ARG0 30000 _game_n_1 h14 x15)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 neg h5 e6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 50000 _play_v_1 h8 e9 x13 x15)
+(id-SF-TENSE-MOOD-PROG-PERF 50000 prop fut indicative - -)

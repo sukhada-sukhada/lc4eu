@@ -1,6 +1,5 @@
-<sent_id=454>
 #lekina bAxa meM inakI saMKyA baDZawI jAwI hE.
-bAxa_14,$wyax,saMKyA_14,baDa_1-wA_hE_1
+bAxa_14,wyax,saMKyA_14,baDa_1-wA_hE_1
 1,2,3,4
 ,,,
 ,,,
@@ -8,7 +7,5 @@ bAxa_14,$wyax,saMKyA_14,baDa_1-wA_hE_1
 ,48.1:coref,,48.2:viroXi
 ,proximal,,
 ,,,
-,,,
-%affirmative
-</sent_id>
+affirmative
 

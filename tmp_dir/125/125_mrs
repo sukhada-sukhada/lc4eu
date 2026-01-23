@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e13
+RELS: < 
+[ _kill_v_1 LBL: h12 ARG0: e13 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: u14 ARG2: x2 ]
+[ named LBL: h1 ARG0: x2 CARG: "Ravana" ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ parg_d LBL: h12 ARG0: e9 ARG1: e13 ARG2: x2 ] >
+HCONS: < h0 qeq h12 h6 qeq h1 > ]

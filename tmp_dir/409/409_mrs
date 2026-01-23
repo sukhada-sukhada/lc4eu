@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e22
+RELS: < 
+[ _have_v_qmodal LBL: h21 ARG0: e22 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h23 ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ _in_p_temp LBL: h12 ARG0: e2 ARG1: e13 ARG2: i20 ]
+[ _wake_v_up LBL: h12 ARG0: e13 ARG1: x6 ]
+[ _morning_n_of LBL: h19 ARG0: i20 ]
+[ _the_q LBL: h15 ARG0: i20 RSTR: h17 BODY: h18 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ] >
+HCONS: < h0 qeq h21 h10 qeq h5 h17 qeq h19 h23 qeq h12 > ]

@@ -1,0 +1,8 @@
+(rule-rel-values krvn  id-MRS_concept-LBL-ARG0-ARG1 20000 _still_a_1 h8 e6 e9 )
+(rule-rel-values v-k1 id-MRS_concept-LBL-ARG0-ARG1 30000 _sleep_v_1 h8 e9 x12 )
+(rule-rel-values v-LTOP LTOP-INDEX h0 e9)
+(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF 30000 prop past indicative + -)
+(rule-rel-values  mrs-info_q id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h1 x12 h3 h4)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1 30000 _sleep_v_1 h8 e9 x12)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1 20000 _still_a_1 h5 e6 e7)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0 10000 _rabbit_n_1 h11 x12)

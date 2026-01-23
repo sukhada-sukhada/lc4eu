@@ -1,0 +1,4 @@
+(rule-rel-values LTOP-modal-verb  Restr-Restricted h9 h16)
+(rule-rel-values LTOP-modal  Restr-Restricted h0 h7)
+(rule-rel-values mrs-info_q  Restr-Restricted  h12  h14)
+(rule-rel-values mrs-info_q  Restr-Restricted  h5  h1)

@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 10000 hara_2 _every_q)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 10000 hara_2 _every_q)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 baccA_2 _kid_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 baccA_2 _kid_n_1)

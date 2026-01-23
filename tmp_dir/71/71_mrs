@@ -1,0 +1,7 @@
+[ LTOP: h0
+INDEX: e8
+RELS: < 
+[ _sleep_v_1 LBL: h7 ARG0: e8 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x2 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h7 h5 qeq h1 > ]

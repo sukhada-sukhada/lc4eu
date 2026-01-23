@@ -1,0 +1,8 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 30000 _give_v_1 h13 e14 comm pres indicative - - x8 x19 x2)
+(LTOP-INDEX  h0 e14)
+(MRS_info  id-MRS_concept-LBL-ARG0 -10000 pron h7 x8)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY -10000 pronoun_q h9 x8 h11 h12)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 _fruit_n_1 h18 x19)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h20 x19 h22 h23)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)

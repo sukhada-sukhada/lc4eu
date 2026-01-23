@@ -1,0 +1,3 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 A_1 _come_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 A_1 _come_v_1)
+(rule-rel-values BI_2 id-MRS_concept 11000 _certain_a_1)

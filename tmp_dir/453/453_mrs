@@ -1,0 +1,16 @@
+[ LTOP: h0
+INDEX: e28
+RELS: < 
+[ _write_v_to LBL: h27 ARG0: e28 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: + ] ARG1: x2 ARG2: x40 ]
+[ _book_n_of LBL: h39 ARG0: x40 [ x NUM: pl PERS: 3 ] ARG1: i41 ]
+[ _topic_n_of LBL: h31 ARG0: x32 [ x NUM: pl PERS: 3 ] ARG1: i33 ]
+[ _issue_n_1 LBL: h37 ARG0: x38 [ x NUM: pl PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ udef_q LBL: h23 ARG0: x40 RSTR: h25 BODY: h26 ]
+[ udef_q LBL: h19 ARG0: x32 RSTR: h21 BODY: h22 ]
+[ udef_q LBL: h15 ARG0: x38 RSTR: h17 BODY: h18 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _on_p LBL: h27 ARG0: e12 ARG1: e28 ARG2: x32 ]
+[ _along+with_p LBL: h27 ARG0: e8 ARG1: e28 ARG2: x38 ]
+[ _political_a_1 LBL: h37 ARG0: e35 ARG1: x38 ] >
+HCONS: < h0 qeq h27 h17 qeq h37 h21 qeq h31 h25 qeq h39 h5 qeq h1 > ]

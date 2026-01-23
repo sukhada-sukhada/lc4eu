@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e22
+RELS: < 
+[ _can_v_modal LBL: h21 ARG0: e22 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h23 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _do_v_1 LBL: h17 ARG0: e18 ARG1: x2 ARG2: x12 ]
+[ neg LBL: h8 ARG0: e9 ARG1: h10 ]
+[ _work_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ _this_q_dem LBL: h13 ARG0: x12 RSTR: h15 BODY: h16 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h8 h10 qeq h21 h15 qeq h11 h23 qeq h17 h6 qeq h1 > ]

@@ -1,0 +1,7 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 JUma_1 _sway_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 JUma_1 _sway_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 10000 hAWI_1 _elephant_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 10000 hAWI_1 _elephant_n_1)
+(rule-rel-values  mrsCon_not id-MRS_concept 10010 _a_q)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 cala_6 _walk_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 cala_6 _walk_v_1)

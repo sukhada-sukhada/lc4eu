@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 kaviwA_1 _rhyme_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 kaviwA_1 _rhyme_n_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 kiwAba_1 _book_n_of)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 kiwAba_1 _book_n_of)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 40000 KarIxa_1 _buy_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 40000 KarIxa_1 _buy_v_1)

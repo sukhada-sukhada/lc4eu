@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _reach_v_1 LBL: h18 ARG0: e19 [ e SF: ques TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: u21 ]
+[ named LBL: h1 ARG0: x2 CARG: "Siwa" ]
+[ place_n LBL: h8 ARG0: x9 ]
+[ which_q LBL: h14 ARG0: x9 RSTR: h16 BODY: h17 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ loc_nonsp LBL: h18 ARG0: e11 ARG1: e19 ARG2: x9 ] >
+HCONS: < h0 qeq h18 h16 qeq h8 h6 qeq h1 > ]

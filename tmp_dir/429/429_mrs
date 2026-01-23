@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e21
+RELS: < 
+[ _bark_v_1 LBL: h20 ARG0: e21 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x19 ]
+[ def_implicit_q LBL: h5 ARG0: x4 RSTR: h7 BODY: h8 ]
+[ loc_nonsp LBL: h20 ARG0: e2 ARG1: e21 ARG2: x4 ]
+[ _now_a_1 LBL: h15 ARG0: e16 ARG1: x4 ]
+[ _dog_n_1 LBL: h18 ARG0: x19 [ x NUM: sg PERS: 3 ] ]
+[ time_n LBL: h15 ARG0: x4 ]
+[ _the_q LBL: h11 ARG0: x19 RSTR: h13 BODY: h14 ] >
+HCONS: < h0 qeq h20 h13 qeq h18 h7 qeq h15 > ]

@@ -1,0 +1,4 @@
+(rule-rel-values gnp-of-eng_pron-personal-male-he id-GEN-NUM-PER-PT 20000 m sg 3 std )
+(rule-rel-values gnp-of-eng_noun-pl id-GEN-NUM-PER 30000 - pl 3 )
+(rule-rel-values no_def-pl id-GEN-NUM-PER 30000  - pl 3 )
+(rule-rel-values gnp-of-eng_pron-personal-male-he id-GEN-NUM-PER-PT 20000 m sg 3 std )

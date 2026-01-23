@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _fall_v_1 LBL: h18 ARG0: e19 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x14 ]
+[ udef_q LBL: h5 ARG0: x16 RSTR: h7 BODY: h8 ]
+[ season LBL: h15 ARG0: x16 CARG: "winter" ]
+[ _in_p_temp LBL: h18 ARG0: e2 ARG1: e19 ARG2: x16 ]
+[ _snow_n_1 LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h9 ARG0: x14 RSTR: h11 BODY: h12 ] >
+HCONS: < h0 qeq h18 h11 qeq h13 h7 qeq h15 > ]

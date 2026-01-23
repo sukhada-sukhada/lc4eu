@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e11
+RELS: < 
+[ _call_v_name LBL: h10 ARG0: e11 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ] ARG1: u12 ARG2: x6 ARG3: x9 ]
+[ _student_n_of LBL: h5 ARG0: x6 [ x NUM: sg PERS: 3 ] ARG1: i7 ]
+[ _child_n_1 LBL: h8 ARG0: x9 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h15 ARG0: x6 RSTR: h17 BODY: h18 ]
+[ _a_q LBL: h19 ARG0: x9 RSTR: h21 BODY: h22 ]
+[ parg_d LBL: h10 ARG0: e2 ARG1: e11 ARG2: x9 ] >
+HCONS: < h0 qeq h10 h17 qeq h5 h21 qeq h8 > ]

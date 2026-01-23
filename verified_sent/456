@@ -1,6 +1,5 @@
-<sent_id=456>
 #vaha Kula gayA.
-$wyax,Kula_1-yA_1
+wyax,Kula_1-yA_1
 1,2
 ,
 ,
@@ -8,7 +7,5 @@ $wyax,Kula_1-yA_1
 ,
 distal,[shade:jA_1]
 ,
-,
-%affirmative
-</sent_id>
+affirmative
 

@@ -1,0 +1,7 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _come_v_1 h16 e17 prop past indicative - - x20)
+(LTOP-INDEX  h0 e17)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _meeting_n_of h13 x14 i15)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _animal_n_1 h19 x20)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h5 x14 h7 h8)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h9 x20 h11 h12)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _to_p h16 e2 e17 x14)

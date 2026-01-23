@@ -1,0 +1,8 @@
+(kriyA-TAM	30000	wA_hE_1)
+(id-concept_label	10000	hAWI_1)
+(id-concept_label	20000	JUma_1)
+(id-concept_label	30000	 cala_6)
+(rel_name-ids	k1	30000	10000)
+(rel_name-ids	krvn	30000	20000)
+(rel_name-ids	main	0	30000)
+(sentence_type	affirmative)

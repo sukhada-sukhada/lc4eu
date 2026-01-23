@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e35
+RELS: < 
+[ _die_v_1 LBL: h34 ARG0: e35 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x13 ]
+
+[ _leave_v_1 LBL: h27 ARG0: e28 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: u30 ]
+[ named LBL: h12 ARG0: x13 CARG: "Xasarawa" ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ _when_x_subord LBL: h19 ARG0: e20 ARG1: h21 ARG2: h22 ]
+[ _forest_n_of LBL: h31 ARG0: x32 [ x NUM: sg PERS: 3 ] ARG1: i33 ]
+[ proper_q LBL: h15 ARG0: x13 RSTR: h17 BODY: h18 ]
+[ _the_q LBL: h23 ARG0: x32 RSTR: h25 BODY: h26 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ]
+[ _to_p LBL: h27 ARG0: e2 ARG1: e28 ARG2: x32 ] >
+HCONS: < h0 qeq h19 h10 qeq h5 h17 qeq h12 h21 qeq h34 h22 qeq h27 h25 qeq h31 > ]

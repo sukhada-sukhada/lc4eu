@@ -1,0 +1,4 @@
+(rule-rel-values gnp-of-eng_pron-addressee-you id-GEN-NUM-PER 10000 - - 2 )
+(rule-rel-values gnp-of-eng_noun-pl id-GEN-NUM-PER 20000 - pl 3 )
+(rule-rel-values no_def-pl id-GEN-NUM-PER 20000  - pl 3 )
+(rule-rel-values gnp-of-eng_pron-addressee-you id-GEN-NUM-PER 10000 - - 2 )

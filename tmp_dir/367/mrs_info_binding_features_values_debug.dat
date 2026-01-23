@@ -1,0 +1,5 @@
+(rule-rel-values unknown_bind id-MRS_concept-LBL-ARG0-ARG  0 unknown h1 e2 x5)
+(rule-rel-values  mrs-info_q id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h6 x5 h8 h9)
+(rule-rel-values unknown_LTOP LTOP-INDEX h0 e2)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0 10000 _dog_n_1 h4 x5)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG 0 unknown h1 e2 x3)

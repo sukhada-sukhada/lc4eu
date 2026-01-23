@@ -1,0 +1,8 @@
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 10000 _turtle_n_1 h1 x2)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h3 x4 h5 h6)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h7 x8 h9 h10)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _reach_v_1 h11 e12 x13 x14)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 20000 _destination_n_1 h15 x16)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 20000 _destination_n_1 h15 x16)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _reach_v_1 h11 e12 x13 x14)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 10000 _turtle_n_1 h1 x2)

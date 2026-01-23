@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e9
+RELS: < 
+[ _sleep_v_1 LBL: h8 ARG0: e9 [ e SF: prop TENSE: past MOOD: indicative PROG: + PERF: - ] ARG1: x12 ]
+[ _rabbit_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h1 ARG0: x12 RSTR: h3 BODY: h4 ]
+[ _still_a_1 LBL: h8 ARG0: e6 ARG1: e9 ] >
+HCONS: < h0 qeq h8 h3 qeq h11 > ]

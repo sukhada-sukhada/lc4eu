@@ -1,0 +1,4 @@
+(MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL 21000 _and_c h1 e2 u3 e4 u5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 named h7 x8 n9)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h10 x11 h12 h13)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _run_v_1 h14 e15 x16)

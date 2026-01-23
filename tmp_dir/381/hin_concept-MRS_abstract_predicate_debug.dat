@@ -1,0 +1,4 @@
+(rule-rel-values mrs_recip_pronoun  id-MRS_concept 20010 pronoun_q)
+(rule-rel-values mrs_recip_pronoun  id-MRS_concept 20000 recip_pro)
+(rule-rel-values mrs_recip_pronoun  id-MRS_concept 20010 pronoun_q)
+(rule-rel-values mrs_recip_pronoun  id-MRS_concept 20000 recip_pro)

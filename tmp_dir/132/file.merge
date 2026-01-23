@@ -1,0 +1,6 @@
+(id-GEN-NUM-PER  20000 - sg 3)
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _tall_a_1 h4 e5 prop pres indicative - - x2)
+(LTOP-INDEX  h0 e5)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _tree_n_of h1 x2 i3)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _each_q h7 x2 h9 h10)
+(Restr-Restricted     h9  h1)

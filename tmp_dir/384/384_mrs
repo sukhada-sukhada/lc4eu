@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _complete_v_2 LBL: h23 ARG0: e24 [ e SF: ques TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x18 ]
+[ unspec_manner LBL: h23 ARG0: e10 ARG1: e24 ARG2: x8 ]
+[ manner LBL: h7 ARG0: x8 ]
+[ _work_n_1 LBL: h17 ARG0: x18 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x PERS: 2 ] ]
+[ which_q LBL: h13 ARG0: x8 RSTR: h15 BODY: h16 ]
+[ _the_q LBL: h19 ARG0: x18 RSTR: h21 BODY: h22 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h23 h15 qeq h7 h21 qeq h17 h5 qeq h1 > ]

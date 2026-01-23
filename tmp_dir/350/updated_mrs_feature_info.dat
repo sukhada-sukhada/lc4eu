@@ -1,0 +1,8 @@
+(LTOP-INDEX h0 e19)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p h18 e8 e19 x12)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 proper_q h14 x12 h16 h17)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _study_v_1 h18 e19 x2 u21)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 20000 named h11 x12 Bhu)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop pres indicative - -)

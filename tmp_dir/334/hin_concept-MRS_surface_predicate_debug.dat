@@ -1,0 +1,7 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 saba_4 person)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 saba_4 person)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 skUla_1 _school_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 skUla_1 _school_n_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 40000 bulA_1 _call_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 40000 bulA_1 _call_v_1)
+(rule-rel-values mrsCon_yes id-MRS_concept 30010 _the_q )

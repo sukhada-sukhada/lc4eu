@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _beam_v_to LBL: h23 ARG0: e24 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x10 ARG2: u26 ]
+[ def_explicit_q LBL: h5 ARG0: x20 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ poss LBL: h19 ARG0: e2 ARG1: x20 ARG2: x22 ]
+[ _importance_n_1 LBL: h19 ARG0: x20 ]
+[ _geography_n_1 LBL: h21 ARG0: x22 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h9 ARG0: x10 ]
+[ _a_q LBL: h27 ARG0: x22 RSTR: h29 BODY: h30 ]
+[ pronoun_q LBL: h11 ARG0: x10 RSTR: h13 BODY: h14 ]
+[ _on_p LBL: h23 ARG0: e16 ARG1: e24 ARG2: x20 ] >
+HCONS: < h0 qeq h23 h13 qeq h9 h29 qeq h21 h7 qeq h19 > ]

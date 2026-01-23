@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e8
+RELS: < 
+[ _watch_v_1 LBL: h7 ARG0: e8 [ e SF: comm TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x19 ]
+
+[ _run_v_1 LBL: h18 ARG0: e16 [ e SF: prop TENSE: untensed MOOD: indicative PROG: + PERF: - ] ARG1: x19 ]
+[ pron LBL: h1 ARG0: x2 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _lion_n_1 LBL: h18 ARG0: x19 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h11 ARG0: x19 RSTR: h13 BODY: h14 ] >
+HCONS: < h0 qeq h7 h13 qeq h18 h5 qeq h1 > ]

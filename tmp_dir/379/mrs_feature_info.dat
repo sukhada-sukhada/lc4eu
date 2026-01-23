@@ -1,0 +1,8 @@
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 udef_q h1 x2 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 40010 udef_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 50000 _give_v_1 h14 e15 x16 x17 u18)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 10000 _bad_a_at h19 e20 x21 u22)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _bad_a_at h23 e24 x25 i26)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 50000 _give_v_1 h14 e15 x16 x17 x18)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 _result_n_of h11 x12 i13)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _work_n_1 h9 x10)

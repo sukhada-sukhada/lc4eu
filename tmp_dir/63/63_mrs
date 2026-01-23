@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e36
+RELS: < 
+[ _call_v_1 LBL: h35 ARG0: e36 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x31 ARG2: x28 ]
+[ _meeting_n_of LBL: h27 ARG0: x28 [ x NUM: sg PERS: 3 ] ARG1: i29 ]
+[ _forest_n_of LBL: h32 ARG0: x33 [ x NUM: sg PERS: 3 ] ARG1: i34 ]
+[ _war_n_1 LBL: h9 ARG0: x10 [ x NUM: sg PERS: 3 ] ]
+[ _lion_n_1 LBL: h30 ARG0: x31 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h11 ARG0: x28 RSTR: h13 BODY: h14 ]
+[ _the_q LBL: h15 ARG0: x33 RSTR: h17 BODY: h18 ]
+[ _the_q LBL: h19 ARG0: x10 RSTR: h21 BODY: h22 ]
+[ _the_q LBL: h23 ARG0: x31 RSTR: h25 BODY: h26 ]
+[ _in_p LBL: h35 ARG0: e2 ARG1: e36 ARG2: x33 ]
+[ _for_p LBL: h35 ARG0: e6 ARG1: e36 ARG2: x10 ] >
+HCONS: < h0 qeq h35 h13 qeq h27 h17 qeq h32 h21 qeq h9 h25 qeq h30 > ]

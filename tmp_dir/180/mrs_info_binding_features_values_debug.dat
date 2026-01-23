@@ -1,0 +1,6 @@
+(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF 40000 prop pres indicative - -)
+(rule-rel-values dem   id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _that_q_dem h1 x6 h3 h4)
+(rule-rel-values samAnAXi id-MRS_concept-LBL-ARG0-ARG1 30000 _beautiful_a_1 h8 x6 )
+(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 e9)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1 30000 _beautiful_a_1 h8 e9 x6)
+(rule-rel-values printFacts id-MRS_concept-LBL-ARG0-ARG1 20000 _book_n_of h5 x6 i7)

@@ -1,6 +1,5 @@
-<sent_id=266>
 #jAnavara kyA kAwe hEM?
-jAnavara_1,$kim,KA_1-wA_hE_1
+jAnavara_1,kim,KA_1-wA_hE_1
 1,2,3
 anim,,
 pl,,
@@ -8,7 +7,4 @@ pl,,
 ,,
 def,,
 ,,
-,,
-%interrogative
-</sent_id>
-
+interrogative

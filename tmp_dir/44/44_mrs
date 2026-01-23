@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < 
+[ _in_p LBL: h1 ARG0: e2 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x16 ARG2: x14 ]
+[ _cat_n_1 LBL: h15 ARG0: x16 [ x NUM: pl PERS: 3 ] ]
+[ _garden_n_1 LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ]
+[ udef_q LBL: h5 ARG0: x16 RSTR: h7 BODY: h8 ]
+[ _the_q LBL: h9 ARG0: x14 RSTR: h11 BODY: h12 ] >
+HCONS: < h11 qeq h13 h7 qeq h15 > ]

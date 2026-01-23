@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _come_v_1 LBL: h18 ARG0: e19 [ e SF: comm TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ pron LBL: h1 ARG0: x2 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ named LBL: h11 ARG0: x12 CARG: "Xilli" ]
+[ proper_q LBL: h14 ARG0: x12 RSTR: h16 BODY: h17 ]
+[ _to_p LBL: h18 ARG0: e8 ARG1: e19 ARG2: x12 ] >
+HCONS: < h0 qeq h18 h16 qeq h11 h5 qeq h1 > ]

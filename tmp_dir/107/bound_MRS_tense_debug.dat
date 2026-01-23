@@ -1,0 +1,7 @@
+(rule-rel-values  tensemodal  id-MRS_concept-LBL-ARG0-ARG1 30000 _might_v_modal h18 e19 prop pres indicative - - h20)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e19)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-CARG 20000 named h7 x8 Rusi)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _speak_v_to h14 e15 x2 x8)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 proper_q h10 x8 h12 h13)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)

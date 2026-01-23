@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e6
+RELS: < 
+[ _have_v_1 LBL: h5 ARG0: e6 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x12 ARG2: x10 ]
+[ _fever_n_1 LBL: h9 ARG0: x10 [ x NUM: sg PERS: 3 ] ]
+[ _boy_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h13 ARG0: x10 RSTR: h15 BODY: h16 ]
+[ _the_q LBL: h1 ARG0: x12 RSTR: h3 BODY: h4 ] >
+HCONS: < h0 qeq h5 h15 qeq h9 h3 qeq h11 > ]

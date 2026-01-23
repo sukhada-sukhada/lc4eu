@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e20
+RELS: < 
+[ _be_v_id LBL: h19 ARG0: e20 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: x17 ]
+[ dofw LBL: h5 ARG0: x6 CARG: "Mon" ]
+[ _day_n_of LBL: h16 ARG0: x17 [ x NUM: sg PERS: 3 ] ARG1: i18 ]
+[ _the_q LBL: h8 ARG0: x17 RSTR: h10 BODY: h11 ]
+[ proper_q LBL: h1 ARG0: x6 RSTR: h3 BODY: h4 ]
+[ ord LBL: h16 ARG0: e13 ARG1: x17 CARG: "first" ] >
+HCONS: < h0 qeq h19 h10 qeq h16 h3 qeq h5 > ]

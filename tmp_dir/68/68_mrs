@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e14
+RELS: < 
+[ _call_v_name LBL: h13 ARG0: e14 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: u15 ARG2: x10 ARG3: x12 ]
+[ _planet_n_1 LBL: h9 ARG0: x10 [ x NUM: sg PERS: 3 ] ]
+[ _earth_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h18 ARG0: x10 RSTR: h20 BODY: h21 ]
+[ _the_q LBL: h5 ARG0: x12 RSTR: h7 BODY: h8 ]
+[ parg_d LBL: h13 ARG0: e2 ARG1: e14 ARG2: x12 ] >
+HCONS: < h0 qeq h13 h20 qeq h9 h7 qeq h11 > ]

@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e17
+RELS: < 
+[ _give_v_1 LBL: h16 ARG0: e17 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x8 ARG2: x15 ARG3: x2 ]
+[ named LBL: h7 ARG0: x8 CARG: "Ayan" ]
+[ _water_n_1 LBL: h14 ARG0: x15 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ _a_q LBL: h21 ARG0: x15 RSTR: h23 BODY: h24 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ proper_q LBL: h10 ARG0: x8 RSTR: h12 BODY: h13 ] >
+HCONS: < h0 qeq h16 h12 qeq h7 h23 qeq h14 h5 qeq h1 > ]

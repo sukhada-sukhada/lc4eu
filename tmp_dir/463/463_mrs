@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _full_a_of LBL: h18 ARG0: e19 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x17 ARG2: u21 ]
+[ def_explicit_q LBL: h5 ARG0: x17 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ named LBL: h9 ARG0: x10 CARG: "Rama" ]
+[ poss LBL: h16 ARG0: e2 ARG1: x17 ARG2: x10 ]
+[ _stomach_n_1 LBL: h16 ARG0: x17 ]
+[ proper_q LBL: h12 ARG0: x10 RSTR: h14 BODY: h15 ] >
+HCONS: < h14 qeq h9 h7 qeq h16 > ]

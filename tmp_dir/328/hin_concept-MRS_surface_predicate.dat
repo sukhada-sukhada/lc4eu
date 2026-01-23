@@ -1,0 +1,5 @@
+(id-hin_concept-MRS_concept 30000 katorA_1 _bowl_n_1)
+(id-hin_concept-MRS_concept 50000 KA_1 _eat_v_1)
+(id-hin_concept-MRS_concept 20000 cammaca_1 _spoon_n_1)
+(MRS_info id-MRS_concept 20010 _a_q)
+(MRS_info id-MRS_concept 30010 _the_q )

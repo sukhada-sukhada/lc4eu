@@ -1,0 +1,7 @@
+[ LTOP: h0
+INDEX: e5
+RELS: < 
+[ _tall_a_1 LBL: h4 ARG0: e5 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ _tree_n_of LBL: h1 ARG0: x2 [ x NUM: sg PERS: 3 ] ARG1: i3 ]
+[ _each_q LBL: h7 ARG0: x2 RSTR: h9 BODY: h10 ] >
+HCONS: < h9 qeq h1 > ]

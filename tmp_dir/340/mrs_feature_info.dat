@@ -1,0 +1,7 @@
+(MRS_info id-MRS_concept-LBL-ARG0 -10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY -10000 pronoun_q h3 x4 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -30000 _while_x h7 e8 h9 h10)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h15 x16 h17 h18)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 10000 _run_v_1 h19 e20 u21 )
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _lion_n_1 h22 x23)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _watch_v_1 h11 e12 x13 x14)

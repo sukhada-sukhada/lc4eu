@@ -1,0 +1,7 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 jUwA_1 _shoe_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 jUwA_1 _shoe_n_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 10000 camadZA_1 _leather_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 10000 camadZA_1 _leather_n_1)
+(rule-rel-values  mrsCon_not id-MRS_concept 10010 _a_q)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 banA_1 _make_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 banA_1 _make_v_1)

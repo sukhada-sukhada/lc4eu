@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e16
+RELS: < 
+[ _be_v_id LBL: h15 ARG0: e16 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x14 ARG2: x9 ]
+[ superl LBL: h8 ARG0: e2 ARG1: e11 ]
+[ _technology_n_1 LBL: h8 ARG0: x9 [ x NUM: sg PERS: 3 ] ]
+[ _geography_n_1 LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h19 ARG0: x9 RSTR: h21 BODY: h22 ]
+[ _the_q LBL: h4 ARG0: x14 RSTR: h6 BODY: h7 ]
+[ _old_a_1 LBL: h8 ARG0: e11 ARG1: x9 ] >
+HCONS: < h0 qeq h15 h21 qeq h8 h6 qeq h13 > ]

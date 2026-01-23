@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e20
+RELS: < 
+[ _fill_v_cause LBL: h19 ARG0: e20 [ e SF: comm TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x18 ]
+[ _pot_n_1 LBL: h17 ARG0: x18 [ x NUM: sg PERS: 3 ] ]
+[ _water_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x PERS: 2 ] ]
+[ _the_q LBL: h13 ARG0: x18 RSTR: h15 BODY: h16 ]
+[ _a_q LBL: h23 ARG0: x12 RSTR: h25 BODY: h26 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _with_p LBL: h19 ARG0: e8 ARG1: e20 ARG2: x12 ] >
+HCONS: < h0 qeq h19 h15 qeq h17 h25 qeq h11 h5 qeq h1 > ]

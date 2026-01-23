@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 parg_d h1 e2 e3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 30000 _call_v_name h10 e11 u12 x13 x14)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h15 x16 h17 h18)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h19 x20 h21 h22)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _child_n_1 h8 x9)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _student_n_of h5 x6 i7)

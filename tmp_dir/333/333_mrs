@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e16
+RELS: < 
+[ _diplomatic_a_1 LBL: h15 ARG0: e16 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ named LBL: h1 ARG0: x2 CARG: "Xaniya" ]
+[ neg LBL: h8 ARG0: e9 ARG1: h10 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ _that_x_deg LBL: h15 ARG0: e12 ARG1: e16 ARG2: u14 ] >
+HCONS: < h0 qeq h8 h10 qeq h15 h6 qeq h1 > ]

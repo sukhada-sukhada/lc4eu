@@ -1,0 +1,24 @@
+[ LTOP: h0
+INDEX: e66
+RELS: < 
+[ _give_v_1 LBL: h65 ARG0: e66 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x16 ARG2: x71 ARG3: x23 ]
+[ udef_q LBL: h54 ARG0: x59 RSTR: h56 BODY: h57 ]
+[ udef_q LBL: h46 ARG0: x51 RSTR: h48 BODY: h49 ]
+[ def_explicit_q LBL: h5 ARG0: x71 [ x NUM: pl PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ _and_c LBL: h58 ARG0: x59 L-INDEX: x30 R-INDEX: x37 ]
+[ implicit_conj LBL: h50 ARG0: x51 L-INDEX: x23 R-INDEX: x59 ]
+[ named LBL: h36 ARG0: x37 CARG: "Manu" ]
+[ named LBL: h29 ARG0: x30 CARG: "Uma" ]
+[ named LBL: h22 ARG0: x23 CARG: "Riya" ]
+[ named LBL: h15 ARG0: x16 CARG: "Hari" ]
+[ poss LBL: h70 ARG0: e2 ARG1: x71 ARG2: x10 ]
+[ neg LBL: h43 ARG0: e44 ARG1: h45 ]
+[ _only_a_1 LBL: h62 ARG0: e63 ARG1: h64 ]
+[ _fruit_n_1 LBL: h70 ARG0: x71 ]
+[ pron LBL: h9 ARG0: x10 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ proper_q LBL: h39 ARG0: x37 RSTR: h41 BODY: h42 ]
+[ proper_q LBL: h32 ARG0: x30 RSTR: h34 BODY: h35 ]
+[ proper_q LBL: h25 ARG0: x23 RSTR: h27 BODY: h28 ]
+[ pronoun_q LBL: h11 ARG0: x10 RSTR: h13 BODY: h14 ]
+[ proper_q LBL: h18 ARG0: x16 RSTR: h20 BODY: h21 ] >
+HCONS: < h0 qeq h43 h0 qeq h62 h13 qeq h9 h20 qeq h15 h27 qeq h22 h34 qeq h29 h41 qeq h36 h48 qeq h50 h56 qeq h58 h64 qeq h65 h7 qeq h70 > ]

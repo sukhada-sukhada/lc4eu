@@ -1,0 +1,4 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 40000 paDa_1 _read_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 40000 paDa_1 _read_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 kiwAba_1 _book_n_of)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 kiwAba_1 _book_n_of)

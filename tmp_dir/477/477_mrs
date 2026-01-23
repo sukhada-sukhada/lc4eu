@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e21
+RELS: < 
+[ _change_v_1 LBL: h20 ARG0: e21 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: + ] ARG1: u22 ]
+[ def_explicit_q LBL: h5 ARG0: x14 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ poss LBL: h13 ARG0: e2 ARG1: x14 ARG2: x16 ]
+[ _surface_n_1 LBL: h13 ARG0: x14 ]
+[ _earth_n_1 LBL: h15 ARG0: x16 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h23 ARG0: x16 RSTR: h25 BODY: h26 ]
+[ _in_p LBL: h20 ARG0: e10 ARG1: e21 ARG2: x14 ]
+[ _continuous_a_1 LBL: h20 ARG0: e18 ARG1: e21 ] >
+HCONS: < h0 qeq h20 h25 qeq h15 h7 qeq h13 > ]

@@ -1,0 +1,5 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _sleep_v_1 h8 e9 prop past indicative + - x12)
+(LTOP-INDEX  h0 e9)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _rabbit_n_1 h11 x12)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h1 x12 h3 h4)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _still_a_1 h8 e6 e9)

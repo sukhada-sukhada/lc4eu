@@ -1,0 +1,4 @@
+Probably, the dog barked.
+Probably the dog barked.
+The dog probably barked.
+

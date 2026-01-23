@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e7
+RELS: < 
+[ _bark_v_1 LBL: h6 ARG0: e7 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x5 ]
+[ neg LBL: h1 ARG0: e2 ARG1: h3 ]
+[ _cat_n_1 LBL: h4 ARG0: x5 [ x NUM: sg PERS: 3 ] ]
+[ _any_q LBL: h9 ARG0: x5 RSTR: h11 BODY: h12 ] >
+HCONS: < h0 qeq h1 h11 qeq h4 h3 qeq h6 > ]

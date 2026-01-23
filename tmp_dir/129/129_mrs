@@ -1,0 +1,7 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < 
+[ _play_v_1 LBL: h1 ARG0: e2 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x6 ARG2: u4 ]
+[ _kid_n_1 LBL: h5 ARG0: x6 [ x NUM: sg PERS: 3 ] ]
+[ _each_q LBL: h7 ARG0: x6 RSTR: h9 BODY: h10 ] >
+HCONS: < h0 qeq h1 h9 qeq h5 > ]

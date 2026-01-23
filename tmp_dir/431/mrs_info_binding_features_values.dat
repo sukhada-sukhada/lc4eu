@@ -1,0 +1,8 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 10001 _in_p_temp h18 e2 e19 x16 )
+(LTOP-INDEX h0 e19)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 udef_q h5 x16 h7 h8 )
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop pres indicative - -)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h9 x14 h11 h12)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _fall_v_1 h18 e19 x14)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 season h15 x16 winter)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _snow_n_1 h13 x14)

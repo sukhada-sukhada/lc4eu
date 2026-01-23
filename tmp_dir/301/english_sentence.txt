@@ -1,0 +1,4 @@
+The turtle walked, continuously.
+The turtle walked continuously.
+The turtle continuously walked.
+

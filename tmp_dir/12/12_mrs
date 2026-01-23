@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e17
+RELS: < 
+[ _come_v_1 LBL: h16 ARG0: e17 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x20 ]
+[ _meeting_n_of LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ARG1: i15 ]
+[ _animal_n_1 LBL: h19 ARG0: x20 [ x NUM: pl PERS: 3 ] ]
+[ _the_q LBL: h5 ARG0: x14 RSTR: h7 BODY: h8 ]
+[ _the_q LBL: h9 ARG0: x20 RSTR: h11 BODY: h12 ]
+[ _to_p LBL: h16 ARG0: e2 ARG1: e17 ARG2: x14 ] >
+HCONS: < h0 qeq h16 h11 qeq h19 h7 qeq h13 > ]

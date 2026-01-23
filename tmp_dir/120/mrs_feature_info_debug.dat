@@ -1,0 +1,7 @@
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0 10010 generic_entity h1 x2)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _this_q_dem h3 x4 h5 h6)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _house_n_of h7 x8 i9)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _be_v_id h10 e11 x12 x13)
+(rule-rel-values active-k2-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _be_v_id h10 e11 x12 u13)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h14 x15 h16 h17)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _house_n_of h7 x8 i9)

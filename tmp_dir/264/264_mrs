@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e25
+RELS: < 
+[ _study_v_1 LBL: h24 ARG0: e25 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x10 ARG2: x33 ]
+[ named LBL: h9 ARG0: x10 CARG: "Riwesa" ]
+[ _book_n_of LBL: h32 ARG0: x33 [ x NUM: sg PERS: 3 ] ARG1: i34 ]
+[ _garden_n_1 LBL: h30 ARG0: x31 [ x NUM: sg PERS: 3 ] ]
+[ _school_n_1 LBL: h28 ARG0: x29 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h35 ARG0: x33 RSTR: h37 BODY: h38 ]
+[ _the_q LBL: h16 ARG0: x31 RSTR: h18 BODY: h19 ]
+[ _the_q LBL: h20 ARG0: x29 RSTR: h22 BODY: h23 ]
+[ proper_q LBL: h12 ARG0: x10 RSTR: h14 BODY: h15 ]
+[ _in_p LBL: h24 ARG0: e2 ARG1: e25 ARG2: x31 ]
+[ _in_p LBL: h24 ARG0: e6 ARG1: e25 ARG2: x29 ] >
+HCONS: < h0 qeq h24 h14 qeq h9 h18 qeq h30 h22 qeq h28 h37 qeq h32 > ]

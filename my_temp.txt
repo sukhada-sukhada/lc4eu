@@ -1,0 +1,35 @@
+#Apa kahAz rahawe hEM?
+1
+Calling ACE parser for generating English sentence
+Where do you live?
+Where do you live?
+#betoM ne Kewa meM bIja bo xiyA.
+10
+Calling ACE parser for generating English sentence
+The sons sowed the seed, in the field.
+The sons sowed the seed in the field.
+#mEM rUsI nahIM bola sakawA hUz.
+100
+Calling ACE parser for generating English sentence
+I can not speak Rusi.
+I cannot speak Rusi.
+I can't speak Rusi.
+#viveka kahAz rahawA hE?
+101
+Calling ACE parser for generating English sentence
+Where does Viveka live?
+Where does Viveka live?
+#rAma ko Pala KAnA hogA.
+102
+Calling ACE parser for generating English sentence
+Rama must eat a fruit.
+#betoM ko Kewa meM bIja bonA cAhie.
+103
+Calling ACE parser for generating English sentence
+The sons must sow the seed, in the field.
+The sons must sow the seed in the field.
+#ladake ko nayI kiwAba paDanI cAhie.
+104
+Calling ACE parser for generating English sentence
+The boy must read the new book.
+#ladake ko vixyAlaya meM paDanA cAhie.

@@ -1,0 +1,4 @@
+(rule-rel-values  yearsofcenturies id-MRS_concept 20010 proper_q)
+(rule-rel-values mrs_propn  id-MRS_concept 30010 proper_q)
+(rule-rel-values mrs_propn  id-MRS_concept 30000 named)
+(rule-rel-values  years_of_century id-MRS_concept 20000 yofc)

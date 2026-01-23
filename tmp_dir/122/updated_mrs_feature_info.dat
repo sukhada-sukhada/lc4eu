@@ -1,0 +1,6 @@
+(LTOP-INDEX h0 e11)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _sleep_v_1 h7 e8 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20100 _can_v_modal h10 e11 h12)
+(id-SF-TENSE-MOOD-PROG-PERF 20000 prop pres indicative - -)

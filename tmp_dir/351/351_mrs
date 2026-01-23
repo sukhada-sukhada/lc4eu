@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e23
+RELS: < 
+[ _eat_v_1 LBL: h22 ARG0: e23 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: x17 ]
+[ udef_q LBL: h12 ARG0: x17 RSTR: h14 BODY: h15 ]
+[ _and_c LBL: h16 ARG0: x17 L-INDEX: x31 R-INDEX: x21 ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ _grape_n_1 LBL: h20 ARG0: x21 [ x NUM: pl PERS: 3 ] ]
+[ _apple_n_1 LBL: h30 ARG0: x31 [ x NUM: sg PERS: 3 ] ]
+[ udef_q LBL: h1 ARG0: x21 RSTR: h3 BODY: h4 ]
+[ _a_q LBL: h26 ARG0: x31 RSTR: h28 BODY: h29 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ] >
+HCONS: < h0 qeq h22 h10 qeq h5 h14 qeq h16 h28 qeq h30 h3 qeq h20 > ]

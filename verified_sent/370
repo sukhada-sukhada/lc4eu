@@ -1,13 +1,11 @@
-<sent_id=370>
 #kuwwe Ora billiyAz
-kuwwA_1,billI_1,[conj_1]
-1,2,3
-anim,anim,
-pl,,
-,,
-,,
-,def,
-,,
-3:op1,3:op2,
+kuwwA_1,billI_1
+1,2
+anim,anim
+pl,
+,
+,
+def,def
+,
 
-</send_id>
+conj:[1,2]

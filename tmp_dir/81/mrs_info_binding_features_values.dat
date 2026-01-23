@@ -1,0 +1,7 @@
+(LTOP-INDEX h0 e9)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x2 h6 h7)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop pres indicative - -)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h14 x13 h16 h17)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _have_v_1 h8 e9 x2 x13)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 Rama)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _fever_n_1 h12 x13)

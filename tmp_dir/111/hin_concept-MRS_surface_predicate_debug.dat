@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 Kela_2 _game_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 Kela_2 _game_n_1)
+(rule-rel-values  mrsCon_not id-MRS_concept 20010 _a_q)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values  may_v_modal  id-MRS_concept 30100  _may_v_modal)

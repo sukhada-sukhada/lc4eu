@@ -1,0 +1,8 @@
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0 20000 pron h1 x2)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 pronoun_q h3 x4 h5 h6)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 parg_d h7 e8 e9 x10)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h11 x12 h13 h14)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 10000 _food_n_1 h15 x16)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _eat_v_1 h17 e18 x19 x20)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _eat_v_1 h17 e18 x19 x20)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 10000 _food_n_1 h15 x16)

@@ -1,0 +1,3 @@
+(rule-rel-values mrs-info_q  Restr-Restricted  h6  h1)
+(rule-rel-values assertion-verb Restr-Restricted h0 h11)
+(rule-rel-values assertion-verb  Restr-Restricted h13 h8)

@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e11
+RELS: < 
+[ _be_v_id LBL: h10 ARG0: e11 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x9 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _doctor_n_1 LBL: h8 ARG0: x9 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h14 ARG0: x9 RSTR: h16 BODY: h17 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h10 h16 qeq h8 h6 qeq h1 > ]

@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h1 x2 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 dofw h5 x6 n7)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 _the_q h8 x9 h10 h11)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _be_v_id h19 e20 x21 u22)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _day_n_of h16 x17 i18)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-CARG 20000 ord h12 e13 x14 n15)

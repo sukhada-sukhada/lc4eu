@@ -1,0 +1,4 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _come_v_1 h7 e8 ques past indicative - - x2)
+(LTOP-INDEX  h0 e8)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 person h1 x2)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 which_q h3 x2 h5 h6)

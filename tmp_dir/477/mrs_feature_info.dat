@@ -1,0 +1,8 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 poss h1 e2 x3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 def_explicit_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p h9 e10 e11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 _change_v_1 h20 e21 u22 )
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h23 x24 h25 h26)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _continuous_a_1 h17 e18 x19)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _earth_n_1 h15 x16)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _surface_n_1 h13 x14)

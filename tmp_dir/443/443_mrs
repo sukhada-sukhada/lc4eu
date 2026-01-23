@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < 
+[ _run_v_1 LBL: h14 ARG0: e15 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x8 ]
+[ _and_c LBL: h1 ARG0: e2 L-INDEX: u3 R-INDEX: e15 L-HNDL: u5 R-HNDL: h6 ]
+[ named LBL: h7 ARG0: x8 CARG: "Mohana" ]
+[ proper_q LBL: h10 ARG0: x8 RSTR: h12 BODY: h13 ] >
+HCONS: < h0 qeq h1 h12 qeq h7 h6 qeq h14 > ]

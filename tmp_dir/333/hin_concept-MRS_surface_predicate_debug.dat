@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 vyavahAra_1+kuSala_1 _diplomatic_a_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 vyavahAra_1+kuSala_1 _diplomatic_a_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 iwanA_1 _that_x_deg)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 iwanA_1 _that_x_deg)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 50000 hE_1 _be_v_id)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 50000 hE_1 _be_v_id)

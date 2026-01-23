@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < 
+[ _walk_v_1 LBL: h1 ARG0: e2 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x5 ]
+[ _turtle_n_1 LBL: h4 ARG0: x5 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h6 ARG0: x5 RSTR: h8 BODY: h9 ]
+[ _slow_a_1 LBL: h1 ARG0: e11 ARG1: e2 ] >
+HCONS: < h0 qeq h1 h8 qeq h4 > ]

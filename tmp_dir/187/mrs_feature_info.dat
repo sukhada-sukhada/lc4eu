@@ -1,0 +1,5 @@
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h1 x2 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _animal_n_1 h15 x16)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _lion_n_1 h13 x14)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _ordain_v_1 h9 e10 x11 x12)

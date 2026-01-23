@@ -1,0 +1,4 @@
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-ARG 0 unknown h1 e2 x3)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 10000 _dog_n_1 h4 x5)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h6 x7 h8 h9)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 10000 _dog_n_1 h4 x5)

@@ -1,0 +1,5 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _walk_v_1 h1 e2 prop past indicative - - x5)
+(LTOP-INDEX  h0 e2)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _turtle_n_1 h4 x5)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h6 x5 h8 h9)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _continuous_a_1 h1 e11 e2)

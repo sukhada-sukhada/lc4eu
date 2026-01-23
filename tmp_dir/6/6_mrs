@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e23
+RELS: < 
+[ _eat_v_1 LBL: h22 ARG0: e23 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x27 ARG2: x21 ]
+[ dofw LBL: h13 ARG0: x14 CARG: "Tue" ]
+[ _fruit_n_1 LBL: h20 ARG0: x21 [ x NUM: pl PERS: 3 ] ]
+[ _baby_n_1 LBL: h26 ARG0: x27 [ x NUM: pl PERS: 3 ] ]
+[ udef_q LBL: h9 ARG0: x21 RSTR: h11 BODY: h12 ]
+[ proper_q LBL: h16 ARG0: x14 RSTR: h18 BODY: h19 ]
+[ udef_q LBL: h5 ARG0: x27 RSTR: h7 BODY: h8 ]
+[ _on_p_temp LBL: h22 ARG0: e2 ARG1: e23 ARG2: x14 ] >
+HCONS: < h0 qeq h22 h11 qeq h20 h18 qeq h13 h7 qeq h26 > ]

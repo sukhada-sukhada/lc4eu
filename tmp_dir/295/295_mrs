@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e26
+RELS: < 
+[ _scan_v_1 LBL: h25 ARG0: e26 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: u28 ]
+[ _distance_n_1 LBL: h29 ARG0: x30 [ x NUM: sg PERS: 3 ] ]
+[ _turtle_n_1 LBL: h15 ARG0: x16 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ _the_q LBL: h17 ARG0: x30 RSTR: h19 BODY: h20 ]
+[ _the_q LBL: h21 ARG0: x16 RSTR: h23 BODY: h24 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _from_p LBL: h25 ARG0: e8 ARG1: e26 ARG2: x30 ]
+[ _for_p LBL: h25 ARG0: e12 ARG1: e26 ARG2: x16 ] >
+HCONS: < h0 qeq h25 h19 qeq h29 h23 qeq h15 h5 qeq h1 > ]

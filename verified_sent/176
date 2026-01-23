@@ -1,4 +1,3 @@
-<sent_id=176>
 #XarAwala SikRA meM hE.
 XarAwala_1,SikRA_1,hE_1-pres
 1,2,3
@@ -8,7 +7,5 @@ XarAwala_1,SikRA_1,hE_1-pres
 ,,
 def,def,
 ,,
-,,
-%affirmative
-</sent_id>
+affirmative
 

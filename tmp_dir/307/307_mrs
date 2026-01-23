@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _see_v_1 LBL: h23 ARG0: e24 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x14 ARG2: x2 ]
+[ udef_q LBL: h5 ARG0: x4 RSTR: h7 BODY: h8 ]
+[ _the_q LBL: h19 ARG0: x2 [ x NUM: sg PERS: 3 ] RSTR: h21 BODY: h22 ]
+[ compound LBL: h1 ARG0: e10 ARG1: x2 ARG2: x4 ]
+[ _bus_n_1 LBL: h3 ARG0: x4 ]
+[ _stop_n_1 LBL: h1 ARG0: x2 ]
+[ pron LBL: h13 ARG0: x14 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ pronoun_q LBL: h15 ARG0: x14 RSTR: h17 BODY: h18 ] >
+HCONS: < h0 qeq h23 h17 qeq h13 h21 qeq h1 h7 qeq h3 > ]

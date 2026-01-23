@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e13
+RELS: < 
+[ _old_a_1 LBL: h12 ARG0: e13 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x6 ]
+
+[ _chase_v_1 LBL: h15 ARG0: e16 [ e SF: prop TENSE: untensed MOOD: indicative PROG: + PERF: - ] ARG1: u17 ARG2: x20 ]
+[ udef_q LBL: h1 ARG0: x6 RSTR: h3 BODY: h4 ]
+[ nominalization LBL: h5 ARG0: x6 ARG1: h15 ]
+[ _cat_n_1 LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h8 ARG0: x20 RSTR: h10 BODY: h11 ] >
+HCONS: < h10 qeq h19 h3 qeq h5 > ]

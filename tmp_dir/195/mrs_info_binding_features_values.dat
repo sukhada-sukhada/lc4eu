@@ -1,0 +1,7 @@
+(LTOP-INDEX h0 e12)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop pres indicative - -)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 udef_q h5 x10 h7 h8)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 udef_q h1 x16 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _eat_v_1 h11 e12 x16 x10)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _fruit_n_1 h9 x10)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _child_n_1 h15 x16)

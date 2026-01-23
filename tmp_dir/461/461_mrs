@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _come_v_1 LBL: h23 ARG0: e24 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ def_implicit_q LBL: h11 ARG0: x10 RSTR: h13 BODY: h14 ]
+[ loc_nonsp LBL: h23 ARG0: e8 ARG1: e24 ARG2: x10 ]
+[ _here_a_1 LBL: h17 ARG0: e18 ARG1: x10 ]
+[ pron LBL: h1 ARG0: x2 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ place_n LBL: h17 ARG0: x10 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _daily_a_1 LBL: h23 ARG0: e21 ARG1: e24 ] >
+HCONS: < h0 qeq h23 h13 qeq h17 h5 qeq h1 > ]

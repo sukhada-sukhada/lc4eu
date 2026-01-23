@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e35
+RELS: < 
+[ _bring_v_1 LBL: h34 ARG0: e35 [ e SF: comm TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x8 ARG2: x30 ]
+[ pron LBL: h7 ARG0: x8 ]
+[ pronoun_q LBL: h9 ARG0: x8 RSTR: h11 BODY: h12 ]
+[ _forest_n_of LBL: h31 ARG0: x32 [ x NUM: sg PERS: 3 ] ARG1: i33 ]
+[ _fruit_n_1 LBL: h29 ARG0: x30 [ x NUM: pl PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ udef_q LBL: h21 ARG0: x30 RSTR: h23 BODY: h24 ]
+[ _the_q LBL: h25 ARG0: x32 RSTR: h27 BODY: h28 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _from_p LBL: h34 ARG0: e14 ARG1: e35 ARG2: x32 ]
+[ _for_p LBL: h34 ARG0: e18 ARG1: e35 ARG2: x2 ] >
+HCONS: < h0 qeq h34 h11 qeq h7 h23 qeq h29 h27 qeq h31 h5 qeq h1 > ]

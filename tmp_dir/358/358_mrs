@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e14
+RELS: < 
+[ _look_v_at LBL: h13 ARG0: e14 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x8 ]
+[ pron LBL: h7 ARG0: x8 [ x NUM: pl PERS: 3 PT: std ] ]
+[ pron LBL: h1 ARG0: x2 [ x PERS: 2 ] ]
+[ pronoun_q LBL: h9 ARG0: x8 RSTR: h11 BODY: h12 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _careful_a_with-about-of LBL: h13 ARG0: e18 ARG1: e14 ] >
+HCONS: < h0 qeq h13 h11 qeq h7 h5 qeq h1 > ]

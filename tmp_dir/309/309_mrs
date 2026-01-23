@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e11
+RELS: < 
+[ _arrogant_a_1 LBL: h10 ARG0: e11 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ pron LBL: h1 ARG0: x2 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _very_x_deg LBL: h10 ARG0: e8 ARG1: e11 ] >
+HCONS: < h5 qeq h1 > ]

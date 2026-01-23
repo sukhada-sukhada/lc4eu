@@ -1,0 +1,6 @@
+(LTOP-INDEX h0 e7)
+(id-SF-TENSE-MOOD-PROG-PERF 40000 prop past indicative - -)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _any_q h9 x5 h11 h12)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 _bark_v_1 h6 e7 x5)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _cat_n_1 h4 x5)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 neg h1 e2 h3)

@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e6
+RELS: < 
+[ _used+to_v_qmodal LBL: h5 ARG0: e6 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: h7 ]
+[ _live_v_1 LBL: h14 ARG0: e15 ARG1: x13 ]
+[ _forest_n_of LBL: h17 ARG0: x18 [ x NUM: sg PERS: 3 ] ARG1: i19 ]
+[ _rabbit_n_1 LBL: h12 ARG0: x13 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h8 ARG0: x18 RSTR: h10 BODY: h11 ]
+[ _a_q LBL: h20 ARG0: x13 RSTR: h22 BODY: h23 ]
+[ _in_p LBL: h14 ARG0: e2 ARG1: e15 ARG2: x18 ] >
+HCONS: < h0 qeq h5 h10 qeq h17 h22 qeq h12 h7 qeq h14 > ]

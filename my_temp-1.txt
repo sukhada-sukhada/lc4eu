@@ -1,0 +1,2881 @@
+#Apa kahAz rahawe hEM?
+1
+Where do you live?
+Where do you live?
+#betoM ne Kewa meM bIja bo xiyA.
+10
+The sons sowed the seed, in the field.
+The sons sowed the seed in the field.
+#mEM rUsI nahIM bola sakawA hUz.
+100
+I can not speak Rusi.
+I cannot speak Rusi.
+I can't speak Rusi.
+#viveka kahAz rahawA hE?
+101
+/home/sanju/lc4eu/tmp_dir/101  directory does not exist 
+Where does Viveka live?
+Where does Viveka live?
+#rAma ko Pala KAnA hogA.
+102
+/home/sanju/lc4eu/tmp_dir/102  directory does not exist 
+Rama must eat a fruit.
+#betoM ko Kewa meM bIja bonA cAhie.
+103
+/home/sanju/lc4eu/tmp_dir/103  directory does not exist 
+The sons must sow the seed, in the field.
+The sons must sow the seed in the field.
+#ladake ko nayI kiwAba paDanI cAhie.
+104
+/home/sanju/lc4eu/tmp_dir/104  directory does not exist 
+The boy must read the new book.
+#ladake ko vixyAlaya meM paDanA cAhie.
+105
+/home/sanju/lc4eu/tmp_dir/105  directory does not exist 
+The boy must study in a school.
+The boy must study, in a school.
+#muJe kala AnA hogA.
+106
+/home/sanju/lc4eu/tmp_dir/106  directory does not exist 
+I must come tomorrow.
+I must come, tomorrow.
+I must come tomorrow.
+#mEM rUsI bola sakawA hUz.
+107
+/home/sanju/lc4eu/tmp_dir/107  directory does not exist 
+I might speak Rusi.
+#usane nahIM KAyA.
+108
+/home/sanju/lc4eu/tmp_dir/108  directory does not exist 
+He did not eat.
+He didn't eat.
+He did not eat.
+#Apa kahAz raha sakawe ho?
+109
+/home/sanju/lc4eu/tmp_dir/109  directory does not exist 
+Where might you live?
+Where might you live?
+#gAyeM GAsa KAwIM hEM.
+11
+/home/sanju/lc4eu/tmp_dir/11  directory does not exist 
+Cows eat a grass.
+#muJe kalama xiyA gayA.
+110
+/home/sanju/lc4eu/tmp_dir/110  directory does not exist 
+I was given a pen.
+#mEM Kela Kela sakawA hUz.
+111
+/home/sanju/lc4eu/tmp_dir/111  directory does not exist 
+I may play a game.
+#mEM JUTa bola sakawA hUz.
+112
+/home/sanju/lc4eu/tmp_dir/112  directory does not exist 
+I may speak a lie.
+#sUrya camakawA BI hE.
+113
+/home/sanju/lc4eu/tmp_dir/113  directory does not exist 
+Also, the sun shines.
+Also the sun shines.
+The sun also shines.
+#kyA mEM jA sakawA hUz?
+114
+/home/sanju/lc4eu/tmp_dir/114  directory does not exist 
+May I go?
+I may go?
+#kyA mEM kala Gara jA sakawA hUz?
+115
+/home/sanju/lc4eu/tmp_dir/115  directory does not exist 
+I may go tomorrow, home?
+I may go home tomorrow?
+May I go tomorrow, home?
+May I go home tomorrow?
+I may go tomorrow, home?
+I may go home, tomorrow?
+May I go home, tomorrow?
+May I go tomorrow, home?
+I may go, tomorrow, home?
+I may go tomorrow home?
+May I go tomorrow home?
+I may go tomorrow home?
+I may go home, tomorrow?
+I may go home tomorrow?
+May I go, tomorrow, home?
+May I go tomorrow home?
+May I go home, tomorrow?
+May I go home tomorrow?
+I may go, tomorrow home?
+I may go, home, tomorrow?
+I may go, home tomorrow?
+May I go, tomorrow home?
+May I go, home, tomorrow?
+May I go, home tomorrow?
+#kyA usane nahIM KAyA?
+116
+/home/sanju/lc4eu/tmp_dir/116  directory does not exist 
+He did not eat?
+Did he not eat?
+Didn't he eat?
+He didn't eat?
+He did not eat?
+Did he not eat?
+#hama puswakeM paDawe hEM.
+117
+/home/sanju/lc4eu/tmp_dir/117  directory does not exist 
+We read the books.
+#kyA muJe jAnA cAhie?
+118
+/home/sanju/lc4eu/tmp_dir/118  directory does not exist 
+I should go?
+Should I go?
+#use Gara nahIM jAnA cAhie.
+119
+/home/sanju/lc4eu/tmp_dir/119  directory does not exist 
+He should not go home.
+He should not go home.
+He should not go, home.
+He shouldn't go home.
+He shouldn't go home.
+He shouldn't go, home.
+#jAnavara saBA meM Aye.
+12
+/home/sanju/lc4eu/tmp_dir/12  directory does not exist 
+The animals came to the meeting.
+The animals came, to the meeting.
+The animals came to the meeting.
+#yaha Gara hE.
+120
+/home/sanju/lc4eu/tmp_dir/120  directory does not exist 
+This is a house.
+#amiwa ko Gara jAnA cAhie.
+121
+/home/sanju/lc4eu/tmp_dir/121  directory does not exist 
+Amit should go home.
+Amit should go home.
+Amit should go, home.
+#vaha so sakawA hE.
+122
+/home/sanju/lc4eu/tmp_dir/122  directory does not exist 
+He can sleep.
+#mEM kala Kela KelUMgA.
+123
+/home/sanju/lc4eu/tmp_dir/123  directory does not exist 
+I will play a game, tomorrow.
+I will play a game tomorrow.
+#kyA wuma Keloge?
+124
+/home/sanju/lc4eu/tmp_dir/124  directory does not exist 
+Will you play?
+You will play?
+#rAvaNa mArA gayA WA.
+125
+/home/sanju/lc4eu/tmp_dir/125  directory does not exist 
+Ravana was killed.
+#rAma doYktara nahIM hE.
+126
+/home/sanju/lc4eu/tmp_dir/126  directory does not exist 
+Rama is not a doctor.
+Rama isn't a doctor.
+#rAma xillI meM nahIM hE.
+127
+/home/sanju/lc4eu/tmp_dir/127  directory does not exist 
+Rama is not in Xilli.
+Rama is not in Xilli.
+Rama isn't in Xilli.
+#rAvaNa rAma ke xvArA laMkA meM mArA gayA.
+128
+/home/sanju/lc4eu/tmp_dir/128  directory does not exist 
+Ravana was killed by Rama, in Lamka.
+Ravana was killed by Rama in Lamka.
+#prawyeka baccA Kela rahA hE.
+129
+/home/sanju/lc4eu/tmp_dir/129  directory does not exist 
+Each kid is playing.
+#John kA betA vixyAlaya meM paDawA hE
+13
+/home/sanju/lc4eu/tmp_dir/13  directory does not exist 
+John's son studies in the school.
+John's son studies, in the school.
+#hara baccA Kela rahA hE.
+130
+/home/sanju/lc4eu/tmp_dir/130  directory does not exist 
+Every kid is playing.
+#saBI bacce Kela rahe hEM.
+131
+/home/sanju/lc4eu/tmp_dir/131  directory does not exist 
+All kids are playing.
+#prawyeka pedZa lambA hE.
+132
+/home/sanju/lc4eu/tmp_dir/132  directory does not exist 
+Each tree is tall.
+#kuCa bacce koI Kela Kela sakawe hEM.
+133
+/home/sanju/lc4eu/tmp_dir/133  directory does not exist 
+Some kids can play any game.
+Some kids can play any game.
+#bacce koI Kela nahIM KeleMge.
+134
+/home/sanju/lc4eu/tmp_dir/134  directory does not exist 
+Kids will not play any game.
+Kids will not play any game.
+Kids won't play any game.
+Kids won't play any game.
+Kids will not play any game.
+Kids will not play any game.
+#rAma ke pAsa WodZA pAnI hE.
+135
+/home/sanju/lc4eu/tmp_dir/135  directory does not exist 
+Rama has some water.
+#mEM souMgA.
+136
+/home/sanju/lc4eu/tmp_dir/136  directory does not exist 
+I would sleep.
+#kyA Apa AeMge?
+137
+/home/sanju/lc4eu/tmp_dir/137  directory does not exist 
+Would you come?
+You would come?
+#kyA usane KAyA?
+138
+/home/sanju/lc4eu/tmp_dir/138  directory does not exist 
+Did he eat?
+He did eat?
+He ate?
+#kyA wuma nahIM Keloge?
+139
+/home/sanju/lc4eu/tmp_dir/139  directory does not exist 
+You would not play?
+Wouldn't you play?
+You wouldn't play?
+Would you not play?
+#kyA Apa jA rahe hEM?
+14
+/home/sanju/lc4eu/tmp_dir/14  directory does not exist 
+Are you going?
+You are going?
+#kala varRA hogI.
+140
+/home/sanju/lc4eu/tmp_dir/140  directory does not exist 
+It will rain tomorrow.
+It will rain, tomorrow.
+#vaha xillI meM rahawA WA.
+141
+/home/sanju/lc4eu/tmp_dir/141  directory does not exist 
+He used to live in Xilli.
+He used to live in Xilli.
+He used to live, in Xilli.
+#rAma yaha kAma kara sakawA hE.
+142
+/home/sanju/lc4eu/tmp_dir/142  directory does not exist 
+Rama can do this work.
+#rAma yaha kAma nahIM kara sakawA.
+143
+/home/sanju/lc4eu/tmp_dir/143  directory does not exist 
+Rama can not do this work.
+Rama cannot do this work.
+Rama can't do this work.
+#Sahara jAie!
+144
+/home/sanju/lc4eu/tmp_dir/144  directory does not exist 
+Let's go to the city.
+Go to the city.
+Let's go to the city.
+Go to the city.
+Go, to the city.
+Let's go, to the city.
+#Sahara jAiegA.
+145
+/home/sanju/lc4eu/tmp_dir/145  directory does not exist 
+Let's go to the city.
+Go to the city.
+Let's go to the city.
+Go to the city.
+Go, to the city.
+Let's go, to the city.
+#mEM so cukA WA.
+146
+/home/sanju/lc4eu/tmp_dir/146  directory does not exist 
+I had slept.
+#vaha so cukA hogA.
+147
+/home/sanju/lc4eu/tmp_dir/147  directory does not exist 
+He will have slept.
+#mEM so jAwA WA.
+148
+/home/sanju/lc4eu/tmp_dir/148  directory does not exist 
+I used to sleep.
+#Sahara jA.
+149
+/home/sanju/lc4eu/tmp_dir/149  directory does not exist 
+Let's go to the city.
+Go to the city.
+Let's go to the city.
+Go to the city.
+Go, to the city.
+Let's go, to the city.
+#kyA rAma jA rahA hE?
+15
+/home/sanju/lc4eu/tmp_dir/15  directory does not exist 
+Is Rama going?
+Rama is going?
+#rAma ne KAnA nahIM KAyA WA
+150
+/home/sanju/lc4eu/tmp_dir/150  directory does not exist 
+Rama did not eat the food.
+Rama didn't eat the food.
+Rama did not eat the food.
+#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+151
+/home/sanju/lc4eu/tmp_dir/151  directory does not exist 
+The teacher made the students clean the class.
+#xillI A.
+152
+/home/sanju/lc4eu/tmp_dir/152  directory does not exist 
+Let's come to Xilli.
+Let's come to Xilli.
+Come to Xilli.
+Come to Xilli.
+Let's come, to Xilli.
+Come, to Xilli.
+#rAma ne kAma kiyA WA
+153
+/home/sanju/lc4eu/tmp_dir/153  directory does not exist 
+Rama had performed the job.
+#rAma ne KAnA KAyA hE.
+154
+/home/sanju/lc4eu/tmp_dir/154  directory does not exist 
+Rama has eaten the food.
+#BEravanAWa mAz vERNo ke xvArA katarA  meM mArA gayA hE.
+155
+/home/sanju/lc4eu/tmp_dir/155  directory does not exist 
+Beravanawa has been killed by Maz+verno, in Katara.
+Beravanawa has been killed by Maz+verno in Katara.
+#rAvaNa rAma ke xvArA laMkA meM mArA gayA hE.
+156
+/home/sanju/lc4eu/tmp_dir/156  directory does not exist 
+Ravana is killed by Rama, in Lamka.
+Ravana is killed by Rama in Lamka.
+#usake xvArA KAnA KAyA gayA WA.
+157
+/home/sanju/lc4eu/tmp_dir/157  directory does not exist 
+The food had been eaten by him.
+#mEMne Pala KA liyA hogA.
+158
+/home/sanju/lc4eu/tmp_dir/158  directory does not exist 
+I will have eaten the fruit.
+#rAma sonA cAhawA hE.
+159
+/home/sanju/lc4eu/tmp_dir/159  directory does not exist 
+Rama wants to sleep.
+#ladakA bagIce meM nayI kiwAba paDa rahA hE.
+16
+/home/sanju/lc4eu/tmp_dir/16  directory does not exist 
+The boy is reading a new book, in the garden.
+The boy is reading a new book in the garden.
+#KAnA mere xvArA KAyA gayA.
+160
+/home/sanju/lc4eu/tmp_dir/160  directory does not exist 
+The food was eaten by me.
+#kyA rAvaNa rAma ke xvArA mArA gayA WA?
+161
+/home/sanju/lc4eu/tmp_dir/161  directory does not exist 
+Was Ravana killed by Rama?
+Ravana was killed by Rama?
+#mere xvArA KAnA KAyA gayA WA.
+162
+/home/sanju/lc4eu/tmp_dir/162  directory does not exist 
+The food was eaten by me.
+#lomadZI BUKI WI
+163
+/home/sanju/lc4eu/tmp_dir/163  directory does not exist 
+The fox was hungry.
+#usane eka Kewa xeKA
+164
+/home/sanju/lc4eu/tmp_dir/164  directory does not exist 
+He saw a field.
+#Kewa meM bahuwa aMgUra We
+165
+/home/sanju/lc4eu/tmp_dir/165  directory does not exist 
+Abundant grapes were in the field.
+#aMgUra rasIle  We.
+166
+/home/sanju/lc4eu/tmp_dir/166  directory does not exist 
+The grapes were juicy.
+#saviwA rImA ko xasa seba xegI.
+167
+/home/sanju/lc4eu/tmp_dir/167  directory does not exist 
+Saviwa will give ten apples to Rima.
+Saviwa will give Rima ten apples.
+#rajawa ne rAXA ko bawAyA
+168
+/home/sanju/lc4eu/tmp_dir/168  directory does not exist 
+Rajawa told Raxa.
+#mEM Sivama ke lie Sahara se AyA.
+169
+/home/sanju/lc4eu/tmp_dir/169  directory does not exist 
+I came from the city, for Sivama.
+I came, for Sivama, from the city.
+I came for Sivama, from the city.
+I came from the city for Sivama.
+I came, from the city, for Sivama.
+I came from the city, for Sivama.
+I came, from the city for Sivama.
+I came from the city for Sivama.
+I came, for Sivama from the city.
+I came for Sivama from the city.
+#ladakA calacciwra xeKa rahA hE.
+17
+/home/sanju/lc4eu/tmp_dir/17  directory does not exist 
+The boy is watching a movie.
+#mEMne naye ladake ko xeKA.
+170
+/home/sanju/lc4eu/tmp_dir/170  directory does not exist 
+I saw the new boy.
+#mEMne aMXe ladake ko xeKA.
+171
+/home/sanju/lc4eu/tmp_dir/171  directory does not exist 
+I saw the blind boy.
+#Sivama ne aMXe ladake ko XIre se XakkA mArA.
+172
+/home/sanju/lc4eu/tmp_dir/172  directory does not exist 
+Sivama kicked the blind boy, slowly.
+Sivama kicked the blind boy, slow.
+Sivama kicked the blind boy slowly.
+Sivama slowly kicked the blind boy.
+Sivama kicked the blind boy slow.
+#ismA puswakeM paDegI.
+173
+/home/sanju/lc4eu/tmp_dir/173  directory does not exist 
+Isma will read the books.
+#mEMne kiwAba paDI.
+174
+/home/sanju/lc4eu/tmp_dir/174  directory does not exist 
+I read the book.
+#mEMne acCI kiwAba paDI.
+175
+/home/sanju/lc4eu/tmp_dir/175  directory does not exist 
+I read a good book.
+#XarAwala SikRA meM hE.
+176
+/home/sanju/lc4eu/tmp_dir/176  directory does not exist 
+The surface is in the education.
+#rAma ke pAsa lABa hE.
+177
+/home/sanju/lc4eu/tmp_dir/177  directory does not exist 
+Rama has the advantage.
+#jaMgala meM Sera WA.
+178
+/home/sanju/lc4eu/tmp_dir/178  directory does not exist 
+A lion was in the forest.
+#kyA rAma doYktara hE ?
+179
+/home/sanju/lc4eu/tmp_dir/179  directory does not exist 
+Rama is a doctor?
+Rama is a Dr.?
+Is Rama a doctor?
+Is Rama a Dr.?
+#ladakA kiwAba paDa rahA hE.
+18
+/home/sanju/lc4eu/tmp_dir/18  directory does not exist 
+The boy is reading a book.
+#vaha kiwAba suMxara hE.
+180
+/home/sanju/lc4eu/tmp_dir/180  directory does not exist 
+That book is beautiful.
+#mEM kala AUMgA.
+181
+/home/sanju/lc4eu/tmp_dir/181  directory does not exist 
+I will come tomorrow.
+I will come, tomorrow.
+I will come tomorrow.
+#mEM saBA ke lie Sahara AyA
+182
+/home/sanju/lc4eu/tmp_dir/182  directory does not exist 
+I came to the city, for the meeting.
+I came to the city for the meeting.
+I came, for the meeting, to the city.
+I came for the meeting, to the city.
+I came, to the city, for the meeting.
+I came to the city, for the meeting.
+I came, to the city for the meeting.
+I came to the city for the meeting.
+I came, for the meeting to the city.
+I came for the meeting to the city.
+#Delhi Ao.
+183
+/home/sanju/lc4eu/tmp_dir/183  directory does not exist 
+Let's come to Delhi.
+Let's come to Delhi.
+Come to Delhi.
+Come to Delhi.
+Let's come, to Delhi.
+Come, to Delhi.
+#rAma doYktara hE.
+184
+/home/sanju/lc4eu/tmp_dir/184  directory does not exist 
+Rama is a doctor.
+#SaharI rAjA jaMgala AyA.
+185
+/home/sanju/lc4eu/tmp_dir/185  directory does not exist 
+The urban king came to the forest.
+The urban king came, to the forest.
+The urban king came to the forest.
+#Sera rAjA ko xeKA.
+186
+/home/sanju/lc4eu/tmp_dir/186  directory does not exist 
+The lion saw the king.
+#Sera ne jAnavaroM ko AxeSa xiyA.
+187
+/home/sanju/lc4eu/tmp_dir/187  directory does not exist 
+The lion ordained the animals.
+#mEM so rahA WA
+188
+/home/sanju/lc4eu/tmp_dir/188  directory does not exist 
+I was sleeping.
+#rAju ko buKAra hE
+189
+/home/sanju/lc4eu/tmp_dir/189  directory does not exist 
+Raju has a fever.
+#ladakA kiwAbeM paDa rahA hE.
+19
+/home/sanju/lc4eu/tmp_dir/19  directory does not exist 
+The boy is reading books.
+#Aja bAriSa huI WI.
+190
+/home/sanju/lc4eu/tmp_dir/190  directory does not exist 
+It had rained, today.
+It had rained today.
+#kyA wumako buKAra hE?
+191
+/home/sanju/lc4eu/tmp_dir/191  directory does not exist 
+Do you have a fever?
+You have a fever?
+You do have a fever?
+#pariNAma burA WA
+192
+/home/sanju/lc4eu/tmp_dir/192  directory does not exist 
+The result was wicked.
+#mEM Delhi meM hUz.
+193
+/home/sanju/lc4eu/tmp_dir/193  directory does not exist 
+I am in Delhi.
+#kyA wuma Delhi meM ho?
+194
+/home/sanju/lc4eu/tmp_dir/194  directory does not exist 
+Are you in Delhi?
+You are in Delhi?
+#bacce Pala KAwe hEM.
+195
+/home/sanju/lc4eu/tmp_dir/195  directory does not exist 
+Children eat fruits.
+#rAma ko KIra KAnI padZI.
+196
+/home/sanju/lc4eu/tmp_dir/196  directory does not exist 
+Rama had to eat Kira.
+#muJe xOdZanA cAhie.
+197
+/home/sanju/lc4eu/tmp_dir/197  directory does not exist 
+I must run.
+#muJe sonA cAhie.
+198
+/home/sanju/lc4eu/tmp_dir/198  directory does not exist 
+I should sleep.
+#ladakA vixyAlaya meM paDawA hE.
+199
+/home/sanju/lc4eu/tmp_dir/199  directory does not exist 
+The boy studies in the school.
+The boy studies, in the school.
+#rAma kahAz se AyA?
+2
+/home/sanju/lc4eu/tmp_dir/2  directory does not exist 
+Where did Rama come from?
+From where did Rama come?
+#mohana rAma ko apane Gara bulAwA hE.
+20
+/home/sanju/lc4eu/tmp_dir/20  directory does not exist 
+Mohana calls Rama, to his house.
+Mohana calls Rama to his house.
+#KAnA mere xvArA KAyA gayA WA.
+200
+/home/sanju/lc4eu/tmp_dir/200  directory does not exist 
+A food was eaten by me.
+#ladakA vixyAlaya ke bagIce meM kiwAba paDa rahA hE.
+201
+/home/sanju/lc4eu/tmp_dir/201  directory does not exist 
+The boy is reading a book, in the school's garden.
+The boy is reading a book in the school's garden.
+#rAjA ne senA ko AxeSa xiyA.
+202
+/home/sanju/lc4eu/tmp_dir/202  directory does not exist 
+The king ordained the armies.
+#haMsa cale gae.
+203
+/home/sanju/lc4eu/tmp_dir/203  directory does not exist 
+The swans retreated.
+#haMsa sabaka sIKa gaye.
+204
+/home/sanju/lc4eu/tmp_dir/204  directory does not exist 
+The swans learned a lesson.
+#rAjA rAjamahala se AyA.
+205
+/home/sanju/lc4eu/tmp_dir/205  directory does not exist 
+A king came from the palace.
+A king came, from the palace.
+A king came from the palace.
+#use Gara nahIM jAnA cAhie.
+206
+/home/sanju/lc4eu/tmp_dir/206  directory does not exist 
+He should not go home.
+He should not go home.
+He should not go, home.
+He shouldn't go home.
+He shouldn't go home.
+He shouldn't go, home.
+#haMsoM ne cidiyA ko mukkA mArA.
+207
+/home/sanju/lc4eu/tmp_dir/207  directory does not exist 
+The swans punched the bird.
+#rAjamahala meM wAlAba hE.
+208
+/home/sanju/lc4eu/tmp_dir/208  directory does not exist 
+A pool is in the palace.
+#haMsa IrRyAlu hEM.
+209
+/home/sanju/lc4eu/tmp_dir/209  directory does not exist 
+The swans are envious.
+#rAma ne mohana ko nIlI kiwAba xI.
+21
+/home/sanju/lc4eu/tmp_dir/21  directory does not exist 
+Rama gave Mohana a blue book.
+Rama gave a blue book to Mohana.
+#haMsa suKI hE.
+210
+/home/sanju/lc4eu/tmp_dir/210  directory does not exist 
+The swan is happy.
+#rAjA ke pAsa paMKa hEM
+211
+/home/sanju/lc4eu/tmp_dir/211  directory does not exist 
+The king has wings.
+#haMsoM ne bAwacIwa kI.
+212
+/home/sanju/lc4eu/tmp_dir/212  directory does not exist 
+The swans talked.
+#Apa kala KeleMge.
+213
+/home/sanju/lc4eu/tmp_dir/213  directory does not exist 
+You will play tomorrow.
+You will play, tomorrow.
+#ladakA Sahara se AyA hE.
+214
+/home/sanju/lc4eu/tmp_dir/214  directory does not exist 
+The boy has come, from the city.
+The boy has come from the city.
+The boy has come from the city.
+#wAlAba meM haMsa hE.
+215
+/home/sanju/lc4eu/tmp_dir/215  directory does not exist 
+A swan is in the pool.
+#ladake ne nayI kiwAba paDI.
+216
+/home/sanju/lc4eu/tmp_dir/216  directory does not exist 
+The boy studied a new book.
+#rAma xvArA KIra KAyI gayI.
+217
+/home/sanju/lc4eu/tmp_dir/217  directory does not exist 
+Kira was eaten by Rama.
+#rAma Sahara meM WA
+218
+/home/sanju/lc4eu/tmp_dir/218  directory does not exist 
+Rama was in the city.
+#ayAn kA miwra vixyAlaya meM paDawA WA.
+219
+/home/sanju/lc4eu/tmp_dir/219  directory does not exist 
+Ayan's friend used to study in the school.
+Ayan's friend used to study, in the school.
+#rAma bETA hE.
+22
+/home/sanju/lc4eu/tmp_dir/22  directory does not exist 
+Rama is sitting.
+#vaha rAmapura meM rahawA WA.
+220
+/home/sanju/lc4eu/tmp_dir/220  directory does not exist 
+He used to live in Ramapura.
+He used to live in Ramapura.
+He used to live, in Ramapura.
+#koI Pala KawI hEM.
+221
+/home/sanju/lc4eu/tmp_dir/221  directory does not exist 
+
+#ayAn ne use pAnI xiyA.
+222
+/home/sanju/lc4eu/tmp_dir/222  directory does not exist 
+Ayan gave him a water.
+Ayan gave a water to him.
+#mEMne nayI kiwAba paDI.
+223
+/home/sanju/lc4eu/tmp_dir/223  directory does not exist 
+I read a new book.
+#mEM Sahara jA rahA hUz.
+224
+/home/sanju/lc4eu/tmp_dir/224  directory does not exist 
+I am going to the city.
+I am going, to the city.
+I am going to the city.
+#mEM saBA ke lie Sahara se AyA.
+225
+/home/sanju/lc4eu/tmp_dir/225  directory does not exist 
+I came from the city, for the meeting.
+I came, for the meeting, from the city.
+I came for the meeting, from the city.
+I came from the city for the meeting.
+I came, from the city, for the meeting.
+I came from the city, for the meeting.
+I came, from the city for the meeting.
+I came from the city for the meeting.
+I came, for the meeting from the city.
+I came for the meeting from the city.
+#mEM Aja AyA.
+226
+/home/sanju/lc4eu/tmp_dir/226  directory does not exist 
+I came today.
+I came, today.
+I came today.
+#mEM usase kiwAba le rahA hUz.
+227
+/home/sanju/lc4eu/tmp_dir/227  directory does not exist 
+I am taking a book, from him.
+I am taking a book from him.
+#mEM usake lie Sahara se AyA.
+228
+/home/sanju/lc4eu/tmp_dir/228  directory does not exist 
+I came, for him from the city.
+I came for him from the city.
+I came from the city, for him.
+I came, for him, from the city.
+I came for him, from the city.
+I came from the city for him.
+I came, from the city, for him.
+I came from the city, for him.
+I came, from the city for him.
+I came from the city for him.
+#ayAn ke pAsa WodZA pAnI WA.
+229
+/home/sanju/lc4eu/tmp_dir/229  directory does not exist 
+Ayan had some water.
+#mohana rAma ko apane vixyAlaya bulAwA hE.
+23
+/home/sanju/lc4eu/tmp_dir/23  directory does not exist 
+Mohana calls Rama, to his school.
+Mohana calls Rama to his school.
+#mEM kala AUzgA.
+230
+/home/sanju/lc4eu/tmp_dir/230  directory does not exist 
+I will come tomorrow.
+I will come, tomorrow.
+I will come tomorrow.
+#vaha acCA doYktara hE
+231
+/home/sanju/lc4eu/tmp_dir/231  directory does not exist 
+He is a good doctor.
+#ladake ke liye jaMgala se Pala lAo!
+232
+/home/sanju/lc4eu/tmp_dir/232  directory does not exist 
+Bring fruits from the forest, for the boy.
+Bring fruits, from the forest, for the boy.
+Let's bring fruits from the forest, for the boy.
+Let's bring fruits, from the forest, for the boy.
+Bring fruits from the forest for the boy.
+Bring fruits, from the forest for the boy.
+Bring fruits for the boy, from the forest.
+Bring fruits, for the boy, from the forest.
+Bring fruits for the boy from the forest.
+Bring fruits, for the boy from the forest.
+Let's bring fruits for the boy, from the forest.
+Let's bring fruits, for the boy, from the forest.
+Let's bring fruits from the forest for the boy.
+Let's bring fruits, from the forest for the boy.
+Let's bring fruits for the boy from the forest.
+Let's bring fruits, for the boy from the forest.
+#ladakA nayI kiwAba paDa rahA hE.
+233
+/home/sanju/lc4eu/tmp_dir/233  directory does not exist 
+The boy is reading a new book.
+#mEM Gara A rahA hUz.
+234
+/home/sanju/lc4eu/tmp_dir/234  directory does not exist 
+I am coming, home.
+I am coming home.
+I am coming home.
+#kyA mEM ApakI sahAyawA kara sakawA hUz?
+235
+/home/sanju/lc4eu/tmp_dir/235  directory does not exist 
+I may help you?
+May I help you?
+I may help yourselves?
+I may help yourself?
+May I help yourselves?
+May I help yourself?
+#ayAn ne KAnA nahIM KAyA WA.
+236
+/home/sanju/lc4eu/tmp_dir/236  directory does not exist 
+Ayan had not eaten a food.
+Ayan had not eaten a food.
+#vaha Sahara meM vixyAlaya meM gayA.
+237
+/home/sanju/lc4eu/tmp_dir/237  directory does not exist 
+He went to a school, in the city.
+He went in the city, to a school.
+He went, to a school, in the city.
+He went to a school, in the city.
+He went to a school in the city.
+He went in the city to a school.
+He went, in the city, to a school.
+He went in the city, to a school.
+He went, in the city to a school.
+He went in the city to a school.
+He went, to a school in the city.
+He went to a school in the city.
+#rAma Delhi meM rahawA hE
+238
+/home/sanju/lc4eu/tmp_dir/238  directory does not exist 
+Rama lives in Delhi.
+In Delhi lives Rama.
+Rama lives in Delhi.
+Rama lives, in Delhi.
+#baccA bagIcA meM Kela rahA hE
+239
+/home/sanju/lc4eu/tmp_dir/239  directory does not exist 
+The kid is playing in the garden.
+The kid is playing, in the garden.
+#ladake ke liye jaMgala se Pala lAo!
+24
+/home/sanju/lc4eu/tmp_dir/24  directory does not exist 
+Bring fruits from the forest, for the boy.
+Bring fruits, from the forest, for the boy.
+Let's bring fruits from the forest, for the boy.
+Let's bring fruits, from the forest, for the boy.
+Bring fruits from the forest for the boy.
+Bring fruits, from the forest for the boy.
+Bring fruits for the boy, from the forest.
+Bring fruits, for the boy, from the forest.
+Bring fruits for the boy from the forest.
+Bring fruits, for the boy from the forest.
+Let's bring fruits for the boy, from the forest.
+Let's bring fruits, for the boy, from the forest.
+Let's bring fruits from the forest for the boy.
+Let's bring fruits, from the forest for the boy.
+Let's bring fruits for the boy from the forest.
+Let's bring fruits, for the boy from the forest.
+#sIwA ne xillI meM cidayAGara xeKA
+240
+/home/sanju/lc4eu/tmp_dir/240  directory does not exist 
+Siwa saw the zoo, in Xilli.
+Siwa saw the zoo in Xilli.
+#aMSa doYktara hE
+241
+/home/sanju/lc4eu/tmp_dir/241  directory does not exist 
+Amsa is a doctor.
+#ladakA vixyAlaya meM bagIce meM kiwAba paDa rahA hE.
+242
+/home/sanju/lc4eu/tmp_dir/242  directory does not exist 
+The boy is reading a book, in the school, in the garden.
+The boy is reading a book, in the garden, in the school.
+The boy is reading a book, in the garden in the school.
+The boy is reading a book in the school, in the garden.
+The boy is reading a book, in the school in the garden.
+The boy is reading a book in the garden, in the school.
+The boy is reading a book in the garden in the school.
+The boy is reading a book in the school in the garden.
+#rAma KIra KAwA hE.
+243
+/home/sanju/lc4eu/tmp_dir/243  directory does not exist 
+Rama eats Kira.
+#rAju ko Pala KAnA hogA
+244
+/home/sanju/lc4eu/tmp_dir/244  directory does not exist 
+Raju must eat fruits.
+#mEM so rahA WA
+245
+/home/sanju/lc4eu/tmp_dir/245  directory does not exist 
+I was sleeping.
+#aMSa ne sIwA ko kiwAba xiyA.
+246
+/home/sanju/lc4eu/tmp_dir/246  directory does not exist 
+Amsa gave Siwa the book.
+Amsa gave the book to Siwa.
+#ayAn ko vixyAlaya meM paDanA cAhie.
+247
+/home/sanju/lc4eu/tmp_dir/247  directory does not exist 
+Ayan must study in a school.
+Ayan must study, in a school.
+#ayAn paDegA.
+248
+/home/sanju/lc4eu/tmp_dir/248  directory does not exist 
+Ayan will study.
+#usane calaciwra xeKA.
+249
+/home/sanju/lc4eu/tmp_dir/249  directory does not exist 
+He watched the movie.
+#ladake ne KAnA nahIM KAyA.
+25
+/home/sanju/lc4eu/tmp_dir/25  directory does not exist 
+The boy did not eat a food.
+The boy didn't eat a food.
+The boy did not eat a food.
+#unhoMne bagIce meM KAnA KAyA.
+250
+/home/sanju/lc4eu/tmp_dir/250  directory does not exist 
+He ate a food, in the garden.
+He ate a food in the garden.
+#muJe Gara jAnA cAhie
+251
+/home/sanju/lc4eu/tmp_dir/251  directory does not exist 
+I should go home.
+I should go home.
+I should go, home.
+#riweSa vixyAlaya meM paDawA hE.
+252
+/home/sanju/lc4eu/tmp_dir/252  directory does not exist 
+Riwesa studies in the school.
+Riwesa studies, in the school.
+#jAnavara GAsa KAwA hE.
+253
+/home/sanju/lc4eu/tmp_dir/253  directory does not exist 
+An animal eats a grass.
+#riweSa bagIce meM hE.
+254
+/home/sanju/lc4eu/tmp_dir/254  directory does not exist 
+Riwesa is in a garden.
+#usane KAnA nahIM KAyA.
+255
+/home/sanju/lc4eu/tmp_dir/255  directory does not exist 
+He did not eat a food.
+He didn't eat a food.
+He did not eat a food.
+#vaha KAnA KA rahA hE.
+256
+/home/sanju/lc4eu/tmp_dir/256  directory does not exist 
+He is eating foods.
+#merA xoswa bagIce meM Kela rahA hE.
+257
+/home/sanju/lc4eu/tmp_dir/257  directory does not exist 
+My friend is playing in the garden.
+My friend is playing, in the garden.
+#jAnavara bagIce meM Aye.
+258
+/home/sanju/lc4eu/tmp_dir/258  directory does not exist 
+The animals came to the garden.
+The animals came, to the garden.
+The animals came to the garden.
+#jAnavara Pala KAwe hEM.
+259
+/home/sanju/lc4eu/tmp_dir/259  directory does not exist 
+An animal eats fruits.
+#manwrIjI ne kala manxira kA uxGAtana kiyA.
+26
+/home/sanju/lc4eu/tmp_dir/26  directory does not exist 
+The honorable minister inaugurated the temple, yesterday.
+The honorable minister inaugurated the temple yesterday.
+#mEM XIre calawA hUz.
+260
+/home/sanju/lc4eu/tmp_dir/260  directory does not exist 
+I walk slowly.
+I walk slow.
+I walk, slowly.
+I walk, slow.
+I slowly walk.
+#riweSa acCA hE.
+261
+/home/sanju/lc4eu/tmp_dir/261  directory does not exist 
+Riwesa is good.
+#kyA riweSa jA rahA hE?
+262
+/home/sanju/lc4eu/tmp_dir/262  directory does not exist 
+Is Riwesa going?
+Riwesa is going?
+#rAma ne mohana se tikata KarIxavAye.
+263
+/home/sanju/lc4eu/tmp_dir/263  directory does not exist 
+Rama made Mohana buy a ticket.
+#riweSa vixyAlaya meM bagIce meM kiwAba paDa rahA hE.
+264
+/home/sanju/lc4eu/tmp_dir/264  directory does not exist 
+Riwesa is studying a book, in the school, in the garden.
+Riwesa is studying a book, in the garden, in the school.
+Riwesa is studying a book, in the garden in the school.
+Riwesa is studying a book in the school, in the garden.
+Riwesa is studying a book, in the school in the garden.
+Riwesa is studying a book in the garden, in the school.
+Riwesa is studying a book in the garden in the school.
+Riwesa is studying a book in the school in the garden.
+#riweSa ke liye jaMgala se Pala lAo!
+265
+/home/sanju/lc4eu/tmp_dir/265  directory does not exist 
+Bring fruits for Riwesa, from the forest.
+Bring fruits, for Riwesa, from the forest.
+Let's bring fruits for Riwesa, from the forest.
+Let's bring fruits, for Riwesa, from the forest.
+Let's bring fruits from the forest, for Riwesa.
+Let's bring fruits, from the forest, for Riwesa.
+Bring fruits for Riwesa from the forest.
+Bring fruits, for Riwesa from the forest.
+Let's bring fruits for Riwesa from the forest.
+Bring fruits from the forest, for Riwesa.
+Let's bring fruits, for Riwesa from the forest.
+Bring fruits, from the forest, for Riwesa.
+Let's bring fruits from the forest for Riwesa.
+Let's bring fruits, from the forest for Riwesa.
+Bring fruits from the forest for Riwesa.
+Bring fruits, from the forest for Riwesa.
+#jAnavara kyA kAwe hEM?
+266
+/home/sanju/lc4eu/tmp_dir/266  directory does not exist 
+What do the animals eat?
+#ayAn acCA ladZakA WA
+267
+/home/sanju/lc4eu/tmp_dir/267  directory does not exist 
+Ayan was a good boy.
+#riweSa vixyAlaya meM paDawA WA.
+268
+/home/sanju/lc4eu/tmp_dir/268  directory does not exist 
+Riwesa used to study in the school.
+Riwesa used to study, in the school.
+#riweSa ke pAsa KaragoSa WA.
+269
+/home/sanju/lc4eu/tmp_dir/269  directory does not exist 
+Riwesa had a rabbit.
+#mEca kisane jIwA?
+27
+/home/sanju/lc4eu/tmp_dir/27  directory does not exist 
+Who did win the match?
+Who won the match?
+#vaha KaragoSa ko pyAra karawA WA
+270
+/home/sanju/lc4eu/tmp_dir/270  directory does not exist 
+He used to love the rabbit.
+#Riwesa KaragoSa ko GAsa xewA hE.
+271
+/home/sanju/lc4eu/tmp_dir/271  directory does not exist 
+Riwesa gives a grass to the rabbit.
+Riwesa gives the rabbit a grass.
+#KaragoSa GAsa KAwA hE.
+272
+/home/sanju/lc4eu/tmp_dir/272  directory does not exist 
+The rabbit eats a grass.
+#vaha vixyAlaya meM  gayA
+273
+/home/sanju/lc4eu/tmp_dir/273  directory does not exist 
+He went to the school.
+He went, to the school.
+He went to the school.
+#vaha Gara meM KaragoSa ko DUzDZa rahA WA 
+274
+/home/sanju/lc4eu/tmp_dir/274  directory does not exist 
+He was searching the rabbit, in the house.
+He was searching the rabbit in the house.
+#KaragoSa guma gayA WA.
+275
+/home/sanju/lc4eu/tmp_dir/275  directory does not exist 
+The rabbit had missed.
+#riweSa ro rahA WA.
+276
+/home/sanju/lc4eu/tmp_dir/276  directory does not exist 
+Riwesa was weeping.
+#riweSa ne KaragoSa ko xeKA.
+277
+/home/sanju/lc4eu/tmp_dir/277  directory does not exist 
+Riwesa saw the rabbit.
+#KaragoSa bagIcA meM WA
+278
+/home/sanju/lc4eu/tmp_dir/278  directory does not exist 
+The rabbit was in the garden.
+#KaragoSa GAsa KA rahA WA 
+279
+/home/sanju/lc4eu/tmp_dir/279  directory does not exist 
+The rabbit was eating a grass.
+#rAma ko xuHKa hE.
+28
+/home/sanju/lc4eu/tmp_dir/28  directory does not exist 
+Rama has a grief.
+#riweSa ko samaJa A gayA
+280
+/home/sanju/lc4eu/tmp_dir/280  directory does not exist 
+Riwesa had understood.
+#KaragoSa BUKA WA
+281
+/home/sanju/lc4eu/tmp_dir/281  directory does not exist 
+The rabbit was hungry.
+#KaragoSa ne GAsa nahIM KAyI WI
+282
+/home/sanju/lc4eu/tmp_dir/282  directory does not exist 
+The rabbit had not eaten a grass.
+The rabbit had not eaten a grass.
+#merI bA muJe KAnA xewI hE 
+283
+/home/sanju/lc4eu/tmp_dir/283  directory does not exist 
+My mother gives me a food.
+My mother gives a food to me.
+#KaragoSa jaMgala meM rahawA WA.
+284
+/home/sanju/lc4eu/tmp_dir/284  directory does not exist 
+A rabbit used to live in the forest.
+A rabbit used to live in the forest.
+A rabbit used to live, in the forest.
+#vaha aBimAnI WA.
+285
+/home/sanju/lc4eu/tmp_dir/285  directory does not exist 
+He was arrogant.
+#usane eka bAra ek kaCuA ko xeKA.
+286
+/home/sanju/lc4eu/tmp_dir/286  directory does not exist 
+He saw a turtle, once.
+He saw a turtle once.
+He once saw a turtle.
+#KaragoSa ne kaCue kI KillI udZAI.
+287
+/home/sanju/lc4eu/tmp_dir/287  directory does not exist 
+The rabbit mocked the turtle.
+#usane kaCue ko xOdZa ke liye cunOwI xI.
+288
+/home/sanju/lc4eu/tmp_dir/288  directory does not exist 
+He challenged the turtle, for a race.
+He challenged the turtle for a race.
+#kaCue ne cunOwI ko svIkAra kIyA.
+289
+/home/sanju/lc4eu/tmp_dir/289  directory does not exist 
+The turtle accepted the challenge.
+#mEM A rahA hUz.
+29
+/home/sanju/lc4eu/tmp_dir/29  directory does not exist 
+I am coming.
+#xOdZa SurU ho gaI.
+290
+/home/sanju/lc4eu/tmp_dir/290  directory does not exist 
+The race started.
+#KaragoSa PurwI se BAgA.
+291
+/home/sanju/lc4eu/tmp_dir/291  directory does not exist 
+The rabbit ran, quickly.
+The rabbit ran quickly.
+The rabbit quickly ran.
+#kaCuA XIre-XIre calA.
+292
+/home/sanju/lc4eu/tmp_dir/292  directory does not exist 
+The turtle walked, slowly.
+The turtle walked, slow.
+The turtle walked slowly.
+The turtle walked slow.
+The turtle slowly walked.
+#rAma ko skUla jAnA hE.
+293
+/home/sanju/lc4eu/tmp_dir/293  directory does not exist 
+Rama has to go to the school.
+Rama has to go to the school.
+Rama has to go, to the school.
+#KaragoSa rukA.
+294
+/home/sanju/lc4eu/tmp_dir/294  directory does not exist 
+The rabbit stopped.
+#usane kaCuA ke liye xUra se paryavekRaNa kiyA.
+295
+/home/sanju/lc4eu/tmp_dir/295  directory does not exist 
+He scanned from the distance, for the turtle.
+He scanned, from the distance, for the turtle.
+He scanned for the turtle, from the distance.
+He scanned for the turtle from the distance.
+He scanned, for the turtle, from the distance.
+He scanned, for the turtle from the distance.
+He scanned from the distance for the turtle.
+He scanned, from the distance for the turtle.
+#vaha kaCuA ko nahIM xeKa sakawA WA.
+296
+/home/sanju/lc4eu/tmp_dir/296  directory does not exist 
+He could not see the turtle.
+He couldn't see the turtle.
+#KaragoSa ne socA.
+297
+/home/sanju/lc4eu/tmp_dir/297  directory does not exist 
+The rabbit pondered.
+#kaCuA XIre cala rahA hE.
+298
+/home/sanju/lc4eu/tmp_dir/298  directory does not exist 
+The turtle is walking, slowly.
+The turtle is walking, slow.
+The turtle is walking, slowly.
+The turtle is walking slowly.
+The turtle is walking, slow.
+The turtle is walking slow.
+The turtle is slowly walking.
+The turtle slowly is walking.
+The turtle is walking slowly.
+The turtle is walking slow.
+#mEM ArAma kara sakawA hUz.
+299
+/home/sanju/lc4eu/tmp_dir/299  directory does not exist 
+I can rest.
+#baccA agaswa meM Pala KAwA hE.
+3
+/home/sanju/lc4eu/tmp_dir/3  directory does not exist 
+A baby eats fruits, in August.
+A baby eats fruits in August.
+#rAma xuHKI hE. 
+30
+/home/sanju/lc4eu/tmp_dir/30  directory does not exist 
+Rama is sad.
+#KaragoSa so gayA.
+300
+/home/sanju/lc4eu/tmp_dir/300  directory does not exist 
+The rabbit slept.
+#kaCuA niraMwara calA.
+301
+/home/sanju/lc4eu/tmp_dir/301  directory does not exist 
+The turtle walked, continuously.
+The turtle walked continuously.
+The turtle continuously walked.
+#KaragoSa aBI BI so rahA WA.
+302
+/home/sanju/lc4eu/tmp_dir/302  directory does not exist 
+The rabbit was still sleeping.
+The rabbit still was sleeping.
+The rabbit was still sleeping.
+#kaCuA ganwavya pe pahuzca gayA.
+303
+/home/sanju/lc4eu/tmp_dir/303  directory does not exist 
+The turtle reached the destination.
+#kaCuA xOdZa jIwa gayA.
+304
+/home/sanju/lc4eu/tmp_dir/304  directory does not exist 
+The turtle won the race.
+#KaragoSa SaramiMxA huA.
+305
+/home/sanju/lc4eu/tmp_dir/305  directory does not exist 
+The rabbit was ashamed.
+#vaha bujurga AxamI kI sahAyawA karawA hE.
+306
+/home/sanju/lc4eu/tmp_dir/306  directory does not exist 
+He helps the old man.
+#usane basa addA xeKA.
+307
+/home/sanju/lc4eu/tmp_dir/307  directory does not exist 
+He saw the bus stop.
+#vaha basa adde para gayA.
+308
+/home/sanju/lc4eu/tmp_dir/308  directory does not exist 
+He went to the bus stop.
+He went, to the bus stop.
+He went to the bus stop.
+#vaha bahuwa aBimAnI WA.
+309
+/home/sanju/lc4eu/tmp_dir/309  directory does not exist 
+He was very arrogant.
+#mEM john ke lie Sahara se AyA.
+31
+/home/sanju/lc4eu/tmp_dir/31  directory does not exist 
+I came from the city, for John.
+I came, for John, from the city.
+I came for John, from the city.
+I came from the city for John.
+I came, from the city, for John.
+I came from the city, for John.
+I came, from the city for John.
+I came from the city for John.
+I came, for John from the city.
+I came for John from the city.
+#usane pramANa pawra xeKA.
+310
+/home/sanju/lc4eu/tmp_dir/310  directory does not exist 
+He saw the certificate.
+#usane rAma ke kAryAlaya kI AXAraSilA raKI.
+311
+/home/sanju/lc4eu/tmp_dir/311  directory does not exist 
+He laid the foundation stone for Rama's office.
+#Apa Sahara jAo!
+312
+/home/sanju/lc4eu/tmp_dir/312  directory does not exist 
+Go to the city.
+Go to the city.
+Go, to the city.
+#hari ne pAnI se GadZe ko BarA.
+313
+/home/sanju/lc4eu/tmp_dir/313  directory does not exist 
+Hari filled the pot, with a water.
+Hari filled the pot with a water.
+#kyA hari ne pAnI se GadZe ko BarA?
+314
+/home/sanju/lc4eu/tmp_dir/314  directory does not exist 
+Did Hari fill the pot, with a water?
+Did Hari fill the pot with a water?
+Hari did fill the pot, with a water?
+Hari filled the pot, with a water?
+With a water, did Hari fill the pot?
+Hari did fill the pot with a water?
+Did Hari fill the pot, with a water?
+Hari filled the pot with a water?
+With a water, Hari did fill the pot?
+Did Hari fill the pot with a water?
+With a water did Hari fill the pot?
+With a water, Hari filled the pot?
+With a water Hari did fill the pot?
+With a water Hari filled the pot?
+#kisane pAnI se GadZe ko BarA?
+315
+/home/sanju/lc4eu/tmp_dir/315  directory does not exist 
+Who did fill the pot, with a water?
+Who did fill the pot with a water?
+Who filled the pot, with a water?
+With a water, who did fill the pot?
+With a water, who filled the pot?
+Who filled the pot with a water?
+With a water who did fill the pot?
+With a water who filled the pot?
+#hari ne kyA GadZe meM BarA?
+316
+/home/sanju/lc4eu/tmp_dir/316  directory does not exist 
+What did Hari fill in the pot?
+What did Hari fill, in the pot?
+In the pot, what did Hari fill?
+What did Hari fill, in the pot?
+What did Hari fill in the pot?
+In the pot what did Hari fill?
+#wuma pAnI se GadZe ko Baro.
+317
+/home/sanju/lc4eu/tmp_dir/317  directory does not exist 
+Fill the pot, with a water.
+Fill the pot with a water.
+#hari ne pAnI se GadZe ko nahIM BarA.
+318
+/home/sanju/lc4eu/tmp_dir/318  directory does not exist 
+Hari did not fill the pot, with a water.
+Hari did not fill the pot with a water.
+Hari didn't fill the pot, with a water.
+Hari did not fill the pot, with a water.
+Hari didn't fill the pot with a water.
+Hari did not fill the pot with a water.
+#GadZe meM pAnI hari ne BarA.
+319
+/home/sanju/lc4eu/tmp_dir/319  directory does not exist 
+Hari filled a water, in the pot.
+Hari filled a water in the pot.
+#mAz ne rAma se bacce ko KAnA KilavAyA.
+32
+/home/sanju/lc4eu/tmp_dir/32  directory does not exist 
+The mother asked Rama to make the child eat a food.
+#Sahara mawa jAo!
+320
+/home/sanju/lc4eu/tmp_dir/320  directory does not exist 
+Don't go to the city.
+Do not go to the city.
+Don't go to the city.
+Do not go to the city.
+Do not go, to the city.
+Don't go, to the city.
+#sUrya nakRawra hE.
+321
+/home/sanju/lc4eu/tmp_dir/321  directory does not exist 
+The sun is a star.
+#sUrya badA nakRawra hE.
+322
+/home/sanju/lc4eu/tmp_dir/322  directory does not exist 
+The sun is a big star.
+#sUrya sabase badA nakRawra hE.
+323
+/home/sanju/lc4eu/tmp_dir/323  directory does not exist 
+The sun is the biggest star.
+#gulAba jEse PUla pAnI meM nahIM ugawe hEM.
+324
+/home/sanju/lc4eu/tmp_dir/324  directory does not exist 
+Flowers like roses do not grow in a water.
+Flowers like roses do not grow in a water.
+Flowers like roses do not grow, in a water.
+Flowers like roses don't grow in a water.
+Flowers like roses don't grow in a water.
+Flowers like roses don't grow, in a water.
+Flowers like roses do not grow in a water.
+Flowers like roses do not grow, in a water.
+Flowers like roses do not grow in a water.
+#mEMne rAma se praSna pUCA.
+325
+/home/sanju/lc4eu/tmp_dir/325  directory does not exist 
+I asked Rama a question.
+#kala pAnI barasA WA.
+326
+/home/sanju/lc4eu/tmp_dir/326  directory does not exist 
+It rained yesterday.
+It rained, yesterday.
+#rAma pahale AyA.
+327
+/home/sanju/lc4eu/tmp_dir/327  directory does not exist 
+Rama came early.
+Rama came, early.
+Rama came early.
+#rAma ne cammaca se katorI se KIra KAyI.
+328
+/home/sanju/lc4eu/tmp_dir/328  directory does not exist 
+Rama ate Kira, with a spoon, from the bowl.
+Rama ate Kira with a spoon, from the bowl.
+Rama ate Kira, from the bowl, with a spoon.
+Rama ate Kira, with a spoon from the bowl.
+Rama ate Kira, from the bowl with a spoon.
+Rama ate Kira from the bowl, with a spoon.
+Rama ate Kira with a spoon from the bowl.
+Rama ate Kira from the bowl with a spoon.
+#rAma ne mohana ko kahAnI sunAyI.
+329
+/home/sanju/lc4eu/tmp_dir/329  directory does not exist 
+Rama told Mohana a story.
+#mEM kala AyA.
+33
+/home/sanju/lc4eu/tmp_dir/33  directory does not exist 
+I came yesterday.
+I came, yesterday.
+I came yesterday.
+#rAma ne skUla jAkara KAnA KAyA.
+330
+/home/sanju/lc4eu/tmp_dir/330  directory does not exist 
+Having been going, to the school, Rama ate a food.
+Having been going to the school, Rama ate a food.
+Having been going to the school, Rama ate a food.
+Having gone to the school, Rama ate a food.
+Having been going, to the school Rama ate a food.
+Having gone, to the school, Rama ate a food.
+Having been going to the school Rama ate a food.
+Having gone to the school, Rama ate a food.
+Having been going to the school Rama ate a food.
+Having gone, to the school Rama ate a food.
+Having gone to the school Rama ate a food.
+Having gone to the school Rama ate a food.
+Rama ate a food having been going, to the school.
+Rama ate a food having been going to the school.
+Rama ate a food having been going to the school.
+Rama ate a food having gone to the school.
+Rama ate a food having gone, to the school.
+Rama ate a food having gone to the school.
+#mEM usase pyAra karawA hUz.
+331
+/home/sanju/lc4eu/tmp_dir/331  directory does not exist 
+I love her.
+#rAvaNa acCA nahIM hE.
+332
+/home/sanju/lc4eu/tmp_dir/332  directory does not exist 
+Ravana is not good.
+Ravana is not good.
+Ravana isn't good.
+#XaniyA iwanI vyavahAra kuSala nahIM WI.
+333
+/home/sanju/lc4eu/tmp_dir/333  directory does not exist 
+Xaniya was not that diplomatic.
+Xaniya wasn't that diplomatic.
+Xaniya was not that diplomatic.
+#rAma sabako skUla bulAwA hE.
+334
+/home/sanju/lc4eu/tmp_dir/334  directory does not exist 
+Rama calls everybody in the school.
+Rama calls everyone in the school.
+Rama calls everybody, in the school.
+Rama calls everyone, in the school.
+#rAma sabako apane skUla bulAwA hE.
+335
+/home/sanju/lc4eu/tmp_dir/335  directory does not exist 
+Rama calls everybody in his school.
+Rama calls everyone in his school.
+Rama calls everybody, in his school.
+Rama calls everyone, in his school.
+#rAma kyA cAhawA hE?
+336
+/home/sanju/lc4eu/tmp_dir/336  directory does not exist 
+What does Rama want?
+#rAma Pala cAhawA hE?
+337
+/home/sanju/lc4eu/tmp_dir/337  directory does not exist 
+Rama wants fruits.
+#mohana laMgadAkara calawA hE.
+338
+/home/sanju/lc4eu/tmp_dir/338  directory does not exist 
+Limping, Mohana walks.
+Mohana walks limping.
+#rAma sowe hue KarrAte BarawA hE.
+339
+/home/sanju/lc4eu/tmp_dir/339  directory does not exist 
+While sleeping, Rama snores.
+While sleeping Rama snores.
+Rama while sleeping snores.
+Rama snores while sleeping.
+Rama snores while sleeping.
+#mEM kiwAbeM paDa rahA hUz.
+34
+/home/sanju/lc4eu/tmp_dir/34  directory does not exist 
+I am reading the books.
+#BAgawe hue Sera ko xeKo.
+340
+/home/sanju/lc4eu/tmp_dir/340  directory does not exist 
+While running, watch the lion.
+While running, let's watch the lion.
+While running watch the lion.
+While running let's watch the lion.
+While running watch the lion.
+Let's while running watch the lion.
+#BAgawe hue Sera ko xeKo.
+341
+/home/sanju/lc4eu/tmp_dir/341  directory does not exist 
+Let's watch the running lion.
+Let's watch the lion, running.
+Let's watch the lion running.
+Watch the running lion.
+Watch the lion, running.
+Watch the lion running.
+Let's watch the running lion.
+Watch the running lion.
+#Apa unakI gaNanA nahIM kara sakawe.
+342
+/home/sanju/lc4eu/tmp_dir/342  directory does not exist 
+You can not count them.
+You cannot count them.
+You can't count them.
+#KIra ke liye KarIxo.
+343
+/home/sanju/lc4eu/tmp_dir/343  directory does not exist 
+Let's buy for Kira.
+Let's buy, for Kira.
+Buy for Kira.
+Buy, for Kira.
+#hAWI JUmawA huA calawA hE.
+344
+/home/sanju/lc4eu/tmp_dir/344  directory does not exist 
+Swaying, an elephant walks.
+An elephant walks swaying.
+#rAma hazsawe hue bolawA hE.
+345
+/home/sanju/lc4eu/tmp_dir/345  directory does not exist 
+Laughing, Rama talks.
+Rama talks laughing.
+#rAma mohana se jyAxA buxXimAna hE.
+346
+/home/sanju/lc4eu/tmp_dir/346  directory does not exist 
+Rama is more intelligent than Mohana.
+#Rama vixyArWiyoM ke muxxoM para carcA kara rahA hE.
+347
+/home/sanju/lc4eu/tmp_dir/347  directory does not exist 
+Rama is discussing on the students ’ issue.
+Rama is discussing on the students's issue.
+Rama is discussing, on the students ’ issue.
+Rama is discussing, on the students's issue.
+#Rama rAjanIwi para carcA kara rahA hE.
+348
+/home/sanju/lc4eu/tmp_dir/348  directory does not exist 
+Rama is discussing on the politics.
+Rama is discussing, on the politics.
+#rAma mohana se kama buxXimAna hE.
+349
+/home/sanju/lc4eu/tmp_dir/349  directory does not exist 
+Rama is less intelligent than Mohana.
+#mEM ladake ke lie Sahara se AyA.
+35
+/home/sanju/lc4eu/tmp_dir/35  directory does not exist 
+I came from the city, for the boy.
+I came from the city for the boy.
+I came, from the city, for the boy.
+I came, for the boy, from the city.
+I came from the city, for the boy.
+I came for the boy, from the city.
+I came, for the boy from the city.
+I came, from the city for the boy.
+I came for the boy from the city.
+I came from the city for the boy.
+#mEM BHU meM paDawA hUM.
+350
+/home/sanju/lc4eu/tmp_dir/350  directory does not exist 
+I study in Bhu.
+I study, in Bhu.
+#rAma ne seba Ora aMgUra KAye.
+351
+/home/sanju/lc4eu/tmp_dir/351  directory does not exist 
+Rama ate an apple and grapes.
+#gAyoM ke xuhane se pahale rAma gayA.
+352
+/home/sanju/lc4eu/tmp_dir/352  directory does not exist 
+Before the cows were milked, Rama went.
+Rama went before the cows were milked.
+Before the cows were milked Rama went.
+Rama went before the cows were milked.
+#rAXA mIrA jEsI sunxara hE.
+353
+/home/sanju/lc4eu/tmp_dir/353  directory does not exist 
+Raxa is as beautiful as Mira.
+#rAma Ora sIwA acCe hEM.
+354
+/home/sanju/lc4eu/tmp_dir/354  directory does not exist 
+Rama and Siwa are good.
+#rAma ke xo bete hEM.
+355
+/home/sanju/lc4eu/tmp_dir/355  directory does not exist 
+Rama has two sons.
+#rAma ke eka betI hE.
+356
+/home/sanju/lc4eu/tmp_dir/356  directory does not exist 
+Rama has a daughter.
+#mEMne kaviwAoM kI kiwAba KarIxI.
+357
+/home/sanju/lc4eu/tmp_dir/357  directory does not exist 
+I bought rhymes ’ book.
+I bought rhymes's book.
+#Apa unako XyAna se xeKeMge.
+358
+/home/sanju/lc4eu/tmp_dir/358  directory does not exist 
+You will look at them, carefully.
+You will look at them carefully.
+You will carefully look at them.
+You will look at them, carefully.
+You carefully will look at them.
+You will look at them carefully.
+#mEMne SruwaleKa paDA.
+359
+/home/sanju/lc4eu/tmp_dir/359  directory does not exist 
+I read the dictation.
+#mEMne acCA Pala KAyA.
+36
+/home/sanju/lc4eu/tmp_dir/36  directory does not exist 
+I ate a good fruit.
+#mEM akAraNa kAma karawA hUz.
+360
+/home/sanju/lc4eu/tmp_dir/360  directory does not exist 
+I work needlesslyly.
+I work, needlesslyly.
+I needlesslyly work.
+#mEM kala rAma ko sarAhuMgA.
+361
+/home/sanju/lc4eu/tmp_dir/361  directory does not exist 
+I will applaud Rama, tomorrow.
+I will applaud Rama tomorrow.
+#mEMne avinASI saca paDA.
+362
+/home/sanju/lc4eu/tmp_dir/362  directory does not exist 
+I read the imperishable truth.
+#rAma ke vana jAne para xaSaraWa mara gaye.
+363
+/home/sanju/lc4eu/tmp_dir/363  directory does not exist 
+When Rama left to the forest, Xasarawa died.
+When Rama left, to the forest, Xasarawa died.
+When Rama left to the forest Xasarawa died.
+When Rama left, to the forest Xasarawa died.
+Xasarawa died when Rama left to the forest.
+Xasarawa died when Rama left, to the forest.
+Xasarawa died when Rama left to the forest.
+Xasarawa died when Rama left, to the forest.
+#rAma, hari, viveka, riyA, rajanI Ora mohana acCe hEM.
+364
+/home/sanju/lc4eu/tmp_dir/364  directory does not exist 
+Rama, Hari, Viveka, Riya, Rajani, and Mohana are good.
+#rAma, mohana Ora sIwA acCe hEM.
+365
+/home/sanju/lc4eu/tmp_dir/365  directory does not exist 
+Rama, Mohana, and Siwa are good.
+#rAma buxXimAna, praSAMwa, xilera Ora acCA hE.
+366
+/home/sanju/lc4eu/tmp_dir/366  directory does not exist 
+Rama is intelligent, calm, brave, and good.
+#kuwwA!
+367
+/home/sanju/lc4eu/tmp_dir/367  directory does not exist 
+A dog.
+A dog
+#kuwwe!
+368
+/home/sanju/lc4eu/tmp_dir/368  directory does not exist 
+Dogs
+Dogs.
+#kuwwA Ora billI
+369
+/home/sanju/lc4eu/tmp_dir/369  directory does not exist 
+The cat and the dog.
+The cat and the dog
+#mEMne acCI kiwAba paDI hE.
+37
+/home/sanju/lc4eu/tmp_dir/37  directory does not exist 
+I have read a good book.
+#kuwwe Ora billiyAz
+370
+/home/sanju/lc4eu/tmp_dir/370  directory does not exist 
+The dogs and the cat.
+The dogs and the cat
+#kOnasA kuwwA BOMkA? 
+371
+/home/sanju/lc4eu/tmp_dir/371  directory does not exist 
+What dog barked?
+What dog did bark?
+Which dog barked?
+Which dog did bark?
+#kisaka kuwwA BOMkA? 
+372
+/home/sanju/lc4eu/tmp_dir/372  directory does not exist 
+Whose dog barked?
+Whose dog did bark?
+#abrAma kiwanA KuSa WA?
+373
+/home/sanju/lc4eu/tmp_dir/373  directory does not exist 
+How happy with which was Abrama?
+How happy with who was Abrama?
+How happy was Abrama?
+#billI ne eka kA pICA kiyA.
+374
+/home/sanju/lc4eu/tmp_dir/374  directory does not exist 
+The cat chased one.
+#BIma ne jarAsanXa ko mAra dAlA.
+375
+/home/sanju/lc4eu/tmp_dir/375  directory does not exist 
+Bima killed Jarasanxa.
+#kAlU KA-KAkara mara gayA.
+376
+/home/sanju/lc4eu/tmp_dir/376  directory does not exist 
+Having been eating frequently, Kalu died.
+Having been eating, frequently, Kalu died.
+Having frequently been eating, Kalu died.
+Having been eating, frequently, Kalu died.
+Having been eating, frequently, Kalu died.
+Frequently having been eating, Kalu died.
+Kalu died having been eating frequently.
+Having eaten, frequently, Kalu died.
+Having eaten, frequently, Kalu died.
+Having eaten frequently, Kalu died.
+Having been frequently eating, Kalu died.
+Having been eating frequently, Kalu died.
+Frequently having eaten, Kalu died.
+Having been eating frequently Kalu died.
+Having frequently eaten, Kalu died.
+Kalu died having been eating, frequently.
+Having been eating, frequently Kalu died.
+Kalu died having been eating, frequently.
+Having been eating frequently, Kalu died.
+Kalu died having been eating, frequently.
+Having been frequently eating Kalu died.
+Having frequently been eating Kalu died.
+Kalu died having eaten, frequently.
+Having been eating, frequently Kalu died.
+Frequently having been eating Kalu died.
+Having frequently eaten Kalu died.
+Kalu died having been eating frequently.
+Having been eating, frequently Kalu died.
+Kalu died having eaten, frequently.
+Kalu died having eaten frequently.
+Having eaten, frequently Kalu died.
+Having eaten frequently, Kalu died.
+Having eaten, frequently Kalu died.
+Kalu died frequently having been eating.
+Frequently having eaten Kalu died.
+Kalu died having frequently eaten.
+Kalu died having been frequently eating.
+Kalu died having been eating frequently.
+Having been eating frequently Kalu died.
+Having eaten frequently Kalu died.
+Having been eating frequently Kalu died.
+Kalu died frequently having eaten.
+Kalu died having frequently been eating.
+Kalu died having eaten frequently.
+Having eaten frequently Kalu died.
+#rAma ke xo bete We.
+377
+/home/sanju/lc4eu/tmp_dir/377  directory does not exist 
+Rama had two sons.
+#BIma ke eka betA WA.
+378
+/home/sanju/lc4eu/tmp_dir/378  directory does not exist 
+Bima had one son.
+#bure kAma bure Pala xewe hEM.
+379
+/home/sanju/lc4eu/tmp_dir/379  directory does not exist 
+Bad works give bad results.
+#rAma ne SyAma xvArA mohana se BiKArI ko xAna xilavAyA.
+38
+/home/sanju/lc4eu/tmp_dir/38  directory does not exist 
+Rama asked Syama to make Mohana give the donation to the beggar.
+Rama asked Syama to make Mohana give the beggar the donation.
+#muJe eka Pala xo.
+380
+/home/sanju/lc4eu/tmp_dir/380  directory does not exist 
+Give me a fruit.
+Let's give me a fruit.
+Let's give a fruit to me.
+Give a fruit to me.
+#hama eka xUsare se pyAra karawe hEM.
+381
+/home/sanju/lc4eu/tmp_dir/381  directory does not exist 
+We love one another.
+We love each other.
+#vaha Kuxa se pyAra karawA hE.
+382
+/home/sanju/lc4eu/tmp_dir/382  directory does not exist 
+He loves himself.
+#mEM Kuxa se pyAra karawA hUz.
+383
+/home/sanju/lc4eu/tmp_dir/383  directory does not exist 
+I love myself.
+#Apane kAma kEse pUrA kiyA?
+384
+/home/sanju/lc4eu/tmp_dir/384  directory does not exist 
+How did you complete the work?
+#rAma Gara AwA hE.
+385
+/home/sanju/lc4eu/tmp_dir/385  directory does not exist 
+Rama comes home.
+Rama comes home.
+Rama comes, home.
+#muJe hinxI AwI hE.
+386
+/home/sanju/lc4eu/tmp_dir/386  directory does not exist 
+I know Hinxi.
+#hama bUDZe AxamI Ora OrawoM se mile.
+387
+/home/sanju/lc4eu/tmp_dir/387  directory does not exist 
+We met the old men and women.
+#sIwA gAzva kI ora jA rahI WI.
+388
+/home/sanju/lc4eu/tmp_dir/388  directory does not exist 
+Siwa was going towards the village.
+Siwa was going, towards the village.
+Siwa was going towards the village.
+#mEMne mohana kI vajaha se kiwAba KarIxI.
+389
+/home/sanju/lc4eu/tmp_dir/389  directory does not exist 
+I bought a book, because of Mohana.
+I bought a book because of Mohana.
+#ye prawIka hE.
+39
+/home/sanju/lc4eu/tmp_dir/39  directory does not exist 
+This is a symbol.
+#muJe cAya yA kAPI xo.
+390
+/home/sanju/lc4eu/tmp_dir/390  directory does not exist 
+Give me a tea or a coffee.
+Let's give me a tea or a coffee.
+Let's give a tea or a coffee to me.
+Give a tea or a coffee to me.
+#rAma acCA hE yA burA?
+391
+/home/sanju/lc4eu/tmp_dir/391  directory does not exist 
+Is Rama good, or bad?
+Rama is good, or bad?
+Is Rama good or bad?
+Rama is good or bad?
+#kyA mEM saMsAra kA sabase acCA rAjA hUz?
+392
+/home/sanju/lc4eu/tmp_dir/392  directory does not exist 
+I am the best king in the world?
+Am I the best king in the world?
+#kAra Gara ke pAsa hE.
+393
+/home/sanju/lc4eu/tmp_dir/393  directory does not exist 
+The car is near the house.
+#vaha eka kiwAba hE.
+394
+/home/sanju/lc4eu/tmp_dir/394  directory does not exist 
+That is a book.
+#wU kahAz rahawA hE?
+395
+/home/sanju/lc4eu/tmp_dir/395  directory does not exist 
+Where do you live?
+Where do you live?
+#mEM kAma kara cukA hUz.
+396
+/home/sanju/lc4eu/tmp_dir/396  directory does not exist 
+I have done the work.
+#Apa muJe Pala xeM. 
+397
+/home/sanju/lc4eu/tmp_dir/397  directory does not exist 
+Give me the fruit.
+Give the fruit to me.
+#rAma ko skUla jAnA hE.
+398
+/home/sanju/lc4eu/tmp_dir/398  directory does not exist 
+Rama has to go to the school.
+Rama has to go to the school.
+Rama has to go, to the school.
+#rAma ko kala xOdZanA padZegA.
+399
+/home/sanju/lc4eu/tmp_dir/399  directory does not exist 
+Rama will have to run tomorrow.
+Rama will have to run tomorrow.
+Rama will have to run, tomorrow.
+#bacce janavarI meM Pala KAwe hEM.
+4
+/home/sanju/lc4eu/tmp_dir/4  directory does not exist 
+Babies eat fruits, in January.
+Babies eat fruits in January.
+#rAma ko xillI jAnA padZA.
+40
+/home/sanju/lc4eu/tmp_dir/40  directory does not exist 
+Rama had to go to Xilli.
+Rama had to go to Xilli.
+Rama had to go, to Xilli.
+#rajani ji ne apane bete Ora apanI betI ko somavAra ko kASI ke sabase bade vixyAlaya meM BarawI kiyA.
+400
+Ms Rajani admitted to her son and her daughter, on Monday, in Kasi's largest school.
+Ms. Rajani admitted to her son and her daughter, on Monday, in Kasi's largest school.
+Ms. Rajani admitted to her son and her daughter, in Kasi's largest school, on Monday.
+Ms Rajani admitted to her son and her daughter, in Kasi's largest school, on Monday.
+Ms Rajani admitted to her son and her daughter, on Monday in Kasi's largest school.
+Ms. Rajani admitted to her son and her daughter, on Monday in Kasi's largest school.
+Ms Rajani admitted to her son and her daughter, in Kasi's largest school on Monday.
+Ms. Rajani admitted to her son and her daughter, in Kasi's largest school on Monday.
+Ms Rajani admitted her son and her daughter, on Monday, in Kasi's largest school.
+Ms. Rajani admitted her son and her daughter, on Monday, in Kasi's largest school.
+Ms Rajani admitted her son and her daughter, in Kasi's largest school, on Monday.
+Ms. Rajani admitted her son and her daughter, in Kasi's largest school, on Monday.
+Ms. Rajani admitted her son and her daughter, on Monday in Kasi's largest school.
+Ms Rajani admitted her son and her daughter, on Monday in Kasi's largest school.
+Ms Rajani admitted to her son and her daughter on Monday, in Kasi's largest school.
+Ms. Rajani admitted to her son and her daughter on Monday, in Kasi's largest school.
+Ms. Rajani admitted to her son and her daughter in Kasi's largest school, on Monday.
+Ms Rajani admitted to her son and her daughter in Kasi's largest school, on Monday.
+Ms. Rajani admitted to her son and her daughter on Monday in Kasi's largest school.
+Ms Rajani admitted to her son and her daughter on Monday in Kasi's largest school.
+Ms Rajani admitted her son and her daughter, in Kasi's largest school on Monday.
+Ms. Rajani admitted her son and her daughter, in Kasi's largest school on Monday.
+Ms Rajani admitted to her son and her daughter in Kasi's largest school on Monday.
+Ms. Rajani admitted to her son and her daughter in Kasi's largest school on Monday.
+Ms. Rajani admitted her son and her daughter on Monday, in Kasi's largest school.
+Ms Rajani admitted her son and her daughter on Monday, in Kasi's largest school.
+Ms Rajani admitted her son and her daughter in Kasi's largest school, on Monday.
+Ms. Rajani admitted her son and her daughter in Kasi's largest school, on Monday.
+Ms. Rajani admitted her son and her daughter on Monday in Kasi's largest school.
+Ms Rajani admitted her son and her daughter on Monday in Kasi's largest school.
+Ms. Rajani admitted her son and her daughter in Kasi's largest school on Monday.
+Ms Rajani admitted her son and her daughter in Kasi's largest school on Monday.
+#sUryoxaya ke bAxa gAdZI Ayi.
+401
+/home/sanju/lc4eu/tmp_dir/401  directory does not exist 
+The train came, after the sunrise.
+The train came after the sunrise.
+#mEM apanA kAma nahIM kara sakA.
+402
+/home/sanju/lc4eu/tmp_dir/402  directory does not exist 
+I could not do my work.
+I couldn't do my work.
+#Apa kOna ho?
+403
+/home/sanju/lc4eu/tmp_dir/403  directory does not exist 
+Who are you?
+Whom are you?
+#kOna Aya?
+404
+/home/sanju/lc4eu/tmp_dir/404  directory does not exist 
+Who did come?
+Who came?
+#rAma kisase milA?
+405
+/home/sanju/lc4eu/tmp_dir/405  directory does not exist 
+Who did Rama meet?
+Whom did Rama meet?
+#rAma ne kisako kiwAba xI?
+406
+/home/sanju/lc4eu/tmp_dir/406  directory does not exist 
+Who did Rama give the book to?
+Whom did Rama give the book to?
+To who did Rama give the book?
+To whom did Rama give the book?
+Who did Rama give the book?
+Whom did Rama give the book?
+#rAma kisase darawA hE?
+407
+/home/sanju/lc4eu/tmp_dir/407  directory does not exist 
+Who is Rama afraid of?
+Whom is Rama afraid of?
+Afraid of who is Rama?
+Afraid of whom is Rama?
+#rAma ne kisase eka praSna pUCA? 
+408
+/home/sanju/lc4eu/tmp_dir/408  directory does not exist 
+Who did Rama ask a question?
+Whom did Rama ask a question?
+#rAma ko subaha uTanA padZawA hE.
+409
+/home/sanju/lc4eu/tmp_dir/409  directory does not exist 
+Rama has to wake up, in the mornings.
+Rama has to wake up, in the morning.
+Rama has to wake up in the mornings.
+Rama has to wake up in the morning.
+#mEMne aMXe ladake ko XIre se XakkA mArA.
+41
+/home/sanju/lc4eu/tmp_dir/41  directory does not exist 
+I kicked the blind boy, slowly.
+I kicked the blind boy, slow.
+I kicked the blind boy slowly.
+I slowly kicked the blind boy.
+I kicked the blind boy slow.
+#sanju jI A gaye. 
+410
+/home/sanju/lc4eu/tmp_dir/410  directory does not exist 
+Mr. Sanju came.
+#rAma KAnA kyoM nahIM KAwA hE?
+411
+/home/sanju/lc4eu/tmp_dir/411  directory does not exist 
+Why does Rama not eat foods?
+Why doesn't Rama eat foods?
+Why does Rama not eat foods?
+#rAma KAnA kyoM KAwA hE?
+412
+/home/sanju/lc4eu/tmp_dir/412  directory does not exist 
+Why does Rama eat foods?
+#hama kyoM paDZawe hEM?
+413
+/home/sanju/lc4eu/tmp_dir/413  directory does not exist 
+Why do we study?
+#sIwA kahAz pahuzcI. 
+414
+/home/sanju/lc4eu/tmp_dir/414  directory does not exist 
+Where did Siwa reach?
+#mEM 2025 meM BArawa AUMgA.
+415
+/home/sanju/lc4eu/tmp_dir/415  directory does not exist 
+I will come to Barawa, in 2025.
+I will come to Barawa in 2025.
+I will come to Barawa, in 2025.
+I will come to Barawa in 2025.
+I will come, to Barawa, in 2025.
+I will come, to Barawa in 2025.
+I will come in 2025, to Barawa.
+I will come in 2025, to Barawa.
+I will come, in 2025, to Barawa.
+I will come in 2025 to Barawa.
+I will come in 2025 to Barawa.
+I will come, in 2025 to Barawa.
+#rAma ayegA hI.
+416
+/home/sanju/lc4eu/tmp_dir/416  directory does not exist 
+Definitely, Rama will come.
+Definitely Rama will come.
+Rama definitely will come.
+Rama will definitely come.
+Rama will definitely come.
+#abrAmsa ne brAuna ko bagIce meM raKA.
+417
+/home/sanju/lc4eu/tmp_dir/417  directory does not exist 
+Abramsa put Brauna in the garden.
+#rAma ko subaha uTanA padZawA hE.
+418
+/home/sanju/lc4eu/tmp_dir/418  directory does not exist 
+Rama had to wake up, in the mornings.
+Rama had to wake up, in the morning.
+Rama had to wake up in the mornings.
+Rama had to wake up in the morning.
+#Rama kala so rahA hogA.
+419
+/home/sanju/lc4eu/tmp_dir/419  directory does not exist 
+Rama will be sleeping tomorrow.
+Rama will be sleeping, tomorrow.
+#mEMne nayA Pala KAyA.
+42
+/home/sanju/lc4eu/tmp_dir/42  directory does not exist 
+I ate a new fruit.
+#Rama kala so rahA hogA.
+420
+/home/sanju/lc4eu/tmp_dir/420  directory does not exist 
+Rama will have been sleeping tomorrow.
+Rama will have been sleeping, tomorrow.
+#rAma ke xvArA KAyA gayA Pala mITA WA.
+421
+/home/sanju/lc4eu/tmp_dir/421  directory does not exist 
+The fruit, eaten by Rama, was sweet.
+The fruit eaten by Rama was sweet.
+#rAma ke pAsa sIwA kI eka suMxara kalama hE.
+422
+/home/sanju/lc4eu/tmp_dir/422  directory does not exist 
+Rama has Siwa's beautiful pen.
+#rAma se aXika buxXimAna mohana hE.
+423
+/home/sanju/lc4eu/tmp_dir/423  directory does not exist 
+Mohana is more intelligent than Rama.
+#rAma ke vana jAne para sIwA anusaraNa karawI hE.
+424
+/home/sanju/lc4eu/tmp_dir/424  directory does not exist 
+As Rama goes to the forest, Siwa follows.
+As Rama goes, to the forest, Siwa follows.
+As Rama goes to the forest of, Siwa follows.
+As Rama goes to the forest, Siwa follows.
+As Rama goes, to the forest Siwa follows.
+As Rama goes to the forest Siwa follows.
+As Rama goes to the forest Siwa follows.
+As Rama goes, to the forest of, Siwa follows.
+Siwa follows as Rama goes to the forest.
+As Rama goes to the forest of Siwa follows.
+As Rama goes to the forest of, Siwa follows.
+Siwa follows as Rama goes to the forest of.
+As Rama goes, to the forest of Siwa follows.
+Siwa follows as Rama goes to the forest.
+As Rama goes to the forest of Siwa follows.
+Siwa follows as Rama goes, to the forest.
+Siwa follows as Rama goes, to the forest of.
+Siwa follows as Rama goes to the forest of.
+Siwa follows as Rama goes to the forest.
+Siwa follows as Rama goes to the forest of.
+Siwa follows as Rama goes, to the forest.
+Siwa follows as Rama goes, to the forest of.
+Siwa follows as Rama goes to the forest.
+Siwa follows as Rama goes to the forest of.
+#rAma kala pATaSAlA gayA hogA.
+425
+/home/sanju/lc4eu/tmp_dir/425  directory does not exist 
+Rama had gone to the school, yesterday.
+Rama had gone, yesterday, to the school.
+Rama had gone yesterday, to the school.
+Rama had gone yesterday, to the school.
+Rama had gone, to the school, yesterday.
+Rama had gone to the school yesterday.
+Rama had gone to the school, yesterday.
+Rama had gone, yesterday to the school.
+Rama had gone yesterday to the school.
+Rama had gone yesterday to the school.
+Rama had gone, to the school yesterday.
+Rama had gone to the school yesterday.
+#kuwwA BOMka rahA wA.
+426
+/home/sanju/lc4eu/tmp_dir/426  directory does not exist 
+The dog had been barking.
+#kuwwA BOMka rahA hE.
+427
+/home/sanju/lc4eu/tmp_dir/427  directory does not exist 
+The dog has been barking.
+#kuwwA BOMka rahA wA.
+428
+/home/sanju/lc4eu/tmp_dir/428  directory does not exist 
+The dog was barking.
+#kuwwA aba BOMka rahA hE. 
+429
+/home/sanju/lc4eu/tmp_dir/429  directory does not exist 
+The dog is barking now.
+The dog is barking, now.
+#mEMne naye ladake ko xeKA.
+43
+/home/sanju/lc4eu/tmp_dir/43  directory does not exist 
+I saw the new boy.
+#wIna BOMke.
+430
+/home/sanju/lc4eu/tmp_dir/430  directory does not exist 
+Three barked.
+#sarxI meM barPa girawI hE.
+431
+/home/sanju/lc4eu/tmp_dir/431  directory does not exist 
+In winter falls the snow.
+The snow falls in winter.
+The snow falls in winter.
+The snow falls, in winter.
+#jala ke binA jIva jIviwa nahIM rahawe hE.
+432
+/home/sanju/lc4eu/tmp_dir/432  directory does not exist 
+Creatures do not live without a water.
+Creatures do not live, without a water.
+Creatures don't live without a water.
+Creatures do not live without a water.
+Creatures don't live, without a water.
+Creatures do not live, without a water.
+#billI kA pICA karanA purAnA hE. 	 
+433
+/home/sanju/lc4eu/tmp_dir/433  directory does not exist 
+Chasing of the cat is old.
+Chasing the cat is old.
+#kuwwA SAyaxa BOMkA.
+434
+/home/sanju/lc4eu/tmp_dir/434  directory does not exist 
+Probably, the dog barked.
+Probably the dog barked.
+The dog probably barked.
+#rAma wo ayegA.
+435
+/home/sanju/lc4eu/tmp_dir/435  directory does not exist 
+Certainly, Rama will come.
+Certainly Rama will come.
+Rama certainly will come.
+Rama will certainly come.
+Rama will certainly come.
+Rama will come certainly.
+#rAma accA hE. 
+436
+/home/sanju/lc4eu/tmp_dir/436  directory does not exist 
+Rama is good.
+#Ora vaha buxXimAna hE.
+437
+/home/sanju/lc4eu/tmp_dir/437  directory does not exist 
+And he is intelligent.
+#rAma kAma Kawama kiyA.
+438
+/home/sanju/lc4eu/tmp_dir/438  directory does not exist 
+Rama completed the work.
+#Ora vaha gayA.
+439
+/home/sanju/lc4eu/tmp_dir/439  directory does not exist 
+And he went.
+#bagIce meM billiyAz WIM. 
+44
+/home/sanju/lc4eu/tmp_dir/44  directory does not exist 
+Cats were in the garden.
+#rAma jAyegA.
+440
+/home/sanju/lc4eu/tmp_dir/440  directory does not exist 
+Rama will go.
+#yA mohanA jAyegA.
+441
+/home/sanju/lc4eu/tmp_dir/441  directory does not exist 
+Or Mohana will go.
+#rAma bETa rahA hE.
+442
+/home/sanju/lc4eu/tmp_dir/442  directory does not exist 
+Rama is sitting.
+#Ora mohana BAga rahA hE.
+443
+/home/sanju/lc4eu/tmp_dir/443  directory does not exist 
+And Mohana is running.
+#Ora usane KAnA nahIM KAyA.
+444
+/home/sanju/lc4eu/tmp_dir/444  directory does not exist 
+And he did not eat a food.
+And he didn't eat a food.
+And he did not eat a food.
+#kinwu usane KAnA nahIM KAyA.
+445
+/home/sanju/lc4eu/tmp_dir/445  directory does not exist 
+But he did not eat a food.
+But he didn't eat a food.
+But he did not eat a food.
+#wo mEM jAUzgA.
+446
+/home/sanju/lc4eu/tmp_dir/446  directory does not exist 
+Then, I will go.
+Then I will go.
+#wo meM jAUMgA.
+447
+/home/sanju/lc4eu/tmp_dir/447  directory does not exist 
+Then, I will go.
+Then I will go.
+#kyoMki use Gara jAnA hE.
+448
+/home/sanju/lc4eu/tmp_dir/448  directory does not exist 
+Because he has to go home.
+Because he has to go home
+Because he has to go home
+Because he has to go home.
+Because he has to go, home
+Because he has to go, home.
+#rAma ne xUXa ke sAWa kele BI KAe.
+449
+/home/sanju/lc4eu/tmp_dir/449  directory does not exist 
+Rama ate bananas along with a milk.
+#BArawa meM xvIpasamUha hEM.
+45
+/home/sanju/lc4eu/tmp_dir/45  directory does not exist 
+Islands are in Barawa.
+#vaha cammaca ke sAWa kAMte se sabjI KA rahA hE.
+450
+/home/sanju/lc4eu/tmp_dir/450  directory does not exist 
+He is eating vegetables, with a fork, along with a spoon.
+He is eating vegetables, along with a spoon, with a fork.
+He is eating vegetables with a fork, along with a spoon.
+He is eating vegetables along with a spoon, with a fork.
+He is eating vegetables, along with a spoon with a fork.
+He is eating vegetables, with a fork along with a spoon.
+He is eating vegetables along with a spoon with a fork.
+He is eating vegetables with a fork along with a spoon.
+#vaha guru jI ke sAWa SiRyoM ko xakRiNA xe rahA hE.
+451
+/home/sanju/lc4eu/tmp_dir/451  directory does not exist 
+He gives donations to the disciples, along with an honorable guru.
+He gives donations to the disciples along with an honorable guru.
+He gives the disciples donations, along with an honorable guru.
+He gives the disciples donations along with an honorable guru.
+#bAlakanI ke sAWa KidakiyoM se XUla A rahI WI.
+452
+/home/sanju/lc4eu/tmp_dir/452  directory does not exist 
+The dust is coming, from a window, along with a balcony.
+The dust is coming, along with a balcony, from a window.
+The dust is coming from a window, along with a balcony.
+The dust is coming from a window, along with a balcony.
+The dust is coming along with a balcony, from a window.
+The dust is coming, along with a balcony from a window.
+The dust is coming, from a window along with a balcony.
+The dust is coming from a window along with a balcony.
+The dust is coming along with a balcony from a window.
+The dust is coming from a window along with a balcony.
+#unhone rAjanIwika muxxoM sahiwa anya viRayoM para kiwAbeM liKI hEM.
+453
+/home/sanju/lc4eu/tmp_dir/453  directory does not exist 
+He has written books, on topics, along with political issues.
+He has written books, on topics along with political issues.
+He has written books on topics, along with political issues.
+He has written books, along with political issues, on topics.
+He has written books, along with political issues on topics.
+He has written books on topics along with political issues.
+He has written books along with political issues, on topics.
+He has written books along with political issues on topics.
+#lekina bAxa meM inakI saMKyA baDZawI jAwI hE.
+454
+/home/sanju/lc4eu/tmp_dir/454  directory does not exist 
+But their number rises afterwards.
+But their number rises, afterwards.
+But their number rise afterwards.
+But their number afterwards rises.
+But their number rise, afterwards.
+But their number afterwards rise.
+#ve kalama sunxara hEM.
+455
+/home/sanju/lc4eu/tmp_dir/455  directory does not exist 
+Those pens are beautiful.
+#vaha Kula gayA.
+456
+/home/sanju/lc4eu/tmp_dir/456  directory does not exist 
+That opened.
+#kuCa BOMke.
+457
+/home/sanju/lc4eu/tmp_dir/457  directory does not exist 
+Some barked.
+#billI ne nahIM BOMkA.
+458
+/home/sanju/lc4eu/tmp_dir/458  directory does not exist 
+Any cat did not bark.
+Any cat didn't bark.
+Any cat did not bark.
+#kala 300 se kama loga Ayege.
+459
+/home/sanju/lc4eu/tmp_dir/459  directory does not exist 
+Less than 300 people will come tomorrow.
+Less than 300 people will come, tomorrow.
+More little than 300 people will come tomorrow.
+More few than 300 people will come tomorrow.
+More little than 300 people will come, tomorrow.
+More few than 300 people will come, tomorrow.
+Less than 300 people will come tomorrow.
+More few than 300 people will come tomorrow.
+More little than 300 people will come tomorrow.
+#mEMne pahalI kiwAba paDI.
+46
+/home/sanju/lc4eu/tmp_dir/46  directory does not exist 
+I read the first book.
+#kala 300 se aXika loga Ayege.
+460
+/home/sanju/lc4eu/tmp_dir/460  directory does not exist 
+More than 300 people will come tomorrow.
+More than 300 people will come, tomorrow.
+More much than 300 people will come tomorrow.
+More many than 300 people will come tomorrow.
+More much than 300 people will come, tomorrow.
+More many than 300 people will come, tomorrow.
+More than 300 people will come tomorrow.
+More many than 300 people will come tomorrow.
+More much than 300 people will come tomorrow.
+#vaha rojZa yaha AwA hE.
+461
+/home/sanju/lc4eu/tmp_dir/461  directory does not exist 
+He comes here, daily.
+He comes here daily.
+He comes, here, daily.
+He comes here, daily.
+He comes, daily here.
+He comes daily here.
+He comes, daily, here.
+He comes daily, here.
+He comes, here daily.
+He comes here daily.
+#merA xeSa.
+462
+/home/sanju/lc4eu/tmp_dir/462  directory does not exist 
+My country.
+My country
+#rAma kA peta BarA huA hE. 
+463
+/home/sanju/lc4eu/tmp_dir/463  directory does not exist 
+Rama's stomach is full.
+#sIwA ke anusAra rAma vIra hE.
+464
+/home/sanju/lc4eu/tmp_dir/464  directory does not exist 
+Rama is brave, according to Siwa.
+Rama is brave according to Siwa.
+#yaha trena Delhi se hokara BopAla jAwI hE. 
+465
+/home/sanju/lc4eu/tmp_dir/465  directory does not exist 
+This train goes to Bopala, via Delhi.
+This train goes, via Delhi, to Bopala.
+This train goes via Delhi, to Bopala.
+This train goes, to Bopala, via Delhi.
+This train goes to Bopala, via Delhi.
+This train goes, via Delhi to Bopala.
+This train goes via Delhi to Bopala.
+This train goes to Bopala via Delhi.
+This train goes, to Bopala via Delhi.
+This train goes to Bopala via Delhi.
+#baccoM meM arjuna buxXimAna hE.
+466
+/home/sanju/lc4eu/tmp_dir/466  directory does not exist 
+Arjuna among children is intelligent.
+#rAma maMgalavAra subaha pahuzcA.
+467
+/home/sanju/lc4eu/tmp_dir/467  directory does not exist 
+Rama arrived on Tuesday's mornings.
+Rama arrived on Tuesday's morning.
+Rama arrived, on Tuesday's mornings.
+Rama arrived, on Tuesday's morning.
+#rAma usa Gante pahuzce WA.
+468
+/home/sanju/lc4eu/tmp_dir/468  directory does not exist 
+Rama arrived that hour.
+Rama arrived, that hour.
+#rAma xopahara mE pahuzce WA.
+469
+/home/sanju/lc4eu/tmp_dir/469  directory does not exist 
+Rama arrived at midday.
+Rama arrived at twelve.
+Rama arrived at noon.
+Rama arrived, at midday.
+Rama arrived, at twelve.
+Rama arrived, at noon.
+#AkASagaMgA badI hE.
+47
+/home/sanju/lc4eu/tmp_dir/47  directory does not exist 
+The galaxy is huge.
+#praswAviwa pATa kA uxxeSya viRaya ke svarUpa kI vyAKyA karanA hE.
+470
+/home/sanju/lc4eu/tmp_dir/470  directory does not exist 
+A ready course's subject has to explain a subject's nature.
+A course ready's subject has to explain a subject's nature.
+A ready course's subject has to explain a subject's nature.
+A course ready's subject has to explain a subject's nature.
+#yaha BUgola ke mahawva para prakASa dAlawA hE.
+471
+/home/sanju/lc4eu/tmp_dir/471  directory does not exist 
+He beams on a geography's importance.
+They beam on a geography's importance.
+It beams on a geography's importance.
+I beam on a geography's importance.
+She beams on a geography's importance.
+You beam on a geography's importance.
+We beam on a geography's importance.
+They beam, on a geography's importance.
+He beams, on a geography's importance.
+I beam, on a geography's importance.
+It beams, on a geography's importance.
+She beams, on a geography's importance.
+They beam on a geography's importance.
+You beam, on a geography's importance.
+We beam, on a geography's importance.
+They beam, on a geography's importance.
+#yaha jFAna ko viswqwa karane kA prayAsa karawA hE.
+472
+/home/sanju/lc4eu/tmp_dir/472  directory does not exist 
+This attempted to spread knowledge.
+#Ora viRaya kI rocakawA ko baDAwA hE.
+473
+/home/sanju/lc4eu/tmp_dir/473  directory does not exist 
+This adds the subject's interest.
+#BUgola eka prAcInawama BU-vijFAna hE. 
+474
+/home/sanju/lc4eu/tmp_dir/474  directory does not exist 
+The geography is an oldest technology.
+#BUgola kI aXyayana viXi parivarwiwa ho rahI hE.
+475
+/home/sanju/lc4eu/tmp_dir/475  directory does not exist 
+A geography's approach is changing.
+#prAraMBika vixvAna varNanAwmaka BUgolavewwA We.
+476
+/home/sanju/lc4eu/tmp_dir/476  directory does not exist 
+An initial scholar was a descriptive geographer.
+#pqWvI kI sawaha para lagAwAra parivarwana ho rahA hE.
+477
+/home/sanju/lc4eu/tmp_dir/477  directory does not exist 
+Have been changing in an earth's surface, continuously.
+Has been changing in an earth's surface, continuously.
+Have been changing in an earth's surface, continuously.
+Have been changing in an earth's surface, continuously.
+Have been changing continuously, in an earth's surface.
+Has been changing in an earth's surface, continuously.
+Continuously have been changing in an earth's surface.
+Has continuously been changing in an earth's surface.
+Have continuously been changing in an earth's surface.
+Has been changing continuously, in an earth's surface.
+Have been changing, in an earth's surface, continuously.
+Has been changing in an earth's surface, continuously.
+Have been changing, continuously, in an earth's surface.
+Continuously has been changing in an earth's surface.
+Have been changing, in an earth's surface, continuously.
+Have been continuously changing in an earth's surface.
+Have been changing in an earth's surface continuously.
+Has been changing, in an earth's surface, continuously.
+Have been changing continuously in an earth's surface.
+Has been changing, in an earth's surface, continuously.
+Have been changing, in an earth's surface, continuously.
+Has continuously been changing, in an earth's surface.
+Has been changing, continuously, in an earth's surface.
+Have continuously been changing, in an earth's surface.
+Have been continuously changing, in an earth's surface.
+Has been continuously changing in an earth's surface.
+Has been changing in an earth's surface continuously.
+Has been changing continuously in an earth's surface.
+Continuously have been changing, in an earth's surface.
+Have been changing, continuously in an earth's surface.
+Has been changing, in an earth's surface, continuously.
+Have been changing in an earth's surface continuously.
+Has been continuously changing, in an earth's surface.
+Have been changing in an earth's surface continuously.
+Continuously has been changing, in an earth's surface.
+Has been changing in an earth's surface continuously.
+Has been changing, continuously in an earth's surface.
+Have been changing, in an earth's surface continuously.
+Has been changing in an earth's surface continuously.
+Have been changing, in an earth's surface continuously.
+Has been changing, in an earth's surface continuously.
+Has been changing, in an earth's surface continuously.
+Have been changing, in an earth's surface continuously.
+Has been changing, in an earth's surface continuously.
+#भूगोल इस प्रकार के प्रतिरूपों का अध्ययन करता है ।
+478
+/home/sanju/lc4eu/tmp_dir/478  directory does not exist 
+A geography studies this pattern's replicas.
+#wAre timatimAwe hEM.
+48
+/home/sanju/lc4eu/tmp_dir/48  directory does not exist 
+The stars twinkle.
+#mEM Sahara meM eka vixyAlaya gayA.
+49
+/home/sanju/lc4eu/tmp_dir/49  directory does not exist 
+I went to a school, in the city.
+I went in the city, to a school.
+I went, to a school, in the city.
+I went to a school, in the city.
+I went to a school in the city.
+I went in the city to a school.
+I went, in the city, to a school.
+I went in the city, to a school.
+I went, in the city to a school.
+I went in the city to a school.
+I went, to a school in the city.
+I went to a school in the city.
+#baccA kya kAwA hE?
+5
+/home/sanju/lc4eu/tmp_dir/5  directory does not exist 
+What does a baby eat?
+#mEM Sahara meM vixyAlaya meM gayA.
+50
+/home/sanju/lc4eu/tmp_dir/50  directory does not exist 
+I went to a school, in the city.
+I went in the city, to a school.
+I went, to a school, in the city.
+I went to a school, in the city.
+I went to a school in the city.
+I went in the city to a school.
+I went, in the city, to a school.
+I went in the city, to a school.
+I went, in the city to a school.
+I went in the city to a school.
+I went, to a school in the city.
+I went to a school in the city.
+#ladakA usake lie Sahara gayA.
+51
+/home/sanju/lc4eu/tmp_dir/51  directory does not exist 
+The boy went to the city, for him.
+The boy went, for him to the city.
+The boy went for him to the city.
+The boy went to the city for him.
+The boy went, for him, to the city.
+The boy went for him, to the city.
+The boy went, to the city, for him.
+The boy went to the city, for him.
+The boy went, to the city for him.
+The boy went to the city for him.
+#Apa AsamAna kA avalokana acCI waraha se kara sakawe hEM.
+52
+/home/sanju/lc4eu/tmp_dir/52  directory does not exist 
+You can observe the sky, clearly.
+You can observe the sky clearly.
+You can clearly observe the sky.
+#mEM usase eka kiwAba le rahA hUz.
+53
+/home/sanju/lc4eu/tmp_dir/53  directory does not exist 
+I am taking a book, from him.
+I am taking a book from him.
+#brahmAMda badA hE.
+54
+/home/sanju/lc4eu/tmp_dir/54  directory does not exist 
+The universe is huge.
+#mEMne usase eka praSna pUCA.
+55
+/home/sanju/lc4eu/tmp_dir/55  directory does not exist 
+I asked him one question.
+#bacce ko CAwra kahA jAyegA.
+56
+/home/sanju/lc4eu/tmp_dir/56  directory does not exist 
+A child will be called a student.
+#mere liye jaMgala se Pala lAo!
+57
+/home/sanju/lc4eu/tmp_dir/57  directory does not exist 
+Bring fruits for me from the forest.
+Bring fruits, for me from the forest.
+Let's bring fruits from the forest, for me.
+Let's bring fruits, from the forest, for me.
+Bring fruits from the forest, for me.
+Bring fruits, from the forest, for me.
+Bring fruits for me, from the forest.
+Bring fruits, for me, from the forest.
+Let's bring fruits for me from the forest.
+Let's bring fruits, for me from the forest.
+Let's bring fruits from the forest for me.
+Let's bring fruits, from the forest for me.
+Let's bring fruits for me, from the forest.
+Let's bring fruits, for me, from the forest.
+Bring fruits from the forest for me.
+Bring fruits, from the forest for me.
+#rAma john ke liye Sahara se AyA.
+58
+/home/sanju/lc4eu/tmp_dir/58  directory does not exist 
+Rama came from the city, for John.
+Rama came, for John, from the city.
+Rama came for John, from the city.
+Rama came from the city for John.
+Rama came, from the city, for John.
+Rama came from the city, for John.
+Rama came, from the city for John.
+Rama came from the city for John.
+Rama came, for John from the city.
+Rama came for John from the city.
+#rAma xo kiwAbeM paDa rahA hE.
+59
+/home/sanju/lc4eu/tmp_dir/59  directory does not exist 
+Rama is reading two books.
+#bacce maMgalavAra ko Pala KAwe hEM.
+6
+/home/sanju/lc4eu/tmp_dir/6  directory does not exist 
+Babies eat fruits, on Tuesday.
+Babies eat fruits on Tuesday.
+#rAvana mArA gayA.
+60
+/home/sanju/lc4eu/tmp_dir/60  directory does not exist 
+Ravana was killed.
+#rAvaNa rAma ke xvArA mArA gayA WA.
+61
+/home/sanju/lc4eu/tmp_dir/61  directory does not exist 
+Ravana was killed by Rama.
+#Sahara jAo!
+62
+/home/sanju/lc4eu/tmp_dir/62  directory does not exist 
+Let's go to the city.
+Go to the city.
+Let's go to the city.
+Go to the city.
+Go, to the city.
+Let's go, to the city.
+#Sera ne yuxXa ke liye jaMgala meM saBA bulAI.
+63
+/home/sanju/lc4eu/tmp_dir/63  directory does not exist 
+The lion called the meeting, in the forest, for the war.
+The lion called the meeting, for the war, in the forest.
+The lion called the meeting, in the forest for the war.
+The lion called the meeting in the forest, for the war.
+The lion called the meeting for the war, in the forest.
+The lion called the meeting, for the war in the forest.
+The lion called the meeting in the forest for the war.
+The lion called the meeting for the war in the forest.
+#unhone Kewa meM bIja bo xiye.
+64
+/home/sanju/lc4eu/tmp_dir/64  directory does not exist 
+They sowed seeds, in the field.
+They sowed seeds in the field.
+#BArawa ko AryAvarwa kahA jAwA WA.
+65
+/home/sanju/lc4eu/tmp_dir/65  directory does not exist 
+Barawa was called Aryavarwa.
+#vaha aMXe AxamI kI sahAyawA karegA.
+66
+/home/sanju/lc4eu/tmp_dir/66  directory does not exist 
+He will help a blind man.
+#vaha kaba jA rahA hE?
+67
+/home/sanju/lc4eu/tmp_dir/67  directory does not exist 
+When is he going?
+When is he going?
+#pqWvI ko graha kahA jAwA hE.
+68
+/home/sanju/lc4eu/tmp_dir/68  directory does not exist 
+The earth is called a planet.
+#ve calacciwra xeKa rahe hEM.
+69
+/home/sanju/lc4eu/tmp_dir/69  directory does not exist 
+They are watching a movie.
+#bacce Pala KAwe hEM.
+7
+/home/sanju/lc4eu/tmp_dir/7  directory does not exist 
+Babies eat fruits.
+#wuma kele KA rahe ho.
+70
+/home/sanju/lc4eu/tmp_dir/70  directory does not exist 
+You are eating bananas.
+#mEM so rahA hUz.
+71
+/home/sanju/lc4eu/tmp_dir/71  directory does not exist 
+I am sleeping.
+#rAma ne muJe kiwAba xI.
+72
+/home/sanju/lc4eu/tmp_dir/72  directory does not exist 
+Rama gave me the book.
+Rama gave the book to me.
+#rAma acCA hE.
+73
+/home/sanju/lc4eu/tmp_dir/73  directory does not exist 
+Rama is good.
+#vaha apane piwA ke sAWa vixyAlaya jAyegI.
+74
+/home/sanju/lc4eu/tmp_dir/74  directory does not exist 
+She will go to the school, with her father.
+She will go to the school, with her father.
+She will go to the school with her father.
+She will go, to the school, with her father.
+She will go with her father, to the school.
+She will go to the school with her father.
+She will go, with her father, to the school.
+She will go with her father to the school.
+She will go, to the school with her father.
+She will go, with her father to the school.
+#rAma acCA doYktara hE.
+75
+/home/sanju/lc4eu/tmp_dir/75  directory does not exist 
+Rama is a good doctor.
+#rAma xillI meM rahawA hE.
+76
+/home/sanju/lc4eu/tmp_dir/76  directory does not exist 
+Rama lives in Xilli.
+In Xilli lives Rama.
+Rama lives in Xilli.
+Rama lives, in Xilli.
+#ladakA xillI meM hE.
+77
+/home/sanju/lc4eu/tmp_dir/77  directory does not exist 
+The boy is in Xilli.
+#rAma bagIce meM hE.
+78
+/home/sanju/lc4eu/tmp_dir/78  directory does not exist 
+Rama is in a garden.
+#rAma xillI meM hE.
+79
+/home/sanju/lc4eu/tmp_dir/79  directory does not exist 
+Rama is in Xilli.
+#bacce somavAra ko Pala KAwe hEM.
+8
+/home/sanju/lc4eu/tmp_dir/8  directory does not exist 
+Babies eat fruits, on Monday.
+Babies eat fruits on Monday.
+#mEM xillI meM hUz.
+80
+/home/sanju/lc4eu/tmp_dir/80  directory does not exist 
+I am in Xilli.
+#rAma ko buKAra hE.
+81
+/home/sanju/lc4eu/tmp_dir/81  directory does not exist 
+Rama has a fever.
+#ladake ko buKAra hE.
+82
+/home/sanju/lc4eu/tmp_dir/82  directory does not exist 
+The boy has a fever.
+#muJe buKAra hE.
+83
+/home/sanju/lc4eu/tmp_dir/83  directory does not exist 
+I have a fever.
+#rAma ke pAsa kiwAba hE.
+84
+/home/sanju/lc4eu/tmp_dir/84  directory does not exist 
+Rama has the book.
+#mere pAsa kiwAba hE.
+85
+/home/sanju/lc4eu/tmp_dir/85  directory does not exist 
+I have the book.
+#ladake ke pAsa kiwAba hE.
+86
+/home/sanju/lc4eu/tmp_dir/86  directory does not exist 
+The boy has the book.
+#Apa wAroM kI gaNanA nahIM kara sakawe.
+87
+/home/sanju/lc4eu/tmp_dir/87  directory does not exist 
+You can not count the stars.
+You cannot count the stars.
+You can't count the stars.
+#kyA rAma ke pAsa kiwAba hE?
+88
+/home/sanju/lc4eu/tmp_dir/88  directory does not exist 
+Does Rama have the book?
+Rama does have the book?
+Rama has the book?
+#kyA wuma xillI meM ho?
+89
+/home/sanju/lc4eu/tmp_dir/89  directory does not exist 
+Are you in Xilli?
+You are in Xilli?
+#rAma rojZa eka seba KAwA hE.
+9
+/home/sanju/lc4eu/tmp_dir/9  directory does not exist 
+Rama eats one apple, daily.
+Rama eats one apple daily.
+#kyA wumhe buKAra hE?
+90
+/home/sanju/lc4eu/tmp_dir/90  directory does not exist 
+Do you have a fever?
+You have a fever?
+You do have a fever?
+#rAma apane piwA ke sAWa vixyAlaya gayA.
+91
+/home/sanju/lc4eu/tmp_dir/91  directory does not exist 
+Rama went to the school, with his father.
+Rama went to the school with his father.
+Rama went, to the school, with his father.
+Rama went to the school, with his father.
+Rama went, with his father, to the school.
+Rama went with his father, to the school.
+Rama went, to the school with his father.
+Rama went to the school with his father.
+Rama went, with his father to the school.
+Rama went with his father to the school.
+#mEM vahAz A rahA hUz.
+92
+/home/sanju/lc4eu/tmp_dir/92  directory does not exist 
+I am coming, there.
+I am coming there.
+I am coming there.
+#wuma Keloge.
+93
+/home/sanju/lc4eu/tmp_dir/93  directory does not exist 
+You will play.
+#rAma paDegA.
+94
+/home/sanju/lc4eu/tmp_dir/94  directory does not exist 
+Rama will study.
+#mEM Gara jA sakawA hUz.
+95
+/home/sanju/lc4eu/tmp_dir/95  directory does not exist 
+I might go home.
+I might go home.
+I might go, home.
+#vaha Gara jA sakawA hE.
+96
+/home/sanju/lc4eu/tmp_dir/96  directory does not exist 
+He can go home.
+He can go home.
+He can go, home.
+#somavAra pahalA xina hE.
+97
+/home/sanju/lc4eu/tmp_dir/97  directory does not exist 
+Monday is the first day.
+#hAra mahilA ke gale meM hE.
+98
+/home/sanju/lc4eu/tmp_dir/98  directory does not exist 
+The necklace is in the woman's neck.
+#camadZe se jUwe banAo.
+99
+/home/sanju/lc4eu/tmp_dir/99  directory does not exist 
+Let's make shoes, from a leather.
+Make shoes, from a leather.
+Let's make shoes from a leather.
+Make shoes from a leather.
+#hari ne hi apna phala riya uma aur manu ko nahi diya.
+hari
+/home/sanju/lc4eu/tmp_dir/hari  directory does not exist 
+
+98 #राम को फल दो।
+how_1
+/home/sanju/lc4eu/tmp_dir/how_1  directory does not exist 
+Sukhada Warning: Value Error
+Sukhada Warning: Value Error
+Sukhada Warning: Value Error
+Sukhada Warning: Value Error
+Sukhada Warning: Value Error
+Sukhada Warning: Value Error
+Sukhada Warning: Value Error
+

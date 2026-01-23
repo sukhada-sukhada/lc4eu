@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e12
+RELS: < 
+[ _bark_v_1 LBL: h11 ARG0: e12 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x6 ]
+[ udef_q LBL: h1 ARG0: x6 RSTR: h3 BODY: h4 ]
+[ card LBL: h5 ARG0: e8 ARG1: x6 CARG: "3" ]
+[ generic_entity LBL: h5 ARG0: x6 ] >
+HCONS: < h0 qeq h11 h3 qeq h5 > ]

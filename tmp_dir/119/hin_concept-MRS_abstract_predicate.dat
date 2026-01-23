@@ -1,0 +1,4 @@
+(MRS_info id-MRS_concept 30000 neg)
+(MRS_info id-MRS_concept 20000 place_n)
+(MRS_info id-MRS_concept 20000 def_implicit_q)
+(MRS_info id-MRS_concept 20000 loc_nonsp)

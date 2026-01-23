@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 hazsa_1 _laugh_v_at)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 hazsa_1 _laugh_v_at)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 bola_18 _talk_v_about)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 bola_18 _talk_v_about)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 hazsa_1 _laugh_v_at)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 hazsa_1 _laugh_v_at)

@@ -1,0 +1,8 @@
+[ LTOP: h0
+INDEX: e12
+RELS: < 
+[ _good_a_at-for-of LBL: h11 ARG0: e12 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: u14 ]
+[ named LBL: h1 ARG0: x2 CARG: "Ravana" ]
+[ neg LBL: h8 ARG0: e9 ARG1: h10 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h8 h10 qeq h11 h6 qeq h1 > ]

@@ -1,0 +1,8 @@
+(id-GEN-NUM-PER  10000 - sg 3)
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _run_v_1 h5 e6 prop past indicative - - x9)
+(LTOP-INDEX  h0 e6)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _rabbit_n_1 h8 x9)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h1 x9 h3 h4)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _quick_a_1 h5 e11 e6)
+(Restr-Restricted  h0  h5)
+(Restr-Restricted     h3  h8)

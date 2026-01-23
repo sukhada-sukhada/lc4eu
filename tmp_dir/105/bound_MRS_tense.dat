@@ -1,0 +1,8 @@
+(tense-MRS_info  id-MRS_concept-LBL-ARG0-ARG1 30000 _must_v_modal h15 e16 prop pres indicative - - h17)
+(LTOP-INDEX  h0 e16)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _study_v_1 h9 e10 x19 u12)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 _school_n_1 h13 x14)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _boy_n_1 h18 x19)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h20 x14 h22 h23)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h5 x19 h7 h8)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p h9 e2 e10 x14)

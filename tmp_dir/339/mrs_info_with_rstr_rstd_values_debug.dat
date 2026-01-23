@@ -1,0 +1,4 @@
+(rule-rel-values mrs-info_q  Restr-Restricted  h6  h1)
+(rule-rel-values LTOP-while Restr-Restricted  h0 h8)
+(rule-rel-values LTOP-while Restr-Restricted  h11 h15)
+(rule-rel-values LTOP-while Restr-Restricted  h10 h12)

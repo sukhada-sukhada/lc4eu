@@ -1,0 +1,8 @@
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _stop_n_1 h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0 21000 _bus_n_1 h3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 21001 udef_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20002 compound h9 e10 x11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h13 x14)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h15 x16 h17 h18)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h19 x20 h21 h22)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _see_v_1 h23 e24 x25 x26)

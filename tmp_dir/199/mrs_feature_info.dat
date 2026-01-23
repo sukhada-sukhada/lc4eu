@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p h1 e2 e3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h9 x10 h11 h12)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _study_v_1 h13 e14 x15 u16)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _boy_n_1 h19 x20)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _school_n_1 h17 x18)

@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e26
+RELS: < 
+[ _have_v_1 LBL: h25 ARG0: e26 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x10 ARG2: x24 ]
+[ def_explicit_q LBL: h5 ARG0: x24 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ named LBL: h16 ARG0: x17 CARG: "Siwa" ]
+[ named LBL: h9 ARG0: x10 CARG: "Rama" ]
+[ poss LBL: h23 ARG0: e2 ARG1: x24 ARG2: x17 ]
+[ _pen_n_1 LBL: h23 ARG0: x24 ]
+[ proper_q LBL: h19 ARG0: x17 RSTR: h21 BODY: h22 ]
+[ proper_q LBL: h12 ARG0: x10 RSTR: h14 BODY: h15 ]
+[ _beautiful_a_1 LBL: h23 ARG0: e30 ARG1: x24 ] >
+HCONS: < h0 qeq h25 h14 qeq h9 h21 qeq h16 h7 qeq h23 > ]

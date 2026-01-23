@@ -1,0 +1,3 @@
+The fruit, eaten by Rama, was sweet.
+The fruit eaten by Rama was sweet.
+

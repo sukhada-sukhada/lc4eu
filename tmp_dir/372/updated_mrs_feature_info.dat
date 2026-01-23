@@ -1,0 +1,8 @@
+(LTOP-INDEX h0 e18)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 10011 poss h15 e8 x16 x6)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 def_implicit_q h11 x16 h13 h14)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 which_q h1 x6 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 person h5 x6)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _dog_n_1 h15 x16)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _bark_v_1 h17 e18 x16)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 ques past indicative - -)

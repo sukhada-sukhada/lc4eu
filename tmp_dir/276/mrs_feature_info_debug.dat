@@ -1,0 +1,4 @@
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 n3)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x5 h6 h7)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _weep_v_1 h8 e9 x10 x11)
+(rule-rel-values active-k2-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _weep_v_1 h8 e9 x10 u11)

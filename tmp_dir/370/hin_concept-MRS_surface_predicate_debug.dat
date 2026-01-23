@@ -1,0 +1,7 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 10000 kuwwA_1 _dog_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 10000 kuwwA_1 _dog_n_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 billI_1 _cat_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 billI_1 _cat_n_1)
+(rule-rel-values conj id-MRS_concept 10500 _and_c)
+(rule-rel-values mrsCon_yes id-MRS_concept 20010 _the_q )
+(rule-rel-values mrsCon_yes id-MRS_concept 10010 _the_q )

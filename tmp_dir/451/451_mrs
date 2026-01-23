@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e25
+RELS: < 
+[ _give_v_1 LBL: h24 ARG0: e25 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x30 ARG3: x32 ]
+[ _honorable_a_1 LBL: h15 ARG0: e22 ARG1: x16 ]
+[ _donation_n_1 LBL: h29 ARG0: x30 [ x NUM: pl PERS: 3 ] ]
+[ _disciple_n_1 LBL: h31 ARG0: x32 [ x NUM: pl PERS: 3 ] ]
+[ _guru_n_1 LBL: h15 ARG0: x16 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ udef_q LBL: h11 ARG0: x30 RSTR: h13 BODY: h14 ]
+[ _the_q LBL: h17 ARG0: x32 RSTR: h19 BODY: h20 ]
+[ _a_q LBL: h33 ARG0: x16 RSTR: h35 BODY: h36 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _along+with_p LBL: h24 ARG0: e8 ARG1: e25 ARG2: x16 ] >
+HCONS: < h0 qeq h24 h13 qeq h29 h19 qeq h31 h35 qeq h15 h5 qeq h1 > ]

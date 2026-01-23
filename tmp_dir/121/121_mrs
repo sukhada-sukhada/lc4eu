@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _should_v_modal LBL: h18 ARG0: e19 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h20 ]
+[ def_implicit_q LBL: h5 ARG0: x4 RSTR: h7 BODY: h8 ]
+[ named LBL: h11 ARG0: x12 CARG: "Amit" ]
+[ loc_nonsp LBL: h24 ARG0: e2 ARG1: e25 ARG2: x4 ]
+[ _go_v_1 LBL: h24 ARG0: e25 ARG1: x12 ]
+[ _home_p LBL: h21 ARG0: e22 ARG1: x4 ]
+[ place_n LBL: h21 ARG0: x4 ]
+[ proper_q LBL: h14 ARG0: x12 RSTR: h16 BODY: h17 ] >
+HCONS: < h0 qeq h18 h16 qeq h11 h20 qeq h24 h7 qeq h21 > ]

@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _read_v_1 LBL: h23 ARG0: e24 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x30 ARG2: x32 ]
+[ def_explicit_q LBL: h5 ARG0: x28 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ poss LBL: h27 ARG0: e2 ARG1: x28 ARG2: x22 ]
+[ _book_n_of LBL: h31 ARG0: x32 [ x NUM: sg PERS: 3 ] ARG1: i33 ]
+[ _garden_n_1 LBL: h27 ARG0: x28 ]
+[ _school_n_1 LBL: h21 ARG0: x22 [ x NUM: sg PERS: 3 ] ]
+[ _boy_n_1 LBL: h29 ARG0: x30 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h34 ARG0: x32 RSTR: h36 BODY: h37 ]
+[ _the_q LBL: h13 ARG0: x22 RSTR: h15 BODY: h16 ]
+[ _the_q LBL: h17 ARG0: x30 RSTR: h19 BODY: h20 ]
+[ _in_p LBL: h23 ARG0: e10 ARG1: e24 ARG2: x28 ] >
+HCONS: < h0 qeq h23 h15 qeq h21 h19 qeq h29 h36 qeq h31 h7 qeq h27 > ]

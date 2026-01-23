@@ -1,0 +1,4 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _juicy_a_1 h5 e6 prop past indicative - - x9)
+(LTOP-INDEX  h0 e6)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _grape_n_1 h8 x9)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h1 x9 h3 h4)

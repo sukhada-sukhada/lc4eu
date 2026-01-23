@@ -1,0 +1,7 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p h1 e2 e3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30100 _used+to_v_qmodal h5 e6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h8 x9 h10 h11)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h20 x21 h22 h23)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _forest_n_of h17 x18 i19)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _live_v_1 h14 e15 x16)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _rabbit_n_1 h12 x13)

@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0 10010 generic_entity h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 udef_q h3 x4 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _this_q_dem h7 x8 h9 h10)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _spread_v_1 h11 e12 u13 x14)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _attempt_v_1 h18 e19 x20 h21)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _knowledge_n_of h15 x16 i17)

@@ -1,0 +1,8 @@
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 every_q h1 x2 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30001 _in_p h5 e6 e7 x8)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 named h9 x10 n11)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h12 x13 h14 h15)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 _the_q h16 x17 h18 h19)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _call_v_1 h24 e25 x26 x27)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 person h22 x23)
+(MRS_info id-MRS_concept-LBL-ARG0 30000 _school_n_1 h20 x21)

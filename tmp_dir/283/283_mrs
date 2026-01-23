@@ -1,0 +1,14 @@
+[ LTOP: h0
+INDEX: e25
+RELS: < 
+[ _give_v_1 LBL: h24 ARG0: e25 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x22 ARG2: x30 ARG3: x8 ]
+[ def_explicit_q LBL: h17 ARG0: x22 [ x NUM: sg PERS: 3 ] RSTR: h19 BODY: h20 ]
+[ poss LBL: h21 ARG0: e14 ARG1: x22 ARG2: x2 ]
+[ _mother_n_of LBL: h21 ARG0: x22 ARG1: i23 ]
+[ _food_n_1 LBL: h29 ARG0: x30 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h7 ARG0: x8 [ x NUM: sg PERS: 1 PT: std ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _a_q LBL: h31 ARG0: x30 RSTR: h33 BODY: h34 ]
+[ pronoun_q LBL: h9 ARG0: x8 RSTR: h11 BODY: h12 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h24 h11 qeq h7 h19 qeq h21 h33 qeq h29 h5 qeq h1 > ]

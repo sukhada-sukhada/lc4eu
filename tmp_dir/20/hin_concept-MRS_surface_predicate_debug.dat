@@ -1,0 +1,4 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 40000 Gara_2 _house_n_of)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 40000 Gara_2 _house_n_of)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 50000 bulA_1 _call_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 50000 bulA_1 _call_v_1)

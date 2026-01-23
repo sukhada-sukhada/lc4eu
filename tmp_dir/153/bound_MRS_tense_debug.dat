@@ -1,0 +1,6 @@
+(rule-rel-values  tense  id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _perform_v_1 h12 e13  prop past indicative - + x2 x17)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e13)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 Rama)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 20000 _job_n_of h16 x17 i18)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h8 x17 h10 h11)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x2 h6 h7)

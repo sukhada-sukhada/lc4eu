@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e13
+RELS: < 
+[ _eat_v_1 LBL: h12 ARG0: e13 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: + ] ARG1: x9 ARG2: x11 ]
+[ neg LBL: h1 ARG0: e2 ARG1: h3 ]
+[ _grass_n_1 LBL: h10 ARG0: x11 [ x NUM: sg PERS: 3 ] ]
+[ _rabbit_n_1 LBL: h8 ARG0: x9 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h16 ARG0: x11 RSTR: h18 BODY: h19 ]
+[ _the_q LBL: h4 ARG0: x9 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h1 h18 qeq h10 h3 qeq h12 h6 qeq h8 > ]

@@ -1,0 +1,6 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _watch_v_1 h7 e8 prop pres indicative + - x2 x12)
+(LTOP-INDEX  h0 e8)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _movie_n_of h11 x12 i13)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h14 x12 h16 h17)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)

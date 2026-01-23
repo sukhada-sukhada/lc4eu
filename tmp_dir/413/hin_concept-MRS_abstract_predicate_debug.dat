@@ -1,0 +1,3 @@
+(rule-rel-values mrs_inter_why id-MRS_concept 20010 which_q)
+(rule-rel-values mrs_inter_why id-MRS_concept 20001 _for_p)
+(rule-rel-values mrs_inter_why id-MRS_concept 20000 reason)

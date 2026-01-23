@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e10
+RELS: < 
+[ _in_p LBL: h9 ARG0: e10 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x26 ARG2: x24 ]
+[ def_explicit_q LBL: h5 ARG0: x24 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ poss LBL: h23 ARG0: e2 ARG1: x24 ARG2: x14 ]
+[ _neck_n_1 LBL: h23 ARG0: x24 ]
+[ _woman_n_1 LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ]
+[ _necklace_n_1 LBL: h25 ARG0: x26 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h15 ARG0: x14 RSTR: h17 BODY: h18 ]
+[ _the_q LBL: h19 ARG0: x26 RSTR: h21 BODY: h22 ] >
+HCONS: < h17 qeq h13 h21 qeq h25 h7 qeq h23 > ]

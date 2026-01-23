@@ -1,0 +1,4 @@
+(rule-rel-values kim-which-rstr-verb  Restr-Restricted h12 h8)
+(rule-rel-values  kim-which-rstr-k5 which_bind_notrequired2 20010)
+(rule-rel-values mrs-info_q  Restr-Restricted  h6  h1)
+(rule-rel-values LTOP-rstd  Restr-Restricted  h0 h18)

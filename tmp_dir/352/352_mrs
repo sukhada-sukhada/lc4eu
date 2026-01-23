@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e25
+RELS: < 
+[ _go_v_1 LBL: h24 ARG0: e25 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+
+[ _milk_v_1 LBL: h20 ARG0: e21 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: u22 ARG2: x28 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _before_x_h LBL: h12 ARG0: e13 ARG1: h14 ARG2: h15 ]
+[ _cow_n_1 LBL: h27 ARG0: x28 [ x NUM: pl PERS: 3 ] ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ _the_q LBL: h16 ARG0: x28 RSTR: h18 BODY: h19 ]
+[ parg_d LBL: h20 ARG0: e9 ARG1: e21 ARG2: x28 ] >
+HCONS: < h0 qeq h12 h14 qeq h24 h15 qeq h20 h18 qeq h27 h6 qeq h1 > ]

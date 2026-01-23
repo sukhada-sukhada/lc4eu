@@ -1,0 +1,6 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _have_v_1 h12 e13 prop pres indicative - - x2 x17)
+(LTOP-INDEX  h0 e13)
+(MRS_info  id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 Rama)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 _advantage_n_1 h16 x17)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h8 x17 h10 h11)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x2 h6 h7)

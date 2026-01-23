@@ -1,0 +1,5 @@
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x4 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p h7 e8 e9 x10)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 20000 named h11 x12 n13)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 proper_q h14 x15 h16 h17)

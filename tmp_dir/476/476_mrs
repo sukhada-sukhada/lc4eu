@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e12
+RELS: < 
+[ _be_v_id LBL: h11 ARG0: e12 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x7 ]
+[ _geographer_n_1 LBL: h6 ARG0: x7 [ x NUM: sg PERS: 3 ] ]
+[ _scholar_n_1 LBL: h1 ARG0: x2 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h15 ARG0: x7 RSTR: h17 BODY: h18 ]
+[ _a_q LBL: h19 ARG0: x2 RSTR: h21 BODY: h22 ]
+[ _descriptive_a_1 LBL: h6 ARG0: e9 ARG1: x7 ]
+[ _initial_a_1 LBL: h1 ARG0: e4 ARG1: x2 ] >
+HCONS: < h0 qeq h11 h17 qeq h6 h21 qeq h1 > ]

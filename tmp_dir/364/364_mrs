@@ -1,0 +1,27 @@
+[ LTOP: h0
+INDEX: e84
+RELS: < 
+[ _good_a_at-for-of LBL: h83 ARG0: e84 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x72 ARG2: u86 ]
+[ udef_q LBL: h75 ARG0: x80 RSTR: h77 BODY: h78 ]
+[ udef_q LBL: h43 ARG0: x60 RSTR: h45 BODY: h46 ]
+[ udef_q LBL: h47 ARG0: x64 RSTR: h49 BODY: h50 ]
+[ udef_q LBL: h51 ARG0: x68 RSTR: h53 BODY: h54 ]
+[ udef_q LBL: h55 ARG0: x72 RSTR: h57 BODY: h58 ]
+[ _and_c LBL: h79 ARG0: x80 L-INDEX: x30 R-INDEX: x37 ]
+[ implicit_conj LBL: h59 ARG0: x60 L-INDEX: x23 R-INDEX: x80 ]
+[ implicit_conj LBL: h63 ARG0: x64 L-INDEX: x16 R-INDEX: x60 ]
+[ implicit_conj LBL: h67 ARG0: x68 L-INDEX: x9 R-INDEX: x64 ]
+[ implicit_conj LBL: h71 ARG0: x72 L-INDEX: x2 R-INDEX: x68 ]
+[ named LBL: h36 ARG0: x37 CARG: "Mohana" ]
+[ named LBL: h29 ARG0: x30 CARG: "Rajani" ]
+[ named LBL: h22 ARG0: x23 CARG: "Riya" ]
+[ named LBL: h15 ARG0: x16 CARG: "Viveka" ]
+[ named LBL: h8 ARG0: x9 CARG: "Hari" ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ proper_q LBL: h39 ARG0: x37 RSTR: h41 BODY: h42 ]
+[ proper_q LBL: h32 ARG0: x30 RSTR: h34 BODY: h35 ]
+[ proper_q LBL: h25 ARG0: x23 RSTR: h27 BODY: h28 ]
+[ proper_q LBL: h18 ARG0: x16 RSTR: h20 BODY: h21 ]
+[ proper_q LBL: h11 ARG0: x9 RSTR: h13 BODY: h14 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h13 qeq h8 h20 qeq h15 h27 qeq h22 h34 qeq h29 h41 qeq h36 h45 qeq h59 h49 qeq h63 h53 qeq h67 h57 qeq h71 h6 qeq h1 h77 qeq h79 > ]

@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e39
+RELS: < 
+[ _good_a_at-for-of LBL: h38 ARG0: e39 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x27 ARG2: u41 ]
+[ udef_q LBL: h30 ARG0: x35 RSTR: h32 BODY: h33 ]
+[ udef_q LBL: h22 ARG0: x27 RSTR: h24 BODY: h25 ]
+[ _and_c LBL: h34 ARG0: x35 L-INDEX: x9 R-INDEX: x16 ]
+[ implicit_conj LBL: h26 ARG0: x27 L-INDEX: x2 R-INDEX: x35 ]
+[ named LBL: h15 ARG0: x16 CARG: "Siwa" ]
+[ named LBL: h8 ARG0: x9 CARG: "Mohana" ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ proper_q LBL: h18 ARG0: x16 RSTR: h20 BODY: h21 ]
+[ proper_q LBL: h11 ARG0: x9 RSTR: h13 BODY: h14 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h13 qeq h8 h20 qeq h15 h24 qeq h26 h32 qeq h34 h6 qeq h1 > ]

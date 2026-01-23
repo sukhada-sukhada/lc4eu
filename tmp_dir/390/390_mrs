@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _give_v_1 LBL: h23 ARG0: e24 [ e SF: comm TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x8 ARG2: x18 ARG3: x2 ]
+[ pron LBL: h7 ARG0: x8 ]
+[ udef_q LBL: h13 ARG0: x18 RSTR: h15 BODY: h16 ]
+[ pronoun_q LBL: h9 ARG0: x8 RSTR: h11 BODY: h12 ]
+[ _or_c LBL: h17 ARG0: x18 L-INDEX: x22 R-INDEX: x29 ]
+[ _coffee_n_1 LBL: h28 ARG0: x29 [ x NUM: sg PERS: 3 ] ]
+[ _tea_n_1 LBL: h21 ARG0: x22 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _a_q LBL: h30 ARG0: x29 RSTR: h32 BODY: h33 ]
+[ _a_q LBL: h34 ARG0: x22 RSTR: h36 BODY: h37 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h23 h11 qeq h7 h15 qeq h17 h32 qeq h28 h36 qeq h21 h5 qeq h1 > ]

@@ -1,0 +1,6 @@
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _play_v_1 h1 e2 x3 x4)
+(rule-rel-values active-k2-absent MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _play_v_1 h1 e2 x3 u4)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 20000 _kid_n_1 h5 x6)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _all_q h7 x8 h9 h10)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _all_q h7 x8 h9 h10)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 20000 _kid_n_1 h5 x6)

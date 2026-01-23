@@ -1,0 +1,2 @@
+(rule-rel-values mrs_poss_pron id-MRS_concept 20010 def_explicit_q)
+(rule-rel-values mrs_poss_pron id-MRS_concept 20001 poss)

@@ -1,0 +1,5 @@
+(rule-rel-values  krvn-notbind ltop_bind_notrequired 20000)
+(rule-rel-values LTOP-subord-kv Restr-Restricted  h0 h1)
+(rule-rel-values LTOP-subord-kv Restr-Restricted  h4 h8)
+(rule-rel-values LTOP-subord-kv Restr-Restricted  h3 h5)
+(rule-rel-values mrs-info_q  Restr-Restricted  h15  h11)

@@ -1,0 +1,6 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _eat_v_1 h3 e4 prop pres indicative - - x16 x2)
+(LTOP-INDEX  h0 e4)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 _grass_n_1 h1 x2)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _animal_n_1 h15 x16)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h11 x2 h13 h14)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h7 x16 h9 h10)

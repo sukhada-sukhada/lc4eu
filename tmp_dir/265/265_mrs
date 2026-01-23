@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e36
+RELS: < 
+[ _bring_v_1 LBL: h35 ARG0: e36 [ e SF: comm TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x31 ]
+[ pron LBL: h1 ARG0: x2 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ named LBL: h19 ARG0: x20 CARG: "Riwesa" ]
+[ _forest_n_of LBL: h32 ARG0: x33 [ x NUM: sg PERS: 3 ] ARG1: i34 ]
+[ _fruit_n_1 LBL: h30 ARG0: x31 [ x NUM: pl PERS: 3 ] ]
+[ udef_q LBL: h15 ARG0: x31 RSTR: h17 BODY: h18 ]
+[ _the_q LBL: h26 ARG0: x33 RSTR: h28 BODY: h29 ]
+[ proper_q LBL: h22 ARG0: x20 RSTR: h24 BODY: h25 ]
+[ _from_p LBL: h35 ARG0: e8 ARG1: e36 ARG2: x33 ]
+[ _for_p LBL: h35 ARG0: e12 ARG1: e36 ARG2: x20 ] >
+HCONS: < h0 qeq h35 h17 qeq h30 h24 qeq h19 h28 qeq h32 h5 qeq h1 > ]

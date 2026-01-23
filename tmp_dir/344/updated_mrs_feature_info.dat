@@ -1,0 +1,8 @@
+(LTOP-INDEX h0 e6)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h13 x12 h15 h16)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _elephant_n_1 h11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _sway_v_1 h8 e9 u10)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _walk_v_1 h5 e6 x12)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord h1 e2 h3 h4)
+(id-SF-TENSE-MOOD-PROG-PERF 20000 prop untensed indicative + - )
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop pres indicative - -)

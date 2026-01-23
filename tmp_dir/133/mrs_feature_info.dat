@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 50100 _can_v_modal h13 e14 h15)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30000 _any_q h16 x17 h18 h19)
+(MRS_info id-MRS_concept-LBL-ARG0 40000 _game_n_1 h11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _kid_n_1 h9 x10)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 50000 _play_v_1 h5 e6 x7 x8)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _some_q h1 x2 h3 h4)

@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e28
+RELS: < 
+[ _come_v_1 LBL: h27 ARG0: e28 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x10 ]
+[ named LBL: h16 ARG0: x17 CARG: "John" ]
+[ named LBL: h9 ARG0: x10 CARG: "Rama" ]
+[ _city_n_1 LBL: h30 ARG0: x31 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h23 ARG0: x31 RSTR: h25 BODY: h26 ]
+[ proper_q LBL: h19 ARG0: x17 RSTR: h21 BODY: h22 ]
+[ proper_q LBL: h12 ARG0: x10 RSTR: h14 BODY: h15 ]
+[ _from_p LBL: h27 ARG0: e2 ARG1: e28 ARG2: x31 ]
+[ _for_p LBL: h27 ARG0: e6 ARG1: e28 ARG2: x17 ] >
+HCONS: < h0 qeq h27 h14 qeq h9 h21 qeq h16 h25 qeq h30 > ]

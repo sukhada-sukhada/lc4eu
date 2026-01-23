@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _arrive_v_1 LBL: h18 ARG0: e19 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ loc_nonsp LBL: h18 ARG0: e9 ARG1: e19 ARG2: x17 ]
+[ _hour_n_1 LBL: h16 ARG0: x17 [ x NUM: sg PERS: 3 ] ]
+[ _that_q_dem LBL: h12 ARG0: x17 RSTR: h14 BODY: h15 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h18 h14 qeq h16 h6 qeq h1 > ]

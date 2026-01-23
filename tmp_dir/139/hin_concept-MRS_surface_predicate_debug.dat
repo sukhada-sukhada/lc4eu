@@ -1,0 +1,3 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 Kela_1 _play_v_1)
+(rule-rel-values  would_v_modal  id-MRS_concept 30100  _would_v_modal)

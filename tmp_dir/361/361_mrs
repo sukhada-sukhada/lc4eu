@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e25
+RELS: < 
+[ _winnow_v_1 LBL: h24 ARG0: e25 [ e SF: prop TENSE: fut MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x8 ]
+[ def_implicit_q LBL: h18 ARG0: x17 RSTR: h20 BODY: h21 ]
+[ named LBL: h7 ARG0: x8 CARG: "Rama" ]
+[ loc_nonsp LBL: h24 ARG0: e15 ARG1: e25 ARG2: x17 ]
+[ _tomorrow_a_1 LBL: h28 ARG0: e29 ARG1: x17 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ time_n LBL: h28 ARG0: x17 ]
+[ proper_q LBL: h10 ARG0: x8 RSTR: h12 BODY: h13 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h24 h12 qeq h7 h20 qeq h28 h5 qeq h1 > ]

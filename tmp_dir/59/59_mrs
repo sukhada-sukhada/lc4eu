@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e17
+RELS: < 
+[ _read_v_1 LBL: h16 ARG0: e17 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x2 ARG2: x21 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ card LBL: h20 ARG0: e9 ARG1: x21 CARG: "2" ]
+[ _book_n_of LBL: h20 ARG0: x21 [ x NUM: pl PERS: 3 ] ARG1: i22 ]
+[ udef_q LBL: h12 ARG0: x21 RSTR: h14 BODY: h15 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h16 h14 qeq h20 h6 qeq h1 > ]

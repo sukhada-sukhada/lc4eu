@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e18
+RELS: < 
+[ _take_v_1 LBL: h17 ARG0: e18 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x2 ARG2: x23 ARG3: u21 ]
+[ _book_n_of LBL: h22 ARG0: x23 [ x NUM: sg PERS: 3 ] ARG1: i24 ]
+[ pron LBL: h7 ARG0: x8 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _a_q LBL: h25 ARG0: x23 RSTR: h27 BODY: h28 ]
+[ pronoun_q LBL: h9 ARG0: x8 RSTR: h11 BODY: h12 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _from_p LBL: h17 ARG0: e14 ARG1: e18 ARG2: x8 ] >
+HCONS: < h0 qeq h17 h11 qeq h7 h27 qeq h22 h5 qeq h1 > ]

@@ -1,0 +1,7 @@
+(LTOP-INDEX h0 e8)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 ques pres indicative - -)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h13 x12 h15 h16)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 which_q h3 x2 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _eat_v_1 h7 e8 x12 x2)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _baby_n_1 h11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 thing h1 x2)

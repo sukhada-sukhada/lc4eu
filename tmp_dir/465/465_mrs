@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e31
+RELS: < 
+[ _go_v_1 LBL: h30 ARG0: e31 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x24 ]
+[ named LBL: h16 ARG0: x17 CARG: "Bopala" ]
+[ named LBL: h9 ARG0: x10 CARG: "Delhi" ]
+[ _train_n_of LBL: h23 ARG0: x24 [ x NUM: sg PERS: 3 ] ARG1: i25 ]
+[ proper_q LBL: h19 ARG0: x17 RSTR: h21 BODY: h22 ]
+[ proper_q LBL: h12 ARG0: x10 RSTR: h14 BODY: h15 ]
+[ _this_q_dem LBL: h26 ARG0: x24 RSTR: h28 BODY: h29 ]
+[ _to_p LBL: h30 ARG0: e2 ARG1: e31 ARG2: x17 ]
+[ _via_p LBL: h30 ARG0: e6 ARG1: e31 ARG2: x10 ] >
+HCONS: < h0 qeq h30 h14 qeq h9 h21 qeq h16 h28 qeq h23 > ]

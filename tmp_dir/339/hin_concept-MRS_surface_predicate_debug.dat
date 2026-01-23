@@ -1,0 +1,5 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 KarrAte+Bara_1 _snore_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 KarrAte+Bara_1 _snore_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 20000 so_1 _sleep_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 so_1 _sleep_v_1)
+(rule-rel-values mrs_while id-MRS_concept -30000  _while_x)

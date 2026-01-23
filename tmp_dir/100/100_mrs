@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e22
+RELS: < 
+[ _can_v_modal LBL: h21 ARG0: e22 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h23 ]
+[ named LBL: h7 ARG0: x8 CARG: "Rusi" ]
+[ _speak_v_to LBL: h17 ARG0: e18 ARG1: x2 ARG2: x8 ]
+[ neg LBL: h14 ARG0: e15 ARG1: h16 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ proper_q LBL: h10 ARG0: x8 RSTR: h12 BODY: h13 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h14 h12 qeq h7 h16 qeq h21 h23 qeq h17 h5 qeq h1 > ]

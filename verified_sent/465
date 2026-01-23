@@ -1,6 +1,5 @@
-<sent_id=465>
-#yaha trena Delhi se hokara BopAla jAwI hE.
-$wyax,trena_1,Delhi,BopAla,jA_1-wA_hE_1
+#yaha trena Delhi se hokara BopAla jAwI hE. 
+wyax, trena_1,Delhi,BopAla,jA_1-wA_hE_1
 1,2,3,4,5
 ,,place,place,
 ,,,,
@@ -8,7 +7,4 @@ $wyax,trena_1,Delhi,BopAla,jA_1-wA_hE_1
 ,,,,
 proximal,,,,
 ,,,,
-,,,,
-%affirmative
-</sent_id>
-
+affirmative

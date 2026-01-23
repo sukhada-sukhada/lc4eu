@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e16
+RELS: < [ def_explicit_q LBL: h11 ARG0: x19 [ x NUM: sg PERS: 3 ] RSTR: h13 BODY: h14 ]
+[ poss LBL: h18 ARG0: e8 ARG1: x19 ARG2: x2 ]
+[ _country_n_of LBL: h18 ARG0: x19 ARG1: i20 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ unknown LBL: h15 ARG0: e16 ARG: x19 ] >
+HCONS: < h13 qeq h18 h5 qeq h1 > ]

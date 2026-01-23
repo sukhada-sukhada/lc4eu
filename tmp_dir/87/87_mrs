@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e21
+RELS: < 
+[ _can_v_modal LBL: h20 ARG0: e21 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h22 ]
+[ _count_v_1 LBL: h16 ARG0: e17 ARG1: x2 ARG2: x15 ]
+[ neg LBL: h7 ARG0: e8 ARG1: h9 ]
+[ _star_n_1 LBL: h14 ARG0: x15 [ x NUM: pl PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x PERS: 2 ] ]
+[ _the_q LBL: h10 ARG0: x15 RSTR: h12 BODY: h13 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h7 h12 qeq h14 h22 qeq h16 h5 qeq h1 h9 qeq h20 > ]

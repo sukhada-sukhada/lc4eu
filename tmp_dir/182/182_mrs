@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e27
+RELS: < 
+[ _come_v_1 LBL: h26 ARG0: e27 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ _meeting_n_of LBL: h23 ARG0: x24 [ x NUM: sg PERS: 3 ] ARG1: i25 ]
+[ _city_n_1 LBL: h29 ARG0: x30 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _the_q LBL: h15 ARG0: x30 RSTR: h17 BODY: h18 ]
+[ _the_q LBL: h19 ARG0: x24 RSTR: h21 BODY: h22 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _to_p LBL: h26 ARG0: e8 ARG1: e27 ARG2: x30 ]
+[ _for_p LBL: h26 ARG0: e12 ARG1: e27 ARG2: x24 ] >
+HCONS: < h0 qeq h26 h17 qeq h29 h21 qeq h23 h5 qeq h1 > ]

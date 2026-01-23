@@ -1,0 +1,4 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _bark_v_1 h7 e8 prop past indicative + - x6)
+(LTOP-INDEX  h0 e8)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 _dog_n_1 h5 x6)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h1 x6 h3 h4)

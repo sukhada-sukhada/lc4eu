@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 neg h1 e2 h3)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h4 x5 h6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h16 x17 h18 h19)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _boy_n_1 h14 x15)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _eat_v_1 h10 e11 x12 x13)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _food_n_1 h8 x9)

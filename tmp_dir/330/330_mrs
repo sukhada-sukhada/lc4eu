@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e28
+RELS: < 
+[ _eat_v_1 LBL: h27 ARG0: e28 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: x26 ]
+
+[ _go_v_1 LBL: h22 ARG0: e23 [ e SF: prop TENSE: untensed MOOD: indicative PROG: + PERF: + ] ARG1: u24 ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ subord LBL: h12 ARG0: e13 ARG1: h14 ARG2: h15 ]
+[ _food_n_1 LBL: h25 ARG0: x26 [ x NUM: sg PERS: 3 ] ]
+[ _school_n_1 LBL: h20 ARG0: x21 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h31 ARG0: x26 RSTR: h33 BODY: h34 ]
+[ _the_q LBL: h16 ARG0: x21 RSTR: h18 BODY: h19 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ]
+[ _to_p LBL: h22 ARG0: e2 ARG1: e23 ARG2: x21 ] >
+HCONS: < h0 qeq h12 h10 qeq h5 h14 qeq h27 h15 qeq h22 h18 qeq h20 h33 qeq h25 > ]

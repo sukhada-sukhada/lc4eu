@@ -1,6 +1,5 @@
-<sent_id=273>
 #vaha vixyAlaya meM  gayA
-$wyax,vixyAlaya_1,jA_1-yA_1
+wyax,vixyAlaya_1,jA_1-yA_1
 1,2,3
 ,,
 ,,
@@ -8,7 +7,4 @@ $wyax,vixyAlaya_1,jA_1-yA_1
 9.1:coref,,
 ,def,
 ,,
-,,
-%affirmative
-</sent_id>
-
+affirmative

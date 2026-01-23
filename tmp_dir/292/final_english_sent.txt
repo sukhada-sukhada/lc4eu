@@ -1,0 +1,5 @@
+The turtle walked, slowly.
+The turtle walked, slow.
+The turtle walked slowly.
+The turtle walked slow.
+The turtle slowly walked.

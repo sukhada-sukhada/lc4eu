@@ -1,0 +1,2 @@
+(rule-rel-values mrsPrep id-MRS_concept 30001 _at_p)
+(rule-rel-values on_p_temp-adverboftime  id-MRS_concept 20001 _on_p_temp)

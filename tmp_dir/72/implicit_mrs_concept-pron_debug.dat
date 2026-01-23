@@ -1,0 +1,2 @@
+(rule-rel-values mrsPron_yes id-MRS_concept 20010 pronoun_q )
+(rule-rel-values mrsPron_yes id-MRS_concept 20000 pron)

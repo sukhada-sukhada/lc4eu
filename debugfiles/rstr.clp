@@ -1,0 +1,12 @@
+(load "global_path.clp")
+(bind ?*path* (str-cat ?*path* "/src/clp_files/bind-RSTR_RSTD-values.clp"))
+(load ?*path*)
+(load-facts "USR-CLIPS-facts.dat")
+(load-facts "hin_concept-MRS_surface_predicate.dat")
+(load-facts "updated_mrs_feature_info.dat")
+(open "mrs_info_with_rstr_rstd_values.dat" open-rstr "w")
+(open "mrs_info_with_rstr_rstd_values_debug.dat" debug_rstr "w")
+(watch rules)
+(watch facts)
+(agenda)
+

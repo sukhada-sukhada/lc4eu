@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x4 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 place_n h7 x8)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20010 loc_nonsp h9 e10 e11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 which_q h13 x14 h15 h16)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _live_v_1 h17 e18 x19)

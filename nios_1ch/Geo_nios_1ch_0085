@@ -1,0 +1,11 @@
+#BUgola eka samagra Ora anwarsambanXiwa kRewra kA aXyayana hE jo ki viBinna swaroM para sWAnika saMracanAoM meM hone vAle parivarwanoM ke aXyayana se judA huA hE 
+BUgola_1,eka_1,samagra_1,anwarsambanXiwa_1,kRewra_1,aXyayana_1,hE_1-pres,yax,viBinna_1,swara_2,sWAnika_2,saMracanA_1,ho_1,parivarwana_1,aXyayana_1,juda_1-yA_hE_1
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+,numex,,,,,,,,,,,,,
+,,,,,,,,pl,,pl,mawup,pl,,
+6:k1,5:card,5:mod,5:mod,6:k2,0:main,15:k1,9:mod,12:k7p,11:mod,12:k7,13:mod,14:r6,15:k2,1:rcelab
+,,,,,,1:coref,,,,,,,,
+,,,,,,,,,,,,,,[shade:ho_1]
+,,,,,,,,,,,,,,
+affirmative
+conj:[3,4]

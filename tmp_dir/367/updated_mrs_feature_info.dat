@@ -1,0 +1,4 @@
+(LTOP-INDEX h0 e2)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG  0 unknown h1 e2 x5)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h6 x5 h8 h9)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _dog_n_1 h4 x5)

@@ -1,0 +1,14 @@
+[ LTOP: h0
+INDEX: e28
+RELS: < 
+[ _inaugurate_v_1 LBL: h27 ARG0: e28 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x25 ARG2: x23 ]
+[ def_implicit_q LBL: h5 ARG0: x4 RSTR: h7 BODY: h8 ]
+[ loc_nonsp LBL: h27 ARG0: e2 ARG1: e28 ARG2: x4 ]
+[ _yesterday_a_1 LBL: h11 ARG0: e12 ARG1: x4 ]
+[ _honorable_a_1 LBL: h24 ARG0: e32 ARG1: x25 ]
+[ _minister_n_of LBL: h24 ARG0: x25 [ x NUM: sg PERS: 3 ] ARG1: i26 ]
+[ _temple_n_1 LBL: h22 ARG0: x23 [ x NUM: sg PERS: 3 ] ]
+[ time_n LBL: h11 ARG0: x4 ]
+[ _the_q LBL: h14 ARG0: x23 RSTR: h16 BODY: h17 ]
+[ _the_q LBL: h18 ARG0: x25 RSTR: h20 BODY: h21 ] >
+HCONS: < h0 qeq h27 h16 qeq h22 h20 qeq h24 h7 qeq h11 > ]

@@ -1,0 +1,10 @@
+Less than 300 people will come tomorrow.
+Less than 300 people will come, tomorrow.
+More little than 300 people will come tomorrow.
+More few than 300 people will come tomorrow.
+More little than 300 people will come, tomorrow.
+More few than 300 people will come, tomorrow.
+Less than 300 people will come tomorrow.
+More few than 300 people will come tomorrow.
+More little than 300 people will come tomorrow.
+

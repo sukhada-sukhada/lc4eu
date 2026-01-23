@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e13
+RELS: < 
+[ _want_v_1 LBL: h12 ARG0: e13 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: x17 ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ _fruit_n_1 LBL: h16 ARG0: x17 [ x NUM: pl PERS: 3 ] ]
+[ udef_q LBL: h1 ARG0: x17 RSTR: h3 BODY: h4 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ] >
+HCONS: < h0 qeq h12 h10 qeq h5 h3 qeq h16 > ]

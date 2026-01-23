@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e20
+RELS: < 
+[ _make_v_cause LBL: h19 ARG0: e20 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x14 ARG2: h22 ]
+[ _clean_v_1 LBL: h23 ARG0: e24 ARG1: x17 ARG2: x28 ]
+[ _class_n_of LBL: h27 ARG0: x28 [ x NUM: sg PERS: 3 ] ARG1: i29 ]
+[ _student_n_of LBL: h16 ARG0: x17 [ x NUM: pl PERS: 3 ] ARG1: i18 ]
+[ _teacher_n_of LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ARG1: i15 ]
+[ _the_q LBL: h1 ARG0: x28 RSTR: h3 BODY: h4 ]
+[ _the_q LBL: h5 ARG0: x17 RSTR: h7 BODY: h8 ]
+[ _the_q LBL: h9 ARG0: x14 RSTR: h11 BODY: h12 ] >
+HCONS: < h0 qeq h19 h11 qeq h13 h22 qeq h23 h3 qeq h27 h7 qeq h16 > ]

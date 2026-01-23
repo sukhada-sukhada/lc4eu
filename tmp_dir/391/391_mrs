@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < 
+[ _bad_a_at LBL: h18 ARG0: e19 [ e SF: ques TENSE: untensed MOOD: indicative PROG: - PERF: - ] ARG1: x8 ARG2: i21 ]
+
+[ _or_c LBL: h1 ARG0: e2 [ e SF: ques TENSE: pres MOOD: indicative PROG: - PERF: - ] L-INDEX: e15 R-INDEX: e19 L-HNDL: h14 R-HNDL: h18 ]
+
+[ _good_a_at-for-of LBL: h14 ARG0: e15 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x8 ARG2: u17 ]
+[ named LBL: h7 ARG0: x8 CARG: "Rama" ]
+[ proper_q LBL: h10 ARG0: x8 RSTR: h12 BODY: h13 ] >
+HCONS: < h0 qeq h1 h12 qeq h7 > ]

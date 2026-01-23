@@ -1,0 +1,11 @@
+#kisI sWAna kI saMskqwi, janasaMKyA, vahAz ke sAmAjika, ArWika va rAjanIwika pakRoM kI gawiSIlawA kA varNana karawA hE 
+kim,sWAna_4,saMskqwi_1,janasaMKyA_1,wyax,sAmAjika_1,ArWika_1,rAjanIwika_1,pakRa_4,gawiSIlawA_1,varNana+kara_2-wA_hE_1
+1,2,3,4,5,6,7,8,9,10,11
+,,,,,,,,,,
+,,,,,,,,pl,,
+2:quant,3:r6,11:k1,11:k1,6:mod,9:mod,9:mod,9:mod,10:r6,11:k2,0:main
+,,,,2:coref,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+Affirmative
+conj:[6,7,8]

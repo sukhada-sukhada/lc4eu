@@ -1,0 +1,8 @@
+(LTOP-INDEX h0 e12)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop pres indicative - -)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h16 x15 h18 h19)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _play_v_1 h7 e8 x2 x15)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _game_n_1 h14 x15)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30100 _may_v_modal h11 e12 h13)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)

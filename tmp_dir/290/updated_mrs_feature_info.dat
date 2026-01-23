@@ -1,0 +1,5 @@
+(LTOP-INDEX h0 e6)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h1 x9 h3 h4)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 10000 _race_n_of h8 x9 i10)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _start_v_1 h5 e6 x9)
+(id-SF-TENSE-MOOD-PROG-PERF 20000 prop past indicative - -)

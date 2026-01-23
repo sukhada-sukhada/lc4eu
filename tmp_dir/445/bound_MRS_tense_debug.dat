@@ -1,0 +1,8 @@
+(rule-rel-values  tense  id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _eat_v_1 h18 e19  prop past indicative - - x8 x17)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL 41000 _but_c h1 e2 u3 e19 u5 h6)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 30000 neg h13 e14 h15)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 20000 _food_n_1 h16 x17)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 10000 pron h7 x8)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _a_q h22 x17 h24 h25)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h9 x8 h11 h12)

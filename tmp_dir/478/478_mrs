@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e14
+RELS: < 
+[ _study_v_1 LBL: h13 ARG0: e14 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x23 ARG2: x18 ]
+[ def_explicit_q LBL: h5 ARG0: x18 [ x NUM: pl PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ poss LBL: h17 ARG0: e2 ARG1: x18 ARG2: x21 ]
+[ _replica_n_of LBL: h17 ARG0: x18 ARG1: i19 ]
+[ _pattern_n_1 LBL: h20 ARG0: x21 [ x NUM: sg PERS: 3 ] ]
+[ _geography_n_1 LBL: h22 ARG0: x23 [ x NUM: sg PERS: 3 ] ]
+[ _this_q_dem LBL: h9 ARG0: x21 RSTR: h11 BODY: h12 ]
+[ _a_q LBL: h24 ARG0: x23 RSTR: h26 BODY: h27 ] >
+HCONS: < h0 qeq h13 h11 qeq h20 h26 qeq h22 h7 qeq h17 > ]

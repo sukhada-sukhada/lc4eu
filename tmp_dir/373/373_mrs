@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _happy_a_with LBL: h18 ARG0: e19 [ e SF: ques TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: u21 ]
+[ which_q LBL: h14 ARG0: i13 RSTR: h16 BODY: h17 ]
+[ named LBL: h1 ARG0: x2 CARG: "Abrama" ]
+[ measure LBL: h18 ARG0: e9 ARG1: e19 ARG2: i13 ]
+[ abstr_deg LBL: h12 ARG0: i13 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h16 qeq h12 h6 qeq h1 > ]

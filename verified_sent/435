@@ -1,14 +1,11 @@
-<sent_id=435>
 #rAma wo ayegA.
 rAma,A_1-gA_1
 1,2
-per/male,
+per male,
 ,
 2:k1,0:main
 ,
-wo_1,
+assertion,
 ,
-,
-%affirmative
-</sent_id>
+affirmative
 

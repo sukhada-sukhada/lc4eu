@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e36
+RELS: < 
+[ _call_v_1 LBL: h35 ARG0: e36 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x20 ARG2: x27 ]
+[ def_explicit_q LBL: h5 ARG0: x34 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ named LBL: h26 ARG0: x27 CARG: "Rama" ]
+[ named LBL: h19 ARG0: x20 CARG: "Mohana" ]
+[ poss LBL: h33 ARG0: e2 ARG1: x34 ARG2: x10 ]
+[ _school_n_1 LBL: h33 ARG0: x34 ]
+[ pron LBL: h9 ARG0: x10 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ pronoun_q LBL: h11 ARG0: x10 RSTR: h13 BODY: h14 ]
+[ proper_q LBL: h29 ARG0: x27 RSTR: h31 BODY: h32 ]
+[ proper_q LBL: h22 ARG0: x20 RSTR: h24 BODY: h25 ]
+[ _to_p LBL: h35 ARG0: e16 ARG1: e36 ARG2: x34 ] >
+HCONS: < h0 qeq h35 h13 qeq h9 h24 qeq h19 h31 qeq h26 h7 qeq h33 > ]

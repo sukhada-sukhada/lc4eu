@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e32
+RELS: < 
+[ _ask_v_1 LBL: h31 ARG0: e32 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x17 ARG2: x2 ARG3: h35 ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _make_v_cause LBL: h19 ARG0: e20 ARG1: x2 ARG2: h22 ]
+[ _eat_v_1 LBL: h25 ARG0: e26 ARG1: x30 ARG2: x24 ]
+[ _mother_n_of LBL: h16 ARG0: x17 [ x NUM: sg PERS: 3 ] ARG1: i18 ]
+[ _food_n_1 LBL: h23 ARG0: x24 [ x NUM: sg PERS: 3 ] ]
+[ _child_n_1 LBL: h29 ARG0: x30 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h36 ARG0: x24 RSTR: h38 BODY: h39 ]
+[ _the_q LBL: h8 ARG0: x30 RSTR: h10 BODY: h11 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ _the_q LBL: h12 ARG0: x17 RSTR: h14 BODY: h15 ] >
+HCONS: < h0 qeq h31 h10 qeq h29 h14 qeq h16 h22 qeq h25 h35 qeq h19 h38 qeq h23 h6 qeq h1 > ]

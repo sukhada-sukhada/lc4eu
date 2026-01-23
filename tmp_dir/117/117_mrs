@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e12
+RELS: < 
+[ _read_v_1 LBL: h11 ARG0: e12 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x16 ]
+[ _book_n_of LBL: h15 ARG0: x16 [ x NUM: pl PERS: 3 ] ARG1: i17 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: pl PERS: 1 PT: std ] ]
+[ _the_q LBL: h7 ARG0: x16 RSTR: h9 BODY: h10 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h11 h5 qeq h1 h9 qeq h15 > ]

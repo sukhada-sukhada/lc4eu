@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e19
+RELS: < 
+[ _buy_v_1 LBL: h18 ARG0: e19 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x23 ]
+[ named LBL: h11 ARG0: x12 CARG: "Mohana" ]
+[ _book_n_of LBL: h22 ARG0: x23 [ x NUM: sg PERS: 3 ] ARG1: i24 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _a_q LBL: h25 ARG0: x23 RSTR: h27 BODY: h28 ]
+[ proper_q LBL: h14 ARG0: x12 RSTR: h16 BODY: h17 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _because+of_p LBL: h18 ARG0: e8 ARG1: e19 ARG2: x12 ] >
+HCONS: < h0 qeq h18 h16 qeq h11 h27 qeq h22 h5 qeq h1 > ]

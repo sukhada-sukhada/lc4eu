@@ -1,0 +1,8 @@
+(rule-rel-values  tensemodal  id-MRS_concept-LBL-ARG0-ARG1 30000 _might_v_modal h17 e18 ques pres indicative - - h19)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e18)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 30000 _live_v_1 h20 e21 x2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 20000 place_n h7 x8)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 which_q h13 x8 h15 h16)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20010 loc_nonsp h20 e10 e21 x8)

@@ -1,0 +1,6 @@
+(rule-rel-values LTOP-modal-verb  Restr-Restricted h25 h26)
+(rule-rel-values defimplicitq  Restr-Restricted  h16  h20)
+(rule-rel-values kAryakAraNa Restr-Restricted h0 h29)
+(rule-rel-values kAryakAraNa Restr-Restricted h31 h1)
+(rule-rel-values kAryakAraNa Restr-Restricted h32 h23)
+(rule-rel-values mrs-info_q  Restr-Restricted  h8  h4)

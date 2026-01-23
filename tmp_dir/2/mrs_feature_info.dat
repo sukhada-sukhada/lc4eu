@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 n3)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x5 h6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 place_n h8 x9)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 which_q h10 x11 h12 h13)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20010 _from_p_dir h14 e15 e16 x17)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _come_v_1 h18 e19 x20)

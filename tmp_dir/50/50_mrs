@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e22
+RELS: < 
+[ _go_v_1 LBL: h21 ARG0: e22 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ _school_n_1 LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ]
+[ _city_n_1 LBL: h24 ARG0: x25 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _a_q LBL: h26 ARG0: x20 RSTR: h28 BODY: h29 ]
+[ _the_q LBL: h15 ARG0: x25 RSTR: h17 BODY: h18 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _to_p LBL: h21 ARG0: e8 ARG1: e22 ARG2: x20 ]
+[ _in_p LBL: h21 ARG0: e12 ARG1: e22 ARG2: x25 ] >
+HCONS: < h0 qeq h21 h17 qeq h24 h28 qeq h19 h5 qeq h1 > ]

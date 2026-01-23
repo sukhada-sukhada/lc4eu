@@ -1,0 +1,4 @@
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 n3)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x5 h6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 neg h8 e9 h10)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _good_a_at-for-of h11 e12 x13 u14)

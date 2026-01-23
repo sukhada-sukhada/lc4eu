@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e30
+RELS: < 
+[ _arrive_v_1 LBL: h29 ARG0: e30 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x14 ]
+[ def_explicit_q LBL: h5 ARG0: i28 RSTR: h7 BODY: h8 ]
+[ dofw LBL: h24 ARG0: x25 CARG: "Tue" ]
+[ named LBL: h13 ARG0: x14 CARG: "Rama" ]
+[ _on_p_temp LBL: h29 ARG0: e10 ARG1: e30 ARG2: i28 ]
+[ poss LBL: h27 ARG0: e2 ARG1: i28 ARG2: x25 ]
+[ _morning_n_of LBL: h27 ARG0: i28 ]
+[ proper_q LBL: h20 ARG0: x25 RSTR: h22 BODY: h23 ]
+[ proper_q LBL: h16 ARG0: x14 RSTR: h18 BODY: h19 ] >
+HCONS: < h0 qeq h29 h18 qeq h13 h22 qeq h24 h7 qeq h27 > ]

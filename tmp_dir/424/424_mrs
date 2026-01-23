@@ -1,0 +1,15 @@
+[ LTOP: h0
+INDEX: e34
+RELS: < 
+[ _follow_v_1 LBL: h33 ARG0: e34 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x13 ARG2: u36 ]
+
+[ _go_v_1 LBL: h27 ARG0: e28 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x6 ]
+[ named LBL: h12 ARG0: x13 CARG: "Siwa" ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ _as_x_subord LBL: h19 ARG0: e20 ARG1: h21 ARG2: h22 ]
+[ _forest_n_of LBL: h30 ARG0: x31 [ x NUM: sg PERS: 3 ] ARG1: i32 ]
+[ proper_q LBL: h15 ARG0: x13 RSTR: h17 BODY: h18 ]
+[ _the_q LBL: h23 ARG0: x31 RSTR: h25 BODY: h26 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ]
+[ _to_p LBL: h27 ARG0: e2 ARG1: e28 ARG2: x31 ] >
+HCONS: < h0 qeq h19 h10 qeq h5 h17 qeq h12 h21 qeq h33 h22 qeq h27 h25 qeq h30 > ]

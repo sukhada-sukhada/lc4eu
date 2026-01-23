@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e21
+RELS: < 
+[ _can_v_modal LBL: h20 ARG0: e21 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h22 ]
+[ _observe_v_to LBL: h13 ARG0: e14 ARG1: x2 ARG2: x12 ]
+[ _sky_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x PERS: 2 ] ]
+[ _the_q LBL: h7 ARG0: x12 RSTR: h9 BODY: h10 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _clear_a_of LBL: h13 ARG0: e18 ARG1: e14 ] >
+HCONS: < h0 qeq h20 h22 qeq h13 h5 qeq h1 h9 qeq h11 > ]

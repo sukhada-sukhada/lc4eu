@@ -1,0 +1,7 @@
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-ARG1-ARG2 10000 loc_nonsp h1 e2 e3 x4)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 def_implicit_q h5 x6 h7 h8)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0 10000 time_n h9 x10)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1 10000 _yesterday_a_1 h11 e12 x13)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 20000 _rain_v_1 h14 e15)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 20000 _rain_v_1 h14 e15)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1 10000 _yesterday_a_1 h11 e12 x13)

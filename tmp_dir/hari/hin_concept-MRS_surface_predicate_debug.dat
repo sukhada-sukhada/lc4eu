@@ -1,0 +1,6 @@
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 80000 xe_1 _give_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 80000 xe_1 _give_v_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 Pala_1 _fruit_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 Pala_1 _fruit_n_1)
+(rule-rel-values conj id-MRS_concept 50500 _and_c)
+(rule-rel-values exclusive id-MRS_concept 11000 _only_a_1)

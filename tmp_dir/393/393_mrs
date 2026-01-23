@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e10
+RELS: < 
+[ _near_p LBL: h9 ARG0: e10 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x17 ARG2: x14 ]
+[ _house_n_of LBL: h13 ARG0: x14 [ x NUM: sg PERS: 3 ] ARG1: i15 ]
+[ _car_n_1 LBL: h16 ARG0: x17 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h1 ARG0: x14 RSTR: h3 BODY: h4 ]
+[ _the_q LBL: h5 ARG0: x17 RSTR: h7 BODY: h8 ] >
+HCONS: < h0 qeq h9 h3 qeq h13 h7 qeq h16 > ]

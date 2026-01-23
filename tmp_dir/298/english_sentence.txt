@@ -1,0 +1,11 @@
+The turtle is walking, slowly.
+The turtle is walking, slow.
+The turtle is walking, slowly.
+The turtle is walking slowly.
+The turtle is walking, slow.
+The turtle is walking slow.
+The turtle is slowly walking.
+The turtle slowly is walking.
+The turtle is walking slowly.
+The turtle is walking slow.
+

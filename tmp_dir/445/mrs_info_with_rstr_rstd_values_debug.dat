@@ -1,0 +1,5 @@
+(rule-rel-values viroXi-LTOP-verb-neg Restr-Restricted h0 h1)
+(rule-rel-values viroXi-LTOP-verb-neg Restr-Restricted h6 h13)
+(rule-rel-values viroXi-LTOP-verb-neg Restr-Restricted h15 h18)
+(rule-rel-values mrs-info_q  Restr-Restricted  h24  h16)
+(rule-rel-values mrs-info_q  Restr-Restricted  h11  h7)

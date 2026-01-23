@@ -1,0 +1,14 @@
+[ LTOP: h0
+INDEX: e32
+RELS: < 
+[ _go_v_1 LBL: h31 ARG0: e32 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: + ] ARG1: x6 ]
+[ def_implicit_q LBL: h16 ARG0: x15 RSTR: h18 BODY: h19 ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ loc_nonsp LBL: h31 ARG0: e13 ARG1: e32 ARG2: x15 ]
+[ _yesterday_a_1 LBL: h22 ARG0: e23 ARG1: x15 ]
+[ _school_n_1 LBL: h29 ARG0: x30 [ x NUM: sg PERS: 3 ] ]
+[ time_n LBL: h22 ARG0: x15 ]
+[ _the_q LBL: h25 ARG0: x30 RSTR: h27 BODY: h28 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ]
+[ _to_p LBL: h31 ARG0: e2 ARG1: e32 ARG2: x30 ] >
+HCONS: < h0 qeq h31 h10 qeq h5 h18 qeq h22 h27 qeq h29 > ]

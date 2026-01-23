@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e28
+RELS: < 
+[ _eat_v_1 LBL: h27 ARG0: e28 [ e SF: ques TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: x26 ]
+[ named LBL: h5 ARG0: x6 CARG: "Rama" ]
+[ _for_p LBL: h27 ARG0: e15 ARG1: e28 ARG2: x13 ]
+[ neg LBL: h22 ARG0: e23 ARG1: h24 ]
+[ reason LBL: h12 ARG0: x13 ]
+[ _food_n_1 LBL: h25 ARG0: x26 [ x NUM: pl PERS: 3 ] ]
+[ which_q LBL: h18 ARG0: x13 RSTR: h20 BODY: h21 ]
+[ udef_q LBL: h1 ARG0: x26 RSTR: h3 BODY: h4 ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ] >
+HCONS: < h0 qeq h22 h10 qeq h5 h20 qeq h12 h24 qeq h27 h3 qeq h25 > ]

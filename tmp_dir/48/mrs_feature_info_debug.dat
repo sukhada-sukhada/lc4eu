@@ -1,0 +1,5 @@
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _twinkle_v_1 h1 e2 x3)
+(rule-rel-values mrs-info-other id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h4 x5 h6 h7)
+(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0 10000 _star_n_1 h8 x9)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0 10000 _star_n_1 h8 x9)
+(rule-rel-values printMRSfacts  MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _twinkle_v_1 h1 e2 x3)

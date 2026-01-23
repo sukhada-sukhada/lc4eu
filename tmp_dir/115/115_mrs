@@ -1,0 +1,16 @@
+[ LTOP: h0
+INDEX: e31
+RELS: < 
+[ _may_v_modal LBL: h30 ARG0: e31 [ e SF: ques TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h32 ]
+[ def_implicit_q LBL: h11 ARG0: x10 RSTR: h13 BODY: h14 ]
+[ def_implicit_q LBL: h21 ARG0: x20 RSTR: h23 BODY: h24 ]
+[ loc_nonsp LBL: h36 ARG0: e8 ARG1: e37 ARG2: x10 ]
+[ loc_nonsp LBL: h36 ARG0: e18 ARG1: e37 ARG2: x20 ]
+[ _go_v_1 LBL: h36 ARG0: e37 ARG1: x2 ]
+[ _home_p LBL: h33 ARG0: e34 ARG1: x10 ]
+[ _tomorrow_a_1 LBL: h27 ARG0: e28 ARG1: x20 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ place_n LBL: h33 ARG0: x10 ]
+[ time_n LBL: h27 ARG0: x20 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h30 h13 qeq h33 h23 qeq h27 h32 qeq h36 h5 qeq h1 > ]

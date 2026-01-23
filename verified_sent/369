@@ -1,13 +1,11 @@
-<sent_id=369>
-#billI Ora kuwwA 
-billI_1,kuwwA_1,[conj_1]
-1,2,3
-anim,anim,
-,,
-,,
-,,
+#kuwwA Ora billI
+billI_1,kuwwA_1
+1,2
+anim,anim
+,
+,
+,
 def,def
-,,
-3:op1,3:op2,
+,
 
-</sent_id>
+conj:[1,2]

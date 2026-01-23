@@ -1,0 +1,9 @@
+The boy is reading a book, in the school, in the garden.
+The boy is reading a book, in the garden, in the school.
+The boy is reading a book, in the garden in the school.
+The boy is reading a book in the school, in the garden.
+The boy is reading a book, in the school in the garden.
+The boy is reading a book in the garden, in the school.
+The boy is reading a book in the garden in the school.
+The boy is reading a book in the school in the garden.
+

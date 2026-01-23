@@ -1,0 +1,4 @@
+(rule-rel-values defexpq Restr-Restricted  h13  h24)
+(rule-rel-values viroXi-LTOP-verb Restr-Restricted h0 h1)
+(rule-rel-values viroXi-LTOP-verb Restr-Restricted h6 h21)
+(rule-rel-values mrs-info_q  Restr-Restricted  h19  h15)

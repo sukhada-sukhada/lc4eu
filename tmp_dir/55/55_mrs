@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e25
+RELS: < 
+[ _ask_v_1 LBL: h24 ARG0: e25 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x22 ARG3: x8 ]
+[ card LBL: h21 ARG0: e18 ARG1: x22 CARG: "1" ]
+[ _question_n_about LBL: h21 ARG0: x22 [ x NUM: sg PERS: 3 ] ARG1: i23 ]
+[ pron LBL: h7 ARG0: x8 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ udef_q LBL: h13 ARG0: x22 RSTR: h15 BODY: h16 ]
+[ pronoun_q LBL: h9 ARG0: x8 RSTR: h11 BODY: h12 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h24 h11 qeq h7 h15 qeq h21 h5 qeq h1 > ]

@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e17
+RELS: < 
+[ _must_v_modal LBL: h16 ARG0: e17 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h18 ]
+[ _read_v_1 LBL: h9 ARG0: e10 ARG1: x20 ARG2: x22 ]
+[ _book_n_of LBL: h21 ARG0: x22 [ x NUM: sg PERS: 3 ] ARG1: i23 ]
+[ _boy_n_1 LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h1 ARG0: x22 RSTR: h3 BODY: h4 ]
+[ _the_q LBL: h5 ARG0: x20 RSTR: h7 BODY: h8 ]
+[ _new_a_1 LBL: h21 ARG0: e14 ARG1: x22 ] >
+HCONS: < h0 qeq h16 h18 qeq h9 h3 qeq h21 h7 qeq h19 > ]

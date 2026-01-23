@@ -1,0 +1,4 @@
+(MRS_info id-MRS_concept 20000 numbered_hour)
+(MRS_info id-MRS_concept 20010 def_implicit_q)
+(MRS_info id-MRS_concept 10010 proper_q)
+(MRS_info id-MRS_concept 10000 named)

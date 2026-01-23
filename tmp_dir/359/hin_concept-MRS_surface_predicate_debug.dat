@@ -1,0 +1,5 @@
+(rule-rel-values unknown-NN id-hin_concept-MRS_concept  NN_u_unknown 20000 SruwaleKa_1 _leviathan_n_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 20000 SruwaleKa_1 _leviathan_n_1)
+(rule-rel-values mrs-rels id-hin_concept-MRS_concept 30000 paDa_1 _read_v_1)
+(rule-rel-values print-mrs-rels id-hin_concept-MRS_concept 30000 paDa_1 _read_v_1)
+(rule-rel-values mrsCon_yes id-MRS_concept 20010 _the_q )

@@ -1,0 +1,6 @@
+(LTOP-INDEX  h0 e2)
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _bad_a_at h18 e19 ques untensed indicative - - x8 i21)
+(tense-MRS_info id-MRS_concept-LBL-ARG0-L_INDEX-R_INDEX-L_HNDL-R_HNDL 20500 _or_c h1 e2 ques pres indicative - - e15 e19 h14 h18)
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _good_a_at-for-of h14 e15 prop pres indicative - - x8 u17)
+(MRS_info  id-MRS_concept-LBL-ARG0-CARG 10000 named h7 x8 Rama)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h10 x8 h12 h13)

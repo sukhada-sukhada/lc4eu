@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e15
+RELS: < 
+[ _live_v_1 LBL: h14 ARG0: e15 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x18 ]
+[ neg LBL: h9 ARG0: e10 ARG1: h11 ]
+[ _creature_n_1 LBL: h17 ARG0: x18 [ x NUM: pl PERS: 3 ] ]
+[ _water_n_1 LBL: h12 ARG0: x13 [ x NUM: sg PERS: 3 ] ]
+[ udef_q LBL: h5 ARG0: x18 RSTR: h7 BODY: h8 ]
+[ _a_q LBL: h19 ARG0: x13 RSTR: h21 BODY: h22 ]
+[ _without_p LBL: h14 ARG0: e2 ARG1: e15 ARG2: x13 ] >
+HCONS: < h0 qeq h9 h11 qeq h14 h21 qeq h12 h7 qeq h17 > ]

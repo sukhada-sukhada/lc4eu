@@ -1,0 +1,5 @@
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 10000 named h1 x2 n3)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h4 x5 h6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 -20000 subord h8 e9 h10 h11)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _laugh_v_at h15 e16 u17 )
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _talk_v_about h12 e13 x14)

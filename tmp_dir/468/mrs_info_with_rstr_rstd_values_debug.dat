@@ -1,0 +1,4 @@
+(rule-rel-values  loc_nonsp_verb loc_nonsp_bind_notrequired 20000)
+(rule-rel-values mrs-info_q  Restr-Restricted  h6  h1)
+(rule-rel-values LTOP-rstd  Restr-Restricted  h0 h18)
+(rule-rel-values loc_nonsp_verb-bind Restr-Restricted   h14 h16)

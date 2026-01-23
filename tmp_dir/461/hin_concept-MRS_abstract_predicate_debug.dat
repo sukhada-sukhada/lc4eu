@@ -1,0 +1,3 @@
+(rule-rel-values aps_of_here id-MRS_concept 30000 place_n)
+(rule-rel-values aps_of_here id-MRS_concept 30000 def_implicit_q)
+(rule-rel-values aps_of_here id-MRS_concept 30000 loc_nonsp)

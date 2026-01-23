@@ -1,0 +1,8 @@
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x4 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30001 _for_p h7 e8 x9 x10)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h13 x14 h15 h16)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 40000 _challenge_v_to h20 e21 x22 x23 u24)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 _a_q h25 x26 h27 h28)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _race_n_of h17 x18 i19)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _turtle_n_1 h11 x12)

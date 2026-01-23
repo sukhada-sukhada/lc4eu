@@ -1,0 +1,6 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < [ _dog_n_1 LBL: h4 ARG0: x5 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h6 ARG0: x5 RSTR: h8 BODY: h9 ]
+[ unknown LBL: h1 ARG0: e2 ARG: x5 ] >
+HCONS: < h0 qeq h1 h8 qeq h4 > ]

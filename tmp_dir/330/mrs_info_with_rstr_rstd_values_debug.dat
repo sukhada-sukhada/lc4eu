@@ -1,0 +1,6 @@
+(rule-rel-values mrs-info_q  Restr-Restricted  h10  h5)
+(rule-rel-values LTOP-subord Restr-Restricted  h0 h12)
+(rule-rel-values LTOP-subord Restr-Restricted  h15 h22)
+(rule-rel-values LTOP-subord Restr-Restricted  h14 h27)
+(rule-rel-values mrs-info_q  Restr-Restricted  h33  h25)
+(rule-rel-values mrs-info_q  Restr-Restricted  h18  h20)

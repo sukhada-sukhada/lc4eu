@@ -1,6 +1,5 @@
-<sent_id=114>
 #kyA mEM jA sakawA hUz?
-$speaker,jA_1-0_sakawA_hE_3
+speaker,jA_1-0_sakawA_hE_3
 1,2
 anim,
 ,
@@ -8,7 +7,4 @@ anim,
 ,
 ,
 ,
-,
-%yn_interrogative
-</sent_id>
-
+yn_interrogative

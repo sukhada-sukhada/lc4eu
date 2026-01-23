@@ -1,0 +1,5 @@
+(rule-rel-values  coref  id-MRS_concept 30010 pronoun_q )
+(rule-rel-values  coref  id-MRS_concept 30000 pron)
+(rule-rel-values mrs_poss_pron id-MRS_concept 40010 def_explicit_q)
+(rule-rel-values mrs_poss_pron id-MRS_concept 40001 poss)
+(rule-rel-values mrs_every_q  id-MRS_concept 20010 every_q)

@@ -1,0 +1,7 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _attempt_v_1 h18 e19 prop past indicative - - x8 h21)
+(LTOP-INDEX  h0 e19)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10000 _this_q_dem h7 x8 h9 h10)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _spread_v_1 h11 e12 x8 x16)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 20000 _knowledge_n_of h15 x16 i17)
+(MRS_info  id-MRS_concept-LBL-ARG0 10010 generic_entity h1 x8)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 udef_q h3 x16 h5 h6)

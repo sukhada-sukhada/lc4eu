@@ -1,0 +1,5 @@
+(id-hin_concept-MRS_concept 10000 ladakA_1 _boy_n_1)
+(id-hin_concept-MRS_concept 20000 KAnA_1 _food_n_1)
+(MRS_info id-MRS_concept 20010 _a_q)
+(id-hin_concept-MRS_concept 40000 KA_1 _eat_v_1)
+(MRS_info id-MRS_concept 10010 _the_q )

@@ -1,0 +1,7 @@
+(LTOP-INDEX h0 e2)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h12 x17 h14 h15)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 proper_q h8 x6 h10 h11)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _boy_n_1 h16 x17)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p h1 e2 x17 x6)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 20000 named h5 x6 Xilli)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop pres indicative - -)

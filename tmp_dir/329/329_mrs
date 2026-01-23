@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e16
+RELS: < 
+[ _tell_v_1 LBL: h15 ARG0: e16 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x20 ]
+[ named LBL: h8 ARG0: x9 CARG: "Mohana" ]
+[ named LBL: h1 ARG0: x2 CARG: "Rama" ]
+[ _story_n_of LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ARG1: i21 ]
+[ _a_q LBL: h22 ARG0: x20 RSTR: h24 BODY: h25 ]
+[ proper_q LBL: h11 ARG0: x9 RSTR: h13 BODY: h14 ]
+[ proper_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ] >
+HCONS: < h0 qeq h15 h13 qeq h8 h24 qeq h19 h6 qeq h1 > ]

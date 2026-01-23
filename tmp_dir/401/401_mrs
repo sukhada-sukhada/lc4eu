@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e15
+RELS: < 
+[ _come_v_1 LBL: h14 ARG0: e15 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ]
+[ _after_p LBL: h14 ARG0: e18 ARG1: e15 ARG2: x13 ]
+[ _train_n_of LBL: h1 ARG0: x2 [ x NUM: sg PERS: 3 ] ARG1: i3 ]
+[ _sunrise_n_1 LBL: h12 ARG0: x13 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h4 ARG0: x2 RSTR: h6 BODY: h7 ]
+[ _the_q LBL: h8 ARG0: x13 RSTR: h10 BODY: h11 ] >
+HCONS: < h0 qeq h14 h10 qeq h12 h6 qeq h1 > ]

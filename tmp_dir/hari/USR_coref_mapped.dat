@@ -1,0 +1,11 @@
+#hari ne hi apna phala riya uma aur manu ko nahi diya.
+hari,$apanA, Pala_1, riyA, umA, manu, nahIM_1, xe_1-yA_1
+1,2,3,4,5,6,7,8
+per male,per male,,per female,per female,per male,,
+,,pl,,,,,
+8:k1,3:r6,8:k2,8:k4,8:k4,8:k4,8:neg,0:main
+,1:coref,,,,,,
+hI_2,,,,,,,
+,,,,,,,
+negative
+conj:[4,5,6]

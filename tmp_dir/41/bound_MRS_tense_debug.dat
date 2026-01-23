@@ -1,0 +1,8 @@
+(rule-rel-values  tense  id-MRS_concept-LBL-ARG0-ARG1-ARG2 50000 _kick_v_1 h14 e15  prop past indicative - - x2 x19)
+(rule-rel-values  print-ltop LTOP-INDEX  h0 e15)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 30000 _boy_n_1 h18 x19)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 _the_q h7 x19 h9 h10)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 40000 _slow_a_1 h14 e12 e15)
+(rule-rel-values  print-mrs  id-MRS_concept-LBL-ARG0-ARG1 20000 _blind_a_1 h18 e21 x19)

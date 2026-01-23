@@ -1,0 +1,13 @@
+[ LTOP: h0
+INDEX: e24
+RELS: < 
+[ _play_v_1 LBL: h23 ARG0: e24 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x30 ARG2: u26 ]
+[ def_explicit_q LBL: h11 ARG0: x30 [ x NUM: sg PERS: 3 ] RSTR: h13 BODY: h14 ]
+[ poss LBL: h29 ARG0: e8 ARG1: x30 ARG2: x2 ]
+[ _garden_n_1 LBL: h27 ARG0: x28 [ x NUM: sg PERS: 3 ] ]
+[ _friend_n_1 LBL: h29 ARG0: x30 ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _the_q LBL: h19 ARG0: x28 RSTR: h21 BODY: h22 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _in_p LBL: h23 ARG0: e16 ARG1: e24 ARG2: x28 ] >
+HCONS: < h0 qeq h23 h13 qeq h29 h21 qeq h27 h5 qeq h1 > ]

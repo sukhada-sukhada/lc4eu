@@ -1,0 +1,6 @@
+(MRS_info id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x4 h5 h6)
+(MRS_info id-MRS_concept-LBL-ARG0-CARG 20000 named h7 x8 n9)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 proper_q h10 x11 h12 h13)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30100 _might_v_modal h18 e19 h20)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _speak_v_to h14 e15 x16 x17)

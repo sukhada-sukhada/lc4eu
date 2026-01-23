@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e12
+RELS: < 
+[ _change_v_1 LBL: h11 ARG0: e12 [ e SF: prop TENSE: pres MOOD: indicative PROG: + PERF: - ] ARG1: x19 ]
+[ def_explicit_q LBL: h5 ARG0: x19 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ poss LBL: h18 ARG0: e2 ARG1: x19 ARG2: x10 ]
+[ _approach_n_to LBL: h18 ARG0: x19 ARG1: i20 ]
+[ _geography_n_1 LBL: h9 ARG0: x10 [ x NUM: sg PERS: 3 ] ]
+[ _a_q LBL: h14 ARG0: x10 RSTR: h16 BODY: h17 ] >
+HCONS: < h0 qeq h11 h16 qeq h9 h7 qeq h18 > ]

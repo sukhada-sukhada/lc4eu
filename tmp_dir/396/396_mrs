@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e14
+RELS: < 
+[ _do_v_1 LBL: h13 ARG0: e14 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: + ] ARG1: x2 ARG2: x8 ]
+[ _work_n_1 LBL: h7 ARG0: x8 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x NUM: sg PERS: 1 PT: std ] ]
+[ _the_q LBL: h9 ARG0: x8 RSTR: h11 BODY: h12 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ] >
+HCONS: < h0 qeq h13 h11 qeq h7 h5 qeq h1 > ]

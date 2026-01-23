@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e21
+RELS: < 
+[ _fill_v_cause LBL: h20 ARG0: e21 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x6 ARG2: x13 ]
+[ named LBL: h5 ARG0: x6 CARG: "Hari" ]
+[ _water_n_1 LBL: h12 ARG0: x13 [ x NUM: sg PERS: 3 ] ]
+[ _pot_n_1 LBL: h18 ARG0: x19 [ x NUM: sg PERS: 3 ] ]
+[ proper_q LBL: h8 ARG0: x6 RSTR: h10 BODY: h11 ]
+[ _a_q LBL: h24 ARG0: x13 RSTR: h26 BODY: h27 ]
+[ _the_q LBL: h14 ARG0: x19 RSTR: h16 BODY: h17 ]
+[ _in_p LBL: h20 ARG0: e2 ARG1: e21 ARG2: x19 ] >
+HCONS: < h0 qeq h20 h10 qeq h5 h16 qeq h18 h26 qeq h12 > ]

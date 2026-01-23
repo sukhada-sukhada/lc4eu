@@ -1,0 +1,12 @@
+[ LTOP: h0
+INDEX: e21
+RELS: < 
+[ _challenge_v_to LBL: h20 ARG0: e21 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x2 ARG2: x12 ARG3: u24 ]
+[ _race_n_of LBL: h17 ARG0: x18 [ x NUM: sg PERS: 3 ] ARG1: i19 ]
+[ _turtle_n_1 LBL: h11 ARG0: x12 [ x NUM: sg PERS: 3 ] ]
+[ pron LBL: h1 ARG0: x2 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ _a_q LBL: h25 ARG0: x18 RSTR: h27 BODY: h28 ]
+[ _the_q LBL: h13 ARG0: x12 RSTR: h15 BODY: h16 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ _for_p LBL: h20 ARG0: e8 ARG1: e21 ARG2: x18 ] >
+HCONS: < h0 qeq h20 h15 qeq h11 h27 qeq h17 h5 qeq h1 > ]

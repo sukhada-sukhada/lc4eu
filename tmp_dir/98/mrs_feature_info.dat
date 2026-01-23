@@ -1,0 +1,8 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30001 poss h1 e2 x3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 def_explicit_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30001 _in_p h9 e10 e11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h15 x16 h17 h18)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h19 x20 h21 h22)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _necklace_n_1 h25 x26)
+(MRS_info id-MRS_concept-LBL-ARG0 30000 _neck_n_1 h23 x24)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _woman_n_1 h13 x14)

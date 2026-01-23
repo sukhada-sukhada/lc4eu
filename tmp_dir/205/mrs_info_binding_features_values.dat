@@ -1,0 +1,8 @@
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _from_p h14 e2 e15 x10)
+(LTOP-INDEX h0 e15)
+(id-SF-TENSE-MOOD-PROG-PERF 30000 prop past indicative - -)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h5 x10 h7 h8)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h17 x12 h19 h20)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _come_v_1 h14 e15 x12)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _palace_n_1 h9 x10)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 10000 _king_n_of h11 x12 i13)

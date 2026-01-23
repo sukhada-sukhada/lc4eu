@@ -1,5 +1,4 @@
-<sent_id=44>
-#bagIce meM billiyAz WIM.
+#bagIce meM billiyAz WIM. 
 bagIcA_1,billI_1,hE_1-past
 1,2,3
 ,anim,
@@ -8,7 +7,5 @@ bagIcA_1,billI_1,hE_1-past
 ,,
 def,,
 ,,
-,,
-%affirmative
-</sent_id>
+affirmative
 

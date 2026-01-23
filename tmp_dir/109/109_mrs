@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e18
+RELS: < 
+[ _might_v_modal LBL: h17 ARG0: e18 [ e SF: ques TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: h19 ]
+[ _live_v_1 LBL: h20 ARG0: e21 ARG1: x2 ]
+[ place_n LBL: h7 ARG0: x8 ]
+[ pron LBL: h1 ARG0: x2 [ x PERS: 2 ] ]
+[ which_q LBL: h13 ARG0: x8 RSTR: h15 BODY: h16 ]
+[ pronoun_q LBL: h3 ARG0: x2 RSTR: h5 BODY: h6 ]
+[ loc_nonsp LBL: h20 ARG0: e10 ARG1: e21 ARG2: x8 ] >
+HCONS: < h15 qeq h7 h19 qeq h20 h5 qeq h1 > ]

@@ -1,0 +1,7 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 10001 _without_p h1 e2 e3 x4)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 udef_q h5 x6 h7 h8)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 neg h9 e10 h11)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _a_q h19 x20 h21 h22)
+(MRS_info id-MRS_concept-LBL-ARG0 20000 _creature_n_1 h17 x18)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 40000 _live_v_1 h14 e15 x16)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _water_n_1 h12 x13)

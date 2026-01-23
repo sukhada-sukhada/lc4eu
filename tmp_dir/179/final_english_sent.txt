@@ -1,0 +1,4 @@
+Rama is a doctor?
+Rama is a Dr.?
+Is Rama a doctor?
+Is Rama a Dr.?

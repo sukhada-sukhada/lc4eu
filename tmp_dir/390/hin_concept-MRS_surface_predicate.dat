@@ -1,0 +1,6 @@
+(id-hin_concept-MRS_concept 40000 xe_1 _give_v_1)
+(id-hin_concept-MRS_concept 30000 kOPI_1 _coffee_n_1)
+(MRS_info id-MRS_concept 30010 _a_q)
+(id-hin_concept-MRS_concept 20000 cAya_1 _tea_n_1)
+(MRS_info id-MRS_concept 20010 _a_q)
+(MRS_info id-MRS_concept 20500 _or_c)

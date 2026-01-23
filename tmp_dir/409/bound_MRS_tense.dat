@@ -1,0 +1,8 @@
+(tense-MRS_info  id-MRS_concept-LBL-ARG0-ARG1 30000 _have_v_qmodal h21 e22 prop pres indicative - - h23)
+(LTOP-INDEX  h0 e22)
+(MRS_info  id-MRS_concept-LBL-ARG0-CARG 10000 named h5 x6 Rama)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20001 _in_p_temp h12 e2 e13 i20)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1 30000 _wake_v_up h12 e13 x6)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 _morning_n_of h19 i20)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 _the_q h15 i20 h17 h18)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 proper_q h8 x6 h10 h11)

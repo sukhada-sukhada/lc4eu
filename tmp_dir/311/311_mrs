@@ -1,0 +1,18 @@
+[ LTOP: h0
+INDEX: e46
+RELS: < 
+[ _lay_v_1 LBL: h45 ARG0: e46 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x22 ARG2: x2 ]
+[ udef_q LBL: h5 ARG0: x4 RSTR: h7 BODY: h8 ]
+[ _the_q LBL: h38 ARG0: x2 [ x NUM: sg PERS: 3 ] RSTR: h40 BODY: h41 ]
+[ def_explicit_q LBL: h17 ARG0: x43 [ x NUM: sg PERS: 3 ] RSTR: h19 BODY: h20 ]
+[ named LBL: h31 ARG0: x32 CARG: "Rama" ]
+[ compound LBL: h1 ARG0: e10 ARG1: x2 ARG2: x4 ]
+[ poss LBL: h42 ARG0: e14 ARG1: x43 ARG2: x32 ]
+[ _office_n_of LBL: h42 ARG0: x43 ARG1: i44 ]
+[ _foundation_n_1 LBL: h3 ARG0: x4 ]
+[ _stone_n_1 LBL: h1 ARG0: x2 ]
+[ pron LBL: h21 ARG0: x22 [ x GEND: m NUM: sg PERS: 3 PT: std ] ]
+[ proper_q LBL: h34 ARG0: x32 RSTR: h36 BODY: h37 ]
+[ pronoun_q LBL: h23 ARG0: x22 RSTR: h25 BODY: h26 ]
+[ _for_p LBL: h1 ARG0: e28 ARG1: x2 ARG2: x43 ] >
+HCONS: < h0 qeq h45 h19 qeq h42 h25 qeq h21 h36 qeq h31 h40 qeq h1 h7 qeq h3 > ]

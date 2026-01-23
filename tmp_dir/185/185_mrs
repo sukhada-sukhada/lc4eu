@@ -1,0 +1,11 @@
+[ LTOP: h0
+INDEX: e23
+RELS: < 
+[ _come_v_1 LBL: h22 ARG0: e23 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: x17 ]
+[ _forest_n_of LBL: h19 ARG0: x20 [ x NUM: sg PERS: 3 ] ARG1: i21 ]
+[ _king_n_of LBL: h16 ARG0: x17 [ x NUM: sg PERS: 3 ] ARG1: i18 ]
+[ _the_q LBL: h8 ARG0: x20 RSTR: h10 BODY: h11 ]
+[ _the_q LBL: h12 ARG0: x17 RSTR: h14 BODY: h15 ]
+[ _to_p LBL: h22 ARG0: e2 ARG1: e23 ARG2: x20 ]
+[ _urban_a_1 LBL: h16 ARG0: e6 ARG1: x17 ] >
+HCONS: < h0 qeq h22 h10 qeq h19 h14 qeq h16 > ]

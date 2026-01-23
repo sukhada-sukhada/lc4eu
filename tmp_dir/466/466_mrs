@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e17
+RELS: < 
+[ _intelligent_a_1 LBL: h16 ARG0: e17 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x10 ]
+[ named LBL: h9 ARG0: x10 CARG: "Arjuna" ]
+[ _child_n_1 LBL: h19 ARG0: x20 [ x NUM: pl PERS: 3 ] ]
+[ proper_q LBL: h12 ARG0: x10 RSTR: h14 BODY: h15 ]
+[ udef_q LBL: h5 ARG0: x20 RSTR: h7 BODY: h8 ]
+[ _among_p LBL: h9 ARG0: e2 ARG1: x10 ARG2: x20 ] >
+HCONS: < h14 qeq h9 h7 qeq h19 > ]

@@ -1,0 +1,2 @@
+(rule-rel-values mrs-info_q  Restr-Restricted  h3  h8)
+(rule-rel-values unknown_rstr Restr-Restricted h0 h5)

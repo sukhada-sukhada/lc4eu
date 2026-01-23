@@ -1,0 +1,14 @@
+[ LTOP: h0
+INDEX: e21
+RELS: < 
+[ _used+to_v_qmodal LBL: h20 ARG0: e21 [ e SF: prop TENSE: past MOOD: indicative PROG: - PERF: - ] ARG1: h22 ]
+[ def_explicit_q LBL: h5 ARG0: x34 [ x NUM: sg PERS: 3 ] RSTR: h7 BODY: h8 ]
+[ named LBL: h13 ARG0: x14 CARG: "Ayan" ]
+[ _study_v_1 LBL: h27 ARG0: e28 ARG1: x34 ARG2: u30 ]
+[ poss LBL: h33 ARG0: e2 ARG1: x34 ARG2: x14 ]
+[ _school_n_1 LBL: h31 ARG0: x32 [ x NUM: sg PERS: 3 ] ]
+[ _friend_n_1 LBL: h33 ARG0: x34 ]
+[ _the_q LBL: h23 ARG0: x32 RSTR: h25 BODY: h26 ]
+[ proper_q LBL: h16 ARG0: x14 RSTR: h18 BODY: h19 ]
+[ _in_p LBL: h27 ARG0: e10 ARG1: e28 ARG2: x32 ] >
+HCONS: < h0 qeq h20 h18 qeq h13 h22 qeq h27 h25 qeq h31 h7 qeq h33 > ]

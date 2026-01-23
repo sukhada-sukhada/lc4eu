@@ -1,0 +1,7 @@
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20010 superl h1 e2 x3)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 _the_q h4 x5 h6 h7)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 40000 _be_v_id h15 e16 x17 u18)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30010 _a_q h19 x20 h21 h22)
+(MRS_info id-MRS_concept-LBL-ARG0 10000 _geography_n_1 h13 x14)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _old_a_1 h10 e11 x12)
+(MRS_info id-MRS_concept-LBL-ARG0 30000 _technology_n_1 h8 x9)

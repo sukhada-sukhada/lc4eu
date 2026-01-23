@@ -1,0 +1,2 @@
+(rule-rel-values no_plural_def-singular id-GEN-NUM-PER 20000 - sg 3 )
+(rule-rel-values gnp-of-eng_pron-personal-neuter-k1 id-GEN-NUM-PER 10000 n sg  3)

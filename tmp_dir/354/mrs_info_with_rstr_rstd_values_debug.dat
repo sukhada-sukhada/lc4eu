@@ -1,0 +1,7 @@
+(rule-rel-values conj-rstr Restr-Restricted  h17 h19)
+(rule-rel-values  adjective-conjj  Restr-Restricted h0 h23)
+(rule-rel-values mrs-info_q  Restr-Restricted  h13  h8)
+(rule-rel-values  adjective-conjj  Restr-Restricted h0 h23)
+(rule-rel-values mrs-info_q  Restr-Restricted  h6  h1)
+(rule-rel-values  adjective-conjj  Restr-Restricted h0 h23)
+(rule-rel-values  adjective-conjj  Restr-Restricted h0 h23)

@@ -1,0 +1,7 @@
+(tense-MRS_info id-MRS_concept-LBL-ARG0-ARG1 30000 _go_v_1 h17 e18 ques pres indicative + - x2)
+(LTOP-INDEX  h0 e18)
+(MRS_info  id-MRS_concept-LBL-ARG0 20000 time_n h11 x12)
+(MRS_info  id-MRS_concept-LBL-ARG0 10000 pron h1 x2)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 20010 which_q h13 x12 h15 h16)
+(MRS_info  id-MRS_concept-LBL-ARG0-RSTR-BODY 10010 pronoun_q h3 x2 h5 h6)
+(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 20010 loc_nonsp h17 e8 e18 x12)

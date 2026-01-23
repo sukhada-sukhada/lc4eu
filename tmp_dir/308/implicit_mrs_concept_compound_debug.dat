@@ -1,0 +1,4 @@
+(rule-rel-values samasa id-MRS_concept 20002 compound)
+(rule-rel-values samasa id-MRS_concept 21001 udef_q)
+(rule-rel-values samasa id-MRS_concept 21000 _bus_n_1)
+(rule-rel-values samasa id-MRS_concept 20000 _stop_n_1)

@@ -1,0 +1,9 @@
+[ LTOP: h0
+INDEX: e2
+RELS: < 
+[ _in_p LBL: h1 ARG0: e2 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: - ] ARG1: x17 ARG2: x10 ]
+[ named LBL: h9 ARG0: x10 CARG: "Barawa" ]
+[ _island_n_1 LBL: h16 ARG0: x17 [ x NUM: pl PERS: 3 ] ]
+[ udef_q LBL: h5 ARG0: x17 RSTR: h7 BODY: h8 ]
+[ proper_q LBL: h12 ARG0: x10 RSTR: h14 BODY: h15 ] >
+HCONS: < h14 qeq h9 h7 qeq h16 > ]

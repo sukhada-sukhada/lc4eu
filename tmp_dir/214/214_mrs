@@ -1,0 +1,10 @@
+[ LTOP: h0
+INDEX: e14
+RELS: < 
+[ _come_v_1 LBL: h13 ARG0: e14 [ e SF: prop TENSE: pres MOOD: indicative PROG: - PERF: + ] ARG1: x19 ]
+[ _city_n_1 LBL: h16 ARG0: x17 [ x NUM: sg PERS: 3 ] ]
+[ _boy_n_1 LBL: h18 ARG0: x19 [ x NUM: sg PERS: 3 ] ]
+[ _the_q LBL: h5 ARG0: x17 RSTR: h7 BODY: h8 ]
+[ _the_q LBL: h9 ARG0: x19 RSTR: h11 BODY: h12 ]
+[ _from_p LBL: h13 ARG0: e2 ARG1: e14 ARG2: x17 ] >
+HCONS: < h0 qeq h13 h11 qeq h18 h7 qeq h16 > ]
